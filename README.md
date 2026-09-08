@@ -65,3 +65,11 @@ Primary implementation references:
 - [Android Ink](https://developer.android.com/develop/ui/compose/touch-input/stylus-input/about-ink-api): native low-latency handwriting.
 
 Caveat font is distributed under the SIL Open Font License in `public/fonts/OFL.txt`. The notebook has original branding and sample reading content; film footage and uploaded reference files are not shipped with the application.
+
+## Development milestones
+
+The original demo is **alpha 0.1**, preserved by the immutable `alpha-0.1` tag. The current appearance study is **alpha 0.2** (package `0.2.0-alpha.0`). See [CHANGELOG.md](CHANGELOG.md) for the baseline source and milestone history. The notebook's settings also contain a short development journal.
+
+Alpha 0.2 adds local vellum/leather textures, composited candlelight and daylight, layered book edges, and directional 3D leaf transitions. Page turns use an inert DOM copy (including rendered PDF pixels) over the untransformed live editor. Only dedicated page-edge grips interpret drags as navigation; handwriting gestures keep their existing meaning. No new runtime dependency, database migration, or companion-model change is required.
+
+The shared material CSS and components are included in the mobile build. Lighting animates transforms and opacity, pauses in hidden tabs, and respects reduced motion. This is a browser-tested implementation; physical-device performance still needs measurement before mobile release.

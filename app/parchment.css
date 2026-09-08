@@ -1,0 +1,285 @@
+/* Alpha 0.2: a physical book around the existing, untransformed ink plane. */
+.app.parchment {
+    --primary: #d9be87;
+    --primary-foreground: #322b20;
+    --ring: #d8bc82;
+    --muted: #4e4739;
+    --accent: #514b3a;
+    --ink: #473c2a;
+    background: #211f1a;
+    color: #ece4d2;
+}
+.parchment .rail {
+    background: linear-gradient(100deg, #20231feb, #1d211de8), url('/materials/leather-alpha-02.webp') center / 520px;
+    border-right-color: #c6a76e24;
+    box-shadow: 5px 0 25px #0d0c0b1a;
+}
+.parchment .brand-mark { color: #d9be89; }
+.parchment .brand-name { color: #eee2ca; }
+.parchment .brand-name span { color: #b7bba2; }
+.parchment .new-page { background: #bb9e6020; border-color: #b89b6555; color: #ead7b0; }
+.parchment .new-page:hover { background: #bb9e6035; }
+.parchment .page-link.active { background: linear-gradient(90deg, #b99b6630, #b99b660d); box-shadow: inset 2px 0 #c1a575; color: #f4e9d4; }
+.parchment .page-number { color: #c3b18a; }
+.parchment .rail-label { color: #aaa58e; font-size: 10px; letter-spacing: 2.1px; }
+.parchment .rail-bottom p { color: #aead96; }
+.parchment .sample-badge { color: #c4bd9c; border-color: #b6a77440; font-size: 9px; }
+.release-label { color: #a8a189; font-size: 10px; margin-left: 10px; white-space: nowrap; }
+.parchment .workbench {
+    background: radial-gradient(ellipse at 79% 12%, #b278372b, transparent 62%), linear-gradient(120deg, #292920df, #1d211ff2), url('/materials/leather-alpha-02.webp') center / 800px;
+}
+.parchment .topbar { background: #252720e8; border-bottom-color: #b6a07825; height: 68px; }
+.parchment .breadcrumb { color: #a5a68f; font-size: 12px; }
+.parchment .breadcrumb strong { color: #dedcc8; }
+.parchment .top-actions { gap: 14px; }
+.parchment .saved { color: #b8b69a; }
+.parchment .canvas-stage { padding: 25px 42px 90px; scrollbar-color: #716a50 transparent; }
+.parchment .stage-heading { margin-bottom: 19px; }
+.parchment .stage-heading > div:first-child { flex: 1; min-width: 0; }
+.parchment .rename-input { color: #ece1ca; width: 100%; max-width: 450px; font-size: 28px; }
+.parchment .stage-heading .subline { color: #aca68c; }
+.parchment .paper-controls { color: #bfb79a; flex-shrink: 0; }
+.lighting-toggle { display: flex; align-items: center; gap: 7px; height: 31px; padding: 0 11px; border: 1px solid #c3a26650; border-radius: 20px; background: #c79a4614; color: #dec493; font-size: 11px; white-space: nowrap; }
+.lighting-toggle svg { width: 14px; height: 14px; }
+.lighting-toggle:hover { background: #c79a4628; }
+.lighting-toggle[aria-pressed=false] { color: #d2d6c1; border-color: #c8ccae35; background: #c4c7a50d; }
+.parchment .toolbar {
+    margin-bottom: 26px;
+    background: linear-gradient(180deg, #ece0c8, #d2c3a8);
+    border-color: #eddfbc88;
+    box-shadow: 0 5px 13px #090b0840, inset 0 1px #fff5dc88;
+    border-radius: 9px;
+    color: #615541;
+}
+.parchment .tool { color: #796c54; }
+.parchment .tool:hover { background: #7f694b1c; }
+.parchment .tool.active { background: #f9f0dca8; color: #4b452e; box-shadow: 0 1px 3px #6f593621, inset 0 1px #fff9e9; }
+.parchment .separator { background: #9f8a653d; }
+.parchment .color-dot { border-color: #e4d7bd; }
+.parchment .color-dot.active { outline-color: #877657; }
+.parchment .stroke-size { --primary: #7d704c; --muted: #b7a58466; }
+.parchment .toolbar { margin-bottom: 12px; }
+.book-pagination { max-width: 782px; margin: 0 auto 21px; display: flex; align-items: center; justify-content: space-between; color: #b4ac8c; font-size: 10px; letter-spacing: 1.4px; }
+.book-pagination button { display: flex; align-items: center; gap: 5px; padding: 7px 0; border: 0; background: none; color: #c6b99a; font-size: 11px; letter-spacing: 0; }
+.book-pagination button:hover { color: #f6dfab; }
+.book-pagination em { font-style: normal; color: #756e58; margin: 0 7px; }
+.book-pagination button svg { width: 14px; height: 14px; }
+.page-grip { position: absolute; top: 180px; width: 26px; height: 68px; z-index: 8; border: 1px solid #b198675e; border-radius: 4px; background: linear-gradient(90deg, #675939, #9c895a); color: #ebd7a8; box-shadow: 0 4px 8px #0d0c0966; touch-action: none; user-select: none; }
+.page-grip span { font-family: Georgia, serif; font-size: 28px; display: block; }
+.page-grip.forward { right: -24px; transform: translateX(calc(var(--pull, 0) * -15px)) rotateY(calc(var(--pull, 0) * -25deg)); }
+.page-grip.backward { left: -31px; transform: translateX(calc(var(--pull, 0) * 15px)) rotateY(calc(var(--pull, 0) * 25deg)); background: linear-gradient(90deg, #8c7b53, #5a4e36); }
+.page-grip:hover { color: #fff4d3; filter: brightness(1.13); }
+.page-grip:disabled { opacity: 0; pointer-events: none; }
+.page-turn { position: absolute; top: 0; left: 0; width: 100%; z-index: 12; perspective: 1900px; perspective-origin: 45% 32%; pointer-events: none; }
+.turn-leaf { position: absolute; width: 100%; height: 100%; top: 0; left: 0; transform-style: preserve-3d; transform-origin: 0 50%; animation: leaf-forward .95s cubic-bezier(.35,.06,.35,1) both; will-change: transform; }
+.page-turn.backward .turn-leaf { height: auto; animation-name: leaf-backward; }
+.turn-front, .turn-back, .turn-still { position: absolute; inset: 0; }
+.turn-front, .turn-back { backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 3px 8px 9px 2px; overflow: hidden; }
+.turn-front { transform: translateZ(.2px); box-shadow: 3px 4px 9px #3722133d; background: #e7d2a4 url('/materials/vellum-alpha-02.webp') center top / 100% auto; }
+.turn-back { background: #d6bc89 url('/materials/vellum-alpha-02.webp') center top / 100% auto; transform: rotateY(180deg); box-shadow: inset 25px 0 35px #50371c33, inset -6px 0 12px #fff0c054; }
+.turn-fiber { position: absolute; inset: 0; background: linear-gradient(90deg, #412b1766, #ffedb21a 14%, #fff1c429 50%, #50371b40); }
+.turn-bend { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; pointer-events: none; border-radius: 3px 8px 9px 2px; background: linear-gradient(90deg, #32221080 0%, transparent 7%, transparent 63%, #fff3c882 83%, #7c572b52 96%, #f3d39773); animation: leaf-bend .95s ease both; transform: translateZ(.5px); }
+.turn-cast-shadow { position: absolute; inset: 0; background: linear-gradient(90deg, #160e06cc, #29180766 24%, transparent 90%); transform-origin: left; animation: leaf-shadow .95s ease both; }
+.page-turn.backward .turn-cast-shadow { animation-direction: reverse; }
+.parchment .turn-paper-copy { width: 100%; height: 100%; aspect-ratio: auto !important; box-shadow: none; }
+.turn-paper-copy *, .turn-paper-copy::before, .turn-paper-copy::after { animation: none !important; transition: none !important; }
+.turn-paper-copy .ink-character { opacity: 1 !important; }
+.turn-paper-copy .draw-line { stroke-dashoffset: 0 !important; }
+@keyframes leaf-forward {
+    0% { transform: rotateY(0deg) skewY(0deg); }
+    24% { transform: rotateY(-28deg) skewY(-1.5deg); }
+    58% { transform: rotateY(-95deg) skewY(-2.3deg); }
+    100% { transform: rotateY(-174deg) skewY(0deg); }
+}
+@keyframes leaf-backward {
+    0% { transform: rotateY(-174deg) skewY(0deg); }
+    42% { transform: rotateY(-95deg) skewY(-2.3deg); }
+    76% { transform: rotateY(-28deg) skewY(-1.5deg); }
+    100% { transform: rotateY(0deg) skewY(0deg); }
+}
+@keyframes leaf-bend { 0%, 100% { opacity: 0; } 25%, 72% { opacity: .85; } }
+@keyframes leaf-shadow { 0% { transform: scaleX(1); opacity: .2; } 35% { opacity: .65; } 75% { opacity: .4; } 100% { transform: scaleX(.04); opacity: 0; } }
+
+/* The separate book shell makes the thickness visible without skewing the page. */
+.parchment .paper-shell { padding: 0; margin-bottom: 27px; }
+.parchment .paper-shell::before, .parchment .paper-shell::after { display: none; }
+.book-layers { position: absolute; inset: 0; pointer-events: none; }
+.book-cover {
+    position: absolute;
+    inset: -8px -14px -25px -22px;
+    border-radius: 9px 13px 15px 10px;
+    background: linear-gradient(90deg, #100d0780, transparent 6%, transparent 96%, #1b120980), url('/materials/leather-alpha-02.webp') center / 580px;
+    border: 1px solid #9a75404d;
+    box-shadow: 0 2px 0 #99724566, 0 7px 2px #110e0ae0, 0 22px 22px #0008, 0 32px 60px #070a0880, inset 0 1px 2px #c69b6459;
+}
+.paper-leaves { position: absolute; inset: 4px -7px -17px -5px; }
+.paper-leaves i {
+    display: block; position: absolute; inset: 0;
+    background: linear-gradient(90deg, #8e7243, #bca574 3%, #d5be8d 9%, #e0cba0 95%, #ae8752);
+    border: 1px solid #998050;
+    border-radius: 3px 8px 8px 2px;
+    box-shadow: 0 2px 1px #442e1880, inset 0 -1px #fbe8ba;
+}
+.paper-leaves i:nth-child(2) { inset: -2px 1px 4px 0; transform: rotate(-.12deg); background-color: #d1b98c; }
+.paper-leaves i:nth-child(3) { inset: -3px 3px 8px 1px; transform: rotate(.11deg); }
+.paper-leaves i:nth-child(4) { inset: -4px 4px 11px 1px; }
+.paper-leaves i:nth-child(5) { inset: -5px 5px 14px 2px; transform: rotate(-.08deg); }
+.book-spine {
+    position: absolute; top: 0; bottom: -16px; left: -13px; width: 16px;
+    border-left: 1px solid #bb996d44; border-radius: 6px 0 0 7px;
+    background: linear-gradient(90deg, #39291c, #1b130b 31%, #6a4b2b 50%, #21160c 77%, #a5824c66);
+    box-shadow: -3px 0 4px #07080566;
+}
+.book-ribbon {
+    position: absolute; top: -10px; right: 39px; width: 22px; height: 62px;
+    background: linear-gradient(90deg, #3a3927, #687056 22%, #474e3b 67%, #2a3225);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 87%, 0 100%);
+    z-index: 5; border-left: 1px solid #a29b7055;
+    filter: drop-shadow(2px 3px 2px #33271088);
+}
+.parchment .paper {
+    background-color: #e7d2a4;
+    border-radius: 3px 6px 7px 2px;
+    box-shadow: 1px 2px 2px #47341980, 0 0 0 1px #be9c614f;
+    color: var(--ink);
+}
+.parchment .paper.grid { background-image: linear-gradient(#81633c16 1px, transparent 1px), linear-gradient(90deg, #81633c16 1px, transparent 1px); background-size: 28px 28px; }
+.parchment .paper.lined { background-image: linear-gradient(#81633c1b 1px, transparent 1px); background-size: 100% 34px; }
+.vellum-grain, .vellum-light, .vellum-contour, .page-light-sweep { position: absolute; inset: 0; pointer-events: none; }
+.vellum-grain {
+    background: url('/materials/vellum-alpha-02.webp') top center / 100% auto repeat-y;
+    mix-blend-mode: multiply; opacity: .74; z-index: 0;
+}
+.parchment .ink-svg { z-index: 2; }
+.vellum-light { z-index: 3; overflow: hidden; opacity: var(--warmth, .65); transition: opacity .8s ease; mix-blend-mode: soft-light; }
+.candle-pool {
+    position: absolute; width: 160%; height: 1450px; max-height: 155%; top: -24%; right: -41%;
+    background: radial-gradient(ellipse at 58% 38%, #fff8de 0%, #ffdc8fdb 25%, #ffbb5580 44%, transparent 70%);
+    animation: candle-breathe 5.3s ease-in-out infinite, candle-drift 13s ease-in-out infinite alternate;
+    will-change: opacity, transform;
+}
+.candle-reflection {
+    position: absolute; width: 130%; height: 1200px; max-height: 140%; top: -10%; left: -32%;
+    background: radial-gradient(ellipse at 5% 23%, #493319b3, transparent 65%);
+    animation: candle-reflect 7.1s ease-in-out infinite alternate;
+}
+.vellum-contour {
+    z-index: 4;
+    background: linear-gradient(90deg, #563b2666 0%, #7f60301f 2.6%, #fff2c540 4.5%, transparent 8%, transparent 94%, #b78c392b 99%, #8d642b55), linear-gradient(180deg, #fff8dc5e 0, transparent 9px, transparent calc(100% - 17px), #a2793b33);
+    box-shadow: inset 0 0 20px #80522218, inset 1px 0 1px #f6ddb5, inset 0 -1px 1px #73532350;
+}
+.page-light-sweep {
+    z-index: 3;
+    background: linear-gradient(110deg, transparent 20%, #fff1c75c 44%, transparent 68%);
+    opacity: 0; animation: leaf-light 1.6s ease-out both;
+}
+.parchment .paper-kicker, .parchment .paper-date { fill: #796747; font-size: 10px; letter-spacing: 2px; }
+.parchment .paper-date { transform: translateX(-31px); }
+.parchment .page-footer { fill: #87714c; font-size: 10px; letter-spacing: 3px; }
+.parchment .ink-writing { fill: #53462d; }
+.parchment .ink-user { fill: #3e3426; }
+.parchment .ink-caption { fill: #746043; }
+.parchment .ink-heading { fill: #4c4f32; }
+.parchment .ink-line { stroke: #676443; }
+.parchment .ink-soft { fill: #c5c08a66; stroke: #7b7951; }
+.parchment .page-empty-hint { fill: #968467; }
+.parchment .context-chip { fill: #796649; }
+.parchment .quiz-choices button { background: #f5e4be66; border-color: #998052; color: #605333; }
+.parchment .quiz-choices button:hover { background: #ffefc7b3; }
+.parchment .quiz-choices button.correct { background: #aabd7766; border-color: #738247; }
+.parchment .quiz-choices button.wrong { background: #cb8c6460; border-color: #a56842; color: #774a30; }
+.parchment .quiz-answer { color: #5c653a; }
+.parchment .writing-status { background: #efe0bccf; color: #685737; z-index: 7; backdrop-filter: blur(5px); }
+.parchment .writing-status .spinning { animation: quill-breathe 1.6s ease-in-out infinite; }
+.parchment .reader-caption, .parchment .reader-excerpt { position: relative; z-index: 1; }
+.parchment .reader-excerpt { color: #51432f; }
+.parchment .reading-canvas { position: relative; z-index: 1; mix-blend-mode: multiply; }
+
+.parchment .composer-area { background: #232720f5; border-top-color: #b7a47b29; padding-top: 14px; }
+.parchment .suggestions > span { color: #a6a28a; }
+.parchment .suggestions button { background: #b7a2740b; border-color: #a7996c39; color: #c8c6aa; }
+.parchment .suggestions button:hover { background: #b7a27420; }
+.parchment .composer { background: #c0aa7010; border-color: #a493634f; }
+.parchment .composer input::placeholder { color: #b0af97; }
+.parchment .send-button { background: #d5bd86; color: #433e29; box-shadow: inset 0 1px #f9dfaa; }
+.parchment .composer-hint { color: #9c9c85; }
+
+/* Dialog portals sit above the drawer. Do not change vendored primitives. */
+body:has(.vellum-dialog) [data-slot=dialog-overlay] { z-index: 90; background: #0d100dcc; backdrop-filter: blur(5px); }
+.modal.vellum-dialog {
+    z-index: 100; max-width: min(490px, calc(100vw - 32px)) !important;
+    max-height: calc(100dvh - 40px); overflow-y: auto;
+    background: linear-gradient(130deg, #32392df5, #242b23f7), url('/materials/leather-alpha-02.webp') center / 500px !important;
+    border-color: #b8a07460 !important;
+    box-shadow: 0 24px 90px #0008, inset 0 1px #d5bc8630;
+    --primary: #d7bd86; --primary-foreground: #373321; --muted: #52573f; --ring: #d7bd86;
+}
+.vellum-dialog .modal-field { background: #d8c0890d; border-color: #b6a37666; }
+.vellum-dialog .modal-primary { background: #d6bf8c; color: #3b3e29; }
+.vellum-dialog .settings-row { border-bottom-color: #c3af7e24; }
+.light-setting { padding: 0 0 8px; }
+.light-setting label { display: flex; justify-content: space-between; font-size: 12px; color: #cbc8ae; margin-bottom: 15px; }
+.light-setting label span { color: #bcac80; }
+.light-setting small { display: block; margin-top: 13px; font-size: 11px; color: #aeb799; }
+.release-history { border-top: 1px solid #c3af7e24; padding-top: 13px; }
+.release-history summary { cursor: pointer; font-size: 12px; color: #c9bd98; }
+.release-history p { font-size: 12px; margin: 12px 0; }
+
+.parchment[data-light=day] .vellum-light { opacity: 0; }
+.parchment[data-light=day] .paper { background-color: #f2e6cb; }
+.parchment[data-light=day] .vellum-grain { opacity: .5; }
+.parchment[data-light=day] .page-light-sweep { display: none; }
+.parchment[data-visible=false] *, .parchment[data-light=day] .candle-pool, .parchment[data-light=day] .candle-reflection { animation-play-state: paused !important; }
+@keyframes candle-breathe {
+    0%, 100% { opacity: .72; } 12% { opacity: .83; } 19% { opacity: .74; }
+    25% { opacity: .89; } 41% { opacity: .78; } 56% { opacity: .95; }
+    64% { opacity: .85; } 73% { opacity: .9; } 82% { opacity: .73; }
+}
+@keyframes candle-drift { from { transform: translate3d(-1%, 0, 0) scale(1); } to { transform: translate3d(4%, 2%, 0) scale(1.04); } }
+@keyframes candle-reflect { 0%, 100% { opacity: .52; } 28% { opacity: .7; } 46% { opacity: .57; } 75% { opacity: .78; } }
+@keyframes leaf-light { 0% { opacity: .75; transform: translateX(-60%); } 100% { opacity: 0; transform: translateX(50%); } }
+@keyframes quill-breathe { 0%, 100% { opacity: .65; transform: rotate(-8deg); } 50% { opacity: 1; transform: rotate(4deg); } }
+@media (max-width: 1060px) {
+    .parchment .canvas-stage { padding: 24px 30px 75px; }
+    .parchment .topbar { padding: 0 22px; }
+    .parchment .top-actions { gap: 10px; }
+}
+@media (max-width: 767px) {
+    .parchment.app, .parchment.app[data-slot=sidebar-wrapper] { min-height: 0; }
+    .parchment .rail { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+    .parchment .topbar { height: 57px; padding: 0 13px; }
+    .parchment .top-actions { gap: 5px; }
+    .parchment .breadcrumb { font-size: 12px; }
+    .parchment .canvas-stage { padding: 21px 21px 68px; }
+    .parchment .rename-input { font-size: 24px; }
+    .parchment .stage-heading { padding: 0; margin-bottom: 17px; }
+    .parchment .toolbar { margin-bottom: 8px; padding: 5px; }
+    .parchment .tool { width: 33px; }
+    .parchment .paper-shell { padding: 0; }
+    .parchment .paper-controls { gap: 0; }
+    .parchment .paper-controls .icon-button { width: 30px; }
+    .book-cover { inset: -5px -7px -20px -11px; border-radius: 5px 8px 10px 5px; }
+    .book-spine { left: -8px; width: 10px; bottom: -13px; }
+    .paper-leaves { right: -4px; bottom: -14px; left: -3px; }
+    .book-ribbon { width: 15px; height: 39px; right: 25px; top: -6px; }
+    .lighting-toggle { padding: 0; width: 32px; height: 32px; justify-content: center; }
+    .lighting-toggle span { display: none; }
+    .candle-pool { height: 900px; }
+    .candle-reflection { height: 760px; }
+    .book-pagination { margin-bottom: 15px; }
+    .page-grip { width: 20px; height: 55px; top: 145px; }
+    .page-grip.forward { right: -15px; }
+    .page-grip.backward { left: -15px; }
+}
+@media (max-width: 560px) { .parchment .saved span { display: none; } .parchment .top-actions { gap: 3px; } }
+@media (max-width: 370px) { .parchment .canvas-stage { padding-left: 17px; padding-right: 17px; } .parchment .tool { width: 28px; } .parchment .rename-input { font-size: 22px; } }
+@media (prefers-reduced-motion: reduce) {
+    .parchment .candle-pool, .parchment .candle-reflection { animation: none !important; transform: none; will-change: auto; }
+    .parchment .page-light-sweep { display: none; }
+    .page-turn { display: none; }
+}
+@media print {
+    .book-layers, .vellum-light, .vellum-contour, .page-light-sweep, .page-turn, .page-grip, .book-pagination { display: none !important; }
+    .parchment .paper { background-color: #fff; box-shadow: none; }
+    .vellum-grain { opacity: .15 !important; }
+}

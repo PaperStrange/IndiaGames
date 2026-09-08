@@ -39,6 +39,7 @@ export default function PdfPage({ url, pageNumber, onLoaded }: {
             canvas.current.height = viewport.height * 1.5;
             await page.render({ canvas: canvas.current, canvasContext: ctx, viewport, transform: [1.5, 0, 0, 1.5, 0, 0] }).promise;
             if (!cancelled) {
+                canvas.current.dataset.renderedPage = String(pageNumber);
                 callback.current(doc.numPages, viewport.height, text.items.map(item => 'str' in item ? item.str : '').join(' '), text.items.filter(item => 'str' in item).map(item => { if (!('str' in item))
                     return { text: '', x: 0, y: 0, w: 0, h: 0 }; const transform = pdfjs.Util.transform(viewport.transform, item.transform); return { text: item.str, x: transform[4], y: transform[5] - Math.abs(transform[3]), w: item.width * viewport.scale, h: Math.max(12, Math.abs(transform[3])) }; }));
                 setLoading(false);
