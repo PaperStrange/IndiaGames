@@ -1,0 +1,7 @@
+{
+  "appId": "com.enchanted.notebook",
+  "appName": "Enchanted Notebook",
+  "webDir": "dist-mobile",
+  "ios": {"contentInset": "always"},
+  "android": {"backgroundColor": "#222b28"}
+}
