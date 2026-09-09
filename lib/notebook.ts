@@ -10,10 +10,13 @@ export type Stroke = {
     color: string;
     size: number;
     tool: 'pen' | 'highlight';
+    absorbedBy?: string;
 };
+export type ReplyFont = 'hand' | 'book' | 'mono';
+export type ReplyFormat = 'auto' | 'text' | 'emoji' | 'table' | 'sticker' | 'picture' | 'video';
 export type Block = {
     id: string;
-    kind: 'user' | 'text' | 'mitosis' | 'coordinates' | 'doodle' | 'table' | 'quiz';
+    kind: 'user' | 'text' | 'mitosis' | 'coordinates' | 'doodle' | 'table' | 'quiz' | 'sticker' | 'picture' | 'video';
     text: string;
     x: number;
     y: number;
@@ -25,6 +28,10 @@ export type Block = {
     choices?: string[];
     selected?: string;
     feedback?: string;
+    font?: ReplyFont;
+    absorbedBy?: string;
+    exchangeId?: string;
+    media?: 'owl' | 'forest' | 'cell-film';
 };
 export type Page = {
     id: string;
@@ -57,7 +64,7 @@ export function initialNotebook(): Notebook {
     third.blocks = [block('user', 'Draw a happy guy.', 122, 60), block('doodle', 'A little friend for the margin.', 235, 300)];
     return { pages: [first, second, third] };
 }
-export function nextY(page: Page) { return Math.max(122, ...page.blocks.map(b => b.y + b.h + 42), ...page.strokes.map(s => Math.max(...s.points.map(p => p[1])) + 38)); }
+export function nextY(page: Page) { return Math.max(122, ...page.blocks.filter(b => !b.absorbedBy).map(b => b.y + b.h + 42), ...page.strokes.filter(s => !s.absorbedBy).map(s => Math.max(...s.points.map(p => p[1])) + 38)); }
 export function pageHeight(page: Page) { return Math.max(1000, nextY(page) + 120); }
 export function topicFor(prompt: string, current = 'free') {
     if (/mitos|cell|divide|division|biology|细胞|分裂/i.test(prompt))

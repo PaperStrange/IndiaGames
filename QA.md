@@ -38,3 +38,17 @@ The default site has sample companion replies. It does not pretend to recognize 
 - Imported two-page PDF opens with the existing document; forward and backward controls navigate and retain a canvas copy in the turning leaf. Incoming PDF copies wait for matching rendered page pixels.
 - Reduced-motion and hidden-tab behavior are implemented; a 1.1-second cleanup fallback prevents a missing animation event from keeping ink locked. OS motion emulation and physical stylus/native-device checks remain outside this browser session.
 - Web and mobile builds and TypeScript checks pass. Temporary responsive QA harnesses are removed before final packaging.
+
+## Alpha 0.3 — The living folio · 2026-09-09
+
+- Desktop folio visually checked: perspective, curved gutter, raised page edges, cast shadows, and movable lamp illumination render with the existing textures.
+- Real mouse stroke on the angled sheet follows its viewport path to within the rendered pen radius (observed first bounds at x 998.29 / y 618.07 for input beginning at x 1000 / y 620). Pen input and the sheet share the measured projective plane.
+- Automatic typed reply and pen reply work without pressing Send. During the phone transition, original-ink opacity measured 0.427 while reply characters were progressively developing; completed original opacity was 0. Originals remain stored and can be restored through the dialog.
+- Book serif, Typewriter, and Handwritten choices render distinct fonts. Emoji clusters including a variation-selector arrow remain intact.
+- Original owl sticker and woodland picture load successfully. The local H264 film reports eight seconds and plays inline after its native play control is clicked; currentTime advances and paused becomes false.
+- 390 × 844 and 320 × 844 iframe viewports checked. Drawer-to-New-page dialog closes the drawer, fits within the phone, and creates a new page. Reply controls fit; Original ink uses an accessible icon on narrow screens. Phone page turns finish and restore interaction.
+- Saved alpha 0.3 originals and media survive reopening in a fresh browser session. Original ink includes typed text and stored vector strokes.
+- SVG export with a media reply completes successfully; images/posters are embedded and faded original groups removed. As with earlier QA, the cloud browser does not expose a reliable blob-download event.
+- Six focused automated tests pass: full-sheet inverse projection, scaled/scrolled phone projection, fragmented Unicode/SSE with unknown events, stream errors/partial retention, cancellation, and upstream/empty-response errors.
+- No paid provider request was made. SSE transport and cancellation were tested with controlled streams; actual model accuracy and first-token latency remain unverified. Physical iOS/Android stylus, native WebView, keyboard and palm rejection require device QA.
+- Temporary phone harness removed before packaging. TypeScript, hosted production build, and independent mobile build are release gates.

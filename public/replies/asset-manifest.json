@@ -1,0 +1,44 @@
+{
+  "generation_mode": "built-in imagegen",
+  "generation_requests": 2,
+  "prompts": {
+    "glade": "Use case: illustration-story\nAsset type: original standalone painting for a magical parchment notebook.\nPrimary request: A moonlit woodland glade with softly glowing fireflies and ancient trees. Storybook gouache painting with rich brush texture. Deep forest greens and midnight blues, gentle golden light, a quietly magical atmosphere.\nComposition: landscape 3:2, 1536x1024. Ancient tree trunks frame an inviting open glade, moonlight filters through layered canopies, scattered tiny fireflies create warm luminous accents. Full bleed original landscape painting, no border.\nConstraints: no text, letters, logos, watermark or UI. No characters or buildings. Deliver one single finished original asset.",
+    "owl": "Use case: illustration-story\nAsset type: original standalone sticker for a magical parchment notebook.\nPrimary request: One original friendly tiny tawny owl holding a single quill. Storybook gouache illustration, warm brown, amber and cream. Soft expressive face, rounded compact silhouette, detailed painted feather texture. A narrow ivory sticker edge follows the complete owl-and-quill silhouette.\nComposition: centered full body, isolated, square 1024x1024 canvas, comfortable transparent margin around the sticker. All parts fully in frame.\nBackground: genuinely transparent alpha outside the sticker; no scenery, surface, cast shadow or backdrop.\nConstraints: one owl only; one quill only; no text, letters, logo, watermark or UI. Deliver a single finished original asset."
+  },
+  "assets": [
+    {
+      "filename": "owl-sticker.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGBA",
+      "description": "Friendly tawny owl holding one quill with ivory sticker edge and transparent alpha"
+    },
+    {
+      "filename": "moonlit-glade.png",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "description": "Moonlit woodland glade with fireflies"
+    },
+    {
+      "filename": "cell-division.mp4",
+      "width": 640,
+      "height": 400,
+      "duration_seconds": 8,
+      "fps": 24,
+      "codec": "H264",
+      "pixel_format": "yuv420p",
+      "audio": false,
+      "faststart": true,
+      "description": "Simplified mitosis and cytokinesis. Two copied chromosomes line up, sister chromatids separate, and each daughter cell inherits one of each."
+    },
+    {
+      "filename": "cell-division-poster.png",
+      "width": 640,
+      "height": 400,
+      "description": "Poster at chromosomes line-up stage"
+    }
+  ]
+}

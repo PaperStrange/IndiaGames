@@ -1,5 +1,16 @@
 # Enchanted Notebook development journal
 
+## Alpha 0.3 — The living folio · 2026-09-09
+
+- A raised writing plane, deeper page block, curved gutter, rim highlights and pointer-responsive lamplight. CSS perspective and composited lighting simulate depth without a ray-tracing requirement. Daylight, flat-view and reduced-motion options remain available.
+- The pen uses inverse projective coordinates, measured from the sheet corners, so the angled surface does not shift ink away from the pointer. A stroke holds its coordinate transform until completion.
+- Reply on pause is enabled by default: 950 ms after typing, 1,300 ms after pen input. IME composition, open dialogs and active drawing suspend it. Manual sending and ordinary placed annotations remain available.
+- Input dissolves over one second as the reply progressively appears. The original text and stroke vectors remain saved; Original ink can restore them. No artificial pre-reply delay for sample answers.
+- Three per-reply fonts: handwritten, book serif and typewriter. Grapheme-aware text supports emojis and wide scripts. Formats include text, tables, emojis, a transparent owl sticker, a woodland picture and an eight-second cell-division film with inline controls and captions.
+- Live companion adapter now supports incremental SSE text, cancellation, partial-response retention and interrupted-stream errors. It awaits real provider tokens; sample mode is explicitly labeled and does not claim handwriting recognition.
+- Self-contained SVG exports embed pictures and video posters, omit visually absorbed originals, and retain selected text styles.
+- All material, media and interaction components are shared with the mobile build. Alpha 0.1 and 0.2 milestones remain unchanged.
+
 ## Alpha 0.2 — Candlelit vellum · 2026-09-08
 
 The first appearance study after the alpha 0.1 baseline.
