@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ink Spark Sprint</title>
+  <style>
+    :root{color-scheme:dark;font-family:Georgia,serif;background:#111a15;color:#f6efd8}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at 70% 15%,#415d3c 0,#18271f 42%,#0e1511 100%);display:grid;place-items:center;padding:16px}
+    .shell{width:min(720px,100%);border:1px solid #97b56d88;background:#17231bd9;box-shadow:0 20px 60px #050906aa;padding:22px}
+    header{display:flex;justify-content:space-between;gap:20px;align-items:start;border-bottom:1px solid #8c9e6d66;padding-bottom:13px}
+    h1{font-weight:400;font-size:clamp(28px,5vw,46px);line-height:1;margin:0 0 7px}.eyebrow{font:700 10px Arial,sans-serif;letter-spacing:.2em;color:#bdd394;margin:0 0 8px}.lede{font:14px Arial,sans-serif;line-height:1.45;color:#bfccb9;margin:0}
+    .stats{display:grid;gap:6px;text-align:right;font:12px Arial,sans-serif;color:#d5dfbb}.stats strong{font:20px Georgia,serif;color:#fff2c9}
+    #arena{position:relative;height:min(60vh,390px);min-height:270px;margin:17px 0;border:1px solid #7f9f61aa;overflow:hidden;background:radial-gradient(circle at 22% 30%,#d6d99b22 0 2px,transparent 3px),radial-gradient(circle at 76% 74%,#d6d99b18 0 2px,transparent 3px),#1b2b20}
+    #arena:before{content:'CLICK THE SPARKS';position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);font:700 11px Arial,sans-serif;letter-spacing:.25em;color:#b6c99544;pointer-events:none}
+    .spark{position:absolute;width:46px;height:46px;border-radius:50%;border:1px solid #f7e8a4;background:radial-gradient(circle,#fff7bf 0 6%,#f2c35f 12%,#a58e4b55 44%,transparent 70%);box-shadow:0 0 24px #f2ca668c;cursor:pointer;transform:translate(-50%,-50%);animation:float 1.4s ease-in-out infinite alternate}.spark:hover{filter:brightness(1.35)}
+    @keyframes float{to{transform:translate(-50%,-58%) scale(1.1)}}@media(prefers-reduced-motion:reduce){.spark{animation:none}}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.controls button{font:13px Arial,sans-serif;border:1px solid #8ca66a;background:#d6e3ae;color:#263525;padding:10px 14px;border-radius:4px;cursor:pointer}.controls button.secondary{background:transparent;color:#d6e3ae}.message{min-height:28px;font:13px Arial,sans-serif;color:#c7d4b5;padding-top:12px}.message.win{color:#ffeba8}
+    footer{border-top:1px solid #8c9e6d44;padding-top:12px;margin-top:16px;font:11px Arial,sans-serif;line-height:1.45;color:#8fa187}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header><div><p class="eyebrow">LUMINOUS LEDGER / HTML5 MINI-GAME</p><h1>Ink Spark Sprint</h1><p class="lede">Catch ten sparks before the page cools.</p></div><div class="stats"><span>SPARKS <strong id="score">0</strong>/10</span><span>TIME <strong id="time">30</strong>s</span></div></header>
+    <div id="arena" aria-label="Game area"></div>
+    <div class="controls"><button id="start">Start the page</button><button id="reset" class="secondary">Reset</button></div>
+    <div id="message" class="message" aria-live="polite">Your companion is waiting for the first spark.</div>
+    <footer>Playable on touch, mouse, and keyboard focus. The full showcase embeds this game beside the reference clip and the notebook interaction loop.</footer>
+  </main>
+  <script>
+    const arena=document.getElementById('arena'),scoreEl=document.getElementById('score'),timeEl=document.getElementById('time'),message=document.getElementById('message'),start=document.getElementById('start'),reset=document.getElementById('reset');
+    let score=0,time=30,running=false,target=null,timer=null;
+    function place(){if(!running)return;if(target)target.remove();target=document.createElement('button');target.className='spark';target.type='button';target.ariaLabel='Catch a page spark';target.style.left=(8+Math.random()*84)+'%';target.style.top=(12+Math.random()*76)+'%';target.addEventListener('click',catchSpark);arena.appendChild(target)}
+    function catchSpark(){if(!running)return;score++;scoreEl.textContent=score;message.textContent=score<10?'The page warmed. Find the next spark.':'The page is open. Your companion leaves a small gold mark.';if(score>=10){finish(true);return}place()}
+    function finish(won){running=false;clearInterval(timer);timer=null;if(target){target.remove();target=null}message.className='message'+(won?' win':'');message.textContent=won?'Page unlocked. The next note can be yours.':'The ink cooled before the page opened. Try again.';start.textContent=won?'Play again':'Start the page'}
+    function begin(){score=0;time=30;running=true;scoreEl.textContent=score;timeEl.textContent=time;message.className='message';message.textContent='Catch ten sparks. The page is listening.';start.textContent='Restart';clearInterval(timer);place();timer=setInterval(()=>{time--;timeEl.textContent=time;if(time<=0)finish(false)},1000)}
+    start.addEventListener('click',begin);reset.addEventListener('click',()=>{clearInterval(timer);running=false;score=0;time=30;scoreEl.textContent=score;timeEl.textContent=time;if(target){target.remove();target=null}message.className='message';message.textContent='Your companion is waiting for the first spark.';start.textContent='Start the page'});
+  </script>
+</body>
+</html>
