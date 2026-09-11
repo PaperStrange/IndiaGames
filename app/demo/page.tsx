@@ -2,10 +2,9 @@ import DemoShowcase from './demo-showcase';
 
 export const metadata = {
   title: 'Live Demo | Enchanted Notebook',
-  description: 'Explore the Enchanted Notebook interaction loop, companion profiles, reference video, and playable Ink Spark Sprint.',
+  description: 'Explore the Enchanted Notebook product surface, companion profiles, product clip, and playable page loop.',
 };
 
 export default function DemoPage() {
-  return <DemoShowcase />;
+  return <DemoShowcase mode="home" />;
 }
-
