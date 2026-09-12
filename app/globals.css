@@ -1,6 +1,9 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
 @import 'tw-animate-css';
 @import '../vendor/shadcn-tailwind-4.13.0.css';
+@source './';
+@source '../components';
+@source '../mobile';
 @font-face{font-family:Ink;src:url('/fonts/caveat.ttf') format('truetype');font-display:swap;font-weight:400 700}
 :root{--background:#222b28;--foreground:#ebece4;--card:#2c3531;--card-foreground:#ebece4;--popover:#303a35;--popover-foreground:#f2f1e8;--primary:#d9ddbc;--primary-foreground:#253029;--secondary:#354139;--secondary-foreground:#e8eade;--muted:#344038;--muted-foreground:#b6beb2;--accent:#415044;--accent-foreground:#fff;--destructive:#f2a49a;--border:#475047;--input:#596159;--ring:#c2d195;--radius:.7rem;--sidebar:#222b28;--sidebar-foreground:#e4e5da;--sidebar-primary:#dde2be;--sidebar-primary-foreground:#232c27;--sidebar-accent:#344039;--sidebar-accent-foreground:#fff;--sidebar-border:#3e4841;--sidebar-ring:#ccd5ad}
 @theme inline{--color-background:var(--background);--color-foreground:var(--foreground);--color-card:var(--card);--color-card-foreground:var(--card-foreground);--color-popover:var(--popover);--color-popover-foreground:var(--popover-foreground);--color-primary:var(--primary);--color-primary-foreground:var(--primary-foreground);--color-secondary:var(--secondary);--color-secondary-foreground:var(--secondary-foreground);--color-muted:var(--muted);--color-muted-foreground:var(--muted-foreground);--color-accent:var(--accent);--color-accent-foreground:var(--accent-foreground);--color-destructive:var(--destructive);--color-border:var(--border);--color-input:var(--input);--color-ring:var(--ring);--radius-lg:var(--radius);--font-sans:Arial,Helvetica,sans-serif}

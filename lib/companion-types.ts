@@ -1,0 +1,15 @@
+export type ModelProfile = { id:string; label:string; vision:boolean; tools:boolean; inputPrice:number; outputPrice:number; context:number };
+export type ProviderConnection = { id:string; name:string; protocol:'responses'|'chat'|'anthropic'; baseUrl:string; model:string; reasoningModel:string; visionModel:string; models:ModelProfile[]; enabled:boolean; hasKey?:boolean; status?:'untested'|'ready'; testedAt?:number };
+export type RemoteTool = { name:string; description:string; inputSchema:Record<string,unknown>; enabled:boolean };
+export type PluginConnection = { id:string; name:string; transport:'mcp'|'http'; endpoint:string; enabled:boolean; notebookIds:string[]; tools:RemoteTool[]; hasKey?:boolean; status:'untested'|'ready'|'error'; error?:string; protocolVersion?:string };
+export type CompanionConfig = { schemaVersion:1; name:string; instructions:string; language:string; style:'warm'|'concise'|'socratic'; providerId:string; locked:boolean; selectedModel:string; dailyBudget:number; memory:boolean; ocr:'auto'|'device'|'vision'; providers:ProviderConnection[]; plugins:PluginConnection[] };
+export type Citation = {id:string;title:string;excerpt:string;pageId?:string;notebookId?:string;url?:string};
+export type MemoryRecord = {id:string;notebookId:string;text:string;kind:'preference'|'fact'|'lesson'|'inference';source:string;sourceId:string;createdAt:number;updatedAt:number;status:'active'|'forgotten';revision:number};
+export type MemoryEvent = {id:string;memoryId:string;action:string;before:string|null;after:string|null;createdAt:number};
+export type Improvement = {id:string;text:string;reason:string;status:'proposed'|'accepted'|'dismissed'|'reverted';createdAt:number;previousInstructions?:string};
+export type ModelTask = 'reply'|'reasoning'|'vision';
+export type RunDetails = {id:string;model:string;provider:string;task:ModelTask;reason:string;cost:number;inputTokens:number;outputTokens:number;status:'running'|'complete'|'error';createdAt:number;tools:string[];citations:Citation[]};
+export type CompanionStatus = {config:CompanionConfig;builtIn:{configured:boolean;provider:string;model:string};live:boolean;vision:boolean;budget:{spent:number;reserved:number;limit:number};memories:MemoryRecord[];proposals:Improvement[];runs:RunDetails[]};
+export type CompanionEvent = {type:'delta';text:string}|{type:'status';message:string}|{type:'route';run:RunDetails}|{type:'citations';citations:Citation[]}|{type:'memory';message:string}|{type:'artifact';kind:'picture'|'sticker'|'video';url:string;caption:string}|{type:'done';run:RunDetails}|{type:'error';message:string};
+export const DEFAULT_COMPANION:CompanionConfig = {schemaVersion:1,name:'Aster',instructions:'Be a thoughtful companion. Reflect on what I write and help me learn.',language:'auto',style:'warm',providerId:'built-in',locked:false,selectedModel:'',dailyBudget:1,memory:true,ocr:'auto',providers:[],plugins:[]};
+export const ROUTER_SOURCE = {repository:'https://github.com/PaperStrange/PaperReadingAgent',commit:'f8fae1976552ecfedb785a747add2b972fc12e85',adapterVersion:'0.4'};

@@ -13,7 +13,7 @@ export function strokeLine(stroke: Stroke) { return stroke.points.map((p, i) => 
 export const InkStroke = React.memo(function InkStroke({ stroke }: {
     stroke: Stroke;
 }) { return stroke.tool === 'highlight' ? <path d={strokeLine(stroke)} fill="none" stroke={stroke.color} strokeWidth={stroke.size * 6} opacity=".28" strokeLinecap="round" strokeLinejoin="round"/> : <path d={outline(stroke)} fill={stroke.color}/>; });
-export function HandText({ text, x = 0, y = 0, kind = 'ink-writing', lineHeight = 38, font = 'hand', streaming = false }: {
+export function HandText({ text, x = 0, y = 0, kind = 'ink-writing', lineHeight = 38, font = 'hand', streaming = false, erased = [] }: {
     text: string;
     x?: number;
     y?: number;
@@ -21,9 +21,10 @@ export function HandText({ text, x = 0, y = 0, kind = 'ink-writing', lineHeight 
     lineHeight?: number;
     font?: ReplyFont;
     streaming?: boolean;
+    erased?: number[];
 }) {
     const lines = wrapReply(text, font, kind.includes('ink-user') ? 44 : undefined); let cursor = 0;
-    return <text x={x} y={y} className={`${kind} reply-font-${font}`} aria-label={text}>{lines.map((l, i) => <tspan key={i} x={x} dy={i ? lineHeight : 0} aria-hidden="true">{graphemes(l || ' ').map((c, j) => <tspan className="ink-character" key={j} style={{ animationDelay: streaming ? '0s' : `${.22 + cursor++ * .005}s` }}>{c}</tspan>)}</tspan>)}</text>;
+    return <text x={x} y={y} className={`${kind} reply-font-${font}`} aria-label={text}>{lines.map((l,i)=><tspan key={i} x={x} dy={i?lineHeight:0} aria-hidden="true">{graphemes(l||' ').map((c,j)=>{const index=cursor++;return <tspan className="ink-character" data-ink-char={index} key={j} style={{visibility:erased.includes(index)?'hidden':undefined,animationDelay:streaming?'0s':`${.22+index*.005}s`}}>{c}</tspan>;})}</tspan>)}</text>;
 }
 export function Mitosis() {
     return <g aria-label="Mitosis diagram: chromosomes condense, line up, separate, and form two nuclei">
@@ -34,25 +35,26 @@ export function Doodle() { return <g aria-label="A smiling stick figure with rai
 export function TableDrawing({ text }: {
     text: string;
 }) { const rows = text.split('\n').map(r => r.split('|')); const cols = rows[0].length; const widths = cols === 2 ? [210, 380] : [150, 235, 210]; return <g role="table" aria-label="Handwritten summary table">{rows.map((row, i) => <g key={i} role="row"><path className="ink-line draw-line" strokeOpacity=".55" d={`M -3 ${i * 42 - 28} Q 283 ${i * 42 - 31} 608 ${i * 42 - 27}`}/>{row.map((cell, j) => <text role={i === 0 ? 'columnheader' : 'cell'} key={j} x={widths.slice(0, j).reduce((a, b) => a + b, 0) + 11} y={i * 42} className={i ? 'ink-caption' : 'ink-heading'}>{cell}</text>)}</g>)}{widths.slice(0, -1).map((_, i) => <path key={i} className="ink-line draw-line" strokeOpacity=".5" d={`M ${widths.slice(0, i + 1).reduce((a, b) => a + b, 0)} -30 V ${rows.length * 42 - 22}`}/>)}<path className="ink-line draw-line" strokeOpacity=".5" d={`M -3 ${rows.length * 42 - 28} H 608`}/></g>; }
-export function InkBlock({ b, animated, onAnswer, onSource, streaming = false }: {
+export function InkBlock({ b, animated, onAnswer, onSource, streaming = false, erased = [] }: {
     b: Block;
     animated: boolean;
     onAnswer: (id: string, value: string) => void;
     onSource: (id?: string) => void;
     streaming?: boolean;
+    erased?: number[];
 }) {
     return <g transform={`translate(${b.x} ${b.y})`} className={animated ? 'inking' : ''} data-block-kind={b.kind} data-block-y={b.y} data-block-id={b.id}>
  {b.source && <text className="context-chip" y={-22} role={b.sourcePageId ? 'button' : undefined} tabIndex={b.sourcePageId ? 0 : undefined} onPointerDown={e => e.stopPropagation()} onClick={() => b.sourcePageId && onSource(b.sourcePageId)} onKeyDown={e => { if (e.key === 'Enter' && b.sourcePageId)
         onSource(b.sourcePageId); }} style={b.sourcePageId ? { cursor: 'pointer', textDecoration: 'underline' } : undefined}>↳ {b.source.slice(0, 78)}</text>}
- {b.kind === 'user' ? <HandText text={b.text} kind="ink-writing ink-user"/> : b.kind === 'text' ? <HandText text={b.text} font={b.font} streaming={streaming}/> : b.kind === 'mitosis' ? <><Mitosis /><text x="286" y="253" textAnchor="middle" className="ink-caption">{b.text}</text></> : b.kind === 'coordinates' ? <Coordinates /> : b.kind === 'doodle' ? <Doodle /> : b.kind === 'table' ? <g className={`reply-font-${b.font || 'hand'}`}><TableDrawing text={b.text}/></g> : b.kind === 'sticker' || b.kind === 'picture' || b.kind === 'video' ? <ReplyMedia b={b}/> : <><HandText text={b.text} kind="ink-heading"/><HandText text={b.question || ''} y={49} kind="ink-writing ink-small"/><foreignObject x="0" y="78" width="615" height="205"><div className="quiz-choices" onPointerDown={e => e.stopPropagation()}>{b.choices?.map(choice => <button key={choice} className={b.selected === choice ? (choice === b.answer ? 'correct' : 'wrong') : ''} onClick={() => onAnswer(b.id, choice)}>{choice}</button>)}</div>{b.feedback && <div className="quiz-answer" role="status">{b.feedback}</div>}</foreignObject></>}
+ {b.kind === 'user' ? <HandText text={b.text} kind="ink-writing ink-user" erased={b.erased}/> : b.kind === 'text' ? <HandText text={b.text} font={b.font} streaming={streaming} erased={b.erased}/> : b.kind === 'mitosis' ? <><Mitosis /><text x="286" y="253" textAnchor="middle" className="ink-caption">{b.text}</text></> : b.kind === 'coordinates' ? <Coordinates /> : b.kind === 'doodle' ? <Doodle /> : b.kind === 'table' ? <g className={`reply-font-${b.font || 'hand'}`}><TableDrawing text={b.text}/></g> : b.kind === 'sticker' || b.kind === 'picture' || b.kind === 'video' ? <ReplyMedia b={b}/> : <><HandText text={b.text} kind="ink-heading"/><HandText text={b.question || ''} y={49} kind="ink-writing ink-small"/><foreignObject x="0" y="78" width="615" height="205"><div className="quiz-choices" onPointerDown={e => e.stopPropagation()}>{b.choices?.map(choice => <button key={choice} className={b.selected === choice ? (choice === b.answer ? 'correct' : 'wrong') : ''} onClick={() => onAnswer(b.id, choice)}>{choice}</button>)}</div>{b.feedback && <div className="quiz-answer" role="status">{b.feedback}</div>}</foreignObject></>}
  </g>;
 }
 
 function ReplyMedia({ b }: { b: Block }) {
-    const media = b.media && MEDIA[b.media]; if (!media) return null;
+    const media = b.mediaUrl?{src:b.mediaUrl,caption:b.text}:b.media&&MEDIA[b.media]; if (!media) return null;
     return <foreignObject x="0" y="-12" width="615" height={b.h} className="reply-media-object">
         <figure className={`reply-media ${b.kind}`} onPointerDown={e => e.stopPropagation()}>
-            {b.media === 'cell-film' ? <video controls playsInline preload="metadata" poster={MEDIA['cell-film'].poster} aria-label="Play a simplified cell division film"><source src={media.src} type="video/mp4"/><track kind="captions" src="/replies/cell-division.vtt" srcLang="en" label="English" default/>Your browser cannot play this film. One cell divides into two daughter cells.</video> : <img src={media.src} alt={b.media === 'owl' ? 'A tiny tawny owl holding a quill' : 'An illustrated moonlit woodland with golden fireflies'} width={b.media === 'owl' ? 225 : 580} height={b.media === 'owl' ? 225 : 360}/>}
+            {b.kind === 'video' ? <video controls playsInline preload="metadata" poster={b.media==='cell-film'?MEDIA['cell-film'].poster:undefined} aria-label={b.text||'Play video'}><source src={media.src} type="video/mp4"/><track kind="captions" src="/replies/cell-division.vtt" srcLang="en" label="English" default/>Your browser cannot play this film. One cell divides into two daughter cells.</video> : <img src={media.src} alt={b.text} width={b.media === 'owl' ? 225 : 580} height={b.media === 'owl' ? 225 : 360}/>}
             <figcaption>{media.caption}</figcaption>
         </figure>
     </foreignObject>;

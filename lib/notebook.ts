@@ -5,6 +5,7 @@ export type Point = [
 ];
 export type Tool = 'pen' | 'highlight' | 'erase' | 'type' | 'select';
 export type Stroke = {
+    revision?: number;
     id: string;
     points: Point[];
     color: string;
@@ -15,6 +16,7 @@ export type Stroke = {
 export type ReplyFont = 'hand' | 'book' | 'mono';
 export type ReplyFormat = 'auto' | 'text' | 'emoji' | 'table' | 'sticker' | 'picture' | 'video';
 export type Block = {
+    pendingInput?: boolean; recognitionId?: string; inkIds?: string[]; erased?: number[]; erasedRegions?: {index:number;x:number;y:number;w:number;h:number}[]; mediaUrl?: string; runId?:string; citations?:{id:string;title:string;excerpt:string;url?:string;pageId?:string;notebookId?:string}[];
     id: string;
     kind: 'user' | 'text' | 'mitosis' | 'coordinates' | 'doodle' | 'table' | 'quiz' | 'sticker' | 'picture' | 'video';
     text: string;
@@ -34,6 +36,7 @@ export type Block = {
     media?: 'owl' | 'forest' | 'cell-film';
 };
 export type Page = {
+    notebookId?: string;
     id: string;
     title: string;
     topic: string;
@@ -49,6 +52,7 @@ export type Page = {
     };
 };
 export type Notebook = {
+    books?: {id:string;title:string}[];
     pages: Page[];
 };
 export const WIDTH = 760;

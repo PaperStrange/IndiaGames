@@ -1,0 +1,46 @@
+{
+  "model": "Xenova/trocr-small-handwritten",
+  "revision": "2432e24d184b1d964d07ed04f5d9e21d31a59141",
+  "files": [
+    {
+      "file": "config.json",
+      "bytes": 4515,
+      "sha256": "ab388d889bdead2a554fc77ae4899caabdb279318e660b457afd29394e8ee43d"
+    },
+    {
+      "file": "generation_config.json",
+      "bytes": 185,
+      "sha256": "cce308da91e0d656e07404c70d4b9c9f5839d426f679eff6fda6dcc0e727e3b6"
+    },
+    {
+      "file": "preprocessor_config.json",
+      "bytes": 465,
+      "sha256": "70da3434c33eedb3b56caf4067851741dfeed02f67576dcc3c6407c2533bfaf0"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "bytes": 471,
+      "sha256": "ce50304582ca15b925982e96dfe56548ddbaba89b584e73176d6bb3a5a0b4713"
+    },
+    {
+      "file": "tokenizer.json",
+      "bytes": 4494727,
+      "sha256": "68bcb5468c854362a615f3d2ff6a5e4091a85f4c8198993ed9a30afe0b143737"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "bytes": 279,
+      "sha256": "d5469a60db23249c7f8945013d78df30b44b6bf686c6bb4740f4223f77b1b535"
+    },
+    {
+      "file": "onnx/encoder_model_quantized.onnx",
+      "bytes": 23082942,
+      "sha256": "2f29edbd925f8a49c9c7d1349895f960cf09d2efdc76fe23f957048d476e0d03"
+    },
+    {
+      "file": "onnx/decoder_model_merged_quantized.onnx",
+      "bytes": 40527613,
+      "sha256": "51076aa396ab5939c4668db9de901ad51765094b4c05c4c8c1f8ae2012ba1e08"
+    }
+  ]
+}
