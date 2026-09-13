@@ -1,5 +1,14 @@
 # Enchanted Notebook development journal
 
+## Alpha 0.4 — A companion with memory · 2026-09-13
+
+- Input-end starts OCR and a five-second fade together; automatic formatting, regional erasing and preserved originals.
+- Multiple provider protocols, model lock, task routing, encrypted endpoint-bound keys and atomic spending reservations.
+- Generic HTTP/MCP tools, notebook/action scope, source/media delivery, automatic memory with history/undo and reviewed strategy proposals.
+- Detailed material lighting; existing book turns, PDFs, samples, fonts and mobile entry retained.
+- Browser compatibility, settings concurrency and plugin citation fixes. Documentation advances separately to docs-v4.
+- Paid providers, hosted PaperReadingAgent and native store release remain external gates.
+
 ## Alpha 0.3 — The living folio · 2026-09-09
 
 - A raised writing plane, deeper page block, curved gutter, rim highlights and pointer-responsive lamplight. CSS perspective and composited lighting simulate depth without a ray-tracing requirement. Daylight, flat-view and reduced-motion options remain available.

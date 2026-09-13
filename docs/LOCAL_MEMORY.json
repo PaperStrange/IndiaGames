@@ -1,0 +1,22 @@
+{
+  "product_version": "alpha-0.4",
+  "documentation_version": "docs-v4",
+  "artifact_version": "v6-alpha04-2026-09-13",
+  "companion_identity": "one per user",
+  "retrieval_default": "current notebook",
+  "cross_notebook": "explicit per turn",
+  "memory_learning": "automatic with history and undo",
+  "strategy_changes": "reviewed proposals",
+  "routing": "task rules with strict model lock",
+  "ocr_trigger": "input-end, same timestamp as fade",
+  "fade_ms": 5000,
+  "input_end_ms": 380,
+  "erase_during_fade": "restore remaining text then erase touched region",
+  "ocr_jobs_on_edit": "continue; revision-check before applying",
+  "external_gates": [
+    "paid provider verification",
+    "PaperReadingAgent hosting",
+    "native auth and signing",
+    "physical iOS/Android QA"
+  ]
+}
