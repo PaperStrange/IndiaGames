@@ -4,13 +4,13 @@ export function publicEndpoint(value:string) {
  if(u.protocol!=='https:'||u.username||u.password||u.hash||u.search||(u.port&&u.port!=='443')||!h.includes('.')||/^[\d.]+$/.test(h)||h.includes(':')||/(^|\.)(localhost|local|internal|lan|home|test|invalid|example)$/.test(h)||/(^|\.)(nip\.io|sslip\.io|localtest\.me)$/.test(h)) throw Error('Use a public HTTPS service address without credentials, a query or a custom port.');
  return u.href.replace(/\/$/,'');
 }
-export function wireModel(id:string){if(id.startsWith('openai/'))return id.slice(7);if(id.startsWith('openrouter/')&&id!=='openrouter/auto')return id.slice(11);return id;}
+export function wireModel(id:string,baseUrl=''){if(baseUrl.includes('openrouter.ai'))return id.startsWith('openrouter/')&&id!=='openrouter/auto'?id.slice(11):id;if(id.startsWith('openai/'))return id.slice(7);if(id.startsWith('openrouter/')&&id!=='openrouter/auto')return id.slice(11);return id;}
 export function taskFor(text:string,vision=false):ModelTask{return vision?'vision':/\b(prove|derive|debug|compare|research|analy[sz]e|step.by.step)\b|证明|推导|研究|分析|比较/i.test(text)?'reasoning':'reply';}
 export function chooseModel(c:CompanionConfig,p:ProviderConnection,task:ModelTask,needsTools=false){
- const id=wireModel(c.locked?c.selectedModel||p.model:task==='vision'?p.visionModel:task==='reasoning'?p.reasoningModel||p.model:p.model);
+ const id=wireModel(c.locked?c.selectedModel||p.model:task==='vision'?p.visionModel:task==='reasoning'?p.reasoningModel||p.model:p.model,p.baseUrl);
  if(!id)throw Error('Choose a model for this task in Companion settings.');
  if(id==='openrouter/auto')throw Error('Choose an explicit model. An upstream auto-router cannot enforce this model lock or budget.');
- const m=p.models.find(m=>wireModel(m.id)===id);if(!m)throw Error(`Add capabilities and pricing for ${id}.`);
+ const m=p.models.find(m=>wireModel(m.id,p.baseUrl)===id);if(!m)throw Error(`Add capabilities and pricing for ${id}.`);
  if(task==='vision'&&!m.vision)throw Error(c.locked?'Your locked model cannot read images. Use on-device OCR or choose a vision model.':'Choose a vision model for handwriting.');
  if(needsTools&&!m.tools)throw Error('Use a tool-capable model or disable connected tools.');
  if(m.inputPrice<0||m.outputPrice<0)throw Error('Set model prices before using the daily spending limit.');
