@@ -52,3 +52,14 @@ The default site has sample companion replies. It does not pretend to recognize 
 - Six focused automated tests pass: full-sheet inverse projection, scaled/scrolled phone projection, fragmented Unicode/SSE with unknown events, stream errors/partial retention, cancellation, and upstream/empty-response errors.
 - No paid provider request was made. SSE transport and cancellation were tested with controlled streams; actual model accuracy and first-token latency remain unverified. Physical iOS/Android stylus, native WebView, keyboard and palm rejection require device QA.
 - Temporary phone harness removed before packaging. TypeScript, hosted production build, and independent mobile build are release gates.
+
+## Alpha 0.4 verification — 2026-09-13
+
+Documentation: docs-v4; artifact: v6-alpha04-2026-09-13.
+
+- Hosted Worker build and shared mobile bundle: passed. TypeScript: passed. All 24 automated tests: passed.
+- Companion tests cover input-end/fade barriers, regional erasing, model locks and native IDs, provider formats, fragmented Unicode SSE, key encryption/redaction/endpoint binding, concurrent budgets, memory history/tombstones, scoped plugins, reviewed proposal rollback, stale settings races and a complete two-round tool/citation reply with fixture transports.
+- Browser: new-page and model settings dialogs remain above the sidebar. A drawn `h` was recognized by the actual bundled TrOCR worker and converted to formatted text. This proves inference executes, not universal accuracy. A typed `brown fox` was fading at opacity 0.95446 before a regional eraser removed the touched `row` glyphs while retaining `b`, `n fox` and the separate handwritten `h`. Missing AI restored the input and showed connection guidance.
+- Browser fixes: non-secure preview UUID fallback, conditional Cache API use, correct Transformers `env.fetch` for split model assets, WASM factory preloading. Originals survive recognition failure.
+- Legacy starter checks were updated: a Cloudflare Worker cannot be imported by Node's default ESM loader, and unused catalog utilities need not be emitted with explicit Tailwind source scanning. Tests now validate the actual production layout and used notebook styles.
+- No paid LLM/vision key or hosted PaperReadingAgent endpoint was available. Transports are fixture-tested, not paid-service verified. Physical iOS/Android, native authentication/signing, OCR accuracy benchmarks and store submission remain unverified.
