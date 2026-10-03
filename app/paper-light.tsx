@@ -1,11 +1,120 @@
 'use client';
-import {useEffect,useRef} from 'react';
-/** Low-resolution material shading, with the CSS book as an always-present fallback. */
-export function PaperLight({candlelight=true,warmth=65,visible=true}:{candlelight?:boolean;warmth?:number;visible?:boolean}){const canvas=useRef<HTMLCanvasElement>(null),state=useRef({candlelight,warmth,visible});state.current={candlelight,warmth,visible};useEffect(()=>{const node=canvas.current;if(!node)return;const gl=node.getContext('webgl',{alpha:true,antialias:false,preserveDrawingBuffer:true});if(!gl)return;let disposed=false,frame=0,last=0,inView=true;const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const vertex='attribute vec2 a; varying vec2 uv; void main(){uv=a*.5+.5;gl_Position=vec4(a,0.,1.);}';
-const fragment=`precision mediump float; varying vec2 uv; uniform sampler2D paper; uniform float time; uniform float warm; uniform float candle;
-float grain(vec2 p){return dot(texture2D(paper,p).rgb,vec3(.299,.587,.114));}
-void main(){vec2 p=vec2(uv.x,1.-uv.y);float dx=grain(p+vec2(.002,0.))-grain(p-vec2(.002,0.));float dy=grain(p+vec2(0.,.002))-grain(p-vec2(0.,.002));float curve=.1*sin(p.x*3.14159)-.18*exp(-p.x*15.);vec3 normal=normalize(vec3(-dx*7.+curve,-dy*7.,1.));float flicker=.94+.035*sin(time*5.7)+.025*sin(time*11.3+1.);vec3 lamp=vec3(.75+.015*sin(time*2.1),.18+.025*sin(time*1.3),.58);vec3 ray=lamp-vec3(p.x,p.y*1.2,0.);float dist=length(ray);float diffuse=max(dot(normal,normalize(ray)),0.);vec3 halfLight=normalize(normalize(ray)+vec3(0.,0.,1.));float spec=pow(max(dot(normal,halfLight),0.),28.)*.17;float gutter=.36*exp(-p.x*27.)+.12*exp(-(1.-p.x)*38.);float edge=.06*exp(-p.y*22.)+.08*exp(-(1.-p.y)*30.);float pool=diffuse/(.65+dist*dist)*.25*flicker;float value=.49-gutter-edge+candle*(pool-.13+spec);vec3 tint=mix(vec3(value),vec3(value*1.15,value*.99,value*.75),warm*candle);gl_FragColor=vec4(tint,.86);}`;
-const compile=(type:number,source:string)=>{const s=gl.createShader(type)!;gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){gl.deleteShader(s);throw Error('Shader unavailable');}return s;};let program:WebGLProgram,vs:WebGLShader,fs:WebGLShader;try{vs=compile(gl.VERTEX_SHADER,vertex);fs=compile(gl.FRAGMENT_SHADER,fragment);program=gl.createProgram()!;gl.attachShader(program,vs);gl.attachShader(program,fs);gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))return;}catch{return;}
-const buffer=gl.createBuffer(),texture=gl.createTexture();gl.useProgram(program);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const a=gl.getAttribLocation(program,'a');gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array([128,128,128,255]));const time=gl.getUniformLocation(program,'time'),warm=gl.getUniformLocation(program,'warm'),candle=gl.getUniformLocation(program,'candle');const img=new Image();img.onload=()=>{if(!disposed){gl.bindTexture(gl.TEXTURE_2D,texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);}};img.src='/materials/vellum-alpha-02.webp';
-const draw=(t:number)=>{if(disposed)return;if(state.current.visible&&inView&&t-last>50){last=t;const rect=node.getBoundingClientRect(),w=Math.min(640,Math.round(rect.width)),h=Math.min(1100,Math.round(rect.height));if(w&&h){if(node.width!==w||node.height!==h){node.width=w;node.height=h;}gl.viewport(0,0,w,h);gl.uniform1f(time,reduced.matches?0:t/1000);gl.uniform1f(warm,state.current.warmth/100);gl.uniform1f(candle,state.current.candlelight?1:0);gl.drawArrays(gl.TRIANGLES,0,6);}}frame=requestAnimationFrame(draw);};frame=requestAnimationFrame(draw);const observer=new IntersectionObserver(entries=>{inView=entries[0]?.isIntersecting!==false;});observer.observe(node);const lost=()=>{node.style.opacity='0';cancelAnimationFrame(frame);};node.addEventListener('webglcontextlost',lost);return()=>{disposed=true;cancelAnimationFrame(frame);observer.disconnect();node.removeEventListener('webglcontextlost',lost);img.onload=null;gl.deleteTexture(texture);gl.deleteBuffer(buffer);gl.deleteProgram(program);gl.deleteShader(vs);gl.deleteShader(fs);};},[]);return <canvas ref={canvas} className="paper-light-canvas" aria-hidden="true"/>;}
+import { useEffect, useRef } from 'react';
+import { PAPER_VERTEX_SHADER, PAPER_FRAGMENT_SHADER } from '@/lib/paper-shaders';
+
+type LightingOptions = { candlelight?: boolean; warmth?: number; visible?: boolean };
+
+export function PaperLight({ candlelight = true, warmth = 65, visible = true }: LightingOptions) {
+    const canvas = useRef<HTMLCanvasElement>(null);
+    const options = useRef({ candlelight, warmth, visible });
+    const requestDraw = useRef<() => void>(() => {});
+    options.current = { candlelight, warmth, visible };
+
+    useEffect(() => {
+        const node = canvas.current;
+        if (!node) return;
+        const gl = node.getContext('webgl', { alpha: true, antialias: false, preserveDrawingBuffer: true });
+        if (!gl) { node.dataset.renderer = 'css'; return; }
+        const compile = (type: number, source: string) => {
+            const shader = gl.createShader(type);
+            if (!shader) throw new Error('Paper shader allocation failed.');
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                const message = gl.getShaderInfoLog(shader);
+                gl.deleteShader(shader);
+                throw new Error(`Paper shader compilation failed: ${message}`);
+            }
+            return shader;
+        };
+        const vertex = compile(gl.VERTEX_SHADER, PAPER_VERTEX_SHADER);
+        const fragment = compile(gl.FRAGMENT_SHADER, PAPER_FRAGMENT_SHADER);
+        const program = gl.createProgram();
+        if (!program) throw new Error('Paper lighting allocation failed.');
+        gl.attachShader(program, vertex);
+        gl.attachShader(program, fragment);
+        gl.linkProgram(program);
+        if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw new Error('Paper lighting could not link.');
+        const buffer = gl.createBuffer(), texture = gl.createTexture();
+        if (!buffer || !texture) throw new Error('Paper material allocation failed.');
+        gl.useProgram(program);
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+        const position = gl.getAttribLocation(program, 'position');
+        gl.enableVertexAttribArray(position);
+        gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        const time = gl.getUniformLocation(program, 'time');
+        const warm = gl.getUniformLocation(program, 'warm');
+        const candle = gl.getUniformLocation(program, 'candle');
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+        const mobile = matchMedia('(pointer: coarse)');
+        let disposed = false, ready = false, inView = true, frame = 0, last = -Infinity;
+
+        // 限制像素数量和刷新频率；隐藏页面与静态模式不持续申请动画帧。
+        const draw = (timestamp: number) => {
+            frame = 0;
+            if (disposed || !ready || !inView || !options.current.visible || gl.isContextLost()) return;
+            if (timestamp - last >= (mobile.matches ? 66 : 42)) {
+                last = timestamp;
+                gl.viewport(0, 0, node.width, node.height);
+                gl.uniform1f(time, reduced.matches ? 0 : timestamp / 1000);
+                gl.uniform1f(warm, options.current.warmth / 100);
+                gl.uniform1f(candle, options.current.candlelight ? 1 : 0);
+                gl.drawArrays(gl.TRIANGLES, 0, 6);
+            }
+            if (options.current.candlelight && !reduced.matches) frame = requestAnimationFrame(draw);
+        };
+        const redraw = () => {
+            cancelAnimationFrame(frame);
+            last = -Infinity;
+            if (!disposed) frame = requestAnimationFrame(draw);
+        };
+        requestDraw.current = redraw;
+        const resize = new ResizeObserver(entries => {
+            const rect = entries[0]?.contentRect;
+            if (!rect || !rect.width || !rect.height) return;
+            const scale = Math.min(1, (mobile.matches ? 400 : 640) / rect.width, 1000 / rect.height);
+            node.width = Math.max(1, Math.round(rect.width * scale));
+            node.height = Math.max(1, Math.round(rect.height * scale));
+            redraw();
+        });
+        resize.observe(node);
+        const observer = new IntersectionObserver(entries => {
+            inView = entries[0]?.isIntersecting === true;
+            redraw();
+        });
+        observer.observe(node);
+        const image = new Image();
+        image.onload = () => {
+            if (disposed) return;
+            gl.bindTexture(gl.TEXTURE_2D, texture);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+            ready = true;
+            node.dataset.renderer = 'webgl';
+            redraw();
+        };
+        image.src = '/materials/vellum-alpha-02.webp';
+        const lost = () => { cancelAnimationFrame(frame); node.style.opacity = '0'; };
+        node.addEventListener('webglcontextlost', lost);
+        reduced.addEventListener('change', redraw);
+        return () => {
+            disposed = true;
+            cancelAnimationFrame(frame);
+            requestDraw.current = () => {};
+            image.onload = null;
+            resize.disconnect(); observer.disconnect();
+            reduced.removeEventListener('change', redraw);
+            node.removeEventListener('webglcontextlost', lost);
+            gl.deleteTexture(texture); gl.deleteBuffer(buffer); gl.deleteProgram(program);
+            gl.deleteShader(vertex); gl.deleteShader(fragment);
+        };
+    }, []);
+
+    useEffect(() => requestDraw.current(), [candlelight, warmth, visible]);
+    return <canvas ref={canvas} className="paper-light-canvas" aria-hidden="true" />;
+}

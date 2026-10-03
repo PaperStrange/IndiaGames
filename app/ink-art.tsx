@@ -24,7 +24,7 @@ export function HandText({ text, x = 0, y = 0, kind = 'ink-writing', lineHeight 
     erased?: number[];
 }) {
     const lines = wrapReply(text, font, kind.includes('ink-user') ? 44 : undefined); let cursor = 0;
-    return <text x={x} y={y} className={`${kind} reply-font-${font}`} aria-label={lines.map((l,i)=>graphemes(l||' ').map((c,j)=>erased.includes(lines.slice(0,i).reduce((n,s)=>n+graphemes(s||' ').length,0)+j)?' ':c).join('')).join('\n')}>{lines.map((l,i)=><tspan key={i} x={x} dy={i?lineHeight:0} aria-hidden="true">{graphemes(l||' ').map((c,j)=>{const index=cursor++;return <tspan className="ink-character" data-ink-char={index} key={j} style={{visibility:erased.includes(index)?'hidden':undefined,animationDelay:streaming?'0s':`${.22+index*.005}s`}}>{c}</tspan>;})}</tspan>)}</text>;
+    return <text x={x} y={y} className={`${kind} reply-font-${font}`} aria-label={lines.map((l,i)=>graphemes(l||' ').map((c,j)=>erased.includes(lines.slice(0,i).reduce((n,s)=>n+graphemes(s||' ').length,0)+j)?' ':c).join('')).join('\n')}>{lines.map((l,i)=><tspan key={i} x={x} dy={i?lineHeight:0} aria-hidden="true">{graphemes(l||' ').map((c,j)=>{const index=cursor++;return <tspan className="ink-character" data-ink-char={index} key={j} style={{visibility:erased.includes(index)?'hidden':undefined,animationDelay:streaming?'0s':`${Math.min(2.4,.12+index*.016)}s`}}>{c}</tspan>;})}</tspan>)}</text>;
 }
 export function Mitosis() {
     return <g aria-label="Mitosis diagram: chromosomes condense, line up, separate, and form two nuclei">

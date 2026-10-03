@@ -53,7 +53,7 @@ export function TurningLeaf({ turn, surface, onFinish }: {
             const updateFace = () => {
                 const node = surface.current;
                 if (!node) return;
-                const pdf = node.querySelector('canvas');
+                const pdf = node.querySelector<HTMLCanvasElement>('canvas[data-rendered-page]');
                 // PDF rendering is async: never put the previous page's pixels on the incoming leaf.
                 if (pdf && (pdf.dataset.renderedPage !== pdf.getAttribute('aria-label')?.replace('PDF page ', '') || pdf.style.display === 'none')) return;
                 front.current?.replaceChildren(copyLeaf(node));

@@ -15,6 +15,7 @@ import PdfPage from './pdf-page';
 import { BookLayers, ParchmentMaterial } from './parchment-material';
 import './parchment.css';
 import './folio.css';
+import './diary.css';
 import { chooseFormat, presentReply, mediaReply, replyHeight } from '@/lib/reply-presentation';
 import { consumeCompanionStream } from '@/lib/companion-stream';
 import { measurePaper } from '@/lib/paper-plane';
@@ -26,6 +27,8 @@ import {INPUT_END_MS} from '@/lib/ink-cycle';
 import {eraseStroke} from '@/lib/erase-ink';
 import type {CompanionStatus} from '@/lib/companion-types';
 import { useBookTurn, TurningLeaf, PageGrip } from './book-turn';
+import { NotebookJournal, journalScope, recoverNotebook, type JournalEntry } from '@/lib/notebook-journal';
+import { SaveIndicator, type SaveState } from './save-indicator';
 const FONTS: Record<ReplyFont, string> = { hand: 'Handwritten', book: 'Book serif', mono: 'Typewriter' };
 const FORMATS: Record<ReplyFormat, string> = { auto: 'Automatic', text: 'Plain text', emoji: 'With emojis', table: 'Table', sticker: 'Sticker', picture: 'Picture', video: 'Video' };
 const COLORS = ['#40372a', '#526344', '#8a4f36'];
@@ -45,7 +48,7 @@ export default function NotebookApp({ apiBase = '' }: {
     const menuButton = useRef<HTMLButtonElement>(null);
     useEffect(() => { const visibility = () => setTabVisible(!document.hidden); visibility(); document.addEventListener('visibilitychange', visibility); return () => document.removeEventListener('visibilitychange', visibility); }, []);
     const [data, setData] = useState<Notebook | null>(null), [active, setActive] = useState(''), [tool, setTool] = useState<Tool>('pen'), [color, setColor] = useState(COLORS[0]), [size, setSize] = useState(3.2), [prompt, setPrompt] = useState('');
-    const [saving, setSaving] = useState<'loading' | 'saved' | 'saving' | 'error'>('loading'), [loadError, setLoadError] = useState(false), [live, setLive] = useState(false), [busy, setBusy] = useState(false), [auto, setAuto] = useState(true), [penOnly, setPenOnly] = useState(false), [settings, setSettings] = useState(false), [help, setHelp] = useState(false), [newOpen, setNewOpen] = useState(false), [newTitle, setNewTitle] = useState(''), [mobileOpen, setMobileOpen] = useState(false), [reader, setReader] = useState(false), [zoom, setZoom] = useState(100), [animated, setAnimated] = useState<string[]>([]), [typePoint, setTypePoint] = useState<{
+    const [saving, setSaving] = useState<SaveState>('loading'), [loadError, setLoadError] = useState(false), [live, setLive] = useState(false), [busy, setBusy] = useState(false), [auto, setAuto] = useState(true), [penOnly, setPenOnly] = useState(false), [settings, setSettings] = useState(false), [help, setHelp] = useState(false), [newOpen, setNewOpen] = useState(false), [newTitle, setNewTitle] = useState(''), [mobileOpen, setMobileOpen] = useState(false), [reader, setReader] = useState(false), [zoom, setZoom] = useState(100), [animated, setAnimated] = useState<string[]>([]), [typePoint, setTypePoint] = useState<{
         x: number;
         y: number;
     } | null>(null), [undoTick, setUndoTick] = useState(0), [selection, setSelection] = useState<{
@@ -55,6 +58,14 @@ export default function NotebookApp({ apiBase = '' }: {
         bottom: number;
     } | null>(null), [readingText, setReadingText] = useState(''), [uploading, setUploading] = useState(false), [readerHeight, setReaderHeight] = useState(1000), [saveProblem, setSaveProblem] = useState('');
     const current = data?.pages.find(p => p.id === active) || data?.pages[0];
+    const journal = useRef<NotebookJournal | null>(null);
+    const pendingSave = useRef<JournalEntry | undefined>(undefined);
+    const syncBlocked = useRef(false);
+    const [recoveryNeeded, setRecoveryNeeded] = useState(false);
+    const loadSequence = useRef(0);
+    const syncing = useRef(false);
+    const deviceSaveFailed = useRef(false);
+    const remoteCopy = useRef<Notebook | null>(null);
     const revision = useRef(0), dataRef = useRef<Notebook | null>(null), activeRef = useRef(''), currentRef = useRef<Page | undefined>(undefined), dirtyRef = useRef(false), loadedRef = useRef(false), saveTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined), saveChain = useRef<Promise<unknown>>(Promise.resolve()), responseTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined), busyRef = useRef(false), stage = useRef<HTMLDivElement>(null), svg = useRef<SVGSVGElement>(null), inkPath = useRef<SVGPathElement>(null), drawing = useRef<Stroke | null>(null), pointerId = useRef<number | null>(null), erasing = useRef(false), selectionStart = useRef<Point | null>(null), histories = useRef<Record<string, {
         undo: Page[];
         redo: Page[];
@@ -80,37 +91,54 @@ export default function NotebookApp({ apiBase = '' }: {
         setUndoTick(t => t + 1);
     } }, [reader, active, current?.document?.page]);
     useEffect(() => { currentRef.current = current; activeRef.current = active; dataRef.current = data; }, [data, active, current]);
-    const load = useCallback(async () => { setSaving('loading'); try {
+    const load = useCallback(async () => {
+      const sequence = ++loadSequence.current;
+      setSaving('loading');
+      try {
         const r = await fetch(apiPath(apiBase, '/api/notebook'));
         if (!r.ok)
-            throw Error();
+            throw Error('Your saved notebook could not be opened.');
         const payload = await r.json() as {
-            notebook?: Notebook;
+            notebook: Notebook | null;
             version: number;
+            owner: string;
         };
-        revision.current = payload.version || 0;
+        if (sequence !== loadSequence.current || !mounted.current) return;
+        revision.current = payload.version;
+        remoteCopy.current = payload.notebook;
         setSaveProblem('');
-        const next: Notebook = payload.notebook?.pages?.length ? payload.notebook : initialNotebook();
+        journal.current = new NotebookJournal(localStorage, journalScope(apiBase, payload.owner));
+        const recovery = recoverNotebook(journal.current.read(), payload.notebook, payload.version);
+        recovery.acknowledged.forEach(entry => journal.current!.acknowledge(entry));
+        pendingSave.current = recovery.selected;
+        syncBlocked.current = recovery.conflict;
+        setRecoveryNeeded(recovery.conflict);
+        const next: Notebook = structuredClone(recovery.selected?.notebook || payload.notebook || initialNotebook());
         next.books ||= [{id:'main',title:'My notebook'}];
         dataRef.current = next;
         setData(next);
         setActive(next.pages[0].id);
         activeRef.current = next.pages[0].id;
         loadedRef.current = true;
-        dirtyRef.current = !payload.notebook;
         setLoadError(false);
-        setSaving('saved');
-    }
-    catch {
-        setLoadError(true);
-        setSaving('error');
-        if (!dataRef.current) {
-            const next = initialNotebook();
-            setData(next);
-            dataRef.current = next;
-            setActive(next.pages[0].id);
-            activeRef.current = next.pages[0].id;
+        if (recovery.conflict) {
+            setSaveProblem('Your device and server have different copies. Your device copy is open. Export the recovery copies before resolving these changes.');
+            setSaving('local');
+        } else if (recovery.selected || !payload.notebook) {
+            pendingSave.current = journal.current.write(next, payload.version, recovery.selected);
+            dirtyRef.current = true;
+            setSaving('local');
+        } else {
+            dirtyRef.current = false;
+            setSaving('saved');
         }
+    }
+    catch (cause) {
+        if (sequence !== loadSequence.current || !mounted.current) return;
+        if (loadedRef.current) deviceSaveFailed.current = true;
+        setLoadError(!loadedRef.current);
+        setSaving('error');
+        setSaveProblem(cause instanceof Error ? cause.message : 'Your saved notebook could not be opened.');
     } }, [apiBase]);
     useEffect(() => { mounted.current = true; void load(); fetch(apiPath(apiBase, '/api/companion/settings')).then(r=>r.json()).then(d=>{const status=d as CompanionStatus;if(status.config){setCompanionStatus(status);setLive(status.live);}}).catch(()=>{}); try {
         const prefs = JSON.parse(localStorage.getItem('enchanted-preferences') || '{}');
@@ -127,39 +155,91 @@ export default function NotebookApp({ apiBase = '' }: {
         localStorage.setItem('enchanted-preferences', JSON.stringify({ flowEnabled: auto, penOnly, candlelight, warmth, depth, replyFont, replyFormat }));
     }
     catch { } }, [auto, penOnly, candlelight, warmth, depth, replyFont, replyFormat, preferencesLoaded]);
-    const save = useCallback((snapshot: Notebook) => { if (!loadedRef.current)
-        return; setSaving('saving'); saveChain.current = saveChain.current.catch(() => { }).then(async () => { try {
-        const r = await fetch(apiPath(apiBase, '/api/notebook'), { method: 'PUT', headers: { 'content-type': 'application/json', 'X-Notebook-Version': String(revision.current) }, body: JSON.stringify(snapshot) });
-        const result = await r.json() as {
-            version?: number;
-            error?: string;
-        };
-        if (!r.ok) {
-            setSaveProblem(result.error || 'Your notes could not be saved. Please try again.');
-            throw Error();
+    const save = useCallback(async () => {
+        if (!loadedRef.current || syncing.current || syncBlocked.current || deviceSaveFailed.current || !journal.current) return;
+        syncing.current = true;
+        try {
+            while (pendingSave.current && !deviceSaveFailed.current) {
+                const entry = pendingSave.current;
+                const response = await fetch(apiPath(apiBase, '/api/notebook'), {
+                    method: 'PUT',
+                    headers: { 'content-type': 'application/json', 'X-Notebook-Version': String(entry.baseVersion) },
+                    body: JSON.stringify(entry.notebook),
+                });
+                const result = await response.json() as { version?: number; error?: string };
+                if (!response.ok) {
+                    if (response.status === 409) {
+                        syncBlocked.current = true;
+                        setRecoveryNeeded(true);
+                    }
+                    throw new Error(result.error || 'Sync failed. Your device copy is retained. Retry when connected.');
+                }
+                if (!Number.isSafeInteger(result.version) || result.version! <= entry.baseVersion) {
+                    throw new Error('The server did not confirm a saved version. Your device copy is retained.');
+                }
+                revision.current = result.version!;
+                remoteCopy.current = entry.notebook;
+                if (pendingSave.current?.id === entry.id) {
+                    journal.current.acknowledge(entry);
+                    pendingSave.current = undefined;
+                } else if (pendingSave.current) {
+                    pendingSave.current = journal.current.write(pendingSave.current.notebook, result.version!, pendingSave.current);
+                    journal.current.acknowledge(entry);
+                }
+            }
+            if (!deviceSaveFailed.current) {
+                dirtyRef.current = false;
+                if (mounted.current) { setSaveProblem(''); setSaving('saved'); }
+            }
+        } catch (cause) {
+            if (mounted.current) {
+                setSaving(deviceSaveFailed.current ? 'error' : pendingSave.current ? 'local' : 'error');
+                setSaveProblem(cause instanceof Error ? cause.message : 'Sync failed. Retry when connected.');
+            }
+        } finally {
+            syncing.current = false;
         }
-        revision.current = result.version || revision.current;
-        if (mounted.current) {
-            setSaveProblem('');
-            setSaving('saved');
-        }
-    }
-    catch {
-        if (mounted.current)
-            setSaving('error');
-    } }); }, [apiBase]);
+    }, [apiBase]);
     useEffect(() => { if (data && dirtyRef.current && loadedRef.current) {
         clearTimeout(saveTimer.current);
-        saveTimer.current = setTimeout(() => { save(data); dirtyRef.current = false; }, 650);
+        saveTimer.current = setTimeout(() => { void save(); }, 650);
     } return () => clearTimeout(saveTimer.current); }, [data, save]);
-    useEffect(() => { const flush = () => { if (dirtyRef.current && dataRef.current && loadedRef.current) {
-        void fetch(apiPath(apiBase, '/api/notebook'), { method: 'PUT', headers: { 'content-type': 'application/json', 'X-Notebook-Version': String(revision.current) }, body: JSON.stringify(dataRef.current), keepalive: true });
-    } }; window.addEventListener('pagehide', flush); return () => window.removeEventListener('pagehide', flush); }, [apiBase]);
+    useEffect(() => {
+        const reconnect = () => { void save(); };
+        window.addEventListener('online', reconnect);
+        return () => window.removeEventListener('online', reconnect);
+    }, [save]);
     function mutate(fn: (d: Notebook) => Notebook) {
         const old = dataRef.current; if (!old) return;
         const next = fn(old); dataRef.current = next; dirtyRef.current = true;
         currentRef.current = next.pages.find(p => p.id === activeRef.current) || next.pages[0];
         setData(next); setSaving('saving');
+        try {
+            if (!journal.current) throw new Error('Open your saved notebook before writing.');
+            pendingSave.current = journal.current.write(next, revision.current, pendingSave.current);
+            deviceSaveFailed.current = false;
+            setSaving('local');
+        } catch (cause) {
+            // 保存失败时保留当前页面，界面明确显示未保存状态。
+            dirtyRef.current = false;
+            deviceSaveFailed.current = true;
+            setSaving('error');
+            setSaveProblem(cause instanceof Error ? cause.message : 'Device saving failed. Keep this tab open and export your page.');
+        }
+    }
+    function retrySave() {
+        if (loadError) { void load(); return; }
+        if (syncBlocked.current) return;
+        if (dataRef.current && journal.current && saving === 'error') {
+            mutate(() => dataRef.current!);
+        }
+        if (dirtyRef.current) void save();
+    }
+    function exportRecovery() {
+        const blob = new Blob([JSON.stringify({ current: dataRef.current, server: remoteCopy.current, pending: journal.current?.read() }, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob), link = document.createElement('a');
+        link.href = url; link.download = 'notebook-recovery.json'; link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
     }
     function updatePage(fn: (p: Page) => Page, history = true, id = activeRef.current) { const old = dataRef.current?.pages.find(p => p.id === id); if (!old)
         return; if (history) {
@@ -443,7 +523,18 @@ export default function NotebookApp({ apiBase = '' }: {
         setReader(true);
         setTool('select');
     } }} className={`page-link ${active === p.id && !reader ? 'active' : active === p.id && p.document ? 'active' : ''}`} aria-current={active === p.id ? 'page' : undefined}><span className="page-number">{String(i + 1).padStart(2, '0')}</span><span><b>{p.title}</b><small>{p.document ? 'Imported PDF' : p.topic === 'mitosis' ? 'A study in small beginnings' : p.topic === 'coordinates' ? 'Making room for understanding' : p.topic === 'doodle' ? 'An unhurried doodle' : p.topic === 'language' ? 'Words, sounds & little rules' : 'Room for a thought'}</small></span></button>)}</nav><div className="rail-label">READ & REFLECT</div><button className="reading-link" onClick={openReader}><BookOpen size={17}/>A short guide to coordinates</button><button className="reading-link" onClick={() => fileInput.current?.click()} disabled={uploading}>{uploading ? <LoaderCircle className="spinning"/> : <Plus size={17}/>}Import a PDF</button><input ref={fileInput} type="file" accept="application/pdf,.pdf" style={{ display: 'none' }} onChange={importFile}/><div className="rail-bottom"><div className="companion-label"><Sparkles size={17}/>{companionStatus?.config.name||'A companion in the margins'}</div><p>Follow a thought.<br />See where the ink takes you.</p><span className="sample-badge">{live?'AI CONFIGURED':'AI SETUP NEEDED'}</span><span className="release-label">alpha 0.4</span><div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}><button className="quiet-button" onClick={() => showDialog('help')}><HelpCircle size={15}/>How it works</button><button className="quiet-button" aria-label="Settings" onClick={() => showDialog('settings')}><Settings2 size={16}/></button></div></div></Sidebar>
- <main className="workbench" inert={isMobile && mobileOpen}><header className="topbar"><div className="breadcrumb"><button ref={menuButton} className="icon-button menu-button" aria-label="Open notebook menu" onClick={() => setMobileOpen(true)}><Menu /></button><span>My notebook</span><span>/</span><strong>{reader ? 'Reading room' : 'A place to think'}</strong></div><div className="top-actions"><ToolTip label={candlelight ? "Switch to daylight" : "Light the candle"}><button className="lighting-toggle" aria-label="Candlelight" aria-pressed={candlelight} onClick={() => setCandlelight(v => !v)}>{candlelight ? <Flame size={15} /> : <Sun size={15} />}<span>{candlelight ? "Candlelight" : "Daylight"}</span></button></ToolTip><button className={`saved ${saving === 'error' ? 'error' : ''}`} style={{ background: 'none', border: 0 }} onClick={() => saving === 'error' && (loadError ? void load() : data && save(data))} aria-disabled={saving !== 'error'}>{saving === 'saved' ? <Check size={13}/> : saving === 'error' ? <RotateCcw size={13}/> : <LoaderCircle size={13} className="spinning"/>}<span>{saving === 'saved' ? 'All changes saved' : saving === 'error' ? 'Retry saving' : saving === 'loading' ? 'Opening notebook' : 'Saving your ink'}</span></button><button className="text-action" aria-label="Export page" onClick={exportPage} disabled={reader || !current}><Download size={17}/><span>Export page</span></button><button className="icon-button" aria-label="Notebook settings" onClick={() => showDialog('settings')}><MoreHorizontal /></button></div></header>{loadError && <div className="error-banner">Saved notes could not be opened. This session is temporary.<button onClick={() => void load()}>Try again</button></div>}
+ <main className="workbench" inert={isMobile && mobileOpen}>
+ <header className="topbar">
+   <div className="breadcrumb"><button ref={menuButton} className="icon-button menu-button" aria-label="Open notebook menu" onClick={() => setMobileOpen(true)}><Menu /></button><span>My notebook</span><span>/</span><strong>{reader ? 'Reading room' : 'A place to think'}</strong></div>
+   <div className="top-actions">
+     <ToolTip label={candlelight ? 'Switch to daylight' : 'Light the candle'}><button className="lighting-toggle" aria-label="Candlelight" aria-pressed={candlelight} onClick={() => setCandlelight(v => !v)}>{candlelight ? <Flame size={15} /> : <Sun size={15} />}<span>{candlelight ? 'Candlelight' : 'Daylight'}</span></button></ToolTip>
+     <SaveIndicator state={saving} retry={retrySave} />
+     <button className="text-action" aria-label="Export page" onClick={exportPage} disabled={reader || !current}><Download size={17}/><span>Export page</span></button>
+     <button className="icon-button" aria-label="Notebook settings" onClick={() => showDialog('settings')}><MoreHorizontal /></button>
+   </div>
+ </header>
+ {loadError && <div className="error-banner" role="alert">{saveProblem || 'Saved notes could not be opened.'}<button onClick={() => void load()}>Try again</button></div>}
+ {recoveryNeeded && <div className="error-banner"><button onClick={exportRecovery}>Export recovery copies</button><span>Both copies are retained. Sync is paused.</span></div>}
  {saveProblem && !loadError && <div className="error-banner" role="alert">{saveProblem}</div>}<div ref={stage} className="canvas-stage"><div className="stage-heading"><div>{reader ? <h1>{current?.document ? current.document.name : 'The reading room'}</h1> : <input className="rename-input" aria-label="Page title" value={current?.title || 'Opening your notebook…'} onChange={e => updatePage(p => ({ ...p, title: e.target.value.slice(0, 80) }), false)}/>}<div className="subline">{reader ? <><BookOpen size={13}/>Read a little. Wonder a little.</> : <><Leaf size={13}/>One thought can lead anywhere.</>}</div></div><div className="paper-controls"><DropdownMenu><DropdownMenuTrigger asChild><button className="icon-button" aria-label="Paper style" disabled={reader}><NotebookPen size={18}/></button></DropdownMenuTrigger><DropdownMenuContent align="end">{(['grid', 'lined', 'plain'] as const).map(p => <DropdownMenuItem key={p} onClick={() => updatePage(old => ({ ...old, paper: p }))}>{current?.paper === p && <Check size={14}/>} {p.charAt(0).toUpperCase() + p.slice(1)} paper</DropdownMenuItem>)}</DropdownMenuContent></DropdownMenu><button className="icon-button" aria-label={zoom === 100 ? 'Zoom in' : 'Fit page'} onClick={() => setZoom(z => z === 100 ? (isMobile ? 175 : 135) : 100)}><Maximize2 size={17}/></button><span className="zoom-label" style={{ fontSize: 12 }}>{zoom}%</span></div></div>
  <div className="toolbar" role="toolbar" aria-label="Writing tools">{([{ id: 'pen', label: 'Pen (P)', icon: PenLine }, { id: 'highlight', label: 'Highlighter (H)', icon: Highlighter }, { id: 'erase', label: 'Eraser (E)', icon: Eraser }, { id: 'type', label: 'Place text (T)', icon: Type }, { id: 'select', label: reader ? 'Select a passage (V)' : 'Scroll / navigate (V)', icon: MousePointer2 }] as const).map(item => <ToolTip key={item.id} label={item.label}><button className={`tool ${tool === item.id ? 'active' : ''}`} aria-label={item.label} aria-pressed={tool === item.id} disabled={reader && item.id === 'type'} onClick={() => { setTool(item.id); setTypePoint(null); }}><item.icon strokeWidth={1.6}/></button></ToolTip>)}<div className="separator"/>{COLORS.map((c, i) => <ToolTip key={c} label={['Graphite ink', 'Moss ink', 'Sepia ink'][i]}><button aria-label={['Graphite ink', 'Moss ink', 'Sepia ink'][i]} aria-pressed={color === c} className={`color-dot ${color === c ? 'active' : ''}`} style={{ background: c }} onClick={() => { setColor(c); setTool('pen'); }}/></ToolTip>)}<Slider className="stroke-size" aria-label="Pen thickness" min={1.5} max={7} step={.5} value={[size]} onValueChange={v => setSize(v[0])}/><div className="separator"/><ToolTip label="Undo (⌘/Ctrl Z)"><button className="tool" aria-label="Undo" disabled={reader ? markedStrokes.current.length === 0 : !history?.undo.length} onClick={() => { if (reader) {
         storeAnnotations(markedStrokes.current.slice(0, -1));

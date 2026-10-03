@@ -9,7 +9,7 @@ export async function GET(request: Request) { try {
         content: string;
         updated_at: number;
     }>();
-    return Response.json({ notebook: row ? JSON.parse(row.content) : null, version: row?.updated_at || 0 }, { headers: { 'Cache-Control': 'no-store' } });
+    return Response.json({ notebook: row ? JSON.parse(row.content) : null, version: row?.updated_at || 0, owner: owner(request) }, { headers: { 'Cache-Control': 'no-store' } });
 }
 catch {
     return error('Saved notes could not be opened. Please try again.');
