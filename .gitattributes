@@ -1,0 +1,11 @@
+# Binary media: keep diffs clean (no LFS — files are small, and this keeps
+# cloning dependency-free). Revisit LFS if art assets grow past ~50MB.
+*.webp -diff
+*.png -diff
+*.jpg -diff
+*.jpeg -diff
+*.gif -diff
+*.mp3 -diff
+*.wav -diff
+*.ogg -diff
+*.pdf -diff

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>The 13th Bell — Solo Time-Loop Adventure</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <main class="app">
+    <div class="topline">
+      <div class="run-state"><span class="pulse"></span><span id="runLabel">Ready to enter Bellweather</span></div>
+      <div class="top-actions"><div class="mode-switch" aria-label="Demo version"><button id="originalMode" type="button" aria-pressed="true">Original</button><button id="contrastMode" type="button" aria-pressed="false">Contrast</button></div><button class="text-btn" id="rulesBtn" type="button">How to play</button></div>
+    </div>
+    <div class="layout">
+      <section class="game" aria-label="Bellweather adventure board">
+        <div class="scene">
+          <svg class="skyline" viewBox="0 0 500 130" aria-hidden="true"><path fill="#09191e" d="M0 130V89h48V55h31v75h47V72h58V27h20V6h26v21h20v103h52V85h49v45h44V66h62v64z"/><circle cx="217" cy="59" r="22" fill="#132d33" stroke="#d4aa56"/><path d="M217 59V44M217 59l11 7" stroke="#f6dfa9" stroke-linecap="round"/></svg>
+          <div class="scene-copy">
+            <div class="chapter" id="chapter">A solo time-loop adventure</div>
+            <h1>The 13th Bell</h1>
+            <p id="sceneText">Bellweather is awake, and so is the tower. Walk the town, meet its people, and let each return reshape the day.</p>
+          </div>
+        </div>
+        <div class="phase-strip" aria-label="Current time of day">
+          <div class="phase active" data-phase="0"><strong>Dawn</strong>7:00</div>
+          <div class="phase" data-phase="1"><strong>Noon</strong>12:00</div>
+          <div class="phase" data-phase="2"><strong>Dusk</strong>18:20</div>
+          <div class="phase" data-phase="3"><strong>Midnight</strong>13th bell</div>
+        </div>
+        <div class="brief"><span class="sigil">13</span><div><b id="objectiveTitle">Find what the tower is pulling from the town.</b><span id="objectiveText">Choose a district. Each visit advances the clock; at midnight, the town returns changed.</span></div></div>
+        <div class="companion-note contrast-only" hidden><b>Companion layer</b><span>The screen handles schedules, compression, and consequences. The tabletop kit keeps the clue cards, hidden envelopes, and debate at the table.</span></div>
+        <section class="schedule-panel contrast-only" id="schedulePanel" hidden aria-labelledby="scheduleTitle"><div class="schedule-head"><h3 id="scheduleTitle">People × phase ledger</h3><span>Plan from patterns, not waypoints.</span></div><div class="schedule-grid" id="scheduleGrid"></div></section>
+        <section class="forecast" aria-labelledby="forecastTitle"><div class="forecast-head"><div><div class="forecast-label" id="forecastLabel">Prediction · before the next bell</div><h3 id="forecastTitle">What changes by noon?</h3><p id="forecastClue">Read the schedule, then commit before you travel.</p></div><div class="forecast-state" id="forecastState">Undeclared</div></div><div class="prediction-choices" id="predictionChoices"></div></section>
+        <div class="map-head"><h2>Where do you go?</h2><p>Each district holds an activity, not an answer.<br>Three visits before midnight.</p></div>
+        <div class="town-map" id="townMap" aria-label="Interactive illustrated map of Bellweather">
+          <img class="map-art" src="assets/images/town-map.webp" alt="Hand-drawn town map showing Bell Square, North Gate, Glassworks, Saint Orra's Hospice, Flooded Archive, Underbell, and the central clock" />
+          <div class="map-caption" id="mapCaption">Loop I · The ordinary morning</div>
+          <div class="map-clock" id="mapClock" aria-hidden="true"><i class="clock-hand hour" id="hourHand"></i><i class="clock-hand minute" id="minuteHand"></i><i class="clock-pin"></i><span id="mapClockPhase">Dawn · 7:00</span></div>
+          <div id="mapPlaces"></div>
+          <div class="legend">Red: new activity · Green: visited this loop</div>
+        </div>
+        <section class="encounter-panel" id="eventModal" aria-labelledby="eventTitle">
+          <div class="event-art"><div id="eventIcon"></div><div class="weather" id="eventWeather"></div></div>
+          <div class="event-body"><div class="encounter-top"><div><div class="event-label" id="eventLabel"></div><h2 id="eventTitle"></h2></div><button class="close-encounter" id="closeEncounter" type="button">Choose elsewhere</button></div><p id="eventText"></p><button class="skip-scene" id="skipScene" type="button" hidden>Skip mastered scene · Spend 1 Momentum</button><div class="choices" id="choices"></div><div id="result" hidden><p class="result-note" id="resultText"></p><button class="primary" id="continueBtn" type="button">Continue the day</button></div></div>
+        </section>
+      </section>
+      <aside class="side">
+        <section class="panel">
+          <h3>Journey</h3>
+          <div class="metrics"><div class="metric"><strong id="timer">0:00</strong><span>elapsed</span></div><div class="metric"><strong id="loopMetric">1</strong><span>loop</span></div><div class="metric"><strong id="actionMetric">0</strong><span>visits</span></div></div>
+          <div class="resources"><div class="resource-row"><span>Momentum</span><b class="momentum" id="momentum">0</b></div><div class="resource-row"><span>Fracture</span><div class="fracture-track" id="fractureTrack" aria-label="Fracture 0 of 4"><i class="fracture-dot"></i><i class="fracture-dot"></i><i class="fracture-dot"></i><i class="fracture-dot"></i></div></div></div>
+          <div class="satchel"><span>Satchel this loop</span><b id="satchel">Empty</b></div>
+          <button class="understand" id="understandBtn" type="button">I know how to play</button>
+        </section>
+        <section class="panel">
+          <h3>Anchored memories</h3>
+          <div class="anchors">
+            <div class="anchor" data-anchor="route"><i>Ⅰ</i><span><b>Hidden route</b><br>Find a way beneath the tower.</span></div>
+            <div class="anchor" data-anchor="song"><i>Ⅱ</i><span><b>Bell's true song</b><br>Learn what wakes the mechanism.</span></div>
+            <div class="anchor" data-anchor="lens"><i>Ⅲ</i><span><b>Ember lens</b><br>Carry one change across midnight.</span></div>
+          </div>
+        </section>
+        <section class="panel">
+          <h3>Carried through midnight</h3>
+          <div class="scar-list" id="carried"><span class="empty-note">Nothing chosen yet.</span></div>
+          <h3 style="margin-top:13px">Scars</h3>
+          <div class="scar-list" id="scars"><span class="empty-note">The first loop has left no scar.</span></div>
+        </section>
+        <section class="panel original-only" id="originalJournalPanel">
+          <h3>Travel journal</h3>
+          <ul class="journal" id="journal"><li>Your first morning has not happened yet.</li></ul>
+        </section>
+        <section class="panel contrast-only" id="contrastJournalPanel" hidden>
+          <h3>Two-view journal</h3>
+          <div class="journal-tabs" role="tablist" aria-label="Journal view"><button class="journal-tab" id="placeTab" type="button" role="tab" aria-selected="true" aria-controls="placeJournal">Place</button><button class="journal-tab" id="theoryTab" type="button" role="tab" aria-selected="false" aria-controls="theoryJournal">Theory</button></div>
+          <div id="placeJournal" class="place-journal" role="tabpanel" aria-labelledby="placeTab"></div>
+          <div id="theoryJournal" class="theory-board" role="tabpanel" aria-labelledby="theoryTab" hidden>
+            <svg class="theory-lines" viewBox="0 0 300 278" preserveAspectRatio="none" aria-hidden="true"><line data-edge="0" x1="66" y1="50" x2="219" y2="50"/><line data-edge="1" x1="66" y1="50" x2="84" y2="145"/><line data-edge="2" x1="219" y1="50" x2="225" y2="150"/><line data-edge="3" x1="84" y1="145" x2="147" y2="233"/><line data-edge="4" x1="225" y1="150" x2="147" y2="233"/><line data-edge="5" x1="84" y1="145" x2="225" y2="150"/></svg>
+            <div class="theory-pin pin-a" data-theory="flowers">Undiscovered thread<small>Gather evidence</small></div><div class="theory-pin pin-b" data-theory="song">Undiscovered thread<small>Gather evidence</small></div><div class="theory-pin pin-c" data-theory="route">Undiscovered thread<small>Gather evidence</small></div><div class="theory-pin pin-d" data-theory="lens">Undiscovered thread<small>Gather evidence</small></div><div class="theory-pin pin-e" data-theory="release">Unformed theory<small>Connect three anchors</small></div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <section class="event start show" id="startModal" role="dialog" aria-modal="true" aria-labelledby="startTitle">
+    <div class="event-card">
+      <div class="event-art"><svg viewBox="0 0 140 110" aria-hidden="true"><circle cx="70" cy="51" r="38"/><path d="M70 51V26M70 51l20 13M48 90h44M56 14h28M70 12V2"/><path d="M29 94c23-8 59-8 82 0"/></svg><div class="weather">The town remembers<br>what you disturb.</div></div>
+      <div class="event-body">
+        <div class="event-label" id="startLabel">A 4–8 minute solo adventure</div><h2 id="startTitle">Walk a day that refuses to repeat.</h2>
+        <p id="startText">You have three visits before the thirteenth bell—unless Fracture reaches 4 and catastrophe arrives early. Predict scheduled events to gain Momentum, then carry one bond and one object through midnight. Scars never reset.</p>
+        <div class="how" id="startHow"><div><b>1 · Predict</b>Commit before the next bell.</div><div><b>2 · Travel & act</b>Every choice strains the town.</div><div><b>3 · Spend Momentum</b>Skip scenes you have mastered.</div><div><b>4 · Anchor</b>Choose what tomorrow remembers.</div></div>
+        <button class="primary" id="startBtn" type="button">Step into Bellweather</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="event" id="rulesModal" role="dialog" aria-modal="true" aria-labelledby="rulesTitle"><div class="event-card"><div class="event-body"><div class="event-label">How to play</div><h2 id="rulesTitle">Read the schedule. Risk the town.</h2><p id="rulesText">Before each bell, declare a prediction about the scheduled event. A correct call earns Momentum; spend 1 Momentum to skip a district scene you mastered in an earlier loop. Every action adds 1 Fracture, while dangerous actions add 2. At 4, catastrophe advances and midnight arrives early. At the Anchor Board, choose one bond and one object to survive the reset. Route, song, lens, and every Scar persist automatically.</p><button class="primary" id="closeRules" type="button">Back to the map</button></div></div></section>
+
+  <section class="event" id="batchModal" role="dialog" aria-modal="true" aria-labelledby="batchTitle"><div class="event-card"><div class="event-art"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 13h38v38H13zM13 31h38M31 13v38"/><path d="m20 23 4 4 8-9M38 41l8-8M46 41l-8-8"/></svg><div class="weather">The bell answers<br>all at once.</div></div><div class="event-body"><div class="event-label">Phase boundary · commitments resolve</div><h2 id="batchTitle">The town reveals what changed.</h2><p>No theory is confirmed while you act. At the bell, prediction and consequence arrive together.</p><div class="batch-list" id="batchList"></div><button class="primary" id="batchContinue" type="button">Enter the next phase</button></div></div></section>
+
+  <section class="event" id="resetModal" role="dialog" aria-modal="true" aria-labelledby="resetTitle"><div class="event-card"><div class="event-art"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M15 20A23 23 0 1 1 10 37M15 20V8M15 20h12"/><path d="M32 19v14l10 6"/></svg><div class="weather">The streets return.<br>The story does not.</div></div><div class="event-body"><div class="event-label">Anchor Board · the thirteenth bell</div><h2 id="resetTitle">What must tomorrow remember?</h2><p id="resetText"></p><div class="anchor-board" id="anchorBoard"><div class="anchor-column"><h3>One bond</h3><div class="anchor-options" id="bondOptions"></div></div><div class="anchor-column"><h3>One object</h3><div class="anchor-options" id="objectOptions"></div></div></div><button class="primary" id="wakeBtn" type="button" disabled>Choose a bond and an object</button></div></div></section>
+
+  <section class="event" id="winModal" role="dialog" aria-modal="true" aria-labelledby="winTitle"><div class="event-card"><div class="event-art"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7v12M14 14l8 9M50 14l-8 9M9 34h13M42 34h13M18 51l9-10M46 51l-9-10"/><circle cx="32" cy="32" r="9"/></svg><div class="weather">A fourteenth morning.</div></div><div class="event-body"><div class="event-label">Adventure complete</div><h2 id="winTitle">The tower releases the day.</h2><p>You descend by the hidden route, carrying the bell's true song through the ember lens. Bellweather does not reset. Its people remember fragments of every life you crossed.</p><div class="debrief" id="debrief"></div><button class="primary" id="restartBtn" type="button">Begin a different path</button></div></div></section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+    <script src="js/engine.js"></script>
+</body>
+</html>
