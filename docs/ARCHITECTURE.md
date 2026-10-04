@@ -40,3 +40,11 @@ Context combines recent turns and up to eight attributed excerpts. Retrieval is 
 Plugins are generic HTTP/MCP services, not specific PaperQA code paths. PaperReadingAgent currently supplies registry conventions; its Python functions need a hosted wrapper. V1 supports bearer authentication and supported 2025 MCP revisions, not OAuth/stdio installation. Public rollout needs native sessions and controlled outbound networking/DNS enforcement beyond the private deployment's endpoint filters.
 
 Shared React/TypeScript and vector ink support mobile reuse. Layered geometry and bounded composited WebGL lighting simulate depth; they are not hardware ray tracing. Worker inference keeps OCR off the UI thread. Capacitor native projects, credentials and device certification remain external gates.
+
+## Planned paper and 3D additions — sprint-02-r2
+
+The accepted direction adds a physical notebook paired with its digital edition. Proposed capture data separates immutable original image bytes, derived crop/orientation, physical page identity, interpretation revision and companion turn. Owner-scoped source resolution links each answer to the exact capture revision; pairing identifiers do not grant access. Capture durability, idempotency, two-client handoff, export/import and permission controls reuse and extend the existing storage boundaries.
+
+Photo input uses explicit Ask. A configured vision provider interprets the current image; local OCR belongs to non-provider mode. Both preserve original evidence and revision guards. The document model remains independent of any Three.js/React Three Fiber investigation. MC-034 evaluates one deformable spread and its coordinate mapping; MC-035 supplies physical dimensions and binding design. Production renderer adoption depends on actual input/device evidence.
+
+These modules are proposed in [Sprint 02](iterations/02/SPRINT-PREPARATION.md); they are not deployed capabilities. Existing provider routing, model lock, memory permission and pre-reveal checks remain required. The electronic answering-book option is future discovery.

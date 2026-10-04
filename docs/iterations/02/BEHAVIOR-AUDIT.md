@@ -42,4 +42,22 @@ Visual evidence: [existing illustration and new input](./INPUT-PLACEMENT-QA.jpg)
 
 20 tests passed. New cases cover placement inside existing content with underestimated metadata height, a full leaf, exact placement in available space and recognition excluding its own source strokes while respecting other content. These tests use the actual layout and state functions. No provider response was fabricated.
 
-Before closing MC-029/030/031, run the profile × device/input-method matrix, including interruption during each phase, a changing active leaf, IME, background/resume, reduced motion, screen reader, provider timeout and stale recognition. Link actual logs/recordings to each criterion. Update the progress record only for demonstrated evidence.
+Before closing MC-029/030/031, run the profile × device/input-method matrix, including interruption during each phase, a changing active leaf, IME, background/resume, reduced motion, screen reader, provider timeout and stale recognition. Link actual logs/recordings to each criterion. Update the progress record only for demonstrated evidence. These cards are scheduled after the paper sprint; the observations above remain historical.
+
+## Sprint 02 paper acceptance additions — planned
+
+All rows below are untested. Current scheduling and statuses are in [Sprint progress](AGILE-PROGRESS.md).
+
+| Journey | Required environment | Card / evidence |
+|---|---|---|
+| Photograph/import, rotate/crop, permission denied, retake | Desktop upload, physical iOS and Android camera/import | MC-032; actual files and recording |
+| Restart, interrupted transfer, duplicate request, concurrent retake, second-client handoff | Actual journal/storage and two clients | B2 / MC-032; original checksum and revision association |
+| Another owner requests capture, thumbnail or source | Two authenticated test identities | B1 / MC-032; denied requests |
+| Ask, five-second fade, current vision result, linked answer | Configured live provider and declared phone/tablet/desktop set | B3 / MC-033; actual usage, phase times and source navigation |
+| Correct/erase/retake during recognition and fade; switch active page | Actual delayed or overlapping jobs | MC-006 / MC-033; stale work finishes without changing the active draft |
+| Provider unavailable, revoked, unsupported vision or budget exhausted | Actual route errors and policy enforcement | MC-011/017 / MC-033; original retained, accurate failure message |
+| Long reply, context limit, image region source, correction/deletion propagation | Integrated candidate | MC-008/009 / MC-033; fixed leaves and versioned source evidence |
+| 3D corner drag, writing placement, erasure, focus, reduced motion, ten-minute use | Named desktop, physical iPad and Android phone | MC-034; actual frame/input measurements and adopt/rework decision |
+| Physical dimensions, cutting/assembly and optional print geometry | Design/model files; actual sample when available | MC-035; distinguish digital checks from pending physical fit |
+
+Camera/preview pauses never trigger submission. Photo Ask is a separate input policy from the existing writing surface. No user-research result or physical-device pass is supplied by this planning revision.

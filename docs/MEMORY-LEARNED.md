@@ -14,3 +14,11 @@ Product **alpha 0.4** · Documentation **docs-v4** · Artifact **v6-alpha04-2026
 Engineering findings: browser UUID and Cache APIs are capability-dependent; Tailwind must not scan tokenizer/model assets; older OCR completion must not replace the visible current cycle; OpenRouter native model IDs retain provider prefixes; slow connection checks must not restore removed credentials; plugin citations need independent arrays and explicit stream events. Workspace maintenance can remove checkouts; pushed checkpoints and reproducible assets are the recovery source.
 
 Boundaries: paid provider calls and native devices remain unverified. Samples are labeled. Local OCR is English-focused, retrieval is bounded lexical search, and routing is application rules. The private owner fallback is unsuitable for public/native authentication. No model weights or source code undergo autonomous recursive modification.
+
+## Accepted paper-notebook direction — 2026-10-03 America/Los_Angeles
+
+The next product direction pairs a real paper notebook with a matching 3D app edition. Paper ink remains physical; the app displays fading and companion replies. Deliberate capture preserves an original with notebook/page/revision identity; explicit Ask defines the photo turn. Existing input jobs, revision guards, companion identity and memory scope remain governed by their current requirements.
+
+Sprint 02 selects MC-032/033 for capture and source-linked answering, MC-034 for a bounded 3D investigation, and MC-035 for the physical design specification. Baseline verification receives six of fourteen allocated engineering days. MC-029–031 retain their acceptance and move after the paper journey. Camera capture is not subject to the surface quiet timer. A photo preserves appearance without establishing historical stroke order.
+
+The accepted direction does not constitute evidence of accuracy, physical fit, market demand or customer readiness. Full M0 remains required before the proposed customer pilot. Current plan and statuses: [Sprint 02](iterations/02/SPRINT-PREPARATION.md) and [Agile progress](iterations/02/AGILE-PROGRESS.md).

@@ -38,3 +38,9 @@ flowchart TD
 ## External gates
 
 Connect a paid provider for real response/vision measurements; host PaperReadingAgent research functions if needed; add native authentication/CORS, signing and store metadata; test Apple Pencil, Android stylus/IME, low-memory OCR and assistive technologies on physical devices. These are not claimed complete by the web alpha.
+
+## Planned paper workflow — sprint-02-r2
+
+Paper capture has explicit submission: capture/import, select notebook/page, durably preserve original and source revision, then Ask. Ask starts current vision recognition and the digital five-second fade together. Correcting or retaking creates a new revision; existing jobs continue without applying stale results. The current response appears on fixed digital leaves and opens the exact original through its source link. Ordinary paper ink remains unchanged.
+
+Execution order, capacity, regression checks and baseline prerequisites are defined in [Sprint 02](iterations/02/SPRINT-PREPARATION.md). MC-032–035 are proposed implementation/design work. Conversation profiles and multi-leaf input in MC-029–031 follow that sprint. Customer pilot execution requires the complete MC-024 baseline.
