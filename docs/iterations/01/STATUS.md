@@ -36,3 +36,9 @@ Selected test command: `node --test tests/ink-cycle-behavior.test.mjs tests/note
 The required managed preview browser skill is unavailable in this session. No browser-control substitute was used. Interaction, physical-device and visual acceptance remain open. Provider accuracy, source-linked recall, recovery drills, measured live latency/cost, market privacy/content review and the remaining baseline gates are still required before M0.
 
 Publication identifiers are recorded by the Site version/deployment service after the source commit; this document intentionally does not predict a deployment ID or claim a future deployment succeeded.
+
+## 2026-10-04 interaction checkpoint
+
+The browser limitation described above was resolved in this session through the built-in browser. Actual preview journeys now cover input-box pauses, explicit sending, fixed-size continuation leaves, page turning and save/reload. The browser used the animated CSS lighting fallback because WebGL was unavailable.
+
+Composer submission, reply pagination, red ribbon, directional lighting and provider-only vision recognition are implemented. Selected automated checks increased to 17 passing tests. Live provider and physical-device evidence remains open. See [UX fixes and QA record](./UX-FIXES-2026-10-04.md) for scope, evidence and remaining limits; M0 is still in progress.

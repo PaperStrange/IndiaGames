@@ -3,10 +3,31 @@
     background-color: #232624;
     background-image: radial-gradient(ellipse at 76% 8%, #73543924, transparent 62%);
 }
-.parchment .paper { background-color: #dcd2b7; }
-.parchment .vellum-grain { opacity: .56; filter: saturate(.32); }
-.parchment .vellum-light { opacity: calc(var(--warmth, .65) * .54); }
-.parchment .folio-lamplight { opacity: calc(var(--warmth, .65) * .42); }
+.parchment .paper { background-color: #eee3c9; }
+.parchment .vellum-grain { opacity: .38; filter: saturate(.18); }
+.parchment .folio-lamplight { display: none; }
+.parchment .vellum-light {
+    display: block; opacity: 1; mix-blend-mode: multiply;
+    background: linear-gradient(155deg, #fff6df00 12%, #705e4838 65%, #2f313452),
+        radial-gradient(ellipse at 12% -10%, #ffdb9533, transparent 76%);
+}
+.parchment .paper:has(.paper-light-canvas[data-renderer=webgl]) .vellum-light { display: none; }
+.parchment .candle-pool {
+    inset: -8%; width: 116%; height: 116%; max-height: none;
+    background: radial-gradient(ellipse 75% 70% at 20% 5%, transparent 25%, #312b2242 85%);
+    animation: diary-candle-shadow 3.7s ease-in-out infinite alternate;
+}
+.parchment .candle-reflection {
+    inset: 0; width: 100%; height: 100%; max-height: none;
+    background: radial-gradient(ellipse 16% 25% at var(--lamp-x, 75%) var(--lamp-y, 65%), #30231d70, transparent);
+    opacity: var(--hand-opacity, 0); animation: none; transition: opacity .24s;
+}
+.parchment[data-light=day] .vellum-light { opacity: .18; }
+.parchment[data-light=day] .candle-pool { animation: none; }
+.parchment[data-visible=false] .candle-pool { animation-play-state: paused; }
+.parchment .paper-light-canvas { mix-blend-mode: multiply; opacity: 1; }
+.parchment .ink-draft { display: none; }
+.parchment .paper:not(.reading-panel) { overflow: hidden; }
 .parchment .folio-ground {
     box-shadow: 7px 8px 9px #090908c9, 21px 34px 38px #0809098a, -9px 18px 48px #08090945;
 }
@@ -16,7 +37,7 @@
         9px 22px 18px #07080980;
 }
 .parchment .folio-gutter {
-    background: linear-gradient(90deg, #1f1b17cc, #42362c8c 1.8%, #86725938 4%, #f7ebc643 7%, transparent 14%);
+    background: linear-gradient(90deg, #151412eb, #392c21b3 1.8%, #68573c50 4%, #fff2ca43 8%, transparent 19%);
     box-shadow: inset 7px 0 11px -4px #1b18159c;
 }
 .parchment .folio-rim {
@@ -50,6 +71,13 @@
     76% { opacity: .88; fill: #33352c; stroke-width: .15px; }
     100% { opacity: 1; fill: #35332d; stroke-width: 0; }
 }
+@keyframes diary-candle-shadow {
+    0% { transform: translate(-1.5%, -1%) rotate(-1deg); opacity: .78; }
+    34% { opacity: .92; }
+    43% { opacity: .81; }
+    72% { opacity: .96; }
+    100% { transform: translate(1.2%, .7%) rotate(1deg); opacity: .84; }
+}
 @media (pointer: coarse) {
     .parchment .flow-ink { filter: none; }
 }
@@ -58,6 +86,8 @@
     .parchment .folio-ground { box-shadow: 5px 7px 7px #0809099c, 12px 20px 24px #08090966; }
 }
 @media (prefers-reduced-motion: reduce) {
+    .parchment .candle-pool { animation: none; }
+    .parchment .candle-reflection { display: none; }
     .parchment .inking .ink-character { opacity: 1; stroke-width: 0; animation: none; }
     .parchment .flow-ink { filter: none; }
 }

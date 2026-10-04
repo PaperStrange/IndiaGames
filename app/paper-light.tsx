@@ -51,6 +51,8 @@ export function PaperLight({ candlelight = true, warmth = 65, visible = true }: 
         const time = gl.getUniformLocation(program, 'time');
         const warm = gl.getUniformLocation(program, 'warm');
         const candle = gl.getUniformLocation(program, 'candle');
+        const hand = gl.getUniformLocation(program, 'hand');
+        let handX = .5, handY = .5, handVisible = 0;
         const reduced = matchMedia('(prefers-reduced-motion: reduce)');
         const mobile = matchMedia('(pointer: coarse)');
         let disposed = false, ready = false, inView = true, frame = 0, last = -Infinity;
@@ -65,6 +67,7 @@ export function PaperLight({ candlelight = true, warmth = 65, visible = true }: 
                 gl.uniform1f(time, reduced.matches ? 0 : timestamp / 1000);
                 gl.uniform1f(warm, options.current.warmth / 100);
                 gl.uniform1f(candle, options.current.candlelight ? 1 : 0);
+                gl.uniform3f(hand, handX, handY, reduced.matches ? 0 : handVisible);
                 gl.drawArrays(gl.TRIANGLES, 0, 6);
             }
             if (options.current.candlelight && !reduced.matches) frame = requestAnimationFrame(draw);
@@ -75,6 +78,17 @@ export function PaperLight({ candlelight = true, warmth = 65, visible = true }: 
             if (!disposed) frame = requestAnimationFrame(draw);
         };
         requestDraw.current = redraw;
+        const surface = node.parentElement!;
+        const moveHand = (event: PointerEvent) => {
+            const rect = surface.getBoundingClientRect();
+            handX = (event.clientX - rect.left) / rect.width;
+            handY = (event.clientY - rect.top) / rect.height;
+            handVisible = event.pointerType === 'touch' ? 0 : 1;
+            if (!frame) redraw();
+        };
+        const leaveHand = () => { handVisible = 0; redraw(); };
+        surface.addEventListener('pointermove', moveHand);
+        surface.addEventListener('pointerleave', leaveHand);
         const resize = new ResizeObserver(entries => {
             const rect = entries[0]?.contentRect;
             if (!rect || !rect.width || !rect.height) return;
@@ -108,6 +122,8 @@ export function PaperLight({ candlelight = true, warmth = 65, visible = true }: 
             requestDraw.current = () => {};
             image.onload = null;
             resize.disconnect(); observer.disconnect();
+            surface.removeEventListener('pointermove', moveHand);
+            surface.removeEventListener('pointerleave', leaveHand);
             reduced.removeEventListener('change', redraw);
             node.removeEventListener('webglcontextlost', lost);
             gl.deleteTexture(texture); gl.deleteBuffer(buffer); gl.deleteProgram(program);

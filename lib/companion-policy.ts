@@ -11,7 +11,7 @@ export function chooseModel(c:CompanionConfig,p:ProviderConnection,task:ModelTas
  if(!id)throw Error('Choose a model for this task in Companion settings.');
  if(id==='openrouter/auto')throw Error('Choose an explicit model. An upstream auto-router cannot enforce this model lock or budget.');
  const m=p.models.find(m=>wireModel(m.id,p.baseUrl)===id);if(!m)throw Error(`Add capabilities and pricing for ${id}.`);
- if(task==='vision'&&!m.vision)throw Error(c.locked?'Your locked model cannot read images. Use on-device OCR or choose a vision model.':'Choose a vision model for handwriting.');
+ if(task==='vision'&&!m.vision)throw Error(c.locked?'Your locked model cannot read images. Select an image-capable model or unlock routing.':'Choose a vision model for handwriting.');
  if(needsTools&&!m.tools)throw Error('Use a tool-capable model or disable connected tools.');
  if(m.inputPrice<0||m.outputPrice<0)throw Error('Set model prices before using the daily spending limit.');
  return {model:{...m,id},reason:c.locked?'Selected model locked':task==='vision'?'Handwriting → vision model':task==='reasoning'&&p.reasoningModel?'Reasoning task → reasoning model':'Conversation → reply model'};

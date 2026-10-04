@@ -29,6 +29,7 @@ import type {CompanionStatus} from '@/lib/companion-types';
 import { useBookTurn, TurningLeaf, PageGrip } from './book-turn';
 import { NotebookJournal, journalScope, recoverNotebook, type JournalEntry } from '@/lib/notebook-journal';
 import { SaveIndicator, type SaveState } from './save-indicator';
+import { placeReply, paginateExistingReplies, SHEET_HEIGHT, WRITING_TOP, WRITING_BOTTOM } from '@/lib/page-layout';
 const FONTS: Record<ReplyFont, string> = { hand: 'Handwritten', book: 'Book serif', mono: 'Typewriter' };
 const FORMATS: Record<ReplyFormat, string> = { auto: 'Automatic', text: 'Plain text', emoji: 'With emojis', table: 'Table', sticker: 'Sticker', picture: 'Picture', video: 'Video' };
 const COLORS = ['#40372a', '#526344', '#8a4f36'];
@@ -79,6 +80,12 @@ export default function NotebookApp({ apiBase = '' }: {
     const flow=useInkFlow({apiBase,status:companionStatus,activeId:active,surface:readingPaper,readPage:id=>dataRef.current?.pages.find(p=>p.id===id),updatePage,reply:(text,page,ids)=>respond(text,{page,inputIds:ids})});
     const books=data?.books?.length?data.books:[{id:'main',title:'My notebook'}],bookId=current?.notebookId||'main',visiblePages=data?.pages.filter(p=>(p.notebookId||'main')===bookId)||[];
     const { turn, beginTurn, finishTurn } = useBookTurn(readingPaper);
+    useEffect(() => {
+        const surface = folio.current;
+        const clearHand = () => surface?.style.setProperty('--hand-opacity', '0');
+        surface?.addEventListener('pointerleave', clearHand);
+        return () => surface?.removeEventListener('pointerleave', clearHand);
+    }, [active]);
     useEffect(() => { if (!reader || !readingPaper.current)
         return; const observer = new ResizeObserver(() => { const el = readingPaper.current; if (el && el.offsetWidth) {
         const h = el.offsetHeight / el.offsetWidth * WIDTH;
@@ -113,7 +120,8 @@ export default function NotebookApp({ apiBase = '' }: {
         pendingSave.current = recovery.selected;
         syncBlocked.current = recovery.conflict;
         setRecoveryNeeded(recovery.conflict);
-        const next: Notebook = structuredClone(recovery.selected?.notebook || payload.notebook || initialNotebook());
+        const next: Notebook = paginateExistingReplies(structuredClone(recovery.selected?.notebook || payload.notebook || initialNotebook()));
+        const repaginated = JSON.stringify(next) !== JSON.stringify(recovery.selected?.notebook || payload.notebook || next);
         next.books ||= [{id:'main',title:'My notebook'}];
         dataRef.current = next;
         setData(next);
@@ -121,10 +129,11 @@ export default function NotebookApp({ apiBase = '' }: {
         activeRef.current = next.pages[0].id;
         loadedRef.current = true;
         setLoadError(false);
+        deviceSaveFailed.current = false;
         if (recovery.conflict) {
             setSaveProblem('Your device and server have different copies. Your device copy is open. Export the recovery copies before resolving these changes.');
             setSaving('local');
-        } else if (recovery.selected || !payload.notebook) {
+        } else if (recovery.selected || !payload.notebook || repaginated) {
             pendingSave.current = journal.current.write(next, payload.version, recovery.selected);
             dirtyRef.current = true;
             setSaving('local');
@@ -252,7 +261,7 @@ export default function NotebookApp({ apiBase = '' }: {
     function undo(redo = false) { if (busyRef.current) return; const id = activeRef.current, h = histories.current[id], p = dataRef.current?.pages.find(p => p.id === id); if (!h || !p)
         return; const from = redo ? h.redo : h.undo, to = redo ? h.undo : h.redo, previous = from.pop(); if (!previous)
         return; flow.inputStart(id); to.push(structuredClone(p)); updatePage(() => previous, false); setUndoTick(t => t + 1); }
-    function go(id: string) { abortReply.current?.abort(); draftPages.current[activeRef.current] = promptRef.current; const draft = draftPages.current[id] || ''; promptRef.current = draft; setPrompt(draft); if (id !== activeRef.current || reader) { const pages = dataRef.current?.pages || []; const from = pages.findIndex(p => p.id === activeRef.current), to = pages.findIndex(p => p.id === id); beginTurn(to >= 0 && to < from ? 'backward' : 'forward'); } clearTimeout(responseTimer.current); setActive(id); activeRef.current = id; currentRef.current = dataRef.current?.pages.find(p => p.id === id); setReader(false); setSelection(null); setTypePoint(null); setMobileOpen(false); setAnimated([]); setDissolving([]); setZoom(100); markedStrokes.current = []; stage.current?.scrollTo({ top: 0 }); }
+    function go(id: string) { draftPages.current[activeRef.current] = promptRef.current; const draft = draftPages.current[id] || ''; promptRef.current = draft; setPrompt(draft); if (id !== activeRef.current || reader) { const pages = dataRef.current?.pages || []; const from = pages.findIndex(p => p.id === activeRef.current), to = pages.findIndex(p => p.id === id); beginTurn(to >= 0 && to < from ? 'backward' : 'forward'); } clearTimeout(responseTimer.current); setActive(id); activeRef.current = id; currentRef.current = dataRef.current?.pages.find(p => p.id === id); setReader(false); setSelection(null); setTypePoint(null); setMobileOpen(false); setAnimated([]); setDissolving([]); setZoom(100); markedStrokes.current = []; stage.current?.scrollTo({ top: 0 }); }
     function turnPage(direction: 'forward' | 'backward') { if (pointerId.current !== null) return; const pages = dataRef.current?.pages.filter(p=>(p.notebookId||'main')===(currentRef.current?.notebookId||'main')) || []; const index = pages.findIndex(p => p.id === activeRef.current), next = pages[index + (direction === 'forward' ? 1 : -1)]; if (next) { go(next.id); if (next.document) { setReader(true); setTool('select'); } } }
     function turnPdf(direction: 'forward' | 'backward') { const doc = currentRef.current?.document; if (!doc || pointerId.current !== null) return; const next = doc.page + (direction === 'forward' ? 1 : -1); if (next < 1 || next > doc.total) return; beginTurn(direction); updatePage(p => ({ ...p, document: p.document ? { ...p.document, page: next } : undefined }), false); markedStrokes.current = []; setSelection(null); stage.current?.scrollTo({ top: 0 }); }
     function showDialog(kind: 'new' | 'help' | 'settings') { setMobileOpen(false); if (kind === 'new') {setNewBook(false);setNewOpen(true);} else if (kind === 'help') setHelp(true); else setSettings(true); }
@@ -268,28 +277,52 @@ export default function NotebookApp({ apiBase = '' }: {
             stage.current.scrollTo({ top: Math.max(0, top), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
         }, 80);
     }
-    function editPrompt(value:string){flow.inputStart(activeRef.current);abortReply.current?.abort();promptRef.current=value;setPrompt(value);}
+    function editPrompt(value:string){promptRef.current=value;setPrompt(value);}
     function stopReply(){abortReply.current?.abort();flow.restore(activeRef.current);setAnimated([]);}
-    function restoreInk(exchange:string){flow.inputStart(activeRef.current);updatePage(p=>({...p,blocks:p.blocks.filter(b=>b.exchangeId!==exchange&&b.recognitionId!==exchange&&!(b.recognitionId&&b.absorbedBy===exchange)).map(b=>b.absorbedBy===exchange?{...b,absorbedBy:undefined,pendingInput:true}:b),strokes:p.strokes.map(s=>s.absorbedBy===exchange?{...s,absorbedBy:undefined}:s)}));setDissolving([]);toast.success('Your original ink is back on the page.');}
-    async function send(text=promptRef.current,options:{source?:string;page?:Page;ink?:boolean;automatic?:boolean;sample?:boolean}={}){let p=options.page||currentRef.current;if(!p||busyRef.current)return;if(options.sample){await respond(text,{...options,page:p});return;}if(reader&&!options.page)p=create('A question from my reading',p.topic);if(text.trim()){const input=block('user',text.trim(),typePoint?.y||nextY(p),replyHeight(text,'hand',44),{x:typePoint?.x||68,pendingInput:true,source:options.source});updatePage(old=>({...old,blocks:[...old.blocks,input]}),true,p.id);promptRef.current='';setPrompt('');draftPages.current[p.id]='';setTypePoint(null);}flow.begin(p.id);}
+    function restoreInk(exchange:string){flow.inputStart(activeRef.current);mutate(notebook=>({...notebook,pages:notebook.pages.map(p=>({...p,blocks:p.blocks.filter(b=>b.exchangeId!==exchange&&b.recognitionId!==exchange&&!(b.recognitionId&&b.absorbedBy===exchange)).map(b=>b.absorbedBy===exchange?{...b,absorbedBy:undefined,pendingInput:true}:b),strokes:p.strokes.map(s=>s.absorbedBy===exchange?{...s,absorbedBy:undefined}:s)}))}));setDissolving([]);toast.success('Your original ink is back on the page.');}
+    async function send(text=promptRef.current,options:{source?:string;page?:Page;ink?:boolean;automatic?:boolean;sample?:boolean}={}) {
+        let p=options.page||currentRef.current;
+        if(!p||busyRef.current)return;
+        const draftPageId=p.id;
+        if(options.sample){await respond(text,{...options,page:p});return;}
+        if(reader&&!options.page)p=create('A question from my reading',p.topic);
+        if(text.trim()) {
+            let y=typePoint?.y||nextY(p);
+            if(y+Math.min(replyHeight(text,'hand',44),WRITING_BOTTOM-WRITING_TOP)>WRITING_BOTTOM) {
+                p=create(`${p.title.slice(0,55)} · a new thought`,p.topic);
+                y=WRITING_TOP;
+            }
+            const input=block('user',text.trim(),y,replyHeight(text,'hand',44),{x:typePoint?.x||68,pendingInput:true,source:options.source});
+            updatePage(old=>({...old,blocks:[...old.blocks,input]}),true,p.id);
+            promptRef.current='';setPrompt('');draftPages.current[draftPageId]='';draftPages.current[p.id]='';setTypePoint(null);
+        }
+        flow.begin(p.id);
+    }
     async function respond(text:string,options:{source?:string;page:Page;sample?:boolean;inputIds?:string[]}){
         const p=options.page,pageId=p.id;if(busyRef.current||activeRef.current!==pageId){flow.restore(pageId);return;}
         if(!live&&!options.sample){flow.restore(pageId);toast.message('Connect AI in Settings → Models for a reply to your writing.',{action:{label:'Settings',onClick:()=>showDialog('settings')}});return;}
         const inputIds=new Set(options.inputIds||[]),inputs=p.blocks.filter(b=>inputIds.has(b.id)),inkIds=new Set(inputs.flatMap(b=>b.inkIds||[])),exchange=uid(),controller=new AbortController();abortReply.current=controller;
         const y=inputs.length?Math.min(...inputs.map(b=>b.y)):nextY(p),font=replyFont,format=chooseFormat(text,replyFormat);busyRef.current=true;setBusy(true);setAnnouncement('');setSelection(null);
         let committed=false,latest='',streamBlock:Block|undefined,flushTimer:ReturnType<typeof setTimeout>|undefined;const artifacts:Block[]=[];
-        const commit=(replies:Block[])=>{if(!mounted.current||committed||controller.signal.aborted)return;committed=true;setAnimated(replies.map(b=>b.id));updatePage(old=>({...old,strokes:old.strokes.map(s=>inkIds.has(s.id)?{...s,absorbedBy:exchange}:s),blocks:[...old.blocks.map(b=>inputIds.has(b.id)?{...b,absorbedBy:exchange,pendingInput:false}:b),...replies.map(b=>({...b,exchangeId:exchange}))]}),true,pageId);};
-        const flush=()=>{clearTimeout(flushTimer);flushTimer=undefined;if(!latest||!streamBlock||!mounted.current||controller.signal.aborted)return;if(!committed){streamBlock={...streamBlock,text:latest,h:replyHeight(latest,font)};commit([streamBlock]);}else updatePage(old=>({...old,blocks:old.blocks.map(b=>b.id===streamBlock!.id?{...b,text:latest,h:replyHeight(latest,font)}:b)}),false,pageId);};
+        const layoutReplies = (replies: Block[]) => {
+            mutate(notebook => placeReply(notebook, pageId, exchange, replies, y));
+            setAnimated(dataRef.current!.pages.flatMap(page => page.blocks.filter(b => b.exchangeId === exchange).map(b => b.id)));
+        };
+        const commit=(replies:Block[])=>{if(!mounted.current||committed||controller.signal.aborted)return;updatePage(old=>({...old,strokes:old.strokes.map(s=>inkIds.has(s.id)?{...s,absorbedBy:exchange}:s),blocks:old.blocks.map(b=>inputIds.has(b.id)?{...b,absorbedBy:exchange,pendingInput:false}:b)}),true,pageId);layoutReplies(replies);committed=true;};
+        const flush=()=>{clearTimeout(flushTimer);flushTimer=undefined;if(!latest||!streamBlock||!mounted.current||controller.signal.aborted)return;streamBlock={...streamBlock,text:latest,h:replyHeight(latest,font)};if(!committed)commit([streamBlock]);else layoutReplies([streamBlock]);};
         try{if(options.sample){const replies=presentReply(text,p,y,format,font,options.source);commit(replies);setAnnouncement(replies.filter(b=>b.kind==='text').map(b=>b.text).join(' '));}
         else{streamBlock=block('text','',y,60,{font,source:options.source});setStreamingId(streamBlock.id);const res=await fetch(apiPath(apiBase,'/api/companion'),{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({prompt:text,format,notebookId:p.notebookId||'main',pageId,crossNotebook,context:p.blocks.filter(b=>!inputIds.has(b.id)&&(b.kind==='text'||b.kind==='user')).slice(-8).map(b=>({role:b.kind==='user'?'user':'assistant',text:visibleInkText(b)})),source:options.source||'',documentText:liveDocText.current.slice(0,10000)}),signal:controller.signal});
         await consumeCompanionStream(res,partial=>{latest=partial;if(!committed)flush();else if(!flushTimer)flushTimer=setTimeout(flush,60);},controller.signal,event=>{if(event.type==='route'){setRunLabel(event.run.model+' · '+event.run.reason);streamBlock!.runId=event.run.id;}if(event.type==='status')setAnnouncement(event.message);if(event.type==='memory')toast.message(event.message);if(event.type==='citations'){streamBlock!.citations=event.citations;updatePage(old=>({...old,blocks:old.blocks.map(b=>b.id===streamBlock!.id?{...b,citations:event.citations}:b)}),false,pageId);}if(event.type==='artifact')artifacts.push(block(event.kind,event.caption,0,event.kind==='sticker'?270:435,{mediaUrl:event.url,font}));});flush();
-        if(artifacts.length){let cursor=y+replyHeight(latest,font)+30;updatePage(old=>({...old,blocks:[...old.blocks,...artifacts.map(b=>{const next={...b,y:cursor,exchangeId:exchange};cursor+=b.h+24;return next;})]}),false,pageId);}
-        if(format==='table'){const rows=latest.trim().split('\n').filter(r=>r.includes('|')&&!/^[\s|:-]+$/.test(r)).slice(0,8);if(rows.length>1)updatePage(old=>({...old,blocks:old.blocks.map(b=>b.id===streamBlock!.id?{...b,kind:'table',text:rows.map(r=>r.replace(/^\||\|$/g,'').split('|').slice(0,3).map(c=>c.trim().slice(0,27)).join('|')).join('\n'),h:rows.length*42+30}:b)}),false,pageId);}
+        if(artifacts.length) layoutReplies([streamBlock!, ...artifacts]);
+        if(format==='table'){
+            const rows=latest.trim().split('\n').filter(row=>row.includes('|')&&!/^[\s|:-]+$/.test(row));
+            if(rows.length>1) layoutReplies([{...streamBlock!,kind:'table',text:rows.map(row=>row.replace(/^\||\|$/g,'')).join('\n'),h:rows.length*42+30},...artifacts]);
+        }
         setAnnouncement(latest);setCrossNotebook(false);}
         }catch(e){flush();if(!committed)flow.restore(pageId);toast.error(e instanceof Error&&e.name==='AbortError'?'Reply stopped. Your ink and any partial reply are kept.':e instanceof Error?e.message:'Could not get a reply. Your ink is kept.');}
         finally{clearTimeout(flushTimer);if(abortReply.current===controller)abortReply.current=null;busyRef.current=false;if(mounted.current){setBusy(false);setStreamingId('');}}
     }
-    useEffect(()=>{clearTimeout(responseTimer.current);if(!auto||busy||composing||reader||settings||newOpen||help||originalOpen||controlsOpen||mobileOpen||pointerId.current!==null||!current||!flow.canBegin(current.id))return;const hasInk=current.strokes.some(s=>s.tool==='pen'&&!s.absorbedBy),pending=current.blocks.some(b=>b.pendingInput&&!b.absorbedBy&&visibleInkText(b));if(!prompt.trim()&&!hasInk&&!pending)return;const id=current.id;responseTimer.current=setTimeout(()=>{if(activeRef.current===id&&!drawing.current)void send(promptRef.current,{ink:hasInk,automatic:true});},INPUT_END_MS);return()=>clearTimeout(responseTimer.current);},[prompt,auto,busy,composing,reader,active,undoTick,settings,newOpen,help,originalOpen,controlsOpen,mobileOpen]);
+    useEffect(()=>{clearTimeout(responseTimer.current);if(!auto||busy||composing||reader||settings||newOpen||help||originalOpen||controlsOpen||mobileOpen||pointerId.current!==null||!current||!flow.canBegin(current.id))return;const hasInk=current.strokes.some(s=>s.tool==='pen'&&!s.absorbedBy),pending=current.blocks.some(b=>b.pendingInput&&!b.absorbedBy&&visibleInkText(b));if(!hasInk&&!pending)return;const id=current.id;responseTimer.current=setTimeout(()=>{if(activeRef.current===id&&!drawing.current)flow.begin(id);},INPUT_END_MS);return()=>clearTimeout(responseTimer.current);},[auto,busy,composing,reader,active,undoTick,settings,newOpen,help,originalOpen,controlsOpen,mobileOpen]);
     function illuminate(e: React.PointerEvent<HTMLDivElement>) {
         if (!candlelight || !tabVisible || e.pointerType === 'touch' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const node = folio.current; if (!node) return;
@@ -297,6 +330,7 @@ export default function NotebookApp({ apiBase = '' }: {
         lightFrame.current = requestAnimationFrame(() => {
             const r = node.getBoundingClientRect(), px = Math.max(0, Math.min(1, (x - r.left) / r.width)), py = Math.max(0, Math.min(1, (y - r.top) / r.height));
             node.style.setProperty('--lamp-x', `${px * 100}%`); node.style.setProperty('--lamp-y', `${py * 100}%`); node.style.setProperty('--shadow-x', `${(px - .5) * -22}px`);
+            node.style.setProperty('--hand-opacity', '1');
         });
     }
     async function inkCrop(strokes: Stroke[]) { const b = bounds(strokes); if (!b)
@@ -517,7 +551,7 @@ export default function NotebookApp({ apiBase = '' }: {
     } const mapping: Record<string, Tool> = { p: 'pen', h: 'highlight', e: 'erase', t: 'type', v: 'select' }; if (mapping[e.key.toLowerCase()] && !e.ctrlKey && !e.metaKey)
         setTool(mapping[e.key.toLowerCase()]); }; window.addEventListener('keydown', key); return () => window.removeEventListener('keydown', key); }, [undoTick]);
     const pageIndex = visiblePages.findIndex(p=>p.id===current?.id);
-    const history = histories.current[active], height = current ? Math.max(pageHeight(current), prompt.trim() && !reader ? (typePoint?.y || nextY(current)) + replyHeight(prompt, 'hand', 44) + 120 : 0) : 1000;
+    const history = histories.current[active], height = SHEET_HEIGHT;
     const drawingHandlers = { onPointerDown: down, onPointerMove: move, onPointerUp: up, onPointerCancel: cancel };
     return <TooltipProvider delayDuration={250}><SidebarProvider className="app parchment" data-light={candlelight ? "candle" : "day"} data-visible={tabVisible} data-depth={depth} style={{ "--warmth": warmth / 100 } as React.CSSProperties}><button className={`mobile-scrim ${mobileOpen ? 'open' : ''}`} aria-label="Close notebook menu" onClick={() => setMobileOpen(false)}/><Sidebar collapsible="none" className={`rail ${mobileOpen ? 'open' : ''}`} aria-label="Notebook pages" inert={isMobile && !mobileOpen} aria-hidden={isMobile && !mobileOpen}><div className="brand"><Feather className="brand-mark" strokeWidth={1.2}/><div className="brand-name">Enchanted<span>notebook</span></div></div><button className="new-page" onClick={() => showDialog('new')}><Plus size={17}/>New page</button><div className="book-picker"><Choice label="Your notebooks" value={bookId} options={books.map(b=>({value:b.id,label:b.title}))} onChange={id=>{const p=data?.pages.find(p=>(p.notebookId||'main')===id);if(p)go(p.id);}}/><button className="new-notebook-button" onClick={()=>{setMobileOpen(false);setNewTitle('');setNewBook(true);setNewOpen(true);}}>+ New notebook</button></div><nav className="pages">{visiblePages.map((p, i) => <button key={p.id} onClick={() => { go(p.id); if (p.document) {
         setReader(true);
@@ -551,13 +585,13 @@ export default function NotebookApp({ apiBase = '' }: {
         setReader(false); markedStrokes.current = []; }}><PenLine size={16}/>Back to notebook</button></div>{current?.document && <div className="reader-pager"><button className="icon-button" aria-label="Previous PDF page" disabled={current.document.page <= 1 || !!turn} onClick={() => turnPdf('backward')}><ChevronLeft /></button><span>Page {current.document.page} of {current.document.total}</span><button className="icon-button" aria-label="Next PDF page" disabled={current.document.page >= current.document.total || !!turn} onClick={() => turnPdf('forward')}><ChevronRight /></button></div>}</>}
  </div>
  <footer className="composer-area"><div className="suggestions"><span>Try a sample</span><button disabled={busy} onClick={() => sample('mitosis', 'Show me how cells divide.')}><FlaskConical />Cells divide</button><button disabled={busy} onClick={() => sample('doodle', 'Draw a happy guy.')}><Smile />Draw something</button><button disabled={busy} onClick={() => sample('language', 'Make a table comparing a and an.')}><Table2 />A or an?</button><button disabled={busy || !current} onClick={() => current&&void send('Quiz me on this topic.',{sample:true,page:current})}><GraduationCap />Quiz me</button></div>
- <div className="flow-status" role="status">{flow.message}</div><div className="reply-controls"><label className="companion-recall"><Switch size="sm" aria-label="Across notebooks for this reply" checked={crossNotebook} onCheckedChange={setCrossNotebook}/><span>Across notebooks</span></label><label className="flow-toggle"><Switch size="sm" aria-label="Reply on pause" checked={auto} onCheckedChange={setAuto}/><span>Reply on pause</span></label>
+ <div className="flow-status" role="status">{flow.message}</div><div className="reply-controls"><label className="companion-recall"><Switch size="sm" aria-label="Across notebooks for this reply" checked={crossNotebook} onCheckedChange={setCrossNotebook}/><span>Across notebooks</span></label><label className="flow-toggle"><Switch size="sm" aria-label="Reply when handwriting pauses" checked={auto} onCheckedChange={setAuto}/><span>Handwriting on pause</span></label>
  <DropdownMenu onOpenChange={setControlsOpen}><DropdownMenuTrigger asChild><button className="reply-control-button" aria-label="Reply lettering"><Type/><span>{FONTS[replyFont]}</span><ChevronDown/></button></DropdownMenuTrigger><DropdownMenuContent className="reply-menu" side="top" align="start"><DropdownMenuRadioGroup value={replyFont} onValueChange={v => setReplyFont(v as ReplyFont)}>{Object.entries(FONTS).map(([value,label]) => <DropdownMenuRadioItem value={value} key={value}>{label}</DropdownMenuRadioItem>)}</DropdownMenuRadioGroup></DropdownMenuContent></DropdownMenu>
  <DropdownMenu onOpenChange={setControlsOpen}><DropdownMenuTrigger asChild><button className="reply-control-button" aria-label="Reply format"><Sparkles/><span>{replyFormat === 'auto' ? 'Format' : FORMATS[replyFormat]}</span><ChevronDown/></button></DropdownMenuTrigger><DropdownMenuContent className="reply-menu" side="top" align="start"><DropdownMenuRadioGroup value={replyFormat} onValueChange={v => setReplyFormat(v as ReplyFormat)}>{Object.entries(FORMATS).map(([value,label]) => <DropdownMenuRadioItem value={value} key={value}>{label}</DropdownMenuRadioItem>)}</DropdownMenuRadioGroup></DropdownMenuContent></DropdownMenu>
  <button className="reply-control-button originals-button" disabled={reader || busy} aria-label="Original ink" onClick={() => { setMobileOpen(false); setOriginalOpen(true); }}><RotateCcw/><span>Original ink</span></button></div>
- <form className="composer" onSubmit={typeOnPage}><PenLine size={18}/><input ref={promptInput} aria-label={typePoint ? 'Text to place on page' : 'Write to your companion'} value={prompt} maxLength={1000} onChange={e => editPrompt(e.target.value)} onCompositionStart={() => { setComposing(true); clearTimeout(responseTimer.current); }} onCompositionEnd={() => setComposing(false)} onKeyDown={e => { if (e.key === 'Enter' && (e.nativeEvent.isComposing || composing)) e.preventDefault(); }} placeholder={typePoint ? auto ? 'Write here. Pause and the ink will answer…' : 'Write here, then place your words on the page…' : reader ? 'Ask about your reading…' : auto ? 'Write a thought. Pause. Watch the ink…' : 'Write a thought… the page will write back.'}/>
+ <form className="composer" onSubmit={typeOnPage}><PenLine size={18}/><input ref={promptInput} aria-label={typePoint ? 'Text to place on page' : 'Write to your companion'} value={prompt} maxLength={1000} onChange={e => editPrompt(e.target.value)} onCompositionStart={() => { setComposing(true); clearTimeout(responseTimer.current); }} onCompositionEnd={() => setComposing(false)} onKeyDown={e => { if (e.key === 'Enter' && (e.nativeEvent.isComposing || composing)) e.preventDefault(); }} placeholder={typePoint ? 'Type, then press Enter to place your words…' : reader ? 'Ask about your reading, then press Enter…' : 'Take your time. Press Enter when you’re ready…'}/>
  {busy ? <button type="button" className="stop-reply" onClick={stopReply}>Stop reply</button> : !reader && <ToolTip label="Read my new handwriting"><button type="button" className="icon-button" aria-label="Read my ink" disabled={!current?.strokes.some(s => !s.absorbedBy && s.tool === 'pen')} onClick={() => void send('', { ink: true })}><Sparkles size={17}/></button></ToolTip>}
- <ToolTip label={typePoint && !auto ? 'Place on the page' : 'Write to companion now'}><button className="send-button" aria-label={typePoint && !auto ? 'Place text' : 'Send thought'} disabled={busy || !prompt.trim() || composing}><ArrowUp /></button></ToolTip></form><div className="composer-hint"><span><button className="companion-model-label" onClick={()=>showDialog('settings')}>{live?runLabel||'AI configured · view model settings':'Connect AI in Settings · samples available'}</button></span><span>{auto ? 'Pause → OCR + fade · originals kept' : 'Pen, touch, or a little typing.'}</span></div><div className="stream-announcement" aria-live="polite" aria-atomic="true">{announcement}</div></footer></main></SidebarProvider>
+ <ToolTip label={typePoint && !auto ? 'Place on the page' : 'Write to companion now'}><button className="send-button" aria-label={typePoint && !auto ? 'Place text' : 'Send thought'} disabled={busy || !prompt.trim() || composing}><ArrowUp /></button></ToolTip></form><div className="composer-hint"><span><button className="companion-model-label" onClick={()=>showDialog('settings')}>{live?runLabel||'AI configured · view model settings':'Connect AI in Settings · samples available'}</button></span><span>Typing sends only with Enter or Send.</span></div><div className="stream-announcement" aria-live="polite" aria-atomic="true">{announcement}</div></footer></main></SidebarProvider>
  <OriginalInk open={originalOpen} onOpenChange={setOriginalOpen} page={current} onRestore={restoreInk} onCloseAutoFocus={restoreNotebookFocus}/>
 
  <Dialog open={newOpen} onOpenChange={setNewOpen}><DialogContent className="modal vellum-dialog" onCloseAutoFocus={restoreNotebookFocus}><DialogHeader><DialogTitle>{newBook?'A new notebook.':'A fresh page.'}</DialogTitle><DialogDescription>Give this thought a place to begin.</DialogDescription></DialogHeader><form onSubmit={e => { e.preventDefault(); newBook?createNotebook():create(); }}><label className="modal-label" htmlFor="new-title">{newBook?'Notebook title':'Page title'}</label><input autoFocus id="new-title" className="modal-field" value={newTitle} maxLength={80} placeholder="What’s on your mind?" onChange={e => setNewTitle(e.target.value)}/><button className="modal-primary" style={{ marginTop: 18 }} type="submit">{newBook?'Open a new notebook':'Open a new page'}</button></form></DialogContent></Dialog>

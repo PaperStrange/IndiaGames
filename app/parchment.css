@@ -132,7 +132,7 @@
 }
 .book-ribbon {
     position: absolute; top: -10px; right: 39px; width: 22px; height: 62px;
-    background: linear-gradient(90deg, #3a3927, #687056 22%, #474e3b 67%, #2a3225);
+    background: linear-gradient(90deg, #470c14, #b3313c 22%, #8f1525 67%, #510c17);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 87%, 0 100%);
     z-index: 5; border-left: 1px solid #a29b7055;
     filter: drop-shadow(2px 3px 2px #33271088);

@@ -56,7 +56,14 @@ export type Notebook = {
     pages: Page[];
 };
 export const WIDTH = 760;
-export const uid = () => typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : Array.from(crypto.getRandomValues(new Uint8Array(16))).map(n => n.toString(16).padStart(2, '0')).join('');
+export function uid() {
+    if (typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 15) | 64;
+    bytes[8] = (bytes[8] & 63) | 128;
+    const hex = Array.from(bytes, value => value.toString(16).padStart(2, '0')).join('');
+    return `${hex.slice(0,8)}-${hex.slice(8,12)}-${hex.slice(12,16)}-${hex.slice(16,20)}-${hex.slice(20)}`;
+}
 export const block = (kind: Block['kind'], text: string, y: number, h: number, extra: Partial<Block> = {}): Block => ({ id: uid(), kind, text, x: 68, y, h, ...extra });
 export function newPage(title = 'Untitled thought', topic = 'free'): Page { return { id: uid(), title, topic, paper: 'grid', strokes: [], blocks: [] }; }
 export function initialNotebook(): Notebook {

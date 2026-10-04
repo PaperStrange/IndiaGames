@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import type { Notebook } from './notebook';
+import { uid } from './notebook.ts';
 
 const PREFIX = 'enchanted:pending:v1:';
 const entrySchema = z.object({
@@ -52,7 +53,7 @@ export class NotebookJournal {
             throw new Error('The device record belongs to another notebook account.');
         }
         const entry: JournalEntry = {
-            schema: 1, id: crypto.randomUUID(), scope: this.scope,
+            schema: 1, id: uid(), scope: this.scope,
             baseVersion, createdAt: Date.now(), notebook: structuredClone(notebook),
         };
         entrySchema.parse(entry);
