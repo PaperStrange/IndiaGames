@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "project": "MentalCityBeta",
+  "planning_version": "agile-v1",
+  "prepared_at": "2026-09-14",
+  "product_baseline": "alpha 0.4",
+  "documentation_baseline": "docs-v5",
+  "source_commit": "2cadd253452e6f9d806255fa532ca581816b71b2",
+  "basis": [
+    "User decisions in this project conversation",
+    "Consolidated LOCAL_MEMORY.json docs-v5",
+    "Roadmap v2 and competitive stress-test direction as recorded in handoff"
+  ],
+  "verification_scope": "Planning consistency only; no new implementation or live test claims",
+  "story_count": 27,
+  "sprint_1_candidate_ids": [
+    "MC-001",
+    "MC-002",
+    "MC-003",
+    "MC-004",
+    "MC-005",
+    "MC-006",
+    "MC-007"
+  ],
+  "sprint_1_preliminary_engineer_days": 14,
+  "all_statuses": "Proposed",
+  "external_tracker_created": false,
+  "chatgpt_project_sources_uploaded": false,
+  "file_count_including_this_manifest": 36,
+  "self_hash_excluded": true,
+  "files": [
+    {
+      "path": "00-START-HERE.MD",
+      "bytes": 2749,
+      "sha256": "b3f0ef1bf2186402a6091e2a9b5b1409d6942a5004c71be94a1e3afa409cd45b"
+    },
+    {
+      "path": "01-SPRINT-01-PLAN.MD",
+      "bytes": 4078,
+      "sha256": "2e2fd0ee61897193e7b2f7344d4c11938da42f9e0fecf2ba803c7e971102139a"
+    },
+    {
+      "path": "02-PRIORITIZED-BACKLOG.MD",
+      "bytes": 5589,
+      "sha256": "2e8dddebf317730dd3bc432dc035717ff68551441b40b3a35c95384879979554"
+    },
+    {
+      "path": "03-READY-DONE-AND-QA.MD",
+      "bytes": 4993,
+      "sha256": "36f3f32449cabc5ab2ffc3fac001507ddf3c4be818e28656cd40ac3b7ae35af9"
+    },
+    {
+      "path": "04-RISKS-DECISIONS-DEPENDENCIES.MD",
+      "bytes": 5146,
+      "sha256": "6fa7fc3633847cac1be407d6bbda4c9ee2236471fec6ca9486bb47c729de844a"
+    },
+    {
+      "path": "05-DISCOVERY-AND-METRICS.MD",
+      "bytes": 6331,
+      "sha256": "2a2ec6b6a810d142f540054118c3099727a48cdb6b7b54ba44ce10b4408f9968"
+    },
+    {
+      "path": "06-REVIEW-RETRO-AND-RELEASE.MD",
+      "bytes": 4452,
+      "sha256": "a50f48186732e1d2516af29fb97d25e4a731a1afe7a85c377d9dff73c27c067a"
+    },
+    {
+      "path": "BACKLOG.json",
+      "bytes": 53152,
+      "sha256": "c5d4a1c72c0e9ddec1aec044099519383f88b9110dbf30221952a3c851666331"
+    },
+    {
+      "path": "Story-Cards/MC-001.MD",
+      "bytes": 2524,
+      "sha256": "7181d5dda4fc66d4c90c80702a3629ceed8170338ed901953e3df14402dd08f6"
+    },
+    {
+      "path": "Story-Cards/MC-002.MD",
+      "bytes": 2424,
+      "sha256": "8c4198580c220b73e6bebbacd33b9ed20c502407858a29bfd9aea972bb0bc667"
+    },
+    {
+      "path": "Story-Cards/MC-003.MD",
+      "bytes": 2402,
+      "sha256": "4d509564d3ff180a38d5f68cd6d480ec713e00171f1ba66e43b45ef450e7834c"
+    },
+    {
+      "path": "Story-Cards/MC-004.MD",
+      "bytes": 2386,
+      "sha256": "d0124d07df35e56bf6061132f1cc3f00a87e7b96f9b25ae543ceb6722cdbadb0"
+    },
+    {
+      "path": "Story-Cards/MC-005.MD",
+      "bytes": 2493,
+      "sha256": "fc2424a01a64c37c5fd0367d979e9761e68357752aeebc097dfb8fee06e5b397"
+    },
+    {
+      "path": "Story-Cards/MC-006.MD",
+      "bytes": 2531,
+      "sha256": "0ba0461c5f088a7bbc5ae8aa2862e6e46c8848855395bf881435e73be19fd9c5"
+    },
+    {
+      "path": "Story-Cards/MC-007.MD",
+      "bytes": 2474,
+      "sha256": "3b5ccdada948873a4d107066184717191401351c31466c6d86ec766c63e011f9"
+    },
+    {
+      "path": "Story-Cards/MC-008.MD",
+      "bytes": 2338,
+      "sha256": "50987641c53b004e47f32015ac1939759530421d87c84ec6cc4704a32f86f66f"
+    },
+    {
+      "path": "Story-Cards/MC-009.MD",
+      "bytes": 2349,
+      "sha256": "f819801ec83cb2b2e3ea62a975ffdf138a65cd1b0952a09de2ac11d860318406"
+    },
+    {
+      "path": "Story-Cards/MC-010.MD",
+      "bytes": 2386,
+      "sha256": "3b0f6ac7cb1241ac9476641727c1b97cdb912da5e724f0ac16ae7bdfca02c6b5"
+    },
+    {
+      "path": "Story-Cards/MC-011.MD",
+      "bytes": 2475,
+      "sha256": "895ad9e94a1365337dd27f7073539d8db19b0019d883d85f0d9dc7d24da80896"
+    },
+    {
+      "path": "Story-Cards/MC-012.MD",
+      "bytes": 2433,
+      "sha256": "4f30933357c1c4c3b26146b910907c4d4840de799b82e70d6aa8cfa391c81095"
+    },
+    {
+      "path": "Story-Cards/MC-013.MD",
+      "bytes": 2500,
+      "sha256": "f2edc302d0efdf815ba33f11a06c34758c2fe85897d51affcc422883998bd330"
+    },
+    {
+      "path": "Story-Cards/MC-014.MD",
+      "bytes": 2339,
+      "sha256": "ab8786d9b8ccafd4ed9a7a3c7a2db5727e35ccf130d85957bd9e4863c916f3b0"
+    },
+    {
+      "path": "Story-Cards/MC-015.MD",
+      "bytes": 2331,
+      "sha256": "2a5942dd3b556932cf96a6b8e51431a29f570908b7f80c2937ebd97274ebc57f"
+    },
+    {
+      "path": "Story-Cards/MC-016.MD",
+      "bytes": 2394,
+      "sha256": "f697d905c4ff7b32d4c87846b4d5579e908fedad98786f9846359f1dfb6af1ab"
+    },
+    {
+      "path": "Story-Cards/MC-017.MD",
+      "bytes": 2420,
+      "sha256": "ec6ae5c0236804004db90704448749f33f49d1b4137506c3f193113a205f9c35"
+    },
+    {
+      "path": "Story-Cards/MC-018.MD",
+      "bytes": 2576,
+      "sha256": "416482281db9ca2469e5004d81e89beb2c301a90c45e29cdfc5a5a8debab8f46"
+    },
+    {
+      "path": "Story-Cards/MC-019.MD",
+      "bytes": 2268,
+      "sha256": "59fcd4cb3472a576e0935cd826b25893a805f83edd38933704f26a34fd83d65a"
+    },
+    {
+      "path": "Story-Cards/MC-020.MD",
+      "bytes": 2433,
+      "sha256": "31c22259f41dae2bb3b661a1fc424a2c607050026408d7b0a3ee0c3595cee57f"
+    },
+    {
+      "path": "Story-Cards/MC-021.MD",
+      "bytes": 2507,
+      "sha256": "18aa614bccdc9c7c1a0b92da343a00b94e94651fa737ebc52c402dcb577e078f"
+    },
+    {
+      "path": "Story-Cards/MC-022.MD",
+      "bytes": 2465,
+      "sha256": "3c3e041fef2e4701df81ae93367e49917464cc3b3018392e64a1e127bfb44bab"
+    },
+    {
+      "path": "Story-Cards/MC-023.MD",
+      "bytes": 2453,
+      "sha256": "506790324b34f56844cf31ff244989a42f31b8ea662ce9debaebea04b4166dbe"
+    },
+    {
+      "path": "Story-Cards/MC-024.MD",
+      "bytes": 2565,
+      "sha256": "2a2edfeb669b10107395ae8c0d98e4146d724449502f7abc9302cc0834d03fba"
+    },
+    {
+      "path": "Story-Cards/MC-025.MD",
+      "bytes": 2549,
+      "sha256": "7a72f6d7c4862df42a2b19cb84542b52cf24559fc79f77c33ddc73c2625483a9"
+    },
+    {
+      "path": "Story-Cards/MC-026.MD",
+      "bytes": 2356,
+      "sha256": "3d10f08e78cc348372934b9db221463ed096602f9713a621ddd916258d5bbc7f"
+    },
+    {
+      "path": "Story-Cards/MC-027.MD",
+      "bytes": 2577,
+      "sha256": "3c1272a50b4a4232f8c3d09b06a82a87cc3d7fe0bf7b387d112c8153e8364d18"
+    }
+  ]
+}

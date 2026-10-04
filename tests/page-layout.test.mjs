@@ -9,6 +9,7 @@ after(() => vite.close());
 const { paginateBlocks, placeReply, WRITING_BOTTOM, SHEET_HEIGHT } = await vite.ssrLoadModule('/lib/page-layout.ts');
 const { block, newPage } = await vite.ssrLoadModule('/lib/notebook.ts');
 const { recognitionMode } = await vite.ssrLoadModule('/lib/recognition-policy.ts');
+const { findInputPlacement, renderedBlockHeight } = await vite.ssrLoadModule('/lib/input-placement.ts');
 
 test('long replies keep every word on fixed pages in every lettering style', () => {
     const text = Array.from({length: 140}, (_, index) => `Thought ${index}: remember the exact words.`).join('\n');
@@ -63,4 +64,33 @@ test('long tables retain all rows and repeat column labels on continuation leave
         assert.equal(value.text.split('\n')[0], 'Item|Value');
         assert.ok(value.y + value.h <= WRITING_BOTTOM);
     }
+});
+
+test('a placement selected inside existing writing moves below its rendered content', () => {
+    const page = newPage('An existing leaf');
+    const existing = block('text', 'A full line of existing writing.\n'.repeat(5), 122, 20);
+    page.blocks.push(existing);
+    const placement = findInputPlacement(page, 'A new thought.', {x:100,y:140});
+    assert.ok(placement.y - 34 >= existing.y + renderedBlockHeight(existing) + 12);
+    assert.ok(placement.y + placement.h <= WRITING_BOTTOM);
+    assert.equal(page.blocks.length,1);
+    assert.equal(page.blocks[0],existing);
+});
+
+test('input uses an available location and reports a full leaf without moving old ink', () => {
+    const page = newPage('A full leaf');
+    page.blocks.push(block('text','Existing text.',122,740));
+    assert.equal(findInputPlacement(page,'A new thought.',{x:68,y:122}),undefined);
+    assert.equal(page.blocks[0].y,122);
+    assert.deepEqual(findInputPlacement(newPage(),'A new thought.',{x:100,y:350}),{x:100,y:350,h:54});
+});
+
+test('recognition ignores its own raw strokes and preserves other occupied regions', () => {
+    const page = newPage();
+    page.strokes.push({id:'raw',points:[[100,150,.5],[200,180,.5]],size:3,color:'#111',tool:'pen'});
+    const placed = findInputPlacement(page,'Recognized words.',{x:68,y:179},{strokeIds:['raw']});
+    assert.equal(placed.y,179);
+    page.blocks.push(block('text','An existing answer.',200,120));
+    const shifted = findInputPlacement(page,'Recognized words.',{x:68,y:179},{strokeIds:['raw']});
+    assert.ok(shifted.y - 34 > 320);
 });

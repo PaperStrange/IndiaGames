@@ -19,6 +19,7 @@ import './diary.css';
 import { chooseFormat, presentReply, mediaReply, replyHeight } from '@/lib/reply-presentation';
 import { consumeCompanionStream } from '@/lib/companion-stream';
 import { measurePaper } from '@/lib/paper-plane';
+import { findInputPlacement } from '@/lib/input-placement';
 import { OriginalInk } from './original-ink';
 import {CompanionSettings,Choice} from './companion-settings';
 import {useInkFlow} from './use-ink-flow';
@@ -279,22 +280,35 @@ export default function NotebookApp({ apiBase = '' }: {
     }
     function editPrompt(value:string){promptRef.current=value;setPrompt(value);}
     function stopReply(){abortReply.current?.abort();flow.restore(activeRef.current);setAnimated([]);}
+    function placeInput(text: string, page: Page, pendingInput: boolean, source?: string): Page | undefined {
+        const draftPageId = activeRef.current;
+        const preferred = page.id === draftPageId ? typePoint ?? undefined : undefined;
+        let placement = findInputPlacement(page, text, preferred);
+        if (!placement) {
+            placement = findInputPlacement({ ...page, blocks: [], strokes: [] }, text);
+            if (!placement) { toast.message('This thought needs more than one leaf. Keep this draft and send a shorter passage.'); return; }
+            if ((dataRef.current?.pages.length || 0) >= 200) { toast.message('This notebook has reached 200 leaves. Your draft is kept.'); return; }
+            page = create(`${page.title.slice(0,55)} · a new thought`, page.topic);
+        }
+        flow.inputStart(page.id);
+        const input = block('user', text.trim(), placement.y, placement.h, { x: placement.x, pendingInput, source });
+        updatePage(old => ({ ...old, blocks: [...old.blocks, input] }), true, page.id);
+        promptRef.current = ''; setPrompt('');
+        draftPages.current[draftPageId] = ''; draftPages.current[page.id] = '';
+        setTypePoint(null);
+        scrollToWriting(placement.y);
+        return dataRef.current!.pages.find(value => value.id === page.id);
+    }
     function restoreInk(exchange:string){flow.inputStart(activeRef.current);mutate(notebook=>({...notebook,pages:notebook.pages.map(p=>({...p,blocks:p.blocks.filter(b=>b.exchangeId!==exchange&&b.recognitionId!==exchange&&!(b.recognitionId&&b.absorbedBy===exchange)).map(b=>b.absorbedBy===exchange?{...b,absorbedBy:undefined,pendingInput:true}:b),strokes:p.strokes.map(s=>s.absorbedBy===exchange?{...s,absorbedBy:undefined}:s)}))}));setDissolving([]);toast.success('Your original ink is back on the page.');}
     async function send(text=promptRef.current,options:{source?:string;page?:Page;ink?:boolean;automatic?:boolean;sample?:boolean}={}) {
         let p=options.page||currentRef.current;
         if(!p||busyRef.current)return;
-        const draftPageId=p.id;
         if(options.sample){await respond(text,{...options,page:p});return;}
         if(reader&&!options.page)p=create('A question from my reading',p.topic);
         if(text.trim()) {
-            let y=typePoint?.y||nextY(p);
-            if(y+Math.min(replyHeight(text,'hand',44),WRITING_BOTTOM-WRITING_TOP)>WRITING_BOTTOM) {
-                p=create(`${p.title.slice(0,55)} · a new thought`,p.topic);
-                y=WRITING_TOP;
-            }
-            const input=block('user',text.trim(),y,replyHeight(text,'hand',44),{x:typePoint?.x||68,pendingInput:true,source:options.source});
-            updatePage(old=>({...old,blocks:[...old.blocks,input]}),true,p.id);
-            promptRef.current='';setPrompt('');draftPages.current[draftPageId]='';draftPages.current[p.id]='';setTypePoint(null);
+            const target=placeInput(text,p,true,options.source);
+            if(!target)return;
+            p=target;
         }
         flow.begin(p.id);
     }
@@ -366,7 +380,9 @@ export default function NotebookApp({ apiBase = '' }: {
         return; if (tool === 'select' && !reader) {
         return;
     } paperMap.current = readingPaper.current ? measurePaper(readingPaper.current) : null; paperMapHeight.current = reader ? pdfHeight.current : e.currentTarget.viewBox.baseVal.height; const p = point(e); if (tool === 'type' && !reader) {
-        setTypePoint({ x: Math.max(40, Math.min(140, p[0])), y: Math.max(110, p[1]) });
+        const placement=findInputPlacement(currentRef.current,' ',{x:p[0],y:p[1]});
+        if(placement) { setTypePoint(placement); scrollToWriting(placement.y); }
+        else { setTypePoint(null); toast.message('This leaf is full. Your next thought will use a new leaf when you send it.'); }
         promptInput.current?.focus();
         return;
     } if(!reader&&(tool==='pen'||tool==='erase')){flow.inputStart(activeRef.current);abortReply.current?.abort();} e.preventDefault(); e.currentTarget.setPointerCapture(e.pointerId); pointerId.current = e.pointerId; clearTimeout(responseTimer.current); if (tool === 'erase') {
@@ -431,12 +447,8 @@ export default function NotebookApp({ apiBase = '' }: {
         inkPath.current?.setAttribute('d', '');
     } }
     function answer(id: string, choice: string) { updatePage(p => ({ ...p, blocks: p.blocks.map(b => b.id === id ? { ...b, selected: choice, feedback: feedbackFor(b, choice) } : b) })); }
-    function typeOnPage(e: React.FormEvent) { e.preventDefault(); if (typePoint && prompt.trim() && !auto) {
-        const b = block('user', prompt.trim(), typePoint.y, replyHeight(prompt, 'hand', 44), { x: typePoint.x });
-        updatePage(p => ({ ...p, blocks: [...p.blocks, b] }));
-        editPrompt('');
-        setTypePoint(null);
-        setTool('pen');
+    function typeOnPage(e: React.FormEvent) { e.preventDefault(); if (tool === 'type' && prompt.trim() && !auto && !reader) {
+        if(currentRef.current&&placeInput(prompt,currentRef.current,false))setTool('pen');
     }
     else
         void send(); }
@@ -591,7 +603,7 @@ export default function NotebookApp({ apiBase = '' }: {
  <button className="reply-control-button originals-button" disabled={reader || busy} aria-label="Original ink" onClick={() => { setMobileOpen(false); setOriginalOpen(true); }}><RotateCcw/><span>Original ink</span></button></div>
  <form className="composer" onSubmit={typeOnPage}><PenLine size={18}/><input ref={promptInput} aria-label={typePoint ? 'Text to place on page' : 'Write to your companion'} value={prompt} maxLength={1000} onChange={e => editPrompt(e.target.value)} onCompositionStart={() => { setComposing(true); clearTimeout(responseTimer.current); }} onCompositionEnd={() => setComposing(false)} onKeyDown={e => { if (e.key === 'Enter' && (e.nativeEvent.isComposing || composing)) e.preventDefault(); }} placeholder={typePoint ? 'Type, then press Enter to place your words…' : reader ? 'Ask about your reading, then press Enter…' : 'Take your time. Press Enter when you’re ready…'}/>
  {busy ? <button type="button" className="stop-reply" onClick={stopReply}>Stop reply</button> : !reader && <ToolTip label="Read my new handwriting"><button type="button" className="icon-button" aria-label="Read my ink" disabled={!current?.strokes.some(s => !s.absorbedBy && s.tool === 'pen')} onClick={() => void send('', { ink: true })}><Sparkles size={17}/></button></ToolTip>}
- <ToolTip label={typePoint && !auto ? 'Place on the page' : 'Write to companion now'}><button className="send-button" aria-label={typePoint && !auto ? 'Place text' : 'Send thought'} disabled={busy || !prompt.trim() || composing}><ArrowUp /></button></ToolTip></form><div className="composer-hint"><span><button className="companion-model-label" onClick={()=>showDialog('settings')}>{live?runLabel||'AI configured · view model settings':'Connect AI in Settings · samples available'}</button></span><span>Typing sends only with Enter or Send.</span></div><div className="stream-announcement" aria-live="polite" aria-atomic="true">{announcement}</div></footer></main></SidebarProvider>
+ <ToolTip label={tool === 'type' && !auto && !reader ? 'Place on the page' : 'Write to companion now'}><button className="send-button" aria-label={tool === 'type' && !auto && !reader ? 'Place text' : 'Send thought'} disabled={busy || !prompt.trim() || composing}><ArrowUp /></button></ToolTip></form><div className="composer-hint"><span><button className="companion-model-label" onClick={()=>showDialog('settings')}>{live?runLabel||'AI configured · view model settings':'Connect AI in Settings · samples available'}</button></span><span>Typing sends only with Enter or Send.</span></div><div className="stream-announcement" aria-live="polite" aria-atomic="true">{announcement}</div></footer></main></SidebarProvider>
  <OriginalInk open={originalOpen} onOpenChange={setOriginalOpen} page={current} onRestore={restoreInk} onCloseAutoFocus={restoreNotebookFocus}/>
 
  <Dialog open={newOpen} onOpenChange={setNewOpen}><DialogContent className="modal vellum-dialog" onCloseAutoFocus={restoreNotebookFocus}><DialogHeader><DialogTitle>{newBook?'A new notebook.':'A fresh page.'}</DialogTitle><DialogDescription>Give this thought a place to begin.</DialogDescription></DialogHeader><form onSubmit={e => { e.preventDefault(); newBook?createNotebook():create(); }}><label className="modal-label" htmlFor="new-title">{newBook?'Notebook title':'Page title'}</label><input autoFocus id="new-title" className="modal-field" value={newTitle} maxLength={80} placeholder="What’s on your mind?" onChange={e => setNewTitle(e.target.value)}/><button className="modal-primary" style={{ marginTop: 18 }} type="submit">{newBook?'Open a new notebook':'Open a new page'}</button></form></DialogContent></Dialog>

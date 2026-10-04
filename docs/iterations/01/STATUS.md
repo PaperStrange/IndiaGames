@@ -42,3 +42,7 @@ Publication identifiers are recorded by the Site version/deployment service afte
 The browser limitation described above was resolved in this session through the built-in browser. Actual preview journeys now cover input-box pauses, explicit sending, fixed-size continuation leaves, page turning and save/reload. The browser used the animated CSS lighting fallback because WebGL was unavailable.
 
 Composer submission, reply pagination, red ribbon, directional lighting and provider-only vision recognition are implemented. Selected automated checks increased to 17 passing tests. Live provider and physical-device evidence remains open. See [UX fixes and QA record](./UX-FIXES-2026-10-04.md) for scope, evidence and remaining limits; M0 is still in progress.
+
+## Input placement and scenario review
+
+Occupied-page text placement and recognition normalization use rendered content bounds. The desktop browser verified text beneath an existing illustration and cursor-aligned ink on the scrolled page. Selected tests now total 20 passes. Current card states and the next-sprint scenario work are recorded in [the agile progress review](./AGILE-PROGRESS-2026-10-04.md) and [sprint preparation](../02/SPRINT-PREPARATION.md).

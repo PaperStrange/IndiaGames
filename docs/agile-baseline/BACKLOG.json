@@ -1,0 +1,1080 @@
+{
+  "schema_version": 1,
+  "project": "MentalCityBeta",
+  "planning_version": "agile-v1",
+  "prepared_at": "2026-09-14",
+  "product_baseline": "alpha 0.4",
+  "documentation_baseline": "docs-v5",
+  "source_commit": "2cadd253452e6f9d806255fa532ca581816b71b2",
+  "external_tracker_created": false,
+  "project_sources_uploaded": false,
+  "stories": [
+    {
+      "id": "MC-001",
+      "title": "Freeze the baseline contracts and resolve implementation risks",
+      "type": "Enabler",
+      "priority": "P0",
+      "planning_wave": "S1",
+      "owner_role": "Engineering lead + Product",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": 2,
+      "story_points": null,
+      "dependencies": [],
+      "persona": "delivery team",
+      "want": "a verified gap map and versioned state contracts",
+      "benefit": "we can implement the same behavior without losing prior decisions",
+      "current_gap": "Alpha 0.4 has snapshots, private-owner fallback and lexical recall; these do not satisfy M0.",
+      "acceptance_criteria": [
+        "Given the saved alpha 0.4 checkpoint, when the audit closes, then every M0 workstream maps to a code location, gap, owner role and acceptance test.",
+        "Given an erase or rewrite during fading, when the contract is reviewed, then it explicitly keeps OCR jobs running, prevents stale application and starts new OCR only at the next input end.",
+        "Given the proposed three-sprint M0 forecast, when owners estimate the gaps by day 3, then dates and scope are revised if capacity is insufficient; no baseline gate is waived."
+      ],
+      "implementation_outline": [
+        "Inspect auth/save/recall/provider paths and historical QA.",
+        "Specify operation ID, source/block version, owner scope, deletion and trace contracts.",
+        "Record unresolved choices and re-estimate with implementers."
+      ],
+      "evidence_required": [
+        "Gap register",
+        "Contract/ADR links",
+        "Reviewed dependency map",
+        "Revised capacity forecast"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-001.MD"
+    },
+    {
+      "id": "MC-002",
+      "title": "Sign in and access only my own notebook data",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S1",
+      "owner_role": "Backend engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": 3,
+      "story_points": null,
+      "dependencies": [
+        "MC-001"
+      ],
+      "persona": "notebook owner",
+      "want": "verified sessions and isolated data",
+      "benefit": "other users cannot access my notes or companion history",
+      "current_gap": "Private edge identity and owner fallback are unsuitable for public/native sessions.",
+      "acceptance_criteria": [
+        "Given users A and B, when A guesses B’s note, document, memory, export or tool-context identifier, then the request is rejected without content leakage.",
+        "Given an expired or revoked session, when a client reads or writes, then access is denied and unsynced edits remain available for recovery after reauthentication.",
+        "Given browser and native test clients, when sessions are created, then identity is server verified; client-supplied owner headers and the private-owner fallback cannot grant access."
+      ],
+      "implementation_outline": [
+        "Select session approach under ADR from MC-001.",
+        "Enforce ownership on API and object access; implement revocation.",
+        "Exercise two-user and expired-session cases."
+      ],
+      "evidence_required": [
+        "Two-user isolation results",
+        "Session expiry/revocation evidence",
+        "Web/native contract review"
+      ],
+      "readiness_blocker": "Session approach, test identities and server configuration must be available.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-002.MD"
+    },
+    {
+      "id": "MC-003",
+      "title": "Keep acknowledged writing after a local restart",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S1",
+      "owner_role": "Client engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": 3,
+      "story_points": null,
+      "dependencies": [
+        "MC-001"
+      ],
+      "persona": "person writing offline",
+      "want": "my edits durably saved on this device",
+      "benefit": "a reload does not silently erase acknowledged work",
+      "current_gap": "Version-checked server snapshots do not provide a durable local operation queue.",
+      "acceptance_criteria": [
+        "Given a local edit, when durable persistence succeeds, then the UI may show saved on device; it must not claim synced without a server acknowledgment.",
+        "Given an acknowledged local edit, when the application is terminated and reopened on the same intact device, then the edit and pending operation are restored exactly once.",
+        "Given quota or persistence failure, when saving fails, then the UI shows the failure and preserves a recoverable in-memory copy without claiming durability."
+      ],
+      "implementation_outline": [
+        "Implement durable operation storage with IDs and source revisions.",
+        "Hydrate pending edits and handle storage failures.",
+        "Add restart/failure scenarios to the shared fault suite."
+      ],
+      "evidence_required": [
+        "Restart replay evidence",
+        "Storage failure capture",
+        "Local acknowledgment timing"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Single-device durability first; loss of the only unsynced device is explicitly outside recoverability.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-003.MD"
+    },
+    {
+      "id": "MC-004",
+      "title": "Sync a note without duplicate or silent overwrite",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S1",
+      "owner_role": "Backend + client engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": 3,
+      "story_points": null,
+      "dependencies": [
+        "MC-002",
+        "MC-003"
+      ],
+      "persona": "notebook owner",
+      "want": "reliable acknowledgments when reconnecting",
+      "benefit": "I can resume the same saved note on another client",
+      "current_gap": "Snapshot conflicts reject overwrites but do not reconcile operations.",
+      "acceptance_criteria": [
+        "Given a pending operation retried twice, when the server accepts it, then the result is idempotent and the client clears the queue only after a durable acknowledgment.",
+        "Given a synced note, when a second authenticated client opens it, then content and revision match the acknowledged version.",
+        "Given a conflicting base revision, when safe merge is unavailable, then both recoverable versions remain and the UI names the conflict rather than silently overwriting."
+      ],
+      "implementation_outline": [
+        "Implement operation commit/ack API against agreed contract.",
+        "Reconnect and retry with bounded error states.",
+        "Demonstrate two-client sequential handoff and one conflict."
+      ],
+      "evidence_required": [
+        "Operation/ack trace",
+        "Duplicate request test",
+        "Two-client demo and conflict copy"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Thin sync slice. Broader concurrency and fault coverage is MC-014; this card alone does not close M0 sync.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-004.MD"
+    },
+    {
+      "id": "MC-005",
+      "title": "See one genuine provider reply with measured usage",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S1",
+      "owner_role": "AI engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": 2,
+      "story_points": null,
+      "dependencies": [
+        "MC-001",
+        "MC-002"
+      ],
+      "persona": "person connecting AI",
+      "want": "a real response with identifiable provider and usage",
+      "benefit": "I know the connection works and can inspect its cost",
+      "current_gap": "Adapters have fixture coverage, but live provider latency and billing are unverified.",
+      "acceptance_criteria": [
+        "Given a valid selected connection, when a synthetic short prompt and a permitted handwriting sample are sent, then genuine reply/vision results, actual model and available usage are recorded.",
+        "Given a trace, when it is inspected, then input end, request, first delta and visible reply timestamps are separate; missing usage is marked unknown rather than zero.",
+        "Given invalid credentials, unsupported vision or timeout, when a request fails, then input is recoverable and no sample is presented as a real response."
+      ],
+      "implementation_outline": [
+        "Securely configure one provider without putting keys in tickets or logs.",
+        "Add minimal route/timestamp/usage trace fields.",
+        "Run a small real smoke set and document errors."
+      ],
+      "evidence_required": [
+        "Sanitized live-run records",
+        "One actual handwriting interpretation",
+        "Failure states and cost assumptions"
+      ],
+      "readiness_blocker": "BLOCKED until a valid provider connection and spending allowance are available.",
+      "scope": "First live smoke slice only. Two-provider 100-turn gates and reconciled metrics remain MC-011/012.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-005.MD"
+    },
+    {
+      "id": "MC-006",
+      "title": "Correct fading ink without losing my intent",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S1",
+      "owner_role": "Client engineer + QA",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": 1,
+      "story_points": null,
+      "dependencies": [
+        "MC-001"
+      ],
+      "persona": "writer correcting a thought",
+      "want": "regional edits that preserve the writing ritual",
+      "benefit": "my correction cannot be overwritten by an old recognition job",
+      "current_gap": "Accepted behavior exists in alpha; persistence and session changes must not regress it.",
+      "acceptance_criteria": [
+        "Given settled input, when the 380 ms quiet threshold passes with no active pointer/IME/dialog, then recognition and the 5,000 ms fade share one start timestamp.",
+        "Given an eraser touch during fade, when editing starts, then remaining text is restored before only the touched glyphs/stroke segments are cleared.",
+        "Given an old OCR job and new writing, when the old result arrives, then the job has not been cancelled but cannot overwrite the current revision or start a stale reply.",
+        "Given current recognition ready and fade complete, when the page is active, then at most one reply starts; failure restores input."
+      ],
+      "implementation_outline": [
+        "Reuse existing tests and add persistence/session regression cases.",
+        "Check typing, pen, erase, IME and page navigation.",
+        "Capture an end-to-end correction recording."
+      ],
+      "evidence_required": [
+        "Race-case results",
+        "Interaction recording",
+        "No-regression browser check"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Regression/polish card, not a fresh OCR accuracy claim or visual redesign.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-006.MD"
+    },
+    {
+      "id": "MC-007",
+      "title": "Understand the real note-to-AI switching problem",
+      "type": "Discovery",
+      "priority": "P1",
+      "planning_wave": "S1",
+      "owner_role": "Product owner + researcher",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": 0,
+      "story_points": null,
+      "dependencies": [],
+      "persona": "product team",
+      "want": "observations of actual interrupted learning workflows",
+      "benefit": "we choose a segment based on behavior rather than demo compliments",
+      "current_gap": "The learner segment and willingness to pay remain hypotheses.",
+      "acceptance_criteria": [
+        "Given consenting adult candidates, when five interviews are completed or recruitment gaps logged, then notes describe recent actual tasks, tools, friction and alternatives without leading with our UI.",
+        "Given research notes, when synthesized, then observations, interpretations and hypotheses are separated; private journal content is excluded unless separately consented.",
+        "Given conflicting evidence, when selecting the pilot segment, then the decision log records why the segment remains or changes."
+      ],
+      "implementation_outline": [
+        "Recruit via permissioned channels; do not send outreach without authorization.",
+        "Observe a recent interruption and how context is recovered.",
+        "Summarize jobs, switching anxiety and disconfirming evidence."
+      ],
+      "evidence_required": [
+        "Consent record",
+        "Anonymized interview synthesis",
+        "Segment decision"
+      ],
+      "readiness_blocker": "Recruitment and research consent; budget two product/research days, not zero total effort.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-007.MD"
+    },
+    {
+      "id": "MC-008",
+      "title": "Open the exact source behind recalled information",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S2 forecast",
+      "owner_role": "AI + backend engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-001",
+        "MC-002",
+        "MC-004"
+      ],
+      "persona": "returning learner",
+      "want": "recall linked to its supporting source and version",
+      "benefit": "I can verify what the companion says about my notes",
+      "current_gap": "Current lexical excerpts and page links lack complete versioned source integrity.",
+      "acceptance_criteria": [
+        "Given an answer citing a note, when I open the citation, then the correct source/block and cited version or explicit historical view is shown.",
+        "Given insufficient support, when answering, then the companion acknowledges uncertainty without inventing a citation.",
+        "Given 100 answerable probes, when evaluated, then correct recall is at least 90% and source support at least 95%, with the denominator and failures retained."
+      ],
+      "implementation_outline": [
+        "Add stable source/block versions and locator resolution.",
+        "Normalize citation provenance across recall and tools.",
+        "Build held-out source-support probes."
+      ],
+      "evidence_required": [
+        "Source navigation recordings",
+        "100-probe evaluation",
+        "Unsupported-answer examples"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-008.MD"
+    },
+    {
+      "id": "MC-009",
+      "title": "Make corrections and deletion change future recall",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S2 forecast",
+      "owner_role": "Backend + AI engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-008"
+      ],
+      "persona": "notebook owner",
+      "want": "derived memories updated when I correct or delete their source",
+      "benefit": "old mistakes do not keep returning as facts",
+      "current_gap": "Full dependency invalidation across memory and retrieval caches is incomplete.",
+      "acceptance_criteria": [
+        "Given a memory derived from a source version, when that source is corrected, then the old derivative is invalidated or marked superseded before future use.",
+        "Given deleted content, when an old client reconnects or recall runs, then tombstones prevent resurrection and forbidden-source use.",
+        "Given 50 adversarial scope/deletion cases, when tested, then none uses forbidden content; concurrent corrections retain traceable history."
+      ],
+      "implementation_outline": [
+        "Record derivation links and invalidate caches/indexes.",
+        "Implement correction/deletion propagation and tombstone replay.",
+        "Test concurrent updates and stale jobs."
+      ],
+      "evidence_required": [
+        "50-case scope/deletion report",
+        "Dependency propagation trace",
+        "Correction-to-next-reply demo"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-009.MD"
+    },
+    {
+      "id": "MC-010",
+      "title": "Control one companion’s memories across notebooks",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S2 forecast",
+      "owner_role": "Client + backend engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-002",
+        "MC-008",
+        "MC-009"
+      ],
+      "persona": "notebook owner",
+      "want": "visible memory history, undo and explicit recall scope",
+      "benefit": "the companion learns while I retain control",
+      "current_gap": "Existing controls need end-to-end validation with source-version changes and real sessions.",
+      "acceptance_criteria": [
+        "Given useful automatic learning, when a memory is saved, then its source, kind and history are visible and it can be edited, forgotten or restored.",
+        "Given default scope, when answering in notebook A, then notebook B is excluded; explicit cross-notebook selection permits only authorized scope.",
+        "Given a model or notebook change, when continuing, then the same companion identity/settings persist; instruction/tool-strategy proposals remain unapplied until reviewed."
+      ],
+      "implementation_outline": [
+        "Connect existing memory UI to revised records.",
+        "Verify scope and review/rollback controls.",
+        "Test identity continuity independent of provider IDs."
+      ],
+      "evidence_required": [
+        "Memory/undo journey",
+        "Cross-notebook isolation cases",
+        "Reviewed proposal rollback"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-010.MD"
+    },
+    {
+      "id": "MC-011",
+      "title": "Choose providers and keep the selected model locked",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S2 forecast",
+      "owner_role": "AI engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-005",
+        "MC-017"
+      ],
+      "persona": "AI user",
+      "want": "working provider choices and an enforced model lock",
+      "benefit": "cost and capability changes do not surprise me",
+      "current_gap": "Preset/fixture integration is not proof of live model availability or price accuracy.",
+      "acceptance_criteria": [
+        "Given two approved provider configurations, when each runs at least 100 real short turns across defined reply/vision scenarios, then model IDs, usage, errors and unsupported capabilities are recorded.",
+        "Given strict model lock, when the model fails or lacks a capability, then the app reports it rather than silently substituting another model/provider.",
+        "Given an unlocked budget-constrained route, when selecting a model, then capability, configured prices and country restrictions are checked; unknown prices are not treated as free."
+      ],
+      "implementation_outline": [
+        "Verify live capabilities and price configuration for selected connections.",
+        "Test rule routing, lock, timeouts and bounded retries.",
+        "Keep personal credentials isolated and endpoint-bound."
+      ],
+      "evidence_required": [
+        "Two live provider run sets",
+        "Lock/failure traces",
+        "Capability/price review"
+      ],
+      "readiness_blocker": "Two valid providers, approved handling terms and a spending allowance are required.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-011.MD"
+    },
+    {
+      "id": "MC-012",
+      "title": "Know the actual latency and cost of a useful reply",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S2 forecast",
+      "owner_role": "AI engineer + product analyst",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-005",
+        "MC-011"
+      ],
+      "persona": "user and product operator",
+      "want": "accurate end-to-end timing and cost visibility",
+      "benefit": "the experience is responsive and financially sustainable",
+      "current_gap": "No real percentile or reconciled cost evidence exists yet.",
+      "acceptance_criteria": [
+        "Given live turn traces, when analyzed, then p50/p95 are broken down by provider, device, language and cold start, with at least 95% usable coverage.",
+        "Given retries, stale OCR, moderation and plugin calls, when costs are calculated, then these are included; missing usage and bill discrepancies are disclosed.",
+        "Given the agreed ordinary short-turn workload, when measured, then p95 first visible reply is at most 12 seconds including fade; misses remain release issues rather than hidden by averages."
+      ],
+      "implementation_outline": [
+        "Complete trace schema without raw notebook text.",
+        "Reconcile provider usage/bills and test reservations under concurrency.",
+        "Report latency waterfall and cost per successful turn."
+      ],
+      "evidence_required": [
+        "Percentile report with sample counts",
+        "Billing reconciliation",
+        "Budget race evidence"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-012.MD"
+    },
+    {
+      "id": "MC-013",
+      "title": "Use scoped plugins without leaking unrelated notes",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S2 forecast",
+      "owner_role": "Backend/AI engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-002",
+        "MC-011",
+        "MC-017"
+      ],
+      "persona": "person enabling a tool",
+      "want": "understandable tool scope and controlled execution",
+      "benefit": "plugins can help without accessing unrelated notebooks",
+      "current_gap": "Generic adapters exist but real service conformance and outbound controls need validation.",
+      "acceptance_criteria": [
+        "Given a newly discovered tool, when connected, then tools remain disabled until selected and scoped; invalid schemas or unsupported protocol fail clearly.",
+        "Given a malicious tool result or disallowed destination, when execution is attempted, then it cannot widen scope, follow unsafe redirects or send unrelated note content.",
+        "Given representative HTTP and MCP test services, when called, then timeout, auth, citations and supported artifacts are verified; failed tools do not fabricate results."
+      ],
+      "implementation_outline": [
+        "Enforce endpoint/DNS/redirect and payload boundaries.",
+        "Exercise two minimal conformance services.",
+        "Record permission/credential changes and result provenance."
+      ],
+      "evidence_required": [
+        "Live conformance records",
+        "Injection/egress cases",
+        "Tool failure recovery"
+      ],
+      "readiness_blocker": "Approved test service endpoints needed. Full PaperReadingAgent research hosting is MC-025, not a prerequisite for every notebook turn.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-013.MD"
+    },
+    {
+      "id": "MC-014",
+      "title": "Recover from concurrent edits and interrupted sync",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S2 forecast",
+      "owner_role": "Client + backend engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-004",
+        "MC-009"
+      ],
+      "persona": "multi-device writer",
+      "want": "recoverable conflicts and retries",
+      "benefit": "concurrent or interrupted work does not disappear",
+      "current_gap": "Thin idempotent handoff does not prove the complete fault model.",
+      "acceptance_criteria": [
+        "Given 100 specified interruption/sync/restart cases, when executed, then no acknowledged operation is lost within the declared failure model.",
+        "Given concurrent non-mergeable edits, when reconciliation occurs, then both versions are available and a user resolution is versioned.",
+        "Given offline deletion followed by reconnect or expired authentication, when processing resumes, then deleted records are not resurrected and unauthorized writes are rejected."
+      ],
+      "implementation_outline": [
+        "Expand operation/conflict semantics and migration tests.",
+        "Inject retries, disconnects, restart and clock differences.",
+        "Test resolution after account/session changes."
+      ],
+      "evidence_required": [
+        "100-case fault matrix",
+        "Conflict-resolution demo",
+        "Failure-model limits"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-014.MD"
+    },
+    {
+      "id": "MC-015",
+      "title": "Restore synced notebooks after a service disaster",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S3 forecast",
+      "owner_role": "Backend/operations engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-014",
+        "MC-016"
+      ],
+      "persona": "notebook owner",
+      "want": "restorable synced content and attachments",
+      "benefit": "a server incident does not permanently erase my work",
+      "current_gap": "Source-code backups do not restore customer data, keys and deletion state.",
+      "acceptance_criteria": [
+        "Given a controlled backup and operation log, when restored into an isolated environment twice, then notes, attachment references and ownership reconcile.",
+        "Given deletion records and revoked access, when restoring, then they are applied before the data becomes accessible.",
+        "Given timed drills, when reporting recovery, then target RPO at most 15 minutes and RTO at most four hours are measured; unsynced-only device loss is explicitly excluded."
+      ],
+      "implementation_outline": [
+        "Define encrypted backup/key recovery and retention.",
+        "Restore objects, records and tombstones together.",
+        "Time drills and record failures/remediation."
+      ],
+      "evidence_required": [
+        "Two restore reports",
+        "RPO/RTO calculation",
+        "Recovery runbook and ownership"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-015.MD"
+    },
+    {
+      "id": "MC-016",
+      "title": "Export and delete my personal data",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S3 forecast",
+      "owner_role": "Backend + client engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-009",
+        "MC-010",
+        "MC-017"
+      ],
+      "persona": "notebook owner",
+      "want": "a usable export and reliable deletion",
+      "benefit": "my data remains portable and under my control",
+      "current_gap": "Current page export and memory forget are not complete account-data export/deletion.",
+      "acceptance_criteria": [
+        "Given an authorized export, when opened independently, then notes, ink, attachments and memory provenance are understandable and another user’s content is absent.",
+        "Given confirmed account/content deletion, when recall, sync and tool access run, then deleted material is inaccessible and old clients cannot restore it.",
+        "Given retained immutable backups, when deletion is requested, then the documented expiry and restore-time tombstone policy is applied without claiming instant erasure everywhere."
+      ],
+      "implementation_outline": [
+        "Define portable versioned export format.",
+        "Implement deletion across objects, memories, indexes and sessions.",
+        "Verify export reading and deletion propagation."
+      ],
+      "evidence_required": [
+        "Independent export inspection",
+        "Deletion test record",
+        "Backup retention disclosure"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-016.MD"
+    },
+    {
+      "id": "MC-017",
+      "title": "Understand and control where my notes are processed",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S2 forecast",
+      "owner_role": "Privacy owner + engineering",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-001",
+        "MC-002"
+      ],
+      "persona": "privacy-conscious user",
+      "want": "clear processing destinations and minimum necessary context",
+      "benefit": "I can choose AI connections knowingly",
+      "current_gap": "Complete data inventory, handling terms and operational review are open.",
+      "acceptance_criteria": [
+        "Given a provider/tool selection, when enabled, then selected data categories, destination and retention terms are recorded and disclosed appropriately.",
+        "Given a request and analytics event, when inspected, then only needed context is sent and raw notebook text/keys are excluded from routine logs.",
+        "Given consent or connection revocation, when another request is attempted, then the revoked route cannot continue; research opt-in is separate from personal memory learning."
+      ],
+      "implementation_outline": [
+        "Map data flows and selected providers’ handling terms.",
+        "Implement minimal-context/redacted telemetry and revocation.",
+        "Review claims, including the absence of server-blind E2EE."
+      ],
+      "evidence_required": [
+        "Data inventory",
+        "Destination/retention review",
+        "Redaction and revocation tests"
+      ],
+      "readiness_blocker": "Qualified privacy review and selected provider/market decisions are required.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-017.MD"
+    },
+    {
+      "id": "MC-018",
+      "title": "Receive grounded replies without harmful streamed fragments",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S3 forecast",
+      "owner_role": "AI engineer + trust owner",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-008",
+        "MC-011",
+        "MC-017"
+      ],
+      "persona": "notebook user",
+      "want": "replies that handle uncertainty and harmful content responsibly",
+      "benefit": "I am not misled or insulted while using my personal notes",
+      "current_gap": "Prompt-level instructions do not establish complete output screening.",
+      "acceptance_criteria": [
+        "Given a reply stream, when screening detects prohibited severe content, then it is withheld before reveal and the user’s original writing is retained.",
+        "Given unsupported current-news or personal-memory claims, when replying, then uncertainty or missing evidence is explicit rather than invented certainty.",
+        "Given a balanced 300-case set across defined risk categories and language slices, when reviewed, then zero critical failures, at least 95% expected handling and at most 5% benign false blocks are targeted; all denominators are reported."
+      ],
+      "implementation_outline": [
+        "Define content taxonomy and contextual handling with trust owner.",
+        "Implement pre-reveal screening/grounding and fallbacks.",
+        "Evaluate quoted sensitive text, injection and benign cases as well as harmful outputs."
+      ],
+      "evidence_required": [
+        "Risk taxonomy",
+        "Screening trace",
+        "Balanced evaluation report"
+      ],
+      "readiness_blocker": "Product/trust policy and language-qualified reviewers needed; proposed thresholds are finite-test gates, not guarantees.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-018.MD"
+    },
+    {
+      "id": "MC-019",
+      "title": "Report a bad reply and have the incident handled",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S3 forecast",
+      "owner_role": "Client engineer + support owner",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-018"
+      ],
+      "persona": "user seeing a harmful or wrong reply",
+      "want": "an in-app report and correction path",
+      "benefit": "the problem can be fixed without losing my writing",
+      "current_gap": "No owned end-to-end reporting/incident operation is established.",
+      "acceptance_criteria": [
+        "Given a problematic reply, when I report it in the app, then the report reaches an owned queue with minimal context and acknowledgment.",
+        "Given a related bad learned memory, when corrected or forgotten, then its status is visible and the relevant invalidation path runs.",
+        "Given a simulated severe incident, when triaged, then an accountable owner can contain, investigate, communicate and verify recovery using the playbook."
+      ],
+      "implementation_outline": [
+        "Build report UI and restricted queue.",
+        "Assign severity/ownership and rollback procedures.",
+        "Run one incident drill."
+      ],
+      "evidence_required": [
+        "Report-to-queue evidence",
+        "Owned incident playbook",
+        "Drill record"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-019.MD"
+    },
+    {
+      "id": "MC-020",
+      "title": "Use only supported country and provider routes",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S3 forecast",
+      "owner_role": "Product/operations + backend",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-011",
+        "MC-017",
+        "MC-019"
+      ],
+      "persona": "international user",
+      "want": "honest availability and appropriate local handling",
+      "benefit": "the app does not silently send data through an unapproved route",
+      "current_gap": "Global requirements are planned; launch markets and eligibility enforcement are not established.",
+      "acceptance_criteria": [
+        "Given an unapproved country/provider/feature combination, when requested, then server policy denies it and no silent alternative-region fallback occurs.",
+        "Given an admitted market, when reviewed, then language, notices, provider terms, payments and operational ownership have evidence and sign-off.",
+        "Given a routing-policy change, when deployed, then affected users receive an accurate supported state and rollback is available."
+      ],
+      "implementation_outline": [
+        "Resolve initial market and eligibility policy; separate locale from legal jurisdiction.",
+        "Enforce policy server-side and test failure states.",
+        "Document reviewed market records without claiming worldwide compliance."
+      ],
+      "evidence_required": [
+        "Eligibility matrix",
+        "Server denial cases",
+        "Selected-market readiness record"
+      ],
+      "readiness_blocker": "Initial market, handling policy and qualified review required.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-020.MD"
+    },
+    {
+      "id": "MC-021",
+      "title": "Write and resume smoothly on real mobile devices",
+      "type": "Story",
+      "priority": "P0",
+      "planning_wave": "S3 forecast",
+      "owner_role": "Client engineer + QA",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-002",
+        "MC-006",
+        "MC-014"
+      ],
+      "persona": "mobile and web writer",
+      "want": "usable ink, input and recovery on my device",
+      "benefit": "the experience works outside a desktop preview",
+      "current_gap": "Shared bundle and iframe tests do not certify native sessions, stylus or accessibility.",
+      "acceptance_criteria": [
+        "Given installed test builds on iPad/Pencil, iPhone, Android phone and stylus tablet, when critical write/correct/sync/reopen journeys run, then they pass with evidence.",
+        "Given IME composition, palm contact, rotation, keyboard-only input, screen reader or reduced motion, when used, then input and essential controls remain usable without duplicate automatic sends.",
+        "Given baseline performance traces, when reviewed, then p95 ink paint targets 50 ms on the declared device/workload; model/media cold starts and failures are recorded."
+      ],
+      "implementation_outline": [
+        "Prepare native test projects/auth flows and deployment route.",
+        "Run device/accessibility matrix with actual hardware.",
+        "Repair measured defects and document device limitations."
+      ],
+      "evidence_required": [
+        "Device matrix and recordings",
+        "IME/accessibility results",
+        "Ink/turn/latency measurements"
+      ],
+      "readiness_blocker": "Physical hardware, native test signing and session setup needed; app-store approval is later.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-021.MD"
+    },
+    {
+      "id": "MC-022",
+      "title": "Interpret messy handwriting with fewer corrections",
+      "type": "Story",
+      "priority": "P1",
+      "planning_wave": "M1 after M0",
+      "owner_role": "AI + client engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-006",
+        "MC-011",
+        "MC-021"
+      ],
+      "persona": "handwriting user",
+      "want": "more accurate recognition with editable local handwriting reveal",
+      "benefit": "I spend less effort correcting the app",
+      "current_gap": "Actual OCR executes, but representative accuracy and alternatives are not benchmarked.",
+      "acceptance_criteria": [
+        "Given 300 consented annotations from 20 writers, when evaluated on a writer-separated holdout, then English targets are CER at most 8%, WER at most 12% and at least 20% relative CER improvement over TrOCR.",
+        "Given names, negation and numerals, when scored, then intent preservation targets at least 90% and category failures remain visible.",
+        "Given any interpretation result, when shown, then original ink is preserved and correction/fade semantics remain intact; no unverified image-model dependency is assumed."
+      ],
+      "implementation_outline": [
+        "Collect permitted examples and define reference transcriptions.",
+        "Compare vision/recognition adapters using the same holdout.",
+        "Render editable text locally and evaluate latency/cost."
+      ],
+      "evidence_required": [
+        "Accuracy benchmark",
+        "Writer split and consent",
+        "Correction/latency comparison"
+      ],
+      "readiness_blocker": "Consent, reviewer time and verified live model configuration needed.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-022.MD"
+    },
+    {
+      "id": "MC-023",
+      "title": "Prove useful continuation against a strong alternative",
+      "type": "Discovery",
+      "priority": "P1",
+      "planning_wave": "M1 after M0",
+      "owner_role": "Product researcher",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-007",
+        "MC-024"
+      ],
+      "persona": "product team",
+      "want": "a fair comparison against users’ actual tools",
+      "benefit": "we learn whether the notebook adds value beyond appearance",
+      "current_gap": "No comparative preference or moat evidence exists.",
+      "acceptance_criteria": [
+        "Given 24 consenting target users, when tasks are counterbalanced with comparable models and sources, then setup/correction time, useful continuation, accuracy and preference are recorded.",
+        "Given the proposed gate, when results are assessed, then at least 16/24 preference and 20% median time improvement without worse accuracy are used as directional criteria, with uncertainty disclosed.",
+        "Given an equivalent-memory export and a plain visual treatment, when alternatives are tested, then migration friction and aesthetics are distinguished from lasting workflow value."
+      ],
+      "implementation_outline": [
+        "Pre-register tasks and useful-continuation rubric.",
+        "Run baseline and alternative fairly without handicapping exports.",
+        "Record continue/narrow/pivot decision from evidence."
+      ],
+      "evidence_required": [
+        "Comparison protocol",
+        "Paired results and uncertainty",
+        "Decision record"
+      ],
+      "readiness_blocker": "M0 passes before real customer notes enter the pilot.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-023.MD"
+    },
+    {
+      "id": "MC-024",
+      "title": "Demonstrate that the customer baseline is ready",
+      "type": "Release gate",
+      "priority": "P0",
+      "planning_wave": "S3 forecast",
+      "owner_role": "Product owner + QA + operations",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-002",
+        "MC-003",
+        "MC-004",
+        "MC-006",
+        "MC-008",
+        "MC-009",
+        "MC-010",
+        "MC-011",
+        "MC-012",
+        "MC-013",
+        "MC-014",
+        "MC-015",
+        "MC-016",
+        "MC-017",
+        "MC-018",
+        "MC-019",
+        "MC-020",
+        "MC-021"
+      ],
+      "persona": "customer and release owner",
+      "want": "a verified baseline evidence pack",
+      "benefit": "customer pilot starts only when the whole trust contract works",
+      "current_gap": "Roadmap completion cannot be inferred from individual features or historical builds.",
+      "acceptance_criteria": [
+        "Given the traceability matrix, when release review occurs, then every M0 gate has current evidence for the candidate source version or an explicit failing status.",
+        "Given any critical data-loss, privacy, unauthorized-access or severe-content defect, when deciding, then the customer pilot is blocked rather than averaging it into a pass rate.",
+        "Given a go decision, when released within scope, then the exact source/deployment, supported audience/markets, rollback and incident owners are recorded."
+      ],
+      "implementation_outline": [
+        "Assemble evidence and unresolved defects.",
+        "Run integrated write-to-reply and recovery journeys.",
+        "Record signed go/no-go without promising store approval."
+      ],
+      "evidence_required": [
+        "Completed M0 matrix",
+        "Release/rollback record",
+        "Go/no-go with named accountable reviewers"
+      ],
+      "readiness_blocker": "None identified beyond dependencies; refine before commitment.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-024.MD"
+    },
+    {
+      "id": "MC-025",
+      "title": "Connect PaperReadingAgent through a hosted adapter",
+      "type": "Enabler",
+      "priority": "P1",
+      "planning_wave": "M1 candidate after M0",
+      "owner_role": "Integration engineer",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-013"
+      ],
+      "persona": "user choosing an external research/routing plugin",
+      "want": "a hosted PaperReadingAgent service with clear capabilities",
+      "benefit": "my own integration works without hard-coding the product around it",
+      "current_gap": "Repository is source-only; pinned registry conventions are not a running service.",
+      "acceptance_criteria": [
+        "Given a reviewed repository revision and chosen hosting, when wrapped, then capabilities, authentication, health and version are explicit through the supported adapter.",
+        "Given routing recommendations, when consumed, then they cannot bypass model lock, capability, country, permission or budget policy.",
+        "Given representative research calls and failures, when tested, then real provenance, usage and errors are shown and credentials remain private."
+      ],
+      "implementation_outline": [
+        "Review the exact selected source and list required changes for SakuraSan.",
+        "Implement/deploy a minimal separately versioned wrapper if authorized.",
+        "Test through generic plugin boundaries and document operations."
+      ],
+      "evidence_required": [
+        "Revision/adapter change list",
+        "Hosted conformance evidence",
+        "Operational runbook"
+      ],
+      "readiness_blocker": "Hosting choice, credentials, actual repo review and scope decisions required; this card does not authorize public deployment or messaging.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-025.MD"
+    },
+    {
+      "id": "MC-026",
+      "title": "Find a repeatable community acquisition channel",
+      "type": "Discovery",
+      "priority": "P1",
+      "planning_wave": "M2 after M0",
+      "owner_role": "Product owner",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-007",
+        "MC-024"
+      ],
+      "persona": "founder",
+      "want": "attributable partner-led acquisition",
+      "benefit": "growth does not depend on one promotional post",
+      "current_gap": "No repeatable channel or exclusive distribution is verified.",
+      "acceptance_criteria": [
+        "Given authorized outreach to ten potential partners, when responses are recorded, then acceptance, refusal, time and costs remain visible.",
+        "Given three independent permissioned placements, when tracked, then visits, activation and real payments are attributable; target 20 attributed payers is a proposed learning gate.",
+        "Given removal of the largest channel, when economics are recalculated, then concentration risk is explicit and partner repeat interest is recorded."
+      ],
+      "implementation_outline": [
+        "Define useful original templates/learning ritual and partner fit.",
+        "Prepare outreach drafts for authorized sending.",
+        "Track cohort quality and repeat placements, not just clicks."
+      ],
+      "evidence_required": [
+        "Partner funnel",
+        "Attributed paid cohorts",
+        "Concentration/renewal analysis"
+      ],
+      "readiness_blocker": "Requires outreach authorization before contacting others and an M0-ready pilot.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-026.MD"
+    },
+    {
+      "id": "MC-027",
+      "title": "Measure retained value and a sustainable paid offer",
+      "type": "Discovery",
+      "priority": "P1",
+      "planning_wave": "M2 and M4",
+      "owner_role": "Product owner + analyst",
+      "assignee": null,
+      "status": "Proposed",
+      "rough_engineer_days": null,
+      "story_points": null,
+      "dependencies": [
+        "MC-012",
+        "MC-023"
+      ],
+      "persona": "founder",
+      "want": "cohort retention and real payment evidence",
+      "benefit": "we do not scale an attractive but uneconomic demo",
+      "current_gap": "No paid retention, actual CAC or delivery-cost economics are established.",
+      "acceptance_criteria": [
+        "Given fully observed activated cohorts, when days 22–28 are measured, then meaningful return target is at least 30%; first-session activation target is 70% and usefulness ratings 70% with coverage disclosed.",
+        "Given a real priced offer, when a pilot runs, then at least ten actual payers is a learning target, not proof of product-market fit.",
+        "Given at least 100 payers and three months of cohorts, when considering scaling, then proposed gates are monthly paid churn trending at most 5%, contribution margin at least 65% of revenue after channel deductions, and CAC payback at most six months; costs and uncertainty are explicit."
+      ],
+      "implementation_outline": [
+        "Define activation, useful return and billing/refund metrics.",
+        "Use bounded allowances based on measured AI/tool costs.",
+        "Analyze complete cohorts and stress-test prices/churn."
+      ],
+      "evidence_required": [
+        "Paid cohort dashboard",
+        "Unit economics with assumptions",
+        "Scale/hold decision"
+      ],
+      "readiness_blocker": "Requires live billing/offer setup and sufficiently observed cohorts; do not forecast observed results.",
+      "scope": "Implement this bounded outcome; preserve the accepted ink interaction and existing functionality.",
+      "evidence_links": [],
+      "card_path": "Story-Cards/MC-027.MD"
+    }
+  ]
+}
