@@ -71,7 +71,7 @@ export function placeReply(notebook: Notebook, pageId: string, exchangeId: strin
     const index = pages.findIndex(page => page.id === pageId);
     pages[index].blocks.push(...sheets[0].map(b => ({ ...b, exchangeId })));
     const additions = sheets.slice(1).map((blocks, index): Page => ({
-        ...(existing[index] || { ...origin, id: uid(), strokes: [], blocks: [], annotations: undefined, document: undefined }),
+        ...(existing[index] || { ...origin, id: uid(), strokes: [], blocks: [], annotations: undefined, document: undefined, capture: undefined }),
         title: `${origin.title.slice(0, 55)} · continued ${index + 2}`,
         blocks: [...(pages.find(page => page.id === existing[index]?.id)?.blocks || []), ...blocks.map(b => ({ ...b, exchangeId }))],
     }));

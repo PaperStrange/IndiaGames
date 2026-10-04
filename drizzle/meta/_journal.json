@@ -15,6 +15,13 @@
       "when": 1789232224744,
       "tag": "0001_cynical_legion",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791136425503,
+      "tag": "0002_purple_captain_britain",
+      "breakpoints": true
     }
   ]
 }

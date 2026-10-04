@@ -1,4 +1,9 @@
 import { sqliteTable, text, integer, real, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
+export const paperCaptures = sqliteTable('paper_captures', {
+    id: text('id').primaryKey(), owner: text('owner').notNull(), notebookId: text('notebook_id').notNull(),
+    content: text('content').notNull(), originalKey: text('original_key').notNull(), preparedKey: text('prepared_key').notNull(),
+    fingerprint: text('fingerprint').notNull(), createdAt: integer('created_at').notNull(),
+}, table => [index('idx_paper_owner_notebook').on(table.owner, table.notebookId, table.createdAt)]);
 export const notebooks = sqliteTable('notebooks', { owner: text('owner').primaryKey(), content: text('content').notNull(), updatedAt: integer('updated_at').notNull() });
 export const documents = sqliteTable('documents', { id: text('id').primaryKey(), owner: text('owner').notNull(), name: text('name').notNull(), createdAt: integer('created_at').notNull() });
 export const companionLimits = sqliteTable('companion_limits', { owner: text('owner').primaryKey(), windowStart: integer('window_start').notNull(), count: integer('count').notNull() });

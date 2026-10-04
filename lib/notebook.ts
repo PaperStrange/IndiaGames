@@ -36,6 +36,7 @@ export type Block = {
     media?: 'owl' | 'forest' | 'cell-film';
 };
 export type Page = {
+    capture?: { id: string; pageLabel: string; transcription?: string };
     notebookId?: string;
     id: string;
     title: string;
