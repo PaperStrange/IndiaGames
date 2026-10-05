@@ -1,0 +1,73 @@
+{
+  "method": "Manually reconstructed from executed tool actions and inspected screenshots; not a raw continuous browser recording. Exact interaction coordinates where relevant are in journey entries.",
+  "journey": [
+    {
+      "stage": "Arrival",
+      "input": "Open itch listing and click Run game",
+      "outcome": "Game iframe stayed on blurred image; console logged IndexedDB unavailable. Same unchanged deployment loaded when opened as top-level URL.",
+      "evidence": [
+        "01-page.png",
+        "02-loading.png",
+        "03-after-load.png",
+        "05-direct-deployment.png"
+      ],
+      "interpretation": "Environment compatibility issue, not a universal consumer failure."
+    },
+    {
+      "stage": "Orientation",
+      "input": "Click question mark (1088,36), then highlighted alarm (668,300)",
+      "outcome": "Question mark briefly highlighted alarm; interaction supplied office-at-08:00 goal.",
+      "evidence": [
+        "06-help.png",
+        "07-phone.png"
+      ],
+      "interpretation": "A small goal gives immediate direction, but clue is transient."
+    },
+    {
+      "stage": "Navigation",
+      "input": "Use hand mode, exit apartment, move left through street to office door",
+      "outcome": "Door transitions and camera-follow movement reached Private Detective office. Accidental reentry and ground clicks occurred while camera was moving.",
+      "evidence": [
+        "09-office.png",
+        "14-street-left.png",
+        "20-case-opening.png"
+      ],
+      "interpretation": "Atmosphere is legible; agent camera timing is a confound."
+    },
+    {
+      "stage": "Read environment",
+      "input": "Click wall schedule then advance text (650,506)",
+      "outcome": "Schedule identified 00:00\u201308:00 Work, 08:00\u201313:00 Office, 13:00\u201318:00 Research.",
+      "evidence": [
+        "22-client-body-click.png",
+        "23-schedule.png"
+      ],
+      "interpretation": "World objects carry useful temporal context."
+    },
+    {
+      "stage": "Accept case",
+      "input": "Click client torso (593,313), choose police question (565,515), then successive first dialogue options around (585,506)",
+      "outcome": "Learned missing partner, urgency, active time machine and client inability to locate it; finally received Building 42, Apartment C.",
+      "evidence": [
+        "24-talk-selection.png",
+        "25-police-question.png",
+        "26-urgency.png",
+        "27-machine-explanation.png",
+        "28-machine-location.png",
+        "29-address-and-memory.png"
+      ],
+      "interpretation": "Curiosity is advanced through questions that turn a strange premise into a next action. Motivation hypothesis, not measured preference."
+    },
+    {
+      "stage": "Return to exploration",
+      "input": "Dismiss last dialogue (585,506); click inventory (198,565); select hand (201,460); exit (918,299)",
+      "outcome": "Address vanished from current display and no address note appeared in observed inventory state. Exited to street.",
+      "evidence": [
+        "30-case-accepted.png",
+        "31-inventory-after-case.png",
+        "32-leave-office.png"
+      ],
+      "interpretation": "A persistent discovered-lead pin could make interrupted play easier without answering the puzzle."
+    }
+  ]
+}

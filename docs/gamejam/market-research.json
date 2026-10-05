@@ -1,0 +1,426 @@
+{
+  "title": "One-day GameJam: evidence that changes what we build",
+  "date_utc": "2026-10-05",
+  "researcher": "reference_research agent",
+  "scope": "Focused competitor, criticism, platform and source-code reading. Actual game playthroughs are separate agents' evidence and must be joined by the coordinator.",
+  "evidence_rules": {
+    "source_read": "The linked page or pinned source file was opened during this session. A publisher describing a feature establishes a publisher claim, not measured player behavior.",
+    "critic_report": "An independent reviewer describes their own play. This is neither our playthrough nor representative audience research.",
+    "hypothesis": "A proposed motivation or advantage, awaiting player observation.",
+    "firsthand_play": "None performed by this research agent. Do not relabel repo notes or website browsing as current firsthand gameplay.",
+    "limits": "No market-size, retention, revenue, bonding, or unique-in-the-world claim is established by this research. No reviewer score is used as a causal explanation of demand. Existing branch research was inspected but not independently replicated wholesale."
+  },
+  "identity": [
+    {
+      "game": "Memorable Moments",
+      "repository": "PaperStrange/IndiaGames",
+      "branch": "memorable-moments-game",
+      "source_commit": "a6b3f3b7a5d14fe3d1e532762edab79c50e5b7a0",
+      "actual_concept": "Digital shared-moment creation, reveal, capture and keepsakes",
+      "note": "The identically named 2021 Hidden4Fun browser game found in initial search is unrelated and excluded."
+    },
+    {
+      "game": "Vivid 2.5D Photo",
+      "repository": "PaperStrange/IndiaGames",
+      "branch": "vivid-2.5d-photo-game",
+      "source_commit": "e0df14f4639d17fa06eb840bec06cdc13df587f2",
+      "actual_concept": "A still image becomes a responsive portrait with a personality and gameplay purpose"
+    },
+    {
+      "game": "The Thirteenth Bell",
+      "repository": "PaperStrange/IndiaGames",
+      "branch": "the-thirteenth-bell",
+      "source_commit": "369f0da82696caab98f8f68ede78f49da286d590",
+      "actual_concept": "Town mystery with repeated time phases, persistent knowledge and prediction",
+      "note": "Unrelated itch.io and gjserrano repositories with similar names are excluded."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1",
+      "decision": "Build an immediately playable browser slice before choosing a device product.",
+      "basis": "User direction; itch.io supports HTML/CSS/JS browser delivery. This is a distribution feasibility choice, not proof of audience demand."
+    },
+    {
+      "id": "D2",
+      "decision": "Withdraw the broad claim that nobody combines missions, reveal and memory archives.",
+      "basis": "Paired's current official FAQ lists response unlocking, Secret Missions, photo sharing and a Timeline. The older feature-map gap no longer establishes a defensible position.",
+      "sources": [
+        "paired-faq"
+      ]
+    },
+    {
+      "id": "D3",
+      "decision": "Differentiate on an observable five-minute experience, not a feature checklist or visual effect.",
+      "basis": "Each broad ingredient already has comparators: co-created party content, conversational characters and knowledge-driven mysteries. Exact jam executions remain hypotheses.",
+      "sources": [
+        "jackbox-custom",
+        "event0-store",
+        "suckup-store",
+        "mobius-curiosity"
+      ]
+    },
+    {
+      "id": "D4",
+      "decision": "Treat clear state transitions, save behavior and short feedback loops as collaboration boundaries.",
+      "basis": "Pinned source inspections show useful separations in A Dark Room, Hextris and inkjs; avoid inheriting their legacy global coupling.",
+      "sources": [
+        "github-adarkroom",
+        "github-hextris",
+        "github-inkjs"
+      ]
+    }
+  ],
+  "games": [
+    {
+      "game": "Memorable Moments",
+      "proposed_player_job": "Give two people a small, amusing reason to attend to each other and leave with something they made together.",
+      "why_play_status": "hypothesis",
+      "why_play": [
+        "Curiosity about how the other person sees the same moment",
+        "Low-pressure shared action instead of planning an elaborate activity",
+        "Authorship of a keepsake that refers to this pair's real interaction"
+      ],
+      "competitive_baseline": [
+        {
+          "source": "paired-faq",
+          "observed_page_claim": "Both partners answer to unlock a response; the app also offers weekly Secret Missions, photos and a personalized Timeline.",
+          "implication": "Reveal, missions and an archive are not individually differentiating, and their broad combination is already advertised."
+        },
+        {
+          "source": "jackbox-custom",
+          "observed_page_claim": "Drawful and Quiplash variants allow player-authored prompt episodes joined using room codes.",
+          "implication": "Player-generated content and inside jokes already power established party games."
+        },
+        {
+          "source": "drawful-critic",
+          "critic_report": "The reviewer found joining without account/app simple, but the minimum group size and per-player devices constrained where the game worked.",
+          "implication": "Two people sharing one browser is a concrete situational alternative worth testing, not a claim that all players dislike phones."
+        }
+      ],
+      "candidate_signature": "Predict privately, do one harmless action together, reveal two separately authored details, and leave with a co-authored keepsake in one sitting.",
+      "claim_to_avoid": "Scientifically proven to create memories or improve relationships; no competitor offers this combination.",
+      "critical_test": {
+        "question": "Does the joint action and mutual reveal create something worth retelling beyond an ordinary prompt card?",
+        "comparison": "Same pair tries a plain prompt card and the prototype in counterbalanced order; do not coach the prototype's intended emotion.",
+        "observe": [
+          "Time until both people contribute",
+          "Whether the second participant chooses to participate without repeated prompting",
+          "Whether each can recall a distinct partner detail after ten minutes",
+          "Unprompted retelling or desire to keep/export the artifact",
+          "Whether either opts into another round"
+        ],
+        "failure_signal": "Pairs complete forms but cannot name a memorable shared moment, or one participant does all the work.",
+        "limitation": "A solo agent can verify secret-state handling and export, but cannot establish actual social reciprocity or bonding."
+      }
+    },
+    {
+      "game": "Vivid 2.5D Photo",
+      "proposed_player_job": "Meet a character who notices a specific choice, remembers it and lets that relationship change a small puzzle.",
+      "why_play_status": "hypothesis",
+      "why_play": [
+        "Being recognized through a visible callback to one's own action",
+        "Curiosity about a character's motives",
+        "Agency from influencing how a conversation resolves a concrete problem"
+      ],
+      "competitive_baseline": [
+        {
+          "source": "event0-store",
+          "observed_page_claim": "Typed conversations with Kaizen, mood-dependent reactions and exploration work toward getting home.",
+          "implication": "Conversational agency and character mood already have a shipped game precedent."
+        },
+        {
+          "source": "suckup-store",
+          "observed_page_claim": "Players persuade AI characters, use disguises and create/share characters.",
+          "implication": "Free speech, response variation and custom characters alone are not a fresh promise."
+        },
+        {
+          "source": "event0-critic",
+          "critic_report": "The reviewer developed affection for Kaizen while also reporting keyword-triggered contextual failures and a slow opening.",
+          "implication": "A coherent persona may support attachment despite limited language, but avoid claiming open conversation when the implemented system cannot honor it."
+        }
+      ],
+      "candidate_signature": "A portrait remembers one concrete thing the player did, cites it later, and changes what it will permit; the player can immediately test that change.",
+      "claim_to_avoid": "Nobody has shipped a talking photo; parallax itself is a moat; a scripted demo is open-ended AI conversation.",
+      "critical_test": {
+        "question": "Is remembered agency more valuable than merely moving the portrait?",
+        "comparison": "Compare the same short interaction with contextual memory enabled and disabled; optionally hold memory fixed while disabling parallax.",
+        "observe": [
+          "Whether players notice the callback without being told",
+          "Whether they correctly connect the callback to their own earlier action",
+          "Whether they test an alternative action or return voluntarily",
+          "Whether they can describe what changed in the character's behavior",
+          "Confusion when unsupported input produces a stock reply"
+        ],
+        "failure_signal": "Players only describe the image motion, or read the memory callback as random/generic rather than earned.",
+        "limitation": "Authored-choice jam play tests a character-memory mechanic, not the reliability, latency or cost of a live AI service."
+      }
+    },
+    {
+      "game": "The Thirteenth Bell",
+      "proposed_player_job": "Become more capable because one understands the mystery, with the game making that knowledge visible and usable.",
+      "why_play_status": "hypothesis",
+      "why_play": [
+        "An unresolved question gives exploration a purpose",
+        "Correctly predicting a repeated event demonstrates competence",
+        "Changing the next loop turns previous failure into useful knowledge"
+      ],
+      "competitive_baseline": [
+        {
+          "source": "mobius-curiosity",
+          "observed_page_claim": "Outer Wilds' director describes curiosity and exploration as the design focus that led to its open structure.",
+          "implication": "Knowledge-based progress and curiosity are established design approaches, not a unique category claim."
+        },
+        {
+          "source": "roottrees-original",
+          "observed_page_claim": "The creator preserves the original Global Game Jam browser version alongside the commercial remake.",
+          "implication": "A browser mystery can serve as a playable, bounded proof before a larger product."
+        },
+        {
+          "source": "roottrees-critic",
+          "critic_report": "The reviewer praises highlight-to-search/note shortcuts and periodic correct-entry confirmation, while distinguishing satisfying deductions from caring about characters.",
+          "implication": "Remove transcription and navigation friction; make facts matter to a particular person rather than adding more clue inventory."
+        }
+      ],
+      "candidate_signature": "Make a prediction before travel, see the consequence, then use proven knowledge to make the next circuit shorter or meaningfully different.",
+      "claim_to_avoid": "Players universally enjoy time loops; more clues mean deeper mystery; a journal by itself differentiates the game.",
+      "critical_test": {
+        "question": "Does loop two feel like increased understanding rather than repeated reading?",
+        "comparison": "Observe the existing journey and revised knowledge/prediction journey with the same clue goal; alternate order for fresh human testers to reduce learning bias.",
+        "observe": [
+          "Player states a next-step theory in their own words",
+          "Clicks/time spent on already-seen text",
+          "Evidence used in a prediction versus random guessing",
+          "Time to first useful contradiction or changed consequence",
+          "Can explain what persisted after a reset",
+          "Voluntary second loop"
+        ],
+        "failure_signal": "Player repeats routes without a theory, mistakes reset for lost progress, or must re-read unchanged material to reach every new clue.",
+        "limitation": "An agent reading source code has foreknowledge; use browser-only cold play for empathy evidence and keep code-informed regression checks separate."
+      }
+    }
+  ],
+  "platform": {
+    "provisional_target": "itch.io browser builds",
+    "status": "Recommendation for the jam, not a publication or platform-demand claim",
+    "why": "Official support for embedded HTML/CSS/JS and direct HTML/ZIP distribution matches the existing lightweight games. Narrative and social loops can be presented with precise player-count and duration information.",
+    "itch_actions": [
+      "Package a root index.html with relative asset paths and exact filename case; verify it from a subdirectory and iframe.",
+      "Use a cover and first GIF that show the actual signature interaction, not a research report.",
+      "Clearly state two players/one device for Moments and solo play for the other slices.",
+      "Describe authored dialogue accurately; complete AI-disclosure fields truthfully if publishing generated material.",
+      "Enable mobile-friendly only after touch/viewport testing; upload files directly and avoid an unnecessary account wall."
+    ],
+    "crazygames_comparison": "CrazyGames' documentation emphasizes quick entry into gameplay, clear goals, consistent controls and little repetitive work. Moments adds a second-person prerequisite; Vivid adds text-entry expectations; Bell adds reading and replay pacing. These are design-fit questions to test, not documented categorical rejections. A launch there is a later submission decision, not assumed acceptance.",
+    "sources": [
+      "itch-html5",
+      "itch-quality",
+      "crazygames-quality",
+      "crazygames-requirements",
+      "crazygames-gameplay"
+    ],
+    "acquisition_hypothesis": "A short clip that proves the signature consequence will communicate each game more clearly than feature lists. Test comprehension by asking a viewer what they expect to do after seeing it.",
+    "device_sequence": [
+      "Desktop browser: complete one full loop",
+      "Touch browser: controls, keyboard behavior, layout, save/export",
+      "Only then evaluate native or framed-device distribution against measured needs"
+    ],
+    "crazygames_requirements": {
+      "basic": "The official summary allows Basic Launch without SDK customization, but with no monetization or external ads. Initial download is capped at 50 MB and total size at 50 MB without SDK. Applicable account requirements disallow external login options.",
+      "full": "Full Launch requires SDK integration and direct entry into gameplay. Basic gameplay checks include legibility in responsive iframe sizes such as 821×462 and 907×510, English localization, intuitive controls and smooth performance.",
+      "implication": "Our jam should test compact iframe layouts now; do not claim CrazyGames readiness or publication without its QA. Optional quality advice is distinct from these required checks."
+    }
+  },
+  "criticism_close_reads": [
+    {
+      "source": "drawful-critic",
+      "reviewer": "Dom Reseigh-Lincoln",
+      "date": "2018-06-22",
+      "reviewed_version": "Drawful 2, European Switch release",
+      "interpretation": "Low-friction browser joining coexists with real gathering/device constraints. Design for the situation in which people actually start, and be explicit about player count.",
+      "not_established": "The review cannot measure demand for a two-person browser alternative or current Drawful features."
+    },
+    {
+      "source": "event0-critic",
+      "reviewer": "Nic Rowen",
+      "date": "2016-09-14",
+      "reviewed_version": "Event[0] PC retail build supplied by publisher",
+      "interpretation": "The reviewer describes emotional rapport with a character yet notices contextual reply failures. A constrained authored character with concrete remembered consequences is a testable jam strategy.",
+      "not_established": "One critic's attachment does not establish population-level retention or prove that visual fidelity is unimportant."
+    },
+    {
+      "source": "roottrees-critic",
+      "reviewer": "Tom Sykes",
+      "date": "2025-02-08",
+      "reviewed_version": "The Roottrees are Dead commercial remake and included expansion, not the browser original",
+      "interpretation": "The review separates deduction satisfaction, frictionless information handling and attachment to people. Bell should make each of those independently observable.",
+      "not_established": "Do not attribute the remake's interface details to the original browser version unless the separate playtester observes them."
+    }
+  ],
+  "github_patterns": [
+    {
+      "id": "github-adarkroom",
+      "repository": "doublespeakgames/adarkroom",
+      "commit": "1fada4620b6c66bd07bf15a3f1eb8223df8bc1d7",
+      "license": "Mozilla Public License 2.0; read LICENSE.md",
+      "files_read": [
+        "script/state_manager.js lines 1-135",
+        "script/events/room.js lines 1-100",
+        "contributing.md",
+        "LICENSE.md lines 1-30"
+      ],
+      "source_links": [
+        "https://github.com/doublespeakgames/adarkroom/blob/1fada4620b6c66bd07bf15a3f1eb8223df8bc1d7/script/state_manager.js",
+        "https://github.com/doublespeakgames/adarkroom/blob/1fada4620b6c66bd07bf15a3f1eb8223df8bc1d7/script/events/room.js",
+        "https://github.com/doublespeakgames/adarkroom/blob/1fada4620b6c66bd07bf15a3f1eb8223df8bc1d7/LICENSE.md"
+      ],
+      "observed": "StateManager centralizes updates and emits stateUpdate; scene content is in an event collection with availability, text, button costs/rewards and transitions.",
+      "adopt": "Give content authors a scene schema and stable IDs. Put state mutation/save in one owner module so UI and story contributors do not invent competing persistence rules.",
+      "do_not_copy": "Legacy eval-based path handling and shared globals are not recommended. No game prose, art or implementation was copied."
+    },
+    {
+      "id": "github-hextris",
+      "repository": "Hextris/hextris",
+      "commit": "3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+      "license": "GPL-3.0-or-later, explicitly stated in README; LICENSE.md contains GPL v3",
+      "files_read": [
+        "js/input.js lines 1-100",
+        "js/update.js lines 1-75",
+        "js/render.js lines 1-70",
+        "README.md",
+        "LICENSE.md lines 1-45"
+      ],
+      "source_links": [
+        "https://github.com/Hextris/hextris/blob/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396/js/input.js",
+        "https://github.com/Hextris/hextris/blob/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396/js/update.js",
+        "https://github.com/Hextris/hextris/blob/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396/js/render.js",
+        "https://github.com/Hextris/hextris/blob/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396/README.md"
+      ],
+      "observed": "Input bindings, time-step update and canvas drawing are separate files, although they still rely on shared globals and render mutates some state.",
+      "adopt": "Keep device input adapters separate from game actions and visual rendering. Later touch support should call the same game actions rather than duplicate rules.",
+      "do_not_copy": "Do not mistake file splitting for full isolation. Prefer explicit state/action arguments in our own implementation; no Hextris code/assets copied."
+    },
+    {
+      "id": "github-inkjs",
+      "repository": "y-lohse/inkjs",
+      "commit": "6b1153410ab1c4bcfd9ef04eb2f0107f36be7778",
+      "kind": "Interactive-fiction runtime and playable browser templates, not a standalone commercial game",
+      "license": "MIT; read LICENSE.md",
+      "files_read": [
+        "README.md lines 1-170",
+        "templates/browser_serverless/main.js",
+        ".github/workflows/checks.yml",
+        "LICENSE.md"
+      ],
+      "source_links": [
+        "https://github.com/y-lohse/inkjs/blob/6b1153410ab1c4bcfd9ef04eb2f0107f36be7778/templates/browser_serverless/main.js",
+        "https://github.com/y-lohse/inkjs/blob/6b1153410ab1c4bcfd9ef04eb2f0107f36be7778/README.md",
+        "https://github.com/y-lohse/inkjs/blob/6b1153410ab1c4bcfd9ef04eb2f0107f36be7778/.github/workflows/checks.yml",
+        "https://github.com/y-lohse/inkjs/blob/6b1153410ab1c4bcfd9ef04eb2f0107f36be7778/LICENSE.md"
+      ],
+      "observed": "The browser template receives storyContent, advances Story, renders currentChoices and feeds the chosen index back; content is separate from presentation. It also respects reduced-motion preference. Its PR workflow runs build, tests and lint.",
+      "adopt": "Let writers edit content independently of the UI adapter. Use an explicit choice/state contract, honor reduced motion, and make a fresh checkout's documented commands the merge gate.",
+      "do_not_copy": "Do not insert untrusted player text with innerHTML merely because a trusted authored-story template does. No template implementation or story copied."
+    }
+  ],
+  "collaboration_application": {
+    "recommended_boundaries": [
+      "One branch and worktree per game",
+      "One owner for integration/build/state contracts",
+      "Story and tuning data separated from rules and UI",
+      "Input adapter separated from core actions",
+      "Generated build artifacts never edited by hand",
+      "Play evidence names build/commit, path taken, observed result and limits"
+    ],
+    "backup_rhythm": "Coordinator commits a runnable checkpoint before risky changes and after validated vertical slices, then pushes the matching game branch and verifies remote HEAD. Frequency follows meaningful milestones rather than blindly pushing broken edits.",
+    "merge_contract": "A contributor reports files owned, tested commands and known limitations; integration owner resolves shared interfaces before edits. These are proposals informed by inspected boundaries, not claims that the example repos prescribe this exact workflow."
+  },
+  "sources": [
+    {
+      "id": "paired-faq",
+      "kind": "primary product description",
+      "url": "https://www.paired.com/frequently-asked-questions",
+      "read_on": "2026-10-05",
+      "used_sections": "How does Paired work? / What can couples do on Paired?",
+      "not_used": "Marketing efficacy statistics and pricing do not establish our game demand."
+    },
+    {
+      "id": "jackbox-custom",
+      "kind": "primary product documentation",
+      "url": "https://www.jackboxgames.com/blog/about-custom-episodes-in-quiplash-2-drawful-2",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "event0-store",
+      "kind": "developer-authored store description",
+      "url": "https://store.steampowered.com/app/470260/Event0/",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "suckup-store",
+      "kind": "developer-authored store description",
+      "url": "https://store.steampowered.com/app/2726370/Suck_Up/",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "mobius-curiosity",
+      "kind": "primary developer interview on studio site",
+      "url": "https://www.mobiusdigitalgames.com/news/alex-the-nomai",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "roottrees-original",
+      "kind": "primary creator listing, search result checked; browser play delegated",
+      "url": "https://jjohnstongames.itch.io/the-roottrees-are-dead",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "drawful-critic",
+      "kind": "independent criticism, close read",
+      "url": "https://www.nintendolife.com/reviews/switch-eshop/drawful_2",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "event0-critic",
+      "kind": "independent criticism, close read",
+      "url": "https://www.destructoid.com/reviews/review-event0/",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "roottrees-critic",
+      "kind": "independent criticism, close read",
+      "url": "https://www.pcgamer.com/games/puzzle/the-roottrees-are-dead-review/",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "itch-html5",
+      "kind": "official platform documentation",
+      "url": "https://itch.io/docs/creators/html5",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "itch-quality",
+      "kind": "official platform documentation",
+      "url": "https://itch.io/docs/creators/quality-guidelines",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "crazygames-quality",
+      "kind": "official platform guidance; guidance distinct from mandatory requirements",
+      "url": "https://docs.crazygames.com/requirements/quality/",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "crazygames-requirements",
+      "kind": "official platform requirements",
+      "url": "https://docs.crazygames.com/requirements/intro/",
+      "read_on": "2026-10-05"
+    },
+    {
+      "id": "crazygames-gameplay",
+      "kind": "official platform gameplay requirements",
+      "url": "https://docs.crazygames.com/requirements/gameplay/",
+      "read_on": "2026-10-05"
+    }
+  ]
+}
