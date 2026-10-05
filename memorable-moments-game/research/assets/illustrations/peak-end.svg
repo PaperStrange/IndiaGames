@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380"><rect width="900" height="380" fill="#fafaf8" rx="16"/><style>
+text{font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+.title{font-size:20px;font-weight:700;fill:#1a1a2e}
+.sub{font-size:12.5px;fill:#55556a}
+.node{fill:#ffffff;stroke:#4f46e5;stroke-width:2}
+.nodet{font-size:13px;font-weight:700;fill:#1a1a2e}
+.noded{font-size:11px;fill:#55556a}
+.warn{fill:#fff7ed;stroke:#f59e0b;stroke-width:2}
+.warnt{font-size:13px;font-weight:700;fill:#92400e}
+.tag{font-size:10.5px;font-weight:700}
+</style>
+<text x="30" y="40" class="title">Design the peak and the ending — duration buys almost nothing</text>
+<text x="30" y="62" class="sub">Peak-end rule (Kahneman 1993): remembered utility = peak + end, not duration</text>
+<line x1="70" y1="300" x2="830" y2="300" stroke="#999" stroke-width="1.5"/>
+<line x1="70" y1="300" x2="70" y2="90" stroke="#999" stroke-width="1.5"/>
+<text x="830" y="322" text-anchor="end" class="sub">time →</text>
+<text x="52" y="100" text-anchor="end" class="sub">intensity</text>
+<path d="M70,270 C180,265 230,260 300,255 C360,250 380,140 450,135 C520,130 540,210 620,205 C700,200 760,190 830,185" fill="none" stroke="#4f46e5" stroke-width="4"/>
+<circle cx="450" cy="135" r="9" fill="#e11d48"/><text x="450" y="110" text-anchor="middle" class="tag" fill="#e11d48">ONE ENGINEERED PEAK</text>
+<circle cx="830" cy="185" r="9" fill="#0d9488"/><text x="800" y="160" text-anchor="end" class="tag" fill="#0d9488">WARM SHARED ENDING</text>
+<text x="180" y="292" text-anchor="middle" class="sub">no filler — flat stretches add nothing to memory</text></svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="680" viewBox="0 0 1080 680">
+<rect width="1080" height="680" fill="#fafaf8" rx="16"/>
+<style>text{font-family:'Segoe UI',system-ui,sans-serif}
+.t{font-size:20px;font-weight:700;fill:#1a1a2e}.sub{font-size:12px;fill:#55556a}
+.ax{font-size:13px;font-weight:700;fill:#1a1a2e}.lb{font-size:10.5px;fill:#33334a}
+.star{font-size:13px;font-weight:700;fill:#4f46e5}.note{font-size:11px;fill:#55556a;font-style:italic}</style>
+<text x="30" y="38" class="t">Competitor landscape — 33 products mapped</text>
+<text x="30" y="60" class="sub">x: conversation / keeping → moment-manufacturing · y: physical → digital</text>
+<rect x="660.4" y="100.0" width="349.6" height="200.0" fill="#4f46e5" opacity="0.06" rx="12"/>
+<rect x="660.4" y="100.0" width="349.6" height="200.0" fill="none" stroke="#4f46e5" stroke-width="2" stroke-dasharray="8,6" rx="12"/>
+<line x1="90" y1="600" x2="1010" y2="600" stroke="#999" stroke-width="1.5"/>
+<line x1="90" y1="100" x2="90" y2="600" stroke="#999" stroke-width="1.5"/>
+<text x="90" y="628" class="ax">conversation / keeping</text>
+<text x="1010" y="628" text-anchor="end" class="ax">moment-manufacturing →</text>
+<text x="78" y="600" text-anchor="end" class="ax">physical</text>
+<text x="78" y="106" text-anchor="end" class="ax">digital</text>
+<circle cx="710" cy="76" r="7" fill="#e11d48"/><text x="722" y="80" class="lb">physical</text>
+<circle cx="795" cy="76" r="7" fill="#4f46e5"/><text x="807" y="80" class="lb">mobile</text>
+<circle cx="875" cy="76" r="7" fill="#d97706"/><text x="887" y="80" class="lb">PC / console</text>
+<circle cx="710" cy="98" r="7" fill="#0d9488"/><text x="722" y="102" class="lb">web</text>
+<circle cx="881" cy="570" r="7" fill="#e11d48"/>
+<text x="891" y="558" class="lb">Adventure Challenge</text>
+<circle cx="366" cy="570" r="7" fill="#e11d48"/>
+<text x="376" y="588" class="lb">WNRS</text>
+<circle cx="237" cy="580" r="7" fill="#e11d48"/>
+<text x="247" y="568" class="lb">TableTopics</text>
+<circle cx="348" cy="550" r="7" fill="#e11d48"/>
+<text x="358" y="538" class="lb">The Skin Deep</text>
+<circle cx="292" cy="585" r="7" fill="#e11d48"/>
+<text x="302" y="603" class="lb">BestSelf</text>
+<circle cx="403" cy="560" r="7" fill="#e11d48"/>
+<text x="413" y="578" class="lb">Esther Perel</text>
+<circle cx="900" cy="290" r="7" fill="#d97706"/>
+<text x="910" y="278" class="lb">It Takes Two</text>
+<circle cx="863" cy="315" r="7" fill="#d97706"/>
+<text x="873" y="335" class="lb">A Way Out</text>
+<circle cx="918" cy="270" r="7" fill="#d97706"/>
+<text x="840" y="258" class="lb">Split Fiction</text>
+<circle cx="752" cy="310" r="7" fill="#d97706"/>
+<text x="762" y="298" class="lb">Keep Talking</text>
+<circle cx="716" cy="285" r="7" fill="#d97706"/>
+<text x="638" y="301" class="lb">We Were Here</text>
+<circle cx="808" cy="300" r="7" fill="#d97706"/>
+<text x="818" y="286" class="lb">Overcooked</text>
+<circle cx="844" cy="335" r="7" fill="#d97706"/>
+<text x="654" y="357" class="lb">Lovers in a Dangerous Spacetime</text>
+<circle cx="504" cy="300" r="7" fill="#d97706"/>
+<text x="514" y="288" class="lb">Stardew Valley</text>
+<circle cx="550" cy="320" r="7" fill="#d97706"/>
+<text x="560" y="338" class="lb">Minecraft</text>
+<circle cx="440" cy="210" r="7" fill="#4f46e5"/>
+<text x="450" y="198" class="lb">Paired</text>
+<circle cx="568" cy="190" r="7" fill="#4f46e5"/>
+<text x="578" y="178" class="lb">Spicer</text>
+<circle cx="605" cy="210" r="7" fill="#4f46e5"/>
+<text x="615" y="228" class="lb">Desire</text>
+<circle cx="421" cy="170" r="7" fill="#4f46e5"/>
+<text x="337" y="158" class="lb">Cozy Couples</text>
+<circle cx="338" cy="150" r="7" fill="#4f46e5"/>
+<text x="348" y="138" class="lb">Widgetable</text>
+<circle cx="476" cy="180" r="7" fill="#4f46e5"/>
+<text x="486" y="198" class="lb">Bondly</text>
+<circle cx="292" cy="250" r="7" fill="#4f46e5"/>
+<text x="302" y="238" class="lb">Between</text>
+<circle cx="265" cy="270" r="7" fill="#4f46e5"/>
+<text x="275" y="288" class="lb">FamilyAlbum</text>
+<circle cx="311" cy="230" r="7" fill="#4f46e5"/>
+<text x="251" y="216" class="lb">BackThen</text>
+<circle cx="338" cy="250" r="7" fill="#4f46e5"/>
+<text x="348" y="270" class="lb">Marco Polo</text>
+<circle cx="495" cy="240" r="7" fill="#4f46e5"/>
+<text x="505" y="228" class="lb">Cupla</text>
+<circle cx="394" cy="230" r="7" fill="#4f46e5"/>
+<text x="404" y="248" class="lb">Lasting</text>
+<circle cx="826" cy="160" r="7" fill="#0d9488"/>
+<text x="836" y="148" class="lb">Jackbox</text>
+<circle cx="660" cy="200" r="7" fill="#0d9488"/>
+<text x="670" y="218" class="lb">INREDA</text>
+<circle cx="476" cy="150" r="7" fill="#0d9488"/>
+<text x="396" y="138" class="lb">Sync or Swim</text>
+<circle cx="697" cy="220" r="7" fill="#0d9488"/>
+<text x="707" y="208" class="lb">Couple Storm</text>
+<circle cx="596" cy="130" r="7" fill="#0d9488"/>
+<text x="606" y="118" class="lb">Count Together</text>
+<circle cx="532" cy="200" r="7" fill="#0d9488"/>
+<text x="542" y="218" class="lb">OurCouple generator</text>
+<text x="945.6" y="240.0" text-anchor="middle" font-size="32">⭐</text>
+<text x="945.6" y="270.0" text-anchor="middle" class="star">OUR GAME</text>
+<text x="945.6" y="287.0" text-anchor="middle" class="lb">manufacture + preserve,</text>
+<text x="945.6" y="301.0" text-anchor="middle" class="lb">digital</text>
+<text x="30" y="666" class="note">Dashed quadrant = digital × manufacturing × preserve (capture/share). Jackbox and It Takes Two manufacture moments but keep no persistent keepsake — the preserve layer is the gap. Emptiness is a hypothesis, not proof of demand.</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480"><rect width="1000" height="480" fill="#fafaf8" rx="16"/><style>
+text{font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+.title{font-size:20px;font-weight:700;fill:#1a1a2e}
+.sub{font-size:12.5px;fill:#55556a}
+.node{fill:#ffffff;stroke:#4f46e5;stroke-width:2}
+.nodet{font-size:13px;font-weight:700;fill:#1a1a2e}
+.noded{font-size:11px;fill:#55556a}
+.warn{fill:#fff7ed;stroke:#f59e0b;stroke-width:2}
+.warnt{font-size:13px;font-weight:700;fill:#92400e}
+.tag{font-size:10.5px;font-weight:700}
+</style>
+<text x="30" y="40" class="title">Open decision gates, threat-ranked</text>
+<text x="30" y="62" class="sub">2026-10-03 ruling: digital/virtual is the priority form factor — gate 1 is now the whole ballgame</text>
+<rect x="30" y="100" width="940" height="40" rx="8" fill="#e11d48" opacity="0.85"/>
+<text x="48" y="126" font-size="14" font-weight="700" fill="#ffffff">1 · Prove the reveal/commitment loop works DIGITALLY</text>
+<rect x="30" y="150" width="870" height="40" rx="8" fill="#e11d48" opacity="0.85"/>
+<text x="48" y="176" font-size="14" font-weight="700" fill="#ffffff">2 · #3 vs #6 collision: which side gives?</text>
+<rect x="30" y="200" width="800" height="40" rx="8" fill="#0d9488" opacity="0.85"/>
+<text x="48" y="226" font-size="14" font-weight="700" fill="#ffffff">3 · Separate editions decided (couples / friends / family) — triple-converged</text>
+<rect x="30" y="250" width="730" height="40" rx="8" fill="#f59e0b" opacity="0.85"/>
+<text x="48" y="276" font-size="14" font-weight="700" fill="#ffffff">4 · Content supply past month 12</text>
+<rect x="30" y="300" width="660" height="40" rx="8" fill="#f59e0b" opacity="0.85"/>
+<text x="48" y="326" font-size="14" font-weight="700" fill="#ffffff">5 · LDR segment vs location-bound missions</text>
+<rect x="30" y="350" width="590" height="40" rx="8" fill="#0d9488" opacity="0.85"/>
+<text x="48" y="376" font-size="14" font-weight="700" fill="#ffffff">6 · Synchrony transfer — residual: phone-mediated only</text>
+<rect x="30" y="400" width="520" height="40" rx="8" fill="#0d9488" opacity="0.85"/>
+<text x="48" y="426" font-size="14" font-weight="700" fill="#ffffff">7 · Consent / takedown policy for shared captures</text></svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340" viewBox="0 0 1000 340"><rect width="1000" height="340" fill="#fafaf8" rx="16"/><style>
+text{font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+.title{font-size:20px;font-weight:700;fill:#1a1a2e}
+.sub{font-size:12.5px;fill:#55556a}
+.node{fill:#ffffff;stroke:#4f46e5;stroke-width:2}
+.nodet{font-size:13px;font-weight:700;fill:#1a1a2e}
+.noded{font-size:11px;fill:#55556a}
+.warn{fill:#fff7ed;stroke:#f59e0b;stroke-width:2}
+.warnt{font-size:13px;font-weight:700;fill:#92400e}
+.tag{font-size:10.5px;font-weight:700}
+</style>
+<text x="30" y="40" class="title">The open collision: #3 vs #6 — both cannot hold as stated</text>
+<rect x="30" y="90" width="300" height="130" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/><text x="180.0" y="116" text-anchor="middle" class="nodet">Finding #3</text><text x="180.0" y="136" text-anchor="middle" class="noded">everyone acts in the</text><text x="180.0" y="152" text-anchor="middle" class="noded">same time window</text><text x="180.0" y="168" text-anchor="middle" class="noded">synchrony bonds [REAL]</text>
+<rect x="670" y="90" width="300" height="130" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/><text x="820.0" y="116" text-anchor="middle" class="nodet">Finding #6</text><text x="820.0" y="136" text-anchor="middle" class="noded">loop must complete with</text><text x="820.0" y="152" text-anchor="middle" class="noded">a passive partner</text><text x="820.0" y="168" text-anchor="middle" class="noded">top killer [SECONDARY]</text>
+<line x1="330" y1="155" x2="420" y2="155" stroke="#e11d48" stroke-width="2.5"/><polygon points="420,155 411,150 411,160" fill="#e11d48"/>
+<line x1="670" y1="155" x2="580" y2="155" stroke="#e11d48" stroke-width="2.5"/><polygon points="580,155 589,150 589,160" fill="#e11d48"/>
+<rect x="430" y="105" width="140" height="100" rx="12" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+<text x="500" y="145" text-anchor="middle" class="warnt">⚠ [OPEN]</text>
+<text x="500" y="170" text-anchor="middle" class="noded">gated, not resolved</text>
+<text x="500" y="190" text-anchor="middle" class="noded">pilot must test</text>
+<text x="30" y="270" class="sub">First pilot: measure closeness gain with one passive player vs two active. The plan must name which side gives —</text>
+<text x="30" y="292" class="sub">narrow to motivated pairs + gift acquisition, or prove passivity-tolerant bonding. Until then, neither "kills async" nor "survives passivity" is settled.</text></svg>
