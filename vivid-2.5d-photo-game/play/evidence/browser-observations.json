@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-05",
+  "browser": "Chromium headless, /usr/bin/chromium",
+  "automated": true,
+  "notHumanEvidence": true,
+  "errors": [],
+  "observations": [
+    {
+      "action": "First arrival: intro and supported inputs",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA FOGBOUND EVENING\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nSome things become clear from a different angle.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s\nFrame.\n\nShe can see the sea.\nShe needs your hands to save the ferry.\n\n✦\nIONA, KEEPER OF THE EAST LIGHT\n\n“Most visitors look at a painting. You look as though you might listen.”\n\nLook around her frame. Find the safe signal. Decide what she gets to remember.\n\nStep closer\n→\n\nNo timer. No sound required. A small encounter, at your own pace.\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nGAME JAM / 2026"
+    },
+    {
+      "action": "Guess cannot bypass evidence",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA FOGBOUND EVENING\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nUse the lean buttons, or ← and →, to look behind the frame.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s Frame.\n✦\nIONA, KEEPER OF THE EAST LIGHT\n\n“You there. The ferry is coming, and I cannot reach outside this frame. Help me send the safe signal.”\n\nFind two harbour marks behind the frame. Lean left and right, then read what you uncover.\n\nYOUR HARBOUR MARKS\n0 / 2\nLook around the frame to find two harbour marks.\nSET THE LAMP\nBearing\nEast →\n← West\nFlash pattern\n• ━ •\n• • •\n━ • ━\nSend the signal\n→\n\nFind both harbour marks first. Iona needs evidence before opening the lamp.\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nGAME JAM / 2026\nYou there. The ferry is coming, and I cannot reach outside this frame. Help me send the safe signal."
+    },
+    {
+      "action": "Wrong signal: try again without losing clues",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA FOGBOUND EVENING\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nRead the brass plate →\nOpen her private letter →\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nBrass catches the light. A letter waits below.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s Frame.\n✦\nIONA, KEEPER OF THE EAST LIGHT\n\n“FERRY CALL · One short flash. One long flash. One short flash. Wait for the answering light.”\n\nUse your two harbour marks to set the lamp. Iona is ready when you are.\n\nYOUR HARBOUR MARKS\n2 / 2\nBearing · EAST\nRhythm · SHORT / LONG / SHORT\nSET THE LAMP\nBearing\nEast →\n← West\nFlash pattern\n• ━ •\n• • •\n━ • ━\nSend the signal\n→\n\nNo answer from the ferry. Compare your signal with the two harbour marks; you can try again.\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nGAME JAM / 2026\nFERRY CALL · One short flash. One long flash. One short flash. Wait for the answering light."
+    },
+    {
+      "action": "Ferry answers; keeper offers permission",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA LIGHT IN THE FOG\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nA ferry finds its way home.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s\nFrame.\n\nShe can see the sea.\nShe needs your hands to save the ferry.\n\n✦\nIONA, KEEPER OF THE EAST LIGHT\n\n“That is the way home. Look — the ferry is answering. You noticed what the fog tried to hide.”\n\nIona takes out a letter. “I was afraid every night. I kept the light anyway. You may add it to the harbour record, if you think it would help someone.”\n\nKeep the letter between us.\nA private promise. On your next visit, she will offer it freely.\nLet the harbour know her name.\nWith her permission, let her courage become public history.\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nGAME JAM / 2026\nThat is the way home. Look — the ferry is answering. You noticed what the fog tried to hide."
+    },
+    {
+      "action": "Private promise saved",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA LIGHT IN THE FOG\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nA ferry finds its way home.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s\nFrame.\n\nShe can see the sea.\nShe needs your hands to save the ferry.\n\n✦\nTHE FERRY IS HOME\nA promise between frames\n\nIona folds the letter back into its envelope. The ferry reaches the breakwater. One person knows what her courage cost.\n\nYou kept her letter private.\n\nLeave, then return\n↻\n\nEvery visit starts a new evening. Your promise crosses the frame.\n\nPromise saved in this browser. Return now to see what she remembers.\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nForget our visits\nGAME JAM / 2026\nIona folds the letter back into its envelope. The ferry reaches the breakwater. One person knows what her courage cost."
+    },
+    {
+      "action": "Reload recognizes concrete promise",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA FOGBOUND EVENING\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nSome things become clear from a different angle.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s\nFrame.\n\nShe can see the sea.\nShe needs your hands to save the ferry.\n\n✦\nA FAMILIAR VISITOR · 1 PROMISE KEPT\nIONA, KEEPER OF THE EAST LIGHT\n\n“You kept my letter between us. I remember. This time, I will open it for you — because you waited.”\n\nLook around her frame. Find the safe signal. Decide what she gets to remember.\n\nVisit Iona again\n→\n\nNo timer. No sound required. A small encounter, at your own pace.\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nForget our visits\nGAME JAM / 2026"
+    },
+    {
+      "action": "Returning guest receives letter by permission",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA FOGBOUND EVENING\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nRead the brass plate →\nRead the letter she offers →\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nBrass catches the light. A letter waits below.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s Frame.\n✦\nIONA, KEEPER OF THE EAST LIGHT\n\n“To whoever keeps this light after me: I was frightened every night. I turned it on anyway. — Iona”\n\nFind two harbour marks behind the frame. Lean left and right, then read what you uncover.\n\nYOUR HARBOUR MARKS\n0 / 2\nLook around the frame to find two harbour marks.\nSET THE LAMP\nBearing\nEast →\n← West\nFlash pattern\n• ━ •\n• • •\n━ • ━\nSend the signal\n→\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nForget our visits\nGAME JAM / 2026\nTo whoever keeps this light after me: I was frightened every night. I turned it on anyway. — Iona"
+    },
+    {
+      "action": "Second ending changes recognition",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA FOGBOUND EVENING\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nSome things become clear from a different angle.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s\nFrame.\n\nShe can see the sea.\nShe needs your hands to save the ferry.\n\n✦\nA FAMILIAR VISITOR · 2 PROMISES KEPT\nIONA, KEEPER OF THE EAST LIGHT\n\n“You put my name in the harbour record. They came back to thank me. I saved you a place beside the lamp.”\n\nLook around her frame. Find the safe signal. Decide what she gets to remember.\n\nVisit Iona again\n→\n\nNo timer. No sound required. A small encounter, at your own pace.\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nForget our visits\nGAME JAM / 2026\nWith Iona’s permission, you place her letter in the public record. The ferry reaches the breakwater. Tomorrow, the harbour will know who kept its light."
+    },
+    {
+      "action": "Premature letter opening persists honestly",
+      "url": "http://127.0.0.1:8112/",
+      "screen": "◈\nTHE LIVING COLLECTION\nONE FRAME. ONE PROMISE.\nMotion: on\nPORTRAIT № 001\nA FOGBOUND EVENING\nHARBOUR\nPROCEDURE\nEAST →\nFog rolls in.\nThe light stays on.\nFERRY CALL\n• ━ •\n1814\nI.\nIONA VALE\nKeeper of the East Light · 1814–1891\n← Lean left\nFace her\nLean right →\n\nSome things become clear from a different angle.\n\nA LIVING PORTRAIT · 3 MINUTES\nThe Keeper’s\nFrame.\n\nShe can see the sea.\nShe needs your hands to save the ferry.\n\n✦\nA FAMILIAR VISITOR · 1 PROMISE KEPT\nIONA, KEEPER OF THE EAST LIGHT\n\n“You looked before I said yes. Then you kept my secret. I remember both things. We can still do good work together.”\n\nLook around her frame. Find the safe signal. Decide what she gets to remember.\n\nVisit Iona again\n→\n\nNo timer. No sound required. A small encounter, at your own pace.\n\nOriginal illustration · Authored dialogue · Memory saved only in this browser\nForget our visits\nGAME JAM / 2026"
+    },
+    {
+      "action": "Keyboard only: Tab, Enter and arrows complete encounter with reduced motion"
+    },
+    {
+      "action": "390×844 emulated touch: full completion, no horizontal overflow"
+    },
+    {
+      "action": "821×462 browser/embed viewport: scrollable, no horizontal overflow; first clue usable"
+    },
+    {
+      "action": "Blocked browser storage: safe startup and explicit temporary-memory notice"
+    }
+  ]
+}
