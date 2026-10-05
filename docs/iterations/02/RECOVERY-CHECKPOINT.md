@@ -21,6 +21,14 @@ The previous build, TypeScript and 15 regression passes belong to the unavailabl
 - MC-034 device-measured 3D investigation and MC-035 dimensioned physical design.
 - Full customer-baseline review stays open. A source checkpoint is not a completed story or customer release.
 
+## Reconstructed candidate evidence
+
+The reconstructed candidate passed TypeScript and production build checks. The compiled-Worker integration test passed original-byte recovery after restart, idempotent retries, immutable and concurrent retakes, storage-scope rejection for another test owner, cross-notebook rejection, missing-provider reporting, and recovery into a clean D1/R2 environment. Fifteen existing pagination, ink-cycle and device-journal regressions passed.
+
+Desktop preview opened the capture interface. Its automated file-selection call did not respect its requested time limit, so full browser upload/export verification remains open. Photo selection uses the existing notebook `uid()` helper. Browser acceptance, actual authenticated two-user isolation, live-provider runs, disaster recovery and physical-device acceptance remain unverified. No story is marked Done from these checks.
+
+Verified remote checkpoints before the latest candidate: `c76632360fe80c838641ba6883ae4d80ea14fd8a` (recovery record) and `6ee22bdd0701bbbf9924c77dd3e1d7fff2998f35` (capture implementation). Source checkpoints have not changed the published Site version.
+
 ## Preservation procedure
 
 Commit and push each coherent source checkpoint before advancing to the next verification phase. Check the remote branch SHA against local HEAD. Keep secrets, uploads and runtime caches out of source commits. Record passing checks and blocked checks separately. Retain the existing published site until the candidate is verified for its declared scope.

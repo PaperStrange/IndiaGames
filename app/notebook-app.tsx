@@ -1,5 +1,11 @@
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
+import { Camera } from 'lucide-react';
+import { PaperCaptureDialog } from './paper-capture-dialog';
+import { usePaperTurn } from './use-paper-turn';
+import { captureUrl, type PaperCapture } from '@/lib/paper-capture';
+import { readJson } from '@/lib/capture-recovery';
 import { PenLine, Highlighter, Eraser, Type, MousePointer2, Undo2, Redo2, Plus, BookOpen, FileText, ChevronLeft, ChevronRight, ChevronDown, ArrowUp, ArrowUpRight, Check, Download, Menu, X, Sparkles, Settings2, HelpCircle, Maximize2, LoaderCircle, Leaf, FlaskConical, Smile, Table2, GraduationCap, Feather, Link2, NotebookPen, MoreHorizontal, RotateCcw, Flame, Sun } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -43,6 +49,8 @@ export default function NotebookApp({ apiBase = '' }: {
     apiBase?: string;
 }) {
     const isMobile = useIsMobile();
+    const [captureOpen, setCaptureOpen] = useState(false), [captureSource, setCaptureSource] = useState<string>();
+    const [correctionOpen, setCorrectionOpen] = useState(false), [photoCorrection, setPhotoCorrection] = useState('');
     const [companionStatus,setCompanionStatus]=useState<CompanionStatus|null>(null),[crossNotebook,setCrossNotebook]=useState(false),[runLabel,setRunLabel]=useState(''),[newBook,setNewBook]=useState(false);
     const [candlelight, setCandlelight] = useState(true), [warmth, setWarmth] = useState(65), [tabVisible, setTabVisible] = useState(true), [preferencesLoaded, setPreferencesLoaded] = useState(false);
     const [depth, setDepth] = useState(true), [replyFont, setReplyFont] = useState<ReplyFont>('hand'), [replyFormat, setReplyFormat] = useState<ReplyFormat>('auto'), [originalOpen, setOriginalOpen] = useState(false), [composing, setComposing] = useState(false), [dissolving, setDissolving] = useState<string[]>([]), [streamingId, setStreamingId] = useState(''), [announcement, setAnnouncement] = useState(''), [controlsOpen, setControlsOpen] = useState(false);
@@ -80,6 +88,15 @@ export default function NotebookApp({ apiBase = '' }: {
     }>>([]);
     const flow=useInkFlow({apiBase,status:companionStatus,activeId:active,surface:readingPaper,readPage:id=>dataRef.current?.pages.find(p=>p.id===id),updatePage,reply:(text,page,ids)=>respond(text,{page,inputIds:ids})});
     const books=data?.books?.length?data.books:[{id:'main',title:'My notebook'}],bookId=current?.notebookId||'main',visiblePages=data?.pages.filter(p=>(p.notebookId||'main')===bookId)||[];
+    const paperTurn = usePaperTurn({ apiBase, activeId: active, enabled: !!companionStatus?.live && !!companionStatus?.vision, busy: () => busyRef.current, isCurrent: id => activeRef.current === id,
+        createPage: capture => {
+            if ((dataRef.current?.pages.length || 0) >= 200) throw new Error('This notebook has reached 200 leaves. The original paper source is saved.');
+            const page = newPage(capture.pageLabel, 'paper'); page.notebookId = capture.notebookId;
+            page.capture = { id: capture.id, pageLabel: capture.pageLabel };
+            mutate(notebook => ({ ...notebook, pages: [...notebook.pages, page] })); go(page.id);
+            return page;
+        }, updatePage, reply: (text, page, capture) => respond(text, { page, captureId: capture.id, source: `${capture.pageLabel} · original photo`, sourcePageId: `capture:${capture.id}` }),
+    });
     const { turn, beginTurn, finishTurn } = useBookTurn(readingPaper);
     useEffect(() => {
         const surface = folio.current;
@@ -278,9 +295,10 @@ export default function NotebookApp({ apiBase = '' }: {
             stage.current.scrollTo({ top: Math.max(0, top), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
         }, 80);
     }
-    function editPrompt(value:string){promptRef.current=value;setPrompt(value);}
+    function editPrompt(value:string){paperTurn.interrupt();promptRef.current=value;setPrompt(value);}
     function stopReply(){abortReply.current?.abort();flow.restore(activeRef.current);setAnimated([]);}
     function placeInput(text: string, page: Page, pendingInput: boolean, source?: string): Page | undefined {
+        paperTurn.interrupt();
         const draftPageId = activeRef.current;
         const preferred = page.id === draftPageId ? typePoint ?? undefined : undefined;
         let placement = findInputPlacement(page, text, preferred);
@@ -312,7 +330,7 @@ export default function NotebookApp({ apiBase = '' }: {
         }
         flow.begin(p.id);
     }
-    async function respond(text:string,options:{source?:string;page:Page;sample?:boolean;inputIds?:string[]}){
+    async function respond(text:string,options:{source?:string;sourcePageId?:string;captureId?:string;page:Page;sample?:boolean;inputIds?:string[]}){
         const p=options.page,pageId=p.id;if(busyRef.current||activeRef.current!==pageId){flow.restore(pageId);return;}
         if(!live&&!options.sample){flow.restore(pageId);toast.message('Connect AI in Settings → Models for a reply to your writing.',{action:{label:'Settings',onClick:()=>showDialog('settings')}});return;}
         const inputIds=new Set(options.inputIds||[]),inputs=p.blocks.filter(b=>inputIds.has(b.id)),inkIds=new Set(inputs.flatMap(b=>b.inkIds||[])),exchange=uid(),controller=new AbortController();abortReply.current=controller;
@@ -325,7 +343,7 @@ export default function NotebookApp({ apiBase = '' }: {
         const commit=(replies:Block[])=>{if(!mounted.current||committed||controller.signal.aborted)return;updatePage(old=>({...old,strokes:old.strokes.map(s=>inkIds.has(s.id)?{...s,absorbedBy:exchange}:s),blocks:old.blocks.map(b=>inputIds.has(b.id)?{...b,absorbedBy:exchange,pendingInput:false}:b)}),true,pageId);layoutReplies(replies);committed=true;};
         const flush=()=>{clearTimeout(flushTimer);flushTimer=undefined;if(!latest||!streamBlock||!mounted.current||controller.signal.aborted)return;streamBlock={...streamBlock,text:latest,h:replyHeight(latest,font)};if(!committed)commit([streamBlock]);else layoutReplies([streamBlock]);};
         try{if(options.sample){const replies=presentReply(text,p,y,format,font,options.source);commit(replies);setAnnouncement(replies.filter(b=>b.kind==='text').map(b=>b.text).join(' '));}
-        else{streamBlock=block('text','',y,60,{font,source:options.source});setStreamingId(streamBlock.id);const res=await fetch(apiPath(apiBase,'/api/companion'),{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({prompt:text,format,notebookId:p.notebookId||'main',pageId,crossNotebook,context:p.blocks.filter(b=>!inputIds.has(b.id)&&(b.kind==='text'||b.kind==='user')).slice(-8).map(b=>({role:b.kind==='user'?'user':'assistant',text:visibleInkText(b)})),source:options.source||'',documentText:liveDocText.current.slice(0,10000)}),signal:controller.signal});
+        else{streamBlock=block('text','',y,60,{font,source:options.source,sourcePageId:options.sourcePageId});setStreamingId(streamBlock.id);const res=await fetch(apiPath(apiBase,'/api/companion'),{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({prompt:text,format,captureId:options.captureId,notebookId:p.notebookId||'main',pageId,crossNotebook,context:p.blocks.filter(b=>!inputIds.has(b.id)&&(b.kind==='text'||b.kind==='user')).slice(-8).map(b=>({role:b.kind==='user'?'user':'assistant',text:visibleInkText(b)})),source:options.source||'',documentText:options.captureId?'':liveDocText.current.slice(0,10000)}),signal:controller.signal});
         await consumeCompanionStream(res,partial=>{latest=partial;if(!committed)flush();else if(!flushTimer)flushTimer=setTimeout(flush,60);},controller.signal,event=>{if(event.type==='route'){setRunLabel(event.run.model+' · '+event.run.reason);streamBlock!.runId=event.run.id;}if(event.type==='status')setAnnouncement(event.message);if(event.type==='memory')toast.message(event.message);if(event.type==='citations'){streamBlock!.citations=event.citations;updatePage(old=>({...old,blocks:old.blocks.map(b=>b.id===streamBlock!.id?{...b,citations:event.citations}:b)}),false,pageId);}if(event.type==='artifact')artifacts.push(block(event.kind,event.caption,0,event.kind==='sticker'?270:435,{mediaUrl:event.url,font}));});flush();
         if(artifacts.length) layoutReplies([streamBlock!, ...artifacts]);
         if(format==='table'){
@@ -336,7 +354,7 @@ export default function NotebookApp({ apiBase = '' }: {
         }catch(e){flush();if(!committed)flow.restore(pageId);toast.error(e instanceof Error&&e.name==='AbortError'?'Reply stopped. Your ink and any partial reply are kept.':e instanceof Error?e.message:'Could not get a reply. Your ink is kept.');}
         finally{clearTimeout(flushTimer);if(abortReply.current===controller)abortReply.current=null;busyRef.current=false;if(mounted.current){setBusy(false);setStreamingId('');}}
     }
-    useEffect(()=>{clearTimeout(responseTimer.current);if(!auto||busy||composing||reader||settings||newOpen||help||originalOpen||controlsOpen||mobileOpen||pointerId.current!==null||!current||!flow.canBegin(current.id))return;const hasInk=current.strokes.some(s=>s.tool==='pen'&&!s.absorbedBy),pending=current.blocks.some(b=>b.pendingInput&&!b.absorbedBy&&visibleInkText(b));if(!hasInk&&!pending)return;const id=current.id;responseTimer.current=setTimeout(()=>{if(activeRef.current===id&&!drawing.current)flow.begin(id);},INPUT_END_MS);return()=>clearTimeout(responseTimer.current);},[auto,busy,composing,reader,active,undoTick,settings,newOpen,help,originalOpen,controlsOpen,mobileOpen]);
+    useEffect(()=>{clearTimeout(responseTimer.current);if(!auto||busy||composing||reader||settings||newOpen||help||originalOpen||controlsOpen||mobileOpen||captureOpen||correctionOpen||paperTurn.reading||pointerId.current!==null||!current||!flow.canBegin(current.id))return;const hasInk=current.strokes.some(s=>s.tool==='pen'&&!s.absorbedBy),pending=current.blocks.some(b=>b.pendingInput&&!b.absorbedBy&&visibleInkText(b));if(!hasInk&&!pending)return;const id=current.id;responseTimer.current=setTimeout(()=>{if(activeRef.current===id&&!drawing.current)flow.begin(id);},INPUT_END_MS);return()=>clearTimeout(responseTimer.current);},[auto,busy,composing,reader,active,undoTick,settings,newOpen,help,originalOpen,controlsOpen,mobileOpen,captureOpen,correctionOpen,paperTurn.reading]);
     function illuminate(e: React.PointerEvent<HTMLDivElement>) {
         if (!candlelight || !tabVisible || e.pointerType === 'touch' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const node = folio.current; if (!node) return;
@@ -385,7 +403,7 @@ export default function NotebookApp({ apiBase = '' }: {
         else { setTypePoint(null); toast.message('This leaf is full. Your next thought will use a new leaf when you send it.'); }
         promptInput.current?.focus();
         return;
-    } if(!reader&&(tool==='pen'||tool==='erase')){flow.inputStart(activeRef.current);abortReply.current?.abort();} e.preventDefault(); e.currentTarget.setPointerCapture(e.pointerId); pointerId.current = e.pointerId; clearTimeout(responseTimer.current); if (tool === 'erase') {
+    } if(!reader&&(tool==='pen'||tool==='erase')){paperTurn.interrupt();flow.inputStart(activeRef.current);abortReply.current?.abort();} e.preventDefault(); e.currentTarget.setPointerCapture(e.pointerId); pointerId.current = e.pointerId; clearTimeout(responseTimer.current); if (tool === 'erase') {
         erasing.current = true;
         if (!reader)
             updatePage(old => old);
@@ -507,7 +525,7 @@ export default function NotebookApp({ apiBase = '' }: {
         const found = pdfBoxes.current.filter(b => b.y + offset + b.h >= selection.y - 12 && b.y + offset <= selection.bottom + 18 && b.x + b.w >= selection.x - 12 && b.x <= selection.right + 12).map(b => b.text).join(' ');
         return found || 'No text was found inside this mark. A live companion can inspect handwriting; try marking a text passage.';
     }
-    function openSource(id?: string) { if (!id || id === 'sample') {
+    function openSource(id?: string) { if (id?.startsWith('capture:')) { setCaptureSource(id.slice(8)); setCaptureOpen(true); return; } if (!id || id === 'sample') {
         openReader();
         return;
     } const p = dataRef.current?.pages.find(p => p.id === id); if (p) {
@@ -573,12 +591,14 @@ export default function NotebookApp({ apiBase = '' }: {
  <header className="topbar">
    <div className="breadcrumb"><button ref={menuButton} className="icon-button menu-button" aria-label="Open notebook menu" onClick={() => setMobileOpen(true)}><Menu /></button><span>My notebook</span><span>/</span><strong>{reader ? 'Reading room' : 'A place to think'}</strong></div>
    <div className="top-actions">
+     <button className="text-action" aria-label="Your paper notebook" disabled={!current} onClick={() => { setCaptureSource(undefined); setCaptureOpen(true); setMobileOpen(false); }}><Camera size={18}/><span>Paper notebook</span></button>
      <ToolTip label={candlelight ? 'Switch to daylight' : 'Light the candle'}><button className="lighting-toggle" aria-label="Candlelight" aria-pressed={candlelight} onClick={() => setCandlelight(v => !v)}>{candlelight ? <Flame size={15} /> : <Sun size={15} />}<span>{candlelight ? 'Candlelight' : 'Daylight'}</span></button></ToolTip>
      <SaveIndicator state={saving} retry={retrySave} />
      <button className="text-action" aria-label="Export page" onClick={exportPage} disabled={reader || !current}><Download size={17}/><span>Export page</span></button>
      <button className="icon-button" aria-label="Notebook settings" onClick={() => showDialog('settings')}><MoreHorizontal /></button>
    </div>
  </header>
+ {current?.capture && <div className="paper-source-bar"><button onClick={() => openSource(`capture:${current.capture!.id}`)}>Original paper</button><button onClick={() => { paperTurn.interrupt(); abortReply.current?.abort(); setPhotoCorrection(current.capture?.transcription || ''); setCorrectionOpen(true); }}>Correct reading</button><span>{paperTurn.message || current.capture.pageLabel}</span></div>}
  {loadError && <div className="error-banner" role="alert">{saveProblem || 'Saved notes could not be opened.'}<button onClick={() => void load()}>Try again</button></div>}
  {recoveryNeeded && <div className="error-banner"><button onClick={exportRecovery}>Export recovery copies</button><span>Both copies are retained. Sync is paused.</span></div>}
  {saveProblem && !loadError && <div className="error-banner" role="alert">{saveProblem}</div>}<div ref={stage} className="canvas-stage"><div className="stage-heading"><div>{reader ? <h1>{current?.document ? current.document.name : 'The reading room'}</h1> : <input className="rename-input" aria-label="Page title" value={current?.title || 'Opening your notebook…'} onChange={e => updatePage(p => ({ ...p, title: e.target.value.slice(0, 80) }), false)}/>}<div className="subline">{reader ? <><BookOpen size={13}/>Read a little. Wonder a little.</> : <><Leaf size={13}/>One thought can lead anywhere.</>}</div></div><div className="paper-controls"><DropdownMenu><DropdownMenuTrigger asChild><button className="icon-button" aria-label="Paper style" disabled={reader}><NotebookPen size={18}/></button></DropdownMenuTrigger><DropdownMenuContent align="end">{(['grid', 'lined', 'plain'] as const).map(p => <DropdownMenuItem key={p} onClick={() => updatePage(old => ({ ...old, paper: p }))}>{current?.paper === p && <Check size={14}/>} {p.charAt(0).toUpperCase() + p.slice(1)} paper</DropdownMenuItem>)}</DropdownMenuContent></DropdownMenu><button className="icon-button" aria-label={zoom === 100 ? 'Zoom in' : 'Fit page'} onClick={() => setZoom(z => z === 100 ? (isMobile ? 175 : 135) : 100)}><Maximize2 size={17}/></button><span className="zoom-label" style={{ fontSize: 12 }}>{zoom}%</span></div></div>
@@ -605,6 +625,16 @@ export default function NotebookApp({ apiBase = '' }: {
  {busy ? <button type="button" className="stop-reply" onClick={stopReply}>Stop reply</button> : !reader && <ToolTip label="Read my new handwriting"><button type="button" className="icon-button" aria-label="Read my ink" disabled={!current?.strokes.some(s => !s.absorbedBy && s.tool === 'pen')} onClick={() => void send('', { ink: true })}><Sparkles size={17}/></button></ToolTip>}
  <ToolTip label={tool === 'type' && !auto && !reader ? 'Place on the page' : 'Write to companion now'}><button className="send-button" aria-label={tool === 'type' && !auto && !reader ? 'Place text' : 'Send thought'} disabled={busy || !prompt.trim() || composing}><ArrowUp /></button></ToolTip></form><div className="composer-hint"><span><button className="companion-model-label" onClick={()=>showDialog('settings')}>{live?runLabel||'AI configured · view model settings':'Connect AI in Settings · samples available'}</button></span><span>Typing sends only with Enter or Send.</span></div><div className="stream-announcement" aria-live="polite" aria-atomic="true">{announcement}</div></footer></main></SidebarProvider>
  <OriginalInk open={originalOpen} onOpenChange={setOriginalOpen} page={current} onRestore={restoreInk} onCloseAutoFocus={restoreNotebookFocus}/>
+ {current?.capture && !reader && readingPaper.current && !current.blocks.some(b => !b.absorbedBy) && !current.strokes.length && createPortal(<img className="paper-photo-surface" src={captureUrl(apiBase, current.capture.id, 'prepared')} alt="Original paper reading copy" data-fading={paperTurn.reading === current.id}/>, readingPaper.current)}
+ {paperTurn.message && <div className="stream-announcement" role="status">{paperTurn.message}</div>}
+ <PaperCaptureDialog key={bookId} open={captureOpen} onOpenChange={setCaptureOpen} apiBase={apiBase} notebookId={bookId} initialId={captureSource} status={companionStatus} onAsk={capture => { setCaptureOpen(false); void paperTurn.start(capture).catch(cause => toast.error(cause.message)); }} onSettings={() => { setCaptureOpen(false); showDialog('settings'); }}/>
+ <Dialog open={correctionOpen} onOpenChange={setCorrectionOpen}><DialogContent className="modal vellum-dialog"><DialogHeader><DialogTitle>Edit this reading</DialogTitle><DialogDescription>The saved photograph stays available. Your correction is used only after you ask again.</DialogDescription></DialogHeader>
+   <textarea className="modal-field" aria-label="Correct the paper transcription" rows={8} maxLength={12000} value={photoCorrection} onChange={event => setPhotoCorrection(event.target.value)}/>
+   <button className="modal-primary" disabled={!photoCorrection.trim() || busy} onClick={() => {
+       const id = current?.capture?.id; if (!id) return;
+       void fetch(captureUrl(apiBase, id), { signal: AbortSignal.timeout(15000) }).then(response => readJson<{ capture: PaperCapture }>(response)).then(({ capture }) => { setCorrectionOpen(false); return paperTurn.start(capture, photoCorrection); }).catch(cause => toast.error(cause.message));
+   }}>Ask with this correction</button>
+ </DialogContent></Dialog>
 
  <Dialog open={newOpen} onOpenChange={setNewOpen}><DialogContent className="modal vellum-dialog" onCloseAutoFocus={restoreNotebookFocus}><DialogHeader><DialogTitle>{newBook?'A new notebook.':'A fresh page.'}</DialogTitle><DialogDescription>Give this thought a place to begin.</DialogDescription></DialogHeader><form onSubmit={e => { e.preventDefault(); newBook?createNotebook():create(); }}><label className="modal-label" htmlFor="new-title">{newBook?'Notebook title':'Page title'}</label><input autoFocus id="new-title" className="modal-field" value={newTitle} maxLength={80} placeholder="What’s on your mind?" onChange={e => setNewTitle(e.target.value)}/><button className="modal-primary" style={{ marginTop: 18 }} type="submit">{newBook?'Open a new notebook':'Open a new page'}</button></form></DialogContent></Dialog>
  <CompanionSettings open={settings} onOpenChange={setSettings} apiBase={apiBase} onStatus={s=>{setCompanionStatus(s);setLive(s.live);}} books={books} onCloseAutoFocus={restoreNotebookFocus} appearance={<><div className="settings-row"><div>Candlelight<small>A living glow across the parchment.</small></div><Switch aria-label="Candlelight setting" checked={candlelight} onCheckedChange={setCandlelight}/></div><div className="light-setting"><label htmlFor="light-warmth">Light warmth <span>{warmth}%</span></label><Slider id="light-warmth" aria-label="Light warmth" min={20} max={100} step={5} value={[warmth]} onValueChange={v => setWarmth(v[0])} disabled={!candlelight}/><small>Your motion preference is respected.</small></div><div className="settings-row"><div>Raised folio<small>An angled sheet, deep binding, and cast shadows.</small></div><Switch aria-label="Raised folio" checked={depth} onCheckedChange={setDepth}/></div><div className="settings-row"><div>Stylus only<small>Let your finger scroll; use a pen to draw.</small></div><Switch aria-label="Stylus only" checked={penOnly} onCheckedChange={setPenOnly}/></div><div className="settings-row"><div>Reply when I pause<small>Your ink fades as a reply appears. Originals are kept.</small></div><Switch aria-label="Reply when I pause" checked={auto} onCheckedChange={setAuto}/></div></>}/>

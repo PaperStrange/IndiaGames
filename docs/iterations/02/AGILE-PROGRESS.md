@@ -2,7 +2,7 @@
 
 Reviewed 2026-10-03 America/Los_Angeles / 2026-10-04 UTC. Planning revision: 2. Reviewed product source: `d696112d9ae6e94ffec2bc9e2c3db4f6bbf1dda7`; published Site version 9. This review supersedes previous scheduling and status summaries. Historical acceptance evidence remains linked below.
 
-35 cards: 4 In progress, 2 Blocked, 29 Proposed, 0 Done. The accepted product direction and completed planning documents do not count as implementation completion. Readiness blocks on proposed stories are tracked separately. B1–B3 are tasks on parent cards and do not increase the card count.
+Implementation review: 2026-10-04 America/Los_Angeles / 2026-10-05 UTC. 35 cards: 6 In progress, 2 Blocked, 27 Proposed, 0 Done. MC-032/033 have candidate implementation and partial verification. Readiness blocks remain distinct from implementation status. B1–B3 are tasks on parent cards and do not increase the card count.
 
 | Card | Execution state | Current scheduling / evidence boundary |
 |---|---|---|
@@ -37,14 +37,14 @@ Reviewed 2026-10-03 America/Los_Angeles / 2026-10-04 UTC. Planning revision: 2. 
 | MC-029 | Proposed | Queued after paper sprint; complete conversation policy retained |
 | MC-030 | Proposed | Queued after paper sprint and relevant M0 prerequisites; complete harness requirements retained |
 | MC-031 | Proposed | Queued after paper sprint; full multi-leaf input requirements retained |
-| MC-032 | Proposed | Selected forecast: capture identity, durable original and recovery; B1/B2 readiness required |
-| MC-033 | Proposed | Selected forecast: live source-linked reply; readiness blocked by B3 provider prerequisites |
+| MC-032 | In progress | Compiled-Worker restart/retry/retake/clean-store recovery checks pass; full browser, actual identities and devices open |
+| MC-033 | In progress | Vision/source/fade integration implemented; genuine-provider, screening, photo-region correction and device acceptance open |
 | MC-034 | Proposed | Selected time-bounded 3D investigation; dimensions and physical devices required |
 | MC-035 | Proposed | Selected physical design specification; specialist owner required; fabrication validation remains separate |
 
 ## Planning verification
 
-The current update adds four cards, retains MC-029–031 acceptance, separates design investigation from production adoption, and keeps all eighteen original MC-024 dependency IDs. No new behavioral, provider, device, prototype or customer evidence is asserted. Allocation arithmetic, JSON structure, local document links and card identity/status consistency are checked before saving this revision.
+Planning revision 2 retains MC-029–031 acceptance, distinguishes design investigation from production adoption, and keeps all eighteen original MC-024 dependency IDs. The candidate passes a compiled-Worker storage integration scenario and fifteen existing ink/pagination/journal regressions. Browser file-selection automation exceeded its timeout; full browser capture verification is open. No new live-provider, physical-device, prototype or customer acceptance is asserted. Exact evidence and checkpoint scope are in [RECOVERY-CHECKPOINT.md](RECOVERY-CHECKPOINT.md).
 
 ## Evidence and next review
 

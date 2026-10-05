@@ -19,5 +19,6 @@ export type PaperCapture = CaptureMetadata & {
 export const captureUrl = (base: string, id: string, asset?: 'original' | 'prepared') =>
     `${base.replace(/\/$/, '')}/api/captures/${encodeURIComponent(id)}${asset ? `?asset=${asset}` : ''}`;
 export async function sha256(bytes: ArrayBuffer) {
+    if (!globalThis.crypto?.subtle) throw new Error('Recovery verification needs HTTPS. Open the secure published notebook to restore this file.');
     return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), b => b.toString(16).padStart(2, '0')).join('');
 }

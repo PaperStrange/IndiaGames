@@ -41,7 +41,15 @@ Plugins are generic HTTP/MCP services, not specific PaperQA code paths. PaperRea
 
 Shared React/TypeScript and vector ink support mobile reuse. Layered geometry and bounded composited WebGL lighting simulate depth; they are not hardware ray tracing. Worker inference keeps OCR off the UI thread. Capacitor native projects, credentials and device certification remain external gates.
 
-## Planned paper and 3D additions — sprint-02-r2
+## Paper capture candidate — sprint-02-r2
+
+`app/paper-capture-dialog.tsx` owns deliberate photo selection and review. `lib/prepare-photo.ts` creates an oriented/cropped PNG without EXIF. `app/api/captures` and `lib/capture-store.ts` persist owner-scoped source metadata in D1 and original/derived bytes in R2. Migration 0002 adds `paper_captures`. Each retake has a new ID and parent reference; a repeated matching upload is idempotent. SHA-256 fingerprints reject changed content under an existing ID.
+
+`lib/capture-recovery.ts` exports a bounded parent-first revision chain and verifies hashes before restore. Recovery supports up to 20 revisions and 45 MB of raw assets per export. `app/use-paper-turn.ts` starts vision and fade at explicit Ask, invalidates superseded results without cancelling recognition, and sends current text into existing reply pagination. Page source metadata and reply links retain the exact capture ID. Original and derived bytes remain separate from model interpretation. Photo selection sends no model request.
+
+Compiled-Worker persistence tests and existing ink/pagination regressions pass. Actual-provider runs, full browser/photo-region correction and physical-device validation remain open; [candidate evidence](iterations/02/RECOVERY-CHECKPOINT.md) governs completion claims.
+
+## Planned 3D additions — sprint-02-r2
 
 The accepted direction adds a physical notebook paired with its digital edition. Proposed capture data separates immutable original image bytes, derived crop/orientation, physical page identity, interpretation revision and companion turn. Owner-scoped source resolution links each answer to the exact capture revision; pairing identifiers do not grant access. Capture durability, idempotency, two-client handoff, export/import and permission controls reuse and extend the existing storage boundaries.
 

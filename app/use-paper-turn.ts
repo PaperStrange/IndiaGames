@@ -6,7 +6,7 @@ import type { PaperCapture } from '@/lib/paper-capture';
 import type { Page } from '@/lib/notebook';
 
 type Options = {
-    apiBase: string; activeId: string; enabled: boolean; busy: () => boolean;
+    apiBase: string; activeId: string; enabled: boolean; busy: () => boolean; isCurrent: (id: string) => boolean;
     createPage: (capture: PaperCapture) => Page;
     updatePage: (fn: (page: Page) => Page, history: boolean, id: string) => void;
     reply: (text: string, page: Page, capture: PaperCapture) => Promise<void>;
@@ -38,12 +38,12 @@ export function usePaperTurn(options: Options) {
             const text = correction?.trim() || result.text.trim();
             if (!text) throw new Error('No readable handwriting was returned. The original photo is kept.');
             if (text.length > 12000) throw new Error('This page exceeds the reply input limit. Crop a shorter passage; the complete original is kept.');
-            if (!current.current || !mounted.current) return;
+            if (!current.current || !mounted.current || !latest.current.isCurrent(page.id)) return;
             const interpreted = { ...page, capture: { ...page.capture!, transcription: text } };
             latest.current.updatePage(() => interpreted, false, page.id);
             setMessage('The ink is settling…');
             await fade;
-            if (!current.current || !mounted.current) return;
+            if (!current.current || !mounted.current || !latest.current.isCurrent(page.id)) return;
             setMessage('The companion is answering…');
             await latest.current.reply(text, interpreted, capture);
         } catch (cause) {

@@ -6,6 +6,7 @@ import { captureUrl, type CaptureMetadata, type PaperCapture } from '@/lib/paper
 import { preparePhoto } from '@/lib/prepare-photo';
 import { exportCapture, readJson, restoreCapture, uploadCapture } from '@/lib/capture-recovery';
 import type { CompanionStatus } from '@/lib/companion-types';
+import { uid } from '@/lib/notebook';
 import './paper-capture.css';
 
 type Props = { open: boolean; onOpenChange: (open: boolean) => void; apiBase: string; notebookId: string;
@@ -51,10 +52,10 @@ export function PaperCaptureDialog({ open, onOpenChange, apiBase, notebookId, in
     }, [prepared]);
     function choose(photo?: File) {
         if (!photo) return;
-        setMetadata({ id: crypto.randomUUID(), notebookId, pageLabel: selected?.pageLabel || photo.name.replace(/\.[^.]+$/, '').slice(0, 80) || 'Paper page', parentId: selected?.id, rotation: 0, crop: { ...fullCrop } });
+        setMetadata({ id: uid(), notebookId, pageLabel: selected?.pageLabel || photo.name.replace(/\.[^.]+$/, '').slice(0, 80) || 'Paper page', parentId: selected?.id, rotation: 0, crop: { ...fullCrop } });
         setFile(photo); setProblem('');
     }
-    function transform(change: Partial<CaptureMetadata>) { setMetadata(previous => previous && ({ ...previous, ...change, id: crypto.randomUUID() })); }
+    function transform(change: Partial<CaptureMetadata>) { setMetadata(previous => previous && ({ ...previous, ...change, id: uid() })); }
     async function perform(label: string, operation: () => Promise<void>) {
         setWorking(label); setProblem('');
         try { await operation(); } catch (cause) { if (alive.current) setProblem(cause instanceof Error ? cause.message : 'The action failed. Your photo is retained.'); }
