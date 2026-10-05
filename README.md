@@ -4,6 +4,8 @@ Product **alpha 0.4** · Documentation **docs-v4** · Artifact **v6-alpha04-2026
 
 A private interactive notebook with pressure-aware ink, layered vellum, physical page turns, PDF annotations and a persistent companion. React/TypeScript is shared by the hosted app and mobile bundle. Previous alpha 0.1–0.3 checkpoints remain in Git.
 
+Art research, proposals, material assets and review evidence are collected in [docs/art-design](docs/art-design/README.md), with implementation status and original-source provenance.
+
 ## Write and reply
 
 Write with a pointer, stylus, touch or the composer. After 380 ms without input, OCR and a five-second fade start together. Recognition applies its best matching formatted text without a confirmation dialog. Erasing during fading restores the remaining text first, then clears only the touched region. Corrections begin a new cycle at the next input-end; running OCR jobs continue, with revision checks preventing stale results from resurrecting changed ink. Replies progressively appear only after both OCR and fading finish. Original ink is recoverable.

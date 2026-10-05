@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pageflow Practice</title>
+  <style>
+    :root{color-scheme:dark;font-family:Georgia,serif;background:#111a15;color:#f6efd8}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at 72% 18%,#415d3c 0,#18271f 42%,#0e1511 100%);display:grid;place-items:center;padding:16px}
+    .shell{width:min(820px,100%);border:1px solid #97b56d88;background:#17231bd9;box-shadow:0 20px 60px #050906aa;padding:22px}
+    header{display:flex;justify-content:space-between;gap:20px;align-items:start;border-bottom:1px solid #8c9e6d66;padding-bottom:13px}
+    h1{font-weight:400;font-size:clamp(28px,5vw,46px);line-height:1;margin:0 0 7px}.eyebrow{font:700 10px Arial,sans-serif;letter-spacing:.2em;color:#bdd394;margin:0 0 8px}.lede{font:14px Arial,sans-serif;line-height:1.45;color:#bfccb9;margin:0;max-width:560px}
+    .stats{display:grid;gap:6px;text-align:right;font:12px Arial,sans-serif;color:#d5dfbb}.stats strong{font:20px Georgia,serif;color:#fff2c9}
+    #arena{position:relative;min-height:330px;margin:17px 0;border:1px solid #7f9f61aa;overflow:hidden;background:radial-gradient(circle at 22% 30%,#d6d99b22 0 2px,transparent 3px),radial-gradient(circle at 76% 74%,#d6d99b18 0 2px,transparent 3px),#1b2b20;padding:24px}
+    #arena:before{content:'COMPLETE THE PAGE LOOP';position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);font:700 11px Arial,sans-serif;letter-spacing:.25em;color:#b6c99544;pointer-events:none;white-space:nowrap}
+    .choices{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;max-width:620px;margin:24px auto 0}.choice{min-height:92px;border:1px solid #8ca66a;background:#2d3e31;color:#f6efd8;padding:15px;text-align:left;cursor:pointer;border-radius:4px;transition:transform .15s,border-color .15s,background .15s}.choice:hover,.choice:focus-visible{transform:translateY(-2px);border-color:#f1d58c;background:#3a503b;outline:none}.choice[disabled]{cursor:default;opacity:.42;transform:none}.choice .num{display:block;font:700 11px Arial,sans-serif;letter-spacing:.18em;color:#d9ab6b;margin-bottom:7px}.choice .label{display:block;font:700 19px Georgia,serif}.choice .detail{display:block;font:12px Arial,sans-serif;color:#bfccb9;margin-top:6px}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.controls button{font:13px Arial,sans-serif;border:1px solid #8ca66a;background:#d6e3ae;color:#263525;padding:10px 14px;border-radius:4px;cursor:pointer}.controls button.secondary{background:transparent;color:#d6e3ae}.message{min-height:30px;font:13px Arial,sans-serif;color:#c7d4b5;padding-top:12px}.message.good{color:#ffeba8}.message.bad{color:#edb3a9}.rule{border-top:1px solid #8c9e6d44;padding-top:13px;margin-top:16px;font:12px Arial,sans-serif;line-height:1.5;color:#9eae98}.rule b{color:#d6e3b4}
+    @media(max-width:560px){.choices{grid-template-columns:1fr}.stats{min-width:70px}.shell{padding:17px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header><div><p class="eyebrow">ENCHANTED NOTEBOOK / PRODUCT LOOP</p><h1>Pageflow Practice</h1><p class="lede">Choose the next event in the actual notebook lifecycle. The page responds, but the source mark always stays yours.</p></div><div class="stats"><span>STEP <strong id="score">0</strong>/4</span><span>TIME <strong id="time">25</strong>s</span></div></header>
+    <section id="arena" aria-label="Pageflow choices"><div class="choices" id="choices"></div></section>
+    <div class="controls"><button id="start">Start the page</button><button id="reset" class="secondary">Reset</button></div>
+    <div id="message" class="message" aria-live="polite">The page is ready. Start when you are.</div>
+    <p class="rule"><b>Product rule:</b> Immediate ink is the trust anchor. A reply can pause, fail, or be cancelled without erasing the original stroke.</p>
+  </main>
+  <script>
+    const choicesEl=document.getElementById('choices'),scoreEl=document.getElementById('score'),timeEl=document.getElementById('time'),message=document.getElementById('message'),start=document.getElementById('start'),reset=document.getElementById('reset');
+    const steps=[{key:'write',label:'WRITE',detail:'Draw or place text on the page.',good:'The source appears immediately.'},{key:'pause',label:'PAUSE',detail:'Let the page notice a finished thought.',good:'Recognition can begin without blocking new ink.'},{key:'reply',label:'REPLY',detail:'A companion returns a bounded response.',good:'The response arrives with intent and placement.'},{key:'keep',label:'KEEP',detail:'Continue with the original source available.',good:'The user can restore, edit, or reject the reply.'}];
+    let progress=0,time=25,running=false,timer=null;
+    function shuffled(){return [...steps].sort(()=>Math.random()-.5)}
+    function render(){choicesEl.innerHTML='';shuffled().forEach(step=>{const button=document.createElement('button');button.className='choice';button.type='button';button.dataset.key=step.key;button.innerHTML='<span class="num">NEXT EVENT</span><span class="label">'+step.label+'</span><span class="detail">'+step.detail+'</span>';button.addEventListener('click',()=>choose(step));choicesEl.appendChild(button)})}
+    function choose(step){if(!running)return;if(step.key!==steps[progress].key){message.className='message bad';message.textContent='That event comes later. Keep the product loop in order.';return}progress++;scoreEl.textContent=progress;message.className='message';message.textContent=step.good;if(progress>=steps.length){finish(true);return}render()}
+    function finish(won){running=false;clearInterval(timer);timer=null;document.querySelectorAll('.choice').forEach(button=>button.disabled=true);message.className='message '+(won?'good':'bad');message.textContent=won?'Page complete. The reply helped, and the original ink stayed available.':'The page cooled before the loop finished. Start again and keep the source visible.';start.textContent=won?'Play again':'Start the page'}
+    function begin(){progress=0;time=25;running=true;scoreEl.textContent=progress;timeEl.textContent=time;message.className='message';message.textContent='Find WRITE first. The page is listening.';start.textContent='Restart';clearInterval(timer);render();timer=setInterval(()=>{time--;timeEl.textContent=time;if(time<=0)finish(false)},1000)}
+    function clear(){clearInterval(timer);running=false;progress=0;time=25;scoreEl.textContent=0;timeEl.textContent=time;choicesEl.innerHTML='';message.className='message';message.textContent='The page is ready. Start when you are.';start.textContent='Start the page'}
+    start.addEventListener('click',begin);reset.addEventListener('click',clear);
+  </script>
+</body>
+</html>

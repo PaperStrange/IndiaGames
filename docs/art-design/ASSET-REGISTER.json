@@ -1,0 +1,816 @@
+{
+  "schemaVersion": 1,
+  "collection": "MentalCityBeta art-design",
+  "revision": "art-design-v1",
+  "dateLocal": "2026-10-04",
+  "timezone": "America/Los_Angeles",
+  "dateUtc": "2026-10-05",
+  "reviewedSource": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095",
+  "productVersion": "0.4.0-alpha.0",
+  "scope": "Existing notebook art research, proposals, references, assets and review evidence",
+  "note": "The register excludes itself. Reference copies preserve original bytes. The full supplied video is retained in ordered verified parts; a restore command produces its exact original. Historical documents retain their original content; current cards are linked in the collection review.",
+  "files": [
+    {
+      "path": "ART-DIRECTION.md",
+      "category": "consolidation-document",
+      "origin": {
+        "kind": "authored",
+        "revision": "art-design-v1"
+      },
+      "bytes": 7043,
+      "sha256": "790e995f8f2c7e6be64823181246d3bb6a274a5eed282c7ec936bf57ff1552b5"
+    },
+    {
+      "path": "IMPLEMENTATION-AND-REVIEW.md",
+      "category": "consolidation-document",
+      "origin": {
+        "kind": "authored",
+        "revision": "art-design-v1"
+      },
+      "bytes": 5187,
+      "sha256": "ef3559aa586bef33028a9c6df7707389883f3a67fe1c86230e241f6d941232a6"
+    },
+    {
+      "path": "README.md",
+      "category": "consolidation-document",
+      "origin": {
+        "kind": "authored",
+        "revision": "art-design-v1"
+      },
+      "bytes": 4164,
+      "sha256": "3c5253719fe84df2b47aac20fb2ca44f6d8989094973b1dd010ecc2356fd7489"
+    },
+    {
+      "path": "RESEARCH-REGISTER.md",
+      "category": "consolidation-document",
+      "origin": {
+        "kind": "authored",
+        "revision": "art-design-v1"
+      },
+      "bytes": 6318,
+      "sha256": "1db5e9d748d79d8c807b2caeb4ab8d841b7631e4361e488edb3d2dafc52f4309"
+    },
+    {
+      "path": "companions/COMPANION_INTEGRATION.md",
+      "category": "supplied-profile-design",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "COMPANION_INTEGRATION.md",
+        "file_id": "file_00000000462881fd9baae59648d97a6b"
+      },
+      "bytes": 7722,
+      "sha256": "58cc07192765669af6fa3d64efa7d5235be0f6a67a70494864602bbb9941b0f6"
+    },
+    {
+      "path": "companions/COMPANION_PROFILES.md",
+      "category": "supplied-profile-design",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "COMPANION_PROFILES.md",
+        "file_id": "file_00000000c4b081fdbf253050de9823d3"
+      },
+      "bytes": 17587,
+      "sha256": "c9d9ae4e66b069b18ef1c97097cf4fe2b9798877ac5d13beb4a9aaae8cd123f3"
+    },
+    {
+      "path": "companions/portraits/cassian-starling.png",
+      "category": "demo-portrait",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/companions/cassian-starling.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2413149,
+      "sha256": "1310076da5a4d9b49d0ff51e170b1ebac27abf8cbd6f013d294e1dc3ae63835b"
+    },
+    {
+      "path": "companions/portraits/mara-hearthwick.png",
+      "category": "demo-portrait",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/companions/mara-hearthwick.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2454465,
+      "sha256": "131735da2db9de82c00f847e60bb3699f39efe7d09f79715ea130f641c08e22c"
+    },
+    {
+      "path": "companions/portraits/mira-moonthread.png",
+      "category": "demo-portrait",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/companions/mira-moonthread.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2468782,
+      "sha256": "78c5c1ff99cc5929279e858a2e6b9633873e2c38a52579650acb9a5824b54820"
+    },
+    {
+      "path": "companions/portraits/pip-bramblefoot.png",
+      "category": "demo-portrait",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/companions/pip-bramblefoot.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2729980,
+      "sha256": "e6e1096d7610774d9335578bf81c6410b219848ef51d96dd28538b5a1455edb6"
+    },
+    {
+      "path": "companions/portraits/talia-fernroot.png",
+      "category": "demo-portrait",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/companions/talia-fernroot.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2674937,
+      "sha256": "3bfdda2f6e37e27eb86a1a9e5e5cfc293e50d3ebbb4601acc63e948cf9e7a226"
+    },
+    {
+      "path": "companions/portraits/vesper-flint.png",
+      "category": "demo-portrait",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/companions/vesper-flint.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2500846,
+      "sha256": "d1bde3819eb3e7edffa41a19e48933112414510536b81159844d45f5337bef38"
+    },
+    {
+      "path": "companions/runtime-demo-profiles.json",
+      "category": "demo-profile-data",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/companion_profiles.json",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 21773,
+      "sha256": "7cad171b9ab67ca02f5af6999fdad1a6b79f7f1ca333dd075a05fdcf8356d062"
+    },
+    {
+      "path": "companions/supplied-companion_profiles.json",
+      "category": "supplied-profile-data",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "companion_profiles.json",
+        "file_id": "file_000000009d6081fdbbd99f16be6e57c0"
+      },
+      "bytes": 21773,
+      "sha256": "7cad171b9ab67ca02f5af6999fdad1a6b79f7f1ca333dd075a05fdcf8356d062"
+    },
+    {
+      "path": "evidence/INPUT-PLACEMENT-QA.jpg",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/INPUT-PLACEMENT-QA.jpg",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 101570,
+      "sha256": "4297849423dd97ee683ba038823fbf0ee6417841bd20eab9872d88e9c19ba91c"
+    },
+    {
+      "path": "evidence/NOTEBOOK-QA-2026-10-04.jpg",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/01/NOTEBOOK-QA-2026-10-04.jpg",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 107217,
+      "sha256": "5f77513786b5396dddb7377b236e107c707fd60c66c51a3203413e69a7141b65"
+    },
+    {
+      "path": "evidence/alpha-0.3.jpg",
+      "category": "historical-appearance",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/alpha-0.3.jpg",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 88105,
+      "sha256": "740337341ae134d4f0b352b69f85336b3de147ace78d83b643bf72ca3cf49769"
+    },
+    {
+      "path": "evidence/browser-ink/ink-desktop.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-desktop.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 919072,
+      "sha256": "502fd0b546470765fc7feff83dc7bbbad3b704d070e8db2c706c86d34ea721f0"
+    },
+    {
+      "path": "evidence/browser-ink/ink-phone.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-phone.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 479655,
+      "sha256": "31b3e0dcd0d9a0a33dd1d9fc075f0718edc1298cffe54b47b4f0e279f5af865d"
+    },
+    {
+      "path": "evidence/browser-ink/paper-phone.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/paper-phone.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 917156,
+      "sha256": "5730c23eeddba06f6061e40df50280e061313ad1b201e67aa788775402058521"
+    },
+    {
+      "path": "evidence/browser-ink/results.json",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/results.json",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 12930,
+      "sha256": "42180df4ee8de0a65453fe754bb7513e73b2b282030a5d77f11381a97d351083"
+    },
+    {
+      "path": "evidence/flash-game.html",
+      "category": "historical-demo",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/flash-game.html",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 6847,
+      "sha256": "7cf27f8ea58db762a370292a9f67f0eec9aeee9d69bd654a2e5cd8d639d8cb14"
+    },
+    {
+      "path": "evidence/ink-continuation/continued-writing-desktop.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-continuation/continued-writing-desktop.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 942583,
+      "sha256": "4fe35909ed1dc362c6f0ec514c590f76d1ffe38396534f64c4a3c3720e47e83a"
+    },
+    {
+      "path": "evidence/ink-continuation/continued-writing-phone.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-continuation/continued-writing-phone.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 418615,
+      "sha256": "74f3a305b867f3547081eb090436ad5222821fb3d2daef56071d967651cac48f"
+    },
+    {
+      "path": "evidence/ink-continuation/continued-writing-tablet.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-continuation/continued-writing-tablet.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 826873,
+      "sha256": "24010cd3d4845c4a29388a402816ca38831a4a02382d8665aeb63f79b0bcd551"
+    },
+    {
+      "path": "evidence/ink-continuation/results.json",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-continuation/results.json",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 12965,
+      "sha256": "6a272a8472b98a95b723d286717e6b94eeed558c8eab513e2597888233ed2ed2"
+    },
+    {
+      "path": "evidence/ink-recovery-discoverability/phone-recovery-results.json",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-recovery-discoverability/phone-recovery-results.json",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 4347,
+      "sha256": "6f65e52e4f9638b1600a07f96c6cebf55024fc8755b2ed36d44ba1e8eb1f639b"
+    },
+    {
+      "path": "evidence/ink-recovery-discoverability/recovery-action-phone.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-recovery-discoverability/recovery-action-phone.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 311907,
+      "sha256": "6779794a9d9fbbf9c270b61930769e0bfce35cf09b6bc3e274553cadadc86b53"
+    },
+    {
+      "path": "evidence/ink-recovery-discoverability/recovery-visible-desktop.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-recovery-discoverability/recovery-visible-desktop.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 1013289,
+      "sha256": "566e5e9c2bc1d34d5291b3434a5cb3bb08c7fdab37647ac1fef21b0b90807897"
+    },
+    {
+      "path": "evidence/ink-recovery-discoverability/recovery-visible-phone.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-recovery-discoverability/recovery-visible-phone.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 315547,
+      "sha256": "43b4b676d2832bce96aaac0b4f596fa4c7190e21a95a89939f5023350fa9e728"
+    },
+    {
+      "path": "evidence/ink-recovery-discoverability/recovery-visible-tablet.png",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-recovery-discoverability/recovery-visible-tablet.png",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 845431,
+      "sha256": "c95a20c2cd9d40893b090da0a008658164c85c5e15c4fc46c9c45bf7ef28b543"
+    },
+    {
+      "path": "evidence/ink-recovery-discoverability/regression-results.json",
+      "category": "browser-evidence",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/evidence/ink-recovery-discoverability/regression-results.json",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 20915,
+      "sha256": "57d4761c34cc8e5f25413daf2a8a751b379ae81ce3b02dbcd73b47e56d835433"
+    },
+    {
+      "path": "evidence/product-flow-preview.jpg",
+      "category": "demo-poster",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/product-flow-preview.jpg",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 95103,
+      "sha256": "869adafc767d206efe80814e6ac95b9b50aee4dfcb653aa1f5552202c119c201"
+    },
+    {
+      "path": "evidence/product-flow-preview.mp4",
+      "category": "demo-recording",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/product-flow-preview.mp4",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 192258,
+      "sha256": "7034df05fcd3cc80687ac7fd6e29183142a36cb164224fd3b66f89d1ed12c6af"
+    },
+    {
+      "path": "historical-documents/AGILE-PROGRESS.md",
+      "category": "status-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/AGILE-PROGRESS.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 5935,
+      "sha256": "8f288cdc436ac285c31235729a820504287c4b8df827697f3d49165da29255ef"
+    },
+    {
+      "path": "historical-documents/BEHAVIOR-AUDIT.md",
+      "category": "qa-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/BEHAVIOR-AUDIT.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 7215,
+      "sha256": "4c9023d40a2189d7c146cd86fbca66589dd1786d021e4183d5d0d61f53881ca8"
+    },
+    {
+      "path": "historical-documents/BROWSER-INK-MILESTONE.md",
+      "category": "qa-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/BROWSER-INK-MILESTONE.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 5119,
+      "sha256": "a401dea3e408ad51684201a983873572a71bc2d26bba41b6f07b01fa7c362b54"
+    },
+    {
+      "path": "historical-documents/DEVELOPMENT-JOURNAL.md",
+      "category": "version-history-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "CHANGELOG.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 4441,
+      "sha256": "8cbff5a3fbf347bd3de02366ae27beab7a1786cbb7db1485eb15778c14ffd3c0"
+    },
+    {
+      "path": "historical-documents/Enchanted-Notebook-Architecture-Proposal.md",
+      "category": "supplied-proposal",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Enchanted-Notebook-Architecture-Proposal.md",
+        "file_id": "file_0000000039ec81f582970fed3581b53e"
+      },
+      "bytes": 31423,
+      "sha256": "963ed54659de282157131a82e4777d5ed732a75860972b0bfbcfa8e56755d60f"
+    },
+    {
+      "path": "historical-documents/Enchanted-Notebook-Business-Plan-v3.pptx",
+      "category": "supplied-design-context-deck",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Enchanted-Notebook-Business-Plan-v3.pptx",
+        "file_id": "file_00000000e13881fda503ef96377e6d58"
+      },
+      "bytes": 7523109,
+      "sha256": "b357d44369a942082da8aba001ffa7ad7feb0a6765ca5fa4918b9c3802990e03"
+    },
+    {
+      "path": "historical-documents/INK-RECOVERY-DISCOVERABILITY.md",
+      "category": "qa-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/INK-RECOVERY-DISCOVERABILITY.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 5414,
+      "sha256": "8020373709c868224b654aa4d6d545196ef5685e1ec56e4ea3370445535fbaa1"
+    },
+    {
+      "path": "historical-documents/MC-028-DIARY-ART.md",
+      "category": "art-card-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/01/MC-028-DIARY-ART.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2733,
+      "sha256": "fc52a0000557f2d285c010c7fa02bed2ecadfd470949cc3a77181de194b16e94"
+    },
+    {
+      "path": "historical-documents/MC-034.md",
+      "category": "design-card-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/Story-Cards/MC-034.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2705,
+      "sha256": "ea5441e77b7a351e974ada801163e65ff40fd9498ab784154c9b6c1ad8e76e76"
+    },
+    {
+      "path": "historical-documents/MC-035.md",
+      "category": "design-card-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/Story-Cards/MC-035.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2538,
+      "sha256": "a89174c5d4517ad8dbe2cf30245f792c61ceecde3a7cb2868333c5a42fd2abe6"
+    },
+    {
+      "path": "historical-documents/SPRINT-PREPARATION.md",
+      "category": "plan-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/02/SPRINT-PREPARATION.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 12774,
+      "sha256": "ee7383da7ef312f0f6640b0848872c3ff3f51ccde416b4fa688cd98f9f8ab945"
+    },
+    {
+      "path": "historical-documents/UX-FIXES-2026-10-04.md",
+      "category": "qa-snapshot",
+      "origin": {
+        "kind": "repository",
+        "path": "docs/iterations/01/UX-FIXES-2026-10-04.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 5481,
+      "sha256": "528de4c05ef0adc51c4cfec150d8f89c329044c3b10581c8a68cb8c47e855805"
+    },
+    {
+      "path": "lettering/OFL.txt",
+      "category": "font-license",
+      "origin": {
+        "kind": "repository",
+        "path": "public/fonts/OFL.txt",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 4385,
+      "sha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b"
+    },
+    {
+      "path": "lettering/caveat.ttf",
+      "category": "font",
+      "origin": {
+        "kind": "repository",
+        "path": "public/fonts/caveat.ttf",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 403648,
+      "sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988"
+    },
+    {
+      "path": "materials/GENERATION-BRIEFS.md",
+      "category": "material-provenance",
+      "origin": {
+        "kind": "repository",
+        "path": "public/materials/README.md",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 979,
+      "sha256": "0d0ccbae879662cb8561c0e41939f90b7855aa727e68986cdcf441c05aead5fa"
+    },
+    {
+      "path": "materials/leather-alpha-02.webp",
+      "category": "material",
+      "origin": {
+        "kind": "repository",
+        "path": "public/materials/leather-alpha-02.webp",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 421368,
+      "sha256": "87584839901a314788780e79bc0d8be3b6fec0ab8d43245cb85701ee3253a596"
+    },
+    {
+      "path": "materials/vellum-alpha-02.webp",
+      "category": "material",
+      "origin": {
+        "kind": "repository",
+        "path": "public/materials/vellum-alpha-02.webp",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 227826,
+      "sha256": "527f3fa49aa6a69a112b4962655ae41b1146e4f05e978811de992aabaf8cf17f"
+    },
+    {
+      "path": "references/.gitignore",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "authored",
+        "revision": "art-design-v1"
+      },
+      "bytes": 42,
+      "sha256": "c161300fcc23de13690b8286f8c34666d20e01e81d65b8a50411660736844041"
+    },
+    {
+      "path": "references/README.md",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "authored",
+        "revision": "art-design-v1"
+      },
+      "bytes": 1047,
+      "sha256": "e871af2c561c68075b66a84dd0b4c572e7803dc2fa4789647ae380fc88624866"
+    },
+    {
+      "path": "references/harry-potter-notebook-demo.jpg",
+      "category": "reference-poster",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/harry-potter-notebook-demo.jpg",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 80066,
+      "sha256": "c2c62547fa9c21aad4fe6e1fa541ffd5f3595b6501d1e172cc3805a2d06f39bb"
+    },
+    {
+      "path": "references/harry-potter-notebook-demo.mp4",
+      "category": "reference-derivative",
+      "origin": {
+        "kind": "repository",
+        "path": "public/demo/harry-potter-notebook-demo.mp4",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 954804,
+      "sha256": "a660cc405bc9baab63f286c8ed2c534220336522b9cf3dfc36fa802fd954c9c8"
+    },
+    {
+      "path": "references/original-video-parts/manifest.json",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Harry_Potter.s_notebookDemo.mp4",
+        "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+      },
+      "bytes": 1439,
+      "sha256": "733209bf9b9cce9e172eaed9df1a64c0ec419c0ae75152aba16f570b13b7e787"
+    },
+    {
+      "path": "references/original-video-parts/part-001.bin",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Harry_Potter.s_notebookDemo.mp4",
+        "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+      },
+      "bytes": 8388608,
+      "sha256": "114a97a2da243bfd11f733d5a3ea9fdf8dd3abfbf45c5a0da23b14a6a2b67344"
+    },
+    {
+      "path": "references/original-video-parts/part-002.bin",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Harry_Potter.s_notebookDemo.mp4",
+        "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+      },
+      "bytes": 8388608,
+      "sha256": "2ceed1f112f7b8a00d965c5119c201db941ba940965a4d1121677c0eb6ba4fc7"
+    },
+    {
+      "path": "references/original-video-parts/part-003.bin",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Harry_Potter.s_notebookDemo.mp4",
+        "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+      },
+      "bytes": 8388608,
+      "sha256": "3e3d238b6e2d9354342231b27c9eba7338872ac94a3a8c853f0e0498f0280aa4"
+    },
+    {
+      "path": "references/original-video-parts/part-004.bin",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Harry_Potter.s_notebookDemo.mp4",
+        "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+      },
+      "bytes": 8388608,
+      "sha256": "19ed1cec22f87e24db1648a46dff173a6fc9f97851771236bf535c3fe6f0dd60"
+    },
+    {
+      "path": "references/original-video-parts/part-005.bin",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Harry_Potter.s_notebookDemo.mp4",
+        "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+      },
+      "bytes": 8388608,
+      "sha256": "33bd0cf6e4177d694a7fe07225c373b1129daa5a8c8066c9ab4e5a44931a0c30"
+    },
+    {
+      "path": "references/original-video-parts/part-006.bin",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Harry_Potter.s_notebookDemo.mp4",
+        "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+      },
+      "bytes": 8388608,
+      "sha256": "d4eb73ca0551f98075933a730050603a9b820e72f01d839b9a339b810d1505ac"
+    },
+    {
+      "path": "references/original-video-parts/part-007.bin",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "Harry_Potter.s_notebookDemo.mp4",
+        "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+      },
+      "bytes": 7898923,
+      "sha256": "3964adc85aeb76b99cc24cfdfdc17a9f2fbf7cee14ca1d23c39f1d4d47de832a"
+    },
+    {
+      "path": "references/restore-original-video.py",
+      "category": "original-video-preservation",
+      "origin": {
+        "kind": "authored",
+        "revision": "art-design-v1"
+      },
+      "bytes": 1441,
+      "sha256": "5e1c704e8337e85abf95f64720b0ee6d7a6df362c26af4340659e1d089f3cdc7"
+    },
+    {
+      "path": "reply-media/asset-manifest.json",
+      "category": "reply-media",
+      "origin": {
+        "kind": "repository",
+        "path": "public/replies/asset-manifest.json",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 2640,
+      "sha256": "990190e80deeb30bafc0e2725cb1453fcf2bcb1e3c3b3449d16837a71befd990"
+    },
+    {
+      "path": "reply-media/cell-division-poster.webp",
+      "category": "reply-media",
+      "origin": {
+        "kind": "repository",
+        "path": "public/replies/cell-division-poster.webp",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 13546,
+      "sha256": "ad38aab3a61f8fc7d49f04897c27f29050bcdba98c3d067412734f3e452688c7"
+    },
+    {
+      "path": "reply-media/cell-division.mp4",
+      "category": "reply-media",
+      "origin": {
+        "kind": "repository",
+        "path": "public/replies/cell-division.mp4",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 60835,
+      "sha256": "0829aaa5d1f579f3390df4c0f40e21d5ee3beeb7dc64a602e32719d6d7aac3b4"
+    },
+    {
+      "path": "reply-media/cell-division.vtt",
+      "category": "reply-media",
+      "origin": {
+        "kind": "repository",
+        "path": "public/replies/cell-division.vtt",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 371,
+      "sha256": "750f9f152e6813d30f690ab1b2c6d4c141deeacf45a9049bed847bd2f013628f"
+    },
+    {
+      "path": "reply-media/moonlit-forest.webp",
+      "category": "reply-media",
+      "origin": {
+        "kind": "repository",
+        "path": "public/replies/moonlit-forest.webp",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 495490,
+      "sha256": "d3ad3139a86c8c1b9220e89c25e36f454dd5f376b87e56c96d2e450a70a52a1b"
+    },
+    {
+      "path": "reply-media/owl-sticker.webp",
+      "category": "reply-media",
+      "origin": {
+        "kind": "repository",
+        "path": "public/replies/owl-sticker.webp",
+        "commit": "1ade48864d90afcc23a0b9b8ea1a84b101d0f095"
+      },
+      "bytes": 298304,
+      "sha256": "db80968e00f2b2476d591811c30de7cacd13e17a7bed18b11b537dcc2445a37a"
+    },
+    {
+      "path": "world-map/LUMINOUS_LEDGER_FANTASY_MAP_v06.png",
+      "category": "supplied-map-art",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "LUMINOUS_LEDGER_FANTASY_MAP_v06.png",
+        "file_id": "file_00000000298881fd9b89831cd9c61f29"
+      },
+      "bytes": 4671053,
+      "sha256": "f51f94d347c585247b8a28a3fccde06808ea275b975e8e14650a09ac62237cc3"
+    },
+    {
+      "path": "world-map/WORLD_MAP_SOURCE_NOTES_v05.md",
+      "category": "supplied-map-provenance",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "WORLD_MAP_SOURCE_NOTES_v05.md",
+        "file_id": "file_000000007eb881fbb50b5953beaabcd9"
+      },
+      "bytes": 2166,
+      "sha256": "2eff2f5175abf833d467a63606c3ea36cb515da00dbb338fa9c08803844ea31e"
+    },
+    {
+      "path": "world-map/world_map_locations_v05.json",
+      "category": "supplied-map-data",
+      "origin": {
+        "kind": "supplied-attachment",
+        "filename": "world_map_locations_v05.json",
+        "file_id": "file_000000005a2881fdb65b02a784361bff"
+      },
+      "bytes": 12345,
+      "sha256": "69bc6c56b51007acc551d262541607bb49a62e7b597f64695dd3c2d20705c01d"
+    }
+  ],
+  "originalVideo": {
+    "manifest": "references/original-video-parts/manifest.json",
+    "restore": "references/restore-original-video.py",
+    "bytes": 58230571,
+    "sha256": "eecccee2fda553cfa38d3d8817d97e2dff76fada3b0cb64ec97705af929ddc9e"
+  }
+}

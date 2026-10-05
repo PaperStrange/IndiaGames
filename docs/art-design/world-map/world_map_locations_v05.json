@@ -1,0 +1,304 @@
+{
+  "mapId": "luminous-ledger-magical-britain-v05",
+  "title": "The Luminous Ledger - Geographic Overview and Player Journey Map",
+  "version": "0.5",
+  "projection": "schematic-geographic-overlay",
+  "boundarySemantics": "Gameplay navigation regions. These colored divisions are not claims about canonical political borders.",
+  "presentationModel": "dual-view-navigation-map",
+  "canvas": {
+    "width": 2400,
+    "height": 1600,
+    "mapViewport": {
+      "x": 88,
+      "y": 220,
+      "width": 1590,
+      "height": 1190
+    },
+    "sidebar": {
+      "x": 1720,
+      "y": 220,
+      "width": 600,
+      "height": 1190
+    }
+  },
+  "defaultWorldState": {
+    "date": "1991-07-24",
+    "time": "08:00",
+    "largeRegion": "london-arc",
+    "smallRegion": "london-gate",
+    "currentLocationId": "london-gate"
+  },
+  "visualAssets": {
+    "artBase": "LUMINOUS_LEDGER_FANTASY_MAP_ART_v03.png",
+    "geographicOverview": "LUMINOUS_LEDGER_FANTASY_MAP_v05.svg",
+    "geographicPreview": "LUMINOUS_LEDGER_FANTASY_MAP_v05.png",
+    "journeyMap": "LUMINOUS_LEDGER_PLAYER_JOURNEY_MAP_v05.svg",
+    "journeyPreview": "LUMINOUS_LEDGER_PLAYER_JOURNEY_MAP_v05.png",
+    "previousVersion": "LUMINOUS_LEDGER_FANTASY_MAP_v04.svg"
+  },
+  "regions": [
+    {
+      "id": "london-arc",
+      "label": "London Arc",
+      "description": "Dense magical city network and southern transit gate.",
+      "color": "#E6CF83",
+      "boundaryStyle": "dashed",
+      "detailLayer": "london-detail"
+    },
+    {
+      "id": "west-country",
+      "label": "West Country",
+      "description": "Villages, memorial paths, and old family routes.",
+      "color": "#E2B490",
+      "boundaryStyle": "dashed",
+      "detailLayer": "west-country-detail"
+    },
+    {
+      "id": "central-heartland",
+      "label": "Central Heartland",
+      "description": "School approaches and the primary northbound corridor.",
+      "color": "#C7AED0",
+      "boundaryStyle": "dashed",
+      "detailLayer": "central-detail"
+    },
+    {
+      "id": "northern-wilds",
+      "label": "Northern Wilds",
+      "description": "Forest boundary, villages, and the northern gate.",
+      "color": "#D7CF91",
+      "boundaryStyle": "dashed",
+      "detailLayer": "hogwarts-region-detail"
+    },
+    {
+      "id": "scottish-highlands",
+      "label": "Scottish Highlands",
+      "description": "Remote mountain routes and high-altitude magical travel.",
+      "color": "#A7C9B1",
+      "boundaryStyle": "dashed",
+      "detailLayer": "highlands-detail"
+    }
+  ],
+  "locations": [
+    {
+      "id": "london-gate",
+      "label": "London Gate",
+      "subtitle": "Leaky Cauldron / Diagon Alley",
+      "type": "city-gate",
+      "regionId": "london-arc",
+      "mapPoint": { "x": 1292, "y": 1227 },
+      "markerNumber": 1,
+      "factionTags": ["Ministry", "neutral"],
+      "detailLayer": "london-detail"
+    },
+    {
+      "id": "kings-cross-gate",
+      "label": "King's Cross Gate",
+      "subtitle": "primary northbound departure",
+      "type": "transit",
+      "regionId": "central-heartland",
+      "journeyPoint": { "x": 705, "y": 625 },
+      "markerNumber": 2,
+      "factionTags": ["neutral"],
+      "detailLayer": "london-detail"
+    },
+    {
+      "id": "ministry",
+      "label": "Ministry District",
+      "subtitle": "politics and official notices",
+      "type": "political",
+      "regionId": "london-arc",
+      "mapPoint": { "x": 1312, "y": 1061 },
+      "markerNumber": 2,
+      "factionTags": ["Ministry"],
+      "detailLayer": "london-detail"
+    },
+    {
+      "id": "hogwarts",
+      "label": "Hogwarts",
+      "subtitle": "Luminous Ledger campus",
+      "type": "academy",
+      "regionId": "central-heartland",
+      "mapPoint": { "x": 1191, "y": 820 },
+      "markerNumber": 3,
+      "factionTags": ["Gryffindor", "Slytherin", "Ravenclaw", "Hufflepuff"],
+      "detailLayer": "hogwarts-region-detail"
+    },
+    {
+      "id": "hogsmeade",
+      "label": "Hogsmeade",
+      "subtitle": "village and northern gate",
+      "type": "settlement",
+      "regionId": "northern-wilds",
+      "mapPoint": { "x": 1175, "y": 635 },
+      "markerNumber": 4,
+      "factionTags": ["neutral"],
+      "detailLayer": "hogwarts-region-detail"
+    },
+    {
+      "id": "forbidden-forest",
+      "label": "Forbidden Forest",
+      "subtitle": "protected wild region",
+      "type": "wild",
+      "regionId": "northern-wilds",
+      "mapPoint": { "x": 1230, "y": 785 },
+      "markerNumber": 5,
+      "factionTags": ["neutral"],
+      "detailLayer": "hogwarts-region-detail"
+    },
+    {
+      "id": "godrics-hollow",
+      "label": "Godric's Hollow",
+      "subtitle": "memorial paths and old houses",
+      "type": "village",
+      "regionId": "west-country",
+      "mapPoint": { "x": 880, "y": 1060 },
+      "markerNumber": 6,
+      "factionTags": ["neutral"],
+      "detailLayer": "west-country-detail"
+    },
+    {
+      "id": "dragonback-highlands",
+      "label": "Dragonback Highlands",
+      "subtitle": "remote northern route",
+      "type": "mountains",
+      "regionId": "scottish-highlands",
+      "mapPoint": { "x": 930, "y": 405 },
+      "markerNumber": 7,
+      "factionTags": ["neutral"],
+      "detailLayer": "highlands-detail"
+    },
+    {
+      "id": "azkaban",
+      "label": "Azkaban / Blackglass Isle",
+      "subtitle": "offshore prison and storm zone",
+      "type": "island",
+      "regionId": "northern-wilds",
+      "mapPoint": { "x": 1505, "y": 495 },
+      "markerNumber": 8,
+      "factionTags": ["Ministry", "neutral"],
+      "detailLayer": "azkaban-detail"
+    }
+  ],
+  "companionAnchors": [
+    { "profileId": "mara-hearthwick", "locationId": "hogwarts", "label": "East Tower Hearthroom", "accent": "#A96F42" },
+    { "profileId": "orin-quillglass", "locationId": "hogwarts", "label": "Underlibrary of Echoes", "accent": "#1B3145" },
+    { "profileId": "talia-fernroot", "locationId": "hogwarts", "label": "Greenhouse Seven", "accent": "#3C6B4A" },
+    { "profileId": "cassian-starling", "locationId": "hogwarts", "label": "Observatory Map Room", "accent": "#344C83" },
+    { "profileId": "vesper-flint", "locationId": "hogwarts", "label": "Mirror Chamber", "accent": "#6A5A8C" },
+    { "profileId": "mira-moonthread", "locationId": "hogwarts", "label": "Observatory of Unfinished Dreams", "accent": "#70456E" },
+    { "profileId": "pip-bramblefoot", "locationId": "hogwarts", "label": "Moonlit Menagerie", "accent": "#A27A42" }
+  ],
+  "storyPoints": [
+    { "id": "east-tower-hearthroom", "locationId": "hogwarts", "label": "East Tower Hearthroom", "companionProfileId": "mara-hearthwick", "mapCode": "M" },
+    { "id": "underlibrary-of-echoes", "locationId": "hogwarts", "label": "Underlibrary of Echoes", "companionProfileId": "orin-quillglass", "mapCode": "O" },
+    { "id": "greenhouse-seven", "locationId": "hogwarts", "label": "Greenhouse Seven", "companionProfileId": "talia-fernroot", "mapCode": "T" },
+    { "id": "observatory-map-room", "locationId": "hogwarts", "label": "Observatory Map Room", "companionProfileId": "cassian-starling" },
+    { "id": "mirror-chamber", "locationId": "hogwarts", "label": "Mirror Chamber", "companionProfileId": "vesper-flint" },
+    { "id": "observatory-of-unfinished-dreams", "locationId": "hogwarts", "label": "Observatory of Unfinished Dreams", "companionProfileId": "mira-moonthread" },
+    { "id": "moonlit-menagerie", "locationId": "hogwarts", "label": "Moonlit Menagerie", "companionProfileId": "pip-bramblefoot" }
+  ],
+  "routes": [
+    { "id": "primary-northbound-route", "label": "Primary Northbound Route", "from": "london-gate", "to": "hogwarts", "via": ["kings-cross-gate"], "style": "amber-dashed", "recommended": true },
+    { "id": "hogwarts-to-hogsmeade", "label": "Northern Gate", "from": "hogwarts", "to": "hogsmeade", "style": "amber-dashed" },
+    { "id": "western-leyline", "label": "Western Leyline", "from": "hogwarts", "to": "godrics-hollow", "style": "rust-dashed" },
+    { "id": "northern-apparition-corridor", "label": "Northern Apparition Corridor", "from": "hogwarts", "to": "azkaban", "style": "violet-dashed" }
+  ],
+  "journeyStages": [
+    {
+      "id": "london-gate-stage",
+      "sequence": 1,
+      "regionId": "london-arc",
+      "locationId": "london-gate",
+      "title": "London Gate",
+      "storyBeat": "Write the first true intention in the Luminous Ledger.",
+      "checkpoint": "Save the current location and companion selection."
+    },
+    {
+      "id": "kings-cross-gate-stage",
+      "sequence": 2,
+      "regionId": "central-heartland",
+      "locationId": "kings-cross-gate",
+      "title": "King's Cross Gate",
+      "storyBeat": "Choose who travels with you and what question to carry north.",
+      "optionalDetour": "ministry"
+    },
+    {
+      "id": "hogwarts-arrival-stage",
+      "sequence": 3,
+      "regionId": "central-heartland",
+      "locationId": "hogwarts",
+      "title": "Hogwarts Arrival",
+      "storyBeat": "Receive the welcome note, meet the first NPC, and accept a quest.",
+      "checkpoint": "Campus access, quest state, and companion memory become inspectable."
+    },
+    {
+      "id": "companion-hubs-stage",
+      "sequence": 4,
+      "regionId": "central-heartland",
+      "locationId": "hogwarts",
+      "title": "Companion Hubs",
+      "storyBeat": "Choose a relationship to deepen.",
+      "anchorIds": [
+        "mara-hearthwick",
+        "orin-quillglass",
+        "talia-fernroot",
+        "cassian-starling",
+        "vesper-flint",
+        "mira-moonthread",
+        "pip-bramblefoot"
+      ]
+    }
+  ],
+  "journeyBranches": [
+    {
+      "id": "west-country-branch",
+      "label": "West Country Branch",
+      "regionId": "west-country",
+      "locationIds": ["godrics-hollow"],
+      "storyUse": "Memorial paths and old family routes."
+    },
+    {
+      "id": "northern-wilds-branch",
+      "label": "Northern Wilds Branch",
+      "regionId": "northern-wilds",
+      "locationIds": ["hogsmeade", "forbidden-forest"],
+      "storyUse": "Village errands, forest thresholds, and northern-gate quests."
+    },
+    {
+      "id": "remote-routes-branch",
+      "label": "Remote Routes",
+      "regionIds": ["scottish-highlands", "northern-wilds"],
+      "locationIds": ["dragonback-highlands", "azkaban"],
+      "storyUse": "Late-game mountain travel and offshore storm-zone content."
+    }
+  ],
+  "layers": [
+    { "id": "overview", "label": "Overview", "visibleByDefault": true },
+    { "id": "player-journey", "label": "Player Journey", "visibleByDefault": false },
+    { "id": "hogwarts-region-detail", "label": "Hogwarts Region Detail", "visibleByDefault": false },
+    { "id": "companion-overlay", "label": "Companion Homes", "visibleByDefault": false },
+    { "id": "quest-route-overlay", "label": "Quest Routes", "visibleByDefault": true }
+  ],
+  "runtimeNotes": [
+    "Use regionId to resolve the selected gameplay region before showing landmark detail.",
+    "Replace currentLocationId from world state at runtime; do not hard-code the gold current marker.",
+    "Use the geographic overview for place orientation and the player journey map for route sequencing and story checkpoints.",
+    "Render numbered markers with leader lines and collision-safe offsets; never place a marker directly on a location label.",
+    "Render region boundaries as explicit high-contrast dashed lines with a darker under-stroke so every gameplay region reads as a deliberate area.",
+    "Keep companion anchors stable while the world-state layer changes; reveal them only in the companion overlay or local detail view.",
+    "The map is an original navigation layer informed by public Harry Potter location references; it does not reproduce a licensed map artwork.",
+    "Local rendering owns marker animation, route drawing, page texture, and candlelight response."
+  ],
+  "referenceSources": [
+    {
+      "title": "HarryPotter.com Fact Files - Locations",
+      "url": "https://www.harrypotter.com/fact-file/locations",
+      "use": "Cross-check the Leaky Cauldron / Diagon Alley relationship and official location naming."
+    },
+    {
+      "title": "MinaLima Hogwarts Map reference image",
+      "url": "https://media.harrypotterfanzone.com/minalima-hogwarts-map.jpg",
+      "use": "Visual reference for parchment cartography, landmark hierarchy, and a separate Hogwarts-area detail treatment; do not copy artwork."
+    }
+  ]
+}

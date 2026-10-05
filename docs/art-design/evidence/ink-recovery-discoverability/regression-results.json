@@ -1,0 +1,572 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/scratch/5e79cf296b76/enchanted-notebook/node_modules/playwright/cli.js",
+      "test"
+    ],
+    "configFile": "/workspace/scratch/5e79cf296b76/enchanted-notebook/playwright.config.ts",
+    "rootDir": "/workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 300000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/scratch/5e79cf296b76/enchanted-notebook/work/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/scratch/5e79cf296b76/enchanted-notebook/work/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "phone",
+        "name": "phone",
+        "testDir": "/workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/scratch/5e79cf296b76/enchanted-notebook/work/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet",
+        "name": "tablet",
+        "testDir": "/workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "work/browser-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/browser-test-server.mjs",
+      "url": "http://127.0.0.1:4175/api/notebook",
+      "timeout": 30000,
+      "reuseExistingServer": false,
+      "stdout": "pipe",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "notebook.spec.ts",
+      "file": "notebook.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "move-ink action is reachable without scrolling or toolbar obstruction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5168,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:17:50.394Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-ba91324c64513b697bf4",
+          "file": "notebook.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "overlapping ink moves intact, survives page turns and reload, and can remain an annotation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26459,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:17:55.685Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-10c90bcff9bf52cb2ec3",
+          "file": "notebook.spec.ts",
+          "line": 100,
+          "column": 1
+        },
+        {
+          "title": "turning a page during the fade leaves the unsent thought visible on return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10192,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:18:22.155Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-9908e10f9fbe5e492e48",
+          "file": "notebook.spec.ts",
+          "line": 146,
+          "column": 1
+        },
+        {
+          "title": "photo upload, crop, retake, original download and recovery use the real application",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6769,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:18:32.360Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-2e1dc64d71beb77c1d19",
+          "file": "notebook.spec.ts",
+          "line": 164,
+          "column": 1
+        },
+        {
+          "title": "move-ink action is reachable without scrolling or toolbar obstruction",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "phone",
+              "projectName": "phone",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 44936,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Synced', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Synced', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Synced', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Synced', exact: true })\u001b[22m\n\n    at /workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser/notebook.spec.ts:94:77",
+                    "location": {
+                      "file": "/workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser/notebook.spec.ts",
+                      "column": 77,
+                      "line": 94
+                    },
+                    "snippet": "  92 |     await page.mouse.click(target.x + target.width / 2, target.y + target.height / 2);\n  93 |     await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('A little curiosity · a new thought');\n> 94 |     await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();\n     |                                                                             ^\n  95 |     const saved = await (await page.request.get('/api/notebook')).json();\n  96 |     expect(saved.notebook.pages[0].strokes).toHaveLength(0);\n  97 |     expect(saved.notebook.pages[1].strokes.length).toBeGreaterThan(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser/notebook.spec.ts",
+                        "column": 77,
+                        "line": 94
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Synced', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Synced', exact: true })\u001b[22m\n\n\n  92 |     await page.mouse.click(target.x + target.width / 2, target.y + target.height / 2);\n  93 |     await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('A little curiosity · a new thought');\n> 94 |     await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();\n     |                                                                             ^\n  95 |     const saved = await (await page.request.get('/api/notebook')).json();\n  96 |     expect(saved.notebook.pages[0].strokes).toHaveLength(0);\n  97 |     expect(saved.notebook.pages[1].strokes.length).toBeGreaterThan(0);\n    at /workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser/notebook.spec.ts:94:77"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:18:39.766Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/scratch/5e79cf296b76/enchanted-notebook/work/browser-results/notebook-move-ink-action-i-790d9-ling-or-toolbar-obstruction-phone/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/scratch/5e79cf296b76/enchanted-notebook/work/browser-results/notebook-move-ink-action-i-790d9-ling-or-toolbar-obstruction-phone/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/scratch/5e79cf296b76/enchanted-notebook/work/browser-results/notebook-move-ink-action-i-790d9-ling-or-toolbar-obstruction-phone/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/scratch/5e79cf296b76/enchanted-notebook/tests/browser/notebook.spec.ts",
+                    "column": 77,
+                    "line": 94
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-040a14c58c5eadf3f410",
+          "file": "notebook.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "overlapping ink moves intact, survives page turns and reload, and can remain an annotation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "phone",
+              "projectName": "phone",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 25087,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:19:26.617Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-325bcc388a6975aa4971",
+          "file": "notebook.spec.ts",
+          "line": 100,
+          "column": 1
+        },
+        {
+          "title": "turning a page during the fade leaves the unsent thought visible on return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "phone",
+              "projectName": "phone",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10297,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:19:51.881Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-a082016b32552db2e9be",
+          "file": "notebook.spec.ts",
+          "line": 146,
+          "column": 1
+        },
+        {
+          "title": "photo upload, crop, retake, original download and recovery use the real application",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "phone",
+              "projectName": "phone",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5485,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:20:02.196Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-124cb9381b59ce823a5b",
+          "file": "notebook.spec.ts",
+          "line": 164,
+          "column": 1
+        },
+        {
+          "title": "move-ink action is reachable without scrolling or toolbar obstruction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:20:08.365Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-812537fbabbba98d08f9",
+          "file": "notebook.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "overlapping ink moves intact, survives page turns and reload, and can remain an annotation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 25424,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:20:13.061Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-2d5e93debebae379c32a",
+          "file": "notebook.spec.ts",
+          "line": 100,
+          "column": 1
+        },
+        {
+          "title": "turning a page during the fade leaves the unsent thought visible on return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9994,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:20:38.517Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-c90667e81bfe42a17476",
+          "file": "notebook.spec.ts",
+          "line": 146,
+          "column": 1
+        },
+        {
+          "title": "photo upload, crop, retake, original download and recovery use the real application",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6285,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-05T03:20:48.530Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f73cefbff9118457938-817bb046947cd12f7d6d",
+          "file": "notebook.spec.ts",
+          "line": 164,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-05T03:17:47.822Z",
+    "duration": 187140.59999999998,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

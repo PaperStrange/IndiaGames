@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "filename": "Harry_Potter.s_notebookDemo-original.mp4",
+  "bytes": 58230571,
+  "sha256": "eecccee2fda553cfa38d3d8817d97e2dff76fada3b0cb64ec97705af929ddc9e",
+  "origin": {
+    "kind": "supplied-attachment",
+    "filename": "Harry_Potter.s_notebookDemo.mp4",
+    "file_id": "file_00000000c6c88230b1c0091ce3e0bef2"
+  },
+  "parts": [
+    {
+      "filename": "part-001.bin",
+      "bytes": 8388608,
+      "sha256": "114a97a2da243bfd11f733d5a3ea9fdf8dd3abfbf45c5a0da23b14a6a2b67344"
+    },
+    {
+      "filename": "part-002.bin",
+      "bytes": 8388608,
+      "sha256": "2ceed1f112f7b8a00d965c5119c201db941ba940965a4d1121677c0eb6ba4fc7"
+    },
+    {
+      "filename": "part-003.bin",
+      "bytes": 8388608,
+      "sha256": "3e3d238b6e2d9354342231b27c9eba7338872ac94a3a8c853f0e0498f0280aa4"
+    },
+    {
+      "filename": "part-004.bin",
+      "bytes": 8388608,
+      "sha256": "19ed1cec22f87e24db1648a46dff173a6fc9f97851771236bf535c3fe6f0dd60"
+    },
+    {
+      "filename": "part-005.bin",
+      "bytes": 8388608,
+      "sha256": "33bd0cf6e4177d694a7fe07225c373b1129daa5a8c8066c9ab4e5a44931a0c30"
+    },
+    {
+      "filename": "part-006.bin",
+      "bytes": 8388608,
+      "sha256": "d4eb73ca0551f98075933a730050603a9b820e72f01d839b9a339b810d1505ac"
+    },
+    {
+      "filename": "part-007.bin",
+      "bytes": 7898923,
+      "sha256": "3964adc85aeb76b99cc24cfdfdc17a9f2fbf7cee14ca1d23c39f1d4d47de832a"
+    }
+  ]
+}
