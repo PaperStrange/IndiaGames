@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f0e5">
+  <meta name="description" content="A tiny game for two people, one screen, and an ordinary moment worth keeping.">
+  <title>Small Hours · Memorable Moments</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar"><a class="wordmark" href="./" aria-label="Small Hours home"><span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M5 19 19 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span> small hours<span class="edition">MEMORABLE MOMENTS</span></a><div class="header-right"><span class="tiny-label">A LITTLE TIME, TOGETHER</span><button class="text-button" id="about-button">How it works <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div></header>
+  <main id="app"></main>
+  <footer class="site-footer"><span>Made for a moment. Yours to keep.</span><span>GAME JAM EXPERIMENT <span class="footer-dot">·</span> 001</span></footer>
+  <dialog id="about"><form method="dialog"><button class="close" aria-label="Close how it works">×</button></form><p class="eyebrow">A SMALL INVITATION</p><h2>Two people.<br>One ordinary moment.</h2><p>Pick a scene. Take turns choosing and guessing in private. Reveal together, make something small away from the screen, then each add one detail to your keepsake.</p><p>About five minutes. No score, streak, account, camera, or need to share anything personal. You can imagine the objects, change the scene, or leave whenever you like.</p><p><strong>A curtain is a courtesy, not a security lock.</strong> Ask the other person to look away. Anyone with this device or browser tools can inspect the session. Answers stay in this tab’s memory; reloading clears them. Only an explicit download saves your keepsake.</p><p class="small">Friends, partners, family: bring someone who wants to join. Solo rehearsal shows the flow, but cannot test a shared experience.</p><form method="dialog"><button class="primary">Sounds good</button></form></dialog>
+  <noscript>This game needs JavaScript to keep choices hidden until the reveal.</noscript>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

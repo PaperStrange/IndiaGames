@@ -1,0 +1,134 @@
+import { createRequire } from 'node:module';
+import { mkdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+const require = createRequire(import.meta.url);
+let chromium;
+try { ({ chromium } = require('playwright')); }
+catch { ({ chromium } = require(process.env.PLAYWRIGHT_PATH || '/workspace/indiagames-env/toms-notebook-deps/node_modules/playwright')); }
+const base = process.env.BASE_URL || 'http://127.0.0.1:8111/memorable-moments-game/';
+const out = path.resolve(new URL('../docs/evidence', import.meta.url).pathname);
+await mkdir(out, { recursive: true });
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium', headless: true, args: ['--no-sandbox'] });
+const trace = [];
+let checks = 0;
+async function check(label, fn) { await fn(); checks += 1; trace.push({ check: label, result: 'pass' }); }
+async function click(page, action, id) {
+  const locator = page.locator(`[data-action="${action}"]${id ? `[data-id="${id}"]` : ''}`);
+  await locator.click(); trace.push({ action: action + (id ? `:${id}` : ''), heading: await page.locator('h1').textContent() });
+}
+async function fits(page, label) {
+  await check(`${label}: no horizontal overflow`, async () => assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)));
+}
+const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+const errors = [];
+page.on('pageerror', err => errors.push(err.message));
+await page.goto(base + 'research-report.html');
+await page.screenshot({ path: path.join(out, '00-before-research-only.png'), fullPage: false });
+trace.push({ baseline: 'Existing branch has a research report, no playable start/reveal/keepsake path.' });
+await page.goto(base + 'play/');
+await page.screenshot({ path: path.join(out, '01-desktop-home.png'), fullPage: true });
+await fits(page, 'Desktop home');
+await page.locator('[data-action="start-pair"]').focus();
+await page.keyboard.press('Enter');
+trace.push({ action: 'Keyboard Enter starts pair session', heading: await page.locator('h1').textContent() });
+await click(page, 'start-scene');
+await click(page, 'ready-a');
+await check('Incomplete private choices cannot be sealed', async () => assert(await page.locator('[data-action="seal"]').isDisabled()));
+await click(page, 'choose', 'color');
+await click(page, 'guess', 'shape');
+await click(page, 'seal');
+await check('A’s choice is absent from curtain DOM', async () => assert(!(await page.locator('#app').innerText()).includes('A little color')));
+await page.screenshot({ path: path.join(out, '02-pass-device.png'), fullPage: true });
+await click(page, 'ready-b');
+await check('B receives clean unselected controls', async () => assert.equal(await page.locator('[aria-pressed="true"]').count(), 0));
+await click(page, 'choose', 'story');
+await click(page, 'guess', 'color');
+await click(page, 'seal');
+await check('Reveal requires an explicit joint-ready step', async () => { assert.equal(await page.locator('.reveal-card').count(), 0); assert.equal(await page.locator('[data-action="reveal"]').count(), 1); });
+await click(page, 'reveal');
+await check('Both distinct choices and prediction outcomes revealed', async () => {
+  assert.equal(await page.locator('.reveal-card h2').nth(0).textContent(), 'A little color');
+  assert.equal(await page.locator('.reveal-card h2').nth(1).textContent(), 'A quiet story');
+  assert((await page.locator('.match-label').allTextContents()).includes('A little room for surprise'));
+  assert((await page.locator('.match-label').allTextContents()).includes('A little shared wavelength'));
+});
+await page.screenshot({ path: path.join(out, '03-shared-reveal.png'), fullPage: true });
+await click(page, 'action');
+await check('Shared action incorporates each chosen prompt', async () => {
+  const roles = await page.locator('.action-roles').innerText(); assert(roles.includes('color you like') && roles.includes('give a story'));
+});
+await page.clock.install();
+await click(page, 'timer');
+await page.clock.fastForward(46000);
+await check('Timer finishes gently without forcing navigation', async () => { assert.equal(await page.locator('#timer').textContent(), '0:00'); assert((await page.locator('#timer-status').innerText()).includes('as long as you like')); });
+await page.screenshot({ path: path.join(out, '04-shared-action.png'), fullPage: true });
+await click(page, 'write'); await click(page, 'ready-write-a');
+await page.locator('#memory').fill('A teaspoon and a sock became a lighthouse for ants.');
+await click(page, 'seal-line');
+await check('A’s authored detail absent from handoff DOM', async () => assert(!(await page.locator('#app').innerText()).includes('teaspoon')));
+await click(page, 'ready-write-b');
+await check('B’s writing field starts empty', async () => assert.equal(await page.locator('#memory').inputValue(), ''));
+await page.locator('#memory').fill('We named the keeper Fern. She only works at dusk.');
+await click(page, 'seal-line');
+await check('Both authors’ details retained at ending', async () => { assert((await page.locator('.keepsake-card').innerText()).includes('teaspoon')); assert((await page.locator('.keepsake-card').innerText()).includes('Fern')); });
+await page.screenshot({ path: path.join(out, '05-desktop-keepsake.png'), fullPage: true });
+const downloadWait = page.waitForEvent('download');
+await click(page, 'download');
+const download = await downloadWait;
+await download.saveAs(path.join(out, 'observed-keepsake.svg'));
+await check('Explicit download produces an SVG keepsake', async () => assert.equal(download.suggestedFilename(), 'small-hours-keepsake.svg'));
+await click(page, 'again');
+await check('Replay opens a different suggested scene', async () => assert.equal(await page.locator('[data-index="1"]').getAttribute('aria-pressed'), 'true'));
+await click(page, 'end');
+await page.locator('[data-cancel]').click();
+await check('Cancel ending leaves the session in place', async () => assert.equal(await page.locator('h1').textContent(), 'A small beginning.'));
+await click(page, 'end'); await page.locator('[data-confirm]').click();
+await check('End and forget returns to welcome', async () => assert.equal(await page.locator('[data-action="start-pair"]').count(), 1));
+const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1 });
+mobile.on('pageerror', err => errors.push(err.message));
+await mobile.goto(base + 'play/');
+await mobile.screenshot({ path: path.join(out, '06-mobile-home.png'), fullPage: true });
+await fits(mobile, '390px home');
+await click(mobile, 'start-solo');
+await fits(mobile, '390px scene selection');
+await mobile.locator('[data-index="1"]').click();
+await click(mobile, 'start-scene'); await click(mobile, 'ready-a');
+await fits(mobile, '390px private choice');
+await mobile.screenshot({ path: path.join(out, '07-mobile-choices.png'), fullPage: true });
+await click(mobile, 'choose', 'moon'); await click(mobile, 'guess', 'sea'); await click(mobile, 'seal');
+await click(mobile, 'ready-b'); await click(mobile, 'choose', 'sea'); await click(mobile, 'guess', 'moon'); await click(mobile, 'seal');
+await click(mobile, 'reveal'); await fits(mobile, '390px reveal'); await click(mobile, 'action'); await fits(mobile, '390px shared action');
+await click(mobile, 'write'); await click(mobile, 'ready-write-a');
+const malicious = '<img src=x onerror="alert(1)"> & a quiet sea';
+await mobile.locator('#memory').fill(malicious); await click(mobile, 'seal-line'); await click(mobile, 'ready-write-b');
+await click(mobile, 'seal-line');
+await check('Optional contribution has a non-punitive fallback', async () => assert((await mobile.locator('.keepsake-card').innerText()).includes('Some details are just for us.')));
+await check('Authored markup is displayed literally, never executed', async () => { assert((await mobile.locator('.keepsake-card').innerText()).includes(malicious)); assert.equal(await mobile.locator('.keepsake-card img').count(), 0); });
+await check('Solo ending is clearly labeled rehearsal', async () => assert((await mobile.locator('.keepsake-date').innerText()).includes('SOLO REHEARSAL')));
+await fits(mobile, '390px keepsake');
+await mobile.screenshot({ path: path.join(out, '08-mobile-keepsake.png'), fullPage: true });
+const mobileWait = mobile.waitForEvent('download'); await click(mobile, 'download'); const soloDownload = await mobileWait;
+await soloDownload.saveAs(path.join(out, 'escaped-rehearsal-keepsake.svg'));
+await check('SVG export safely escapes user input and parses as XML', async () => {
+  const { readFile } = await import('node:fs/promises'); const svg = await readFile(path.join(out, 'escaped-rehearsal-keepsake.svg'), 'utf8');
+  assert(svg.includes('&lt;img')); assert(!svg.includes('<img')); assert(svg.includes('SOLO REHEARSAL'));
+  assert.equal(await mobile.evaluate(text => new DOMParser().parseFromString(text, 'image/svg+xml').querySelectorAll('parsererror').length, svg), 0);
+});
+await mobile.reload();
+await check('Reload clears the session and authored details', async () => { assert.equal(await mobile.locator('[data-action="start-pair"]').count(), 1); assert(!(await mobile.locator('body').innerText()).includes(malicious)); });
+// Third content path: changing scenes after the action clears prior commitments.
+await click(mobile, 'start-pair'); await mobile.locator('[data-index="2"]').click(); await click(mobile,'start-scene'); await click(mobile,'ready-a');
+await click(mobile,'choose','sun'); await click(mobile,'guess','wind'); await click(mobile,'seal'); await click(mobile,'ready-b');
+await click(mobile,'choose','wind'); await click(mobile,'guess','sun'); await click(mobile,'seal'); await click(mobile,'reveal'); await click(mobile,'action');
+await check('Weather scene produces its own shared ritual', async () => assert((await mobile.locator('h1').textContent()).includes('forecast')));
+await click(mobile,'swap'); await mobile.locator('[data-index="0"]').click(); await click(mobile,'start-scene'); await click(mobile,'ready-a');
+await check('Changing scenes removes previous commitments', async () => { assert.equal(await mobile.locator('[aria-pressed="true"]').count(),0); assert(await mobile.locator('[data-action="seal"]').isDisabled()); });
+// Portal-sized iframe viewport: scroll is allowed; the controls must not clip horizontally.
+await page.setViewportSize({ width: 821, height: 462 }); await page.goto(base+'play/'); await fits(page, '821x462 portal home');
+await page.screenshot({ path: path.join(out,'09-portal-821x462.png'),fullPage:false });
+await click(page,'start-pair'); await fits(page, '821x462 scene selection');
+await check('No uncaught browser errors in observed sessions', async () => assert.deepEqual(errors, []));
+await writeFile(path.join(out,'browser-observations.json'),JSON.stringify({ runAt: new Date().toISOString(), browser:'Headless Chromium via Playwright; simulated viewports, not physical-device tests', checks, trace }, null, 2)+'\n');
+await browser.close();
+console.log(`${checks} checks passed. Screenshots, downloads, and action trace: ${out}`);
