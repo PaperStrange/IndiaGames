@@ -5,6 +5,7 @@ export type Point = [
 ];
 export type Tool = 'pen' | 'highlight' | 'erase' | 'type' | 'select';
 export type Stroke = {
+    purpose?: 'annotation';
     revision?: number;
     id: string;
     points: Point[];
@@ -36,6 +37,7 @@ export type Block = {
     media?: 'owl' | 'forest' | 'cell-film';
 };
 export type Page = {
+    inkSourcePageId?: string;
     capture?: { id: string; pageLabel: string; transcription?: string };
     notebookId?: string;
     id: string;
