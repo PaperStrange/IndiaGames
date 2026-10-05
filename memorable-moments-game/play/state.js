@@ -1,4 +1,4 @@
-// State-owned: no browser or DOM access. Views receive only what the current step needs.
+// State-owned: no browser or DOM access. The renderer must expose only what the current step needs.
 import { scenes } from './content.js';
 export function fresh() { return { step: 'home', mode: 'pair', sceneIndex: 0, answers: [null, null], lines: ['', ''], choice: null, guess: null }; }
 export function sceneOf(state) { return scenes[state.sceneIndex]; }

@@ -46,6 +46,7 @@ await click(page, 'choose', 'story');
 await click(page, 'guess', 'color');
 await click(page, 'seal');
 await check('Reveal requires an explicit joint-ready step', async () => { assert.equal(await page.locator('.reveal-card').count(), 0); assert.equal(await page.locator('[data-action="reveal"]').count(), 1); });
+await check('Joint-ready screen invites both people without a look-away instruction', async () => { const copy = await page.locator('#app').innerText(); assert(copy.includes('Sit side by side')); assert(!copy.includes('look away')); });
 await click(page, 'reveal');
 await check('Both distinct choices and prediction outcomes revealed', async () => {
   assert.equal(await page.locator('.reveal-card h2').nth(0).textContent(), 'A little color');
@@ -107,7 +108,7 @@ await check('Optional contribution has a non-punitive fallback', async () => ass
 await check('Authored markup is displayed literally, never executed', async () => { assert((await mobile.locator('.keepsake-card').innerText()).includes(malicious)); assert.equal(await mobile.locator('.keepsake-card img').count(), 0); });
 await check('Solo ending is clearly labeled rehearsal', async () => assert((await mobile.locator('.keepsake-date').innerText()).includes('SOLO REHEARSAL')));
 await fits(mobile, '390px keepsake');
-await mobile.screenshot({ path: path.join(out, '08-mobile-keepsake.png'), fullPage: true });
+await mobile.screenshot({ path: path.join(out, '08-mobile-escaped-text.png'), fullPage: true });
 const mobileWait = mobile.waitForEvent('download'); await click(mobile, 'download'); const soloDownload = await mobileWait;
 await soloDownload.saveAs(path.join(out, 'escaped-rehearsal-keepsake.svg'));
 await check('SVG export safely escapes user input and parses as XML', async () => {
@@ -124,10 +125,24 @@ await click(mobile,'choose','wind'); await click(mobile,'guess','sun'); await cl
 await check('Weather scene produces its own shared ritual', async () => assert((await mobile.locator('h1').textContent()).includes('forecast')));
 await click(mobile,'swap'); await mobile.locator('[data-index="0"]').click(); await click(mobile,'start-scene'); await click(mobile,'ready-a');
 await check('Changing scenes removes previous commitments', async () => { assert.equal(await mobile.locator('[aria-pressed="true"]').count(),0); assert(await mobile.locator('[data-action="seal"]').isDisabled()); });
+// Complete a clean mobile keepsake as a separate observed run, after the safety input case.
+await click(mobile,'choose','shape'); await click(mobile,'guess','color'); await click(mobile,'seal'); await click(mobile,'ready-b');
+await click(mobile,'choose','color'); await click(mobile,'guess','shape'); await click(mobile,'seal'); await click(mobile,'reveal'); await click(mobile,'action');
+await click(mobile,'write'); await click(mobile,'ready-write-a');
+await mobile.locator('#memory').fill('Our paper boat was a ferry for lost buttons.'); await click(mobile,'seal-line'); await click(mobile,'ready-write-b');
+await mobile.locator('#memory').fill('The red button insisted on sitting by the window.'); await click(mobile,'seal-line');
+await mobile.screenshot({path:path.join(out,'08-mobile-keepsake.png'),fullPage:true});
 // Portal-sized iframe viewport: scroll is allowed; the controls must not clip horizontally.
 await page.setViewportSize({ width: 821, height: 462 }); await page.goto(base+'play/'); await fits(page, '821x462 portal home');
 await page.screenshot({ path: path.join(out,'09-portal-821x462.png'),fullPage:false });
 await click(page,'start-pair'); await fits(page, '821x462 scene selection');
+await page.setViewportSize({width:1000,height:650});
+await page.setContent(`<iframe title="Small Hours playable embed" sandbox="allow-scripts allow-same-origin allow-downloads" src="${base}play/" style="width:821px;height:462px;border:1px solid #999"></iframe>`);
+const embedded = page.frameLocator('iframe');
+await embedded.locator('[data-action="start-pair"]').click();
+await embedded.locator('[data-action="start-scene"]').click();
+await check('Sandboxed 821x462 iframe runs the same-device flow', async () => assert((await embedded.locator('h1').textContent()).includes('Person A')));
+await page.screenshot({path:path.join(out,'10-iframe-interaction.png'),fullPage:false});
 await check('No uncaught browser errors in observed sessions', async () => assert.deepEqual(errors, []));
 await writeFile(path.join(out,'browser-observations.json'),JSON.stringify({ runAt: new Date().toISOString(), browser:'Headless Chromium via Playwright; simulated viewports, not physical-device tests', checks, trace }, null, 2)+'\n');
 await browser.close();
