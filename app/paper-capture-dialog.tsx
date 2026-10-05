@@ -52,10 +52,16 @@ export function PaperCaptureDialog({ open, onOpenChange, apiBase, notebookId, in
     }, [prepared]);
     function choose(photo?: File) {
         if (!photo) return;
+        setPrepared(undefined);
         setMetadata({ id: uid(), notebookId, pageLabel: selected?.pageLabel || photo.name.replace(/\.[^.]+$/, '').slice(0, 80) || 'Paper page', parentId: selected?.id, rotation: 0, crop: { ...fullCrop } });
         setFile(photo); setProblem('');
     }
-    function transform(change: Partial<CaptureMetadata>) { setMetadata(previous => previous && ({ ...previous, ...change, id: uid() })); }
+    function transform(change: Partial<CaptureMetadata>) {
+        if (change.rotation !== undefined || change.crop) {
+            setPrepared(undefined); setWorking('Preparing your reading copy…');
+        }
+        setMetadata(previous => previous && ({ ...previous, ...change, id: uid() }));
+    }
     async function perform(label: string, operation: () => Promise<void>) {
         setWorking(label); setProblem('');
         try { await operation(); } catch (cause) { if (alive.current) setProblem(cause instanceof Error ? cause.message : 'The action failed. Your photo is retained.'); }
@@ -66,13 +72,14 @@ export function PaperCaptureDialog({ open, onOpenChange, apiBase, notebookId, in
         link.href = url; link.download = name; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
     }
     const providerName = status?.config.providerId === 'built-in' ? status.builtIn.provider : status?.config.providers.find(provider => provider.id === status.config.providerId)?.name;
+    const controlsLocked = !!working && working !== 'Preparing your reading copy…';
     return <Dialog open={open} onOpenChange={next => { if (!working) onOpenChange(next); }}>
         <DialogContent className="modal vellum-dialog capture-dialog"><DialogHeader>
             <DialogTitle>Your paper notebook</DialogTitle>
             <DialogDescription>Keep a real page here. Ask when you are ready.</DialogDescription>
         </DialogHeader>
         <p className="capture-disclosure">Saving keeps the original photo and reading copy in your private notebook. Ask sends only the reading copy to {providerName || 'your configured provider'}. Original photos can contain camera location metadata; reading copies contain pixels only.</p>
-        <fieldset disabled={!!working} className="capture-controls">
+        <fieldset disabled={controlsLocked} className="capture-controls">
             <label className="capture-file"><Camera size={18}/>Take photo<input aria-label="Take a photo of a notebook page" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" onChange={event => { choose(event.target.files?.[0]); event.target.value = ''; }}/></label>
             <label className="capture-file"><Upload size={18}/>{selected ? 'Retake from file' : 'Choose photo'}<input aria-label="Choose a notebook photo" type="file" accept="image/jpeg,image/png,image/webp" onChange={event => { choose(event.target.files?.[0]); event.target.value = ''; }}/></label>
             <label className="capture-file">Restore sources<input aria-label="Restore paper source recovery file" type="file" accept="application/json,.json" onChange={event => {
@@ -82,10 +89,10 @@ export function PaperCaptureDialog({ open, onOpenChange, apiBase, notebookId, in
         </fieldset>
         {file && metadata ? <section className="capture-review" aria-label="Review photo">
             {preview && <img src={preview} alt="Prepared notebook photo"/>}
-            <label>Physical page label<input className="modal-field" maxLength={80} value={metadata.pageLabel} disabled={!!working} onChange={event => transform({ pageLabel: event.target.value })}/></label>
-            <button disabled={!!working} onClick={() => transform({ rotation: ((metadata.rotation + 90) % 360) as CaptureMetadata['rotation'], crop: { ...fullCrop } })}><RotateCw size={16}/>Rotate 90°</button>
+            <label>Physical page label<input className="modal-field" maxLength={80} value={metadata.pageLabel} disabled={controlsLocked} onChange={event => transform({ pageLabel: event.target.value })}/></label>
+            <button disabled={controlsLocked} onClick={() => transform({ rotation: ((metadata.rotation + 90) % 360) as CaptureMetadata['rotation'], crop: { ...fullCrop } })}><RotateCw size={16}/>Rotate 90°</button>
             <div className="capture-crops">{(['left', 'right', 'top', 'bottom'] as const).map(edge => <label key={edge}>{edge} crop
-                <input aria-label={`${edge} crop`} type="range" min="0" max="95" step="1" disabled={!!working} value={Math.round((edge === 'right' || edge === 'bottom' ? 1 - metadata.crop[edge] : metadata.crop[edge]) * 100)} onChange={event => {
+                <input aria-label={`${edge} crop`} type="range" min="0" max="95" step="1" disabled={controlsLocked} value={Math.round((edge === 'right' || edge === 'bottom' ? 1 - metadata.crop[edge] : metadata.crop[edge]) * 100)} onChange={event => {
                     const crop = { ...metadata.crop, [edge]: edge === 'right' || edge === 'bottom' ? 1 - Number(event.target.value) / 100 : Number(event.target.value) / 100 };
                     if (crop.right - crop.left >= .05 && crop.bottom - crop.top >= .05) transform({ crop });
                 }}/></label>)}</div>
@@ -98,7 +105,11 @@ export function PaperCaptureDialog({ open, onOpenChange, apiBase, notebookId, in
         </section> : selected ? <section className="capture-review" aria-label="Saved paper source">
             <img src={captureUrl(apiBase, selected.id, 'prepared')} alt={`Reading copy of ${selected.pageLabel}`}/>
             <b>{selected.pageLabel}</b><p>Saved original · {new Date(selected.createdAt).toLocaleString()}{selected.parentId ? ' · retake' : ''}</p>
-            <div className="capture-controls"><a href={captureUrl(apiBase, selected.id, 'original')} download><Download size={16}/>Download original</a>
+            <div className="capture-controls"><button disabled={!!working} onClick={() => void perform('Downloading original…', async () => {
+                const response = await fetch(captureUrl(apiBase, selected.id, 'original'), { signal: AbortSignal.timeout(30000) });
+                if (!response.ok) throw new Error('The original could not be downloaded. Your saved source is retained; try again.');
+                download(await response.blob(), selected.originalName);
+            })}><Download size={16}/>Download original</button>
             <button disabled={!!working} onClick={() => void perform('Preparing recovery file…', async () => download(await exportCapture(apiBase, selected), `paper-source-${selected.id}.json`))}>Export sources & revisions</button></div>
             {status?.live && status.vision ? <button className="modal-primary" disabled={!!working} onClick={() => onAsk(selected)}>Ask about this page</button> : <button className="modal-primary" onClick={onSettings}>Connect a vision companion</button>}
             <button disabled={!!working} onClick={() => { setSelected(undefined); setFile(undefined); }}>Capture a different page</button>

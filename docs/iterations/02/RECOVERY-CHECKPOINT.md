@@ -1,5 +1,15 @@
 # Sprint 02 recovery checkpoint
 
+## Latest checkpoint: browser and ink recovery
+
+Verified 2026-10-05 UTC / 2026-10-04 America/Los_Angeles. Published starting source for this increment: `fde7e57d9b08ab510d360ff2e5202cdb11e42e33` (Site version 10). Durable intermediate source: `72f5639d3d1ae7d2656accf5442d5d10b54a66cd`. The final source/deployment result is recorded by the release workflow.
+
+Nine real-application Playwright checks passed across desktop, phone and tablet Chromium layouts; 20 selected regressions, TypeScript and production build passed. The upload/export browser blockage is resolved using the bounded Playwright runner. Recoverable overlapping ink, page-return/reload behavior, photo preparation, original download and revision recovery are covered. See [BROWSER-INK-MILESTONE.md](BROWSER-INK-MILESTONE.md) for exact scope and evidence.
+
+Still open: live-provider traces and measured usage, physical iOS/Android camera/stylus checks, actual authenticated multi-user acceptance, full customer-baseline review, MC-034 and MC-035. No parent story is marked Done. The sections below preserve the earlier reconstruction record and do not override this checkpoint.
+
+## Earlier reconstruction record
+
 Date: 2026-10-04. Owner: Codex. Product acceptance: SakuraSan.
 
 Authoritative starting source: `309226c61fb491f2a9cfc931ca8c256ec594dbe6`. Published release: Site version 9, package `0.4.0-alpha.0`. The source was restored successfully on this date. The preceding uncommitted checkout was unavailable following workspace cleanup.

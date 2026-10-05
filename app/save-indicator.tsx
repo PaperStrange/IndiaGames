@@ -11,7 +11,7 @@ export function SaveIndicator({ state, retry }: { state: SaveState; retry: () =>
     const canRetry = state === 'error' || state === 'local';
     return <button className={`saved ${state === 'error' ? 'error' : ''}`}
         style={{ background: 'none', border: 0 }} onClick={canRetry ? retry : undefined}
-        aria-disabled={!canRetry} aria-live="polite">
+        aria-disabled={!canRetry} aria-live="polite" aria-label={labels[state]} title={labels[state]}>
         {state === 'saved' || state === 'local' ? <Check size={13} />
             : state === 'error' ? <RotateCcw size={13} /> : <LoaderCircle size={13} className="spinning" />}
         <span>{labels[state]}</span>

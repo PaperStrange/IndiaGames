@@ -7,10 +7,14 @@ export function isUnsentStroke(stroke: Stroke): boolean {
 }
 
 export function inputDraft(page: Page) {
-    const blocks = page.blocks.filter(block => block.pendingInput && !block.absorbedBy);
+    const blocks = page.blocks.filter(block => block.pendingInput && block.purpose !== 'annotation' && !block.absorbedBy);
     const linkedIds = new Set(blocks.flatMap(block => block.inkIds || []));
     const strokes = page.strokes.filter(stroke => isUnsentStroke(stroke) || linkedIds.has(stroke.id));
     return { blocks, strokes };
+}
+
+export function isPendingInput(block: Page['blocks'][number]): boolean {
+    return !!block.pendingInput && block.purpose !== 'annotation' && !block.absorbedBy;
 }
 
 export function hasOverlappingInk(page: Page): boolean {
@@ -32,7 +36,7 @@ export function keepDraftAsAnnotation(page: Page): Page {
     return { ...page,
         strokes: page.strokes.map(stroke => strokeIds.has(stroke.id)
             ? { ...stroke, purpose: 'annotation', revision: (stroke.revision || 0) + 1 } : stroke),
-        blocks: page.blocks.map(block => blockIds.has(block.id) ? { ...block, pendingInput: false } : block),
+        blocks: page.blocks.map(block => blockIds.has(block.id) ? { ...block, purpose: 'annotation', pendingInput: false } : block),
     };
 }
 

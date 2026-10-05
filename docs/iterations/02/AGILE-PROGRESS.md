@@ -11,7 +11,7 @@ Implementation review: 2026-10-04 America/Los_Angeles / 2026-10-05 UTC. 35 cards
 | MC-003 | In progress | B2 durability; historical restart evidence exists, photo/device evidence pending |
 | MC-004 | Proposed | B2 idempotent sync and two-client handoff |
 | MC-005 | Blocked | B3 real provider access and spend unverified in QA environment |
-| MC-006 | In progress | Existing fade/placement evidence; paper correction and physical input regression pending |
+| MC-006 | In progress | Recoverable overlap handling and navigation pause implemented; browser checks tracked in the current milestone; broader paper correction and physical input acceptance pending |
 | MC-007 | Proposed | Prepare paper-to-app switching research and recruitment plan |
 | MC-008 | Proposed | B3 exact capture/reply source links; full 100-probe baseline recall gate remains open |
 | MC-009 | Proposed | Required correction/deletion propagation; included in paper regression |
@@ -37,14 +37,14 @@ Implementation review: 2026-10-04 America/Los_Angeles / 2026-10-05 UTC. 35 cards
 | MC-029 | Proposed | Queued after paper sprint; complete conversation policy retained |
 | MC-030 | Proposed | Queued after paper sprint and relevant M0 prerequisites; complete harness requirements retained |
 | MC-031 | Proposed | Queued after paper sprint; full multi-leaf input requirements retained |
-| MC-032 | In progress | Compiled-Worker restart/retry/retake/clean-store recovery checks pass; full browser, actual identities and devices open |
+| MC-032 | In progress | Compiled-Worker restart/retry/retake/clean-store recovery checks pass; browser capture/recovery evidence tracked in the current milestone; actual identities and devices open |
 | MC-033 | In progress | Vision/source/fade integration implemented; genuine-provider, screening, photo-region correction and device acceptance open |
 | MC-034 | Proposed | Selected time-bounded 3D investigation; dimensions and physical devices required |
 | MC-035 | Proposed | Selected physical design specification; specialist owner required; fabrication validation remains separate |
 
 ## Planning verification
 
-Planning revision 2 retains MC-029–031 acceptance, distinguishes design investigation from production adoption, and keeps all eighteen original MC-024 dependency IDs. The candidate passes a compiled-Worker storage integration scenario and fifteen existing ink/pagination/journal regressions. Browser file-selection automation exceeded its timeout; full browser capture verification is open. No new live-provider, physical-device, prototype or customer acceptance is asserted. Exact evidence and checkpoint scope are in [RECOVERY-CHECKPOINT.md](RECOVERY-CHECKPOINT.md).
+Planning revision 2 retains MC-029–031 acceptance, distinguishes design investigation from production adoption, and keeps all eighteen original MC-024 dependency IDs. Twenty storage, ink, placement and journal checks pass. The standalone Playwright runner exercises the compiled application and native file inputs with explicit run deadlines. Current browser evidence and scope are in [BROWSER-INK-MILESTONE.md](BROWSER-INK-MILESTONE.md). No live-provider, physical-device, prototype or customer acceptance is asserted. Prior checkpoint scope remains in [RECOVERY-CHECKPOINT.md](RECOVERY-CHECKPOINT.md).
 
 ## Evidence and next review
 

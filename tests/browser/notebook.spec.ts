@@ -51,6 +51,7 @@ test('overlapping ink moves intact, survives page turns and reload, and can rema
     await page.waitForTimeout(5500);
     await expect(page.locator('.flow-ink')).toHaveCount(0);
     await expect(page.getByRole('region', { name: 'Unsent ink' })).toBeVisible();
+    await page.screenshot({ path: `work/browser-results/ink-${test.info().project.name}.png`, fullPage: true });
     await page.getByRole('button', { name: 'Move ink to a fresh leaf' }).click();
     await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('A little curiosity · a new thought');
     await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
@@ -61,6 +62,12 @@ test('overlapping ink moves intact, survives page turns and reload, and can rema
     expect(destination.strokes[0].id).toBe(mark.id);
     expect(destination.strokes[0].points.map((point: number[]) => point[2])).toEqual(mark.points.map((point: number[]) => point[2]));
     expect(destination.inkSourcePageId).toBe(before.notebook.pages[0].id);
+    await page.reload();
+    await page.getByRole('button', { name: 'Next notebook page', exact: true }).click();
+    await expect(page.getByLabel('Page title', { exact: true })).toHaveValue(destination.title);
+    await page.waitForTimeout(5500);
+    await expect(page.locator('.flow-ink')).toHaveCount(0);
+    await expect(page.getByRole('region', { name: 'Unsent ink' })).toBeVisible();
     await page.getByRole('button', { name: 'Keep as annotation' }).click();
     await expect(page.getByRole('region', { name: 'Unsent ink' })).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
@@ -73,6 +80,24 @@ test('overlapping ink moves intact, survives page turns and reload, and can rema
     expect(restored.notebook.pages[1].strokes[0].purpose).toBe('annotation');
     expect(restored.notebook.pages[1].strokes[0].id).toBe(mark.id);
     expect(errors).toEqual([]);
+});
+
+test('turning a page during the fade leaves the unsent thought visible on return', async ({ page }) => {
+    const thought = 'Keep my thought here until I choose to continue.';
+    await page.getByRole('textbox', { name: 'Write to your companion' }).fill(thought);
+    await page.getByRole('button', { name: 'Send thought', exact: true }).click();
+    await expect(page.locator('.flow-ink')).toHaveCount(1);
+    await nextAndBack(page);
+    await page.waitForTimeout(5500);
+    await expect(page.locator('.flow-ink')).toHaveCount(0);
+    await expect(page.getByRole('region', { name: 'Unsent ink' })).toBeVisible();
+    await expect(page.locator('.ink-user').filter({ hasText: thought })).toBeVisible();
+    await page.getByRole('button', { name: 'Keep as annotation' }).click();
+    await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
+    const saved = await (await page.request.get('/api/notebook')).json();
+    const written = saved.notebook.pages.flatMap((value: { blocks: { text: string; purpose?: string; pendingInput?: boolean }[] }) => value.blocks)
+        .find((block: { text: string }) => block.text === thought);
+    expect(written.purpose).toBe('annotation'); expect(written.pendingInput).toBe(false);
 });
 
 test('photo upload, crop, retake, original download and recovery use the real application', async ({ page }) => {
@@ -89,10 +114,11 @@ test('photo upload, crop, retake, original download and recovery use the real ap
     await expect(crop).toHaveValue('1');
     await dialog.getByRole('button', { name: 'Save paper page', exact: true }).click();
     await expect(dialog.getByRole('region', { name: 'Saved paper source' })).toBeVisible();
+    await expect.poll(() => dialog.getByAltText('Reading copy of QA paper page').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
     const initial = (await (await page.request.get('/api/captures?notebookId=main')).json()).captures[0];
     expect(initial.rotation).toBe(90); expect(initial.crop.left).toBe(.01);
     const originalDownload = page.waitForEvent('download');
-    await dialog.getByRole('link', { name: 'Download original' }).click();
+    await dialog.getByRole('button', { name: 'Download original' }).click();
     const original = await originalDownload;
     const expected = await readFile('public/demo/harry-potter-notebook-demo.jpg');
     expect(await readFile((await original.path())!)).toEqual(expected);

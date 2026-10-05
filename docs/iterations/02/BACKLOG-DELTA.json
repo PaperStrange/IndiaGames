@@ -9,7 +9,7 @@
   "reviewed_site_version": 9,
   "status_source": "AGILE-PROGRESS.md",
   "plan": "SPRINT-PREPARATION.md",
-  "implementation_scope": "Paper capture/recovery and source-linked vision candidate implemented; partial automated verification; browser, provider and physical-device acceptance open",
+  "implementation_scope": "Paper capture/recovery, recoverable overlap handling and source-linked vision candidate implemented; Playwright browser evidence in BROWSER-INK-MILESTONE.md; provider and physical-device acceptance open",
   "accepted_product_direction": "Real paper notebook paired with matching 3D app edition",
   "new_sprint_scope_committed": false,
   "existing_cards_reused": ["MC-001", "MC-002", "MC-003", "MC-004", "MC-005", "MC-006", "MC-007", "MC-008", "MC-009", "MC-010", "MC-011", "MC-012", "MC-013", "MC-014", "MC-015", "MC-016", "MC-017", "MC-018", "MC-019", "MC-020", "MC-021", "MC-022", "MC-023", "MC-024", "MC-028"],

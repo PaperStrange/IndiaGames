@@ -17,7 +17,7 @@ flowchart TD
   API --> R2[R2 documents]
 ```
 
-The application owns canonical state and rendering; model output cannot directly edit the document. Strokes have IDs/revisions, recognized blocks retain original stroke references, and answers have exchange/model/source provenance. Per-page cycles survive navigation; only the active matching revision may start its reply.
+The application owns canonical state and rendering; model output cannot directly edit the document. Strokes have IDs/revisions, recognized blocks retain original stroke references, and answers have exchange/model/source provenance. Navigation restores visible unsent ink and pauses its automatic reply. New input or explicit Read starts a cycle; page entry and reload cannot start one. Recognition jobs complete independently and apply only to the matching input revision.
 
 | Module | Responsibility |
 |---|---|
@@ -47,7 +47,11 @@ Shared React/TypeScript and vector ink support mobile reuse. Layered geometry an
 
 `lib/capture-recovery.ts` exports a bounded parent-first revision chain and verifies hashes before restore. Recovery supports up to 20 revisions and 45 MB of raw assets per export. `app/use-paper-turn.ts` starts vision and fade at explicit Ask, invalidates superseded results without cancelling recognition, and sends current text into existing reply pagination. Page source metadata and reply links retain the exact capture ID. Original and derived bytes remain separate from model interpretation. Photo selection sends no model request.
 
-Compiled-Worker persistence tests and existing ink/pagination regressions pass. Actual-provider runs, full browser/photo-region correction and physical-device validation remain open; [candidate evidence](iterations/02/RECOVERY-CHECKPOINT.md) governs completion claims.
+Compiled-Worker persistence tests and existing ink/pagination regressions pass. The Playwright suite runs production client assets and the compiled Worker against independent local D1/R2. Actual-provider runs, photo-region correction and physical-device validation remain open; [current evidence](iterations/02/BROWSER-INK-MILESTONE.md) governs completion claims.
+
+`lib/ink-draft.ts` computes movable unsent input and performs one journaled source/destination mutation. Stroke IDs and pressure, recognized blocks and erased regions move together. The destination records `inkSourcePageId`; moved stroke revisions invalidate previous recognition results. Saved annotation intent excludes both original strokes and formatted text from subsequent automatic recognition. `app/ink-recovery.tsx` exposes move, annotation and explicit read without a compulsory modal.
+
+Photo crop controls remain editable while the derived preview is prepared. Generation checks accept only the latest crop; saving requires a matching prepared image. Original download fetches authenticated bytes, reports failures in the capture panel and creates a named browser download. Compact save indicators keep accessible names when their visible labels are hidden.
 
 ## Planned 3D additions — sprint-02-r2
 

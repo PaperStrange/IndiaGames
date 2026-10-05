@@ -17,6 +17,7 @@ export type Stroke = {
 export type ReplyFont = 'hand' | 'book' | 'mono';
 export type ReplyFormat = 'auto' | 'text' | 'emoji' | 'table' | 'sticker' | 'picture' | 'video';
 export type Block = {
+    purpose?: 'annotation';
     pendingInput?: boolean; recognitionId?: string; inkIds?: string[]; erased?: number[]; erasedRegions?: {index:number;x:number;y:number;w:number;h:number}[]; mediaUrl?: string; runId?:string; citations?:{id:string;title:string;excerpt:string;url?:string;pageId?:string;notebookId?:string}[];
     id: string;
     kind: 'user' | 'text' | 'mitosis' | 'coordinates' | 'doodle' | 'table' | 'quiz' | 'sticker' | 'picture' | 'video';

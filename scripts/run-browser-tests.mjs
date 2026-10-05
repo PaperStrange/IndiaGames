@@ -22,7 +22,7 @@ const deadline = setTimeout(() => {
     expired = true;
     console.error('Browser verification exceeded six minutes. This run is failed.');
     terminate('SIGTERM');
-    setTimeout(() => terminate('SIGKILL'), 5000).unref();
+    setTimeout(() => terminate('SIGKILL'), 5000);
 }, 360000);
 child.once('error', error => { clearTimeout(deadline); console.error(error); process.exitCode = 1; });
 child.once('exit', code => { clearTimeout(deadline); process.exitCode = expired ? 124 : (code ?? 1); });
