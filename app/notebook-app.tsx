@@ -30,7 +30,7 @@ import { OriginalInk } from './original-ink';
 import {CompanionSettings,Choice} from './companion-settings';
 import {useInkFlow} from './use-ink-flow';
 import { InkRecovery } from './ink-recovery';
-import { isUnsentStroke, isPendingInput, inputDraft, moveDraftToFreshLeaf, keepDraftAsAnnotation } from '@/lib/ink-draft';
+import { isUnsentStroke, isPendingInput, inputDraft, hasOverlappingInk, moveDraftToFreshLeaf, keepDraftAsAnnotation } from '@/lib/ink-draft';
 import {visibleInkText} from '@/lib/ink-text';
 import {INPUT_END_MS} from '@/lib/ink-cycle';
 import {eraseStroke} from '@/lib/erase-ink';
@@ -53,6 +53,7 @@ export default function NotebookApp({ apiBase = '' }: {
     const isMobile = useIsMobile();
     const [captureOpen, setCaptureOpen] = useState(false), [captureSource, setCaptureSource] = useState<string>();
     const [correctionOpen, setCorrectionOpen] = useState(false), [photoCorrection, setPhotoCorrection] = useState('');
+    const [inkRecoveryPage, setInkRecoveryPage] = useState<string | null>(null);
     const [companionStatus,setCompanionStatus]=useState<CompanionStatus|null>(null),[crossNotebook,setCrossNotebook]=useState(false),[runLabel,setRunLabel]=useState(''),[newBook,setNewBook]=useState(false);
     const [candlelight, setCandlelight] = useState(true), [warmth, setWarmth] = useState(65), [tabVisible, setTabVisible] = useState(true), [preferencesLoaded, setPreferencesLoaded] = useState(false);
     const [depth, setDepth] = useState(true), [replyFont, setReplyFont] = useState<ReplyFont>('hand'), [replyFormat, setReplyFormat] = useState<ReplyFormat>('auto'), [originalOpen, setOriginalOpen] = useState(false), [composing, setComposing] = useState(false), [dissolving, setDissolving] = useState<string[]>([]), [streamingId, setStreamingId] = useState(''), [announcement, setAnnouncement] = useState(''), [controlsOpen, setControlsOpen] = useState(false);
@@ -289,6 +290,7 @@ export default function NotebookApp({ apiBase = '' }: {
         try {
             const result = moveDraftToFreshLeaf(notebook, source.id);
             toast.dismiss(`ink-space-${source.id}`);
+            setInkRecoveryPage(null);
             flow.inputStart(source.id); flow.restore(source.id);
             mutate(() => result.notebook);
             // 页面级 undo 仅保留不含已移动标识的快照，防止跨页恢复重复笔迹。
@@ -300,17 +302,20 @@ export default function NotebookApp({ apiBase = '' }: {
                 history.undo = history.undo.filter(page => !retainsMovedInk(page)); history.redo = [];
             }
             go(result.page.id);
-            toast.success('Your ink has its own leaf. Continue writing, or choose Read this ink.');
+            // 新叶本身确认移动结果；仅向辅助技术播报，不覆盖继续书写的区域。
+            setAnnouncement('Ink moved to a fresh leaf. Continue writing.');
         } catch (cause) { toast.error(cause instanceof Error ? cause.message : 'Your ink could not be moved. It is kept on this leaf.'); }
     }
     function annotateUnsentInk() {
         const page = currentRef.current; if (!page) return;
         toast.dismiss(`ink-space-${page.id}`);
+        setInkRecoveryPage(null);
         flow.inputStart(page.id); flow.restore(page.id);
         updatePage(keepDraftAsAnnotation, true, page.id);
         toast.success('Kept as an annotation. It will stay visible when you turn the page.');
     }
     function offerInkSpaceRecovery(pageId: string) {
+        setInkRecoveryPage(pageId);
         toast.message('Your ink is saved.', {
             id: `ink-space-${pageId}`, description: 'Give it a leaf of its own.',
             duration: 12000, className: 'ink-space-toast',
@@ -624,8 +629,10 @@ export default function NotebookApp({ apiBase = '' }: {
     const history = histories.current[active], height = SHEET_HEIGHT;
     const drawingHandlers = { onPointerDown: down, onPointerMove: move, onPointerUp: up, onPointerCancel: cancel };
     const unsent = current ? inputDraft(current) : undefined;
-    const showInkRecovery = !reader && !busy && !turn && !flow.cycle?.fading
-        && !!(unsent?.strokes.length || unsent?.blocks.length);
+    const hasUnsentInk = !!(unsent?.strokes.length || unsent?.blocks.length);
+    const overlappingInk = !!current && hasOverlappingInk(current);
+    const canChooseInkAction = !reader && !busy && !turn && !flow.cycle?.fading && hasUnsentInk;
+    const showInkRecovery = canChooseInkAction && (overlappingInk || inkRecoveryPage === current?.id);
     return <TooltipProvider delayDuration={250}><SidebarProvider className="app parchment" data-light={candlelight ? "candle" : "day"} data-visible={tabVisible} data-depth={depth} style={{ "--warmth": warmth / 100 } as React.CSSProperties}><button className={`mobile-scrim ${mobileOpen ? 'open' : ''}`} aria-label="Close notebook menu" onClick={() => setMobileOpen(false)}/><Sidebar collapsible="none" className={`rail ${mobileOpen ? 'open' : ''}`} aria-label="Notebook pages" inert={isMobile && !mobileOpen} aria-hidden={isMobile && !mobileOpen}><div className="brand"><Feather className="brand-mark" strokeWidth={1.2}/><div className="brand-name">Enchanted<span>notebook</span></div></div><button className="new-page" onClick={() => showDialog('new')}><Plus size={17}/>New page</button><div className="book-picker"><Choice label="Your notebooks" value={bookId} options={books.map(b=>({value:b.id,label:b.title}))} onChange={id=>{const p=data?.pages.find(p=>(p.notebookId||'main')===id);if(p)go(p.id);}}/><button className="new-notebook-button" onClick={()=>{setMobileOpen(false);setNewTitle('');setNewBook(true);setNewOpen(true);}}>+ New notebook</button></div><nav className="pages">{visiblePages.map((p, i) => <button key={p.id} onClick={() => { go(p.id); if (p.document) {
         setReader(true);
         setTool('select');
@@ -665,6 +672,7 @@ export default function NotebookApp({ apiBase = '' }: {
  <div className="flow-status" role="status">{flow.message}</div><div className="reply-controls"><label className="companion-recall"><Switch size="sm" aria-label="Across notebooks for this reply" checked={crossNotebook} onCheckedChange={setCrossNotebook}/><span>Across notebooks</span></label><label className="flow-toggle"><Switch size="sm" aria-label="Reply when handwriting pauses" checked={auto} onCheckedChange={setAuto}/><span>Handwriting on pause</span></label>
  <DropdownMenu onOpenChange={setControlsOpen}><DropdownMenuTrigger asChild><button className="reply-control-button" aria-label="Reply lettering"><Type/><span>{FONTS[replyFont]}</span><ChevronDown/></button></DropdownMenuTrigger><DropdownMenuContent className="reply-menu" side="top" align="start"><DropdownMenuRadioGroup value={replyFont} onValueChange={v => setReplyFont(v as ReplyFont)}>{Object.entries(FONTS).map(([value,label]) => <DropdownMenuRadioItem value={value} key={value}>{label}</DropdownMenuRadioItem>)}</DropdownMenuRadioGroup></DropdownMenuContent></DropdownMenu>
  <DropdownMenu onOpenChange={setControlsOpen}><DropdownMenuTrigger asChild><button className="reply-control-button" aria-label="Reply format"><Sparkles/><span>{replyFormat === 'auto' ? 'Format' : FORMATS[replyFormat]}</span><ChevronDown/></button></DropdownMenuTrigger><DropdownMenuContent className="reply-menu" side="top" align="start"><DropdownMenuRadioGroup value={replyFormat} onValueChange={v => setReplyFormat(v as ReplyFormat)}>{Object.entries(FORMATS).map(([value,label]) => <DropdownMenuRadioItem value={value} key={value}>{label}</DropdownMenuRadioItem>)}</DropdownMenuRadioGroup></DropdownMenuContent></DropdownMenu>
+ {canChooseInkAction && !overlappingInk && <button className="reply-control-button ink-options-button" aria-label="Ink options" aria-expanded={showInkRecovery} onClick={() => setInkRecoveryPage(showInkRecovery ? null : current!.id)}>Ink options</button>}
  <button className="reply-control-button originals-button" disabled={reader || busy} aria-label="Original ink" onClick={() => { setMobileOpen(false); setOriginalOpen(true); }}><RotateCcw/><span>Original ink</span></button></div>
  <form className="composer" onSubmit={typeOnPage}><PenLine size={18}/><input ref={promptInput} aria-label={typePoint ? 'Text to place on page' : 'Write to your companion'} value={prompt} maxLength={1000} onChange={e => editPrompt(e.target.value)} onCompositionStart={() => { setComposing(true); clearTimeout(responseTimer.current); }} onCompositionEnd={() => setComposing(false)} onKeyDown={e => { if (e.key === 'Enter' && (e.nativeEvent.isComposing || composing)) e.preventDefault(); }} placeholder={typePoint ? 'Type, then press Enter to place your words…' : reader ? 'Ask about your reading, then press Enter…' : 'Take your time. Press Enter when you’re ready…'}/>
  {busy ? <button type="button" className="stop-reply" onClick={stopReply}>Stop reply</button> : !reader && <ToolTip label="Read my new handwriting"><button type="button" className="icon-button" aria-label="Read my ink" disabled={!current?.strokes.some(isUnsentStroke)} onClick={() => void send('', { ink: true })}><Sparkles size={17}/></button></ToolTip>}

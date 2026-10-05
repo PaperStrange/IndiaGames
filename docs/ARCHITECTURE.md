@@ -51,6 +51,8 @@ Compiled-Worker persistence tests and existing ink/pagination regressions pass. 
 
 `lib/ink-draft.ts` computes movable unsent input and performs one journaled source/destination mutation. Stroke IDs and pressure, recognized blocks and erased regions move together. The destination records `inkSourcePageId`; moved stroke revisions invalidate previous recognition results. Saved annotation intent excludes both original strokes and formatted text from subsequent automatic recognition. `app/ink-recovery.tsx` exposes move, annotation and explicit read without a compulsory modal.
 
+Unsent input alone does not open recovery. The panel appears for an overlap, a space failure or an explicit Ink options request. A successful move clears that request and its notification, then announces the result only to assistive technology. The destination remains editable and unsent; ordinary writing and reload do not reopen recovery.
+
 Photo crop controls remain editable while the derived preview is prepared. Generation checks accept only the latest crop; saving requires a matching prepared image. Original download fetches authenticated bytes, reports failures in the capture panel and creates a named browser download. Compact save indicators keep accessible names when their visible labels are hidden.
 
 ## Planned 3D additions — sprint-02-r2

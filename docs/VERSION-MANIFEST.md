@@ -5,10 +5,10 @@
 | Product | alpha 0.4 / package 0.4.0-alpha.0 |
 | Documentation | docs-v4 |
 | Artifact set | v6-alpha04-2026-09-13 |
-| Published Site reviewed before this candidate | version 11 |
-| Published source reviewed before this candidate | 32ee141fa0a3bec77925cc672f64fdb21ea48e2e |
+| Published Site reviewed before this candidate | version 12 |
+| Published source reviewed before this candidate | 7109d5d4cfc5660fe93c3c8256026041ebdfab73 |
 | Browser/ink source checkpoint | 72f5639d3d1ae7d2656accf5442d5d10b54a66cd |
-| Current candidate | Visible recovery controls and actionable space warning; 2026-10-04 America/Los_Angeles |
+| Current candidate | Clear recovery after moving and resume writing; 2026-10-04 America/Los_Angeles |
 | Planning revision | sprint-02-r2 / 2026-10-03 America/Los_Angeles |
 | Planning source | Git commit containing this revision; separate from published application source |
 

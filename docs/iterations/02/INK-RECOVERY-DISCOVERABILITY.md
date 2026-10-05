@@ -31,3 +31,15 @@ No hosted-provider or physical-device acceptance is inferred. This correction do
 ## Review lesson
 
 For a recovery instruction that names an action, acceptance must include both discoverability and successful execution. Assert viewport containment and pointer hit testing before invoking helpers that scroll; include a scrolled paper and a compact browser viewport. A passing scripted click alone was insufficient evidence.
+
+## Follow-up: let the user continue writing
+
+Starting publication: Site version 12, source `7109d5d4cfc5660fe93c3c8256026041ebdfab73`.
+
+The next user report exposed a second lifecycle gap: the panel reappeared on the destination because every unsent draft was treated as needing recovery. A separate success toast also covered the writing controls after an otherwise successful move.
+
+Recovery now opens automatically for overlapping ink or a reported space problem. Moving clears the recovery state and source notification; an accessible announcement replaces the success toast. The ink stays editable and unsent. A compact **Ink options** button preserves deliberate access to reading, moving and annotation choices without opening that panel during ordinary writing.
+
+Acceptance continues beyond the move: no recovery panel or move toast on the new leaf, a new stroke can be added directly and is saved alongside the unchanged moved stroke, and the page stays quiet after reload. Tests also retain annotation access and the rule that returning to a page does not restart fading.
+
+All nine targeted Playwright scenarios passed in 2.8 minutes across desktop, phone and tablet Chromium layouts. The phone move case used actual bundled OCR and the notice's action; the other move cases used the persistent recovery button. TypeScript, production build and `git diff --check` passed. The report and post-reload screenshots are in `evidence/ink-continuation/`. Physical-device and live-provider acceptance remains separate; no parent story is marked Done.

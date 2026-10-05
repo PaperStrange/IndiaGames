@@ -14,6 +14,7 @@
 .composer-area[data-ink-recovery=true] { position: relative; z-index: 21; }
 .composer-area[data-ink-recovery=true] .suggestions { display: none; }
 .ink-space-toast[data-sonner-toast] [data-button] { min-height: 44px; padding: 8px 12px; flex-shrink: 0; }
+.reply-controls .ink-options-button { min-height: 44px; padding: 6px 10px; font-size: 14px; }
 @media (max-width: 767px) {
     .ink-recovery > div { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
     .ink-recovery .ink-recovery-primary { grid-column: 1 / -1; text-align: center; }

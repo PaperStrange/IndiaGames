@@ -95,6 +95,23 @@ test('move-ink action is reachable without scrolling or toolbar obstruction', as
     const saved = await (await page.request.get('/api/notebook')).json();
     expect(saved.notebook.pages[0].strokes).toHaveLength(0);
     expect(saved.notebook.pages[1].strokes.length).toBeGreaterThan(0);
+    await expect(recovery).toHaveCount(0);
+    await expect(page.locator('.ink-space-toast')).toHaveCount(0);
+    await expect(page.getByText('Your ink has its own leaf.', { exact: false })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Ink options', exact: true })).toBeVisible();
+    // 移动不是流程终点：直接续写，确认不会再次弹出恢复面板，并核对新增笔迹已保存。
+    await drawOverSample(page);
+    await expect(recovery).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
+    const continued = await (await page.request.get('/api/notebook')).json();
+    expect(continued.notebook.pages[1].strokes).toHaveLength(saved.notebook.pages[1].strokes.length + 1);
+    expect(continued.notebook.pages[1].strokes[0]).toEqual(saved.notebook.pages[1].strokes[0]);
+    await page.reload();
+    await page.getByRole('button', { name: 'Next notebook page', exact: true }).click();
+    await expect(page.getByLabel('Page title', { exact: true })).toHaveValue(continued.notebook.pages[1].title);
+    await expect(recovery).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Ink options', exact: true })).toHaveAttribute('aria-expanded', 'false');
+    await page.screenshot({ path: `work/browser-results/continued-writing-${testInfo.project.name}.png` });
 });
 
 test('overlapping ink moves intact, survives page turns and reload, and can remain an annotation', async ({ page }) => {
@@ -128,7 +145,8 @@ test('overlapping ink moves intact, survives page turns and reload, and can rema
     await expect(page.getByLabel('Page title', { exact: true })).toHaveValue(destination.title);
     await page.waitForTimeout(5500);
     await expect(page.locator('.flow-ink')).toHaveCount(0);
-    await expect(page.getByRole('region', { name: 'Unsent ink' })).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Unsent ink' })).toHaveCount(0);
+    await page.getByRole('button', { name: 'Ink options', exact: true }).click();
     await page.getByRole('button', { name: 'Keep as annotation' }).click();
     await expect(page.getByRole('region', { name: 'Unsent ink' })).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
@@ -151,8 +169,9 @@ test('turning a page during the fade leaves the unsent thought visible on return
     await nextAndBack(page);
     await page.waitForTimeout(5500);
     await expect(page.locator('.flow-ink')).toHaveCount(0);
-    await expect(page.getByRole('region', { name: 'Unsent ink' })).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Unsent ink' })).toHaveCount(0);
     await expect(page.locator('.ink-user').filter({ hasText: thought })).toBeVisible();
+    await page.getByRole('button', { name: 'Ink options', exact: true }).click();
     await page.getByRole('button', { name: 'Keep as annotation' }).click();
     await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
     const saved = await (await page.request.get('/api/notebook')).json();
