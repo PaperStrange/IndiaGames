@@ -1,0 +1,162 @@
+[
+  {
+    "file": "01-page.png",
+    "bytes": 31996,
+    "sha256": "0ee309c434f820d22fe9c8787c3cb9273e3dcfeb2c9915ad1fbe8d58150167ad"
+  },
+  {
+    "file": "02-loading.png",
+    "bytes": 125387,
+    "sha256": "e37dff3ff78eddc308b20d608dbaaf6150f57dbf6a8ef80671f27d4857fec819"
+  },
+  {
+    "file": "03-after-load.png",
+    "bytes": 125263,
+    "sha256": "4f1a98cf9eaf86442ebcef3e27003619f6d67262b294ce84fd4a6aeb96e67ca5"
+  },
+  {
+    "file": "04-load-retry.png",
+    "bytes": 125387,
+    "sha256": "e37dff3ff78eddc308b20d608dbaaf6150f57dbf6a8ef80671f27d4857fec819"
+  },
+  {
+    "file": "05-direct-deployment.png",
+    "bytes": 99596,
+    "sha256": "4c62094dc8e3c392428bdb122f985ab382ac5a74a39d40b06a53e2a3ad5aa919"
+  },
+  {
+    "file": "06-help.png",
+    "bytes": 115902,
+    "sha256": "e217d381cd1d3b5c0aa2bdf7b9dc00d98d0e987019ebba686ee0c6d056a6298d"
+  },
+  {
+    "file": "07-phone.png",
+    "bytes": 127108,
+    "sha256": "3a40050954129fa8aa1b3f67206332da025a8ba5b10b3612bf1c9b3f463543f0"
+  },
+  {
+    "file": "08-office-door.png",
+    "bytes": 127392,
+    "sha256": "50f6d4becfa0bea99c7b3928e98cccff7c251400c8d873c534a4051fc3601565"
+  },
+  {
+    "file": "09-office.png",
+    "bytes": 343199,
+    "sha256": "8ad8b92d6913f4789c135f514d8f7038786faca73b61ca7020f9a5788681cfec"
+  },
+  {
+    "file": "10-client.png",
+    "bytes": 321725,
+    "sha256": "0d5634eb46a2d3837707e8183455aac2501ffb83120cd0e529110acb02fe1c60"
+  },
+  {
+    "file": "11-walk-left.png",
+    "bytes": 193076,
+    "sha256": "bd5d864127a9f6ed9a8a51111d3e83069b840c694b93d239ea5e0025a22971c9"
+  },
+  {
+    "file": "12-street.png",
+    "bytes": 111629,
+    "sha256": "d147a2e85e6a909c8d0de155415d621589b3afbc5eddbbf14283d08af6a55a99"
+  },
+  {
+    "file": "13-exit-confirmed.png",
+    "bytes": 5413,
+    "sha256": "ad75f726e4754192fadf9ec171e464ec22e2ee63421f4fed615ef30cc222283e"
+  },
+  {
+    "file": "14-street-left.png",
+    "bytes": 367248,
+    "sha256": "7b8d9df2632d76343b41143cc2c409d9f856ca6438635cef9c6454d79a737a2b"
+  },
+  {
+    "file": "15-detective-door.png",
+    "bytes": 387111,
+    "sha256": "2412a110d972ad7c2638fc6920010f487497ac3caac4a5515df412858d4214d9"
+  },
+  {
+    "file": "16-office-interior.png",
+    "bytes": 381046,
+    "sha256": "13aca2c24220fa001f11798197efeb77b658fe59c1537e0019478d8ea7240ed7"
+  },
+  {
+    "file": "17-stop-moving.png",
+    "bytes": 380698,
+    "sha256": "7fd793548431661c8506e15c783df79f52842cc73ca4649d8614c22efb739ad5"
+  },
+  {
+    "file": "18-client-dialogue.png",
+    "bytes": 375986,
+    "sha256": "4b671bc1f9c5b71dc1f10431c8751c5f757d3345766b0c8d055203f0b2e2aac9"
+  },
+  {
+    "file": "19-enter-office.png",
+    "bytes": 271125,
+    "sha256": "7f7764c7aff3eb4371e7a1f3b5c94cbe8f9a5886756b82a972c25dc9ece84783"
+  },
+  {
+    "file": "20-case-opening.png",
+    "bytes": 185910,
+    "sha256": "333d3211a7b8592617301b612630b5b74ebaf2ac8aebdc45aa3416f767fe0b30"
+  },
+  {
+    "file": "21-client-conversation.png",
+    "bytes": 193947,
+    "sha256": "0e2ef89578002b2eac9466e1dc9192d6fd146ba0f57119823de64ff64e22d036"
+  },
+  {
+    "file": "22-client-body-click.png",
+    "bytes": 146162,
+    "sha256": "707a2b2df01f567ee6b2cb4d0dc61728c30408b60442a37f6ba410fb53639bc1"
+  },
+  {
+    "file": "23-schedule.png",
+    "bytes": 128604,
+    "sha256": "45800add7750fa7ae7072a88eb03010c88c68caeff36b0d20cd1f4c2796ed26e"
+  },
+  {
+    "file": "24-talk-selection.png",
+    "bytes": 199309,
+    "sha256": "6d02de58be1276a97f35d82c88682153dfa7c30efbf9ce3a9237e59aff57b915"
+  },
+  {
+    "file": "25-police-question.png",
+    "bytes": 131790,
+    "sha256": "b1d68baa2ddb0bcf8e03f5fac14710df4164b25f821bf8f5995a916cc1fe4f96"
+  },
+  {
+    "file": "26-urgency.png",
+    "bytes": 138572,
+    "sha256": "1e1e22ffc5275185693419eaba35c9b01091748926047385800b4f7abc36ac58"
+  },
+  {
+    "file": "27-machine-explanation.png",
+    "bytes": 132655,
+    "sha256": "7a189a61c4d652919602b5ac399e801d74e8f7a807b4a307ee5b1c47758f1d85"
+  },
+  {
+    "file": "28-machine-location.png",
+    "bytes": 133738,
+    "sha256": "83e0ea936849e6405a5bd1783d75547468939e70379760982fc533b46315f2ca"
+  },
+  {
+    "file": "29-address-and-memory.png",
+    "bytes": 127660,
+    "sha256": "308a2b4fcc8690e184bc6b2476d640cb8eb1e81f961256f91abfaf3a947d2422"
+  },
+  {
+    "file": "30-case-accepted.png",
+    "bytes": 182900,
+    "sha256": "86b19e5454d397795c5263dbe9a9ad210f48c88ab4a2a4e69639091aef2ef35c"
+  },
+  {
+    "file": "31-inventory-after-case.png",
+    "bytes": 173442,
+    "sha256": "da0fbd23d1159fe76a4799434edff3527057dbac74c0923f7537a18c6b67bd57"
+  },
+  {
+    "file": "32-leave-office.png",
+    "bytes": 337668,
+    "sha256": "fae74b92b48e96f1ac852fd4d9f04a37ce6f7465e1a3da50a2630f522dd4220b"
+  }
+]

@@ -1,0 +1,176 @@
+{
+  "title": "We Become What We Behold",
+  "author": "Nicky Case",
+  "tested_at_utc": "2026-10-05",
+  "release_url": "https://ncase.itch.io/wbwwb",
+  "exact_tested_build_url": "https://html-classic.itch.zone/html/300364/index.html?v=1782253839",
+  "access": "Public released itch.io browser build; no login or payment; accessed live, not a simulated replacement.",
+  "version": "itch hosted HTML build 300364, URL cache version 1782253839. No semantic release version asserted.",
+  "method": {
+    "browser": "Chromium 151.0.7922.173 via Playwright",
+    "viewport": "1280x900 desktop",
+    "network": "All live browser requests routed via Playwright APIRequestContext through injected proxy; NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt; TLS validation enabled. Direct Chromium initially rejected the proxy CA. No domain-policy bypass.",
+    "interaction": "Actual mouse input and screenshots; observed screenshots directly. Initial targeting was visual. Later moving-object coordinates and visible animation phase were read from scene objects to compensate tool round-trip delay, then real pointer input delivered. No game outcome/state writes.",
+    "discarded_attempts": "Initial ncase.me/wbwwb URL returned 404. Untouched public GitHub checkout opened locally but failed textStrings is not defined. Temporary Playwright/CDP virtual-clock experiments were discarded after incompatibilities/timeouts; successful comparison was live normal-time play.",
+    "sound": "Audio not audibly assessed in headless browser.",
+    "coverage": "Opening through first conflict feedback loop: successful hat photo, affectionate-couple photo, failed and successful outburst photos, observed anxious circle reaction. Ending not completed."
+  },
+  "chronological_trace": [
+    {
+      "step": 1,
+      "action": "Open creator itch release page, wait for loading",
+      "observed": "Large Play control; five-minute time promise; content warning; no account wall.",
+      "screenshots": [
+        "05-live-ready.png",
+        "12-live-standalone.png"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "Click Play",
+      "observed": "Quotation introduction, then a crowd surrounding a television. Pointer becomes a camera frame; point-and-click instruction is spatially placed.",
+      "screenshots": [
+        "06-started.png",
+        "07-park.png"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "Attempt to photograph a moving hat wearer using an earlier screenshot position",
+      "observed": "Target moved before shutter; game publishes empty photograph with dismissive feedback. This was a targeting miss, not successful subject capture.",
+      "screenshots": [
+        "09-hat-attempt.png",
+        "10-hat-feedback.png"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "Restart live hosted build; photograph visible hat wearer with current scene coordinate read",
+      "observed": "Camera crop zooms into a TV headline praising the hat. Subsequently six onlookers visibly wear hats.",
+      "screenshots": [
+        "18-hat-news.png",
+        "19-hats-spread.png",
+        "20-after-hat.png"
+      ]
+    },
+    {
+      "step": 5,
+      "action": "Photograph affectionate circle/square couple together",
+      "observed": "The game automatically adds a mocking headline; couple visibly blushes near TV, then walks away. Player chose subject, but not editorial framing.",
+      "screenshots": [
+        "21-loving-couple-feedback.png",
+        "22-love-caption.png",
+        "23-love-consequence.png"
+      ]
+    },
+    {
+      "step": 6,
+      "action": "Photograph agitated square character between qualifying outbursts",
+      "observed": "Feedback asks for something interesting; the face alone does not count as the required event.",
+      "screenshots": [
+        "24-square-outburst.png",
+        "25-outburst-news.png"
+      ]
+    },
+    {
+      "step": 7,
+      "action": "Retry photograph precisely during visible square outburst, using read-only animation-phase observation plus real mouse input",
+      "observed": "Successful capture produces attack headline; a circle onlooker subsequently shows a worried facial expression below TV. This visually extends the earlier hat-adoption loop into fear.",
+      "screenshots": [
+        "27-outburst-caught.png",
+        "28-fear-spreads.png"
+      ]
+    }
+  ],
+  "journey": [
+    {
+      "stage": "Arrival",
+      "observed": "Single visible Play; stated short commitment.",
+      "interpretation": "May lower willingness-to-try cost.",
+      "testable_for_ours": "Offer immediate first action and honest session length; time novice users to first meaningful choice."
+    },
+    {
+      "stage": "Learn by choosing",
+      "observed": "Same click records a crop and generates a television story.",
+      "interpretation": "Player can form a causal model without a separate tutorial.",
+      "testable_for_ours": "Ask testers to predict the effect of a second photo after one successful photo."
+    },
+    {
+      "stage": "Recognize consequence",
+      "observed": "Hat headline followed by visible hat adoption.",
+      "interpretation": "Attention gains power because change is spatially visible.",
+      "testable_for_ours": "Test whether players can name who changed and why, without reading an explanation."
+    },
+    {
+      "stage": "Discover mismatch",
+      "observed": "An affectionate photograph receives a hostile caption.",
+      "interpretation": "A gap between intention and framing creates tension, but can also reduce agency.",
+      "testable_for_ours": "Allow a quiet or generous reading to matter; compare replay intentions across distinct endings."
+    },
+    {
+      "stage": "Master observation",
+      "observed": "Outburst photograph only qualifies in a particular state.",
+      "interpretation": "The camera can make noticing/timing itself the skill; feedback must distinguish wrong subject, wrong moment, and wrong framing.",
+      "testable_for_ours": "Vivid should show a readable clue before shutter and explain a failed alignment after it."
+    }
+  ],
+  "criticism_sources": [
+    {
+      "title": "JayIsGames \u2014 We Become What We Behold",
+      "url": "https://jayisgames.com/review/we-become-what-we-behold.php",
+      "published": "2017-03-02",
+      "accessed": "2026-10-05 via web full page",
+      "summary": "Review emphasizes how selected images influence a community. In comments, one reader objects to being steered toward sensationalism; the author replies that constrained progression expresses the warning. This disagreement is useful design tension, not representative survey data.",
+      "relationship_to_test": "My couple photo confirms authored hostile framing; I have not yet reproduced the later peaceful-photo progression refusal.",
+      "reliability_note": "Page labels the technology Unity, while inspected public source and live build use PIXI JavaScript. Do not reuse its platform metadata as technical fact."
+    },
+    {
+      "title": "Flash Forward Reviews \u2014 Day 284",
+      "url": "https://flash-forward-reviews.github.io/day-284",
+      "published": "2025-02-08",
+      "accessed": "2026-10-05 via web full page",
+      "summary": "Both writers find the social message legible; they criticize explicit text responses that reject peaceful photographs and overexplain the argument. One suggests greater control of headlines and pictures could make the feedback loop feel more systemic. Their low replay estimates are personal opinions, not retention measurements.",
+      "relationship_to_test": "Provides a concrete alternative hypothesis: meaningful control over interpretation may differentiate our social-memory game. Not independently validated by this small developer playthrough."
+    }
+  ],
+  "derived_hypotheses": [
+    {
+      "game": "Memorable Moments",
+      "proposal": "Let the same observed moment support two defensible interpretations; preserve the chosen framing in a later character response or reunion. A quiet/generous photograph must change an outcome too.",
+      "why": "Live comparison shows emotionally readable social consequences, while criticism exposes frustration with forced framing.",
+      "unique_experience_candidate": "A shared memory that changes meaning when a second witness adds context; players recognize how their first interpretation shaped another character, then may repair it.",
+      "validation": "Ask five fresh players to describe their intended message before capture and explain the later consequence; look for distinct understood outcomes, not only completion."
+    },
+    {
+      "game": "Vivid 2.5D Photo",
+      "proposal": "Make perspective selection reveal a story that is inaccessible from one flat image, then preserve the resulting photograph as an expressive artifact.",
+      "why": "WBWWB demonstrates that framing can carry meaning; its failed-event feedback shows the cost of unclear capture criteria.",
+      "unique_experience_candidate": "Two apparently incompatible memories become one coherent scene only from a player-discovered viewpoint, and the saved crop determines what another viewer believes.",
+      "validation": "Test a flat-image control against the 2.5D viewpoint version with fresh players; measure whether they independently describe the discovery and can reproduce it."
+    }
+  ],
+  "github_structure_insight": {
+    "repo": "https://github.com/ncase/wbwwb",
+    "inspected_head": "7c68c7e44e66b5be95ebd07d22391de707090397",
+    "observed": "Separate core scene manager, game camera/world/director, character types, narrative acts, text catalog, and asset directories. Explicit file ownership can support parallel work.",
+    "recommendation": "For our jam, divide scene data/writing, deterministic game rules, input/rendering, and playtest evidence. Give each agent distinct owned files and one integration owner per game branch. Add one fresh-clone boot check; source checkout here failed on missing selected textStrings alias despite a working hosted release.",
+    "license_note": "README dedicates original code/art to CC0 but lists separate third-party code and sound licenses; keep attribution when reusing those assets."
+  },
+  "limits": [
+    "One agent developer playthrough, not recruited human-player research.",
+    "No population-level demand, conversion, retention, revenue, or uniqueness claim established.",
+    "Read-only scene-coordinate assistance was used for moving canvas targets; these observations are not a pure unaided usability benchmark.",
+    "No audio experience or mobile play evaluated.",
+    "Competitor criticism is qualitative published opinion; its claims are separated from reproduced behavior.",
+    "No claim that live itch build matches the current GitHub HEAD."
+  ],
+  "evidence_files": {
+    "actions": "live-actions.jsonl",
+    "screenshots": "numbered PNGs in this directory; all screenshots cited in chronological_trace were opened and visually inspected",
+    "initial_local_failure": "action-trace.json",
+    "runtime_driver": "controller.cjs",
+    "playwright_trace": "live-playwright-trace.zip"
+  },
+  "attribution": "Game and screenshots: We Become What We Behold by Nicky Case. Original art/code CC0 per creator; third-party assets retain their listed licenses. Screenshots are evidence of the live hosted build, not our game art.",
+  "artifact_copy_note": "This branch contains textual evidence and numbered screenshots. Large raw Playwright traces and runtime driver files remain in /workspace/gamejam-shared/released-social; they are not bundled in this document folder."
+}

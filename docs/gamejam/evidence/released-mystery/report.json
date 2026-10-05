@@ -1,0 +1,210 @@
+{
+  "status": "complete_bounded_opening_test",
+  "test_date": "2026-10-05",
+  "tester": "released_games_mystery agent",
+  "game": {
+    "name": "Detective: Again!",
+    "listing": "https://kicodes.itch.io/detective-again",
+    "live_build": "https://html-classic.itch.zone/html/2574314/index.html",
+    "version": "Unity productVersion 1.0 (HTML of live build)",
+    "source_modified": false
+  },
+  "method": {
+    "browser": "Chromium 151, Playwright, mouse inputs, 1280x900 viewport",
+    "network": "Inherited proxy retained; Chromium did not trust proxy CA. Routed browser requests through Playwright APIRequestContext with NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt and inherited HTTPS_PROXY; TLS verification remained enabled. No destination block bypass.",
+    "adaptation": "Itch iframe stuck at blurred loading image, console IndexedDB unavailable. Navigating same deployed iframe URL as top-level loaded playable Unity scene.",
+    "limits": [
+      "One agent using scripted mouse inputs; no representative human participant data, retention evidence, willingness-to-pay evidence, or audience-size measurement.",
+      "Software rendering, screenshot turnaround, and network adaptation invalidate consumer load-time/performance comparisons.",
+      "Moving-camera targeting errors in this session are partly an agent/tool latency limitation; they should not be counted as reproduced human usability bugs.",
+      "Only opening/client-interview path tested. No time-loop reset, persistence, lockpick, ending, alternate interview choices, mobile browser, audio, or full-game completion verified.",
+      "Critic statements and self-selected player comments are secondary evidence. Their reported defects were not reproduced merely by reading them."
+    ]
+  },
+  "critic_sources": [
+    {
+      "url": "https://blog.zarfhome.com/2024/02/spring-narrative-games",
+      "title": "Spring narrative games (The Roottrees are Dead section)",
+      "date": "2024-03-04",
+      "version": "Original browser version, not 2025 remake",
+      "interpretation": "Andrew Plotkin praises multiple routes through evidence but objects to missing search history, repeated simulated modem delay, and an unclear periodical-unlock dependency. He notes the first puzzle describes plaid while the image shows stripes. Lesson to test: persistence and precise clue-art contracts protect inference."
+    },
+    {
+      "url": "https://www.pcgamer.com/games/puzzle/the-roottrees-are-dead-review/",
+      "title": "The Roottrees are Dead review",
+      "date": "2025-02-08",
+      "version": "2025 remake, NOT personally played",
+      "interpretation": "Tom Sykes describes cross-referencing evidence and periodic locking of correctly solved entries; the review values discoveries and confirmation. Hypothesis only: support independent inference then clearly acknowledge it."
+    }
+  ],
+  "community_source": {
+    "url": "https://kicodes.itch.io/detective-again",
+    "version": "Detective original",
+    "interpretation": "Some commenters dislike action-mode switching, report bugs, or say they solved on their first loop. These are self-selected comments and have not established incidence or my own complete play outcome."
+  },
+  "scope": "Live deployed opening played through first client interview, accepted case, received Building 42 / Apartment C address, checked inventory, and exited office. Whole game, puzzle solution, ending, and time-loop reset were NOT tested.",
+  "first_hand_observations": [
+    "Loaded live deployed game, clicked ? to briefly highlight scene object.",
+    "Clicked highlighted alarm, learned client appointment objective at 08:00.",
+    "Exited apartment through door 41 into rainy street, walked left to Private Detective sign.",
+    "Camera follows character; screen coordinates shift while movement is pending. An early second door click accidentally reentered apartment.",
+    "Three visible cursor modes: investigate, interact, inventory. No objective list or journal seen in opening.",
+    "Dialogue choices were selected: police involvement, reason for urgency, accept time-machine premise, why client cannot disable it, then request address.",
+    "The client supplied Building 42, Apartment C. After the dialogue closed the address was no longer visible on the play surface. Clicking the inventory icon did not expose an address note in the observed state. This does not prove the address cannot be retrieved by another interaction.",
+    "Clock stayed at 09:50 across the observed interview screenshots and showed 10:00 after conversation ended, then 10:10 at inventory inspection. This supports a dialogue planning pause within this session.",
+    "The environment shifted to grayscale behind the sepia conversation panel, helping separate conversation from exploration.",
+    "Exited detective office back to rainy street with clock at 10:30; stopped test there."
+  ],
+  "journey": [
+    {
+      "stage": "Arrival",
+      "input": "Open itch listing and click Run game",
+      "outcome": "Game iframe stayed on blurred image; console logged IndexedDB unavailable. Same unchanged deployment loaded when opened as top-level URL.",
+      "evidence": [
+        "01-page.png",
+        "02-loading.png",
+        "03-after-load.png",
+        "05-direct-deployment.png"
+      ],
+      "interpretation": "Environment compatibility issue, not a universal consumer failure."
+    },
+    {
+      "stage": "Orientation",
+      "input": "Click question mark (1088,36), then highlighted alarm (668,300)",
+      "outcome": "Question mark briefly highlighted alarm; interaction supplied office-at-08:00 goal.",
+      "evidence": [
+        "06-help.png",
+        "07-phone.png"
+      ],
+      "interpretation": "A small goal gives immediate direction, but clue is transient."
+    },
+    {
+      "stage": "Navigation",
+      "input": "Use hand mode, exit apartment, move left through street to office door",
+      "outcome": "Door transitions and camera-follow movement reached Private Detective office. Accidental reentry and ground clicks occurred while camera was moving.",
+      "evidence": [
+        "09-office.png",
+        "14-street-left.png",
+        "20-case-opening.png"
+      ],
+      "interpretation": "Atmosphere is legible; agent camera timing is a confound."
+    },
+    {
+      "stage": "Read environment",
+      "input": "Click wall schedule then advance text (650,506)",
+      "outcome": "Schedule identified 00:00\u201308:00 Work, 08:00\u201313:00 Office, 13:00\u201318:00 Research.",
+      "evidence": [
+        "22-client-body-click.png",
+        "23-schedule.png"
+      ],
+      "interpretation": "World objects carry useful temporal context."
+    },
+    {
+      "stage": "Accept case",
+      "input": "Click client torso (593,313), choose police question (565,515), then successive first dialogue options around (585,506)",
+      "outcome": "Learned missing partner, urgency, active time machine and client inability to locate it; finally received Building 42, Apartment C.",
+      "evidence": [
+        "24-talk-selection.png",
+        "25-police-question.png",
+        "26-urgency.png",
+        "27-machine-explanation.png",
+        "28-machine-location.png",
+        "29-address-and-memory.png"
+      ],
+      "interpretation": "Curiosity is advanced through questions that turn a strange premise into a next action. Motivation hypothesis, not measured preference."
+    },
+    {
+      "stage": "Return to exploration",
+      "input": "Dismiss last dialogue (585,506); click inventory (198,565); select hand (201,460); exit (918,299)",
+      "outcome": "Address vanished from current display and no address note appeared in observed inventory state. Exited to street.",
+      "evidence": [
+        "30-case-accepted.png",
+        "31-inventory-after-case.png",
+        "32-leave-office.png"
+      ],
+      "interpretation": "A persistent discovered-lead pin could make interrupted play easier without answering the puzzle."
+    }
+  ],
+  "friction": [
+    {
+      "observation": "Discovered address no longer visible after conversation closes; inventory inspection did not reveal a note.",
+      "strength": "Direct observation bounded to one state; not proof of no retrieval mechanism.",
+      "proposed_experiment": "Show a compact persistent discovered-lead pin in Bell; after an interruption ask player to state their next location/time experiment without replaying dialogue."
+    },
+    {
+      "observation": "Multiple cursor modes are visible; I selected hand again to exit after inventory inspection.",
+      "strength": "Direct interface observation; no measured usability cost and no reproduced community bug.",
+      "proposed_experiment": "Keep primary interaction singular unless look/use differentiation enables a real deduction."
+    }
+  ],
+  "hypotheses": [
+    {
+      "question": "Why play?",
+      "hypothesis": "To feel capable of making a plan from uncertain testimony, while enjoying the atmosphere of a strange case.",
+      "basis": "Observed interview supplied progressively more causal information and a destination; criticized deductive games value cross-reference and confirmation.",
+      "validation_needed": "Human think-aloud interviews and repeated voluntary continuation; this playthrough alone cannot establish player motives."
+    },
+    {
+      "question": "How differentiate?",
+      "hypothesis": "Respect browser-session interruptions: keep the player\u2019s discovered next experiment visible, pause pressure during reading, and make retained knowledge usable after a return.",
+      "basis": "Observed transient address plus stable dialogue clock; Plotkin\u2019s original-Roottrees critique of clue tracking.",
+      "validation_needed": "Compare unaided resumption and next-action recall against existing prototype; no claim of platform-wide uniqueness."
+    },
+    {
+      "question": "Unique experience to test?",
+      "hypothesis": "Bell could make the player author a falsifiable prediction about a person, place, and time, then let the next loop confirm or contradict that prediction while preserving its provenance.",
+      "basis": "Derived proposal, not tested competitor absence or proven demand.",
+      "validation_needed": "Player can explain why prediction failed, chooses another experiment voluntarily, and uses saved evidence after reset. Test against a version with only checklist progression."
+    }
+  ],
+  "artifacts": {
+    "trace": {
+      "path": "initial-trace.zip",
+      "scope": "Playwright trace of network/setup and earliest navigation only; stopped during early street navigation to reduce capture load."
+    },
+    "action_outcome_trace": "action-trace.json",
+    "screenshots_inspected": [
+      "01-page.png",
+      "02-loading.png",
+      "03-after-load.png",
+      "05-direct-deployment.png",
+      "06-help.png",
+      "07-phone.png",
+      "08-office-door.png",
+      "09-office.png",
+      "10-client.png",
+      "11-walk-left.png",
+      "12-street.png",
+      "13-exit-confirmed.png",
+      "14-street-left.png",
+      "15-detective-door.png",
+      "16-office-interior.png",
+      "17-stop-moving.png",
+      "18-client-dialogue.png",
+      "19-enter-office.png",
+      "20-case-opening.png",
+      "21-client-conversation.png",
+      "22-client-body-click.png",
+      "23-schedule.png",
+      "24-talk-selection.png",
+      "25-police-question.png",
+      "26-urgency.png",
+      "27-machine-explanation.png",
+      "28-machine-location.png",
+      "29-address-and-memory.png",
+      "30-case-accepted.png",
+      "31-inventory-after-case.png",
+      "32-leave-office.png"
+    ],
+    "scripts": [
+      "controller.cjs",
+      "act.py",
+      "play.cjs",
+      "browser.cjs"
+    ],
+    "note": "Misleading intermediate filenames (e.g. 10-client.png) are retained as raw artifacts; journey descriptions are authoritative about what they actually show. 04-load-retry.png was captured but not visually inspected."
+  },
+  "browser_closed": true,
+  "artifact_copy_note": "This branch contains textual evidence and numbered screenshots. Large raw Playwright traces and runtime driver files remain in /workspace/gamejam-shared/released-mystery; they are not bundled in this document folder.",
+  "attribution": "Screenshots depict Detective: Again! from KiCodes\u2019 linked itch.io release, retained for comparative play analysis. They are not original art for our prototypes."
+}
