@@ -110,3 +110,5 @@
     .borrow-minute .skip-scene{margin:0;background:var(--paper);min-height:44px}
     .borrow-minute .skip-scene[aria-pressed="true"]{background:var(--teal);color:var(--paper)}
     .borrow-minute .skip-scene:disabled,.close-encounter:disabled,.mode-switch button:disabled{cursor:default;opacity:.55}
+
+    .start-alternative{display:block;width:100%;min-height:44px;margin-top:8px;text-align:center;color:var(--teal)}

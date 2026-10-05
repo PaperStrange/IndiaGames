@@ -1,0 +1,41 @@
+{
+  "method": "Visible controls, real Playwright clicks, no force or game-state injection",
+  "outcomes": [
+    {
+      "path": "/",
+      "width": 1440,
+      "result": "PASS",
+      "clickPath": [
+        "Try GameJam / Contrast",
+        "Begin Contrast run",
+        "Bell Square"
+      ],
+      "originalDefault": "PASS",
+      "pageErrors": []
+    },
+    {
+      "path": "/dist/thirteenth-bell-playable-demo.html",
+      "width": 1440,
+      "result": "PASS",
+      "clickPath": [
+        "Try GameJam / Contrast",
+        "Begin Contrast run",
+        "Bell Square"
+      ],
+      "originalDefault": "PASS",
+      "pageErrors": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "result": "PASS",
+      "clickPath": [
+        "Try GameJam / Contrast",
+        "Begin Contrast run",
+        "Bell Square"
+      ],
+      "originalDefault": "PASS",
+      "pageErrors": []
+    }
+  ]
+}

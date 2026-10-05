@@ -17,7 +17,7 @@ const trace = [];
   async function record(action) {
     trace.push({action,run:await text('#runLabel'),visits:await text('#actionMetric'),momentum:await text('#momentum'),fracture:await page.locator('#fractureTrack').getAttribute('aria-label')});
   }
-  async function boot() {await page.goto(base); await click('#startBtn'); await click('#contrastMode'); await click('#startBtn');}
+  async function boot() {await page.goto(base); await click('#tryContrastBtn'); await click('#startBtn');}
   async function predict(n) {await page.locator('#predictionChoices button').nth(n).click();}
   async function visit(name) {await page.locator('.place').filter({hasText:name}).click();}
   async function choose(n) {await page.locator('#choices button').nth(n).click(); await click('#continueBtn');}
@@ -36,7 +36,7 @@ const trace = [];
   assert.match(await text('#eventText'),/Inspector Brann wears a fox mask/);
   await click('#borrowMinute');
   assert.equal(await text('#momentum'),'3'); // Reservation is reversible, not a spend.
-  await click('#originalMode');
+  await click('#originalMode'); await click('#startBtn');
   assert.equal(await page.locator('#forecastMemory').isVisible(),false);
   await click('#contrastMode'); await visit('Bell Square');
   assert.equal(await page.locator('#borrowMinute').getAttribute('aria-pressed'),'false');
