@@ -13,7 +13,8 @@ import type {CompanionStatus} from '@/lib/companion-types';
 import {recognitionMode} from '@/lib/recognition-policy';
 import {findInputPlacement} from '@/lib/input-placement';
 import {isUnsentStroke,isPendingInput} from '@/lib/ink-draft';
-type Options={apiBase:string;status:CompanionStatus|null;activeId:string;surface:React.RefObject<HTMLDivElement|null>;readPage:(id:string)=>Page|undefined;updatePage:(fn:(p:Page)=>Page,history:boolean,id:string)=>void;reply:(text:string,page:Page,ids:string[])=>Promise<void>};
+class InkNeedsSpaceError extends Error {}
+type Options={apiBase:string;status:CompanionStatus|null;activeId:string;surface:React.RefObject<HTMLDivElement|null>;readPage:(id:string)=>Page|undefined;updatePage:(fn:(p:Page)=>Page,history:boolean,id:string)=>void;onNeedsSpace:(pageId:string)=>void;reply:(text:string,page:Page,ids:string[])=>Promise<void>};
 export function useInkFlow(options:Options){const ref=useRef(options);ref.current=options;const cycles=useRef<Record<string,InkCycle>>({}),revisions=useRef<Record<string,number>>({}),jobs=useRef(new Map<string,Promise<string>>()),accepted=useRef(new Map<string,number>()),timers=useRef(new Map<string,ReturnType<typeof setTimeout>>()),alive=useRef(true),frame=useRef(0);const[cycle,setCycle]=useState<InkCycle|null>(null),[message,setMessage]=useState('');
  const pausedPages=useRef(new Set<string>());
  const publish=(c?:InkCycle)=>{if(alive.current&&(!c||(cycles.current[c.pageId]===c&&c.pageId===ref.current.activeId)))setCycle(c?{...c}:null);};
@@ -30,12 +31,19 @@ export function useInkFlow(options:Options){const ref=useRef(options);ref.curren
  const correction=current.blocks.filter(b=>b.kind==='user'&&!b.absorbedBy&&b.erased?.length).map(b=>({b,text:replaceErasedText(b,line,text)})).find(c=>c.text!==undefined);
  if(correction){const target=correction.b,combined=[...new Set([...(target.inkIds||[]),...ids])],recognitionId=uid();
  const placement=findInputPlacement(current,correction.text!,target,{blockIds:[target.id],strokeIds:combined});
- if(!placement)throw Error('Your correction is saved. Choose “Move ink to a fresh leaf” to give it room.');
+ if(!placement)throw new InkNeedsSpaceError('Your correction is saved.');
  combined.forEach(id=>accepted.current.set(id,c.inputRevision));ref.current.updatePage(p=>({...p,strokes:p.strokes.map(s=>combined.includes(s.id)?{...s,absorbedBy:recognitionId}:s),blocks:p.blocks.map(b=>b.id===target.id?{...b,...placement,text:correction.text!,erased:undefined,erasedRegions:undefined,recognitionId,inkIds:combined,pendingInput:true}:b)}),false,id);return;}
  const placement=findInputPlacement(current,text,{x:68,y:Math.max(122,line.y+29)},{strokeIds:ids,blockIds:overlapping.map(b=>b.id)});
- if(!placement)throw Error('Your ink is saved. Choose “Move ink to a fresh leaf” to give it room.');
+ if(!placement)throw new InkNeedsSpaceError('Your ink is saved.');
  const recognitionId=uid(),normalized=block('user',text,placement.y,placement.h,{x:placement.x,recognitionId,inkIds:ids,pendingInput:true});ids.forEach(id=>accepted.current.set(id,c.inputRevision));ref.current.updatePage(p=>({...p,strokes:p.strokes.map(s=>ids.includes(s.id)?{...s,absorbedBy:recognitionId}:s),blocks:[...p.blocks.filter(b=>!overlapping.some(old=>old.id===b.id)),normalized]}),false,id);
- })).then(()=>{c.ready=true;publish(c);if(cycles.current[id]===c&&c.fading){if(ref.current.activeId===id)setMessage('Your words are becoming a thought…');void maybeReply(c);}}).catch(e=>{if(!alive.current)return;if(cycles.current[id]===c){c.fading=false;publish(c);if(ref.current.activeId===id){setMessage('');ref.current.surface.current?.style.setProperty('--flow-opacity','1');}}toast.error(e instanceof Error?e.message:'Could not read this line. Your ink is kept.');});}
+ })).then(()=>{c.ready=true;publish(c);if(cycles.current[id]===c&&c.fading){if(ref.current.activeId===id)setMessage('Your words are becoming a thought…');void maybeReply(c);}}).catch(e=>{
+    if(!alive.current || cycles.current[id]!==c || (revisions.current[id]||0)!==c.inputRevision)return;
+    c.fading=false;publish(c);
+    if(ref.current.activeId!==id)return;
+    setMessage('');ref.current.surface.current?.style.setProperty('--flow-opacity','1');
+    if(e instanceof InkNeedsSpaceError){ref.current.onNeedsSpace(id);return;}
+    toast.error(e instanceof Error?e.message:'Could not read this line. Your ink is kept.');
+ });}
  function restore(id:string){pausedPages.current.add(id);clearTimeout(timers.current.get(id));timers.current.delete(id);const c=cycles.current[id];if(c){c.fading=false;publish(c);}if(ref.current.activeId===id){ref.current.surface.current?.style.setProperty('--flow-opacity','1');setMessage('');}}
  useEffect(()=>{const c=cycles.current[options.activeId];publish(c);setMessage('');if(c?.fading&&!c.sent)void maybeReply(c);},[options.activeId]);
  useEffect(()=>{cancelAnimationFrame(frame.current);const tick=()=>{const c=cycles.current[ref.current.activeId],elapsed=c?.fading?Math.min(1,(Date.now()-c.startedAt)/FADE_MS):0;ref.current.surface.current?.style.setProperty('--flow-opacity',String(1-elapsed*elapsed));if(c?.fading&&elapsed<1)frame.current=requestAnimationFrame(tick);};tick();return()=>cancelAnimationFrame(frame.current);},[cycle?.id,cycle?.fading,options.activeId]);

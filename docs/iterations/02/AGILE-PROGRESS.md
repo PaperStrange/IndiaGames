@@ -11,7 +11,7 @@ Implementation review: 2026-10-04 America/Los_Angeles / 2026-10-05 UTC. 35 cards
 | MC-003 | In progress | B2 durability; historical restart evidence exists, photo/device evidence pending |
 | MC-004 | Proposed | B2 idempotent sync and two-client handoff |
 | MC-005 | Blocked | B3 real provider access and spend unverified in QA environment |
-| MC-006 | In progress | Recoverable overlap handling and navigation pause implemented; browser checks tracked in the current milestone; broader paper correction and physical input acceptance pending |
+| MC-006 | In progress | Recoverable overlap handling and navigation pause implemented; mobile discoverability correction tracked in INK-RECOVERY-DISCOVERABILITY.md; broader paper correction and physical input acceptance pending |
 | MC-007 | Proposed | Prepare paper-to-app switching research and recruitment plan |
 | MC-008 | Proposed | B3 exact capture/reply source links; full 100-probe baseline recall gate remains open |
 | MC-009 | Proposed | Required correction/deletion propagation; included in paper regression |
@@ -50,6 +50,7 @@ Planning revision 2 retains MC-029–031 acceptance, distinguishes design invest
 
 - [Current sprint goal, order, capacity and checkpoints](SPRINT-PREPARATION.md)
 - [Machine-readable backlog](BACKLOG-DELTA.json)
+- [Recovery-action discoverability correction](INK-RECOVERY-DISCOVERABILITY.md)
 - [Previous implementation evidence](../01/AGILE-PROGRESS-2026-10-04.md)
 - [Component/scenario observations](BEHAVIOR-AUDIT.md)
 - [Original acceptance definitions](../../agile-baseline/02-PRIORITIZED-BACKLOG.MD)

@@ -1,5 +1,5 @@
 .ink-recovery {
-    width: 100%; max-width: 820px; margin: 12px auto; padding: 12px 16px;
+    width: 100%; max-width: 820px; margin: 0 auto 10px; padding: 10px 12px;
     color: #e4d4b7; background: #29241feb; border: 1px solid #94795180;
     border-radius: 10px; font-size: 14px; line-height: 1.5;
 }
@@ -9,3 +9,13 @@
     border: 1px solid #94795180; border-radius: 6px; text-align: left; }
 .ink-recovery button:hover { background: #4f4133; }
 .ink-recovery button:focus-visible { outline: 2px solid #f2c983; outline-offset: 2px; }
+.ink-recovery .ink-recovery-primary { background: #e1c38b; color: #30271b; border-color: #eed9ad; font-weight: 600; }
+.ink-recovery .ink-recovery-primary:hover { background: #f0d6a5; }
+.composer-area[data-ink-recovery=true] { position: relative; z-index: 21; }
+.composer-area[data-ink-recovery=true] .suggestions { display: none; }
+.ink-space-toast[data-sonner-toast] [data-button] { min-height: 44px; padding: 8px 12px; flex-shrink: 0; }
+@media (max-width: 767px) {
+    .ink-recovery > div { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .ink-recovery .ink-recovery-primary { grid-column: 1 / -1; text-align: center; }
+    .ink-recovery button { text-align: center; }
+}

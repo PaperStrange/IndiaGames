@@ -1,5 +1,9 @@
 # Sprint 02 recovery checkpoint
 
+## Recovery action follow-up
+
+The follow-up to published source `32ee141fa0a3bec77925cc672f64fdb21ea48e2e` moves ink-recovery actions beside the input and adds an executable action to the space notice. [INK-RECOVERY-DISCOVERABILITY.md](INK-RECOVERY-DISCOVERABILITY.md) records the user's mobile report, test gap, correction, browser results and remaining acceptance boundaries. The final saved source and private publication are recorded by the release workflow.
+
 ## Latest checkpoint: browser and ink recovery
 
 Verified 2026-10-05 UTC / 2026-10-04 America/Los_Angeles. Published starting source for this increment: `fde7e57d9b08ab510d360ff2e5202cdb11e42e33` (Site version 10). Durable intermediate source: `72f5639d3d1ae7d2656accf5442d5d10b54a66cd`. The final source/deployment result is recorded by the release workflow.

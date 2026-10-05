@@ -1,10 +1,22 @@
-import { test, expect, type Page } from 'playwright/test';
+import { test, expect, type Locator, type Page } from 'playwright/test';
 import { createHash, randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
+import { initialNotebook } from '../../lib/notebook';
 
-test.beforeEach(async ({ context, page }) => {
+test.beforeEach(async ({ context, page }, testInfo) => {
     // 独立身份仅作用于本地测试 Worker；公开部署的身份校验仍由 Sites 提供。
     await context.setExtraHTTPHeaders({ 'oai-authenticated-user-id': `browser-qa-${randomUUID()}` });
+    if (testInfo.project.name === 'phone' && testInfo.title.startsWith('move-ink action')) {
+        // 在客户端首次读取前写入真实服务，避免测试准备本身制造跨客户端版本冲突。
+        const stored = await (await page.request.get('/api/notebook')).json();
+        stored.notebook ||= initialNotebook();
+        stored.notebook.pages[0].blocks.push({ id: randomUUID(), kind: 'text',
+            text: 'The last line of this leaf is already occupied.', x: 68, y: 850, h: 50 });
+        const seeded = await page.request.put('/api/notebook', {
+            headers: { 'X-Notebook-Version': String(stored.version) }, data: stored.notebook,
+        });
+        expect(seeded.ok()).toBe(true);
+    }
     await page.goto('/');
     await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('A little curiosity');
     await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
@@ -35,6 +47,55 @@ async function nextAndBack(page: Page) {
     await page.getByRole('button', { name: 'Previous notebook page', exact: true }).click();
     await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('A little curiosity');
 }
+
+async function expectReachableWithoutScrolling(button: Locator) {
+    // 只读取视口与命中结果；不能让 Playwright 自动滚动掩盖真实用户遇到的遮挡。
+    await expect.poll(() => button.evaluate(element => {
+        const box = element.getBoundingClientRect();
+        const hit = document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2);
+        return box.width > 0 && box.height >= 44 && box.top >= 0 && box.left >= 0
+            && box.bottom <= innerHeight && box.right <= innerWidth && !!hit && element.contains(hit);
+    })).toBe(true);
+}
+
+test('move-ink action is reachable without scrolling or toolbar obstruction', async ({ page }, testInfo) => {
+    const phone = testInfo.project.name === 'phone';
+    if (phone) await page.setViewportSize({ width: 390, height: 700 });
+    await page.getByRole('switch', { name: 'Reply when handwriting pauses' }).click();
+    await drawOverSample(page);
+    const recovery = page.getByRole('region', { name: 'Unsent ink' });
+    const move = recovery.getByRole('button', { name: 'Move ink to a fresh leaf' });
+    await expect(recovery).toContainText('overlaps');
+    await expectReachableWithoutScrolling(move);
+    const stage = await page.locator('.canvas-stage').boundingBox();
+    if (!stage) throw new Error('The notebook viewport is missing.');
+    expect(stage.height).toBeGreaterThan(120);
+    await page.mouse.move(stage.x + stage.width / 2, stage.y + stage.height / 2);
+    await page.mouse.wheel(0, 500);
+    await expect.poll(() => page.locator('.canvas-stage').evaluate(element => element.scrollTop)).toBeGreaterThan(100);
+    await expectReachableWithoutScrolling(move);
+    await expectReachableWithoutScrolling(recovery.getByRole('button', { name: 'Keep as annotation' }));
+    await expectReachableWithoutScrolling(recovery.getByRole('button', { name: 'Read this ink' }));
+    await page.screenshot({ path: `work/browser-results/recovery-visible-${testInfo.project.name}.png` });
+    let action = move;
+    if (phone) {
+        await recovery.getByRole('button', { name: 'Read this ink' }).click();
+        const notice = page.locator('.ink-space-toast');
+        await expect(notice).toContainText('Your ink is saved.', { timeout: 45000 });
+        action = notice.getByRole('button', { name: 'Move ink', exact: true });
+        await expectReachableWithoutScrolling(action);
+        await page.screenshot({ path: 'work/browser-results/recovery-action-phone.png' });
+    }
+    const target = await action.boundingBox();
+    if (!target) throw new Error('The move action is missing.');
+    // 点击已验证的屏幕坐标，不调用会自动滚动的 locator.click。
+    await page.mouse.click(target.x + target.width / 2, target.y + target.height / 2);
+    await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('A little curiosity · a new thought');
+    await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
+    const saved = await (await page.request.get('/api/notebook')).json();
+    expect(saved.notebook.pages[0].strokes).toHaveLength(0);
+    expect(saved.notebook.pages[1].strokes.length).toBeGreaterThan(0);
+});
 
 test('overlapping ink moves intact, survives page turns and reload, and can remain an annotation', async ({ page }) => {
     const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
