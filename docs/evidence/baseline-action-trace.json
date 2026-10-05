@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-05",
+  "build": "369f0da82696caab98f8f68ede78f49da286d590",
+  "method": "Chromium via Playwright, visible controls only. This log transcribes the actual exploratory actions and observed UI from the tool transcript; it is not automatic telemetry or a human participant study.",
+  "original": [
+    {"action":"Start Original; predict masked crowd; visit Bell Square; help Mina","observed":"Redflower; Fracture 1; prediction correct; Momentum 1; Noon"},
+    {"action":"Predict archive floods; visit Flooded Archive; listen at drain","observed":"Hidden route; chalk map; Fracture 2; forecast missed; furnace sings; Dusk"},
+    {"action":"Predict North Gate rises; visit Glassworks; steady pressure wheel","observed":"Glass bead; Fracture 3; forecast missed; Underbell opens; Midnight"},
+    {"action":"Anchor Mina + chalk map; wake","observed":"Loop 2; inventory reduced; carried choices and Bellmarked scar visible"},
+    {"action":"Switch to Contrast","observed":"Separate unstarted Contrast run opened; Original progress retained in its own mode state"}
+  ],
+  "contrast": [
+    {"action":"Start; predict masked crowd; help Mina; resolve boundary","observed":"Commitment then outcome and forecast in separate steps; Momentum 1"},
+    {"action":"Predict furnace sings; listen at drain; resolve boundary","observed":"Route anchored; Momentum 2"},
+    {"action":"Predict Underbell opens; steady pressure; resolve boundary","observed":"Momentum 3; Midnight"},
+    {"action":"Anchor Mina + chalk map; wake","observed":"Loop 2 Dawn; forecasts repeat without learned-outcome note"},
+    {"action":"Predict masked crowd; visit Bell Square","observed":"Only the change remains; new breakfast masquerade scene context omitted; Dance and Unmask choices remain; no Momentum-spending action"}
+  ],
+  "interpretation_limits": "The second run's 3/3 predictions were informed by the first run. They do not show novice comprehension. Agent action elapsed times are not human reading times. No player motivation, enjoyment or retention was measured."
+}

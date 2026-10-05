@@ -32,12 +32,17 @@ node build.mjs
 - Anchor three memories on the **Midnight Anchor Board** to face the thirteenth bell.
 - The **Original / Contrast** toggle (top of the page) compares two builds of the experience: the original map adventure vs. the research-driven contrast build (two-view journal, prediction ledger, batched theory validation).
 
+## GameJam update · 2026-10-05
+
+Contrast now remembers witnessed forecast outcomes and lets you spend 1 Momentum on a familiar route to borrow one extra visit per loop. New encounters keep their full story; Fracture still counts. [Play observations, journey, evidence and human validation gate](docs/gamejam-2026-10-05.md).
+
 ## What's here
 
 ```
 index.html            thin shell — loads css/, js/, assets/
 css/main.css          all styling
 js/data.js            story/world content: locations, NPC schedules, scenes, tuning (edit story here)
+js/echo-time.js       pure borrowed-minute rules (no DOM or state mutation)
 js/engine.js          game systems + UI copy: loop, clock, scenes, predictions, journal, meters
                       (story data lives in js/data.js; engine.js keeps narrative UI copy with the
                       systems that render it)
@@ -55,6 +60,7 @@ copy those systems render (theory text, consequence leads, mode labels).
 ## Tests
 
 ```sh
+node --test tests/echo-time.test.cjs # earned-time rules
 python3 tests/check_static.py   # syntax, JSON, asset references, dist freshness
 python3 tests/smoke_cdp.py      # headless-Chromium smoke test: boot, start click, first scene, mode toggle, no console errors
 ```
