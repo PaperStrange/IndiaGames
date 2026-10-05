@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-05",
+  "games": [
+    {
+      "id": "memorable",
+      "branch": "memorable-moments-game",
+      "source_commit": "f8b725d2ce3038a38c0b49dce564bc0c7b0856d0",
+      "entry": "memorable/index.html",
+      "sha256": "82d4379674360a332ac18438c94f36d05306ae567ca8bb6fd78226f2613fbf8d"
+    },
+    {
+      "id": "vivid",
+      "branch": "vivid-2.5d-photo-game",
+      "source_commit": "79416057a47dec30c00d020f7d8240e5aba8b162",
+      "entry": "vivid/index.html",
+      "sha256": "e0e176930b38c84156c340a88a4c696db35940a4f931288c4aeaf7b8c51a5ba2"
+    },
+    {
+      "id": "bell",
+      "branch": "the-thirteenth-bell",
+      "source_commit": "c2a0a3e385be5b75324f978e84eb273b7d23e404",
+      "entry": "bell/index.html",
+      "sha256": "c2facc2a008c7bb232a629c4bd79efcb07cb5e46b73c4ebf6e55ceaa5337f405"
+    }
+  ]
+}

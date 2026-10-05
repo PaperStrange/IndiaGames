@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-05",
+  "game": "The Thirteenth Bell",
+  "branch": "the-thirteenth-bell",
+  "commit": "369f0da82696caab98f8f68ede78f49da286d590",
+  "method": "Root agent controlled system Chromium through Playwright/CDP, reading rendered text, clicking UI, inspecting screenshots. Source-informed exploratory run, not a blind human study.",
+  "completed": "Original mode ending reached after 3 loops and 8 visits",
+  "observations": [
+    "First selected forecast North Gate closes was marked wrong despite the first North Gate encounter stating North Gate is sealed. The forecast may concern a transition rather than a state, but UI does not explain this distinction.",
+    "Marking Archive doors in loop 1 was explicitly referenced when returning in loop 2. This is a visible input-to-story consequence.",
+    "Skip mastered scene appeared on first visit to loop-2 Archive's changed scene. Clicking it spent 1 Momentum, consumed the encounter, and awarded no route anchor. The new choices disappeared.",
+    "Gate and Glassworks choices in loop 2 yielded song and lens; Archive choice in loop 3 yielded route; Underbell then reached victory.",
+    "Choosing carried bond/object offered names without a preview of their mechanical effects.",
+    "At 390x844 the game stacked into one column; map labels omitted hints, and the journey/anchors were below the encounter. No measured document horizontal overflow; no real phone or touch session performed."
+  ],
+  "inferences_to_test": [
+    "Knowledge that gives a visibly useful additional action may communicate mastery better than skipping unread choices.",
+    "Explicit forecast evidence could reduce guessing, while evidence must be earned to preserve discovery.",
+    "Dense mobile layout may hide progress and costs; ask people to explain their next action without hints."
+  ],
+  "limitations": "Agent elapsed time is not human reading time. Source-informed path cannot establish discoverability, fun, accessibility, replay demand, retention or willingness to pay.",
+  "trace": "bell-observations.jsonl"
+}

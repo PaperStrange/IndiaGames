@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-05T08:13:27.154Z",
+  "results": [
+    {
+      "game": "memorable",
+      "pass": true,
+      "checks": "Bundled runtime, real UI interaction and expected consequence; no page exceptions",
+      "errors": []
+    },
+    {
+      "game": "vivid",
+      "pass": true,
+      "checks": "Bundled runtime, real UI interaction and expected consequence; no page exceptions",
+      "errors": []
+    },
+    {
+      "game": "bell",
+      "pass": true,
+      "checks": "Bundled runtime, real UI interaction and expected consequence; no page exceptions",
+      "errors": []
+    }
+  ]
+}
