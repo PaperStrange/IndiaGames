@@ -1,6 +1,6 @@
 # Shared GameJam evidence and packaging
 
-**Current status: planning only.** Read [One More Turn — research plan for review on 6 October](research-plan-2026-10-06.md), the [candidate roster](candidate-roster-2026-10-06.md), and blank [journey](journey-observation-template.md), [art](art-observation-template.md) and [concept decision](concept-decision-template.md) templates. No further gameplay or game coding begins until the research plan is settled. The new plan supersedes the field report's proposed next-step schedule; historical observations remain preserved below.
+**Current status: planning only, revised 6 October.** Read [One More Turn — revised research plan](research-plan-2026-10-06.md), the [six-competitors-per-demo matrix](competitor-matrix-2026-10-06.md), the [earlier browser candidate pool](candidate-roster-2026-10-06.md), and the [observation templates index](observation-templates.md). No further gameplay or game coding begins until the research plan is settled. The per-demo matrix replaces the earlier shared shortlist as the coverage requirement. The plan supersedes the field report's proposed next-step schedule; historical observations remain preserved below.
 
 Start with [field-report.md](field-report.md). The game-specific report remains with each game's existing docs. `market-research.json` distinguishes publisher claims, critic reports and hypotheses; `evidence/` contains actual action traces and screenshots. Large competitor Playwright traces remain in the local `gamejam-shared` backup, as noted in each report.
 

@@ -4,6 +4,8 @@
 
 Game/edition: [unfilled] · journey/session: [unfilled] · evaluator: [unfilled]
 
+Per-demo matrix ID(s), broad family and specific art/action comparison: [unfilled]
+
 Actual device/viewport/input: [unfilled] · audio listening verified: [unfilled]
 
 ## Journey board

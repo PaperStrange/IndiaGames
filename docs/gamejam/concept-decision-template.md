@@ -4,6 +4,8 @@
 
 Concept: [unfilled] · evidence cut-off: [unfilled] · author/reviewer: [unfilled]
 
+Link the completed [competitor coverage audit](competitor-coverage-template.md). Target at least six distinct studied competitors across four broad play families for this demo. An access-blocked or listing-only row remains a gap; it cannot support a finished competitive recommendation.
+
 ## 1. Why would someone want to play?
 
 - Player situation and occasion, labeled as observed or hypothesized:
@@ -19,13 +21,16 @@ Do not describe a category-wide motive as fact from agent play or a few reviews.
 
 Chosen browser distribution context: [unfilled]
 
-| Close substitute and exact edition | What it already does well | Entry/session/device cost observed or attributed | Our proposed benefit | Evidence and unresolved comparison |
-|---|---|---|---|---|
-| | | | | |
-| | | | | |
-| | | | | |
+| Matrix ID, competitor and exact edition | Family and competitive role | What it already does well | Entry/session/device cost observed or attributed | Our proposed benefit | Evidence and unresolved comparison |
+|---|---|---|---|---|---|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
+| 4 | | | | | |
+| 5 | | | | | |
+| 6 | | | | | |
 
-Record current platform expectations with primary links and dates. Keep actual browser competitors separate from adjacent paid/native benchmarks. State the strongest reason a player could prefer a substitute. Do not claim a feature is absent without checking the relevant version.
+Record current platform expectations with primary links and dates. Keep actual browser competitors separate from adjacent paid/native benchmarks. Explain why each title competes for the player's desired experience or occasion, including at least two outside narrative/deduction puzzles. State the strongest reason a player could prefer a substitute. Do not claim a feature is absent without checking the relevant version. Shared titles require a distinct comparison for this demo, not a copied generic verdict.
 
 ## 3. What distinctive experience could we deliver?
 
