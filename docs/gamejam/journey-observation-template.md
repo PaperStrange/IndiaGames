@@ -7,6 +7,8 @@
 | Field | Record |
 |---|---|
 | Game, creator, edition/build, release route/URL | |
+| Per-demo matrix ID(s), broad play family and competitive role | |
+| Separate comparison question for each mapped demo | |
 | Evaluator; agent or human; prior genre/title exposure | |
 | Date; session ID; prior sessions | |
 | Platform; actual device or emulation; viewport; input | |

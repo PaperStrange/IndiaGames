@@ -2,11 +2,13 @@
 
 **Prepared 5 October 2026 · plan review proposed 6 October · no new gameplay.** Primary creator/store/project page text was checked for this selection. No game embeds were launched. All new runtime compatibility, control, audio and access claims remain unverified until the research plan is agreed.
 
+**6 October revision:** the [per-demo competitor matrix](competitor-matrix-2026-10-06.md) now specifies six required competitors and two reserves for **each** playable demo, with broader genre coverage. This page remains the earlier supplementary browser pool. The old first-depth milestone below is superseded by two contrasting assignments per demo followed by full six-per-demo coverage; it is preserved as selection history, not a competing schedule. See the [updated plan](research-plan-2026-10-06.md) and [templates index](observation-templates.md).
+
 This is a pool of **12 new browser candidates**, **two incomplete carryovers**, and **six optional paid desktop references**. It is not fourteen completed reviews, nor a promise to finish everything in a day. See the [main plan](research-plan-2026-10-06.md) for evidence rules, people, pacing and decision gates.
 
-## Proposed first depth milestone
+## Earlier first-depth proposal — superseded on 6 October
 
-Start with the following six journey targets, subject to agreed scope and access. These are five new titles and one carryover. A full route includes entry, learning, uncertainty/recovery if encountered, development, ending and exit/replay invitation. Actual re-entry is recorded separately.
+The earlier proposal selected the following six journey targets: five new titles and one carryover. The new per-demo matrix replaces this execution order. A full route still includes entry, learning, uncertainty/recovery if encountered, development, ending and exit/replay invitation. Actual re-entry is recorded separately.
 
 | Order within lane | Game | Why start here? | Target and completion caveat |
 |---|---|---|---|
@@ -17,7 +19,7 @@ Start with the following six journey targets, subject to agreed scope and access
 | Discovery/rules 1 | There Is No Game, 2015 jam edition | Interface expectations and narrator response provide a different kind of discovery | Full jam-game ending if it runs; do not confuse it with Wrong Dimension |
 | Discovery/rules 2 | PROMPTBOX | A direct small browser knowledge-loop comparator for Bell | One solved case if achievable; several loops alone remain partial |
 
-The target is **five whole short-game endings plus one completed PROMPTBOX case**, not six promised whole-game completions. Keep completed cases distinct from full titles in every tally. If a game is longer or blocked, preserve that result and adjust the milestone or continue later. Temple of No can also take priority if There Is No Game is inaccessible, but playing it once still counts once. Do not rush a solution or add hidden assistance to hit the target.
+The earlier target was five whole short-game endings plus one completed PROMPTBOX case. The revised target is at least six studied competitive alternatives **per demo**, across four broad families; the original pool alone did not guarantee that. Keep completed cases distinct from full titles in every tally, preserve blocked/partial results, and never add hidden assistance to hit a count.
 
 ## Twelve new browser candidates
 
@@ -40,7 +42,7 @@ The target is **five whole short-game endings plus one completed PROMPTBOX case*
 
 The two social services need real participants for the intended experience. A real group must use a private room with agreed participation. No public-lobby experiments, messages to strangers or simulated “human laughter” are part of this plan. If those sessions cannot happen, the social lane remains pending.
 
-The long/conditional titles are reserves for specific missing comparisons, not substitutes for finishing the short anchors. After the first milestone, prioritize an actual Detective case/reset and a deeper knowledge case over sampling every mystery for a few minutes. Expand toward the main plan's completed-journey target only when the chosen games and available time support it.
+Use this pool for a specific missing comparison or access replacement identified in the new matrix. A reserve becomes a required assignment only through a documented substitution that preserves six distinct competitors and four broad families for the relevant demo.
 
 ## Two unfinished carryovers
 
@@ -51,7 +53,7 @@ The long/conditional titles are reserves for specific missing comparisons, not s
 
 ## Optional commercial art/system references
 
-These are **separate from the browser pool**. The inspected Steam pages support their described product form and requirements, not actual access in this environment. No purchase, account, license, download or compatible machine is assumed. No current demo is promised. Select at most two or three initially if access already exists and a specific uncertainty justifies them.
+These are **separate from the browser pool**. Some now appear in required per-demo comparison sets; their current priority comes from the new matrix. The inspected Steam pages support their described product form and requirements, not actual access in this environment. No purchase, account, license, download or compatible machine is assumed. No current demo is promised by this historical list.
 
 | Game and primary source | Proposed comparison | Access and coverage boundary |
 |---|---|---|
