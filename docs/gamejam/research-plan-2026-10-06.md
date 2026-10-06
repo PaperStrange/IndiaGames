@@ -1,16 +1,17 @@
 # One More Turn: a player-journey expedition
 
-**Plan prepared 5 October 2026 · proposed review 6 October · status: awaiting agreement.**
+**Prepared 5 October · revised 6 October 2026 · status: planning, awaiting agreement before play.**
 
-Tomorrow's deliverable is this plan, not a claim that more games were played overnight. No games have been launched, game code changed, purchases made, or participants contacted while preparing it. Play starts after we settle the research plan. Building starts after we review the resulting evidence and choose an experiment.
+This revision responds to the request for at least six competitors per playable demo and broader genre coverage. No games have been launched, game code changed, purchases made, or participants contacted while preparing it. Play starts after we settle the research plan. Building starts after we review the resulting evidence and choose an experiment.
 
 The ambition is to come back with stories worth designing around: **“I thought this would happen; I tried that; the game surprised me; now I want to…”** A list of attractive features cannot tell us that story.
 
 ## The proposal in one minute
 
-- A pool of **12 new browser-game candidates**, plus **two unfinished carryovers**, selected for contrasting player experiences. Exact editions, access conditions and sources are in the [candidate roster](candidate-roster-2026-10-06.md). A creator listing is evidence of a release, not proof that it runs in our environment.
-- **Depth first:** choose six complete journeys as the first research milestone, targeting five short-game endings and one complete case. Then expand toward eight to ten completed single-player arcs and two complete social sessions, adjusting the selection when a game is longer than expected. Tally whole-game endings, cases, bounded cycles and social sessions separately. Completion is a goal, not a number we will claim regardless of what happened.
-- Longer mysteries get continuing journals across sessions. A chapter, demo, opening or solved case keeps its exact label. Optional commercial benchmarks need legitimate access and suitable hardware; they do not count toward browser coverage.
+- **Six required competitive alternatives for each of the three demos: 18 explicit assignments**, plus two reserves per demo. The [per-demo competitor matrix](competitor-matrix-2026-10-06.md) now governs selection. The [earlier browser roster](candidate-roster-2026-10-06.md) remains an additional source pool. A creator listing is evidence of a release, not proof that it runs in our environment.
+- Each demo must cover **at least four broad play families**, with at least two competitors outside narrative/deduction puzzles and no more than two required titles from one family. Shared titles count once in the unique-game total; each assignment needs its own comparison question.
+- **Depth first:** two contrasting competitors per demo form the first milestone. Continue until all six assignments per demo have meaningful journey evidence, or report the unmet coverage. Whole-game endings, cases, complete matches, bounded runs and partial campaigns have separate counts.
+- Longer games get continuing journals across sessions. Native/commercial competitors need legitimate access and suitable hardware; their placement in the required comparison set does not authorize purchases or make them browser competitors. Reserves must preserve competitive relevance and genre coverage, while explicitly recording any original research question they leave unanswered.
 - Each studied title produces a player journey, a system map and an art board. Critics enter after first-pass notes are locked. Human social experience requires actual people.
 - The synthesis answers the original three questions **separately for Memorable Moments, Vivid and Bell**, and presents competing creative directions before choosing anything to build.
 
@@ -33,9 +34,11 @@ This plan supersedes that report's suggested next-day schedule. Its “let playe
 | Knowledge, consequence and return | Deduction versus guessing; a useful mistake versus repeated administration; remembered knowledge versus accumulated resources | Whether Bell makes understanding rewarding, and whether another loop offers a new plan |
 | Browser context across all lanes | Arrival, trust, loading, controls, interruption, save/re-entry, completion, replay/share invitation | Whether the experience fits a short web visit, beyond whether its central mechanic is interesting |
 
-Choose across creators and traditions, not twelve versions of the same puzzle or only celebrated successes. Include an ambiguous or divisive case, a visually modest case, a social case and an awkwardly fitting case that challenges our assumptions. Creator identity, tags, sales and review scores alone do not establish quality.
+The matrix adds cooperative platforming, hidden-information card play, geographical exploration, creative construction, rhythm action, turn-based tactics, roguelike runs, management and incremental progression. These comparisons must answer why the same person might choose that experience on the relevant occasion. Genre breadth alone is not a reason to add a game. Include counterexamples to our preferred idea; creator identity, tags, sales and review scores alone do not establish quality.
 
-The roster is a pool with priorities and substitutes, not a promise to finish every title in one day. A blocked game stays on the access ledger and contributes zero played coverage. Replace it with a comparable research role, documenting why; do not replace an uncomfortable finding with a more agreeable game.
+The per-demo six are required comparison commitments; the older roster is a reserve pool. Each row names its competitive relationship: a close experience substitute, an adjacent alternative serving a similar desire, or a broader alternative for the same leisure occasion. Allow at most one of the last type per demo. A pure art reference does not satisfy the competitor minimum.
+
+A blocked title stays on the access ledger and contributes zero played coverage. A replacement needs a concrete competitive reason; document the original question it preserves or leaves unanswered and keep at least four broad families after substitutions. If that cannot be done, the demo's coverage remains incomplete. A store-only comparison may inform selection but does not satisfy the later six-game firsthand evidence gate. These are planned tests, not a claim that six suitable licenses/devices/groups are available today.
 
 ## What “the whole journey” means
 
@@ -123,23 +126,23 @@ Start desktop browser work after approval. Then check selected anchors on a **re
 
 ## A realistic rhythm after agreement
 
-This is a staged research effort preceding another one-day build jam. It is not a promise to finish a dozen substantial games tomorrow.
+This is a staged research effort preceding another one-day build jam. The larger per-demo scope replaces the earlier five-short-endings-plus-one-case schedule. Substantial campaigns and participant-dependent sessions need additional time.
 
 | Stage | Proposed effort budget | Output and decision |
 |---|---|---|
-| Plan review, proposed 6 October | 20–30 minutes | Settle roster priorities, people/devices, time budget and evidence rules; authorize research scope |
+| Plan revision/review, 6 October | 20–30 minutes | Settle per-demo competitors, access substitutions, people/devices, time budget and evidence rules; authorize research scope |
 | Access check, after agreement | Up to 10 minutes per selected title | Version/input/audio/access ledger; blocked games do not count as played |
-| First depth milestone | Three lanes, two short anchors each; roughly 4–6 research hours per lane including play, notes, art capture and breaks | Target six complete journeys; actual coverage decides whether to continue or extend, not the clock |
-| Breadth and continuation | A further 4–6 hours per lane as a planning allowance; multi-session continuation for longer titles | Expand toward eight to ten completed single-player arcs; tally endings and cases separately; named partial journeys and reasons; no rushed endings |
-| Real social sessions | Two sessions, budget 60–90 minutes each including join, play and debrief, subject to participants | Complete group journey and differing participant accounts, or a clearly pending social lane |
+| First depth milestone | One lane per demo; two contrasting competitors each; roughly 4–6 research hours per lane including play, notes, art capture and breaks | Complete the declared short game, match or bounded activity where feasible; long games remain partial; first six assignments are not the final coverage target |
+| Comparative expansion and continuation | A further 8–12 research hours per lane as an initial allowance; reassess after the first milestone | Four further assignments per demo; at least six meaningful studies and four broad families for each demo; campaigns may need further sessions |
+| Real social sessions | Budget 60–90 minutes per selected group/paired game including join, play and debrief; several sessions likely | Complete social journeys for the required social competitors; two sessions alone cannot establish the whole Small Hours comparison set |
 | Critics and team cross-review | 2–3 coordinator hours plus one peer audit per lane | Disagreements, counterexamples and corrected causal claims |
 | Synthesis and creative workshop | About 2 hours, after coverage review | Three concept briefs and competing experience sketches; decide further study, discard or propose one experiment |
 
-These are **research-time allowances**, not measured game lengths. Plan for multiple sessions, roughly two research days with parallel lanes plus human availability and any long-game continuations. If our capacity is one day, reduce the first milestone transparently; do not turn every game into another ten-minute opening test.
+These are **research-time allowances**, not measured game lengths: roughly 12–18 hours per demo lane initially, with shared studies reducing duplicate work and human availability or long campaigns potentially extending the schedule. Reserve several research sessions rather than retaining the old two-day assumption. If capacity is one day, deliver the first milestone and state what remains; the six-per-demo requirement remains open.
 
-The six first anchors should include at least two art-led titles, two knowledge/consequence titles and two authorship/character titles, with overlap allowed. Prioritize first-person depth over hitting a count. A long title such as the original Roottrees may start early and continue across days; it does not occupy a “completed short game” slot until it actually qualifies. The roster proposes starting anchors but final selection follows access and scope agreement.
+Choose the first two within each demo from different broad families, ideally one close/adjacent experience and one contrast that can challenge the current direction. The matrix supplies suggested starting pairs and access fallbacks. Preserve first-person depth; a full campaign is not required to inspect a complete tactical encounter, but that encounter never becomes a full-game review. Shared titles can reuse a base journey only if it contains the events needed for both demos' questions; otherwise add a labeled analytical pass.
 
-Stop expanding the roster when another title only repeats known observations and important journey gaps remain. Add a title when it resolves a specific missing comparison, not to make the report look larger.
+Before final synthesis, audit each demo with the [competitor coverage template](competitor-coverage-template.md): six distinct titles, four broad families, actual journey boundaries, two especially deep comparisons from different families, and explicit access/participant gaps. The two deep comparisons must have a full short-game ending, full social match or clearly bounded complete activity; their completion labels remain distinct. Stop adding optional titles when they repeat known observations and required gaps remain.
 
 ## Make room for playful thinking
 
@@ -160,7 +163,7 @@ Produce a separate two-page brief for **Memorable Moments**, **Vivid 2.5D Photo*
 | User's question | What the brief must contain |
 |---|---|
 | Why would people want to play this kind of game? | A specific player situation and desired experience; observed episodes across at least two comparators; contrary evidence; real participant accounts if available; remaining motivation hypotheses |
-| How could it differ on a game platform? | A chosen browser distribution context; three close substitutes from the compared set; the player's reason to choose us; entry/device/session costs; a benefit competitors already provide; and the exact difference we can actually deliver |
+| How could it differ on a game platform? | A chosen browser distribution context; at least six studied competitive alternatives from the per-demo matrix across four broad families; their exact competitive roles and platforms; the player's reason to choose us; entry/device/session costs; and the exact difference we can deliver |
 | What unusually distinctive experience could we deliver? | Two or three alternative complete player stories, each with a signature action → consequence → payoff; strongest precedent; production cost; likely failure; and a fair test that could reject it |
 
 For platform comparison, start with **itch.io browser releases**, a plausible first publishing context, and compare a portal such as **CrazyGames** as a separate acquisition context. Verify their current submission/technical expectations during authorized research. Do not equate a Steam benchmark with a direct browser competitor or describe creator/store promises as discovered player behavior.
@@ -171,7 +174,7 @@ We only propose a build when the short journey makes sense from entry to payoff,
 
 ## Team, evidence and backups
 
-- **Coordinator:** access and coverage ledger, scope, critical comparisons, final briefs and docs-only integration. **Systems reviewer:** rules, learning, decisions and recovery. **Art reviewer:** perception, clues, visual rhythm and actually heard sound. **Social reviewer:** handoffs, contributions and group context when humans are present. Roles can share work; agreement between agents is not independent human sample size.
+- **Coordinator:** per-demo six-competitor/genre audit, access and coverage ledger, scope, critical comparisons, final briefs and docs-only integration. **One research owner per demo** owns its six assignments. **Systems reviewer:** rules, learning, decisions and recovery. **Art reviewer:** perception, clues, visual rhythm and actually heard sound. **Social reviewer:** handoffs, contributions and group context when humans are present. Roles can share work; agreement between agents is not independent human sample size.
 - Keep one accountable first-pass evaluator per title. Give peers the locked record afterward. Cross-review missing stages, unsupported emotion claims, hidden assistance and weak competitor comparisons.
 - Later evidence lives under `docs/gamejam/studies/<title>/<session>/` with the edition, capture references, first-pass notes, analytical pass and coverage status. Preserve originals; annotate copies. Keep large captures in a local evidence backup with a manifest; commit concise findings and selected relevant evidence.
 - Keep the existing branches: `memorable-moments-game`, `vivid-2.5d-photo-game`, `the-thirteenth-bell`. Do not switch a shared checkout underneath another agent. Each agent owns its assigned files; the coordinator integrates shared conclusions.
@@ -181,6 +184,6 @@ Frozen pre-plan branch tips: Memorable `caa031ef723f9d2e016f35465368d9200c247033
 
 ## What we will settle at the review
 
-The proposed default is browser-first, no purchases, six complete journeys before expansion, two real social sessions if people are available, and conditional commercial comparisons later. We need agreement on that scope, the time allowance and available people/devices before play begins. The gate comes directly from the user's instruction: **“Do not start to play or coding before plans settled down.”** Silence or the passage of time is not approval.
+The proposed default is browser-first, no purchases, six competitors and four broad play families per demo, depth before expansion, and real people for social claims. Paid/native rows remain conditional on existing access or a documented replacement; unresolved rows remain gaps. We need agreement on that scope, the time allowance and available people/devices before play begins. The gate comes directly from the user's instruction: **“Do not start to play or coding before plans settled down.”** The request to revise this plan does not itself start gameplay or coding.
 
 After research, we return with the actual coverage matrix, complete journeys, art boards, system comparisons, critic disagreements and three decision briefs. Then we choose whether a new one-day GameJam should build anything—and which player moment deserves that day.
