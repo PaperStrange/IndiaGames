@@ -23,4 +23,18 @@ No handover from Sakura found in the shared IndiaGames repo (checked 2026-10-12 
 ## 4. What stays [OPEN]
 - xAI's true internal reason (cost? retention? moderation?) — official line vs. pressure-surface inference; treat as direction, not fact.
 - Meta Realtime Avatar GA timing, pricing, and whether a third-party API ever appears.
+
+## 5. Evening re-check (2026-10-12 ~19:30 PDT) — no public API confirmed
+
+A fresh search pass confirms the "not a rail" boundary, with multiple secondary sources converging:
+
+- **No public API or model release** — developers cannot yet integrate the system or run it on their own infrastructure; access is tied to Meta's Muse app, itself restricted to users 18+. (AlphaSignal, ~19 days old, crawled 3 days ago.) [SECONDARY]
+- Meta has given **no launch date for the avatar in the Muse app, no API, no price, no open weights**. (codersera, ~13 days old.) [SECONDARY]
+- Notably: Runway Characters and HeyGen LiveAvatar — Meta's chosen preference-test comparators — **are buyable through their own APIs today**, while Muse's avatar is not. If a team needs an embeddable real-time avatar now, the comparison is academic until Meta offers an API. (codersera.) [SECONDARY]
+- Hardware caveat behind the numbers: Meta's reported latency/concurrency figures used an NVIDIA GB200; no comparable results on common data-center or consumer GPUs. [SECONDARY]
+- Meta opened a **developer platform for third-party connectors** at Connect (1,500+ applications in the first week) — connectors, not the avatar model: shopping and app integrations (Stripe, Shopify, PayPal, etc.), not a video-generation API. (tpsreport.) [SECONDARY]
+
+**Read for the landing:** "plan as if the renderer becomes free" still holds as a design posture, but the rent path does not exist today — and where an embeddable rail is needed *now*, HeyGen LiveAvatar and Runway Characters are the purchasable options, not Meta. The moat note from §2 is unchanged: game loop + authored persona + memory.
+
+- Sources: https://alphasignal.ai/news/meta-s-muse-slashes-real-time-avatar-generation-from-120-model-calls-to-two · https://codersera.com/blog/meta-muse-charm-realtime-avatar-2026/ · https://tpsreport.news/news/meta-muse-ai-agent-new-features-connect-2026
 - All Oct 3 decisions (form factor, conversation engine tier, cast sourcing) — still parked on the joint landing discussion.
