@@ -1,0 +1,12 @@
+# Player replay — Six Cats Under (FAILED — Unity canvas unclickable, session died)
+**Filed:** 2026-10-13 ~21:47 PDT · **Source:** live browser replay attempt, first-person player voice
+**URL:** https://teambeanloop.itch.io/six-cats-under (also tried the direct frame https://html-classic.itch.zone/html/2267583/index.html, read from the page's own iframe src)
+**Status:** FAILED. Saw the title screen and the opening bedroom scene; never interacted — zero clicks registered on the Unity canvas, zero cats found, story and ending unreached. Nothing purchased, signed into, or downloaded. No progress faked.
+
+## What actually happened
+The itch page charmed me before the game even loaded — warm pixel-art living room header, the page's own description calling it a cozy point-and-click about a grandmother and her cats. "Run game" worked; the Unity loader took a couple of minutes (white Unity logo on black, progress bar creeping). Then the title screen, and it genuinely landed: a gilt-framed portrait of a smiling gray-haired grandmother in a blue dress holding a black cat, beside big friendly serif letters reading "Six Cats Under" and a hand-written "PLAY." It looked like a painting hung in a hallway — a little pang of affection for a game I hadn't even started.
+
+Then frustration. Unity WebGL canvas, no accessible controls; the visual click tool could not capture the canvas at all — every attempt to click PLAY failed. Direct frame URL: same result. One raw click on the iframe focused it, then the browser session broke entirely — every subsequent action failed, ~10 recovery attempts (reloads, re-navigations) all failed the same way. Glimpses of the opening bedroom while it sat loaded but unclickable: patchwork quilt, nightstand with lamp and a note reading "3:07", TV full of static with a teddy bear beside it, bookshelves, moonlit window, gray tabby asleep on the bed, orange cat lurking near the bottom of the frame. Exactly as cozy as promised — and I couldn't touch any of it, which stung.
+
+## What kind of fun this wasn't
+Not fun — the specific ache of being shown a warm little house through a window you can't open. The title screen and the one bedroom glimpse say this is a tender, hand-made-feeling game I'd have loved to sink into. Honest player feeling: disappointment. Came ready to poke every room and fuss over six cats; spent the session fighting tooling instead. Worth retrying if the browser automation is ever restored — the game itself loaded fine and was clearly ready to be played.
