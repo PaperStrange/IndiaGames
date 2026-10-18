@@ -4,6 +4,8 @@ Product **alpha 0.4** · Documentation **docs-v4** · Artifact **v6-alpha04-2026
 
 A private interactive notebook with pressure-aware ink, layered vellum, physical page turns, PDF annotations and a persistent companion. React/TypeScript is shared by the hosted app and mobile bundle. Previous alpha 0.1–0.3 checkpoints remain in Git.
 
+[Project handover — 2026-10-18](HANDOVER.md) records completed implementation, saved QA evidence, publication/source checkpoints, remaining acceptance work and development restart instructions.
+
 Art research, proposals, material assets and review evidence are collected in [docs/art-design](docs/art-design/README.md), with implementation status and original-source provenance.
 
 ## Write and reply
