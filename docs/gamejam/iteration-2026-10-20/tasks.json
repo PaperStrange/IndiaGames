@@ -37,7 +37,7 @@
         "vivid",
         "bell"
       ],
-      "requirement": "Six distinct titles and at least four broad families per demo with declared journeys; preserve missing evidence. Resolve the prerequisite before coding; do not use provisional plans as a completed market verdict."
+      "requirement": "Before final comparative synthesis: six distinct titles and at least four broad families per demo with declared journeys. Preserve missing evidence and explicitly address open coverage when settling a bounded prototype; do not treat these provisional plans as a completed market verdict."
     },
     {
       "id": "human-validation",
@@ -280,7 +280,7 @@
       "priority": "P0",
       "owner_role": "Bell design agent + research lead",
       "assigned_person_or_agent": null,
-      "deliverable": "Lock one causal beat and observation protocol; depends on shared research-gate decision",
+      "deliverable": "Lock one causal beat and observation protocol; depends on shared evidence/scope decision",
       "acceptance_criteria": "Evidence ledger preserves endpoints/provenance; one-page state/choice table covers ordinary, informed, wrong-forecast and missed-opportunity routes; no mandatory CUE inference; baseline human questions ready",
       "effort_person_hours": "3–5 h",
       "depends_on": [
