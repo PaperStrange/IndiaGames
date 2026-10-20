@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "snapshot_date_utc": "2026-10-20",
+  "type": "versioned planning snapshot, not live external assignments",
+  "implementation_started": false,
+  "source_manifest": "source-manifest.json",
+  "status_definitions": {
+    "proposed": "Planned; not started or assigned.",
+    "conditional": "Only select if the preceding observation supports this change; may close as not selected.",
+    "waiting_for_records": "The project lead will notify when the announced upload is ready."
+  },
+  "gates": [
+    {
+      "id": "plan-settlement",
+      "status": "open",
+      "applies_to": [
+        "memorable",
+        "vivid",
+        "bell"
+      ],
+      "requirement": "Settle the updated lane scope before implementation or new competitor play."
+    },
+    {
+      "id": "incoming-records",
+      "status": "waiting",
+      "applies_to": [
+        "memorable",
+        "bell"
+      ],
+      "requirement": "Complete TEAM-01 before treating these provisional lane plans as settled."
+    },
+    {
+      "id": "competitor-coverage",
+      "status": "open",
+      "applies_to": [
+        "memorable",
+        "vivid",
+        "bell"
+      ],
+      "requirement": "Six distinct titles and at least four broad families per demo with declared journeys; preserve missing evidence. Resolve the prerequisite before coding; do not use provisional plans as a completed market verdict."
+    },
+    {
+      "id": "human-validation",
+      "status": "not_run",
+      "applies_to": [
+        "memorable",
+        "vivid",
+        "bell"
+      ],
+      "requirement": "Use per-demo diagnostic gates on actual participants, not agent-authored emotions or automated play."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "MM-01",
+      "lane": "memorable",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Research lead + Small Hours designer",
+      "assigned_person_or_agent": null,
+      "deliverable": "Intake new records, settle the pilot protocol; depends TEAM-01",
+      "acceptance_criteria": "Evidence delta and roster gaps documented; neutral questions and six-pair observation sheet prepared; no agent reflection becomes participant testimony.",
+      "effort_person_hours": "2–3 h",
+      "depends_on": [
+        "TEAM-01"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "memorable-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "MM-02",
+      "lane": "memorable",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Human playtest lead",
+      "assigned_person_or_agent": null,
+      "deliverable": "Observe six real pairs on unchanged source; depends MM-01 and recruitment",
+      "acceptance_criteria": "Record both contributions, assistance, stopping, actual keep/replay choice and device/build; apply all three diagnostic gates; select one change or a no-change/stop decision with reasons.",
+      "effort_person_hours": "4–6 h",
+      "depends_on": [
+        "MM-01"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "memorable-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": true,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "MM-03",
+      "lane": "memorable",
+      "status": "conditional",
+      "priority": "P1",
+      "owner_role": "Rules/interaction owner",
+      "assigned_person_or_agent": null,
+      "deliverable": "Implement only the selected flow/action change, if justified; depends MM-02",
+      "acceptance_criteria": "Written observation→change hypothesis; optional guessing does not invent a prediction, or revised roles preserve both contributions; privacy curtains, solo labels and stop controls remain coherent. Mark skipped if no flow change was selected.",
+      "effort_person_hours": "3–5 h conditional",
+      "depends_on": [
+        "MM-02"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "memorable-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "MM-04",
+      "lane": "memorable",
+      "status": "conditional",
+      "priority": "P1",
+      "owner_role": "Visual/content owner",
+      "assigned_person_or_agent": null,
+      "deliverable": "Address the selected prompt/keepsake issue, if justified; depends MM-02, coordinate MM-03",
+      "acceptance_criteria": "Both contributions remain recognizable; empty text remains valid; any edit-before-save preserves agreement and escaping; seated/imaginary alternatives remain. Do not add unrelated art or scenes. Mark skipped if not needed.",
+      "effort_person_hours": "3–5 h conditional",
+      "depends_on": [
+        "MM-02"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "memorable-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "MM-05",
+      "lane": "memorable",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "QA + integration owner",
+      "assigned_person_or_agent": null,
+      "deliverable": "Integrate the selected variant and verify; depends disposition of MM-03/MM-04",
+      "acceptance_criteria": "Existing 33 checks pass or documented updates match the chosen behavior; affected keyboard, touch, hidden-turn DOM, export, replay and reset paths checked. Record exact source and fresh evidence. If unchanged, reuse this review’s results and document that fact.",
+      "effort_person_hours": "2–3 h",
+      "depends_on": [
+        "MM-03",
+        "MM-04"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "memorable-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": [],
+      "dependency_note": "Review the disposition of conditional cards; reuse checks if source remains unchanged."
+    },
+    {
+      "id": "MM-06",
+      "lane": "memorable",
+      "status": "conditional",
+      "priority": "P1",
+      "owner_role": "Human playtest lead + designer",
+      "assigned_person_or_agent": null,
+      "deliverable": "Observe selected variant and decide; depends MM-05 and recruitment",
+      "acceptance_criteria": "Predeclare sample/order and the targeted behavior; record actual comparison, contrary evidence and advance/revise/stop. If no variant was chosen, close with the MM-02 decision instead of manufacturing a comparison.",
+      "effort_person_hours": "4–6 h conditional",
+      "depends_on": [
+        "MM-05"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "memorable-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": true,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "VV-01",
+      "lane": "vivid",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Narrative/design lead, with rules owner",
+      "assigned_person_or_agent": null,
+      "deliverable": "Write the two short return beats, neutral control, and a state/action table. No dependency.",
+      "acceptance_criteria": "Table covers private/archive × prior peek/no peek, first/return encounter, offered permission, and stopping state. Both branches remain valid; control and variant have comparable actions. Copy identifies the precise prior choice without claiming unheard audio or live AI.",
+      "effort_person_hours": "3–4 h",
+      "depends_on": [],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "vivid-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": false,
+      "completion_evidence": []
+    },
+    {
+      "id": "VV-02",
+      "lane": "vivid",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Systems engineer",
+      "assigned_person_or_agent": null,
+      "deliverable": "Implement the approved return phase, branch-specific action, minimal persistence, and neutral experimental condition. Depends on VV-01. Own `src/rules.js`; coordinate schema before other edits.",
+      "acceptance_criteria": "Only the appropriate action is accepted in each return state; performed placement survives reload; first rescue and error recovery remain; old valid v1 memories map predictably; malformed/blocked storage still permits play; forgetting removes experiment memory. Focused tests cover the state matrix and migration.",
+      "effort_person_hours": "6–8 h",
+      "depends_on": [
+        "VV-01"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "vivid-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": false,
+      "completion_evidence": []
+    },
+    {
+      "id": "VV-03",
+      "lane": "vivid",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Visual/interaction artist",
+      "assigned_person_or_agent": null,
+      "deliverable": "Produce one offered gesture plus letter/dedication/recess states using the existing illustration, and a mobile composition for the return. Depends on VV-01; can run alongside VV-02. Own `index.html`/`styles.css` until integration.",
+      "acceptance_criteria": "A before/after board makes the changed object identifiable without the outcome paragraph. Artwork does not expose hidden first-visit clues. Reduced-motion still frames communicate the same state; interactive targets remain comfortably tappable and keyboard reachable.",
+      "effort_person_hours": "5–7 h",
+      "depends_on": [
+        "VV-01"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "vivid-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": false,
+      "completion_evidence": []
+    },
+    {
+      "id": "VV-04",
+      "lane": "vivid",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Frontend integrator + QA partner",
+      "assigned_person_or_agent": null,
+      "deliverable": "Connect state, art, and authored response; keep the consequence in view on mobile; capture evidence with the actual run date. Depends on VV-02 and VV-03. Integrator owns `src/app.js`.",
+      "acceptance_criteria": "Both branches and peek histories work via visible controls and real reload; neutral condition is reproducible; desktop, 390×844 touch emulation, keyboard/reduced motion, and blocked storage pass; no errors in each tested browser context. Existing 8 rule tests/13 browser observations remain green or are intentionally updated with rationale. Real device checks are separately labeled.",
+      "effort_person_hours": "5–7 h",
+      "depends_on": [
+        "VV-02",
+        "VV-03"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "vivid-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": false,
+      "completion_evidence": []
+    },
+    {
+      "id": "VV-05",
+      "lane": "vivid",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Playtest/research lead",
+      "assigned_person_or_agent": null,
+      "deliverable": "Prepare neutral prompts/consent and recruit while VV-02–04 proceed; run the actual comparison only after VV-04. Feed evidence and decision to the team dashboard.",
+      "acceptance_criteria": "Record actual sample/condition/device/order, spontaneous versus prompted return, assistance, completion, and causal explanation. Apply the diagnostic gate without retention or statistical claims. Mark outcome advance/revise/stop with evidence links; do not populate participant rows from agent play.",
+      "effort_person_hours": "5–7 h, plus recruitment wait",
+      "depends_on": [
+        "VV-04"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "vivid-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": true,
+      "incoming_records_gate": false,
+      "completion_evidence": [],
+      "dependency_note": "Recruitment preparation may overlap implementation; sessions require VV-04."
+    },
+    {
+      "id": "BL-01",
+      "lane": "bell",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Bell design agent + research lead",
+      "assigned_person_or_agent": null,
+      "deliverable": "Lock one causal beat and observation protocol; depends on shared research-gate decision",
+      "acceptance_criteria": "Evidence ledger preserves endpoints/provenance; one-page state/choice table covers ordinary, informed, wrong-forecast and missed-opportunity routes; no mandatory CUE inference; baseline human questions ready",
+      "effort_person_hours": "3–5 h",
+      "depends_on": [
+        "TEAM-01"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "bell-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "BL-02",
+      "lane": "bell",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Bell systems agent",
+      "assigned_person_or_agent": null,
+      "deliverable": "Enact one Dawn→Noon Bell Square event; depends BL-01",
+      "acceptance_criteria": "On the chosen boundary, map/encounter state matches the forecast reveal regardless of answer; clue marked observed only when its scene is actually encountered; same behavior after revisits and mode switching",
+      "effort_person_hours": "5–8 h",
+      "depends_on": [
+        "BL-01"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "bell-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "BL-03",
+      "lane": "bell",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Bell narrative/systems pair",
+      "assigned_person_or_agent": null,
+      "deliverable": "Add one learned intervention and changed Mina outcome using borrowed visit; depends BL-02",
+      "acceptance_criteria": "Without clue, unavailable action gives honest context; with clue, action is meaningful; normal/borrowed visits preserve phase and Fracture rules; both outcomes visibly differ; one receipt explains action→effect without grading morality",
+      "effort_person_hours": "4–6 h",
+      "depends_on": [
+        "BL-02"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "bell-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "BL-04",
+      "lane": "bell",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Bell art/UI agent",
+      "assigned_person_or_agent": null,
+      "deliverable": "Two scene states, one outcome inset, focused clue/cost presentation; depends BL-01, integrates with BL-02/03",
+      "acceptance_criteria": "Mina/route change recognizable in grayscale and reduced motion; event and next action stay reachable by keyboard at desktop, 390px and compact iframe; no new overview clutter",
+      "effort_person_hours": "4–6 h",
+      "depends_on": [
+        "BL-01"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "bell-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": [],
+      "dependency_note": "Art may begin after BL-01; integration consumes BL-02 and BL-03."
+    },
+    {
+      "id": "BL-05",
+      "lane": "bell",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Bell QA agent",
+      "assigned_person_or_agent": null,
+      "deliverable": "Verify the slice and unchanged complete-game path; depends BL-02/03/04",
+      "acceptance_criteria": "Existing tests plus targeted unseen/seen clue, wrong/blank forecast, borrow cancellation, once-only reward, Fracture 4, reset, mode isolation and new-scene retention checks pass; real-control screenshots/trace for both outcomes and existing ending",
+      "effort_person_hours": "3–5 h",
+      "depends_on": [
+        "BL-02",
+        "BL-03",
+        "BL-04"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "bell-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": false,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "BL-06",
+      "lane": "bell",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Human playtest owner + Bell design agent",
+      "assigned_person_or_agent": null,
+      "deliverable": "Six-person counterbalanced formative comparison; depends BL-05 and recruitment",
+      "acceptance_criteria": "Raw consented observations separated from interpretation; all predeclared metrics and failures recorded; keep/revise/defer decision quotes exact observed causes, with no agent response presented as participant data",
+      "effort_person_hours": "5–7 h + recruitment",
+      "depends_on": [
+        "BL-05"
+      ],
+      "dependency_rule": "dependencies completed or explicitly closed as not selected",
+      "source_plan": "bell-next.md",
+      "plan_settlement_required_before_execution": true,
+      "human_participants_required": true,
+      "incoming_records_gate": true,
+      "completion_evidence": []
+    },
+    {
+      "id": "TEAM-01",
+      "lane": "shared",
+      "status": "waiting_for_records",
+      "priority": "P0",
+      "owner_role": "Research lead + coordinator",
+      "assigned_person_or_agent": null,
+      "deliverable": "Intake announced Small Hours and Bell records",
+      "acceptance_criteria": "Pin new and previous branch SHAs; publish evidence delta, endpoints, actor types and contradictions; revise affected lane plans before implementation.",
+      "effort_person_hours": "not estimated; depends on incoming records/access/recruitment",
+      "depends_on": [],
+      "source_plan": "README.md",
+      "completion_evidence": []
+    },
+    {
+      "id": "TEAM-02",
+      "lane": "shared",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Research lead",
+      "assigned_person_or_agent": null,
+      "deliverable": "Reconcile eighteen required competitor assignments and plan missing coverage",
+      "acceptance_criteria": "Preserve six titles/four families per demo; label access and edition limits; explicitly promote reserves; recover or qualify Detective's original solved record; no source-only slot counts as play.",
+      "effort_person_hours": "not estimated; depends on incoming records/access/recruitment",
+      "depends_on": [
+        "TEAM-01"
+      ],
+      "source_plan": "README.md",
+      "completion_evidence": []
+    },
+    {
+      "id": "TEAM-03",
+      "lane": "shared",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Playtest lead",
+      "assigned_person_or_agent": null,
+      "deliverable": "Prepare consented neutral human-journey records and recruitment",
+      "acceptance_criteria": "Actual people/build/device and spontaneous versus prompted behavior recorded; agent QA separate; execute only after each plan is settled and its build ready.",
+      "effort_person_hours": "not estimated; depends on incoming records/access/recruitment",
+      "depends_on": [],
+      "source_plan": "README.md",
+      "completion_evidence": []
+    },
+    {
+      "id": "TEAM-04",
+      "lane": "shared",
+      "status": "proposed",
+      "priority": "P0",
+      "owner_role": "Integration/QA lead",
+      "assigned_person_or_agent": null,
+      "deliverable": "Verify and back up each future game milestone",
+      "acceptance_criteria": "Run appropriate checks on exact source; preserve evidence and limitations; commit/push owning game branch; verify remote SHA; update coordination dashboard.",
+      "effort_person_hours": "not estimated; depends on incoming records/access/recruitment",
+      "depends_on": [],
+      "source_plan": "README.md",
+      "completion_evidence": []
+    }
+  ]
+}

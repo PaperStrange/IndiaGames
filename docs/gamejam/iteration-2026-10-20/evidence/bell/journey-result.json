@@ -1,0 +1,6 @@
+{
+  "result": "PASS",
+  "journeySteps": 19,
+  "checks": "earned memory, scene context, reversible reservation, mode isolation, no duplicate forecast reward, fourth visit, win, restart, catastrophe, 390px layout, 821x462 iframe",
+  "pageErrors": []
+}

@@ -1,0 +1,62 @@
+{
+  "result": "PASS",
+  "interaction": "Visible UI clicks; read-only DOM assertions; no state injection",
+  "trace": [
+    {
+      "action": "Bell Square",
+      "run": "Original · Loop 1 · Noon",
+      "momentum": "1",
+      "fracture": "Fracture 1 of 4",
+      "visits": "1",
+      "anchors": []
+    },
+    {
+      "action": "Return to Bell Square at Noon after forecast reports masked crowd",
+      "title": "The flower auction",
+      "text": "Inspector Brann is buying every redflower in the square. Mina, the youngest seller, is trying to hide one damaged crate from him.",
+      "journal": "Prediction fulfilled: The masked crowd gathers in Bell Square. Momentum +1.\nBell Square: Mina gives you a redflower. Its pollen glows whenever the tower chimes."
+    },
+    {
+      "action": "Flooded Archive",
+      "run": "Original · Loop 1 · Dusk",
+      "momentum": "2",
+      "fracture": "Fracture 2 of 4",
+      "visits": "2",
+      "anchors": []
+    },
+    {
+      "action": "Glassworks",
+      "run": "Original · Loop 1 · Midnight",
+      "momentum": "3",
+      "fracture": "Fracture 3 of 4",
+      "visits": "3",
+      "anchors": []
+    },
+    {
+      "action": "New loop-two scene still offers district-level skip",
+      "title": "The archive remembers your chalk",
+      "choices": [
+        "Descend with Vale+2 FractureTrace the buried architecture together.",
+        "Search the moving index+1 FractureFollow cards that rearrange around your name."
+      ],
+      "carry": "Bond · Mina, redflower seller\nObject · redflower"
+    },
+    {
+      "action": "Skip unseen loop-two Archive: 1 Momentum spent, no route acquired",
+      "run": "Original · Loop 2 · Dawn",
+      "momentum": "2",
+      "fracture": "Fracture 0 of 4",
+      "visits": "4",
+      "anchors": []
+    },
+    {
+      "action": "Skip consumed phase; correct forecast repaid 1 Momentum",
+      "run": "Original · Loop 2 · Noon",
+      "momentum": "3",
+      "fracture": "Fracture 0 of 4",
+      "visits": "4",
+      "anchors": []
+    }
+  ],
+  "errors": []
+}

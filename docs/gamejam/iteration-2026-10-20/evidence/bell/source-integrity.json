@@ -1,0 +1,71 @@
+{
+  "source_commit": "1be02bc9fc0b846e4c24cb1ceb67ddd69ebfe590",
+  "manifest_commit": "c2a0a3e385be5b75324f978e84eb273b7d23e404",
+  "scope": [
+    "index.html",
+    "css",
+    "js",
+    "tests",
+    "build.mjs",
+    "assets"
+  ],
+  "old_to_current_runtime_diff_empty": true,
+  "files": [
+    {
+      "path": "assets/images/town-map.webp",
+      "snapshot_matches_source": true,
+      "sha256": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45"
+    },
+    {
+      "path": "build.mjs",
+      "snapshot_matches_source": true,
+      "sha256": "07699d388bbc95da76ff607e2c3bd8eca4e93473d184e13a17fbfbace3571b41"
+    },
+    {
+      "path": "css/main.css",
+      "snapshot_matches_source": true,
+      "sha256": "84560475775ba0870bdd6c28cf374ca0314db56e220cd2383f36dc0ea63218ec"
+    },
+    {
+      "path": "index.html",
+      "snapshot_matches_source": true,
+      "sha256": "a6ae78841e7f7e81f838eb43740ec051fe0ae529cb267ff3eeaa709d7b4c3c82"
+    },
+    {
+      "path": "js/data.js",
+      "snapshot_matches_source": true,
+      "sha256": "489c5e58f08f5a103b550933b824d7e52ac9a172cdb9fbc0342e6e68ab460794"
+    },
+    {
+      "path": "js/echo-time.js",
+      "snapshot_matches_source": true,
+      "sha256": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f"
+    },
+    {
+      "path": "js/engine.js",
+      "snapshot_matches_source": true,
+      "sha256": "a73d811b931d614ee61fdc34e7bf00605f2be83e436c3f0d7b83fb0d997a4680"
+    },
+    {
+      "path": "tests/browser_journey.cjs",
+      "snapshot_matches_source": true,
+      "sha256": "842fc11960bbb67d682ffc3493c0b95c82f81051aed32b6ecc08e13367b46794"
+    },
+    {
+      "path": "tests/check_static.py",
+      "snapshot_matches_source": true,
+      "sha256": "40cab4b86da52140033842977b465137798d6ee03b1e67790dbffafa74f744ed"
+    },
+    {
+      "path": "tests/echo-time.test.cjs",
+      "snapshot_matches_source": true,
+      "sha256": "2d6e26e8ee652c5f14d6fde91fe3c7fdd35b2665fa3c3e9d3f25285f54a486ea"
+    },
+    {
+      "path": "tests/smoke_cdp.py",
+      "snapshot_matches_source": true,
+      "sha256": "8b47dabbb0d4ce71303bdf2a3ea420fca8bb748407ecbe448b1adf64c4169a21"
+    }
+  ],
+  "all_snapshot_source_bytes_unchanged": true
+}

@@ -1,0 +1,422 @@
+{
+  "runAt": "2026-10-20T15:11:12.948Z",
+  "browser": "Headless Chromium via Playwright; simulated viewports, not physical-device tests",
+  "checks": 33,
+  "trace": [
+    {
+      "baseline": "Existing branch has a research report, no playable start/reveal/keepsake path."
+    },
+    {
+      "check": "Desktop home: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "action": "Keyboard Enter starts pair session",
+      "heading": "A small beginning."
+    },
+    {
+      "action": "start-scene",
+      "heading": "Person A, this is your turn."
+    },
+    {
+      "action": "ready-a",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "check": "Incomplete private choices cannot be sealed",
+      "result": "pass"
+    },
+    {
+      "action": "choose:color",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "guess:shape",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "seal",
+      "heading": "Pass the screen to Person B."
+    },
+    {
+      "check": "A’s choice is absent from curtain DOM",
+      "result": "pass"
+    },
+    {
+      "action": "ready-b",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "check": "B receives clean unselected controls",
+      "result": "pass"
+    },
+    {
+      "action": "choose:story",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "guess:color",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "seal",
+      "heading": "Come back together."
+    },
+    {
+      "check": "Reveal requires an explicit joint-ready step",
+      "result": "pass"
+    },
+    {
+      "check": "Joint-ready screen invites both people without a look-away instruction",
+      "result": "pass"
+    },
+    {
+      "action": "reveal",
+      "heading": "Well, look at that."
+    },
+    {
+      "check": "Both distinct choices and prediction outcomes revealed",
+      "result": "pass"
+    },
+    {
+      "action": "action",
+      "heading": "Open a very small museum."
+    },
+    {
+      "check": "Shared action incorporates each chosen prompt",
+      "result": "pass"
+    },
+    {
+      "action": "timer",
+      "heading": "Open a very small museum."
+    },
+    {
+      "check": "Timer finishes gently without forcing navigation",
+      "result": "pass"
+    },
+    {
+      "action": "write",
+      "heading": "One detail, just from you."
+    },
+    {
+      "action": "ready-write-a",
+      "heading": "One detail from your tiny exhibit."
+    },
+    {
+      "action": "seal-line",
+      "heading": "And one detail from you."
+    },
+    {
+      "check": "A’s authored detail absent from handoff DOM",
+      "result": "pass"
+    },
+    {
+      "action": "ready-write-b",
+      "heading": "One detail from your tiny exhibit."
+    },
+    {
+      "check": "B’s writing field starts empty",
+      "result": "pass"
+    },
+    {
+      "action": "seal-line",
+      "heading": "It didn’t existbefore you two."
+    },
+    {
+      "check": "Both authors’ details retained at ending",
+      "result": "pass"
+    },
+    {
+      "action": "download",
+      "heading": "It didn’t existbefore you two."
+    },
+    {
+      "check": "Explicit download produces an SVG keepsake",
+      "result": "pass"
+    },
+    {
+      "action": "again",
+      "heading": "A small beginning."
+    },
+    {
+      "check": "Replay opens a different suggested scene",
+      "result": "pass"
+    },
+    {
+      "action": "end",
+      "heading": "A small beginning."
+    },
+    {
+      "check": "Cancel ending leaves the session in place",
+      "result": "pass"
+    },
+    {
+      "action": "end",
+      "heading": "A small beginning."
+    },
+    {
+      "check": "End and forget returns to welcome",
+      "result": "pass"
+    },
+    {
+      "check": "390px home: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "action": "start-solo",
+      "heading": "A small beginning."
+    },
+    {
+      "check": "390px scene selection: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "action": "start-scene",
+      "heading": "Person A, this is your turn."
+    },
+    {
+      "action": "ready-a",
+      "heading": "Where does your mind wander?"
+    },
+    {
+      "check": "390px private choice: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "action": "choose:moon",
+      "heading": "Where does your mind wander?"
+    },
+    {
+      "action": "guess:sea",
+      "heading": "Where does your mind wander?"
+    },
+    {
+      "action": "seal",
+      "heading": "Pass the screen to Person B."
+    },
+    {
+      "action": "ready-b",
+      "heading": "Where does your mind wander?"
+    },
+    {
+      "action": "choose:sea",
+      "heading": "Where does your mind wander?"
+    },
+    {
+      "action": "guess:moon",
+      "heading": "Where does your mind wander?"
+    },
+    {
+      "action": "seal",
+      "heading": "Try the shared reveal."
+    },
+    {
+      "action": "reveal",
+      "heading": "Well, look at that."
+    },
+    {
+      "check": "390px reveal: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "action": "action",
+      "heading": "Send a postcard from nowhere."
+    },
+    {
+      "check": "390px shared action: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "action": "write",
+      "heading": "One detail, just from you."
+    },
+    {
+      "action": "ready-write-a",
+      "heading": "One detail you would put on the postcard."
+    },
+    {
+      "action": "seal-line",
+      "heading": "And one detail from you."
+    },
+    {
+      "action": "ready-write-b",
+      "heading": "One detail you would put on the postcard."
+    },
+    {
+      "action": "seal-line",
+      "heading": "It didn’t existbefore you two."
+    },
+    {
+      "check": "Optional contribution has a non-punitive fallback",
+      "result": "pass"
+    },
+    {
+      "check": "Authored markup is displayed literally, never executed",
+      "result": "pass"
+    },
+    {
+      "check": "Solo ending is clearly labeled rehearsal",
+      "result": "pass"
+    },
+    {
+      "check": "390px keepsake: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "action": "download",
+      "heading": "It didn’t existbefore you two."
+    },
+    {
+      "check": "SVG export safely escapes user input and parses as XML",
+      "result": "pass"
+    },
+    {
+      "check": "Reload clears the session and authored details",
+      "result": "pass"
+    },
+    {
+      "action": "start-pair",
+      "heading": "A small beginning."
+    },
+    {
+      "action": "start-scene",
+      "heading": "Person A, this is your turn."
+    },
+    {
+      "action": "ready-a",
+      "heading": "What kind of weather is this moment?"
+    },
+    {
+      "action": "choose:sun",
+      "heading": "What kind of weather is this moment?"
+    },
+    {
+      "action": "guess:wind",
+      "heading": "What kind of weather is this moment?"
+    },
+    {
+      "action": "seal",
+      "heading": "Pass the screen to Person B."
+    },
+    {
+      "action": "ready-b",
+      "heading": "What kind of weather is this moment?"
+    },
+    {
+      "action": "choose:wind",
+      "heading": "What kind of weather is this moment?"
+    },
+    {
+      "action": "guess:sun",
+      "heading": "What kind of weather is this moment?"
+    },
+    {
+      "action": "seal",
+      "heading": "Come back together."
+    },
+    {
+      "action": "reveal",
+      "heading": "Well, look at that."
+    },
+    {
+      "action": "action",
+      "heading": "Give this moment a forecast."
+    },
+    {
+      "check": "Weather scene produces its own shared ritual",
+      "result": "pass"
+    },
+    {
+      "action": "swap",
+      "heading": "A small beginning."
+    },
+    {
+      "action": "start-scene",
+      "heading": "Person A, this is your turn."
+    },
+    {
+      "action": "ready-a",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "check": "Changing scenes removes previous commitments",
+      "result": "pass"
+    },
+    {
+      "action": "choose:shape",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "guess:color",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "seal",
+      "heading": "Pass the screen to Person B."
+    },
+    {
+      "action": "ready-b",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "choose:color",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "guess:shape",
+      "heading": "What catches your eye first?"
+    },
+    {
+      "action": "seal",
+      "heading": "Come back together."
+    },
+    {
+      "action": "reveal",
+      "heading": "Well, look at that."
+    },
+    {
+      "action": "action",
+      "heading": "Open a very small museum."
+    },
+    {
+      "action": "write",
+      "heading": "One detail, just from you."
+    },
+    {
+      "action": "ready-write-a",
+      "heading": "One detail from your tiny exhibit."
+    },
+    {
+      "action": "seal-line",
+      "heading": "And one detail from you."
+    },
+    {
+      "action": "ready-write-b",
+      "heading": "One detail from your tiny exhibit."
+    },
+    {
+      "action": "seal-line",
+      "heading": "It didn’t existbefore you two."
+    },
+    {
+      "check": "821x462 portal home: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "action": "start-pair",
+      "heading": "A small beginning."
+    },
+    {
+      "check": "821x462 scene selection: no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "check": "Sandboxed 821x462 iframe runs the same-device flow",
+      "result": "pass"
+    },
+    {
+      "check": "No uncaught browser errors in observed sessions",
+      "result": "pass"
+    }
+  ]
+}

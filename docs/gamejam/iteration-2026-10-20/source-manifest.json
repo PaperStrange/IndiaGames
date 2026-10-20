@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "review_date_utc": "2026-10-20",
+  "repository": "https://github.com/PaperStrange/IndiaGames",
+  "coordination_branch": "gamejam-next-iteration-2026-10-20",
+  "coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
+  "implementation_started": false,
+  "incoming_evidence": {
+    "status": "awaiting_project_lead_notice",
+    "lanes": [
+      "memorable",
+      "bell"
+    ],
+    "action": "Pin new heads, review evidence delta, revise provisional plans before implementation",
+    "automatic_polling_scheduled": false
+  },
+  "sources": [
+    {
+      "lane": "memorable",
+      "name": "Small Hours",
+      "branch": "memorable-moments-game",
+      "reviewed_head": "822366ad3eb309f7009bb7a05e26cddfb466422f",
+      "prior_manifest_source": "f8b725d2ce3038a38c0b49dce564bc0c7b0856d0",
+      "runtime_scope": [
+        "memorable-moments-game/play",
+        "memorable-moments-game/tests"
+      ],
+      "runtime_diff_empty": true
+    },
+    {
+      "lane": "vivid",
+      "name": "The Keeper's Frame",
+      "branch": "vivid-2.5d-photo-game",
+      "reviewed_head": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
+      "prior_manifest_source": "79416057a47dec30c00d020f7d8240e5aba8b162",
+      "runtime_scope": [
+        "vivid-2.5d-photo-game/play"
+      ],
+      "runtime_tree": "a74ec4f57463a21b8eb024fa4c843191a2588f7d",
+      "runtime_diff_empty": true
+    },
+    {
+      "lane": "bell",
+      "name": "The Thirteenth Bell",
+      "branch": "the-thirteenth-bell",
+      "reviewed_head": "1be02bc9fc0b846e4c24cb1ceb67ddd69ebfe590",
+      "prior_manifest_source": "c2a0a3e385be5b75324f978e84eb273b7d23e404",
+      "runtime_scope": [
+        "index.html",
+        "css",
+        "js",
+        "assets",
+        "build.mjs",
+        "tests"
+      ],
+      "runtime_diff_empty": true
+    }
+  ],
+  "research": {
+    "reviewed_head": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
+    "replay_package": "docs/gamejam/player-first-replays-2026-10-15",
+    "market_package": "docs/gamejam/market-research",
+    "market_claims_as_of": "2026-10-05/2026-10-06",
+    "replay_slots": 13,
+    "raw_session_or_access_records": 18,
+    "reshoot_logs": 1,
+    "snapshot_files": 33,
+    "snapshot_unique_sha256_count": 33,
+    "revised_html_embedded_images": 33,
+    "human_participant_rows": 0,
+    "required_assignments": 18,
+    "required_unique_titles": 17,
+    "core_gameplay_evidence_assignments": 4,
+    "lobby_only_assignments": 1,
+    "source_only_or_unplayed_assignments": 13,
+    "six_title_four_family_gate_met_by_any_lane": false
+  },
+  "review_methods": [
+    "Source and document review across three pinned branches",
+    "Existing automated demo suites run from isolated git archive snapshots",
+    "Fresh selected demo captures visually inspected by lane reviewers",
+    "All 33 uploaded competitor snapshots inspected by coordinator in contact sheets",
+    "No new competitor gameplay, participant sessions or gameplay implementation"
+  ],
+  "environment": {
+    "node": "v24.19.0",
+    "python": "3.12.14",
+    "chromium": "151.0.7922.173"
+  },
+  "historical_package": {
+    "rebuilt_in_this_review": false,
+    "retested_in_this_review": false
+  }
+}

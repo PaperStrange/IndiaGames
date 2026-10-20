@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-20",
+  "source_commit": "1be02bc9fc0b846e4c24cb1ceb67ddd69ebfe590",
+  "build": {
+    "passed": true,
+    "bytes": 1434008
+  },
+  "rules": {
+    "passed": 3,
+    "failed": 0
+  },
+  "static": {
+    "passed": 17,
+    "failed": 0
+  },
+  "http_smoke": {
+    "passed": 19,
+    "failed": 0,
+    "initial_attempt": "debugger attach failed using existing profile; copied helper with unique external profile passed",
+    "warnings": [
+      "Optional Google Fonts certificate failures; fallback fonts rendered"
+    ]
+  },
+  "existing_browser_journey": {
+    "result": "PASS",
+    "trace_entries": 19,
+    "page_errors": 0
+  },
+  "additional_baseline_journey": {
+    "result": "PASS",
+    "page_errors": 0
+  },
+  "snapshot_source_files_unchanged": 11,
+  "implementation_status": "not started; provisional plan pending user-announced incoming research"
+}
