@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "game": "keepers-frame",
+  "version": "0.1.1",
+  "source_commit": "97695df223b7bf336f6b2c1fb87dce64d5ab5599",
+  "build": {
+    "entrypoint": "index.html",
+    "sha256": "cb4fdcb325f0c05180e94d8a198aeab472f405b15dda61f01d228034c9f965f6",
+    "files": {
+      "art/frame.glb": "f58216181104f2ebb9babd7d6fb536db66b3af178fc472beabdbbfb90bec244a",
+      "art/keeper-portrait.svg": "ce2e5ad30f0c2327d4874cb6d3f51f7d6ea2d94754237b0a5eaa5f4b39a9535f",
+      "art/model-metrics.json": "596f3b694e0782b28602789675e5b034eba841b887e4422aac8a02192f91d63a",
+      "art/postcard.svg": "fc8e7b8152cf01b09506bdc852a7d0ded509d64ac5c355a91e07e66848afefb3",
+      "art/sketch-overlay.svg": "2d1e247b3424e2d35ad6ef7493bdfd9711d5505e881267b4f4238c6985f901a9",
+      "art/sketch-underlay.svg": "9b489cddd713563f5a6a4f17856d6b8fb7cc996d84c32786718bc7d607d40b25",
+      "art/workbench.glb": "0da0115735a527aa6afb2276dceb58754a5fdd5118206ee94c4ae830cbc24446",
+      "assets/index-CmRFnsuX.css": "aafecb6c885b1e05b441c9c32d8915b2f48c6f7c7075e6a4ec26a2959f53d999",
+      "assets/index-DjmERjYM.js": "8b033228535880f58b9866c59abe09db6a3914446fa9d7736629d48c125a427c",
+      "assets/iona-2cAlQtXR.js": "d5c311afe335704f324371ce2b40ecc2c6de2c188b565345c44e2082cc95a7ff",
+      "assets/mara-C1J8lK1G.js": "b26baf9fdcfb5e0e013a063ea89325d01c86f54a0afc52a4d37ea73608bf6702",
+      "assets/world-BIfCt15a.js": "b6841fa12456a7ac9910e56100638b63ef8f399398b912852ee4c88f4d3f6719",
+      "index.html": "b23404f767443d3535c33d730545d82b5d7045bf1f62bac240278adeb7260558",
+      "story-catalog.json": "1b17343c35df541f9c1ef52579412667d0376b51e180cd409ef449115037d6fc",
+      "third-party-notices.txt": "b9229f490630a80cb4968dea0483aea95706b1e8dd5645ece366a7cea3c4f560"
+    }
+  }
+}

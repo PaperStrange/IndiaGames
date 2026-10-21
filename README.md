@@ -2,11 +2,11 @@
 
 `master` is the staging branch for every game-demo release. Game development stays on the individual game branches; candidates arrive here for measured manual human playtests. Only an approved game/version is promoted to `main` as an official release.
 
-**Vivid 0.1.0 is staged for human playtests. There are no official releases.** The packet contains two stories, A Place for the Promise and The Unfinished Postcard. Its human observations and approval remain empty. The original Python battle prototype and its history are preserved.
+**Vivid 0.1.1 is staged for human playtests. There are no official releases.** The packet contains two stories, A Place for the Promise and The Unfinished Postcard. Its human observations and approval remain empty. The original Python battle prototype and its history are preserved.
 
-[Candidate packet](release-candidates/keepers-frame/0.1.0/) · [Candidate notes](release-candidates/keepers-frame/0.1.0/notes.md) · [Human-study preparation](https://github.com/PaperStrange/IndiaGames/tree/d4e3cb1/docs/gamejam/vivid-iteration-2026-10-21/human-study)
+[Candidate packet](release-candidates/keepers-frame/0.1.1/) · [Candidate notes](release-candidates/keepers-frame/0.1.1/notes.md) · [Human-study preparation](https://github.com/PaperStrange/IndiaGames/tree/d4e3cb1/docs/gamejam/vivid-iteration-2026-10-21/human-study)
 
-To play this exact packet locally, run `python3 -m http.server 8114 --bind 127.0.0.1 --directory release-candidates/keepers-frame/0.1.0/build`, then open `http://127.0.0.1:8114/`. Master is not a public Pages deployment. The packet hash is `9f7283b275ee0560c49e959488453fdec136b737e0f45898c5b8a9cb420d082f`. The extended main release-policy change requires separate owner review before any promotion.
+To play this exact packet locally, run `python3 -m http.server 8114 --bind 127.0.0.1 --directory release-candidates/keepers-frame/0.1.1/build`, then open `http://127.0.0.1:8114/`. Master is not a public Pages deployment. The packet hash is `cb4fdcb325f0c05180e94d8a198aeab472f405b15dda61f01d228034c9f965f6`. The earlier 0.1.0 packet is preserved, unapproved; 0.1.1 adds bundled dependency license notices. The extended main release-policy change requires separate owner review before any promotion.
 
 ## Prepare a candidate
 
