@@ -133,3 +133,6 @@ dmypy.json
 !/release-candidates/**/build/**
 !/releases/**/build/
 !/releases/**/build/**
+
+# Browser dependencies retained across serialized branch switches
+node_modules/

@@ -6,15 +6,39 @@ An automated check can establish file identity, recorded counts and consistency.
 
 ## Fixed pilot criteria
 
-These are provisional product acceptance criteria from the current plans, not estimates of population conversion or statistical proof. Before testing, register exactly six session IDs for the frozen build, in order. Report all six attempts, including abandonment and failed attempts, without replacing unfavorable results. `completed_at` means the session ended, not that gameplay succeeded. Use distinct participants: six pairs / twelve people for Small Hours; six people for each other game. Any exclusion or protocol change requires an explicitly reviewed new protocol before another run. Do not cherry-pick six successes from a larger denominator. Keep all observations, including failures, available to the human reviewer.
+These are provisional product acceptance criteria from the current plans, not estimates of population conversion or statistical proof. Before testing, register exactly six session IDs for each required cohort on the frozen build, in order. Report all six attempts, including abandonment and failed attempts, without replacing unfavorable results. `completed_at` means the session ended, not that gameplay succeeded. Use distinct participants: six pairs / twelve people for Small Hours; six people for Bell; six people for each of Vivid's two stories (twelve total), with a separate optional six-person neutral cohort. Any exclusion or protocol change requires an explicitly reviewed new protocol before another run. Do not cherry-pick six successes from a larger denominator. Keep all observations, including failures, available to the human reviewer.
 
 | Game | Required observations on the same candidate build |
 |---|---|
 | Small Hours | At least 5/6 pairs reach the reveal unaided; 4/6 pairs both contribute; 3/6 pairs voluntarily save or replay. |
-| Keeper’s Frame | At least 4/6 players both complete unassisted **and** explain how a choice changes a return action. At most 1/6 expects unrestricted AI; two or more is a recurring false expectation and fails. |
+| Vivid / Iona: A Place for the Promise | At least 4/6 players each both complete unassisted **and** explain how a choice changes a return action. At most 1/6 expects unrestricted AI; two or more is a recurring false expectation and fails. |
+| Vivid / Mara: The Unfinished Postcard | At least 4/6 players each both complete unassisted **and** explain how their action changes a visible consequence. Emotional interpretation is not graded. |
 | Thirteenth Bell | At least 4/6 players both explain cause **and** predict before the outcome; 4/6 both earn the action uncoached **and** explain Fracture; 3/6 recall a specific Mina outcome after a predeclared neutral break of at least two minutes. This measures short delayed recall, not day-two retention. |
 
 All games require zero open critical bugs. A critical bug blocks completion, corrupts/loses required state, or prevents the promised player action. Humans classify severity and verify fixes. The gate checks the recorded zero; it does not discover all bugs. Changing any build byte invalidates the report's build identity and requires a new recorded test run. Record only deidentified participant IDs and concise behavioral notes in the release repository; retain consented raw evidence outside the public packet.
+
+## Vivid is one release containing two reviewed stories
+
+Vivid keeps the technical game ID `keepers-frame` and the hub's existing Vivid lane. It does not create a fourth game. Every new Vivid candidate, including a candidate numbered below `0.1.0`, requires a schema-2 `human-playtest.json` and `build/story-catalog.json`. The shipping catalog is part of the hashed build; it mirrors the shipped story manifests rather than acting as an unhashed attachment. Its schema is:
+
+```json
+{
+  "schema_version": 1,
+  "game": "keepers-frame",
+  "stories": [
+    {"id": "iona", "revision": 1, "title": "A Place for the Promise", "release_profile": "iona-return-v1"},
+    {"id": "mara", "revision": 1, "title": "The Unfinished Postcard", "release_profile": "mara-object-v1"}
+  ]
+}
+```
+
+The current reviewed policy requires both story IDs and their listed profiles. Revisions may increase. New story IDs, removed stories or different profiles need a separately reviewed policy change before a candidate can ship. Story authors cannot lower a threshold through content or catalog data: the validator owns the criteria. A human reviewer verifies that the catalog describes the actual playable bundle; hashing alone cannot inspect game behavior.
+
+The schema-2 envelope has `game`, `version`, `build_sha256`, `critical_bugs_open`, `story_reports`, optional `study_reports`, and one `human_approval`. Each shipping story has exactly one report with its `story_id`, `release_profile`, `condition: "remembered"`, the same build hash, its own critical-bug count, preregistered protocol and six sessions. Every session repeats the story ID and condition. Session IDs and participants must be distinct across all cohorts. The one reviewer must be independent of every participant and observer across the bundle and approve after every included session ends. Existing manual-session, timestamp, Boolean-metric and observation-note requirements still apply.
+
+Recruitment targets eighteen new participants: six Iona remembered, six Iona neutral, six Mara. Twelve suffice for the release decision if the neutral comparison cannot run. If included, the neutral cohort is one `study_reports` item with `story_id: "iona"`, `condition: "neutral"`, `release_profile: "iona-neutral-v1"`, the same bundle hash, six separately preregistered sessions and the Iona metric keys. Its outcome counts carry no efficacy threshold and cannot substitute for the remembered cohort. It still needs genuine observations, distinct participants, zero critical bugs and the independent bundle review. Absence of a neutral cohort means no comparative claim about remembered versus neutral return. Optional 48–72-hour prompted recall is research, not retention, and does not replace the required release observations; preregister it separately and report attrition.
+
+The schema-1 reader remains for historical releases. A legacy Vivid packet is accepted only if it was already registered in the trusted `--base-ref` and both the packet bytes and registry entry are unchanged. No new candidate can opt into the legacy route by choosing an earlier version. Use the prior trusted main commit when validating a hub containing legacy archives. Existing releases stay immutable; no conversion or replacement of old evidence is performed.
 
 ## Stage every candidate on master
 
@@ -23,7 +47,7 @@ Use the [blank packet templates](../templates/release-candidate/README.md). The 
 ```text
 release-candidates/<game>/<version>/
   candidate.json        Game, version, full implementation SHA, build inventory/hash
-  human-playtest.json   Protocol, six manual sessions, critical bugs, human approval
+  human-playtest.json   Required cohort protocols, manual sessions, critical bugs, human approval
   notes.md             Changes, human validation and known limitations
   build/index.html     Browser entry, with all other shipped files under build/
 ```
@@ -35,7 +59,7 @@ python3 scripts/validate-release.py --staging
 python3 scripts/validate-release.py --candidate GAME/VERSION
 ```
 
-The first command checks every staged packet's identity and build integrity, allowing draft playtest evidence and notes. It does **not** approve a release. The second checks all human criteria and completed notes for the selected version. Blank templates must fail readiness until real evidence replaces the blank fields.
+The first command checks every staged packet's identity and build integrity, allowing draft playtest evidence and notes. For Vivid it also requires the reviewed catalog and complete story-report identities, even while sessions and approvals are pending. It does **not** approve a release. The second checks all human criteria and completed notes for the selected version. Blank templates must fail readiness until real evidence replaces the blank fields. If either Vivid story fails, the entire version remains on `master`; do not publish the passing story's report as approval for the bundle.
 
 Commit the complete approved packet to `master` and record its full immutable commit SHA. This SHA belongs in the main registry, not inside the candidate packet, avoiding a commit self-reference. `candidate.json` → `source_commit` identifies the implementation commit; that commit must exist in fetched history. Humans verify that the export was built from it. The hash inventory proves shipped byte identity, not reproducible build derivation.
 
