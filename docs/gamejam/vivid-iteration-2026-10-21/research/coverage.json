@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "observed_date_utc": "2026-10-21",
+  "actor_type": "coding_agents",
+  "human_participants": 0,
+  "status": "qualified_synthesis_with_open_endpoints",
+  "titles_with_core_gameplay": 6,
+  "distinct_families": 5,
+  "declared_units_completed": 3,
+  "declared_units_incomplete": 3,
+  "count_definition": "A declared unit may be two days, an open-ended composition task or one narrative path. It is not a count of full games completed. Partial attempts remain partial despite core gameplay evidence.",
+  "titles": [
+    {
+      "id": "sort-the-court",
+      "title": "Sort the Court!",
+      "edition": "Poki browser edition 2.5.2",
+      "family": "decision and management",
+      "record": "group-a/sort-the-court/README.md",
+      "core_gameplay_observed": true,
+      "declared_unit_completed": true,
+      "full_game_completed": false,
+      "assistance": "No walkthrough or input aiming assistance; agent-operated visible controls.",
+      "endpoint": "Two days, funded-jester payoff and same-context day-three reload; exact pending visitor changed."
+    },
+    {
+      "id": "six-cats-under",
+      "title": "Six Cats Under",
+      "edition": "Original itch.io HTML5",
+      "family": "indirect puzzle",
+      "record": "group-a/six-cats-under/README.md",
+      "core_gameplay_observed": true,
+      "declared_unit_completed": false,
+      "full_game_completed": false,
+      "assistance": "Initial public-comment hints, then deliberate walkthrough; no source/state injection.",
+      "endpoint": "Room changes and remote exposed; channel interaction unresolved. Actual unfinished-run reload restarted opening.",
+      "remaining": "Rescue ending and post-ending restart."
+    },
+    {
+      "id": "adventures-with-anxiety",
+      "title": "Adventures With Anxiety",
+      "edition": "Creator-hosted English HTML5",
+      "family": "interactive narrative",
+      "record": "group-a/adventures-with-anxiety.md",
+      "core_gameplay_observed": true,
+      "declared_unit_completed": true,
+      "full_game_completed": false,
+      "one_story_path_completed": true,
+      "assistance": "Screenshot/OCR-based dialogue controls; creator interview read after initial chapter choices; no walkthrough used to choose options.",
+      "endpoint": "One safe story path, epilogue, credits and resources/Replay panel; actual chapter resume and post-completion reload to Replay/Chapter Select verified. Alternate bad ending and two optional discussion branches unplayed."
+    },
+    {
+      "id": "we-become-what-we-behold",
+      "title": "We Become What We Behold",
+      "edition": "Creator itch browser release, embed 300364",
+      "family": "interactive narrative",
+      "record": "group-b/wbwwb.md",
+      "followup": "group-b/wbwwb-completion/README.md",
+      "core_gameplay_observed": true,
+      "declared_unit_completed": false,
+      "full_game_completed": false,
+      "assistance": "Visible-image aiming; prior strategy and later criticism disclosed; two separate runs.",
+      "endpoint": "First run: hat adoption and attack/fear consequence. Follow-up: mocked couple/embarrassment and title re-entry. Neither reached ending.",
+      "remaining": "Complete cycle and post-completion re-entry; do not pool runs into one completion."
+    },
+    {
+      "id": "townscaper",
+      "title": "Townscaper",
+      "edition": "Browser demo 0.23",
+      "family": "creative construction",
+      "record": "group-b/townscaper.md",
+      "core_gameplay_observed": true,
+      "declared_unit_completed": true,
+      "full_game_completed": false,
+      "assistance": "Desktop-edition review exposed deletion controls before resumed composition.",
+      "endpoint": "Blue annex and connected pier, correction, revision, voluntary finish, exit/re-entry. Default starter returned; explicit save not tested."
+    },
+    {
+      "id": "a-dance-of-fire-and-ice",
+      "title": "A Dance of Fire and Ice",
+      "edition": "Browser demo v0.4.2, December 2018",
+      "family": "rhythm action",
+      "record": "group-b/adofai.md",
+      "followup": "group-b/adofai-followup/README.md",
+      "core_gameplay_observed": true,
+      "declared_unit_completed": false,
+      "full_game_completed": false,
+      "assistance": "Screenshot-guided navigation and timed key cadence; audio not heard and calibration unverified.",
+      "endpoint": "Track 1-1 entered; collapse, explicit Late!!, Space retry and Escape/menu observed. Highest Level Reached 1 is not completion.",
+      "remaining": "Complete tutorial with audible playback and reliable calibration; observe return separately."
+    }
+  ],
+  "native_gaps": [
+    "Event[0]",
+    "TOEM",
+    "Townscaper full native edition",
+    "Rhythm Doctor"
+  ],
+  "synthesis": "SYNTHESIS.md"
+}

@@ -55,3 +55,5 @@ The run did not reach the Council, complete a side quest, resolve the Sultan off
 8. `08-before-reentry.png` — Wizard prompt and 118/114/95.
 9. `09-reentry-continue-day-three.png` — saved-day menu.
 10. `10-reentry-state-preserved-request-changed.png` — same counters, different visitor.
+
+The [capture integrity inventory](capture-inventory.json) was made during final coordination. All ten images match the first remote research checkpoint byte-for-byte; its inventory timestamp is not an image capture time.

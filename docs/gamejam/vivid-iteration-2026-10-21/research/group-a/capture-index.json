@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "game": "Adventures With Anxiety!",
+  "edition": "Creator-hosted English HTML5 edition; no build version surfaced in observed UI",
+  "source_url": "https://ncase.me/anxiety/",
+  "research_date": "2026-10-21",
+  "operator": "/root/browser_research_a",
+  "participant_type": "agent",
+  "viewport_css_pixels": [
+    1280,
+    900
+  ],
+  "capture_clip_css_pixels": {
+    "x": 460,
+    "y": 150,
+    "width": 360,
+    "height": 600
+  },
+  "path_completed": true,
+  "observed_endpoint": "Post-credit resource/Replay screen, followed by real reload to Replay title and inspection of chapter selector",
+  "unplayed": [
+    "Alternative bad third-chapter ending",
+    "Alternative first- and second-chapter endings",
+    "Other two optional epilogue fear-discussion branches",
+    "Audio listening",
+    "Physical touch devices",
+    "Screen-reader operation"
+  ],
+  "captures": [
+    {
+      "path": "captures/anxiety-07-reading-controls.png",
+      "description": "Onboarding offers reading speed and click-to-advance controls.",
+      "sha256": "e58cd85bae49f939fd90d6d9182434ba7eec1736ba6500b0d9b19d5860f2d82d",
+      "file_modified_at_utc": "2026-10-21T07:24:34.933553+00:00"
+    },
+    {
+      "path": "captures/anxiety-19-warning-choices.png",
+      "description": "First three expressive fear choices.",
+      "sha256": "b4d6057ecf329c21f9b296d3068ecadaa17e1102132dbfc8c8ef7fb10618c149",
+      "file_modified_at_utc": "2026-10-21T07:27:17.522175+00:00"
+    },
+    {
+      "path": "captures/anxiety-26-dialogue.png",
+      "description": "Visible first battle consequence: fear of being unloved.",
+      "sha256": "1b61e57212e78daa3619aeaf7ca88d8cbaf18f4826fdb9d24fdbe266cce5ded7",
+      "file_modified_at_utc": "2026-10-21T07:28:15.803753+00:00"
+    },
+    {
+      "path": "captures/anxiety-142-dialogue.png",
+      "description": "Second chapter callback to the chosen cat-GIF retweet.",
+      "sha256": "6f48ff6889648dd0c1d0ff21f8755b4e6b00c9870f3b13086a8004efc5942c48",
+      "file_modified_at_utc": "2026-10-21T07:46:50.667714+00:00"
+    },
+    {
+      "path": "captures/anxiety-259-special-icons.png",
+      "description": "Icon-only special attack choice inspected after text/OCR advancement stalled.",
+      "sha256": "b6acaa50490a7bafcdea2e9eb9bbd8ab98ecadc3f82e239c6ffc85247bdeae42",
+      "file_modified_at_utc": "2026-10-21T07:54:25.868718+00:00"
+    },
+    {
+      "path": "captures/anxiety-292-dialogue.png",
+      "description": "End-of-chapter fear summary explicitly reports auto-save.",
+      "sha256": "e5489b620f1cb41453418bdb1becdb4494c1873d3f134019a520ddea84222bb4",
+      "file_modified_at_utc": "2026-10-21T07:56:36.232382+00:00"
+    },
+    {
+      "path": "captures/anxiety-304-continue-menu.png",
+      "description": "Real reload offers Continue: The Other Party.",
+      "sha256": "f98995cf7ddb82f4c9b94042c7979e8415c3a6be94e27ec43b67bc0e9d575b92",
+      "file_modified_at_utc": "2026-10-21T07:58:38.759738+00:00"
+    },
+    {
+      "path": "captures/anxiety-416-dialogue.png",
+      "description": "Third chapter reaches the safe TIE outcome on this path.",
+      "sha256": "f06faac2109c4b774bb907d2a1a2388c147eec8b006013130107fc74ca0f6cb6",
+      "file_modified_at_utc": "2026-10-21T08:06:40.261584+00:00"
+    },
+    {
+      "path": "captures/anxiety-543-dialogue.png",
+      "description": "Epilogue mutual-appreciation choice after one optional fear discussion.",
+      "sha256": "1db2c8b38dd7a2896958d9e1c417acb7e5ae7ed149b32b663ef397929afc696a",
+      "file_modified_at_utc": "2026-10-21T08:15:08.820156+00:00"
+    },
+    {
+      "path": "captures/anxiety-560-post-credits.png",
+      "description": "Completed credits lead to resources and Replay screen.",
+      "sha256": "3531cfbf55cee8cbbe2f8ef5a74ac880937749942d628571d86f129f826c53dc",
+      "file_modified_at_utc": "2026-10-21T08:19:05.630789+00:00"
+    },
+    {
+      "path": "captures/anxiety-563-final-title.png",
+      "description": "Real post-completion reload now offers Replay and Chapter Select.",
+      "sha256": "d00edf3bfa4a5a7fc31cfaf6f7cb12104ea8f92e10a4f20150b5f279cc3ce9a9",
+      "file_modified_at_utc": "2026-10-21T08:20:10.476715+00:00"
+    },
+    {
+      "path": "captures/anxiety-564-final-chapter-select.png",
+      "description": "Chapter Select visibly lists the four story chapters and credits.",
+      "sha256": "6ddaf4c6efd2902435e2685026c8462171e6e96637b18c70404d61bcbc5c8a8e",
+      "file_modified_at_utc": "2026-10-21T08:20:33.941339+00:00"
+    }
+  ]
+}

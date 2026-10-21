@@ -37,3 +37,7 @@ I verified the displayed `C` shortcut: it reopened “Device Calibration. Press 
 - **Specific experience to test:** make Iona's brace and Mara's alignment meaningful through what they reveal, without requiring rhythmic precision. Keep a visible route back to a stable checkpoint when an input, renderer or save cannot be used.
 
 The right follow-up is a real-time audio-enabled play session, not more automated cadence trials presented as empathetic human evidence.
+
+## Later independent follow-up
+
+The [isolated follow-up](adofai-followup/README.md) reached track 1-1, observed an explicit Late!! error, retried, and exited to the menu. Track completion remains open. This additional session does not change the original calibration/menu-only record above.

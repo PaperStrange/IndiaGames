@@ -43,4 +43,4 @@ for await(const line of readline.createInterface({input:process.stdin,terminal:f
     else if(command.op==='exit')break;
   }catch(error){await record({type:'driver-error',message:error.message});console.log('ERROR',error.message);}
 }
-await browser.close();await api.dispose();
+await browser.close();await api.dispose();process.stdin.pause();

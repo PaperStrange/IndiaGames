@@ -23,3 +23,7 @@ Detailed journeys and their actual endpoints are in the individual records. Dist
 ## Preserve the original gaps
 
 Event[0], TOEM, the full native Townscaper release, and Rhythm Doctor were not played in this work. Townscaper's browser task does not close the native-edition gap, and ADOFAI is a separate approved browser comparator, not a report of playing Rhythm Doctor. These records add evidence to the new six-game browser set; they do not rewrite the historical roster or retrospectively complete older observations.
+
+## Additional sessions
+
+The [ADOFAI isolated follow-up](adofai-followup/README.md) reached actual track 1-1, observed a visible timing error and retry, then exited. Its completed track endpoint remains open; the first session retains its original status.

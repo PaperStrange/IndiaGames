@@ -1,0 +1,57 @@
+{
+  "inventoried_at": "2026-10-21T08:24:40.958016+00:00",
+  "method": "Coordinator integrity inventory after the session, not capture timestamps. Every image matches the first remote research checkpoint byte-for-byte. Read the chronological input log and README for observation provenance.",
+  "remote_checkpoint": "b14a5addfc4b8d51580fe5f73f2b611708d4a637",
+  "captures": [
+    {
+      "path": "captures/01-arrival-poki-2.5.2.png",
+      "sha256": "be9af1c233f6ca2ed3290f6e72dfe0a3438a56632036e1cea336f72fa4aca27e",
+      "bytes": 697183
+    },
+    {
+      "path": "captures/02-simple-rule-queen.png",
+      "sha256": "d9501411fb92f0c1726763c71a06cf8a02832d02689a09f2560700d2d179559a",
+      "bytes": 786495
+    },
+    {
+      "path": "captures/03-jester-funding-request.png",
+      "sha256": "39b372ef3859927fe5553e24013ffc66447cb8ff9122dd864015b7070c8124d4",
+      "bytes": 235881
+    },
+    {
+      "path": "captures/04-casual-answer-costs-population.png",
+      "sha256": "c47334ad4655e547aaedffdcf6a2b3ceb8d583c822e5230d7b1ffb41f859513a",
+      "bytes": 227048
+    },
+    {
+      "path": "captures/05-jester-later-callback.png",
+      "sha256": "ce4caa9db8cbab7f43474838c8af426bdfde86fe459142a284766d0fcb9b580a",
+      "bytes": 183471
+    },
+    {
+      "path": "captures/06-day-one-resolved.png",
+      "sha256": "b5c0cc2a55b274fd35acf346bb9e0215b553cba613eccfda971f87a2ed33c3ab",
+      "bytes": 184298
+    },
+    {
+      "path": "captures/07-day-two-resolved.png",
+      "sha256": "047c1535063a901aba26414e565aef1c33d8ed57fff06c64f955bf060b612743",
+      "bytes": 169179
+    },
+    {
+      "path": "captures/08-before-reentry.png",
+      "sha256": "2a33145b286e11fea0115a79b1d4b6c157a4f3959a033bc0778a7fed5e6868f7",
+      "bytes": 246518
+    },
+    {
+      "path": "captures/09-reentry-continue-day-three.png",
+      "sha256": "14b4fcad101bc406e23af9114bddea2b06f90ae4b5019f52112521d9cff7ed50",
+      "bytes": 161057
+    },
+    {
+      "path": "captures/10-reentry-state-preserved-request-changed.png",
+      "sha256": "dda8943143bfc69ade48d334293ca239ac6ba8801a7e450d947dfc1eebc475f5",
+      "bytes": 220526
+    }
+  ]
+}

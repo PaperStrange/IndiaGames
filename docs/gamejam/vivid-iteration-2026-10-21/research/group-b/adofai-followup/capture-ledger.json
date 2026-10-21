@@ -1,0 +1,164 @@
+[
+  {
+    "capture": "02-menu-default-calibration.png",
+    "capturedAt": "2026-10-21T07:59:05.948603+00:00",
+    "sha256": "374fa4ef98b1dd52ba00d73d6b88432f351cc221a2a46e9da560a1da5af118d0",
+    "retainedInRepository": true
+  },
+  {
+    "capture": "03-first-tile.png",
+    "capturedAt": "2026-10-21T08:00:25.146871+00:00",
+    "sha256": "ee44a03220a95d96a9e30631ac21523fa1fd567c6c10a4ea1f02359a1dcafc90",
+    "retainedInRepository": true
+  },
+  {
+    "capture": "04-timing-compensation.png",
+    "capturedAt": "2026-10-21T08:01:00.955756+00:00",
+    "sha256": "742142417377f6aa525874eaa2e9eaf1d3e1464fb423a156ab634b5394a18191",
+    "retainedInRepository": true
+  },
+  {
+    "capture": "05-upward-path.png",
+    "capturedAt": "2026-10-21T08:01:52.989292+00:00",
+    "sha256": "5ce04a51be3d7c1560725142c83e98961e2c077fb5d2630bf42a51ae275a9e73",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "06-world-one-entry.png",
+    "capturedAt": "2026-10-21T08:02:29.954554+00:00",
+    "sha256": "657134d506cae92d0cdab191b59c6be5eea8392bad6faf2d527a741c1ba8a7e5",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "07-adaptive-visible-navigation.png",
+    "capturedAt": "2026-10-21T08:04:23.885685+00:00",
+    "sha256": "62eace0966d8d092ce4980cb7dee2776e487d6180eb89f5f5abdab498fbe8865",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "08-world-one-gate.png",
+    "capturedAt": "2026-10-21T08:05:39.139829+00:00",
+    "sha256": "98fcc49d6e203da3eef89e2b2dbe4b985e90df6893a46addf9cde4291980a6df",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "09-menu-endpoint-attempt.png",
+    "capturedAt": "2026-10-21T08:06:28.861258+00:00",
+    "sha256": "d8929967a57fb69e08f392d47404e9ecc68119f9830ba89f02b9f43d92d2f278",
+    "retainedInRepository": true
+  },
+  {
+    "capture": "10-first-track-error.png",
+    "capturedAt": "2026-10-21T08:07:12.450507+00:00",
+    "sha256": "c7adcfebcec6c33d3e66bc8f14a9527b6c398a4b459c3b9c95a069ce0f769458",
+    "retainedInRepository": true
+  },
+  {
+    "capture": "11-retry-input.png",
+    "capturedAt": "2026-10-21T08:07:38.391249+00:00",
+    "sha256": "b3d5aa182ae38491748fcc7a1dfc8decd2eb238a36f837e65ccdf3e44a2cdc28",
+    "retainedInRepository": true
+  },
+  {
+    "capture": "12-cadence-attempt-0.png",
+    "capturedAt": "2026-10-21T08:09:48.058927+00:00",
+    "sha256": "23a000cd1aacd8fbeb77fc573afe49c01275b279d172893fe6a34a46d122ac54",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "12-cadence-attempt-4.png",
+    "capturedAt": "2026-10-21T08:09:50.294992+00:00",
+    "sha256": "2f9f6a6e741922f20c9d5623c5ab17aadde516ba66aaa2ef63b35f39f2c8a32f",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "12-cadence-attempt-9.png",
+    "capturedAt": "2026-10-21T08:09:52.439056+00:00",
+    "sha256": "fd7c08e07fe62c44a86e34186c726adeac202fe70c51a5d5d33798ee8c5d9cf4",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "13-before-final-attempt.png",
+    "capturedAt": "2026-10-21T08:12:57.624362+00:00",
+    "sha256": "81848b311c044a2517f8ecf332eb571af1cee91b86ab006c49f87de37e9007f3",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "14-bounded-retry-0.png",
+    "capturedAt": "2026-10-21T08:13:17.968939+00:00",
+    "sha256": "332677f2ab304df223abc4b178cb910e31066c302bea7ff1a8fbf9605ed2c6eb",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "14-bounded-retry-3.png",
+    "capturedAt": "2026-10-21T08:13:19.504983+00:00",
+    "sha256": "dcaa09f9d1b15c9970d3d1e2e25f767d3eaca4b34e6908fedc2298c84ad160bb",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "14-bounded-retry-9.png",
+    "capturedAt": "2026-10-21T08:13:22.165060+00:00",
+    "sha256": "26a41ef8116c709f312c7620d043e40d9bf4114a4123f6187f72f2fabb30c3a6",
+    "retainedInRepository": true
+  },
+  {
+    "capture": "15-exit-to-menu.png",
+    "capturedAt": "2026-10-21T08:13:35.361436+00:00",
+    "sha256": "b61867e4ee037efe82b4a139a0d803863244d421e93896fd710c64b2fcbaf79c",
+    "retainedInRepository": true
+  },
+  {
+    "capture": "countdown-0.png",
+    "capturedAt": "2026-10-21T08:08:30.728740+00:00",
+    "sha256": "ad31cfd60627c10347afface2292ac5ebe98d4482ab294be3f5ebe2544146f4c",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "countdown-1.png",
+    "capturedAt": "2026-10-21T08:08:31.004748+00:00",
+    "sha256": "7fc17c4cb7486c505a3ef6727d63b2d9863afd2ff4afdcb55eeab3d668ba1e54",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "countdown-2.png",
+    "capturedAt": "2026-10-21T08:08:31.264755+00:00",
+    "sha256": "ba36af33ecee81e70d68e16365267d4d79f549e218d14d19f36a780a17b2a237",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "countdown-3.png",
+    "capturedAt": "2026-10-21T08:08:31.528763+00:00",
+    "sha256": "c0afddf057bfe407c64ed29a1806983b122223017be0ce3b04ed465bf67b66d3",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "countdown-4.png",
+    "capturedAt": "2026-10-21T08:08:31.792771+00:00",
+    "sha256": "19b7c474fe7ce8a3209f6f64aa62aa486b44d5569c791f0f280dfeffa7ed8ad0",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "countdown-5.png",
+    "capturedAt": "2026-10-21T08:08:32.072778+00:00",
+    "sha256": "19b7c474fe7ce8a3209f6f64aa62aa486b44d5569c791f0f280dfeffa7ed8ad0",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "countdown-6.png",
+    "capturedAt": "2026-10-21T08:08:32.336786+00:00",
+    "sha256": "4ed39bcac2c4786e3662f8dfbd02108cd15b3596c7b329fdfdc20a34070319c1",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "countdown-7.png",
+    "capturedAt": "2026-10-21T08:08:32.580793+00:00",
+    "sha256": "3db2e4d5e665d9355f73ea5c5648374fb2d0b813634620aedbbaed6d80ff1b26",
+    "retainedInRepository": false
+  },
+  {
+    "capture": "dance-01-arrival.png",
+    "capturedAt": "2026-10-21T07:58:43.783881+00:00",
+    "sha256": "7add845924c3fa0959bfce9210bd7454a5f388e4dd1b76e689b12d533c32f955",
+    "retainedInRepository": false
+  }
+]

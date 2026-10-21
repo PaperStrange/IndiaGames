@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "game": "Six Cats Under",
+  "source_url": "https://teambeanloop.itch.io/six-cats-under",
+  "loaded_iframe_url": "https://html-classic.itch.zone/html/2267583/index.html",
+  "research_date": "2026-10-21",
+  "started_at": "2026-10-21T07:42:52.345Z",
+  "main_attempt_stopped_at": "2026-10-21T08:09:02.641Z",
+  "last_observation_at": "2026-10-21T08:12:25.163Z",
+  "tester_kind": "browser-operating agent; not a human participant",
+  "method": "Visible UI mouse/keyboard inputs; no game source, private state, save editing or injected progression. Reading canvas bounding boxes only positioned visible inputs.",
+  "browser": {
+    "name": "Chromium",
+    "version": "151.0.7922.173",
+    "headless": true,
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "capture_modes": "Page screenshots 1280x900 and canvas-element screenshots 960x540; fullscreen canvas 1280x720 was used during remote recovery."
+  },
+  "transport": {
+    "tls_verification": true,
+    "method": "Task-scoped Playwright APIRequestContext proxy route with installed environment CA via NODE_EXTRA_CA_CERTS; no ignoreHTTPSerrors or trust-store changes.",
+    "limitations": "Proxy mediation, headless rendering, shared machine load and SDK/cookie/service-worker differences limit native/browser/device/performance conclusions."
+  },
+  "audio_listened_to": false,
+  "assisted": true,
+  "blind": false,
+  "assistance": [
+    {
+      "when": "Initial page extraction",
+      "kind": "Public itch.io comments accidentally included fan/remote and future ending hints."
+    },
+    {
+      "when": "Approximately 07:54 UTC onward",
+      "kind": "Deliberate public walkthrough/search snippets",
+      "urls": [
+        "https://itch.io/post/6637538",
+        "https://itch.io/post/4070381",
+        "https://itch.io/post/4614158"
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "partial_assisted",
+    "completed": false,
+    "ending_observed": false,
+    "visible_progress": [
+      "Clock displaced Geoffrey from perch",
+      "Bathroom/toilet-paper/flush sequence brought Geoffrey past Pumpkin",
+      "Opened window and lit lamp; later observed fallen yarn basket",
+      "Later observed torn chair and exposed remote after fan/outlet inputs"
+    ],
+    "stop": "TV channel remained unchanged after repeated visible remote-area inputs, longer presses, pointer recentering and fullscreen. Cause unresolved; not a confirmed game defect.",
+    "restart": "Reload -> Run game -> title -> Play -> opening premise observed. This restarted an unfinished run, not a completed ending.",
+    "browser_closed": true,
+    "closure_verification": "CDP port 9336 refused connection after Browser.close."
+  },
+  "input_records": {
+    "helper_log": "ui-log.jsonl",
+    "helper_log_entries": 77,
+    "supplement": "input-log-supplement.json",
+    "exhaustiveness": "All retained helper input/wait events plus reconstructed manual recovery events. Two early OCR stalls create an explicitly marked timing gap; no claim of exhaustive pointer-motion capture.",
+    "raw_ocr_published": false
+  },
+  "critic_read_after_play": {
+    "url": "https://jayisgames.com/review/weekday-escape-n257.php",
+    "publication_date": "2020-05-27",
+    "author": "chrpa",
+    "status": "Read, not gameplay evidence. Historical overview and reader walkthrough; ending/save claims not independently fully verified."
+  },
+  "followups": [
+    "Complete rescue and observe actual ending on a normal desktop browser",
+    "Resolve remote targeting or prerequisite using recorded state and visible UI",
+    "Observe post-ending restart separately",
+    "Run human studies before asserting motivation, fun or superiority"
+  ],
+  "captures": [
+    {
+      "path": "captures/01-arrival.png",
+      "sha256": "84393beae837ecf660933a157bb3de6aaa87967c9e1cb9d52f50e9c7d8293904",
+      "bytes": 50065,
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "path": "captures/02-game-start.png",
+      "sha256": "ba89c0b0a25cd67969aff15f243e4bf5282b3442fd1536d4d07e5ec6bb7b4d6d",
+      "bytes": 56192,
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "path": "captures/04-premise.png",
+      "sha256": "ecf2e7cd59201786458cd92a3e696000d682dee879cb733ded379e3b11b4feec",
+      "bytes": 37822,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "captures/05-room.png",
+      "sha256": "00ac9ed15e59a2ac84cdd110d4fe4aab9aeb2e13dce4e664a09f80d4111ccea4",
+      "bytes": 23626,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "captures/06-left-room.png",
+      "sha256": "f4dfaa2b42538562971fd808c704134fa490171e00249037d16a078a525fcdd2",
+      "bytes": 25117,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "captures/07-clock-consequence.png",
+      "sha256": "c3dfaed3a656db03afb0d40db1f4fd0e8e39dafe23039109f154c7ffef112a2f",
+      "bytes": 25215,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "captures/11-flush-consequence.png",
+      "sha256": "63e7812648390106e899eaaa39bea4bf2280a60cd873ceb37032cb9a8087a68d",
+      "bytes": 23908,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "captures/12-remote-revealed.png",
+      "sha256": "45d0eeb00be3b86285201528a74a61ae38f7019f981a35bd020b3f6125422982",
+      "bytes": 23134,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "captures/13-stalled-channel.png",
+      "sha256": "2d6dd59f6f433b2b26129e32084328c42d26de1a3860fd49aa733c1704b2a9e6",
+      "bytes": 35726,
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "path": "captures/15-reentry-title.png",
+      "sha256": "27a2a0cd5982205c16eac297be56616ed6efb39402e9efc203ed19c8d766000f",
+      "bytes": 11949,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "captures/17-restarted-room.png",
+      "sha256": "c5b4374aa4d79b2fd81c01c9fba4ba9ad65f8d54d3f29b00a9bbc50c90894fc9",
+      "bytes": 37683,
+      "width": 960,
+      "height": 540
+    }
+  ]
+}

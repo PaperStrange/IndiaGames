@@ -1,0 +1,61 @@
+{
+  "purpose": "Inputs outside the helper log, reconstructed from contemporaneous tool observations. Approximate timestamps are explicitly marked; this does not claim an exhaustive OS-level mouse-motion trace.",
+  "recorded_after_session": true,
+  "events": [
+    {
+      "at": "2026-10-21T07:42:52.345Z",
+      "action": "Navigate original itch.io page",
+      "observation": "Run game button; page text extraction also exposed public comments (assistance contamination).",
+      "capture": "01-arrival.png"
+    },
+    {
+      "at_approximate": "2026-10-21T07:43:17Z",
+      "action": "Click Run game button",
+      "observation": "Title screen visible",
+      "capture": "02-game-start.png"
+    },
+    {
+      "interval_approximate_utc": "07:44\u201307:45",
+      "action": "Click at viewport (654,478), then separate 5000ms wait",
+      "logging_gap": "Two initial OCR calls stalled after action and were stopped; exact event timestamps not retained."
+    },
+    {
+      "at_approximate": "2026-10-21T07:54Z",
+      "action": "Read public walkthrough/search snippets",
+      "url": "https://itch.io/post/6637538",
+      "observation": "Assistance gave bathroom, window/lamp, fan and remote sequence. Described later ending not observed."
+    },
+    {
+      "at_approximate": "2026-10-21T08:00:52Z",
+      "action": "Hover viewport (1008,276) 1000ms; press 600ms; wait 3000ms",
+      "observation": "No confidently identified new consequence."
+    },
+    {
+      "at_approximate": "2026-10-21T08:06:30Z",
+      "action": "Use visible Enter fullscreen control",
+      "observation": "Canvas changed from embedded 960x540 at (160,20) to 1280x720 at (0,90)."
+    },
+    {
+      "at_approximate": "2026-10-21T08:07:29Z",
+      "action": "Click viewport (734,783) twice with 600ms presses",
+      "observation": "TV channel did not visibly change."
+    },
+    {
+      "at_approximate": "2026-10-21T08:08:22Z",
+      "action": "Click viewport (790,785), 700ms press",
+      "observation": "TV channel did not visibly change."
+    }
+  ],
+  "curation": {
+    "retained_capture_count": 11,
+    "omitted_capture_names": [
+      "03-intro.png",
+      "08-fan-remote.png",
+      "09-fan-feedback.png",
+      "10-catnip-change.png",
+      "14-reentry-title.png",
+      "16-restart-intro.png"
+    ],
+    "reason": "Redundant/transition images or filenames that overstated the observed state. Original numbering retained. Omitted images and OCR temporarily backed up outside repository; repository contains input records, selected images and interpreted observations."
+  }
+}
