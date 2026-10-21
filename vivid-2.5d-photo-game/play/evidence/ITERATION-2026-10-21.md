@@ -32,3 +32,9 @@ Earlier runs are retained to explain verification changes, not counted as passin
 | 07-38-03-827Z | Ten observations completed, then a malformed future-save fixture expected a future-version message. The fixture omitted required profile/revision fields; corrected fixture verifies future preservation. |
 
 The original October 5 files at this folder's root are unchanged historical evidence for the earlier prototype; do not substitute their dates or results for this iteration.
+
+## Portable candidate 0.1.1
+
+Source `97695df223b7bf336f6b2c1fb87dce64d5ab5599` adds bundled Three.js/Vite license notices and updates the displayed version. Its 15-file build digest is `cb4fdcb325f0c05180e94d8a198aeab472f405b15dda61f01d228034c9f965f6`; total size **1,400,828 bytes (1.336 MiB)**. Every JavaScript, CSS and art byte is identical to 0.1.0. Only `index.html` and the added `third-party-notices.txt` differ. The older candidate remains untouched.
+
+[The complete 16-observation browser suite](iteration-2026-10-21T07-50-14-245Z/browser-observations.json) passed again on the 0.1.1 build, with zero uncaught errors and its exact inventory recorded. Prior 49 unit, 10 lifecycle and 9 renderer checks cover the identical runtime code; these are not repeated human sessions. Both versions remain unapproved pending real people and an independent reviewer.
