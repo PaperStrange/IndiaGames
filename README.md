@@ -2,11 +2,11 @@
 
 `master` is the staging branch for every game-demo release. Game development stays on the individual game branches; candidates arrive here for measured manual human playtests. Only an approved game/version is promoted to `main` as an official release.
 
-**Vivid 0.1.1 is staged for human playtests. There are no official releases.** The packet contains two stories, A Place for the Promise and The Unfinished Postcard. Its human observations and approval remain empty. The original Python battle prototype and its history are preserved.
+**Vivid 0.1.2 is staged for human playtests. There are no official releases.** The packet contains two stories, A Place for the Promise and The Unfinished Postcard. Its human observations and approval remain empty. The original Python battle prototype and its history are preserved.
 
-[Candidate packet](release-candidates/keepers-frame/0.1.1/) · [Candidate notes](release-candidates/keepers-frame/0.1.1/notes.md) · [Human-study preparation](https://github.com/PaperStrange/IndiaGames/tree/d4e3cb1/docs/gamejam/vivid-iteration-2026-10-21/human-study)
+[Candidate packet](release-candidates/keepers-frame/0.1.2/) · [Candidate notes](release-candidates/keepers-frame/0.1.2/notes.md) · [Human-study preparation](https://github.com/PaperStrange/IndiaGames/tree/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/human-study)
 
-To play this exact packet locally, run `python3 -m http.server 8114 --bind 127.0.0.1 --directory release-candidates/keepers-frame/0.1.1/build`, then open `http://127.0.0.1:8114/`. Master is not a public Pages deployment. The packet hash is `cb4fdcb325f0c05180e94d8a198aeab472f405b15dda61f01d228034c9f965f6`. The earlier 0.1.0 packet is preserved, unapproved; 0.1.1 adds bundled dependency license notices. The extended main release-policy change requires separate owner review before any promotion.
+To play this exact packet locally, run `python3 -m http.server 8114 --bind 127.0.0.1 --directory release-candidates/keepers-frame/0.1.2/build`, then open `http://127.0.0.1:8114/`. Master is not a public Pages deployment. The packet hash is `e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4`. Earlier 0.1.0 and 0.1.1 packets are preserved, unapproved. Version 0.1.1 added dependency notices; 0.1.2 gives story packs control of scene captions and accessible labels while preserving current wording and saves. [The main policy extension](https://github.com/PaperStrange/IndiaGames/pull/1) requires separate owner review before any promotion.
 
 ## Prepare a candidate
 
@@ -23,7 +23,7 @@ After the approved promotion merges, main’s workflow publishes its GitHub vers
 | Game | Source branch | Detailed to-do list on main |
 |---|---|---|
 | Small Hours / Memorable Moments | [memorable-moments-game](https://github.com/PaperStrange/IndiaGames/tree/memorable-moments-game) | [Small Hours](https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/small-hours/TODO.md) |
-| Keeper’s Frame / Vivid 2.5D Photo | [vivid-2.5d-photo-game](https://github.com/PaperStrange/IndiaGames/tree/vivid-2.5d-photo-game) | [Keeper’s Frame](https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/keepers-frame/TODO.md) |
+| Vivid / small worlds, lasting traces | [vivid-2.5d-photo-game](https://github.com/PaperStrange/IndiaGames/tree/vivid-2.5d-photo-game) | [Vivid](https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/keepers-frame/TODO.md) |
 | The Thirteenth Bell | [the-thirteenth-bell](https://github.com/PaperStrange/IndiaGames/tree/the-thirteenth-bell) | [Thirteenth Bell](https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/thirteenth-bell/TODO.md) |
 
 The [main project hub](https://github.com/PaperStrange/IndiaGames/tree/main) contains the dashboard and reusable design templates. Consult its [publication status](https://github.com/PaperStrange/IndiaGames/blob/main/docs/PUBLISHING.md) before assuming GitHub Pages is live.

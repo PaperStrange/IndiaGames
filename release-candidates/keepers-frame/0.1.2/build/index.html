@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#162e35" />
+    <meta
+      name="description"
+      content="Small worlds with something to remember. Two tactile, authored stories about the things we leave for one another."
+    />
+    <title>Vivid — Small worlds, lasting traces</title>
+    <script type="module" crossorigin src="./assets/index-A3TNo5e9.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CmRFnsuX.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the stories</a>
+    <header class="site-header">
+      <a
+        class="brand"
+        href="#"
+        id="home-link"
+        aria-label="Vivid story collection"
+        ><span class="brand-mark" aria-hidden="true">v.</span
+        ><span>VIVID<small>THE STORY COLLECTION</small></span></a
+      >
+      <div class="header-note">Small worlds. Lasting traces.</div>
+      <button
+        id="settings-toggle"
+        class="quiet-button"
+        aria-expanded="false"
+        aria-controls="settings"
+      >
+        Reading & motion
+      </button>
+    </header>
+    <aside
+      id="settings"
+      class="settings"
+      hidden
+      aria-label="Reading and motion settings"
+    >
+      <label><input type="checkbox" id="motion" /> Gentle movement</label
+      ><label><input type="checkbox" id="flat" /> Flat illustration mode</label>
+      <p>
+        No sound is needed. Every action works with a tap or keyboard. Progress
+        stays in this browser.
+      </p>
+    </aside>
+    <main id="main" tabindex="-1">
+      <section id="gallery" aria-labelledby="gallery-title">
+        <div class="collection-intro">
+          <p class="eyebrow">AN INTERACTIVE ANTHOLOGY · VOLUME 01</p>
+          <h1 id="gallery-title">Some things stay<br />with <em>you.</em></h1>
+          <p>
+            Look a little closer. Lend a hand.<br />Leave a small world
+            different from how you found it.
+          </p>
+        </div>
+        <div id="story-cards" class="story-cards"></div>
+        <div class="collection-footer">
+          <span>02 authored stories</span
+          ><span>No rush. No score. A place to return to.</span
+          ><span>Work in progress · 0.1.2</span>
+        </div>
+      </section>
+      <section id="experience" hidden aria-labelledby="story-title">
+        <div class="story-topline">
+          <button id="back" class="text-button">← All stories</button
+          ><span id="story-progress"></span
+          ><span id="render-label">Illustrated world</span>
+        </div>
+        <div class="experience-layout">
+          <div class="world-column">
+            <div id="world" class="world" aria-label="Story illustration">
+              <div id="flat-world" class="flat-world" aria-hidden="true">
+                <div class="world-halo"></div>
+                <div class="flat-frame">
+                  <div class="flat-picture">
+                    <img id="flat-art" alt="" />
+                    <div class="flat-harbour"></div>
+                    <div class="flat-light"></div>
+                  </div>
+                </div>
+                <div class="flat-workbench">
+                  <div class="flat-paper">
+                    <span class="paper-lines"></span>
+                    <div class="paper-sketch"></div>
+                  </div>
+                  <div class="flat-pencil"></div>
+                </div>
+                <div id="placed-object" class="placed-object"></div>
+              </div>
+              <div
+                id="three-world"
+                class="three-world"
+                aria-hidden="true"
+              ></div>
+              <div class="world-caption">
+                <span id="scene-caption"></span
+                ><span aria-hidden="true">✧</span>
+              </div>
+            </div>
+            <div class="world-under">
+              <p id="scene-description"></p>
+              <span id="motion-hint">Drag gently to look around</span>
+            </div>
+            <p id="storage-status" class="storage-status" role="status"></p>
+            <button id="recover" class="text-button" hidden>
+              Replace the incompatible save with this visit
+            </button>
+          </div>
+          <div class="story-panel">
+            <p class="eyebrow" id="story-kicker"></p>
+            <h1 id="story-title"></h1>
+            <div class="story-copy">
+              <p id="speaker" class="speaker"></p>
+              <p id="narration" aria-live="polite" aria-atomic="true"></p>
+            </div>
+            <aside id="inspection" class="inspection" hidden>
+              <h2 id="inspection-title"></h2>
+              <p id="inspection-text"></p>
+            </aside>
+            <div
+              id="actions"
+              class="actions"
+              aria-label="Available story actions"
+            ></div>
+            <p
+              id="interaction-status"
+              class="interaction-status"
+              role="status"
+            ></p>
+            <details id="transcript">
+              <summary>Read this visit’s transcript</summary>
+              <ol id="transcript-lines"></ol>
+            </details>
+            <div class="visit-footer">
+              <span id="choice-summary"></span
+              ><button id="reset" class="text-button">Forget this story</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <p id="load-error" role="alert" hidden></p>
+    </main>
+    <footer class="site-footer">
+      <span>VIVID / Stories you can touch</span
+      ><span>Made for a quiet moment.</span>
+    </footer>
+  </body>
+</html>

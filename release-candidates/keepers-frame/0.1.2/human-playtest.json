@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "game": "keepers-frame",
+  "version": "0.1.2",
+  "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+  "critical_bugs_open": null,
+  "story_reports": [
+    {
+      "story_id": "iona",
+      "release_profile": "iona-return-v1",
+      "condition": "remembered",
+      "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+      "critical_bugs_open": null,
+      "protocol": {
+        "sampling_rule": "first-six-predeclared-sessions",
+        "registered_at": null,
+        "session_ids": []
+      },
+      "sessions": []
+    },
+    {
+      "story_id": "mara",
+      "release_profile": "mara-object-v1",
+      "condition": "remembered",
+      "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+      "critical_bugs_open": null,
+      "protocol": {
+        "sampling_rule": "first-six-predeclared-sessions",
+        "registered_at": null,
+        "session_ids": []
+      },
+      "sessions": []
+    }
+  ],
+  "study_reports": [],
+  "human_approval": {
+    "approved": false,
+    "reviewer_is_human": false,
+    "reviewed_manual_evidence": false,
+    "reviewer_id": null,
+    "reviewed_at": null
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "generator": "art/build_models.py",
+  "blender_version": "4.3.2",
+  "models": [
+    {
+      "file": "frame.glb",
+      "bytes": 386964,
+      "source_triangles": 6888,
+      "mesh_objects": 14
+    },
+    {
+      "file": "workbench.glb",
+      "bytes": 307144,
+      "source_triangles": 5876,
+      "mesh_objects": 11
+    }
+  ],
+  "note": "Geometry/material counts, not physical-device FPS."
+}
