@@ -40,3 +40,7 @@ Confirm that `https://paperstrange.github.io/IndiaGames/` returns the project hu
 4. Confirm these settings with an actual promotion PR before calling the process enforced. Follow the [release policy](RELEASE-POLICY.md); review workflow/policy changes separately from game promotion.
 
 No additional game release is needed to activate the dashboard. Do not fill the empty registry or invent participant records to make the page appear complete.
+
+## 21 October implementation recheck
+
+After staging Vivid 0.1.1, a fresh `GET /repos/PaperStrange/IndiaGames/pages` still returned HTTP 403, “Resource not accessible by integration.” The dashboard source is maintained on main, but no live Pages deployment is claimed. A repository administrator must enable/configure Pages and verify the resulting URL using the steps above. Candidate source links are GitHub repository views, not public playable URLs.

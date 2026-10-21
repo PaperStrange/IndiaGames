@@ -4,16 +4,16 @@
 const REVIEW_ROOT = 'https://github.com/PaperStrange/IndiaGames/blob/e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee/docs/gamejam/iteration-2026-10-20/';
 const REPOSITORY_ROOT = 'https://github.com/PaperStrange/IndiaGames/tree/';
 const MAIN_ROOT = 'https://github.com/PaperStrange/IndiaGames/blob/main/';
-const LANE_NAMES = { memorable: 'Small Hours', vivid: 'The Keeper’s Frame', bell: 'The Thirteenth Bell', shared: 'Shared team' };
+const LANE_NAMES = { memorable: 'Small Hours', vivid: 'Vivid', bell: 'The Thirteenth Bell', shared: 'Shared team' };
 const STATUS_NAMES = { active: 'In progress', done: 'Done', not_selected: 'Not selected', proposed: 'Proposed', conditional: 'Conditional', waiting_for_records: 'Awaiting records', blocked_human: 'Needs human validation' };
 const TODO_PATHS = { memorable: 'docs/games/small-hours/TODO.md', vivid: 'docs/games/keepers-frame/TODO.md', bell: 'docs/games/thirteenth-bell/TODO.md' };
 const PROJECTS = [
   { lane: 'memorable', number: '01', label: 'Memorable Moments', tagline: 'Make a small shared memory.', decision: 'Does the existing shared action feel authored by both people? Observe real pairs before selecting a change.', state: 'Provisional · intake first', plan: 'memorable-next.md' },
-  { lane: 'vivid', number: '02', label: 'Vivid', tagline: 'A remembered choice, a reason to return.', decision: 'Can a remembered choice enable a distinct return action and create a meaningful reason to come back?', state: 'Proposed · settle the plan', plan: 'vivid-next.md' },
+  { lane: 'vivid', number: '02', label: 'Vivid', tagline: 'Two small worlds. Different ways to care.', decision: 'Do Iona’s remembered placement and Mara’s object-led reveal make their actions meaningful to real players?', state: 'Candidate 0.1.1 · human validation pending', plan: 'vivid-next.md' },
   { lane: 'bell', number: '03', label: 'The Thirteenth Bell', tagline: 'Learn the town. Change an outcome.', decision: 'Can witnessing a town event help the player plan an intervention that changes an outcome?', state: 'Provisional · intake first', plan: 'bell-next.md' }
 ];
 const GATE_COPY = {
-  'plan-settlement': { title: 'Settle the scope', note: 'Agree each lane’s plan before implementation.' },
+  'plan-settlement': { title: 'Track the settled scope', note: 'Vivid is implemented; the other lane plans remain provisional.' },
   'incoming-records': { title: 'Reconcile new records', note: 'Small Hours and Bell remain provisional.' },
   'competitor-coverage': { title: 'Close coverage gaps', note: 'Six titles and four broad families per demo.' },
   'human-validation': { title: 'Observe real people', note: 'Use diagnostic gates on actual participants.' }
@@ -82,7 +82,27 @@ function renderProjects() {
     body.append(node('h3', '', LANE_NAMES[project.lane]), node('p', 'project-tagline', project.tagline));
     const decision = node('div', 'project-decision');
     decision.append(node('p', 'eyebrow', 'Next decision'), node('p', '', project.decision));
-    body.append(decision, node('p', 'project-state', snapshot.incoming_evidence_reviewed ? 'Proposed · human validation open' : project.state));
+    body.append(decision, node('p', 'project-state', reviewed.implementation_started ? `Candidate ${reviewed.candidate_version} · human validation pending` : snapshot.incoming_evidence_reviewed ? 'Proposed · human validation open' : project.state));
+    if (reviewed.stories?.length) {
+      body.append(node('p', 'project-source', reviewed.stories.map(story => story.title).join(' · ')));
+      body.append(node('p', 'project-source', reviewed.qa_scope));
+      const implementation = node('a', 'reviewed-plan-link', 'Current implementation & run instructions ↗');
+      implementation.href = reviewed.implementation_readme;
+      body.append(implementation);
+      const decisionLink = node('a', 'reviewed-plan-link', 'Approved direction & product hypotheses ↗');
+      decisionLink.href = reviewed.current_decision_document;
+      body.append(decisionLink);
+      if (reviewed.candidate_manifest) {
+        const candidate = node('a', 'reviewed-plan-link', `Staged ${reviewed.candidate_version} packet · human review pending ↗`);
+        candidate.href = reviewed.candidate_manifest.replace('/blob/', '/tree/').replace('/candidate.json', '');
+        body.append(candidate);
+      }
+      if (reviewed.release_policy_review?.url) {
+        const policy = node('a', 'reviewed-plan-link', 'Separate release-policy review ↗');
+        policy.href = reviewed.release_policy_review.url;
+        body.append(policy);
+      }
+    }
     const links = node('div', 'project-links');
     const planLink = sourceLink('Detailed todo', TODO_PATHS[project.lane]);
     planLink.setAttribute('aria-label', `Read ${LANE_NAMES[project.lane]} detailed todo`);
@@ -154,7 +174,7 @@ function taskCard(task) {
   } else acceptance.textContent = task.acceptance_criteria;
   list.append(acceptance);
   const fields = [
-    ['Proposed owner role', `${task.owner_role}. ${task.assigned_person_or_agent ? `Assigned: ${task.assigned_person_or_agent}.` : 'No person or agent assigned.'}`],
+    ['Owner role', `${task.owner_role}. ${task.assigned_person_or_agent ? `Assigned: ${task.assigned_person_or_agent}.` : 'No person or agent assigned.'}`],
     ['Dependencies', task.depends_on.length ? task.depends_on.join(' · ') : 'No task dependencies listed.']
   ];
   fields.forEach(([label, value]) => list.append(node('dt', '', label), node('dd', '', value)));
@@ -166,7 +186,18 @@ function taskCard(task) {
   if (task.incoming_records_gate) flags.append(node('span', '', 'Incoming records gate'));
   if (task.human_participants_required) flags.append(node('span', '', 'Human participants required'));
   if (flags.childNodes.length) body.append(flags);
-  body.append(node('p', 'detail-note', task.completion_evidence.length ? `${task.completion_evidence.length} completion evidence entries recorded in the snapshot.` : 'No completion evidence recorded in this snapshot.'));
+  if (task.completion_note) body.append(node('p', 'detail-note', task.completion_note));
+  if (task.completion_evidence.length) {
+    const evidence = node('ul', 'criteria-list');
+    task.completion_evidence.forEach((url, index) => {
+      const item = node('li');
+      const link = node('a', '', `Evidence ${index + 1}: ${url.split('/').pop()}`);
+      link.href = url;
+      item.append(link);
+      evidence.append(item);
+    });
+    body.append(evidence);
+  } else body.append(node('p', 'detail-note', 'No completion evidence recorded in this snapshot.'));
   body.append(sourceLink('Open source plan', task.source_plan));
   details.append(summary, body);
   card.append(details);
@@ -192,7 +223,7 @@ function renderTasks() {
 
 
 function renderReleases() {
-  const names = { 'small-hours': 'Small Hours', 'keepers-frame': 'The Keeper’s Frame', 'thirteenth-bell': 'The Thirteenth Bell' };
+  const names = { 'small-hours': 'Small Hours', 'keepers-frame': 'Vivid', 'thirteenth-bell': 'The Thirteenth Bell' };
   if (!releaseRegistry.releases.length) {
     const empty = node('article', 'release-empty');
     empty.append(node('p', 'eyebrow', 'No official releases yet'), node('h3', '', 'The demos are still experiments.'), node('p', '', 'No candidate has a recorded, approved human playtest report in this registry. Explore the development branches above; official play links, versions and release notes will appear here after promotion.'));
@@ -268,9 +299,16 @@ function renderPlanningMetadata() {
     option.value = status;
     return option;
   }));
-  if (snapshot.incoming_evidence_reviewed === true) {
+  if (snapshot.implementation_started === true) {
+    el('snapshot-title').textContent = 'Development edition';
+    const vivid = manifest.sources.find(source => source.lane === 'vivid');
+    el('snapshot-note').textContent = `Vivid: two playable stories, candidate ${vivid.candidate_version}. Small Hours and Bell retain their earlier scope and QA. No official release.`;
+    el('incoming-label').textContent = 'Vivid implementation · 21 October';
+    el('incoming-copy').textContent = 'Iona and Mara now have different playable story structures. Candidate 0.1.1 is staged on master with passing automated checks. Six-title browser research is being reconciled; real human validation and separate release-policy review remain open.';
+    el('incoming-status').textContent = 'Human validation pending';
+  } else if (snapshot.incoming_evidence_reviewed === true) {
     el('incoming-label').textContent = 'Planning update · 21 October';
-    el('incoming-copy').textContent = 'New research incorporated into the proposed work. Human validation remains open. Competitor coverage reflects the 21 October intake; demo QA and the earlier image inventory retain their separate 20 October date.';
+    el('incoming-copy').textContent = 'Research is incorporated into proposed work. Human validation remains open; per-game source records retain their own QA dates.';
     el('incoming-status').textContent = 'Human validation open';
   }
 }
@@ -285,10 +323,13 @@ function validateData(tasks, sources) {
     if (!['deliverable', 'owner_role', 'priority'].every((field) => typeof task[field] === 'string') || !(typeof task.acceptance_criteria === 'string' || (Array.isArray(task.acceptance_criteria) && task.acceptance_criteria.every((criterion) => typeof criterion === 'string'))) || !Array.isArray(task.depends_on) || !task.depends_on.every((id) => typeof id === 'string') || !Array.isArray(task.completion_evidence)) throw new Error('Invalid task content');
     if (task.title !== undefined && typeof task.title !== 'string') throw new Error('Invalid task title');
     if (task.perspective !== undefined && typeof task.perspective !== 'string') throw new Error('Invalid task perspective');
+    if (!task.completion_evidence.every((url) => typeof url === 'string' && url.startsWith('https://github.com/PaperStrange/IndiaGames/'))) throw new Error('Invalid evidence link');
+    if (task.completion_note !== undefined && typeof task.completion_note !== 'string') throw new Error('Invalid task completion note');
   });
   PROJECTS.forEach((project) => {
     const source = sources.sources.find((item) => item.lane === project.lane);
     if (!source || !/^[0-9a-f]{40}$/.test(source.reviewed_head)) throw new Error('Invalid reviewed source');
+    if (source.implementation_started && (!Array.isArray(source.stories) || !source.stories.length || ![source.implementation_readme, source.current_decision_document].every((url) => typeof url === 'string' && url.startsWith('https://github.com/PaperStrange/IndiaGames/')))) throw new Error('Invalid implemented story metadata');
   });
   if (tasks.gates && !tasks.gates.every((gate) => Object.hasOwn(GATE_COPY, gate.id) && typeof gate.requirement === 'string')) throw new Error('Invalid gate content');
   ['core_gameplay_evidence_assignments', 'required_assignments', 'snapshot_unique_sha256_count', 'human_participant_rows'].forEach((key) => {

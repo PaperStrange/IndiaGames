@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "review_date_utc": "2026-10-20",
+  "review_date_utc": "2026-10-21",
   "repository": "https://github.com/PaperStrange/IndiaGames",
-  "coordination_branch": "gamejam-next-iteration-2026-10-20",
-  "coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
-  "implementation_started": false,
+  "coordination_branch": "main",
+  "coordination_base": "ba756cb2876834d4ecbf3cb055381db5ca6660ec",
+  "implementation_started": true,
   "incoming_evidence": {
     "status": "reviewed_records_incorporated_into_proposed_plans",
     "lanes": [
@@ -13,7 +13,7 @@
     ],
     "automatic_polling_scheduled": false,
     "limitations": [
-      "No new human sessions or gameplay implementation",
+      "Small Hours and Bell intake changed neither runtime and created no human sessions; Vivid implementation is tracked separately below.",
       "Rogue Fable IV roster promotion remains a recorded decision, not automatically counted"
     ]
   },
@@ -36,19 +36,56 @@
     },
     {
       "lane": "vivid",
-      "name": "The Keeper's Frame",
+      "name": "Vivid — small worlds, lasting traces",
       "branch": "vivid-2.5d-photo-game",
-      "reviewed_head": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
-      "prior_manifest_source": "79416057a47dec30c00d020f7d8240e5aba8b162",
+      "reviewed_head": "97695df223b7bf336f6b2c1fb87dce64d5ab5599",
+      "prior_manifest_source": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
       "runtime_scope": [
         "vivid-2.5d-photo-game/play"
       ],
-      "runtime_tree": "a74ec4f57463a21b8eb024fa4c843191a2588f7d",
-      "runtime_diff_empty": true,
-      "qa_source_commit": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
-      "qa_date_utc": "2026-10-20",
+      "runtime_tree": "489a4d0e77adbf203f8d457ee45e0f1f28d1eafe",
+      "runtime_diff_empty": false,
+      "qa_source_commit": "97695df223b7bf336f6b2c1fb87dce64d5ab5599",
+      "qa_date_utc": "2026-10-21",
       "latest_runtime_unchanged_from_qa": true,
-      "planning_document": "docs/games/keepers-frame/TODO.md"
+      "planning_document": "docs/games/keepers-frame/TODO.md",
+      "implementation_started": true,
+      "implementation_status": "two_playable_stories_candidate",
+      "candidate_version": "0.1.1",
+      "candidate_status": "staged_awaiting_human_validation",
+      "candidate_master_commit": "f0ef54626eaadb32892b0f748ff245515fa54128",
+      "official_release": false,
+      "human_participant_rows": 0,
+      "qa_scope": "49 unit tests, 16 browser scenarios on 0.1.1, 10 input/lifecycle checks and 9 art checks passed; physical-device and human validation pending.",
+      "qa_status": "automated_pass_human_pending",
+      "current_decision_document": "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md",
+      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/README.md",
+      "qa_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T07-50-14-245Z/browser-observations.json"
+      ],
+      "candidate_build_sha256": "cb4fdcb325f0c05180e94d8a198aeab472f405b15dda61f01d228034c9f965f6",
+      "candidate_build_bytes": 1400828,
+      "candidate_file_count": 15,
+      "gameplay_byte_identical_to_candidate": "0.1.0",
+      "stories": [
+        {
+          "id": "iona",
+          "title": "A Place for the Promise",
+          "release_profile": "iona-return-v1"
+        },
+        {
+          "id": "mara",
+          "title": "The Unfinished Postcard",
+          "release_profile": "mara-object-v1"
+        }
+      ],
+      "qa_evidence_commit": "a0e11d9bd35859878f5e1dc267d0c6455f354914",
+      "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/candidate.json",
+      "release_policy_review": {
+        "status": "pending",
+        "url": "https://github.com/PaperStrange/IndiaGames/pull/1"
+      }
     },
     {
       "lane": "bell",
@@ -96,8 +133,9 @@
       },
       "vivid": {
         "required": 6,
-        "core_gameplay_evidence": 2,
-        "qualification": "two partials; four source/critic-only"
+        "core_gameplay_evidence": null,
+        "qualification": "Approved browser roster; fresh journey and endpoint reconciliation in progress. No current completed-coverage count is claimed.",
+        "status": "active_reconciliation"
       },
       "bell": {
         "required": 6,
@@ -106,15 +144,83 @@
       }
     },
     "snapshot_inventory_as_of": "2026-10-20",
-    "snapshot_inventory_scope": "Original October15 replay package only; does not count newly uploaded evidence"
+    "snapshot_inventory_scope": "Original October15 replay package only; does not count newly uploaded evidence",
+    "historical_original_roster_coverage": {
+      "as_of": "2026-10-21",
+      "core_gameplay_evidence_assignments": 5,
+      "required_assignments": 18,
+      "coverage_by_lane": {
+        "memorable": {
+          "required": 6,
+          "core_gameplay_evidence": 0,
+          "qualification": "one lobby-only, one menu-only/tooling-blocked, four source-only/unplayed"
+        },
+        "vivid": {
+          "required": 6,
+          "core_gameplay_evidence": 2,
+          "qualification": "two partials; four source/critic-only"
+        },
+        "bell": {
+          "required": 6,
+          "core_gameplay_evidence": 3,
+          "qualification": "Detective original recovered, Seedship terminal run, A Dark Room partial; Rogue Fable IV candidate substitution not included"
+        }
+      }
+    },
+    "aggregate_count_scope": "historical_original_roster_baseline",
+    "vivid_browser_iteration": {
+      "status": "active_reconciliation",
+      "required_titles": 6,
+      "minimum_families": 4,
+      "recorded_human_participants": 0,
+      "synthesis_complete": false,
+      "titles": [
+        {
+          "title": "Sort the Court!",
+          "edition": "Poki updated browser edition",
+          "family": "decision and management"
+        },
+        {
+          "title": "Six Cats Under",
+          "edition": "original HTML5",
+          "family": "indirect puzzle"
+        },
+        {
+          "title": "Adventures With Anxiety",
+          "edition": "browser edition",
+          "family": "interactive narrative"
+        },
+        {
+          "title": "We Become What We Behold",
+          "edition": "browser edition",
+          "family": "interactive narrative"
+        },
+        {
+          "title": "Townscaper",
+          "edition": "browser demo, not the full native game",
+          "family": "creative construction"
+        },
+        {
+          "title": "A Dance of Fire and Ice",
+          "edition": "browser demo, not the full native game",
+          "family": "rhythm action"
+        }
+      ],
+      "preserved_native_gaps": [
+        "Event[0]",
+        "TOEM",
+        "Townscaper full native edition",
+        "Rhythm Doctor"
+      ],
+      "note": "Do not pool different editions or count criticism/access screens as gameplay. Final research URLs and counts are added after coordinator reconciliation."
+    }
   },
   "review_methods": [
-    "Source and document review across three pinned branches",
-    "Existing automated demo suites run from isolated git archive snapshots",
-    "Fresh selected demo captures visually inspected by lane reviewers",
-    "All 33 uploaded competitor snapshots inspected by coordinator in contact sheets",
-    "No new competitor gameplay, participant sessions or gameplay implementation",
-    "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
+    "Vivid implementation source and contract review at pinned 97695df checkpoint; gameplay artifacts match the earlier verified candidate.",
+    "49 unit tests, 16 complete browser scenarios on candidate 0.1.1, 10 input/lifecycle checks and 9 renderer/art checks passed; records are pinned separately from human evidence.",
+    "Vivid comparator agents are collecting browser journeys; edition-specific synthesis and coverage counts remain pending.",
+    "Small Hours and Bell retain their prior source/QA metadata. No new implementation or human sessions are claimed for either lane.",
+    "No real human participant, physical-phone FPS or human screen-reader result exists for the Vivid candidate."
   ],
   "environment": {
     "node": "v24.19.0",
@@ -128,5 +234,16 @@
   "plan_date_utc": "2026-10-21",
   "evidence_intake_date_utc": "2026-10-21",
   "publication_branch": "main",
-  "historical_review_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee"
+  "historical_review_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee",
+  "dashboard_date_utc": "2026-10-21",
+  "historical_coordination_branch": "gamejam-next-iteration-2026-10-20",
+  "historical_coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
+  "historical_review_methods": [
+    "Source and document review across three pinned branches",
+    "Existing automated demo suites run from isolated git archive snapshots",
+    "Fresh selected demo captures visually inspected by lane reviewers",
+    "All 33 uploaded competitor snapshots inspected by coordinator in contact sheets",
+    "No new competitor gameplay, participant sessions or gameplay implementation",
+    "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
+  ]
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the three authored task lists and rebuild the static dashboard data."""
+"""Validate authored task lists and rebuild a per-lane development snapshot."""
 import json
 from pathlib import Path
 
@@ -15,6 +15,8 @@ REQUIRED = {'id', 'lane', 'perspective', 'priority', 'status', 'owner_role', 'ti
             'human_participants_required', 'completion_evidence'}
 
 def build():
+    manifest = json.loads((ROOT / 'data' / 'source-manifest.json').read_text())
+    sources = {source['lane']: source for source in manifest['sources']}
     tasks = []
     for folder, (lane, prefix) in LANES.items():
         path = ROOT / 'docs' / 'games' / folder / 'tasks.json'
@@ -33,6 +35,8 @@ def build():
                 raise ValueError(f'{task["id"]}: acceptance criteria must be a nonempty array')
             if not isinstance(task['depends_on'], list):
                 raise ValueError(f'{task["id"]}: dependencies must be an array')
+            if not isinstance(task['completion_evidence'], list) or not all(isinstance(item, str) and item.strip() for item in task['completion_evidence']):
+                raise ValueError(f'{task["id"]}: evidence must be an array of nonempty strings')
             if task['status'] == 'done' and not task['completion_evidence']:
                 raise ValueError(f'{task["id"]}: completion needs evidence')
             plan = ROOT / task['source_plan']
@@ -59,12 +63,20 @@ def build():
         visit(task_id)
     result = {
         'schema_version': 2,
-        'type': 'versioned planning snapshot; role owners are proposed, not external assignments',
-        'snapshot_date_utc': '2026-10-21',
-        'plan_date_utc': '2026-10-21',
-        'demo_qa_date_utc': '2026-10-20',
+        'type': 'versioned development snapshot; coding-agent assignments are explicit, human staffing is not implied',
+        'snapshot_date_utc': manifest.get('dashboard_date_utc', manifest['review_date_utc']),
+        'plan_date_utc': manifest['plan_date_utc'],
+        'demo_qa_date_utc_by_lane': {lane: source['qa_date_utc'] for lane, source in sources.items()},
         'incoming_evidence_reviewed': True,
-        'implementation_started': False,
+        'implementation_started': any(source.get('implementation_started', False) for source in sources.values()),
+        'lane_status': {lane: {
+            'implementation_started': source.get('implementation_started', False),
+            'qa_date_utc': source['qa_date_utc'],
+            'qa_status': source.get('qa_status', 'historical_review'),
+            'candidate_version': source.get('candidate_version'),
+            'candidate_status': source.get('candidate_status'),
+            'official_release': source.get('official_release', False),
+        } for lane, source in sources.items()},
         'source_manifest': 'source-manifest.json',
         'status_definitions': {
             'proposed': 'Planned; not started.',
@@ -75,10 +87,10 @@ def build():
             'not_selected': 'Explicitly closed by a recorded design decision.'
         },
         'gates': [
-            {'id': 'plan-settlement', 'status': 'open', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'Settle each bounded game experiment before implementation or new competitor play.'},
+            {'id': 'plan-settlement', 'status': 'partially_settled', 'applies_to': ['memorable', 'vivid', 'bell'],
+             'requirement': 'Vivid’s two-story plan is approved and implemented. Small Hours and Bell retain their proposed/conditional plans; their implementation has not started in this iteration.'},
             {'id': 'competitor-coverage', 'status': 'open', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'Retain six distinct titles and four broad families before final comparative synthesis; label partials and explicitly decide substitutions.'},
+             'requirement': 'Keep six distinct titles and at least four broad families per lane. Vivid’s approved browser roster is being reconciled; label every partial/access block and retain the original native gaps. No lane is declared complete here.'},
             {'id': 'human-validation', 'status': 'not_run', 'applies_to': ['memorable', 'vivid', 'bell'],
              'requirement': 'Observe actual people using the per-game protocol; automated checks and emotional agent prose are not human evidence.'}
         ],

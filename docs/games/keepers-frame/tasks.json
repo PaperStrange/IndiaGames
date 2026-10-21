@@ -3,59 +3,63 @@
     "id": "KF-01",
     "perspective": "Game design",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Product/design lead",
-    "title": "Choose and record the one-minute return experiment",
-    "deliverable": "A one-page decision brief selecting, revising or declining the remembered-action experiment before any game source change.",
+    "title": "Record the approved two-story direction and product hypotheses",
+    "deliverable": "An accepted, evidence-bounded decision for the Vivid anthology and Iona remembered/neutral comparison.",
     "acceptance_criteria": [
-      "Answer all three product questions as hypotheses: why play, why choose this browser experience, and what distinctive action/consequence/payoff it may offer.",
-      "Compare the proposed remembered-action return with a neutral routine task and a no-new-return option; state the strongest substitute and the failure that would make us stop.",
-      "Acknowledge 2/6 required competitors with partial gameplay and zero human tests; explicitly record the unresolved research gaps or time-boxed pilot rationale.",
-      "Record decision owner, date, intended audience/occasion, scope, and experiment decision before releasing KF-08 or KF-09."
+      "State why someone might play, why choose this browser experience, and which action/consequence may distinguish it; record falsifiers rather than market-uniqueness claims.",
+      "Implement the approved multi-day scope: tactile 3D frame plus painted portrait, a full Iona story and a short object-led Mara story.",
+      "Keep the six-competitor research ledger and all human outcomes open; approval to implement is not proof of audience preference.",
+      "Keep the technical game ID keepers-frame and one Vivid branch; use explicit story packs rather than creating extra game lanes."
     ],
-    "depends_on": [
-      "KF-02"
-    ],
+    "depends_on": [],
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "research_product"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md"
+    ],
+    "focus": "research_product",
+    "completion_note": "User-approved direction recorded and implemented; research hypotheses remain unvalidated.",
+    "assigned_person_or_agent": "Codex coordinating agent"
   },
   {
     "id": "KF-02",
     "perspective": "Research",
     "priority": "P0",
-    "status": "proposed",
+    "status": "active",
     "owner_role": "Research lead",
-    "title": "Maintain the six-competitor gap ledger",
-    "deliverable": "An edition-specific V1–V6 comparison ledger and a proposed future research queue, with source links and exact observed endpoints.",
+    "title": "Reconcile six approved browser competitors and their actual endpoints",
+    "deliverable": "An edition-specific journey ledger for the six approved browser comparators, with capture links, failures and unresolved endpoint gaps.",
     "acceptance_criteria": [
-      "Keep Sort the Court! Poki and older itch sessions separate; retain V1 and V2 as partial, with Six Cats' tool-imposed stopping explicitly recorded.",
-      "Keep Event[0], TOEM, Townscaper and Rhythm Doctor source-only/unplayed; native access, purchases, installation and new gameplay are deferred in this planning pass.",
-      "For every slot state the competitive role, family, action/consequence question, missing journey stages and what evidence could change the product decision.",
-      "Retain six distinct titles, at least four broad families, at least two outside narrative/deduction, no more than two per family and at most one occasion comparator; any future reserve promotion needs a reason and a recalculated roster."
+      "Use Sort the Court! Poki edition, Six Cats Under HTML5, Adventures With Anxiety, We Become What We Behold, Townscaper browser demo and A Dance of Fire and Ice browser demo.",
+      "Record entry, goals, inputs, feedback, mistakes, recovery, observed stopping point and re-entry where actually reached; partial or blocked access is not completion.",
+      "Keep Event[0], TOEM, full native Townscaper and Rhythm Doctor as unplayed native gaps. Do not pool older editions, screenshots, criticism or agent interpretation into fresh play results.",
+      "Retain at least four broad families and two titles outside narrative/deduction. Reconcile the complete records before updating comparative counts or conclusions."
     ],
     "depends_on": [],
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
     "completion_evidence": [],
-    "focus": "research_competitors"
+    "focus": "research_competitors",
+    "completion_note": "Approved roster replaces inaccessible native slots for this iteration; journey reconciliation is still in progress.",
+    "assigned_person_or_agent": "Codex research agents and coordinator"
   },
   {
     "id": "KF-03",
     "perspective": "Game design",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Systems designer",
-    "title": "Specify the return state and action contract",
-    "deliverable": "A rules table and short player journey for the first rescue, both remembered-action returns and neutral control.",
+    "title": "Implement the rescue, recollection and remembered return contract",
+    "deliverable": "Pure story transitions for first rescue, The Worn Notch, both Iona return placements and the neutral routine.",
     "acceptance_criteria": [
-      "Cover first/return visit, private/archive choice, prior peek/no peek, invitation, accepted action, visible result and stopping state.",
-      "Private history invites placing the folded letter in a sheltered recess; archive history invites pinning an approved dedication on the harbour-facing edge.",
-      "Each branch offers one bounded placement with comparable lean/place interactions and care; both are legitimate outcomes and neither repeats the unchanged ferry puzzle.",
-      "Retain evidence-gated first rescue, external clue log, safe retries and no timer; dialogue never grants an invalid mechanical success."
+      "Preserve evidence-gated ferry signalling, visible clues, safe wrong-answer retries and no countdown.",
+      "After rescue, brace the shade and fit a wedge in an explicitly earlier watch; each accepted action changes the scene before returning to the present.",
+      "Private history offers a folded letter in the recess; public history offers an approved dedication on the harbour-facing edge. Completed saves open the return without restarting rescue.",
+      "Neutral profile uses the same rescue/recollection and a comparable cloth placement without prior-choice reference; invalid or repeated placement cannot complete a wrong state."
     ],
     "depends_on": [
       "KF-01"
@@ -63,69 +67,88 @@
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "core_gameplay"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/iona/index.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/stories.test.js"
+    ],
+    "focus": "core_gameplay",
+    "completion_note": "Rules and state scenarios implemented; human understanding is not yet measured.",
+    "assigned_person_or_agent": "Codex story agent"
   },
   {
     "id": "KF-04",
     "perspective": "Narrative",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Narrative designer",
-    "title": "Write the invitation, acknowledgment and quiet ending",
-    "deliverable": "A reviewed script for both return branches, prior-intrusion variants, neutral control and end/return copy.",
+    "title": "Author the two histories, consent and action-led recollection",
+    "deliverable": "Structured fiction for Iona, truthful legacy continuity, balanced private/public routes and a nonjudgmental Mara ending.",
     "acceptance_criteria": [
-      "Each experimental acknowledgment names the player's specific earlier choice and the action now offered; no generic praise substitutes for causality.",
-      "Both private and public routes receive equivalent warmth and narrative care; public sharing is explicitly permitted by Iona.",
-      "Prior uninvited reading is acknowledged truthfully without erasing it through later consent or making privacy the only morally rewarded ending.",
-      "The control omits prior-choice reference while matching interaction count and approximate length; copy promises authored interaction rather than free AI chat or uploaded-photo animation."
+      "Tie narration to accepted actions and concrete objects, with a readable transcript and no mandatory audio or animation.",
+      "Give privacy and public recognition equal warmth. New public sharing approves a dedication, not silent disclosure of the private letter.",
+      "Acknowledge an earlier peek on both routes. Preserve the fact that a legacy v1 archive choice published the letter.",
+      "Let writers replace cast names, pronouns, descriptions and portraits through pack content; keep those choices out of the shared engine."
     ],
     "depends_on": [
-      "KF-03"
+      "KF-03",
+      "KF-20"
     ],
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "narrative"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/iona/content.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/mara/content.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/fixtures/recast.js"
+    ],
+    "focus": "narrative",
+    "completion_note": "Authoring and continuity checks are present; emotional effect remains a human question.",
+    "assigned_person_or_agent": "Codex story agent"
   },
   {
     "id": "KF-05",
     "perspective": "Art",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Visual/interaction artist",
-    "title": "Storyboard the object, invitation and visible consequence",
-    "deliverable": "An annotated before/invitation/placement/after board for both returns using the existing portrait and frame.",
+    "title": "Build original frame, lightbox and persistent object art",
+    "deliverable": "Reproducible Blender props and painted SVG layers for both stories, with state-driven Three.js and flat presentation.",
     "acceptance_criteria": [
-      "Show an offered gesture, folded letter/recess and approved dedication/harbour edge as clearly distinguishable states.",
-      "A reviewer can identify the changed object and its location without the ending paragraph; any such review remains design review, not human-test evidence.",
-      "Preserve the existing visual language and first-visit clue concealment; avoid adding portraits, decorative animation systems or a second full scene.",
-      "Include narrow-screen composition and static reduced-motion frames; pair object change with readable text so color or motion alone carries no essential state."
+      "Show the notch, wedge, sheltered letter, dedication at the frame edge and neutral cloth on its peg as distinct physical states.",
+      "Give Mara a separate workbench/lightbox composition whose drawing layers visibly align; no central talking portrait is required.",
+      "Keep editable originals, exported assets and generation instructions separate. Use local assets and no paid-generation dependency.",
+      "Cap DPR at 1.5 and remain below 100,000 active triangles; keep human appeal and physical-phone performance explicitly unverified."
     ],
     "depends_on": [
       "KF-03",
-      "KF-04"
+      "KF-04",
+      "KF-21"
     ],
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "art"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/art/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/art/build_models.py",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/art/verification-2026-10-21/renderer-verification.json"
+    ],
+    "focus": "art",
+    "completion_note": "Nine automated renderer/art checks passed. This does not establish art appeal or physical-device FPS.",
+    "assigned_person_or_agent": "Codex art/rendering agent"
   },
   {
     "id": "KF-06",
     "perspective": "UX & accessibility",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "UX/accessibility designer",
-    "title": "Specify equivalent touch, keyboard and static interaction",
-    "deliverable": "An interaction specification covering discoverability, focus, labels, target sizes, announcements and mobile composition.",
+    "title": "Provide equivalent pointer, keyboard and static interactions",
+    "deliverable": "Shared inspect, choose, place and adjust controls with accessible text, focus behavior and optional 3D motion.",
     "acceptance_criteria": [
-      "The same meaningful action is available through visible touch controls and keyboard; hover and animation are optional.",
-      "Keep the changed object, invitation and action response visible together at 390×844 where practicable; specify any necessary scrolling instead of hiding consequences below the portrait.",
-      "Describe focus after start, placement, ending and reset; distinguish accessible names, state text and live announcements without duplicating confusing speech.",
-      "Define manual screen-reader and real-phone checks separately from Chromium emulation; unperformed checks remain unknown rather than inferred passes."
+      "Every drag has select-then-tap and keyboard equivalents; sketch adjustment supports a slider and step controls.",
+      "Treat camera movement as preview only, clamp tilt to ±12 degrees, and let explicit view controls select discoverable evidence.",
+      "Honor OS and manual reduced motion. Keep a complete flat mode for WebGL, asset and context failures without resetting progress.",
+      "Support cancellation and repeated input without losing an object. Keep real screen-reader and physical-phone checks on KF-23."
     ],
     "depends_on": [
       "KF-03",
@@ -134,45 +157,57 @@
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "ux_accessibility"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/app.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/renderers/world.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/app-edge-browser.mjs"
+    ],
+    "focus": "ux_accessibility",
+    "completion_note": "Controls and failure paths implemented; integrated browser evidence is finalized by KF-10.",
+    "assigned_person_or_agent": "Codex frontend/runtime agents"
   },
   {
     "id": "KF-07",
     "perspective": "Engineering",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Rules/persistence engineer",
-    "title": "Design minimal memory and migration behavior",
-    "deliverable": "A versioned local-memory schema, migration table and failure/recovery matrix for the approved return.",
+    "title": "Implement per-story saves and explicit recovery",
+    "deliverable": "Versioned local semantic checkpoints isolated by story and study profile, with legacy import and preserved incompatible saves.",
     "acceptance_criteria": [
-      "Preserve private/archive and prior-peek history; define whether return placement is pending or performed and how both display after reload.",
-      "Specify deterministic migration from every valid v1 memory, malformed/unknown versions, absent data and bounded visit counts.",
-      "Blocked storage never prevents play; text accurately distinguishes open-page memory from reload persistence, and forgetting removes all experiment-related local state.",
-      "Assign one schema owner and keep experimental condition assignment explicit and reproducible without introducing accounts, backend analytics or additional personal data."
+      "Store choices, recollection checkpoints and placement; do not store camera pixels, animation coordinates or transient inspection state.",
+      "Import keepers-frame:v1 only into Iona remembered, preserving actual archive disclosure and prior peek history.",
+      "Leave malformed or future records untouched until explicit recovery/reset. Blocked storage keeps the current session playable with an honest notice.",
+      "Forget only the active story/profile; prevent forgotten legacy memory from silently reappearing. Dispose sessions so stale callbacks cannot save into another story."
     ],
     "depends_on": [
-      "KF-03"
+      "KF-03",
+      "KF-20"
     ],
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "engineering_persistence"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/runtime/session.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/runtime.test.js"
+    ],
+    "focus": "engineering_persistence",
+    "completion_note": "Versioning, isolation, blocked storage and explicit recovery scenarios are implemented and covered by unit tests.",
+    "assigned_person_or_agent": "Codex runtime agent"
   },
   {
     "id": "KF-08",
     "perspective": "Engineering",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Rules/persistence engineer",
-    "title": "Implement the approved remembered-action return",
-    "deliverable": "A later, separately authorized game change implementing the approved state table, local persistence and neutral condition.",
+    "title": "Complete Iona’s playable remembered-action story",
+    "deliverable": "A full Iona story with the original rescue, action-led recollection, two legitimate choices and persistent return objects.",
     "acceptance_criteria": [
-      "Start only after KF-01 records the experiment decision and later source work is authorized; this planning task implements nothing.",
-      "Rules accept only the invited action for the active return branch; invalid actions cannot complete or corrupt memory.",
-      "Placement survives a real reload when storage works; legacy, malformed and blocked-storage cases follow KF-07, and forgetting restores a fresh encounter.",
-      "Meaningful state-transition tests cover private/archive × peek/no peek, repeated input, replay, migration and control; preserve the first rescue and safe recovery."
+      "Preserve the approved rescue and complete the recollection before the new choice.",
+      "Offer only the correct placement for the saved choice/profile, and display it on later visits.",
+      "Cover private/archive × peek/no peek, neutral control, repeats, checkpoint reload and truthful legacy migration.",
+      "Keep optional legacy access to the new recollection without forcing a new emergency or overwriting the previous ending."
     ],
     "depends_on": [
       "KF-01",
@@ -185,48 +220,61 @@
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "engineering_core"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/iona/index.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/stories.test.js"
+    ],
+    "focus": "engineering_core",
+    "completion_note": "Implemented on the game branch; human causality and enjoyment remain pending.",
+    "assigned_person_or_agent": "Codex story/runtime agents"
   },
   {
     "id": "KF-09",
     "perspective": "Engineering",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Frontend integrator",
-    "title": "Integrate art, controls and return feedback",
-    "deliverable": "A later integrated browser candidate joining approved assets, script and rules with a reproducible condition selector.",
+    "title": "Integrate the story collection, art and shared controls",
+    "deliverable": "A browser collection that loads either story lazily and supports story switching, resumption and flat fallback.",
     "acceptance_criteria": [
-      "Renderer follows rules state; source ownership and the schema contract are reconciled before integration.",
-      "Both return branches show the correct object, invitation, placement and acknowledgment without changing the first-rescue clues.",
-      "Keyboard, touch and reduced-motion paths match the specification; stale dialogue or a delayed visual update cannot contradict the saved state.",
-      "The neutral return has comparable length, controls and art quality; condition assignment is recorded and cannot accidentally change during a session."
+      "Load story packs through one validated contract; keep story-name conditionals out of shared input and renderer behavior.",
+      "Render the same semantic state in 3D and flat modes. Dispose listeners, capture, pending loads and GPU resources on switching.",
+      "Keep failed story loading recoverable from the collection; guard late async results from restoring a previous scene.",
+      "Expose the neutral study profile explicitly and isolate it from remembered progress; do not silently randomize conditions."
     ],
     "depends_on": [
       "KF-04",
       "KF-05",
       "KF-06",
-      "KF-08"
+      "KF-08",
+      "KF-20",
+      "KF-21"
     ],
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "engineering_integration"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/app.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/runtime/validate.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/renderers/world.js"
+    ],
+    "focus": "engineering_integration",
+    "completion_note": "Both stories are playable; final frozen-build browser coverage remains KF-10.",
+    "assigned_person_or_agent": "Codex coordinating and runtime agents"
   },
   {
     "id": "KF-10",
     "perspective": "QA",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "QA lead",
-    "title": "Verify the complete journey and evidence provenance",
-    "deliverable": "A dated functional/visual verification record for the exact integrated revision, including unresolved coverage limits.",
+    "title": "Finish frozen-build journeys and verification provenance",
+    "deliverable": "A dated functional/visual record for the exact candidate, including browser failures, edge cases and nested-path delivery.",
     "acceptance_criteria": [
-      "Exercise first rescue, a natural wrong signal/retry, both final choices, all peek histories, immediate return, real reload, repeated placement and forget through visible controls.",
-      "Run the rule suite and browser checks; preserve the historical baseline of 8 rule tests and 13 recorded observations as prior-review evidence, and explain any later test changes.",
-      "Check desktop, 390×844 touch emulation, keyboard/reduced motion and blocked storage; attach error listeners to every tested context and label physical-phone/screen-reader results separately.",
-      "Every record includes actual run date, build revision, device/browser, actions and outcomes; remove or clearly override the browser runner's historical hardcoded date in future evidence."
+      "Exercise both Iona choices and peek histories, natural wrong signals, recollection reload, repeated/cancelled placement, neutral isolation and actual leave/reload behavior.",
+      "Complete Mara through visible controls in varied inspection orders; test alignment limits and ungraded ending interpretation.",
+      "Record desktop, touch emulation, keyboard, reduced motion, forced flat, missing assets, context loss, future/corrupt saves and blocked storage; collect errors in every context.",
+      "Retain historical 8-rule/13-observation evidence separately. Pin new run date, source SHA, build hash and screenshots; distinguish automated checks from physical phones and human screen-reader use."
     ],
     "depends_on": [
       "KF-09"
@@ -234,32 +282,46 @@
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "qa"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T07-50-14-245Z/browser-observations.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/edge-2026-10-21/report.json"
+    ],
+    "focus": "qa",
+    "completion_note": "49 unit tests, 16 full browser scenarios on 0.1.1, 10 input/lifecycle checks and 9 art checks passed. Physical-device and human evidence remain separate blockers.",
+    "assigned_person_or_agent": "Codex coordinating and QA agents"
   },
   {
     "id": "KF-11",
     "perspective": "Research",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Playtest/research lead",
-    "title": "Prepare a fair human comparison and recording sheet",
-    "deliverable": "A session protocol, consent wording, neutral questions, condition assignment plan and empty participant sheet.",
+    "title": "Prepare recruitment and independent per-story human protocols",
+    "deliverable": "Recruitment, consent, facilitation, observation and device/recall documents with empty human records.",
     "acceptance_criteria": [
-      "Target six fresh humans for enacted memory and, if feasible, six different humans for neutral return; define assignment and report actual N and branch imbalance.",
-      "Hold first rescue, art quality, control scheme and exposure length comparable; document that the package comparison cannot isolate line, object and permission effects.",
-      "Observe any voluntary return before asking remaining participants to open the return; record later exposure as prompted and ask neutral questions such as 'What changed?' and 'What caused that?'.",
-      "Predeclare the diagnostic gate of at least 4/6 completing unaided and explaining choice-to-action causality, plus absence of recurring AI/photo expectation errors; fewer than six cannot pass the gate and this is not statistical or retention proof."
+      "Target 18 fresh people: six Iona remembered, six Iona neutral and six Mara; require at least the two distinct six-person shipping-story cohorts for release.",
+      "Preregister the first six ordered session IDs per required story on the exact frozen build; include failure and abandonment without replacement.",
+      "Hold Iona first rescue/recollection constant; label scheduled same-session return as prompted exposure. Without neutral participants, make no comparative claim.",
+      "Require independent human review across all observers and participants. Preparation does not send invitations, invent participants or mark any gate passed."
     ],
     "depends_on": [
       "KF-01",
-      "KF-02"
+      "KF-20",
+      "KF-21"
     ],
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "research_protocol"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/protocol.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/recruitment.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md"
+    ],
+    "focus": "research_protocol",
+    "completion_note": "Study preparation is complete; actual recruitment and every participant result remain unfilled.",
+    "assigned_person_or_agent": "Codex coordinating agent"
   },
   {
     "id": "KF-12",
@@ -267,24 +329,26 @@
     "priority": "P0",
     "status": "blocked_human",
     "owner_role": "Human playtest facilitator",
-    "title": "Run the enacted-memory and neutral-return sessions",
-    "deliverable": "Consented human observation rows and a condition-by-condition synthesis linked to the tested revision.",
+    "title": "Run the two required story cohorts and optional neutral comparison",
+    "deliverable": "Real, consented observations for Iona remembered and Mara, with a separate optional Iona neutral cohort.",
     "acceptance_criteria": [
-      "Requires real, willing participants and a verified candidate; no human sessions have been recorded and actual participant availability remains unconfirmed. Agent roleplay cannot fill rows.",
-      "Record condition, build, branch, prior genre exposure, device, order, assistance, completion, spontaneous/prompted return, causal explanation and permitted verbatim response.",
-      "Report actual N and all failures; if neutral recruitment is unavailable, label the enacted-memory sessions a single-condition pilot with no comparative conclusion.",
-      "Apply the predeclared diagnostic gate, preserve contrary cases, and make no enjoyment, market-demand, physiological or day-two retention claims from agent prose or same-session clicks."
+      "Use fresh, distinct participants across cohorts and the same exact master candidate; agent gameplay and synthetic tests contribute zero participant rows.",
+      "Record the assigned story/profile, build hash, device, prior exposure, assistance, completion, explanation and permitted direct quotes.",
+      "Keep all six predeclared attempts for each required cohort. Report actual denominators, failures, exits and missing data.",
+      "Keep neutral comparison descriptive; if unavailable, report a single-condition Iona pilot. Do not claim retention or preference from same-session return."
     ],
     "depends_on": [
       "KF-10",
       "KF-11",
-      "KF-15"
+      "KF-15",
+      "KF-17"
     ],
     "human_participants_required": true,
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "completion_evidence": [],
-    "focus": "human_comparison"
+    "focus": "human_comparison",
+    "completion_note": "Zero real participant sessions recorded; willing human participants are not yet arranged."
   },
   {
     "id": "KF-13",
@@ -292,13 +356,13 @@
     "priority": "P1",
     "status": "blocked_human",
     "owner_role": "Research lead",
-    "title": "Measure a genuine later revisit if separately arranged",
-    "deliverable": "An optional later-session recall/revisit record with the elapsed interval and invitation history.",
+    "title": "Optionally collect predeclared 48–72-hour prompted recall",
+    "deliverable": "A consented later-session record with elapsed time, invitation history and attrition.",
     "acceptance_criteria": [
-      "Arrange follow-up only with consenting participants and an agreed protocol; no outreach or invitations occur during this planning pass.",
-      "Distinguish spontaneous later return, an invited follow-up and an immediate in-session restart; record missing participants without inventing outcomes.",
-      "Record whether the participant remembers the specific choice, recognizes the persisted object and finds an available action meaningful.",
-      "Use findings as qualitative later-session evidence, not a retention rate or a requirement to add daily rewards; leave the result unknown if follow-up does not happen."
+      "Select this follow-up before testing, with consent and a human facilitator; this implementation sends no outreach.",
+      "Distinguish spontaneous revisit from a prompted follow-up and immediate restart. Report no-shows rather than inventing outcomes.",
+      "Ask about the specific action and persistent arrangement without teaching the explanation.",
+      "Call the result prompted recall, not retention; leave it unknown if the follow-up does not occur."
     ],
     "depends_on": [
       "KF-12"
@@ -307,21 +371,22 @@
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "completion_evidence": [],
-    "focus": "human_followup"
+    "focus": "human_followup",
+    "completion_note": "Optional human follow-up, not a release substitute or automatic schedule."
   },
   {
     "id": "KF-14",
     "perspective": "Production",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Coordinating lead",
-    "title": "Assign file ownership and review handoffs",
-    "deliverable": "A proposed role/file map, integrator assignment and shared handoff checklist for any later authorized build.",
+    "title": "Coordinate disjoint ownership and evidence-bearing handoffs",
+    "deliverable": "A recorded story/runtime/art/UI/research/release contract and source checkpoints on the game branch.",
     "acceptance_criteria": [
-      "Give one owner each for rules/schema, content, renderer, art/layout and verification; name one integrator for cross-cutting contracts.",
-      "Record proposed human assignees separately from roles; do not imply staffing or commitment has been confirmed.",
-      "Every handoff identifies files, revision, changed contract, validation command/result, evidence and open limitation; coordinate schema changes before parallel edits.",
-      "Keep planning artifacts separate from gameplay branches and preserve prior records; this plan makes no repository write, branch switch, purchase or deployment."
+      "Assign separate file ownership to story, runtime, art/rendering, research and release agents; keep one UI/integration owner.",
+      "Record shared interfaces before parallel edits and preserve source/art/test handoffs with commands, evidence and remaining limits.",
+      "Keep source work on the Vivid branch, policy changes separate from promotion and versioned candidates on master.",
+      "Distinguish actual coding-agent assignments from unconfirmed human staffing; preserve historical records and remote recovery checkpoints."
     ],
     "depends_on": [
       "KF-01"
@@ -329,22 +394,27 @@
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "team_ownership"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/TEAM-CONTRACT.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md"
+    ],
+    "focus": "team_ownership",
+    "completion_note": "Agent ownership and implementation checkpoint recorded; source links are pinned to 97695df.",
+    "assigned_person_or_agent": "Codex coordinating agent"
   },
   {
     "id": "KF-15",
     "perspective": "Distribution",
     "priority": "P1",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Release/UX owner",
-    "title": "Prepare a browser pilot package with truthful entry copy",
-    "deliverable": "A versioned review archive and distribution checklist for a later pilot, without publishing it.",
+    "title": "Freeze the portable 0.1.1 browser pilot package",
+    "deliverable": "A local-asset candidate build, shipping-story catalog, honest entry copy and exact-build facilitator instructions.",
     "acceptance_criteria": [
-      "Package bundled assets with index.html at the archive root, record exact revision, and distinguish static-host review from a future itch.io HTML submission.",
-      "Explain authored portrait interaction, local-only memory, forgetting and storage failure; the one-minute return remains a design target until humans supply timing data.",
-      "Record current submission/technical requirements only when verified in later authorized research; assess CrazyGames separately rather than assuming itch.io rules apply.",
-      "Include control/viewport notes, review instructions and known limits; no account setup, uploads, external analytics, native distribution or public gameplay release is performed by this planning work."
+      "Bundle dependencies and selected story assets with relative paths; verify nested deployment and record the final source/build identity.",
+      "State authored interaction, local-only memory, reset/recovery and storage limitations. Duration labels remain authored estimates until real timing data exists.",
+      "Include Iona and Mara in a versioned shipping-story catalog inside the hashed build; do not ship the recast fixture as a third story.",
+      "Serve the exact master artifact locally or on a trusted LAN for human review. Do not imply master has a Pages URL or that portal publication is complete."
     ],
     "depends_on": [
       "KF-10",
@@ -354,8 +424,14 @@
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "distribution"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/candidate.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/build/third-party-notices.txt",
+      "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/notes.md"
+    ],
+    "focus": "distribution",
+    "completion_note": "Portable 0.1.1 bundle frozen: 1,400,828 bytes across 15 files, relative paths and bundled dependency notices; human approval is pending.",
+    "assigned_person_or_agent": "Codex coordinating agent"
   },
   {
     "id": "KF-16",
@@ -363,46 +439,56 @@
     "priority": "P0",
     "status": "conditional",
     "owner_role": "Product/design lead with research and QA",
-    "title": "Decide advance, revise or stop from observed evidence",
-    "deliverable": "A short decision record and updated task board linking actual observations, counterexamples and remaining gaps.",
+    "title": "Decide advance, revise or stop from real observations",
+    "deliverable": "A decision linking each story’s human results, contrary cases, competitor journeys and next bounded change.",
     "acceptance_criteria": [
-      "Compare results with KF-01 and the predeclared human diagnostic gate; report actual sample and whether a control exists.",
-      "If appearance is recalled but the causal action is not, revise or stop the relationship experiment before expanding content; if both conditions work similarly, do not claim memory won.",
-      "Keep six-competitor coverage status independent from prototype QA and human-test counts; no completion percentage erases the 2/6 partial baseline or unresolved native studies.",
-      "Name the next bounded decision and owner, or stop; later follow-up is optional, and providers, photo uploads, voice/LLM chat, extra portraits and monetization remain deferred without a new evidence-backed scope."
+      "Evaluate each story independently against its predeclared criterion; one passing story cannot compensate for another failing shipping story.",
+      "If Iona’s picture is remembered but choice-to-action causality is not, revise or stop that hypothesis. Do not claim memory wins without the neutral comparison.",
+      "For Mara, evaluate unaided completion and action-to-visible-consequence explanation without grading emotional interpretation.",
+      "Keep competitor coverage, automated quality, physical-device results and human evidence separate. New stories or services need their own scoped decision."
     ],
     "depends_on": [
       "KF-02",
       "KF-12",
-      "KF-14"
+      "KF-14",
+      "KF-21"
     ],
     "lane": "vivid",
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
     "completion_evidence": [],
-    "focus": "product_decision"
+    "focus": "product_decision",
+    "completion_note": "Conditional on actual observations; implementation approval does not settle product effectiveness."
   },
   {
     "id": "KF-17",
     "lane": "vivid",
     "perspective": "Production",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Release integrator",
-    "title": "Stage one immutable candidate on master",
-    "deliverable": "A versioned release-candidates/keepers-frame/<version>/ package on master, built from the owning game branch.",
+    "title": "Stage the complete two-story 0.1.1 candidate on master",
+    "deliverable": "An immutable release-candidates/keepers-frame/0.1.1 packet with both stories, build inventory, notes and pending human evidence.",
     "acceptance_criteria": [
-      "Record the exact source SHA, version, player-facing notes, build inventory and hash; include a portable build/index.html and only intended files.",
-      "Use the release-candidate template and staging validator. Preserve the predeclared human-session protocol before recruiting; staging may contain pending evidence and is not an official release.",
-      "Keep the previous candidate and source branch recoverable, push master without force, and verify its remote SHA. Do not merge the whole game branch into master or main."
+      "Record exact implementation SHA, artifact version, build file hashes and shipping-story catalog; include only intended portable files.",
+      "Run staging validation with blank human fields still pending. Confirm every inventoried build file is tracked.",
+      "Push master without force and record its full remote SHA; preserve recoverable history and do not merge the whole game branch into master.",
+      "Keep full readiness failing until valid human reports and independent review cover both stories on the same frozen build."
     ],
     "depends_on": [
       "KF-10",
-      "KF-11"
+      "KF-11",
+      "KF-15"
     ],
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": []
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/candidate.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/human-playtest.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/notes.md"
+    ],
+    "completion_note": "Staged and remote-synced at master f0ef54626eaadb32892b0f748ff245515fa54128. All 15 build files are tracked; staging validates both preserved 0.1.0 and current 0.1.1 packets. Human readiness remains pending.",
+    "assigned_person_or_agent": "Codex coordinating agent"
   },
   {
     "id": "KF-18",
@@ -411,21 +497,22 @@
     "priority": "P0",
     "status": "blocked_human",
     "owner_role": "Human playtest facilitator + independent reviewer",
-    "title": "Review the exact candidate against the human release gate",
-    "deliverable": "A complete human-playtest.json and linked anonymized records for the exact packaged build, with a recorded approve/revise/stop decision.",
+    "title": "Review both stories against the exact-build human release gate",
+    "deliverable": "A schema-v2 report with one required report per shipped story and an independent build-specific human approval.",
     "acceptance_criteria": [
-      "Six predeclared individual players: at least 4/6 each both complete the return unaided and explain how their earlier choice changed the return. At most 1/6 expects unrestricted AI interaction after the actual entry copy. Record denominators and the paired per-player outcomes.",
-      "Include every one of the six predeclared sessions, distinct pseudonymous participant IDs, raw observations and assistance. An incomplete, abandoned or assisted attempt cannot be silently replaced or counted as unaided success.",
-      "Zero unresolved critical bugs; manually check actual browser entry, core journey, failure/retry, keyboard, and one physical mobile/touch device. Record measured duration and issues rather than inferring results from automated checks.",
-      "An independent human reviewer inspects the evidence and signs the build-specific approval. Existing pilot sessions may be reused only if the protocol was predeclared, participants and required outcomes are recorded, and the artifact hash matches exactly; changed builds need revalidation.",
-      "Run full candidate validation. A failed gate stays on master; agent sessions and synthetic test fixtures cannot satisfy human evidence."
+      "Iona: at least 4/6 participants each both complete unaided and explain choice-to-return causality; at most 1/6 expects unrestricted AI.",
+      "Mara: at least 4/6 each both complete unaided and explain an action-to-visible-consequence connection. Do not score the emotional interpretation as correct or wrong.",
+      "Use distinct first-six cohorts, all attempts, the same exact build hash and zero open critical bugs. A missing story report fails the whole candidate.",
+      "An independent real human reviews raw observations and plays the exact build; physical input/accessibility checks remain required. Blank reports, automation and fictional personas never satisfy approval."
     ],
     "depends_on": [
-      "KF-17"
+      "KF-17",
+      "KF-23"
     ],
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": true,
-    "completion_evidence": []
+    "completion_evidence": [],
+    "completion_note": "No participant reports or human approval are available."
   },
   {
     "id": "KF-19",
@@ -434,19 +521,129 @@
     "priority": "P0",
     "status": "conditional",
     "owner_role": "Release maintainer",
-    "title": "Promote only the approved game version to main",
-    "deliverable": "A reviewed official release package, registry entry, GitHub version and release-note links, plus a verified playable Pages URL.",
+    "title": "Promote only a human-approved anthology release to main",
+    "deliverable": "A reviewed official package, immutable registry entry, GitHub release/version notes and a verified deployed URL.",
     "acceptance_criteria": [
-      "Copy only the approved candidate package into releases/<game>/<version>/ on main. Pin its immutable ancestor commit on master; preserve all previous official versions and registry entries.",
-      "Open a main promotion PR with human approval and gate results. Required owner review and release-gate must pass; do not auto-merge or include unrelated candidates.",
-      "After the human-approved merge, verify automated GitHub release publication, tag target, notes, registry links and the deployed Pages build. A push or draft link alone is not a verified official delivery.",
-      "If publication fails, preserve the approved artifact, report the actual failure and rerun only the failed publication step. Never rewrite a released version; publish corrections under a new version."
+      "First merge the separately reviewed release-policy change; then copy only an approved master packet into the canonical releases path.",
+      "Require both story reports and human approval on the exact artifact; preserve prior releases and verify master ancestry and byte identity.",
+      "Use a promotion PR and required human/code-owner review. A game-source push, staging pass or policy PR is not official approval.",
+      "After approved promotion, verify tag, GitHub Release notes, registry links and actual Pages delivery. Main currently has no official releases; Pages availability is unverified."
     ],
     "depends_on": [
-      "KF-18"
+      "KF-18",
+      "KF-22"
     ],
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": []
+    "completion_evidence": [],
+    "completion_note": "Conditional on human gates and separate policy review; no release tag or official play URL is claimed."
+  },
+  {
+    "id": "KF-20",
+    "lane": "vivid",
+    "perspective": "Engineering",
+    "priority": "P0",
+    "status": "done",
+    "owner_role": "Story/runtime architects",
+    "title": "Make stories and protagonists replaceable through packs",
+    "deliverable": "A lazy catalog and pure pack contract for content, cast, scene presentation, state, saves and accessible actions.",
+    "acceptance_criteria": [
+      "Expose createState, reduce, getViewModel, serialize and migrate with manifest/content revision separate from save schema.",
+      "Validate IDs, local assets, cast references and interaction capabilities before build; preserve the gallery on load failure.",
+      "Prove replacement with a development-only recast fixture and an independently structured second story; no story-name branching in shared engine behavior."
+    ],
+    "depends_on": [
+      "KF-01",
+      "KF-14"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/catalog.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/runtime/validate.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/runtime.test.js"
+    ],
+    "completion_note": "Implemented pack interface and replacement fixture; source and tests are available.",
+    "assigned_person_or_agent": "Codex story/runtime agents"
+  },
+  {
+    "id": "KF-21",
+    "lane": "vivid",
+    "perspective": "Game design",
+    "priority": "P0",
+    "status": "done",
+    "owner_role": "Narrative/systems designer",
+    "title": "Deliver Mara’s object-led mystery",
+    "deliverable": "The Unfinished Postcard: nonlinear inspection, sketch alignment and a workshop reveal with ungraded interpretation.",
+    "acceptance_criteria": [
+      "Allow timetable, paint-marked postcard and drawings in any inspection order.",
+      "Require evidence and valid alignment before revealing the workshop; slider, steps and keyboard share reducer rules.",
+      "Use a workbench rather than a required speaking portrait, rescue loop or return-choice structure; complete the story without editing the shared runtime."
+    ],
+    "depends_on": [
+      "KF-20"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/mara/index.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/mara/content.js",
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/stories.test.js"
+    ],
+    "completion_note": "Second playable story implemented; human interpretation and completion remain untested.",
+    "assigned_person_or_agent": "Codex story agent"
+  },
+  {
+    "id": "KF-22",
+    "lane": "vivid",
+    "perspective": "Production",
+    "priority": "P0",
+    "status": "active",
+    "owner_role": "Release maintainer + independent code owner",
+    "title": "Review the multi-story release policy separately",
+    "deliverable": "A separately reviewed release-gate change binding one report per shipping story to the same catalog and build hash.",
+    "acceptance_criteria": [
+      "Require exactly the catalog’s shipped stories, fixed reviewed threshold profiles, distinct cohorts and independent approval across all participants and observers.",
+      "Reject missing/extra story reports, identity/hash mismatches and legacy-schema bypass for new multi-story candidates; preserve older release readability and immutability.",
+      "Keep tooling review separate from game promotion and retain the empty official registry until actual human evidence passes."
+    ],
+    "depends_on": [
+      "KF-11",
+      "KF-20",
+      "KF-21"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/pull/1"
+    ],
+    "completion_note": "Policy PR #1 is open for separate independent code-owner review; it has not been merged and does not approve any game release.",
+    "assigned_person_or_agent": "Codex release agent and coordinator"
+  },
+  {
+    "id": "KF-23",
+    "lane": "vivid",
+    "perspective": "QA",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human device/accessibility reviewer",
+    "title": "Measure physical-device performance and accessibility",
+    "deliverable": "A real-device record covering mobile input, frame pacing, reading, motion comfort and screen-reader use.",
+    "acceptance_criteria": [
+      "Measure the exact master artifact on physical phone hardware, recording device, browser, settings, cold load and observed frame pacing; target 30 FPS.",
+      "Manually complete both stories with touch and assess keyboard/focus, text readability and a real screen reader; record assistance and every blocker.",
+      "Keep ≤8 MiB cold-load, ≤100,000 active triangles and DPR ≤1.5 checks separate from actual phone performance. Headless emulation is not a physical pass."
+    ],
+    "depends_on": [
+      "KF-10",
+      "KF-17"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md"
+    ],
+    "completion_note": "No physical-phone or human screen-reader measurements are available."
   }
 ]

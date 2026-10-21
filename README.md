@@ -9,7 +9,7 @@ Three browser experiments, one shared design practice: state a player promise, o
 | Demo | Player promise being tested | Implementation branch | Separate development list |
 |---|---|---|---|
 | **Small Hours** · Memorable Moments | Two people turn a brief shared activity into a keepsake that reflects both contributions. | [memorable-moments-game](https://github.com/PaperStrange/IndiaGames/tree/memorable-moments-game) | [Small Hours to-do list](docs/games/small-hours/TODO.md) |
-| **The Keeper’s Frame** · Vivid 2.5D Photo | Looking closely helps Iona; a remembered choice could change what the player can do on a later visit. | [vivid-2.5d-photo-game](https://github.com/PaperStrange/IndiaGames/tree/vivid-2.5d-photo-game) | [Keeper’s Frame to-do list](docs/games/keepers-frame/TODO.md) |
+| **Vivid** · formerly Keeper’s Frame | Two stories use different actions: Iona's choice changes a return placement; Mara's aligned sketches reveal a future workshop. Human meaning remains to be tested. | [vivid-2.5d-photo-game](https://github.com/PaperStrange/IndiaGames/tree/vivid-2.5d-photo-game) | [Vivid to-do list](docs/games/keepers-frame/TODO.md) |
 | **The Thirteenth Bell** | Learning a repeated town event enables a better plan and a visible consequence for someone in it. | [the-thirteenth-bell](https://github.com/PaperStrange/IndiaGames/tree/the-thirteenth-bell) | [Thirteenth Bell to-do list](docs/games/thirteenth-bell/TODO.md) |
 
 These are product hypotheses. The plans distinguish shipped behavior, proposed changes, observed competitor sessions and missing human evidence. The October 21 lists incorporate the new Small Hours/Bell record intake; the [October 20 review](https://github.com/PaperStrange/IndiaGames/tree/e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee/docs/gamejam/iteration-2026-10-20) remains an immutable historical snapshot.
@@ -21,10 +21,12 @@ Use the selected game branch in its own task environment. Check for local change
 | Game branch | Local command from its repository root | Local entry |
 |---|---|---|
 | `memorable-moments-game` | `python3 -m http.server 8111 --bind 127.0.0.1` | `/memorable-moments-game/play/` |
-| `vivid-2.5d-photo-game` | `python3 -m http.server 8112 --bind 127.0.0.1 --directory vivid-2.5d-photo-game/play` | `/` |
+| `vivid-2.5d-photo-game` | `npm --prefix vivid-2.5d-photo-game/play run dev` | `/` on port 8112 |
 | `the-thirteenth-bell` | `python3 -m http.server 8113 --bind 127.0.0.1` | `/` |
 
-GitHub branch/file links above open source, not hosted playable games. This Pages site hosts the overview, planning dashboard and, after approval, versioned official builds. There are no official game releases yet.
+GitHub branch/file links above open source, not hosted playable games. This hub is prepared to host the overview, planning dashboard and, after approval, versioned official builds. Pages activation remains unverified; there are no official game releases yet.
+
+For Vivid, first install its locked dependencies with `npm --prefix vivid-2.5d-photo-game/play ci` (Node ≥22.12). Its [source README](https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/README.md) explains builds, input and local memory. The portable [0.1.1 candidate](https://github.com/PaperStrange/IndiaGames/tree/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1) is staged on master with both stories and pending human reports. Serve its `build/` directory for manual review; master is not a live Pages deployment. Candidate 0.1.0 is preserved unchanged.
 
 ## Start another experiment
 
@@ -53,5 +55,7 @@ Preview this hub with `python3 -m http.server 8120 --bind 127.0.0.1`. No package
 Game branch → `master` candidate → measured manual human playtest → reviewed promotion PR → `main` official release. A whole-branch merge is not the promotion unit: copy only the approved game/version so unrelated candidates and the legacy Python project remain separate.
 
 Use the [release policy](docs/RELEASE-POLICY.md) and [candidate package template](templates/release-candidate/README.md). They define six-session per-game thresholds, artifact hashes, independent human approval, immutable prior releases and automated validation. A successful check validates the supplied records; the human reviewer verifies that the playtests actually happened.
+
+Vivid's separate per-story extension is awaiting owner review in [PR #1](https://github.com/PaperStrange/IndiaGames/pull/1). Both Iona and Mara need distinct six-person cohorts on the exact same build; the neutral comparison cohort is optional. No Vivid promotion should proceed before that policy review and real human approval. No participants have been recruited or recorded by this implementation work.
 
 The dashboard’s Official releases section reads [data/releases.json](data/releases.json). After a promotion passes review and merges, the release workflow creates its GitHub version/tag and release notes; the card links to that version, notes and its playable build. The empty registry truthfully records that no demo has met this process yet. Branch protection must require the release gate and owner review; see the policy’s setup requirements and [publication status](docs/PUBLISHING.md).

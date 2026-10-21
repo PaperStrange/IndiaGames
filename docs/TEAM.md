@@ -4,7 +4,7 @@
 
 `main` owns the project overview, current per-game to-do lists, reusable templates and approved official game versions. `master` owns pre-commit candidate packages and their pending or completed human evidence. Each game branch owns its implementation, game-specific research and test evidence. The `gamejam-next-iteration-2026-10-20` branch preserves the earlier cross-game review. Do not merge entire game branches into main to update a plan; copy only the intended documentation/data or link to a pinned source.
 
-Each task has a proposed role owner, a deliverable, dependencies and acceptance criteria. `proposed` means not started; `conditional` means a preceding observation must justify selecting it; `blocked_human` means real participants are required. None is an assignment already accepted by a person or a claim that a feature has shipped. No progress percentage is inferred from the number of cards.
+Each task has a role owner, a deliverable, dependencies and acceptance criteria. Vivid's completed implementation cards name their coding agents; human facilitator and reviewer roles remain unstaffed. `proposed` means not started; `conditional` means a preceding observation must justify selecting it; `blocked_human` means real participants are required. An implemented card is not an official release or human approval. No progress percentage is inferred from the number of cards.
 
 ## Parallel work that stays compatible
 
@@ -43,5 +43,7 @@ Use explicit categories: source/critic-only, access/menu/lobby-only, partial gam
 ## Release handoff
 
 Follow [RELEASE-POLICY.md](RELEASE-POLICY.md). A release integrator packages a source-branch revision on `master`; a facilitator observes six predeclared human sessions on that exact artifact; an independent human reviewer assesses the raw records and thresholds. Failed or incomplete candidates stay on master. Publish a correction as a new version, preserving the previous evidence.
+
+Vivid's two-story extension is pending owner review in [PR #1](https://github.com/PaperStrange/IndiaGames/pull/1). Its candidate requires separate six-person cohorts for Iona and Mara on the same build, with an optional additional neutral Iona cohort. Do not promote Vivid before that policy review and real human approval; no facilitator or participants are staffed by these agent assignments.
 
 A maintainer promotes only an approved `game/version` into main through a reviewed PR. The gate checks source provenance, hashes, human criteria and prior-version immutability. After merge, the workflow publishes the GitHub release and the dashboard provides the official build, version and notes. Agent-written check results cannot replace human playtest or approval. Main documentation and hub maintenance may proceed with an empty release registry; this does not certify any game.
