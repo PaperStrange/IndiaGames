@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="560" viewBox="0 0 800 560">
+ <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#407e7e" stroke-width=".7" opacity=".16"/></pattern></defs>
+ <path fill="#e0ddbd" fill-opacity=".82" d="M8 12 785 5l8 543-779 6z"/><path fill="url(#grid)" d="M22 18h758v520H22z"/>
+ <g fill="none" stroke="#416b6b" stroke-linejoin="round"><path stroke-width="7" d="M112 126h571v303H112z"/><path stroke-width="2" d="M124 138h547v279H124z"/><path stroke-width="7" d="M358 126v192m0 67v44"/><path stroke-width="3" d="M358 320a65 65 0 0 1 65 65h-65M439 429a69 69 0 0 1 70-70v70"/><path stroke-width="10" stroke="#e0ddbd" d="M441 429h67M170 126h96m170 0h96m151 83v89M112 215v89"/><path stroke-width="3" d="M170 124h96m-96 5h96m170-5h96m-96 5h96M680 209v89m5-89v89M110 215v89m5-89v89"/><path stroke-width="1.5" d="M112 99h571m-571-9v20m571-20v20M88 126v303m-10-303h20m-20 303h20M294 471h158m-158-7v14m158-14v14"/></g>
+ <g fill="#537a76" opacity=".8"><path d="m128 92 12 6-12 6zm540 0-12 6 12 6zM81 143l6 12 6-12zm0 268 6-12 6 12z"/><circle cx="241" cy="277" r="5"/><circle cx="530" cy="277" r="5"/></g>
+ <g fill="none" stroke="#47716e" stroke-width="2" opacity=".7"><path d="m41 45 54-1m-54 8 79-1m-79 8 37-1m589 425h58m-58 7h47m-47 7h65m-65 7h26"/></g>
+ <path fill="none" stroke="#bc7950" stroke-width="2" d="m705 84 31 9-16 28m-24-17 38-11M57 366l26 16-12 22m-26-20 37-1"/>
+</svg>

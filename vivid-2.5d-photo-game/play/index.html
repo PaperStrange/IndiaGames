@@ -1,106 +1,151 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#111e22">
-  <meta name="description" content="A three-minute encounter with a lighthouse keeper who lives in a frame — and remembers your promise.">
-  <title>The Keeper’s Frame · A living portrait</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%23111e22'/%3E%3Cpath d='M18 38h12l-3-23h-6zM17 13h14L24 5z' fill='%23e9be73'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="src/app.js"></script>
-</head>
-<body>
-  <div class="grain" aria-hidden="true"></div>
-  <header class="masthead"><a href="./" class="brand"><span aria-hidden="true">◈</span> THE LIVING COLLECTION</a><span class="edition">ONE FRAME. ONE PROMISE.</span><button class="quiet" id="motion" aria-pressed="false">Motion: on</button></header>
-  <main>
-    <section class="gallery" aria-label="Iona’s portrait">
-      <div class="catalog"><span>PORTRAIT № 001</span><span id="weather">A FOGBOUND EVENING</span></div>
-      <div id="portrait" class="portrait" data-view="0">
-        <div class="painting">
-          <svg class="scenery depth" data-depth="0.4" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs>
-              <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#526768"/><stop offset=".7" stop-color="#abb8aa"/><stop offset="1" stop-color="#567878"/></linearGradient>
-              <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#75999a"/><stop offset="1" stop-color="#223e48"/></linearGradient>
-              <radialGradient id="sun"><stop stop-color="#efd1a0" stop-opacity=".75"/><stop offset="1" stop-color="#efdcba" stop-opacity="0"/></radialGradient>
-              <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="3" seed="8"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="soft-light"/></filter>
-            </defs>
-            <rect width="600" height="720" fill="url(#sky)"/>
-            <circle cx="407" cy="204" r="150" fill="url(#sun)"/><circle cx="407" cy="204" r="43" fill="#e4d6b5" opacity=".8"/>
-            <path d="M0 368Q82 320 178 372T355 347T600 371V720H0" fill="#6f8b86"/>
-            <path d="M0 402Q112 361 212 405T421 390T600 414V720H0" fill="url(#sea)"/>
-            <g stroke="#c5d3bd" opacity=".3" fill="none"><path d="M-10 421q124-17 273 0t350 4M45 461q94-12 175 0m106-4q157-16 239 0M-20 503q147-12 219 0m118-9q72-9 153 0M323 541q178-13 259 0"/></g>
-            <path d="M460 409l21-177h29l20 177z" fill="#e2d4b6"/><path d="M501 232h9l20 177h-18z" fill="#9eae9e"/>
-            <path d="M478 232v-28h38v28z" fill="#33474b"/><path d="M472 203l24-20 24 20z" fill="#293d42"/>
-            <path d="M487 208h19v16h-19z" fill="#ebc27b"/><path d="M464 260h61" stroke="#34494c" stroke-width="3"/>
-            <path d="M440 416q49-35 98-15l55 31H440" fill="#3a5557"/>
-            <g id="light-beam" opacity="0"><path d="M495 212L40 60v285z" fill="#ffda83" opacity=".2"/><circle cx="496" cy="214" r="18" fill="#fce3a5" opacity=".55"/></g>
-            <g id="ferry"><path d="M370 450h67l-10 12h-44z" fill="#263d43"/><path d="M387 440h29v10h-29z" fill="#c9cbb2"/><path d="M402 423v19" stroke="#273c43" stroke-width="2"/><circle id="answer-light" cx="403" cy="440" r="3" fill="#c9cbb2"/></g>
-            <path d="M0 0h50v720H0zm542 0h58v720h-58z" fill="#344a4b"/><path d="M39 0h12v720H39zm495 0h13v720h-13z" fill="#d2bea0" opacity=".2"/>
-            <path d="M50 111Q297-71 542 111" fill="none" stroke="#263e42" stroke-width="30"/>
-            <path d="M62 112Q297-49 530 112" fill="none" stroke="#d4c3a5" stroke-width="3" opacity=".3"/>
-          </svg>
-          <div class="hidden-item ledger-art" aria-hidden="true"><span>HARBOUR<br>PROCEDURE</span><strong>EAST →</strong><i>Fog rolls in.<br>The light stays on.</i></div>
-          <div class="hidden-item plate-art" aria-hidden="true"><span>FERRY CALL</span><strong>• ━ •</strong><small>1814</small></div>
-          <div class="envelope" aria-hidden="true">I.</div>
-          <svg class="iona depth" data-depth="1.4" viewBox="0 0 600 720" aria-hidden="true">
-            <defs>
-              <linearGradient id="coat" x2="1" y2="1"><stop stop-color="#304951"/><stop offset="1" stop-color="#152c38"/></linearGradient>
-              <linearGradient id="skin" x2="1" y2=".4"><stop stop-color="#d6ad86"/><stop offset=".45" stop-color="#c79876"/><stop offset="1" stop-color="#997563"/></linearGradient>
-              <linearGradient id="hair" x2="1" y2="1"><stop stop-color="#c9c7b2"/><stop offset=".4" stop-color="#929d94"/><stop offset="1" stop-color="#596e6d"/></linearGradient>
-              <linearGradient id="scarf" x2="1" y2="1"><stop stop-color="#cc9a69"/><stop offset="1" stop-color="#8a594b"/></linearGradient>
-            </defs>
-            <path d="M70 720l30-190q8-49 72-75l70-24h106l81 38q48 22 69 90l21 161z" fill="url(#coat)"/>
-            <path d="M214 445l20-92h112l16 95-53 62z" fill="#ae846b"/>
-            <path d="M194 336q-30-99 7-153 33-50 95-50 81-3 110 64 31 68-16 153l-49 56-84-6z" fill="url(#hair)"/>
-            <path d="M225 222q40-32 119-19l31 59-6 69q-3 43-39 72-17 13-39 5-62-29-76-99z" fill="url(#skin)"/>
-            <path d="M223 272q-33-8-19 36 6 21 20 21m146-62q27-4 15 35-5 17-15 23" fill="#b2886e"/>
-            <path d="M218 284q-27-23-18-72 6-58 56-64 61-40 109 12 49 24 26 106l-20 18q-9-66-39-81-73 56-108 31z" fill="url(#hair)"/>
-            <g fill="none" stroke-linecap="round"><path d="M211 227q35-15 60-54m-65 24q21-37 64-43m-43 78q76-1 111-56m-8 30q38 19 44 65m-26-84q41 13 42 56" stroke="#dee0c8" stroke-width="3" opacity=".4"/><path d="M245 266q17-9 32-2m45-1q16-8 30 1" stroke="#675f56" stroke-width="6"/><path d="M241 286q19-13 37-1m40 0q19-13 35-1" stroke="#796b59" stroke-width="2"/></g>
-            <g fill="#ece0c1"><path d="M242 286q18-12 35-1-17 11-35 1"/><path d="M319 285q17-11 33 0-17 10-33 0"/></g>
-            <g class="pupils" fill="#294647"><circle cx="261" cy="286" r="5"/><circle cx="333" cy="285" r="5"/><circle cx="263" cy="284" r="1.6" fill="#e9e0c5"/><circle cx="335" cy="283" r="1.6" fill="#e9e0c5"/></g>
-            <path d="M299 287l-10 38q12 8 25-1" fill="none" stroke="#9b715f" stroke-width="3"/>
-            <path d="M272 351q24 12 49-2-22 22-49 2" fill="#805951"/><path d="M276 350q21 2 40-1" stroke="#dfb28d" stroke-width="2"/>
-            <g fill="none" stroke="#997965" stroke-width="2" opacity=".8"><path d="M238 298l-8 4m13 1-9 6m113-10 11 3m-12 3 8 5M254 331q-9 17 2 30m76-30q13 16 0 30M256 246q30-9 62-3M264 236q24-5 46-2"/></g>
-            <circle cx="215" cy="321" r="5" fill="#dcba72"/>
-            <path d="M225 421q33 33 76 29l53-29 31 47-81 80-107-78z" fill="url(#scarf)"/>
-            <path d="M231 450l56 59-17 109 35 58 21-124 52-84" fill="none" stroke="#e4b57c" stroke-width="5" opacity=".3"/>
-            <path d="M201 468l65 68-45 28 70 156M373 465l-49 74 37 25-54 156" fill="none" stroke="#658080" stroke-width="3" opacity=".55"/>
-            <circle cx="338" cy="575" r="8" fill="#b29865"/><circle cx="330" cy="643" r="8" fill="#b29865"/>
-            <path d="M175 589l-21 104m262-108 36 111" stroke="#152c35" stroke-width="8"/>
-            <path d="M189 671q38-25 76-1l45 20-3 30H169z" fill="#bb9072"/>
-            <path d="M381 672q-25-27-47-18l-59 37 7 29h119z" fill="#cca181"/>
-            <path d="M321 688l43-17m-36 28 43-15m-86 10-47-15" fill="none" stroke="#9d745f" stroke-width="2"/>
-          </svg>
-          <div class="canvas-texture" aria-hidden="true"></div>
-          <button class="hotspot clue-left" data-clue="ledger" hidden>Read the tucked page <span>→</span></button>
-          <button class="hotspot clue-right" data-clue="plate" hidden>Read the brass plate <span>→</span></button>
-          <button class="hotspot letter" id="letter" hidden>Open her private letter <span>→</span></button>
-          <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#162e35" />
+    <meta
+      name="description"
+      content="Small worlds with something to remember. Two tactile, authored stories about the things we leave for one another."
+    />
+    <title>Vivid — Small worlds, lasting traces</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the stories</a>
+    <header class="site-header">
+      <a
+        class="brand"
+        href="#"
+        id="home-link"
+        aria-label="Vivid story collection"
+        ><span class="brand-mark" aria-hidden="true">v.</span
+        ><span>VIVID<small>THE STORY COLLECTION</small></span></a
+      >
+      <div class="header-note">Small worlds. Lasting traces.</div>
+      <button
+        id="settings-toggle"
+        class="quiet-button"
+        aria-expanded="false"
+        aria-controls="settings"
+      >
+        Reading & motion
+      </button>
+    </header>
+    <aside
+      id="settings"
+      class="settings"
+      hidden
+      aria-label="Reading and motion settings"
+    >
+      <label><input type="checkbox" id="motion" /> Gentle movement</label
+      ><label><input type="checkbox" id="flat" /> Flat illustration mode</label>
+      <p>
+        No sound is needed. Every action works with a tap or keyboard. Progress
+        stays in this browser.
+      </p>
+    </aside>
+    <main id="main" tabindex="-1">
+      <section id="gallery" aria-labelledby="gallery-title">
+        <div class="collection-intro">
+          <p class="eyebrow">AN INTERACTIVE ANTHOLOGY · VOLUME 01</p>
+          <h1 id="gallery-title">Some things stay<br />with <em>you.</em></h1>
+          <p>
+            Look a little closer. Lend a hand.<br />Leave a small world
+            different from how you found it.
+          </p>
         </div>
-      </div>
-      <div class="plaque"><span>IONA VALE</span><small>Keeper of the East Light · 1814–1891</small></div>
-      <div class="view-controls" aria-label="Viewpoint"><button data-view="-1" disabled>← Lean left</button><button data-view="0" disabled aria-pressed="true">Face her</button><button data-view="1" disabled>Lean right →</button></div>
-      <p class="view-hint" id="view-hint">Some things become clear from a different angle.</p>
-    </section>
-    <section class="encounter" aria-label="The encounter">
-      <div class="eyebrow"><span class="status-dot"></span> A LIVING PORTRAIT · 3 MINUTES</div>
-      <h1>The Keeper’s<br> <em>Frame.</em></h1>
-      <p class="deck">She can see the sea.<br>She needs your hands to save the ferry.</p>
-      <div class="divider"><span>✦</span></div>
-      <div id="story"></div>
-      <div id="evidence" hidden><h2>YOUR HARBOUR MARKS <span id="clue-count">0 / 2</span></h2><div id="clue-list"></div></div>
-      <div id="signal" hidden>
-        <h2>SET THE LAMP</h2>
-        <fieldset><legend>Bearing</legend><div class="options"><button data-bearing="east" aria-pressed="false">East →</button><button data-bearing="west" aria-pressed="false">← West</button></div></fieldset>
-        <fieldset><legend>Flash pattern</legend><div class="options"><button data-rhythm="sls" aria-label="Short long short" aria-pressed="false">• ━ •</button><button data-rhythm="sss" aria-label="Short short short" aria-pressed="false">• • •</button><button data-rhythm="lsl" aria-label="Long short long" aria-pressed="false">━ • ━</button></div></fieldset>
-        <button class="primary" id="send-signal">Send the signal <span>→</span></button>
-        <p class="feedback" id="feedback" role="status"></p>
-      </div>
-      <div id="actions"></div>
-      <p class="storage-status" id="storage-status"></p>
-    </section>
-  </main>
-  <footer><span>Original illustration · Authored dialogue · Memory saved only in this browser</span><button id="forget" class="quiet" hidden>Forget our visits</button><span>GAME JAM / 2026</span></footer>
-  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
-</body>
+        <div id="story-cards" class="story-cards"></div>
+        <div class="collection-footer">
+          <span>02 authored stories</span
+          ><span>No rush. No score. A place to return to.</span
+          ><span>Work in progress · 0.1.0</span>
+        </div>
+      </section>
+      <section id="experience" hidden aria-labelledby="story-title">
+        <div class="story-topline">
+          <button id="back" class="text-button">← All stories</button
+          ><span id="story-progress"></span
+          ><span id="render-label">Illustrated world</span>
+        </div>
+        <div class="experience-layout">
+          <div class="world-column">
+            <div id="world" class="world" aria-label="Story illustration">
+              <div id="flat-world" class="flat-world" aria-hidden="true">
+                <div class="world-halo"></div>
+                <div class="flat-frame">
+                  <div class="flat-picture">
+                    <img id="flat-art" alt="" />
+                    <div class="flat-harbour"></div>
+                    <div class="flat-light"></div>
+                  </div>
+                </div>
+                <div class="flat-workbench">
+                  <div class="flat-paper">
+                    <span class="paper-lines"></span>
+                    <div class="paper-sketch"></div>
+                  </div>
+                  <div class="flat-pencil"></div>
+                </div>
+                <div id="placed-object" class="placed-object"></div>
+              </div>
+              <div
+                id="three-world"
+                class="three-world"
+                aria-hidden="true"
+              ></div>
+              <div class="world-caption">
+                <span id="scene-caption"></span
+                ><span aria-hidden="true">✧</span>
+              </div>
+            </div>
+            <div class="world-under">
+              <p id="scene-description"></p>
+              <span id="motion-hint">Drag gently to look around</span>
+            </div>
+            <p id="storage-status" class="storage-status" role="status"></p>
+            <button id="recover" class="text-button" hidden>
+              Replace the incompatible save with this visit
+            </button>
+          </div>
+          <div class="story-panel">
+            <p class="eyebrow" id="story-kicker"></p>
+            <h1 id="story-title"></h1>
+            <div class="story-copy">
+              <p id="speaker" class="speaker"></p>
+              <p id="narration" aria-live="polite" aria-atomic="true"></p>
+            </div>
+            <aside id="inspection" class="inspection" hidden>
+              <h2 id="inspection-title"></h2>
+              <p id="inspection-text"></p>
+            </aside>
+            <div
+              id="actions"
+              class="actions"
+              aria-label="Available story actions"
+            ></div>
+            <p
+              id="interaction-status"
+              class="interaction-status"
+              role="status"
+            ></p>
+            <details id="transcript">
+              <summary>Read this visit’s transcript</summary>
+              <ol id="transcript-lines"></ol>
+            </details>
+            <div class="visit-footer">
+              <span id="choice-summary"></span
+              ><button id="reset" class="text-button">Forget this story</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <p id="load-error" role="alert" hidden></p>
+    </main>
+    <footer class="site-footer">
+      <span>VIVID / Stories you can touch</span
+      ><span>Made for a quiet moment.</span>
+    </footer>
+    <script type="module" src="./src/app.js"></script>
+  </body>
 </html>

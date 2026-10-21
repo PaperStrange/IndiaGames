@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><style>body{margin:0;background:radial-gradient(ellipse at 50% 40%,#394c49,#1a2b2d 80%);font-family:serif;color:#e9d9b2}#stage{width:850px;height:800px;margin:auto}h1{text-align:center;font-weight:normal}</style></head><body><h1>Vivid · original art check</h1><div id="stage"></div><script type="module">
+import {createRenderer} from '../src/renderers/world.js';
+window.view={title:'Preview',scene:{kind:'portrait',view:0,actorId:'keeper',light:'steady',notchBraced:true,wedgePlaced:true,placement:'letter',details:[]}};
+window.manifest={cast:{keeper:{name:'Example Keeper',portrait:'art/keeper-portrait.svg'}},assets:[]};
+window.failures=[];
+window.world=await createRenderer({container:document.querySelector('#stage'),onUnavailable:reason=>window.failures.push(reason)});
+await window.world.update(window.view,window.manifest);window.ready=true;
+</script></body></html>

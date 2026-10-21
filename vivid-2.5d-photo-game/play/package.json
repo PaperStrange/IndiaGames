@@ -1,6 +1,25 @@
 {
   "name": "keepers-frame",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {"test": "node --test test/rules.test.js", "serve": "python3 -m http.server 8112"}
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 8112",
+    "serve": "vite --host 127.0.0.1 --port 8112",
+    "test": "node --test test/*.test.js",
+    "validate": "node scripts/validate-stories.mjs",
+    "build": "npm run validate && vite build && node scripts/write-catalog.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 8112",
+    "test:browser": "node test/iteration-browser.mjs"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "vite": "8.3.4",
+    "playwright": "1.56.1"
+  }
 }

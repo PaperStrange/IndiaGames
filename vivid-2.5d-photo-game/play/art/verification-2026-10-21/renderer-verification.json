@@ -1,0 +1,95 @@
+{
+  "observed_at": "2026-10-21T07:37:08.886Z",
+  "method": "Automated Chromium with software WebGL. Art/lifecycle checks; no human or physical-device claims.",
+  "browser": "151.0.7922.173",
+  "assertions": [
+    {
+      "id": "portrait-render",
+      "result": "pass",
+      "detail": "Locally bundled frame and painted texture render; active triangle budget passes; idle RAF stops."
+    },
+    {
+      "id": "workbench-render",
+      "result": "pass",
+      "detail": "Separate workbench, underlay and aligned overlay render through the same renderer API."
+    },
+    {
+      "id": "motion-and-tilt",
+      "result": "pass",
+      "detail": "Manual motion off settles without easing; extreme input clamps to 12 degrees."
+    },
+    {
+      "id": "system-motion",
+      "result": "pass",
+      "detail": "OS reduced motion cannot be overridden by enabling the optional movement setting."
+    },
+    {
+      "id": "scene-switch",
+      "result": "pass",
+      "detail": "Six alternating scene loads leave active geometry/texture counts at the same workbench baseline."
+    },
+    {
+      "id": "context-loss",
+      "result": "pass",
+      "detail": "Software WebGL context loss reports fallback once; dispose removes its canvas and scene geometry."
+    },
+    {
+      "id": "missing-asset",
+      "result": "pass",
+      "detail": "A missing selected-scene model reports the illustrated fallback instead of silently showing stale art."
+    },
+    {
+      "id": "in-flight-disposal",
+      "result": "pass",
+      "detail": "Disposing during a selected-scene fetch cancels it; no late canvas or fallback callback is created."
+    },
+    {
+      "id": "browser-errors",
+      "result": "pass",
+      "detail": "No uncaught page errors across all renderer scenarios."
+    }
+  ],
+  "stats": {
+    "portrait": {
+      "activeTriangles": 6514,
+      "drawCalls": 13,
+      "pixelRatio": 1.5,
+      "geometries": 13,
+      "textures": 2,
+      "loadCount": 1,
+      "sceneKind": "portrait",
+      "disposed": false,
+      "failed": false,
+      "activeAnimation": false,
+      "tiltRadians": 0,
+      "targetTiltRadians": 0,
+      "reducedMotion": false
+    },
+    "workbench": {
+      "activeTriangles": 5880,
+      "drawCalls": 13,
+      "pixelRatio": 1.5,
+      "geometries": 13,
+      "textures": 3,
+      "loadCount": 2,
+      "sceneKind": "workbench",
+      "disposed": false,
+      "failed": false,
+      "activeAnimation": false,
+      "tiltRadians": 0,
+      "targetTiltRadians": 0,
+      "reducedMotion": false
+    }
+  },
+  "file_sha256": {
+    "src/renderers/world.js": "e8d45dd20b488feed6e72d10b541c63b69061d5502e420ef2505d2c9e77d78af",
+    "public/art/frame.glb": "f58216181104f2ebb9babd7d6fb536db66b3af178fc472beabdbbfb90bec244a",
+    "public/art/workbench.glb": "0da0115735a527aa6afb2276dceb58754a5fdd5118206ee94c4ae830cbc24446",
+    "public/art/keeper-portrait.svg": "ce2e5ad30f0c2327d4874cb6d3f51f7d6ea2d94754237b0a5eaa5f4b39a9535f",
+    "public/art/postcard.svg": "fc8e7b8152cf01b09506bdc852a7d0ded509d64ac5c355a91e07e66848afefb3",
+    "public/art/sketch-underlay.svg": "9b489cddd713563f5a6a4f17856d6b8fb7cc996d84c32786718bc7d607d40b25",
+    "public/art/sketch-overlay.svg": "2d1e247b3424e2d35ad6ef7493bdfd9711d5505e881267b4f4238c6985f901a9"
+  },
+  "status": "pass",
+  "page_errors": []
+}

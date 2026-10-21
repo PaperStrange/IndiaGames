@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "url": "https://littleprince.dev/",
+  "edition": "deployed desktop website",
+  "browser": "Chromium 151.0.7922.173",
+  "environment": "headless Linux desktop, 1280x900",
+  "observer": "agent operating visible UI",
+  "human_participant": false,
+  "started_at": "2026-10-21T07:35:11.873Z",
+  "stopped_at": "2026-10-21T07:36:27.502Z",
+  "endpoint": "landing page compatibility block; language menu and persistence observed; core gameplay not reached",
+  "core_gameplay_played": false,
+  "completion_claim": false,
+  "audio_listened": false,
+  "transport": "Task-scoped Playwright APIRequestContext over managed HTTPS proxy with installed environment CA and default TLS verification; no persistent trust changes or certificate-error ignores",
+  "inputs": [
+    "Open website",
+    "Click English language menu",
+    "Click Chinese option",
+    "Reload page"
+  ],
+  "captures": [
+    {
+      "path": "captures/littleprince-01-arrival.png",
+      "bytes": 1830349,
+      "sha256": "1deac00d24bb56a8fb12f0be15d8c0b32e761ba883c8e8eb1caaeb74e2544311"
+    },
+    {
+      "path": "captures/littleprince-02-language-menu.png",
+      "bytes": 1835907,
+      "sha256": "d9a8c6718fef46b8611cd2041efe5abcb34dc1f68e28d45c70a388f833702c4a"
+    },
+    {
+      "path": "captures/littleprince-03-chinese-block.png",
+      "bytes": 1831874,
+      "sha256": "9e5989831728bd3decd7c2b3cea205bd35ca2ae17245b30c0cc646f3becab1af"
+    },
+    {
+      "path": "captures/littleprince-04-reentry.png",
+      "bytes": 1826892,
+      "sha256": "f0e3c94951bc567660e54df3f377e40607aa177c92d4a19b121887b68dd4dc21"
+    }
+  ],
+  "limitations": [
+    "Graphics acceleration/WebGPU entry requirement not met in this environment",
+    "No physical device or performance measurements",
+    "No player motivation, enjoyment or retention measured"
+  ]
+}

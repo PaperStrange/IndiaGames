@@ -1,49 +1,51 @@
-# The Keeper’s Frame
+# Vivid — small worlds, lasting traces
 
-A browser-first GameJam slice for the Vivid 2.5D Photo Game research branch. Meet Iona, a lighthouse keeper who cannot reach outside her portrait. Lean around the frame, inspect two harbour marks, send the ferry’s safe signal, and decide what happens to her private letter. Return immediately or reload: she remembers the specific choice and offers the letter differently.
+A browser anthology with two playable stories:
 
-**This build uses original SVG illustration, authored branching dialogue, and browser-local memory. It has no generative AI, uploaded-photo inference, microphone, account, backend, or runtime dependency.** It tests a purposeful portrait and earned recognition. It does not implement the research concept’s photo-to-depth pipeline or free conversation. The “3 minutes” caption is a design target, not a measured human completion time.
+- **A Place for the Promise:** help Iona bring a ferry home, repair a lamp in an earlier memory, then choose where a private letter or approved public dedication belongs on a later visit.
+- **The Unfinished Postcard:** examine Mara's workbench in any order and align the drawings to discover a community workshop inside a closed station.
 
-## Play
+The technical package/release ID is `keepers-frame`. Version `0.1.0` is a candidate, not an approved official release. Human playtests are pending. Approximate story durations in the collection are content estimates.
 
-From this directory:
+## Run and verify
 
-```sh
-python3 -m http.server 8112
-```
-
-Open <http://localhost:8112>. Serve over HTTP; module imports are not intended for `file://` use. All assets are bundled in the source. The prototype can be uploaded unchanged as an HTML game to a static host or an itch.io HTML upload, with `index.html` at the archive root. No public release or platform integration is included.
-
-Use the lean buttons or left/right arrow keys to reveal marks; click or press Enter to read them. Tab reaches every control. Choose a bearing and flash pattern, then send the signal. There is no time limit or sound requirement. Touch does not require hover. OS reduced motion is respected, and the header has a motion toggle. In compact embedded viewports the page scrolls vertically.
-
-Your ending and whether you opened the letter without permission are stored under `keepers-frame:v1` in this browser’s local storage. Storage contains only version, ending choice, privacy flag, and visit count. A two-click “Forget our visits” control removes it. If storage is blocked, the game works with memory for the open page and displays that limitation. No analytics or external requests are made by game code.
-
-## Cooperating without conflicting
-
-| Area | Files | Contract |
-| --- | --- | --- |
-| Rules and persistence schema | `src/rules.js` | Pure `transition(state, event)`; reject invalid phase/viewpoint changes; `memoryFor()` only after an ending. |
-| Writing | `src/content.js` | Authored clue text must agree with rules and visible artwork. Never introduce undisplayed answers. |
-| Interaction and rendering | `src/app.js` | Dispatch events; render rules state. Dialogue cannot grant success. Storage errors never block play. |
-| Art and layout | `index.html`, `styles.css` | Original inline SVG. Preserve semantic buttons, focus order, and equivalent reduced-motion clue access. |
-| Verification | `test/`, `evidence/` | Behavioral tests and observed action record; agent evidence is not human research. |
-
-Coordinate shared event/schema changes before editing. A writer and renderer can work independently if clue IDs and state fields stay stable. Keep this game on the `vivid-2.5d-photo-game` branch; commit a runnable milestone, then validation/notes, and sync only the intended branch. Do not cherry-pick another game’s working tree into this one.
-
-## Verify
-
-Rules use Node’s built-in test runner:
+Node ≥22.12, Chromium for browser checks, and npm are required. Runtime assets are local; install dependencies once, then serve the build from any ordinary static host.
 
 ```sh
-node --test test/rules.test.js
+npm ci
+npm test
+npm run build
+npm run preview
+npm run test:browser
 ```
 
-Browser coverage uses an existing Playwright installation and Chromium; those are development tools, not shipped dependencies:
+The server uses `http://127.0.0.1:8112/`. `GAME_URL` can point browser checks at a separately served **built** candidate, including a nested path. `CHROMIUM_PATH` defaults to `/usr/bin/chromium`. Every browser run writes a new timestamped evidence folder; historical October 5 captures are preserved. Do not open index.html directly with file://.
 
 ```sh
-PLAYWRIGHT_MODULE_PATH=/path/to/node_modules/playwright \
-CHROMIUM_PATH=/usr/bin/chromium \
-node test/browser.mjs
+# Optional URL controls for facilitators / reproducible diagnostics
+# ?flat=1#iona              force complete flat illustration mode
+# ?profile=neutral#iona     separate neutral-return study profile
+# #mara                     open the second story
 ```
 
-Run the HTTP server first. Optional `GAME_URL` overrides localhost. The suite overwrites `evidence/`, completes the interaction through visible controls, tests actual reload persistence, and saves screenshots plus a Playwright trace. See [the jam notebook](../docs/gamejam-2026-10-05.md) for the user journey, findings, limitations, and next experiment.
+The neutral profile is a study tool, not an invisible random assignment. Use only the assigned URL and a fresh profile during preregistered studies. Do not use developer save fixtures as participant evidence.
+
+## Interaction and privacy
+
+Mouse, pen, touch and keyboard share the same state rules. Dragging the scene is only a view preview; visible lean controls choose a viewpoint. Every placement also works by selecting the object, then its destination. Sketch alignment has a slider and step buttons. No action requires sound, sustained holding, simultaneous inputs or rapid timing. Reading & motion settings include reduced movement and flat illustration mode; OS reduced motion is respected.
+
+Visits stay in this browser, separately for each story and study profile. No account, analytics or external dialogue service is used. Forgetting a story requires two deliberate clicks and affects only that story/profile. Iona's old `keepers-frame:v1` memory migrates without hiding what the old archive ending published. Unknown future and damaged records are preserved until explicit recovery or reset. If browser storage is unavailable, the current visit remains playable but cannot survive a reload.
+
+## Project structure
+
+`src/stories/` contains lazy story packs, writer-editable content and the unshipped recast fixture. `src/runtime/` handles pack validation, safe saves and session lifecycle. `src/renderers/` consumes presentation state; it never changes game rules. `src/app.js` implements shared HTML input and reading UI. `art/` contains source artwork and the Blender exporter; `public/art/` contains distributable assets. See [the story-authoring contract](src/stories/README.md) and [art provenance](art/README.md).
+
+The small legacy `src/rules.js` / `src/content.js` and their eight tests remain as an isolated historical baseline. The shipped app imports story packs instead. They are not the new engine and should not receive new story features.
+
+A new pack provides `createState`, `reduce`, `getViewModel`, `serialize`, `migrate`, manifest, validation states and scenario tests; register it in the catalog. Cast names and story IDs do not belong in shared input/rendering code. New mechanics must provide accessible controls and maintain renderer-independent truth. The build validates assets and writes `story-catalog.json` from the actual shipped manifests.
+
+## Delivery boundary
+
+Builds use relative URLs and bundle all required runtime dependencies. Serve the **exact** master candidate locally or on an agreed trusted LAN for manual review. The main dashboard and release policy explain promotion; master is not assumed to have a public Pages deployment. Both shipped stories require separate human evidence for the same build hash. Automated QA, screenshots, source analysis and agent competitor play do not satisfy that gate.
+
+[Iteration decision and research](../../docs/gamejam/vivid-iteration-2026-10-21/DECISION.md) · [human-study preparation](../../docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md)
