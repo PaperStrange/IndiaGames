@@ -1,0 +1,13 @@
+{
+  "runId": "2026-10-21T07-36-48-261Z",
+  "at": "2026-10-21T07:37:21.661Z",
+  "sourceCommit": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
+  "workingDiffSHA256": "a4e86a0e48d342af1ebe6c1f8ad53e87b350fb8126052cacccc67e0f2523d324",
+  "base": "http://127.0.0.1:8113/",
+  "automated": true,
+  "notHumanEvidence": true,
+  "physicalDeviceTested": false,
+  "audioRequired": false,
+  "errors": [],
+  "observations": []
+}

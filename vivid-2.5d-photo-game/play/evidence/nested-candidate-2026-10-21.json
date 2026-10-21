@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-21T07:44:35.551Z",
+  "base": "http://127.0.0.1:8114/release-candidates/keepers-frame/0.1.0/build/",
+  "sourceCommit": "25d784b5973e0b1112d8afbba00d32e63257a10b",
+  "buildSHA256": "9f7283b275ee0560c49e959488453fdec136b737e0f45898c5b8a9cb420d082f",
+  "automated": true,
+  "notHumanEvidence": true,
+  "scenarios": [
+    "Mara complete 3D journey under nested candidate path",
+    "Switch to Iona 3D and inspect first evidence"
+  ],
+  "errors": [],
+  "failed": []
+}

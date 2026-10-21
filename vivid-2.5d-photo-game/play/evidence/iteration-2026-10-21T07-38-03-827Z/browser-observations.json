@@ -1,0 +1,74 @@
+{
+  "runId": "2026-10-21T07-38-03-827Z",
+  "at": "2026-10-21T07:39:03.504Z",
+  "sourceCommit": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
+  "workingDiffSHA256": "3662a03d757eb90fa3055c9a132ed1fc295516d76a3ef23c456d53caeaaab98e",
+  "base": "http://127.0.0.1:8113/",
+  "automated": true,
+  "notHumanEvidence": true,
+  "physicalDeviceTested": false,
+  "audioRequired": false,
+  "errors": [],
+  "observations": [
+    {
+      "at": "2026-10-21T07:38:25.533Z",
+      "label": "Evidence-gated rescue, safe wrong answer and prior uninvited reading",
+      "url": "http://127.0.0.1:8113/#iona",
+      "screen": "← All stories\nThe ferry is safely home\nA little world in 3D\nAN EVENING AT THE HARBOUR\n✧\n\nBearing · EAST · Rhythm · SHORT / LONG / SHORT\n\nDrag gently to look around\n\nProgress is kept on this device.\n\nAN EVENING AT THE HARBOUR\n\nA Place for the Promise\n\nIONA\n\nThere. The answering light. The ferry has found the breakwater. We can leave the lamp steady now. Would you like to know why I kept that little wedge?\n\nRemember an earlier watch\n\nRead this visit’s transcript\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:38:35.146Z",
+      "label": "Recollection reload retains latched brace; invalid/cancelled drops do not grant success; wedge steadies lamp",
+      "url": "http://127.0.0.1:8113/#iona",
+      "screen": "← All stories\nA memory · the light steadies\nA little world in 3D\nAN EARLIER WATCH · A RECOLLECTION\n✧\n\nBearing · EAST · Rhythm · SHORT / LONG / SHORT\n\nDrag gently to look around\n\nProgress is kept on this device.\n\nTHE WORN NOTCH · AN EARLIER WATCH\n\nA Place for the Promise\n\nIONA\n\nThe shade is still. Just a scrap of wood, but I could breathe again. I did not become fearless. I found one small thing I could do, and then another.\n\nReturn to the present\n\nRead this visit’s transcript\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:38:37.469Z",
+      "label": "Reload after ending goes directly to promised return",
+      "url": "http://127.0.0.1:8113/#iona",
+      "screen": "← All stories\nOne small thing to put in place\nOpening the world…\nAN EVENING AT THE HARBOUR\n✧\n\nBearing · EAST · Rhythm · SHORT / LONG / SHORT\n\nDrag gently to look around\n\nProgress is kept on this device.\n\nANOTHER EVENING\n\nA Place for the Promise\n\nIONA\n\nYou kept the letter between us. Here is the sheltered recess I promised. Will you put the folded letter there, out of the weather? You read before I had said yes. I remember that, too. Thank you for hearing me now.\n\nFolded letter\nSheltered recess\n\nSelect folded letter, then its place. You can also drag it across.\n\nRead this visit’s transcript\nYou chose to keep the original letter private.\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:38:40.992Z",
+      "label": "Private folded letter remains in the sheltered recess after real reload",
+      "url": "http://127.0.0.1:8113/#iona",
+      "screen": "← All stories\nThe frame remembers its arrangement\nA little world in 3D\nAN EVENING AT THE HARBOUR\n✧\n\nBearing · EAST · Rhythm · SHORT / LONG / SHORT\n\nDrag gently to look around\n\nProgress is kept on this device.\n\nANOTHER EVENING\n\nA Place for the Promise\n\nIONA\n\nThere. Out of the wind, beside the light. A private promise can have a place in the world, too. The ferry is home. The lamp is steady. You can leave the frame as it is, and find it this way when you return.\n\nRead this visit’s transcript\nYou chose to keep the original letter private.\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:38:49.594Z",
+      "label": "Mara: three objects, stepped alignment, visible community-workshop reveal and interpretive ending",
+      "url": "http://127.0.0.1:8113/#mara",
+      "screen": "← All stories\nAn invitation completed\nA little world in 3D\nA MYSTERY TOLD BY OBJECTS\n✧\n\nThe old room and a new arrangement, drawn on separate sheets. · An invitation to bring something broken. · The last train left. Someone kept a key.\n\nDrag gently to look around\n\nProgress is kept on this device.\n\nA MYSTERY TOLD BY OBJECTS\n\nThe Unfinished Postcard\n\nPerhaps someone will bring a chair with one loose leg. Perhaps they will stay for tea. A place can begin again with a small repair. You leave the layers aligned on the lightbox. The empty address line on the postcard could be for anyone in the town.\n\nRead this visit’s transcript\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:38:51.748Z",
+      "label": "Switching and reloading preserves independent stories without transcript leakage",
+      "url": "http://127.0.0.1:8113/#mara",
+      "screen": "← All stories\nAn invitation completed\nOpening the world…\nA MYSTERY TOLD BY OBJECTS\n✧\n\nThe old room and a new arrangement, drawn on separate sheets. · An invitation to bring something broken. · The last train left. Someone kept a key.\n\nDrag gently to look around\n\nProgress is kept on this device.\n\nA MYSTERY TOLD BY OBJECTS\n\nThe Unfinished Postcard\n\nPerhaps someone will bring a chair with one loose leg. Perhaps they will stay for tea. A place can begin again with a small repair. You leave the layers aligned on the lightbox. The empty address line on the postcard could be for anyone in the town.\n\nRead this visit’s transcript\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:38:54.684Z",
+      "label": "390×844 emulated touch, flat mode: public dedication completed without dragging",
+      "url": "http://127.0.0.1:8113/?flat=1#iona",
+      "screen": "← All stories\nThe frame remembers its arrangement\nFlat illustration\nAN EVENING AT THE HARBOUR\n✧\n\nBearing · EAST · Rhythm · SHORT / LONG / SHORT\n\nProgress is kept on this device.\n\nANOTHER EVENING\n\nA Place for the Promise\n\nIONA\n\nThere. The harbour can read it in the morning. The little repair and the long nights belong to the same person. The ferry is home. The lamp is steady. You can leave the frame as it is, and find it this way when you return.\n\nRead this visit’s transcript\nYou approved a public dedication with the keeper. The original letter remains private.\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:38:57.689Z",
+      "label": "Keyboard-only Iona completion, latched actions and reduced motion",
+      "url": "http://127.0.0.1:8113/?flat=1#iona",
+      "screen": "← All stories\nThe frame remembers its arrangement\nFlat illustration\nAN EVENING AT THE HARBOUR\n✧\n\nBearing · EAST · Rhythm · SHORT / LONG / SHORT\n\nGentle movement is off\n\nProgress is kept on this device.\n\nANOTHER EVENING\n\nA Place for the Promise\n\nIONA\n\nThere. The harbour can read it in the morning. The little repair and the long nights belong to the same person. The ferry is home. The lamp is steady. You can leave the frame as it is, and find it this way when you return.\n\nRead this visit’s transcript\nYou approved a public dedication with the keeper. The original letter remains private.\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:39:00.153Z",
+      "label": "Keyboard-only Mara completes both nonlinear inspection and alignment",
+      "url": "http://127.0.0.1:8113/?flat=1#mara",
+      "screen": "← All stories\nAn invitation completed\nFlat illustration\nA MYSTERY TOLD BY OBJECTS\n✧\n\nThe last train left. Someone kept a key. · An invitation to bring something broken. · The old room and a new arrangement, drawn on separate sheets.\n\nGentle movement is off\n\nProgress is kept on this device.\n\nA MYSTERY TOLD BY OBJECTS\n\nThe Unfinished Postcard\n\nNot every edge is inked. There is room to add a table, change a plan, bring an idea. Unfinished can mean there is a place for you. You leave the layers aligned on the lightbox. The empty address line on the postcard could be for anyone in the town.\n\nRead this visit’s transcript\nForget this story"
+    },
+    {
+      "at": "2026-10-21T07:39:01.551Z",
+      "label": "Synthetic v1 archive preserves truthful publication history; optional recollection returns without another rescue",
+      "url": "http://127.0.0.1:8113/?flat=1#iona",
+      "screen": "← All stories\nThe frame remembers its arrangement\nFlat illustration\nAN EVENING AT THE HARBOUR\n✧\n\nA harbour keeper in a weathered blue coat. One hand rests beside a small, carefully repaired lamp.\n\nDrag gently to look around\n\nProgress is kept on this device.\n\nANOTHER EVENING\n\nA Place for the Promise\n\nIONA\n\nThere. The harbour can read it in the morning. The little repair and the long nights belong to the same person. The ferry is home. The lamp is steady. You can leave the frame as it is, and find it this way when you return.\n\nRead this visit’s transcript\nOn the earlier version, you approved publishing the original letter.\nForget this story"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "startedAt": "2026-10-21T07:41:37.099Z",
+  "recordedAt": "2026-10-21T07:42:45.084Z",
+  "sourceCommit": "25d784b5973e0b1112d8afbba00d32e63257a10b",
+  "sourceTreeDirty": true,
+  "base": "http://127.0.0.1:8113/",
+  "testedBuild": {
+    "sha256": "9f7283b275ee0560c49e959488453fdec136b737e0f45898c5b8a9cb420d082f",
+    "files": {
+      "art/frame.glb": "f58216181104f2ebb9babd7d6fb536db66b3af178fc472beabdbbfb90bec244a",
+      "art/keeper-portrait.svg": "ce2e5ad30f0c2327d4874cb6d3f51f7d6ea2d94754237b0a5eaa5f4b39a9535f",
+      "art/model-metrics.json": "596f3b694e0782b28602789675e5b034eba841b887e4422aac8a02192f91d63a",
+      "art/postcard.svg": "fc8e7b8152cf01b09506bdc852a7d0ded509d64ac5c355a91e07e66848afefb3",
+      "art/sketch-overlay.svg": "2d1e247b3424e2d35ad6ef7493bdfd9711d5505e881267b4f4238c6985f901a9",
+      "art/sketch-underlay.svg": "9b489cddd713563f5a6a4f17856d6b8fb7cc996d84c32786718bc7d607d40b25",
+      "art/workbench.glb": "0da0115735a527aa6afb2276dceb58754a5fdd5118206ee94c4ae830cbc24446",
+      "assets/index-CmRFnsuX.css": "aafecb6c885b1e05b441c9c32d8915b2f48c6f7c7075e6a4ec26a2959f53d999",
+      "assets/index-DjmERjYM.js": "8b033228535880f58b9866c59abe09db6a3914446fa9d7736629d48c125a427c",
+      "assets/iona-2cAlQtXR.js": "d5c311afe335704f324371ce2b40ecc2c6de2c188b565345c44e2082cc95a7ff",
+      "assets/mara-C1J8lK1G.js": "b26baf9fdcfb5e0e013a063ea89325d01c86f54a0afc52a4d37ea73608bf6702",
+      "assets/world-BIfCt15a.js": "b6841fa12456a7ac9910e56100638b63ef8f399398b912852ee4c88f4d3f6719",
+      "index.html": "6408952f13e61cff62a1f487583216033575dae94b0be47d34ea1ab48c258a58",
+      "story-catalog.json": "1b17343c35df541f9c1ef52579412667d0376b51e180cd409ef449115037d6fc"
+    }
+  },
+  "kind": "automated-browser-regression",
+  "humanPlaytest": false,
+  "passed": true,
+  "results": [
+    {
+      "name": "escape-cancels-drag-and-keyboard-still-places",
+      "passed": true,
+      "durationMs": 8551
+    },
+    {
+      "name": "touch-cancel-keeps-object-and-next-tap-works",
+      "passed": true,
+      "durationMs": 6915
+    },
+    {
+      "name": "second-touch-cancels-placement-without-losing-object",
+      "passed": true,
+      "durationMs": 5611
+    },
+    {
+      "name": "reduced-motion-interrupts-active-world-drag",
+      "passed": true,
+      "durationMs": 3062
+    },
+    {
+      "name": "adjustment-boundary-keeps-keyboard-focus",
+      "passed": true,
+      "durationMs": 4023
+    },
+    {
+      "name": "switching-stories-clears-transcript-and-hidden-inspection",
+      "passed": true,
+      "durationMs": 7118
+    },
+    {
+      "name": "malformed-bookmark-leaves-gallery-usable",
+      "passed": true,
+      "durationMs": 4248
+    },
+    {
+      "name": "same-document-bookmarks-open-stories-and-preserve-skip-link",
+      "passed": true,
+      "durationMs": 5885
+    },
+    {
+      "name": "simulated-bfcache-lifecycle-resumes-live-session",
+      "passed": true,
+      "durationMs": 5014
+    },
+    {
+      "name": "late-previous-story-assets-cannot-replace-current-scene",
+      "passed": true,
+      "durationMs": 7995
+    }
+  ]
+}

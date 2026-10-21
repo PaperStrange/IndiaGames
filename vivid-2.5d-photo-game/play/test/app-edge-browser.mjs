@@ -1,11 +1,35 @@
 // Automated regression checks. These are not human playtest observations.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readdir, readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+import { resolve } from 'node:path';
 
 const base = process.env.BASE_URL || 'http://127.0.0.1:8113/';
 const output = process.env.EDGE_EVIDENCE_DIR || '/tmp/vivid-app-edge';
+const startedAt = new Date().toISOString();
+let sourceCommit = 'unknown', sourceTreeDirty = null;
+try {
+  sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+  sourceTreeDirty = Boolean(execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' }).trim());
+} catch {}
+async function inventory(directory) {
+  const files = {};
+  async function walk(prefix = '') {
+    for (const entry of await readdir(resolve(directory, prefix), { withFileTypes: true })) {
+      const path = prefix ? `${prefix}/${entry.name}` : entry.name;
+      if (entry.isDirectory()) await walk(path);
+      else if (entry.isFile()) files[path] = createHash('sha256').update(await readFile(resolve(directory, path))).digest('hex');
+    }
+  }
+  await walk();
+  const sorted = Object.fromEntries(Object.keys(files).sort().map(path => [path, files[path]]));
+  return { sha256: createHash('sha256').update(JSON.stringify(sorted)).digest('hex'), files: sorted };
+}
+// The parent run freezes dist/ and serves it through Vite preview. This binds
+// the observations to those bytes, separately from the source commit.
+const testedBuild = await inventory(process.env.EDGE_BUILD_DIR || 'dist');
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium',
   headless: true,
@@ -230,10 +254,8 @@ await check('late-previous-story-assets-cannot-replace-current-scene', async pag
 });
 
 await browser.close();
-let sourceCommit = 'unknown';
-try { sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(); } catch {}
 const report = {
-  recordedAt: new Date().toISOString(), sourceCommit, base,
+  startedAt, recordedAt: new Date().toISOString(), sourceCommit, sourceTreeDirty, base, testedBuild,
   kind: 'automated-browser-regression', humanPlaytest: false,
   passed: results.every(result => result.passed), results,
 };
