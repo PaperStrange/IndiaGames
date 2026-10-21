@@ -1,0 +1,452 @@
+[
+  {
+    "id": "KF-01",
+    "perspective": "Game design",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Product/design lead",
+    "title": "Choose and record the one-minute return experiment",
+    "deliverable": "A one-page decision brief selecting, revising or declining the remembered-action experiment before any game source change.",
+    "acceptance_criteria": [
+      "Answer all three product questions as hypotheses: why play, why choose this browser experience, and what distinctive action/consequence/payoff it may offer.",
+      "Compare the proposed remembered-action return with a neutral routine task and a no-new-return option; state the strongest substitute and the failure that would make us stop.",
+      "Acknowledge 2/6 required competitors with partial gameplay and zero human tests; explicitly record the unresolved research gaps or time-boxed pilot rationale.",
+      "Record decision owner, date, intended audience/occasion, scope, and experiment decision before releasing KF-08 or KF-09."
+    ],
+    "depends_on": [
+      "KF-02"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "research_product"
+  },
+  {
+    "id": "KF-02",
+    "perspective": "Research",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Research lead",
+    "title": "Maintain the six-competitor gap ledger",
+    "deliverable": "An edition-specific V1–V6 comparison ledger and a proposed future research queue, with source links and exact observed endpoints.",
+    "acceptance_criteria": [
+      "Keep Sort the Court! Poki and older itch sessions separate; retain V1 and V2 as partial, with Six Cats' tool-imposed stopping explicitly recorded.",
+      "Keep Event[0], TOEM, Townscaper and Rhythm Doctor source-only/unplayed; native access, purchases, installation and new gameplay are deferred in this planning pass.",
+      "For every slot state the competitive role, family, action/consequence question, missing journey stages and what evidence could change the product decision.",
+      "Retain six distinct titles, at least four broad families, at least two outside narrative/deduction, no more than two per family and at most one occasion comparator; any future reserve promotion needs a reason and a recalculated roster."
+    ],
+    "depends_on": [],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "research_competitors"
+  },
+  {
+    "id": "KF-03",
+    "perspective": "Game design",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Systems designer",
+    "title": "Specify the return state and action contract",
+    "deliverable": "A rules table and short player journey for the first rescue, both remembered-action returns and neutral control.",
+    "acceptance_criteria": [
+      "Cover first/return visit, private/archive choice, prior peek/no peek, invitation, accepted action, visible result and stopping state.",
+      "Private history invites placing the folded letter in a sheltered recess; archive history invites pinning an approved dedication on the harbour-facing edge.",
+      "Each branch offers one bounded placement with comparable lean/place interactions and care; both are legitimate outcomes and neither repeats the unchanged ferry puzzle.",
+      "Retain evidence-gated first rescue, external clue log, safe retries and no timer; dialogue never grants an invalid mechanical success."
+    ],
+    "depends_on": [
+      "KF-01"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "core_gameplay"
+  },
+  {
+    "id": "KF-04",
+    "perspective": "Narrative",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Narrative designer",
+    "title": "Write the invitation, acknowledgment and quiet ending",
+    "deliverable": "A reviewed script for both return branches, prior-intrusion variants, neutral control and end/return copy.",
+    "acceptance_criteria": [
+      "Each experimental acknowledgment names the player's specific earlier choice and the action now offered; no generic praise substitutes for causality.",
+      "Both private and public routes receive equivalent warmth and narrative care; public sharing is explicitly permitted by Iona.",
+      "Prior uninvited reading is acknowledged truthfully without erasing it through later consent or making privacy the only morally rewarded ending.",
+      "The control omits prior-choice reference while matching interaction count and approximate length; copy promises authored interaction rather than free AI chat or uploaded-photo animation."
+    ],
+    "depends_on": [
+      "KF-03"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "narrative"
+  },
+  {
+    "id": "KF-05",
+    "perspective": "Art",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Visual/interaction artist",
+    "title": "Storyboard the object, invitation and visible consequence",
+    "deliverable": "An annotated before/invitation/placement/after board for both returns using the existing portrait and frame.",
+    "acceptance_criteria": [
+      "Show an offered gesture, folded letter/recess and approved dedication/harbour edge as clearly distinguishable states.",
+      "A reviewer can identify the changed object and its location without the ending paragraph; any such review remains design review, not human-test evidence.",
+      "Preserve the existing visual language and first-visit clue concealment; avoid adding portraits, decorative animation systems or a second full scene.",
+      "Include narrow-screen composition and static reduced-motion frames; pair object change with readable text so color or motion alone carries no essential state."
+    ],
+    "depends_on": [
+      "KF-03",
+      "KF-04"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "art"
+  },
+  {
+    "id": "KF-06",
+    "perspective": "UX & accessibility",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "UX/accessibility designer",
+    "title": "Specify equivalent touch, keyboard and static interaction",
+    "deliverable": "An interaction specification covering discoverability, focus, labels, target sizes, announcements and mobile composition.",
+    "acceptance_criteria": [
+      "The same meaningful action is available through visible touch controls and keyboard; hover and animation are optional.",
+      "Keep the changed object, invitation and action response visible together at 390×844 where practicable; specify any necessary scrolling instead of hiding consequences below the portrait.",
+      "Describe focus after start, placement, ending and reset; distinguish accessible names, state text and live announcements without duplicating confusing speech.",
+      "Define manual screen-reader and real-phone checks separately from Chromium emulation; unperformed checks remain unknown rather than inferred passes."
+    ],
+    "depends_on": [
+      "KF-03",
+      "KF-05"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "ux_accessibility"
+  },
+  {
+    "id": "KF-07",
+    "perspective": "Engineering",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Rules/persistence engineer",
+    "title": "Design minimal memory and migration behavior",
+    "deliverable": "A versioned local-memory schema, migration table and failure/recovery matrix for the approved return.",
+    "acceptance_criteria": [
+      "Preserve private/archive and prior-peek history; define whether return placement is pending or performed and how both display after reload.",
+      "Specify deterministic migration from every valid v1 memory, malformed/unknown versions, absent data and bounded visit counts.",
+      "Blocked storage never prevents play; text accurately distinguishes open-page memory from reload persistence, and forgetting removes all experiment-related local state.",
+      "Assign one schema owner and keep experimental condition assignment explicit and reproducible without introducing accounts, backend analytics or additional personal data."
+    ],
+    "depends_on": [
+      "KF-03"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "engineering_persistence"
+  },
+  {
+    "id": "KF-08",
+    "perspective": "Engineering",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Rules/persistence engineer",
+    "title": "Implement the approved remembered-action return",
+    "deliverable": "A later, separately authorized game change implementing the approved state table, local persistence and neutral condition.",
+    "acceptance_criteria": [
+      "Start only after KF-01 records the experiment decision and later source work is authorized; this planning task implements nothing.",
+      "Rules accept only the invited action for the active return branch; invalid actions cannot complete or corrupt memory.",
+      "Placement survives a real reload when storage works; legacy, malformed and blocked-storage cases follow KF-07, and forgetting restores a fresh encounter.",
+      "Meaningful state-transition tests cover private/archive × peek/no peek, repeated input, replay, migration and control; preserve the first rescue and safe recovery."
+    ],
+    "depends_on": [
+      "KF-01",
+      "KF-03",
+      "KF-04",
+      "KF-06",
+      "KF-07",
+      "KF-14"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "engineering_core"
+  },
+  {
+    "id": "KF-09",
+    "perspective": "Engineering",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Frontend integrator",
+    "title": "Integrate art, controls and return feedback",
+    "deliverable": "A later integrated browser candidate joining approved assets, script and rules with a reproducible condition selector.",
+    "acceptance_criteria": [
+      "Renderer follows rules state; source ownership and the schema contract are reconciled before integration.",
+      "Both return branches show the correct object, invitation, placement and acknowledgment without changing the first-rescue clues.",
+      "Keyboard, touch and reduced-motion paths match the specification; stale dialogue or a delayed visual update cannot contradict the saved state.",
+      "The neutral return has comparable length, controls and art quality; condition assignment is recorded and cannot accidentally change during a session."
+    ],
+    "depends_on": [
+      "KF-04",
+      "KF-05",
+      "KF-06",
+      "KF-08"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "engineering_integration"
+  },
+  {
+    "id": "KF-10",
+    "perspective": "QA",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "QA lead",
+    "title": "Verify the complete journey and evidence provenance",
+    "deliverable": "A dated functional/visual verification record for the exact integrated revision, including unresolved coverage limits.",
+    "acceptance_criteria": [
+      "Exercise first rescue, a natural wrong signal/retry, both final choices, all peek histories, immediate return, real reload, repeated placement and forget through visible controls.",
+      "Run the rule suite and browser checks; preserve the historical baseline of 8 rule tests and 13 recorded observations as prior-review evidence, and explain any later test changes.",
+      "Check desktop, 390×844 touch emulation, keyboard/reduced motion and blocked storage; attach error listeners to every tested context and label physical-phone/screen-reader results separately.",
+      "Every record includes actual run date, build revision, device/browser, actions and outcomes; remove or clearly override the browser runner's historical hardcoded date in future evidence."
+    ],
+    "depends_on": [
+      "KF-09"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "qa"
+  },
+  {
+    "id": "KF-11",
+    "perspective": "Research",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Playtest/research lead",
+    "title": "Prepare a fair human comparison and recording sheet",
+    "deliverable": "A session protocol, consent wording, neutral questions, condition assignment plan and empty participant sheet.",
+    "acceptance_criteria": [
+      "Target six fresh humans for enacted memory and, if feasible, six different humans for neutral return; define assignment and report actual N and branch imbalance.",
+      "Hold first rescue, art quality, control scheme and exposure length comparable; document that the package comparison cannot isolate line, object and permission effects.",
+      "Observe any voluntary return before asking remaining participants to open the return; record later exposure as prompted and ask neutral questions such as 'What changed?' and 'What caused that?'.",
+      "Predeclare the diagnostic gate of at least 4/6 completing unaided and explaining choice-to-action causality, plus absence of recurring AI/photo expectation errors; fewer than six cannot pass the gate and this is not statistical or retention proof."
+    ],
+    "depends_on": [
+      "KF-01",
+      "KF-02"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "research_protocol"
+  },
+  {
+    "id": "KF-12",
+    "perspective": "Human playtesting",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human playtest facilitator",
+    "title": "Run the enacted-memory and neutral-return sessions",
+    "deliverable": "Consented human observation rows and a condition-by-condition synthesis linked to the tested revision.",
+    "acceptance_criteria": [
+      "Requires real, willing participants and a verified candidate; no human sessions have been recorded and actual participant availability remains unconfirmed. Agent roleplay cannot fill rows.",
+      "Record condition, build, branch, prior genre exposure, device, order, assistance, completion, spontaneous/prompted return, causal explanation and permitted verbatim response.",
+      "Report actual N and all failures; if neutral recruitment is unavailable, label the enacted-memory sessions a single-condition pilot with no comparative conclusion.",
+      "Apply the predeclared diagnostic gate, preserve contrary cases, and make no enjoyment, market-demand, physiological or day-two retention claims from agent prose or same-session clicks."
+    ],
+    "depends_on": [
+      "KF-10",
+      "KF-11",
+      "KF-15"
+    ],
+    "human_participants_required": true,
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "completion_evidence": [],
+    "focus": "human_comparison"
+  },
+  {
+    "id": "KF-13",
+    "perspective": "Human playtesting",
+    "priority": "P1",
+    "status": "blocked_human",
+    "owner_role": "Research lead",
+    "title": "Measure a genuine later revisit if separately arranged",
+    "deliverable": "An optional later-session recall/revisit record with the elapsed interval and invitation history.",
+    "acceptance_criteria": [
+      "Arrange follow-up only with consenting participants and an agreed protocol; no outreach or invitations occur during this planning pass.",
+      "Distinguish spontaneous later return, an invited follow-up and an immediate in-session restart; record missing participants without inventing outcomes.",
+      "Record whether the participant remembers the specific choice, recognizes the persisted object and finds an available action meaningful.",
+      "Use findings as qualitative later-session evidence, not a retention rate or a requirement to add daily rewards; leave the result unknown if follow-up does not happen."
+    ],
+    "depends_on": [
+      "KF-12"
+    ],
+    "human_participants_required": true,
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "completion_evidence": [],
+    "focus": "human_followup"
+  },
+  {
+    "id": "KF-14",
+    "perspective": "Production",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Coordinating lead",
+    "title": "Assign file ownership and review handoffs",
+    "deliverable": "A proposed role/file map, integrator assignment and shared handoff checklist for any later authorized build.",
+    "acceptance_criteria": [
+      "Give one owner each for rules/schema, content, renderer, art/layout and verification; name one integrator for cross-cutting contracts.",
+      "Record proposed human assignees separately from roles; do not imply staffing or commitment has been confirmed.",
+      "Every handoff identifies files, revision, changed contract, validation command/result, evidence and open limitation; coordinate schema changes before parallel edits.",
+      "Keep planning artifacts separate from gameplay branches and preserve prior records; this plan makes no repository write, branch switch, purchase or deployment."
+    ],
+    "depends_on": [
+      "KF-01"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "team_ownership"
+  },
+  {
+    "id": "KF-15",
+    "perspective": "Distribution",
+    "priority": "P1",
+    "status": "conditional",
+    "owner_role": "Release/UX owner",
+    "title": "Prepare a browser pilot package with truthful entry copy",
+    "deliverable": "A versioned review archive and distribution checklist for a later pilot, without publishing it.",
+    "acceptance_criteria": [
+      "Package bundled assets with index.html at the archive root, record exact revision, and distinguish static-host review from a future itch.io HTML submission.",
+      "Explain authored portrait interaction, local-only memory, forgetting and storage failure; the one-minute return remains a design target until humans supply timing data.",
+      "Record current submission/technical requirements only when verified in later authorized research; assess CrazyGames separately rather than assuming itch.io rules apply.",
+      "Include control/viewport notes, review instructions and known limits; no account setup, uploads, external analytics, native distribution or public gameplay release is performed by this planning work."
+    ],
+    "depends_on": [
+      "KF-10",
+      "KF-11",
+      "KF-14"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "distribution"
+  },
+  {
+    "id": "KF-16",
+    "perspective": "Game design",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Product/design lead with research and QA",
+    "title": "Decide advance, revise or stop from observed evidence",
+    "deliverable": "A short decision record and updated task board linking actual observations, counterexamples and remaining gaps.",
+    "acceptance_criteria": [
+      "Compare results with KF-01 and the predeclared human diagnostic gate; report actual sample and whether a control exists.",
+      "If appearance is recalled but the causal action is not, revise or stop the relationship experiment before expanding content; if both conditions work similarly, do not claim memory won.",
+      "Keep six-competitor coverage status independent from prototype QA and human-test counts; no completion percentage erases the 2/6 partial baseline or unresolved native studies.",
+      "Name the next bounded decision and owner, or stop; later follow-up is optional, and providers, photo uploads, voice/LLM chat, extra portraits and monetization remain deferred without a new evidence-backed scope."
+    ],
+    "depends_on": [
+      "KF-02",
+      "KF-12",
+      "KF-14"
+    ],
+    "lane": "vivid",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "product_decision"
+  },
+  {
+    "id": "KF-17",
+    "lane": "vivid",
+    "perspective": "Production",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Release integrator",
+    "title": "Stage one immutable candidate on master",
+    "deliverable": "A versioned release-candidates/keepers-frame/<version>/ package on master, built from the owning game branch.",
+    "acceptance_criteria": [
+      "Record the exact source SHA, version, player-facing notes, build inventory and hash; include a portable build/index.html and only intended files.",
+      "Use the release-candidate template and staging validator. Preserve the predeclared human-session protocol before recruiting; staging may contain pending evidence and is not an official release.",
+      "Keep the previous candidate and source branch recoverable, push master without force, and verify its remote SHA. Do not merge the whole game branch into master or main."
+    ],
+    "depends_on": [
+      "KF-10",
+      "KF-11"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": []
+  },
+  {
+    "id": "KF-18",
+    "lane": "vivid",
+    "perspective": "Human playtesting",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human playtest facilitator + independent reviewer",
+    "title": "Review the exact candidate against the human release gate",
+    "deliverable": "A complete human-playtest.json and linked anonymized records for the exact packaged build, with a recorded approve/revise/stop decision.",
+    "acceptance_criteria": [
+      "Six predeclared individual players: at least 4/6 each both complete the return unaided and explain how their earlier choice changed the return. At most 1/6 expects unrestricted AI interaction after the actual entry copy. Record denominators and the paired per-player outcomes.",
+      "Include every one of the six predeclared sessions, distinct pseudonymous participant IDs, raw observations and assistance. An incomplete, abandoned or assisted attempt cannot be silently replaced or counted as unaided success.",
+      "Zero unresolved critical bugs; manually check actual browser entry, core journey, failure/retry, keyboard, and one physical mobile/touch device. Record measured duration and issues rather than inferring results from automated checks.",
+      "An independent human reviewer inspects the evidence and signs the build-specific approval. Existing pilot sessions may be reused only if the protocol was predeclared, participants and required outcomes are recorded, and the artifact hash matches exactly; changed builds need revalidation.",
+      "Run full candidate validation. A failed gate stays on master; agent sessions and synthetic test fixtures cannot satisfy human evidence."
+    ],
+    "depends_on": [
+      "KF-17"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": []
+  },
+  {
+    "id": "KF-19",
+    "lane": "vivid",
+    "perspective": "Distribution",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Release maintainer",
+    "title": "Promote only the approved game version to main",
+    "deliverable": "A reviewed official release package, registry entry, GitHub version and release-note links, plus a verified playable Pages URL.",
+    "acceptance_criteria": [
+      "Copy only the approved candidate package into releases/<game>/<version>/ on main. Pin its immutable ancestor commit on master; preserve all previous official versions and registry entries.",
+      "Open a main promotion PR with human approval and gate results. Required owner review and release-gate must pass; do not auto-merge or include unrelated candidates.",
+      "After the human-approved merge, verify automated GitHub release publication, tag target, notes, registry links and the deployed Pages build. A push or draft link alone is not a verified official delivery.",
+      "If publication fails, preserve the approved artifact, report the actual failure and rerun only the failed publication step. Never rewrite a released version; publish corrections under a new version."
+    ],
+    "depends_on": [
+      "KF-18"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": []
+  }
+]

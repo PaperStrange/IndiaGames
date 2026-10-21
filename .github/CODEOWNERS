@@ -1,0 +1,11 @@
+# Branch protection must require code-owner approval for these rules to enforce review.
+/.github/CODEOWNERS @PaperStrange
+/.github/workflows/ @PaperStrange
+/scripts/validate-release.py @PaperStrange
+/scripts/publish-releases.py @PaperStrange
+/tests/test_release_gate.py @PaperStrange
+/docs/RELEASE-POLICY.md @PaperStrange
+/templates/release-candidate/ @PaperStrange
+/data/releases.json @PaperStrange
+/releases/ @PaperStrange
+/release-candidates/ @PaperStrange

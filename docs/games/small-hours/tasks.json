@@ -1,0 +1,461 @@
+[
+  {
+    "id": "SH-01",
+    "lane": "memorable",
+    "perspective": "Research",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Small Hours research lead",
+    "title": "Publish the incoming-record delta and provenance ledger",
+    "deliverable": "A lane intake note linked to the immutable source, with one row per M1–M6 assignment and an explicit TEAM-01 lane-intake disposition.",
+    "acceptance_criteria": [
+      "Record that 875230b adds six documentation/evidence files and changes no gameplay or tests relative to 822366ad.",
+      "Classify M1 as lobby-only, M2 as menu-only/tooling-blocked with zero gameplay, and M3–M6 as source-only/unplayed in this reviewed package.",
+      "Record that the Make it Meme note and three PNGs are byte-identical to the older Vivid package; preserve October 13 session and October 15 reshoot dates.",
+      "Flag the M1 index/raw-record wording discrepancy and the unsupported-in-this-package Townscaper cross-branch reference for reconciliation.",
+      "Close only the Small Hours incoming-record intake when incorporated; keep competitor coverage and human validation open."
+    ],
+    "depends_on": [],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Research / evidence"
+  },
+  {
+    "id": "SH-02",
+    "lane": "memorable",
+    "perspective": "Research",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Small Hours research lead + access coordinator",
+    "title": "Make the remaining M3–M6 coverage executable",
+    "deliverable": "A versioned access/edition ledger and future session briefs for Hanabi, GeoGuessr, Townscaper and Florence; source recovery for any claimed shared Townscaper session.",
+    "acceptance_criteria": [
+      "For Hanabi, document legitimate accounts, separate views, same-IP conditions and a real partner; for GeoGuessr, identify the exact consumer mode, eligible host and agreed round boundary.",
+      "For Townscaper and Florence, record existing license/device availability or keep the rows blocked; do not treat a browser demo as the selected full desktop edition.",
+      "Retrieve and reconcile the claimed Townscaper record before reuse: exact edition, actor, date, creation/revision/finish/save boundary and original evidence; shared M5/V5 evidence counts as one title.",
+      "Write each future journey target from the matrix, including failure/recovery when encountered, ending or bounded unit, exit and actual repeat; distinguish planned from observed stages.",
+      "Any reserve promotion includes the lost question and recalculated six-title/four-family rules, at least two outside narrative/deduction, no more than two per family and at most one occasion comparator.",
+      "Do not purchase, create accounts or launch a competitor while preparing this plan; unavailable access remains an explicit gap."
+    ],
+    "depends_on": [
+      "SH-01"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Research / competitive coverage"
+  },
+  {
+    "id": "SH-03",
+    "lane": "memorable",
+    "perspective": "Human playtesting",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human research facilitator + Small Hours researcher",
+    "title": "Complete staged competitor journeys, starting with M1/M2",
+    "deliverable": "An M1/M2 human comparison milestone, followed by scoped M3–M6 studies as access permits, each with a journey, system observations and an art board.",
+    "acceptance_criteria": [
+      "Use real willing participants; disclose observer assistance and prior knowledge. An agent controlling both sides does not satisfy the social question.",
+      "M1 records join, authoring, reveal/judgment, three agreed rounds and the actual repeat/leave decision; distinguish authorship, recognition, surprise and scoring.",
+      "M2 uses a keyboard capable of WASD, arrows and held inputs; records role division, introduction, a coordination-level completion, natural recovery if encountered and continue/leave.",
+      "After SH-02 resolves access, M3 targets a complete Hanabi game/debrief; M4 an agreed private location session/recalled detail; M5 a creation/revision/finish/save cycle in the selected edition; M6 the full story/ending and recalled interaction. Unreached targets stay explicitly partial or blocked.",
+      "Record active play, setup and notes separately; preserve the October 20 tool limitation as that session’s limitation, not a general game defect.",
+      "Store exact stop points and capture provenance; incomplete sessions retain their partial status and do not satisfy the full-journey gate."
+    ],
+    "depends_on": [
+      "SH-01",
+      "SH-02"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Research / social comparison"
+  },
+  {
+    "id": "SH-04",
+    "lane": "memorable",
+    "perspective": "Research",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Research lead + game designer",
+    "title": "Settle the unchanged-build six-pair protocol",
+    "deliverable": "A short neutral facilitator script, observation sheet and predeclared decision rules for the current build.",
+    "acceptance_criteria": [
+      "Pin 875230b as the reviewed source and state that its game files match 822366ad; log the actual tested build if the study later uses another export.",
+      "Observe entry, private choice/prediction, handoff, reveal, actual offscreen activity, optional writing, save/leave and voluntary repeat without explaining the intended payoff.",
+      "Record both people’s contributions, assistance, stopping, device/browser, time to reveal and voluntary comments; do not solicit or collect keepsakes by default.",
+      "Predeclare the formative gates: 5/6 pairs reach reveal unaided, 4/6 show both contributing and 3/6 voluntarily save or replay; these are diagnostic thresholds, not population or retention estimates.",
+      "Give the unchanged build first. Record prediction and writing friction qualitatively; do not mix an unimplemented no-prediction variant into the baseline.",
+      "A person may stop without explanation; seated/imaginary participation and blank writing stay valid."
+    ],
+    "depends_on": [
+      "SH-01"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Research / experiment design"
+  },
+  {
+    "id": "SH-05",
+    "lane": "memorable",
+    "perspective": "Human playtesting",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human playtest facilitator",
+    "title": "Observe six willing pairs on the unchanged build",
+    "deliverable": "Six de-identified pair observations, an actual-sample summary and the three gate counts.",
+    "acceptance_criteria": [
+      "Record recruitment context and willingness; include friends/partners where feasible without treating six pairs as representative.",
+      "Observe rather than enact the shared activity; separately record A and B contributions and any one-person carrying of the task.",
+      "Do not prompt saving or replay; distinguish choosing the interface’s replay button from a later voluntary return.",
+      "Report assistance, exits, missing data and contrary cases. If fewer than six pairs attend, state the actual denominator and leave six-pair thresholds unevaluated.",
+      "Keep participant statements separate from observer interpretation and agent-generated examples."
+    ],
+    "depends_on": [
+      "SH-04"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Product / human gameplay"
+  },
+  {
+    "id": "SH-06",
+    "lane": "memorable",
+    "perspective": "Game design",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Game designer + research lead",
+    "title": "Choose one response to the baseline, including no change or stop",
+    "deliverable": "A brief observation → problem → hypothesis → falsifier decision, with explicit disposition of SH-07/08/09.",
+    "acceptance_criteria": [
+      "Apply all three baseline gates and examine qualitative exceptions before selecting a change.",
+      "Select at most one bounded experiment: prediction/handoff friction, complementary activity prompts, or the earned keepsake ending; document why the others are not selected.",
+      "If both people do not want the activity, consider revising the proposition or stopping before polishing export.",
+      "Identify the expected changed behavior, a result that would reject the hypothesis, and remaining rival explanations.",
+      "Keep six-competitor validation open even if the internal pilot is encouraging; an internal result does not replace required competitor journeys."
+    ],
+    "depends_on": [
+      "SH-05"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Product / decision"
+  },
+  {
+    "id": "SH-07",
+    "lane": "memorable",
+    "perspective": "UX & accessibility",
+    "priority": "P1",
+    "status": "conditional",
+    "owner_role": "Interaction designer + transition owner",
+    "title": "If selected, address observed prediction or handoff friction",
+    "deliverable": "One bounded future interaction variant and a transition/copy specification tied to the baseline issue.",
+    "acceptance_criteria": [
+      "Activate only if SH-06 selects this hypothesis; otherwise record a not-selected disposition.",
+      "If prediction becomes optional, a skipped prediction is represented explicitly and the reveal never invents a guess or matching outcome.",
+      "If handoff is the issue, identify the exact confusing step before reducing or rewriting controls; the twelve-activation count alone is not evidence of human friction.",
+      "Preserve informed pair participation, solo-rehearsal labels, private versus joint curtains, keyboard/touch equivalence and End & forget.",
+      "Deliver only this selected flow change on the game’s own future implementation workstream after the decision; no change is made by this planning task."
+    ],
+    "depends_on": [
+      "SH-06"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "UX / interaction"
+  },
+  {
+    "id": "SH-08",
+    "lane": "memorable",
+    "perspective": "Narrative",
+    "priority": "P1",
+    "status": "conditional",
+    "owner_role": "Content designer + social play reviewer",
+    "title": "If selected, make each person’s contribution to the activity clearer",
+    "deliverable": "One revised scene-prompt set with a before/after role map and a falsifiable contribution hypothesis.",
+    "acceptance_criteria": [
+      "Activate only if SH-06 identifies weak or one-sided participation; otherwise record a not-selected disposition.",
+      "Show the fixed scene activity, A’s selected role prompt and B’s selected role prompt separately so the causal change is inspectable.",
+      "Preserve stable scene/choice IDs, three choices per current scene, imaginary/seated alternatives and permission to alter or leave the activity.",
+      "Do not demand personal disclosure, add a relationship score or use claims of togetherness as instructions to participants.",
+      "Test the proposed wording against the observed confusion; no extra scene is part of this experiment."
+    ],
+    "depends_on": [
+      "SH-06"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Narrative / content / gameplay"
+  },
+  {
+    "id": "SH-09",
+    "lane": "memorable",
+    "perspective": "Art",
+    "priority": "P1",
+    "status": "conditional",
+    "owner_role": "Visual designer + content owner",
+    "title": "If selected, make the ending recognizably belong to both people",
+    "deliverable": "A compact ending storyboard and, only when chosen, one bounded keepsake variant aligned with the joint-authorship hypothesis.",
+    "acceptance_criteria": [
+      "Activate only when the activity works but the baseline ending does not; otherwise record a not-selected disposition.",
+      "Trace the signature action → contribution → artifact; current SVG content is two optional written lines plus scene title/stamp, not a direct visualization of earlier choices.",
+      "Keep each person’s contribution legible in the card and export, including one or two blank contributions; any edit-before-save step preserves mutual agreement.",
+      "Use the existing table/window/paper visual language and legible text; do not add unrelated decoration, captured photos or asset pipelines.",
+      "Compare recognition of this particular moment, not a generic preference for prettier art; altered exports retain escaping and readable long text."
+    ],
+    "depends_on": [
+      "SH-06"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Art / keepsake experience"
+  },
+  {
+    "id": "SH-10",
+    "lane": "memorable",
+    "perspective": "UX & accessibility",
+    "priority": "P1",
+    "status": "blocked_human",
+    "owner_role": "Accessibility reviewer + device tester",
+    "title": "Check comfortable participation on real devices",
+    "deliverable": "A dated device/accessibility matrix with actual observations and unresolved gaps.",
+    "acceptance_criteria": [
+      "Use a physical iPhone/Safari and Android/Chrome where available; record models, OS/browser, virtual keyboard, background/resume, reload, SVG saving and browser history.",
+      "Inspect keyboard focus and order, visible labels, zoom/reflow, contrast and reduced motion; record assistive-technology checks actually performed.",
+      "Verify a seated/imaginary route and comfortable stop/change-scene/blank-writing route with willing people; do not claim universal accessibility from technical checks.",
+      "Exercise the actual hosted embed only when that distribution path is available; the previous synthetic iframe check is not an itch.io device test.",
+      "Log severity and reproduction for any barrier; a serious participation or privacy-confusion issue takes priority over expanding scenes."
+    ],
+    "depends_on": [
+      "SH-04"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Accessibility / physical devices"
+  },
+  {
+    "id": "SH-11",
+    "lane": "memorable",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "conditional",
+    "owner_role": "Single integration owner + module owners",
+    "title": "Integrate only the selected experiment with explicit state ownership",
+    "deliverable": "A narrow future implementation branch/patch, transition contract and source manifest for the selected change.",
+    "acceptance_criteria": [
+      "Begin only after SH-06 and the selected SH-07/08/09 specification; document the other cards’ not-selected disposition.",
+      "Keep content in content.js, rules/export in state.js, event transitions in game.js and rendering in views.js/CSS; one owner resolves shared transitions.",
+      "Preserve ephemeral session behavior, hidden-stage DOM filtering, escaped user strings, optional timer behavior, restart and reset contracts.",
+      "Record the exact baseline and variant commits and the smallest changed file set; no storage, backend, accounts or remote-play architecture is introduced.",
+      "If SH-06 selects no change or stop, deliver a no-build disposition instead of creating a patch."
+    ],
+    "depends_on": [
+      "SH-06",
+      "SH-16"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Engineering / integration"
+  },
+  {
+    "id": "SH-12",
+    "lane": "memorable",
+    "perspective": "QA",
+    "priority": "P1",
+    "status": "conditional",
+    "owner_role": "QA owner + integration reviewer",
+    "title": "Verify the selected variant and preserve evidence boundaries",
+    "deliverable": "A verification report linked to the exact reviewed source, or a documented reuse of the unchanged baseline.",
+    "acceptance_criteria": [
+      "Run the existing 33 behavioral assertions only against a changed build or another justified verification target; explain changed expectations rather than preserving a stale assertion count.",
+      "Cover affected keyboard/touch controls, private/joint DOM content, all impacted scenes, blank/long/markup text, SVG parsing, timer, replay, cancel/end and reload paths.",
+      "Label synthetic Chromium, emulated phone, real-device and human observations separately; passing automation is not evidence of fun or pair authorship.",
+      "For unchanged/no-build outcomes, cite the October 20 verification at 822366ad and the no-game-file delta; do not fabricate a new run timestamp.",
+      "Resolve any blocker before the follow-up study, and record exact evidence paths and remaining limitations."
+    ],
+    "depends_on": [
+      "SH-11"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "QA / verification"
+  },
+  {
+    "id": "SH-13",
+    "lane": "memorable",
+    "perspective": "Distribution",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Distribution owner + product writer",
+    "title": "Prepare a truthful browser invitation and hosting checklist",
+    "deliverable": "A reviewable invitation, short platform-fit brief and package checklist for a direct link/itch.io browser context.",
+    "acceptance_criteria": [
+      "Explain the actual occasion: two willing people, one screen, private choices, a shared activity and an optional keepsake; describe five minutes as a design target until observed timings support it.",
+      "Keep a portal such as CrazyGames as a separate acquisition hypothesis with requirements still to verify; do not claim acceptance or audience demand.",
+      "Specify relative static assets, full play/ package, embed sizing, keyboard/touch access and download behavior; link actual host checks when later performed.",
+      "State that the active session clears on reload/leave and a downloaded file remains with the player; curtains are visual courtesy rather than device security.",
+      "Do not claim market uniqueness, memory improvement, relationship benefit, human-tested accessibility or retention; no upload, publication or campaign is part of this card."
+    ],
+    "depends_on": [
+      "SH-01"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Distribution / positioning"
+  },
+  {
+    "id": "SH-14",
+    "lane": "memorable",
+    "perspective": "Human playtesting",
+    "priority": "P1",
+    "status": "blocked_human",
+    "owner_role": "Human playtest facilitator + research lead",
+    "title": "If a variant exists, compare its targeted behavior with the baseline",
+    "deliverable": "A predeclared comparison protocol, actual session observations and a narrow advance/revise/stop recommendation.",
+    "acceptance_criteria": [
+      "Begin only after a selected variant passes SH-12; if there is no variant, record that disposition and use SH-05/06 rather than manufacturing a comparison.",
+      "Use fresh pairs or a declared counterbalanced order; state the actual sample, prior exposure, learning effects and missing data.",
+      "Choose the target metric/observation before sessions: prediction friction, balanced contribution, or recognizable ending; avoid changing multiple levers.",
+      "Record contrary evidence, comfort leaving and voluntary keep/replay; do not interpret a small formative comparison as a causal population estimate.",
+      "If later recall/return is studied, obtain an agreed follow-up and report actual attendance; agent replay never fills that gap."
+    ],
+    "depends_on": [
+      "SH-12"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Research / comparative test"
+  },
+  {
+    "id": "SH-15",
+    "lane": "memorable",
+    "perspective": "Game design",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Game designer + research lead + art reviewer",
+    "title": "Write the three-question decision brief with unresolved evidence visible",
+    "deliverable": "A separate Small Hours brief comparing complete player stories and deciding advance, revise, further study or stop.",
+    "acceptance_criteria": [
+      "Answer why someone might choose this break, how it differs in the chosen browser context, and which signature action → consequence → payoff is worth testing.",
+      "Use observed M1/M2 contrasts plus M3–M6 only to their recorded scope; six titles/four families remain an unmet gate until actual qualifying studies exist.",
+      "Offer two or three concise alternative stories with a strongest precedent, production cost, likely failure and rejecting observation, rather than a list of desired features.",
+      "Include baseline and any follow-up human results, contrary evidence, access/device limits and exact source links; separate human statements from design hypotheses.",
+      "A no-change/stop outcome may close the experiment without building a variant; a further-study outcome leaves research tasks visibly open."
+    ],
+    "depends_on": [
+      "SH-02",
+      "SH-03",
+      "SH-06",
+      "SH-10",
+      "SH-14"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Product / synthesis"
+  },
+  {
+    "id": "SH-16",
+    "lane": "memorable",
+    "perspective": "Production",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Project coordinator + lane lead",
+    "title": "Assign accountable owners and protect the pilot-first sequence",
+    "deliverable": "A role-to-person ownership map, dependency review and acceptance/evidence handoff convention.",
+    "acceptance_criteria": [
+      "Name one accountable research owner, human facilitator, designer, content/visual owners, transition integrator, QA reviewer and distribution owner; roles may be combined without inflating sample size.",
+      "Confirm that all cards are proposed, conditional or blocked_human and no future feature has completion evidence yet.",
+      "Do not assign parallel edits to shared transition files; preserve the game branch/worktree ownership contract and source/evidence pinning.",
+      "For each conditional card, record selection or not-selected/no-build disposition after the decision; a disposition is not an implemented feature.",
+      "Track participant/device/access needs separately from person-hours; share only de-identified observations and agreed artifacts with the integration reviewer."
+    ],
+    "depends_on": [
+      "SH-01"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Team / ownership"
+  },
+  {
+    "id": "SH-17",
+    "lane": "memorable",
+    "perspective": "Production",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Release integrator",
+    "title": "Stage one immutable candidate on master",
+    "deliverable": "A versioned release-candidates/small-hours/<version>/ package on master, built from the owning game branch.",
+    "acceptance_criteria": [
+      "Record the exact source SHA, version, player-facing notes, build inventory and hash; include a portable build/index.html and only intended files.",
+      "Use the release-candidate template and staging validator. Preserve the predeclared human-session protocol before recruiting; staging may contain pending evidence and is not an official release.",
+      "Keep the previous candidate and source branch recoverable, push master without force, and verify its remote SHA. Do not merge the whole game branch into master or main."
+    ],
+    "depends_on": [
+      "SH-06",
+      "SH-10",
+      "SH-12"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": []
+  },
+  {
+    "id": "SH-18",
+    "lane": "memorable",
+    "perspective": "Human playtesting",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human playtest facilitator + independent reviewer",
+    "title": "Review the exact candidate against the human release gate",
+    "deliverable": "A complete human-playtest.json and linked anonymized records for the exact packaged build, with a recorded approve/revise/stop decision.",
+    "acceptance_criteria": [
+      "Six predeclared pairs (12 distinct people): at least 5/6 reach the reveal unaided, 4/6 pairs both contribute, and 3/6 voluntarily save or replay. Record the actual choice and both contributions, including failures and assistance.",
+      "Include every one of the six predeclared sessions, distinct pseudonymous participant IDs, raw observations and assistance. An incomplete, abandoned or assisted attempt cannot be silently replaced or counted as unaided success.",
+      "Zero unresolved critical bugs; manually check actual browser entry, core journey, failure/retry, keyboard, and one physical mobile/touch device. Record measured duration and issues rather than inferring results from automated checks.",
+      "An independent human reviewer inspects the evidence and signs the build-specific approval. Existing pilot sessions may be reused only if the protocol was predeclared, participants and required outcomes are recorded, and the artifact hash matches exactly; changed builds need revalidation.",
+      "Run full candidate validation. A failed gate stays on master; agent sessions and synthetic test fixtures cannot satisfy human evidence."
+    ],
+    "depends_on": [
+      "SH-17"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": []
+  },
+  {
+    "id": "SH-19",
+    "lane": "memorable",
+    "perspective": "Distribution",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Release maintainer",
+    "title": "Promote only the approved game version to main",
+    "deliverable": "A reviewed official release package, registry entry, GitHub version and release-note links, plus a verified playable Pages URL.",
+    "acceptance_criteria": [
+      "Copy only the approved candidate package into releases/<game>/<version>/ on main. Pin its immutable ancestor commit on master; preserve all previous official versions and registry entries.",
+      "Open a main promotion PR with human approval and gate results. Required owner review and release-gate must pass; do not auto-merge or include unrelated candidates.",
+      "After the human-approved merge, verify automated GitHub release publication, tag target, notes, registry links and the deployed Pages build. A push or draft link alone is not a verified official delivery.",
+      "If publication fails, preserve the approved artifact, report the actual failure and rerun only the failed publication step. Never rewrite a released version; publish corrections under a new version."
+    ],
+    "depends_on": [
+      "SH-18"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": []
+  }
+]

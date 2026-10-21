@@ -1,0 +1,436 @@
+[
+  {
+    "id": "TB-01",
+    "lane": "bell",
+    "perspective": "Research",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Bell research lead",
+    "title": "Reconcile the October 20 evidence delta and the B4 substitution",
+    "deliverable": "A versioned B1–B6 ledger, source-conflict note and explicit roster decision for Rogue Fable IV.",
+    "acceptance_criteria": [
+      "Record Detective’s recovered October 6 SOLVED report and reload restart separately from October 12–13 partial retries; do not describe the in-game replay control as verified.",
+      "Record Seedship v1.4.0 as one terminal colony run with 9 planets and score 2,873; record no actual second run, share action or banked session screenshots.",
+      "Preserve the original roster count of 3/6 gameplay titles across three families. If Rogue Fable IV is adopted, record the B4 replacement, v0.26 browser build, precise title URL/provenance gap, tactical relevance and unanswered party-dice allocation question; only then label the adjusted count 4/6 across four families.",
+      "Use A Dark Room’s raw trading-post/compass endpoint; explicitly flag the package README’s contradictory “no stranger” summary. Do not count duplicated records/images as new sessions.",
+      "Label Slice & Dice access findings and archived Steam trailer as October 20 market evidence, not gameplay; scope the no-browser finding to the checked creator listings and keep the free native demo distinct from the paid full game."
+    ],
+    "depends_on": [],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Research / evidence provenance"
+  },
+  {
+    "id": "TB-02",
+    "lane": "bell",
+    "perspective": "Research",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Bell research lead + coordinator",
+    "title": "Plan the remaining exploration and tactics comparisons",
+    "deliverable": "An access-conditional study plan and claim ledger for Outer Wilds, Into the Breach and any explicitly selected replacement.",
+    "acceptance_criteria": [
+      "List exact edition, legal access/device needs, available input/audio, prior exposure, complete activity boundary and remaining question for each study; authorize no purchases, installs or play through this card.",
+      "Preserve Outer Wilds’ self-directed expedition question and Into the Breach’s visible-intent/sacrifice question. A proposed reserve must name the question it leaves unanswered and recalculate distinct titles and family limits.",
+      "For future sessions, capture at least one prediction before an action, a natural mistake/recovery if encountered, exact terminal or stopping state, and actual retry separately from an invitation.",
+      "Attach the full coverage gate to final competitive claims: six distinct titles, at least four families, at least two outside narrative/deduction, no more than two per family, and two deep comparisons from different families with complete bounded units. Bounded design specification may proceed with disclosed gaps after the experiment is settled; source-only titles never satisfy firsthand coverage.",
+      "Keep agent interpretations, critic claims, storefront facts, screenshots and human accounts in separate evidence fields."
+    ],
+    "depends_on": [
+      "TB-01"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Research / comparison design"
+  },
+  {
+    "id": "TB-03",
+    "lane": "bell",
+    "perspective": "Game design",
+    "priority": "P0",
+    "status": "proposed",
+    "owner_role": "Bell design lead + coordinator",
+    "title": "Settle the two-loop causal experiment before implementation",
+    "deliverable": "A chosen concept, state/choice table, scope boundary and signed-off comparison protocol.",
+    "acceptance_criteria": [
+      "Choose between the three bounded stories above; retain one Bell Square Dawn→Noon event, Mina and Brann, one observed clue, one intervention and one changed outcome.",
+      "Specify how an actually witnessed blockage produces a provenance-bearing clue, how that clue permits the next-loop intervention, and how ordinary versus borrowed visits change the opportunity cost.",
+      "Cover correct/wrong/blank forecasts, absent witness, late arrival, no Momentum, missed intervention, Fracture 4, revisit, restart and mode switching; preserve understandable failure and recovery.",
+      "Use current Contrast as the main comparison and keep an immutable Original reference. Do not attribute Original’s skip/journal/batching differences to the new experiment.",
+      "Record the unresolved research/human questions and a keep/revise/defer criterion. The plan must be explicitly settled before any game source, art asset or gameplay implementation starts."
+    ],
+    "depends_on": [
+      "TB-01"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Product / gameplay direction"
+  },
+  {
+    "id": "TB-04",
+    "lane": "bell",
+    "perspective": "Engineering",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Bell systems owner",
+    "title": "Make Bell Square’s Dawn→Noon event occur in the world",
+    "deliverable": "One bounded event transition and a documented clue-provenance schema, after TB-03 is settled.",
+    "acceptance_criteria": [
+      "Event state changes at the selected ordinary phase boundary regardless of forecast answer; forecast text, encounter and map agree about what happened.",
+      "Separate scheduled/revealed information from personally observed evidence. Grant the clue only through the specified witnessed scene, with source event, loop and phase recorded.",
+      "A player elsewhere can discover the changed Square state later without receiving retroactive eyewitness credit or a falsely worded “Witnessed” message.",
+      "Do not build a general NPC schedule simulator, extra district, meter or item-key framework; leave other authored loops readable and the existing ending reachable."
+    ],
+    "depends_on": [
+      "TB-03"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Engineering / event state"
+  },
+  {
+    "id": "TB-05",
+    "lane": "bell",
+    "perspective": "Game design",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Bell gameplay designer + systems owner",
+    "title": "Make one learned intervention change Mina’s outcome",
+    "deliverable": "One clue-gated route preparation action and two visible outcomes.",
+    "acceptance_criteria": [
+      "Without the witnessed clue, present an honest unavailable-action explanation without revealing the answer. With the clue, expose one meaningful intervention before Noon; no extra carried-token key is required.",
+      "A regular visit can perform the intervention at its normal phase cost. A valid borrowed visit fits it beside a normal expedition action; the extra action creates an opportunity the player can explain.",
+      "Spend exactly 1 Momentum atomically on commitment, once per loop after loop one and on a previously visited route; reservation and cancellation spend nothing.",
+      "A borrowed action holds phase and forecast only while Fracture remains below 4. Fracture 4 still forces midnight; the next real boundary resolves a locked forecast and rewards it at most once.",
+      "Show the missed opportunity and successful destination as specific Mina outcomes, with a recoverable next plan; do not grade the player’s morality."
+    ],
+    "depends_on": [
+      "TB-04",
+      "TB-06"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Gameplay / knowledge and action economy"
+  },
+  {
+    "id": "TB-06",
+    "lane": "bell",
+    "perspective": "Narrative",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Bell narrative designer",
+    "title": "Write the clue, intervention and aftermath as a checkable story",
+    "deliverable": "A compact script sheet for two Square states, one action, two outcomes and one receipt.",
+    "acceptance_criteria": [
+      "Settle one concrete cause using existing flower/crate/market/alley motifs: what blocks Mina, what the player can observe, why preparation changes it and where Mina ends up.",
+      "Distinguish observation, prediction, inference and outcome in wording. A correct guess alone never becomes an eyewitness claim.",
+      "Write ordinary, informed, absent-clue, late and missed-opportunity variants; each references the same cause without adding a second puzzle.",
+      "Make Brann and Mina’s responses specific to the action. The receipt says what the player did and what changed, without congratulating an unsupported deduction.",
+      "Preserve the wider game’s tone and avoid new endings, relationship meters, lore branches or long explanatory monologues."
+    ],
+    "depends_on": [
+      "TB-03"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Narrative / character consequence"
+  },
+  {
+    "id": "TB-07",
+    "lane": "bell",
+    "perspective": "UX & accessibility",
+    "priority": "P1",
+    "status": "conditional",
+    "owner_role": "Bell UX writer + interaction designer",
+    "title": "Put the usable clue and its cost beside the next decision",
+    "deliverable": "A focused action panel and short evidence receipt within the existing journal.",
+    "acceptance_criteria": [
+      "Display clue provenance and the pending intervention’s Momentum/Fracture cost near the relevant action; the player should not need to cross-reference the entire people×phase table.",
+      "Label schedule knowledge, observed fact and untested theory differently in text, not only by color; keep the clue available across midnight and clear it on restart.",
+      "At the outcome, show a short observation → action → changed destination receipt; do not reveal an unearned solution through a global highlight.",
+      "Keep the existing Place/Theory journal available while limiting the new feature to one receipt and one local cue; no new top-level dashboard or meter."
+    ],
+    "depends_on": [
+      "TB-04",
+      "TB-06"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "UX / memory and uncertainty"
+  },
+  {
+    "id": "TB-08",
+    "lane": "bell",
+    "perspective": "Art",
+    "priority": "P1",
+    "status": "conditional",
+    "owner_role": "Bell art lead",
+    "title": "Create a small scene kit that makes the route change visible",
+    "deliverable": "Two Bell Square scene states and one changed-outcome inset, with annotated composition references.",
+    "acceptance_criteria": [
+      "Retain the canon map and repeat the same Mina silhouette, crate, redflower and alley landmarks so the later image can be compared with the earlier one.",
+      "Stage the blocking crowd and alternate destination legibly at desktop, 390px portrait and compact iframe sizes without a full-town repaint or portrait roster.",
+      "Labels and shape/location cues communicate the change in grayscale and with motion disabled; optional bell/route audio has mute and equivalent text.",
+      "Provide before/after annotations identifying which visible detail teaches the clue and which confirms consequence. Do not use decorative animation as evidence that the action mattered."
+    ],
+    "depends_on": [
+      "TB-03",
+      "TB-06"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Art / visual storytelling"
+  },
+  {
+    "id": "TB-09",
+    "lane": "bell",
+    "perspective": "UX & accessibility",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Bell accessibility reviewer + UI owner",
+    "title": "Keep the full decision path reachable and understandable",
+    "deliverable": "Keyboard, touch-layout, focus and reduced-motion acceptance evidence for both outcomes.",
+    "acceptance_criteria": [
+      "Complete witness → clue → intervention → outcome using keyboard alone; focus remains visible, follows modal transitions and returns to the triggering action.",
+      "Check label associations, state announcements, readable contrast/text, reduced motion and non-color cues; disabled actions state their reason without requiring hover.",
+      "Check 390×844 portrait and 821×462 iframe layouts, zoom and long-page scroll recovery. State clearly when these are emulated viewports rather than real device observations.",
+      "Run a real touch-device/Safari check only when the device is available; record unavailable coverage and never turn desktop screenshots into a mobile usability claim.",
+      "A newly accessible action may not bypass a clue requirement, spend Momentum twice or allow a second borrow."
+    ],
+    "depends_on": [
+      "TB-05",
+      "TB-07",
+      "TB-08"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "UX / accessibility and devices"
+  },
+  {
+    "id": "TB-10",
+    "lane": "bell",
+    "perspective": "Engineering",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Bell systems owner",
+    "title": "Preserve restart, loop and mode boundaries",
+    "deliverable": "A state ownership/reset table and a small implementation patch with one engine integrator.",
+    "acceptance_criteria": [
+      "Define which event, clue and outcome fields persist across midnight, reset on a new run, and remain isolated between Original and Contrast.",
+      "Prevent double resolution from repeated Continue input or revisits; preserve pending-action guards, new-scene retention, cancel semantics and once-only forecast reward.",
+      "Retain the existing no-save-on-reload behavior unless separately chosen later; label this limitation in the pilot and distribution notes.",
+      "One systems owner integrates engine.js; narrative and art contributors work through agreed data/asset seams, not simultaneous changes to the compressed engine.",
+      "Record base/new commit, build output hash, rollback reference and touched paths. Do not change unrelated districts or repair Original within this experiment."
+    ],
+    "depends_on": [
+      "TB-04",
+      "TB-05",
+      "TB-07"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Engineering / state lifecycle"
+  },
+  {
+    "id": "TB-11",
+    "lane": "bell",
+    "perspective": "QA",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Bell QA owner",
+    "title": "Verify the cause-and-effect slice and the complete existing path",
+    "deliverable": "A scenario matrix, exact build identifiers and visible-control traces/screenshots.",
+    "acceptance_criteria": [
+      "Run the existing build, three echo-time tests, 17 static checks and applicable smoke/journey suites against the new isolated build; historical passing results alone are insufficient.",
+      "Cover witnessed/unwitnessed clue, correct/wrong/blank forecast, ordinary/borrowed intervention, no Momentum, cancellation, revisit, late/missed opportunity and both Mina outcomes.",
+      "Cover second-borrow rejection, atomic spend, locked phase/forecast, reward exactly once, Fracture reaching 4, restart, mode switching and retention of unseen new scenes.",
+      "Re-run the existing full ending and restart through visible controls. Publish exact counts and failures, console errors and artifact links rather than a bare “works”.",
+      "Block the human pilot on repeatable wrong-state, duplicate-reward or inaccessible-action failures; repair and rerun only the affected checks plus justified regression coverage."
+    ],
+    "depends_on": [
+      "TB-09",
+      "TB-10"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "QA / causal and regression coverage"
+  },
+  {
+    "id": "TB-12",
+    "lane": "bell",
+    "perspective": "Research",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Human playtest owner + Bell design lead",
+    "title": "Prepare a six-person formative comparison without teaching the solution",
+    "deliverable": "A consent/observation template, counterbalanced build order and predeclared decision sheet.",
+    "acceptance_criteria": [
+      "Plan six new participants, three per first-build order: current Contrast then candidate, or candidate then current Contrast. Record genre familiarity, device, prior exposure and any help.",
+      "Capture the player’s causal explanation and prediction before the result; prompt neutrally. Treat second-build responses as affected by learning and emphasize first-exposure evidence.",
+      "Record help requests, wrong forecasts, rereading, missed-opportunity reaction, Fracture explanation and optional retry/leave choice. Elicit outcome recall after a two-minute neutral break following each run, before the next build or final debrief; this is short-delay recall, not next-day retention.",
+      "Predeclare the thresholds below and record the exact denominator. Report candidate-build results separately for the two first-build orders (three each), alongside the six-person total; keep current-Contrast results separate. Do not turn six sessions into a statistical superiority, retention or market-demand claim.",
+      "Recruitment and consent belong to the human owner when separately arranged. No invitations or external messages are sent by preparing this plan."
+    ],
+    "depends_on": [
+      "TB-03"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Research / human pilot protocol"
+  },
+  {
+    "id": "TB-13",
+    "lane": "bell",
+    "perspective": "Human playtesting",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human playtest owner + Bell design lead",
+    "title": "Observe six real players and decide keep, revise or defer",
+    "deliverable": "Consented raw observations, build-order log and an evidence-linked design decision.",
+    "acceptance_criteria": [
+      "Require six actual new participants and TB-11’s passing pilot gate; an agent run or roleplay supplies zero participant rows.",
+      "At least four of six explain the witnessed cause and predict the intervention consequence before receiving it.",
+      "At least four of six use the earned action without coaching and explain that Fracture can still end the day; at least three name Mina’s specific changed outcome after the predeclared two-minute break, rather than only extra Momentum.",
+      "Record zero repeatable wrong-state, duplicate-reward or inaccessible-action failures. Keep all misses/help requests and build-order effects visible.",
+      "If success comes from memorized answers or highlighting without causal explanation, revise the slice; if the outcome is remembered only as a meter, revise the payoff. Incomplete recruitment leaves the decision pending, not passed.",
+      "Separate verbatim participant words, observed behavior and interpretation; optional retry is immediate behavior, not delayed return or retention."
+    ],
+    "depends_on": [
+      "TB-11",
+      "TB-12"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Human pilot / design decision"
+  },
+  {
+    "id": "TB-14",
+    "lane": "bell",
+    "perspective": "Distribution",
+    "priority": "P2",
+    "status": "conditional",
+    "owner_role": "Bell distribution owner + QA owner",
+    "title": "Prepare an honest browser pilot package",
+    "deliverable": "A local preview manifest, entry copy and itch.io/CrazyGames readiness checklist with dated sources.",
+    "acceptance_criteria": [
+      "State the intended context as an itch.io browser release/pilot; treat CrazyGames as a separate acquisition context whose current technical requirements still need authorized verification.",
+      "Package the tested portable build with commit/hash, direct launch instructions, viewport/input limitations, no-save-on-reload disclosure and one clear route into the selected comparison build.",
+      "Measure actual loading/entry behavior when implementation exists; do not reuse the 4–8 minute UI promise as a measured human duration.",
+      "Use copy about the concrete learned-action payoff; make no uniqueness, preference, retention or market-conversion claim from competitor notes or six formative sessions.",
+      "Preparing the package does not publish, upload to a portal, add accounts, purchase services or install analytics. Release is a later scoped decision."
+    ],
+    "depends_on": [
+      "TB-11",
+      "TB-13"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Distribution / browser delivery"
+  },
+  {
+    "id": "TB-15",
+    "lane": "bell",
+    "perspective": "Production",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Bell coordinator",
+    "title": "Keep the plan, dependencies and evidence reviewable",
+    "deliverable": "A dashboard-ready task export and phase decision log with artifact links.",
+    "acceptance_criteria": [
+      "Keep all cards proposed/conditional/blocked_human until their stated prerequisites are met and work is actually assigned; owner roles are not accepted assignments.",
+      "Record TB-03’s settled design before implementation begins. Separate design readiness, QA readiness, human-evidence readiness and final competitive-claim readiness.",
+      "For each completed future card, attach the source/build commit, acceptance evidence and open limits; never mark the plan itself as a completed game feature.",
+      "Reconcile the new Bell evidence addendum with the older audit without rewriting historical claims as though the recovered records had always been present.",
+      "Defer general schedule simulation, new districts/endings, bond/item frameworks, save/accounts, procedural cases, co-op, generalized art overhaul, paid distribution and analytics backend."
+    ],
+    "depends_on": [
+      "TB-01",
+      "TB-03"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Project / handoff and scope control"
+  },
+  {
+    "id": "TB-16",
+    "lane": "bell",
+    "perspective": "Production",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Release integrator",
+    "title": "Stage one immutable candidate on master",
+    "deliverable": "A versioned release-candidates/thirteenth-bell/<version>/ package on master, built from the owning game branch.",
+    "acceptance_criteria": [
+      "Record the exact source SHA, version, player-facing notes, build inventory and hash; include a portable build/index.html and only intended files.",
+      "Use the release-candidate template and staging validator. Preserve the predeclared human-session protocol before recruiting; staging may contain pending evidence and is not an official release.",
+      "Keep the previous candidate and source branch recoverable, push master without force, and verify its remote SHA. Do not merge the whole game branch into master or main."
+    ],
+    "depends_on": [
+      "TB-11",
+      "TB-12"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": []
+  },
+  {
+    "id": "TB-17",
+    "lane": "bell",
+    "perspective": "Human playtesting",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human playtest facilitator + independent reviewer",
+    "title": "Review the exact candidate against the human release gate",
+    "deliverable": "A complete human-playtest.json and linked anonymized records for the exact packaged build, with a recorded approve/revise/stop decision.",
+    "acceptance_criteria": [
+      "Six predeclared individual players: at least 4/6 each explain cause and predict consequence; at least 4/6 each use the earned action uncoached and explain Fracture; at least 3/6 recall a specific Mina outcome after a neutral break of at least 120 seconds. Keep the counterbalanced first-build groups of three visible in the design analysis.",
+      "Include every one of the six predeclared sessions, distinct pseudonymous participant IDs, raw observations and assistance. An incomplete, abandoned or assisted attempt cannot be silently replaced or counted as unaided success.",
+      "Zero unresolved critical bugs; manually check actual browser entry, core journey, failure/retry, keyboard, and one physical mobile/touch device. Record measured duration and issues rather than inferring results from automated checks.",
+      "An independent human reviewer inspects the evidence and signs the build-specific approval. Existing pilot sessions may be reused only if the protocol was predeclared, participants and required outcomes are recorded, and the artifact hash matches exactly; changed builds need revalidation.",
+      "Run full candidate validation. A failed gate stays on master; agent sessions and synthetic test fixtures cannot satisfy human evidence."
+    ],
+    "depends_on": [
+      "TB-16"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": []
+  },
+  {
+    "id": "TB-18",
+    "lane": "bell",
+    "perspective": "Distribution",
+    "priority": "P0",
+    "status": "conditional",
+    "owner_role": "Release maintainer",
+    "title": "Promote only the approved game version to main",
+    "deliverable": "A reviewed official release package, registry entry, GitHub version and release-note links, plus a verified playable Pages URL.",
+    "acceptance_criteria": [
+      "Copy only the approved candidate package into releases/<game>/<version>/ on main. Pin its immutable ancestor commit on master; preserve all previous official versions and registry entries.",
+      "Open a main promotion PR with human approval and gate results. Required owner review and release-gate must pass; do not auto-merge or include unrelated candidates.",
+      "After the human-approved merge, verify automated GitHub release publication, tag target, notes, registry links and the deployed Pages build. A push or draft link alone is not a verified official delivery.",
+      "If publication fails, preserve the approved artifact, report the actual failure and rerun only the failed publication step. Never rewrite a released version; publish corrections under a new version."
+    ],
+    "depends_on": [
+      "TB-17"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": []
+  }
+]

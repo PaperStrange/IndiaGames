@@ -1,0 +1,111 @@
+{
+  "checkedAt": "2026-10-21T05:09:26.377Z",
+  "fixtureNote": "Synthetic release cases use request interception only; no release was created.",
+  "initial": {
+    "tasks": 56,
+    "projects": 3,
+    "releases": 0,
+    "releaseEmpty": "NO OFFICIAL RELEASES YET\n\nThe demos are still experiments.\n\nNo candidate has a recorded, approved human playtest report in this registry. Explore the development branches above; official play links, versions and release notes will appear here after promotion.",
+    "perspectives": [
+      "All perspectives",
+      "Art",
+      "Distribution",
+      "Engineering",
+      "Game design",
+      "Human playtesting",
+      "Narrative",
+      "Production",
+      "QA",
+      "Research",
+      "UX & accessibility"
+    ]
+  },
+  "layouts": [
+    {
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "overflow": false
+    }
+  ],
+  "keyboard": {
+    "firstFocus": "skip-link",
+    "keyboardLane": "memorable",
+    "detailsOpen": true,
+    "focusedOutline": "rgb(164, 63, 30) solid 3px"
+  },
+  "filters": {
+    "memorable": 19,
+    "vivid": 19,
+    "bell": 18
+  },
+  "errorsAndRetries": [
+    {
+      "filename": "tasks.json",
+      "errorShown": true,
+      "releaseMessage": "Release registry unavailable. No release status can be verified.",
+      "recoveredTasks": 56
+    },
+    {
+      "filename": "source-manifest.json",
+      "errorShown": true,
+      "releaseMessage": "Release registry unavailable. No release status can be verified.",
+      "recoveredTasks": 56
+    },
+    {
+      "filename": "releases.json",
+      "errorShown": true,
+      "releaseMessage": "Release registry unavailable. No release status can be verified.",
+      "recoveredTasks": 56
+    }
+  ],
+  "syntheticRelease": {
+    "cards": 3,
+    "links": [
+      {
+        "label": "Play this version ↗",
+        "url": "http://127.0.0.1:8120/IndiaGames/releases/thirteenth-bell/1.0.2/build/index.html"
+      },
+      {
+        "label": "Version on GitHub ↗",
+        "url": "https://github.com/PaperStrange/IndiaGames/releases/tag/thirteenth-bell-v1.0.2"
+      },
+      {
+        "label": "Release notes ↗",
+        "url": "https://github.com/PaperStrange/IndiaGames/blob/main/releases/thirteenth-bell/1.0.2/notes.md"
+      },
+      {
+        "label": "Play this version ↗",
+        "url": "http://127.0.0.1:8120/IndiaGames/releases/keepers-frame/1.0.1/build/index.html"
+      },
+      {
+        "label": "Version on GitHub ↗",
+        "url": "https://github.com/PaperStrange/IndiaGames/releases/tag/keepers-frame-v1.0.1"
+      },
+      {
+        "label": "Release notes ↗",
+        "url": "https://github.com/PaperStrange/IndiaGames/blob/main/releases/keepers-frame/1.0.1/notes.md"
+      },
+      {
+        "label": "Play this version ↗",
+        "url": "http://127.0.0.1:8120/IndiaGames/releases/small-hours/1.0.0/build/index.html"
+      },
+      {
+        "label": "Version on GitHub ↗",
+        "url": "https://github.com/PaperStrange/IndiaGames/releases/tag/small-hours-v1.0.0"
+      },
+      {
+        "label": "Release notes ↗",
+        "url": "https://github.com/PaperStrange/IndiaGames/blob/main/releases/small-hours/1.0.0/notes.md"
+      }
+    ]
+  },
+  "invalidReleaseRejected": true,
+  "pageErrors": []
+}
