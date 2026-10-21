@@ -63,7 +63,7 @@ async function rescue(p, peek = false) {
 }
 async function recollect(p) {
   await press(p, "recollect");
-  assert.equal(await p.locator("#scene-caption").innerText(), "An earlier watch · a recollection");
+  assert.equal(await p.locator("#scene-caption").textContent(), "An earlier watch · a recollection");
   assert.match(await p.locator("#world").getAttribute("aria-label"), /^A framed painted portrait\./);
   await press(p, "brace");
   await place(p, "wedge");
@@ -71,7 +71,7 @@ async function recollect(p) {
 }
 async function finishMara(p) {
   await press(p, "start");
-  assert.equal(await p.locator("#scene-caption").innerText(), "A mystery told by objects");
+  assert.equal(await p.locator("#scene-caption").textContent(), "A mystery told by objects");
   assert.match(await p.locator("#world").getAttribute("aria-label"), /^A station workbench and lightbox\./);
   for (const id of ["sketches", "postcard", "timetable"]) await press(p, id);
   for (let i = 0; i < 3; i++) await press(p, "align-plus");
@@ -105,7 +105,7 @@ try {
     "iona-rescue",
   );
   await press(p, "recollect");
-  assert.equal(await p.locator("#scene-caption").innerText(), "An earlier watch · a recollection");
+  assert.equal(await p.locator("#scene-caption").textContent(), "An earlier watch · a recollection");
   assert.match(await p.locator("#world").getAttribute("aria-label"), /^A framed painted portrait\./);
   await press(p, "brace");
   await p.reload();
