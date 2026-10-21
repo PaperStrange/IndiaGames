@@ -1,0 +1,54 @@
+{
+  "verified_at": "2026-10-21T08:14:27.198701+00:00",
+  "method": "Coordinator SHA-256 verification of every file served by the frozen dist server after the browser run; server/dist unchanged through the run. Prepared master packet matches byte-for-byte. Research-only working changes explain the browser report whole-repository diff hash.",
+  "source_commit": "0c72da97994d9f2d315e6aba1afba5219936b78b",
+  "candidate_version": "0.1.2",
+  "build": {
+    "entrypoint": "index.html",
+    "sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+    "files": {
+      "art/frame.glb": "f58216181104f2ebb9babd7d6fb536db66b3af178fc472beabdbbfb90bec244a",
+      "art/keeper-portrait.svg": "ce2e5ad30f0c2327d4874cb6d3f51f7d6ea2d94754237b0a5eaa5f4b39a9535f",
+      "art/model-metrics.json": "596f3b694e0782b28602789675e5b034eba841b887e4422aac8a02192f91d63a",
+      "art/postcard.svg": "fc8e7b8152cf01b09506bdc852a7d0ded509d64ac5c355a91e07e66848afefb3",
+      "art/sketch-overlay.svg": "2d1e247b3424e2d35ad6ef7493bdfd9711d5505e881267b4f4238c6985f901a9",
+      "art/sketch-underlay.svg": "9b489cddd713563f5a6a4f17856d6b8fb7cc996d84c32786718bc7d607d40b25",
+      "art/workbench.glb": "0da0115735a527aa6afb2276dceb58754a5fdd5118206ee94c4ae830cbc24446",
+      "assets/index-A3TNo5e9.js": "bf48b4e44c3d67bf88cd5ad14dc9d36e213d9e0c73d4744668b0dac2feba6c8a",
+      "assets/index-CmRFnsuX.css": "aafecb6c885b1e05b441c9c32d8915b2f48c6f7c7075e6a4ec26a2959f53d999",
+      "assets/iona-CUvUWMAu.js": "5848954d4fdad15a24415a65d0fa0a60711a201430f0ce3ee3e26e28dda60e59",
+      "assets/mara-D9h6TfjT.js": "13be7fa92007b3b0d30e320c4b77c64ff785c59c641731d68e2a2a654870a93e",
+      "assets/world-BIfCt15a.js": "b6841fa12456a7ac9910e56100638b63ef8f399398b912852ee4c88f4d3f6719",
+      "index.html": "edc2518faa3122b640673e2836a10dd6395b84a32969c2515b687a8fc420edde",
+      "story-catalog.json": "1b17343c35df541f9c1ef52579412667d0376b51e180cd409ef449115037d6fc",
+      "third-party-notices.txt": "b9229f490630a80cb4968dea0483aea95706b1e8dd5645ece366a7cea3c4f560"
+    }
+  },
+  "served_file_sha256": {
+    "art/frame.glb": "f58216181104f2ebb9babd7d6fb536db66b3af178fc472beabdbbfb90bec244a",
+    "art/keeper-portrait.svg": "ce2e5ad30f0c2327d4874cb6d3f51f7d6ea2d94754237b0a5eaa5f4b39a9535f",
+    "art/model-metrics.json": "596f3b694e0782b28602789675e5b034eba841b887e4422aac8a02192f91d63a",
+    "art/postcard.svg": "fc8e7b8152cf01b09506bdc852a7d0ded509d64ac5c355a91e07e66848afefb3",
+    "art/sketch-overlay.svg": "2d1e247b3424e2d35ad6ef7493bdfd9711d5505e881267b4f4238c6985f901a9",
+    "art/sketch-underlay.svg": "9b489cddd713563f5a6a4f17856d6b8fb7cc996d84c32786718bc7d607d40b25",
+    "art/workbench.glb": "0da0115735a527aa6afb2276dceb58754a5fdd5118206ee94c4ae830cbc24446",
+    "assets/index-A3TNo5e9.js": "bf48b4e44c3d67bf88cd5ad14dc9d36e213d9e0c73d4744668b0dac2feba6c8a",
+    "assets/index-CmRFnsuX.css": "aafecb6c885b1e05b441c9c32d8915b2f48c6f7c7075e6a4ec26a2959f53d999",
+    "assets/iona-CUvUWMAu.js": "5848954d4fdad15a24415a65d0fa0a60711a201430f0ce3ee3e26e28dda60e59",
+    "assets/mara-D9h6TfjT.js": "13be7fa92007b3b0d30e320c4b77c64ff785c59c641731d68e2a2a654870a93e",
+    "assets/world-BIfCt15a.js": "b6841fa12456a7ac9910e56100638b63ef8f399398b912852ee4c88f4d3f6719",
+    "index.html": "edc2518faa3122b640673e2836a10dd6395b84a32969c2515b687a8fc420edde",
+    "story-catalog.json": "1b17343c35df541f9c1ef52579412667d0376b51e180cd409ef449115037d6fc",
+    "third-party-notices.txt": "b9229f490630a80cb4968dea0483aea95706b1e8dd5645ece366a7cea3c4f560"
+  },
+  "total_bytes": 1401263,
+  "unit_tests": {
+    "passed": 51,
+    "failed": 0
+  },
+  "browser_observations": {
+    "passed": 16,
+    "uncaught_errors": 0
+  },
+  "human_sessions": 0
+}

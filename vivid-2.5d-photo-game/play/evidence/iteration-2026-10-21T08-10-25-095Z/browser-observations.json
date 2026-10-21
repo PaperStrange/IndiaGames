@@ -1,0 +1,22 @@
+{
+  "runId": "2026-10-21T08-10-25-095Z",
+  "at": "2026-10-21T08:10:57.773Z",
+  "sourceCommit": "93e271b56b2b3d80ea2f18c43e8b03520b4f5dac",
+  "workingDiffSHA256": "9d2bb849f39bf71c4159b6734863ddbf96d77e7a7f0c01d2de362e5528953261",
+  "base": "http://127.0.0.1:8112/",
+  "automated": true,
+  "passed": false,
+  "failure": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'AN EARLIER WATCH · A RECOLLECTION'\n- 'An earlier watch · a recollection'\n",
+  "notHumanEvidence": true,
+  "physicalDeviceTested": false,
+  "audioRequired": false,
+  "errors": [],
+  "observations": [
+    {
+      "at": "2026-10-21T08:10:48.987Z",
+      "label": "Evidence-gated rescue, safe wrong answer and prior uninvited reading",
+      "url": "http://127.0.0.1:8112/#iona",
+      "screen": "← All stories\nThe ferry is safely home\nA little world in 3D\nAN EVENING AT THE HARBOUR\n✧\n\nBearing · EAST · Rhythm · SHORT / LONG / SHORT\n\nDrag gently to look around\n\nProgress is kept on this device.\n\nAN EVENING AT THE HARBOUR\n\nA Place for the Promise\n\nIONA\n\nThere. The answering light. The ferry has found the breakwater. We can leave the lamp steady now. Would you like to know why I kept that little wedge?\n\nRemember an earlier watch\n\nRead this visit’s transcript\nForget this story"
+    }
+  ]
+}
