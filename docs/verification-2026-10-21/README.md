@@ -12,7 +12,7 @@ Screenshots: [desktop](final-1440-top.png), [phone-width](final-390-top.png), [a
 
 ## Release process
 
-All 17 focused Python tests passed locally. They use temporary Git repositories and explicitly synthetic records. They check thresholds, build identity, master ancestry, old-release immutability, blank-template rejection and idempotent publication behavior. Publication API calls are mocked; no official version is created by the tests. See the committed test suite and CI run for reproducible checks.
+All 17 focused Python tests passed locally. They use temporary Git repositories and explicitly synthetic records. They check thresholds, build identity, master ancestry, old-release immutability, blank-template rejection and idempotent publication behavior. Publication API calls are mocked; no official version is created by the tests. See the committed test suite and successful [main CI](https://github.com/PaperStrange/IndiaGames/actions/runs/39548153606) / [master CI](https://github.com/PaperStrange/IndiaGames/actions/runs/39548224005) for reproducible checks.
 
 Actual human authenticity, device playability, observation quality and independent approval remain the human reviewer’s responsibility. An empty release registry passes hub maintenance checks without approving any demo.
 

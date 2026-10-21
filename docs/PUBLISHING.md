@@ -24,3 +24,19 @@ Open the local root through HTTP. Also verify a project-path preview at `/IndiaG
 ## After activation
 
 Confirm that `https://paperstrange.github.io/IndiaGames/` returns the project hub and that its task JSON loads. Check the Pages build’s source revision. If deployment fails, inspect its actual error before changing configuration or rerunning. Record activation and verification in a dated delivery note; keep earlier failures as history rather than claiming they never happened.
+
+## Verified remote status · 21 October 2026
+
+- Main hub and release process uploaded at [`5f9b45e`](https://github.com/PaperStrange/IndiaGames/commit/5f9b45e22d03d540a23d56809f7313025d2b215d); master staging installed at [`8246c87`](https://github.com/PaperStrange/IndiaGames/commit/8246c87ea8abf89679869ef0e3a9bb71b95039bb). Remote SHAs matched after push.
+- GitHub Actions succeeded on [main](https://github.com/PaperStrange/IndiaGames/actions/runs/39548153606) and [master](https://github.com/PaperStrange/IndiaGames/actions/runs/39548224005). Main’s publisher correctly had no versions to create.
+- The authorized request to create Pages with `main` / root returned **403: Resource not accessible by integration**. The expected Pages URL returned **404**. The site source is uploaded; the website is **not live**.
+- Reading main and master branch-protection settings also returned **403**. Existing settings could not be inspected, so no protection configuration was overwritten. Required gate enforcement is **not verified**. CODEOWNERS and workflow files alone do not enable branch protection.
+
+### Administrator actions still required
+
+1. In [Pages settings](https://github.com/PaperStrange/IndiaGames/settings/pages), select **Deploy from a branch → main → / (root)** and Save. Then verify the deployment’s revision and actual site URL.
+2. In [branch settings](https://github.com/PaperStrange/IndiaGames/settings/branches), protect **main** with required PRs, at least one approving human review, code-owner review, dismissed stale approvals, resolved conversations and the required **release-gate** check on the latest changes. Disable force pushes, deletion and bypass of these requirements where available.
+3. Protect **master** from force pushes/deletion and require its **release-gate** staging check. Keep draft human evidence permitted there. Restrict official version-tag mutation; allow only the reviewed publication workflow/authorized maintainer to create those tags.
+4. Confirm these settings with an actual promotion PR before calling the process enforced. Follow the [release policy](RELEASE-POLICY.md); review workflow/policy changes separately from game promotion.
+
+No additional game release is needed to activate the dashboard. Do not fill the empty registry or invent participant records to make the page appear complete.
