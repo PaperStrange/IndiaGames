@@ -21,6 +21,16 @@ GAMES = {
 VERSION = re.compile(r"(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\Z")
 SHA = re.compile(r"[0-9a-f]{40}\Z")
 REGISTRY = "data/releases.json"
+STORY_CATALOG = "story-catalog.json"
+# Policy lives in the trusted validator, never in writer-editable story content.
+# Adding a shipping story or changing a threshold requires a separate policy review.
+VIVID_STORIES = {"iona": "iona-return-v1", "mara": "mara-object-v1"}
+STORY_CRITERIA = {
+    "iona-return-v1": GAMES["keepers-frame"],
+    "mara-object-v1": (1, (("completed_unassisted", "explained_action_to_visible_consequence"),), (4,)),
+}
+NEUTRAL_CRITERIA = (1, (("completed_unassisted",), ("explained_choice_to_return_action",),
+                        ("expected_unrestricted_ai",)), (0, 0, 0))
 
 
 def require(condition, message):
@@ -77,7 +87,7 @@ def inventory(build):
     return {"entrypoint": "index.html", "sha256": digest, "files": files}
 
 
-def playtests(report, game, version, digest):
+def playtests(report, game, version, digest, criteria=None):
     require(report["schema_version"] == 1 and report["game"] == game
             and report["version"] == version, "playtest identity mismatch")
     require(report["build_sha256"] == digest, "playtests must use the exact shipped build")
@@ -93,7 +103,7 @@ def playtests(report, game, version, digest):
     sessions = report["sessions"]
     require(len(sessions) == 6 and [s["id"] for s in sessions] == ids,
             "report all six sessions in predeclared order")
-    participants, groups, minimums = GAMES[game]
+    participants, groups, minimums = criteria or GAMES[game]
     metrics = {metric for group in groups for metric in group}
     completed_times = []
     seen_people = set()
@@ -141,7 +151,79 @@ def playtests(report, game, version, digest):
     return timestamp(approval["reviewed_at"])
 
 
-def validate_package(package, game, version, ready=True):
+def shipping_stories(build):
+    """Return a reviewed, versioned shipping catalog already covered by build inventory."""
+    path = build / STORY_CATALOG
+    require(path.is_file(), "new Vivid candidates require build/story-catalog.json")
+    catalog = read_json(path)
+    require(type(catalog["schema_version"]) is int and catalog["schema_version"] == 1
+            and catalog["game"] == "keepers-frame", "invalid shipping story catalog identity")
+    stories = catalog["stories"]
+    require(isinstance(stories, list) and len(stories) == len(VIVID_STORIES),
+            "shipping catalog must contain the two reviewed stories")
+    result = {}
+    for story in stories:
+        story_id = story["id"]
+        require(isinstance(story_id, str) and story_id in VIVID_STORIES and story_id not in result,
+                "unknown or duplicate shipping story ID")
+        require(story["release_profile"] == VIVID_STORIES[story_id],
+                "story release profile is not the reviewed policy")
+        require(type(story["revision"]) is int and story["revision"] >= 1 and filled(story["title"]),
+                "shipping story needs a positive revision and title")
+        result[story_id] = story
+    require(set(result) == set(VIVID_STORIES), "missing reviewed shipping story")
+    return result
+
+
+def story_playtests(report, version, digest, stories, ready=True):
+    """One evidence report per shipping story, one independent approval for the bundle."""
+    require(type(report["schema_version"]) is int and report["schema_version"] == 2
+            and report["game"] == "keepers-frame" and report["version"] == version,
+            "multi-story Vivid requires schema 2 playtest identity")
+    require(report["build_sha256"] == digest, "playtests must use the exact shipped build")
+    reports = report["story_reports"]
+    require(isinstance(reports, list) and len(reports) == len(stories),
+            "supply exactly one report for every shipping story")
+    seen_stories = set()
+    for item in reports:
+        story_id = item["story_id"]
+        require(isinstance(story_id, str) and story_id in stories and story_id not in seen_stories,
+                "unknown or duplicate story report")
+        seen_stories.add(story_id)
+        require(item["release_profile"] == stories[story_id]["release_profile"]
+                and item["condition"] == "remembered", "story report has wrong profile or condition")
+        require(item["build_sha256"] == digest, "story report build mismatch")
+    require(seen_stories == set(stories), "missing shipping story report")
+    studies = report.get("study_reports", [])
+    require(isinstance(studies, list) and len(studies) <= 1, "at most one optional neutral study report")
+    for item in studies:
+        require(item["story_id"] == "iona" and item["condition"] == "neutral"
+                and item["release_profile"] == "iona-neutral-v1",
+                "only the reviewed Iona neutral comparison is optional")
+        require(item["build_sha256"] == digest, "neutral study build mismatch")
+    if not ready:
+        return None  # Staging verifies identities; pending human observations remain pending.
+    require(type(report["critical_bugs_open"]) is int and report["critical_bugs_open"] == 0,
+            "all critical bugs must be closed")
+    all_people, all_ids, approvals = set(), set(), []
+    for item in reports + studies:
+        criteria = NEUTRAL_CRITERIA if item["condition"] == "neutral" else STORY_CRITERIA[item["release_profile"]]
+        # Reuse the existing manual-session checks without allowing content-defined thresholds.
+        individual = dict(item, schema_version=1, game="keepers-frame", version=version,
+                          human_approval=report["human_approval"])
+        approvals.append(playtests(individual, "keepers-frame", version, digest, criteria=criteria))
+        for session in item["sessions"]:
+            require(session["story_id"] == item["story_id"] and session["condition"] == item["condition"],
+                    "session story or condition mismatch")
+            people = set(session["participant_ids"])
+            require(not people.intersection(all_people), "use distinct participants across all story and study cohorts")
+            require(session["id"] not in all_ids, "session IDs must be unique across the bundle")
+            all_people.update(people)
+            all_ids.add(session["id"])
+    return max(approvals)
+
+
+def validate_package(package, game, version, ready=True, allow_legacy_vivid=False):
     require(game in GAMES and VERSION.fullmatch(version), "unknown game or invalid version")
     all_files = files_under(package)
     require(set(all_files) == {"candidate.json", "notes.md", "human-playtest.json"}
@@ -155,13 +237,21 @@ def validate_package(package, game, version, ready=True):
     built = inventory(package / "build")
     require(built == manifest["build"] and bool(built["files"]), "build inventory/hash mismatch")
     require(bool(all_files.get("build/index.html", b"").strip()), "build/index.html is required")
+    report = read_json(package / "human-playtest.json")
+    multi_story = game == "keepers-frame" and (
+        not allow_legacy_vivid
+        or STORY_CATALOG in built["files"] or report.get("schema_version") == 2)
+    stories = shipping_stories(package / "build") if multi_story else None
+    if multi_story:
+        story_playtests(report, version, built["sha256"], stories, ready=False)
     if ready:
         notes = all_files["notes.md"].decode("utf-8")
         require(filled(notes) and len(notes.strip()) >= 80
                 and all(title in notes for title in ("## Changes", "## Human validation", "## Known limitations")),
                 "complete release notes, human validation and known limitations")
-        return playtests(read_json(package / "human-playtest.json"), game, version, built["sha256"])
-    read_json(package / "human-playtest.json")  # Drafts are welcome on master; readiness is separate.
+        if multi_story:
+            return story_playtests(report, version, built["sha256"], stories)
+        return playtests(report, game, version, built["sha256"])
     return None
 
 
@@ -215,9 +305,22 @@ def validate(root, master_ref="refs/remotes/origin/master", base_ref=None, stagi
     released = files_under(root / "releases")
     require(all("/".join(path.split("/")[:2]) in entries for path in released),
             "unregistered files under releases/")
+    old_entries = {}
+    if base_ref:
+        # Only byte-identical, already-published archives may use their old evidence schema.
+        # A smaller candidate version number never opts a new Vivid build out of story review.
+        for name, data in tree(root, base_ref, "releases/").items():
+            target = root / name
+            require(target.is_file() and target.read_bytes() == data, f"released file is immutable: {name}")
+        old_data = tree(root, base_ref, REGISTRY)
+        if REGISTRY in old_data:
+            old_entries = registry(decode(old_data[REGISTRY]))
+            for key, entry in old_entries.items():
+                require(entries.get(key) == entry, f"released registry entry is immutable: {key}")
     for key, entry in entries.items():
         game, version = key.split("/")
-        approved_at = validate_package(root / "releases" / key, game, version)
+        approved_at = validate_package(root / "releases" / key, game, version,
+                                       allow_legacy_vivid=key in old_entries)
         implementation = read_json(root / "releases" / key / "candidate.json")["source_commit"]
         git(root, "cat-file", "-e", implementation + "^{commit}")
         require(timestamp(entry["released_at"]) >= approved_at, "release cannot precede human approval")
@@ -227,15 +330,6 @@ def validate(root, master_ref="refs/remotes/origin/master", base_ref=None, stagi
         original = {name[len(prefix):]: data for name, data in tree(root, sha, prefix).items()}
         require(original == files_under(root / "releases" / key),
                 f"{key} differs from the immutable master candidate at {sha}")
-    if base_ref:
-        # Freeze both old file bytes and old registry entries, including removals.
-        for name, data in tree(root, base_ref, "releases/").items():
-            target = root / name
-            require(target.is_file() and target.read_bytes() == data, f"released file is immutable: {name}")
-        old_data = tree(root, base_ref, REGISTRY)
-        if REGISTRY in old_data:
-            for key, entry in registry(decode(old_data[REGISTRY])).items():
-                require(entries.get(key) == entry, f"released registry entry is immutable: {key}")
     return f"{len(entries)} official releases validated; human review remains required."
 
 
