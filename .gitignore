@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Versioned browser artifacts are intentional release inputs, not Python build output.
+!/release-candidates/**/build/
+!/release-candidates/**/build/**
+!/releases/**/build/
+!/releases/**/build/**

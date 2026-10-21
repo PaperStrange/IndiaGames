@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "game": null,
+  "version": null,
+  "build_sha256": null,
+  "critical_bugs_open": null,
+  "protocol": {
+    "sampling_rule": "first-six-predeclared-sessions",
+    "registered_at": null,
+    "session_ids": [],
+    "delayed_recall_min_hours": null
+  },
+  "sessions": [],
+  "human_approval": {
+    "approved": false,
+    "reviewer_is_human": false,
+    "reviewed_manual_evidence": false,
+    "reviewer_id": null,
+    "reviewed_at": null
+  }
+}

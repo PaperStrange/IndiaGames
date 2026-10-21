@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "game": null,
+  "version": null,
+  "source_commit": null,
+  "build": {
+    "entrypoint": "index.html",
+    "sha256": null,
+    "files": {}
+  }
+}

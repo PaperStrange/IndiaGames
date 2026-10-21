@@ -1,0 +1,67 @@
+name: Release gate
+
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  release-gate:
+    name: release-gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Test the release gate
+        run: python3 -m unittest discover -s tests -p 'test_release_gate.py' -v
+      - name: Validate candidate staging or official releases
+        env:
+          TARGET_BRANCH: ${{ github.base_ref || github.ref_name }}
+          BASE_COMMIT: ${{ github.event.pull_request.base.sha || github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          GATE_SCRIPT=scripts/validate-release.py
+          if [ "$EVENT_NAME" = pull_request ] && git cat-file -e "$BASE_COMMIT:scripts/validate-release.py" 2>/dev/null; then
+            git show "$BASE_COMMIT:scripts/validate-release.py" > "$RUNNER_TEMP/trusted-release-gate.py"
+            GATE_SCRIPT="$RUNNER_TEMP/trusted-release-gate.py"
+          fi
+          if [ "$TARGET_BRANCH" = master ]; then
+            python3 "$GATE_SCRIPT" --staging
+          elif [ -n "$BASE_COMMIT" ] && [ "$BASE_COMMIT" != 0000000000000000000000000000000000000000 ]; then
+            python3 "$GATE_SCRIPT" --base-ref "$BASE_COMMIT"
+          else
+            python3 "$GATE_SCRIPT"
+          fi
+
+  publish-releases:
+    name: publish-approved-releases
+    needs: release-gate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: official-release-publication-${{ github.sha }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Publish new approved versions without changing existing tags or notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_COMMIT: ${{ github.event.before }}
+          MAIN_COMMIT: ${{ github.sha }}
+        run: |
+          if [ "$BASE_COMMIT" = 0000000000000000000000000000000000000000 ]; then
+            python3 scripts/publish-releases.py --head-ref "$MAIN_COMMIT" --apply
+          else
+            python3 scripts/publish-releases.py --base-ref "$BASE_COMMIT" --head-ref "$MAIN_COMMIT" --apply
+          fi
