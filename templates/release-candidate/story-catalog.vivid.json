@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "game": "keepers-frame",
+  "stories": [
+    {
+      "id": "iona",
+      "revision": 1,
+      "title": "A Place for the Promise",
+      "release_profile": "iona-return-v1"
+    },
+    {
+      "id": "mara",
+      "revision": 1,
+      "title": "The Unfinished Postcard",
+      "release_profile": "mara-object-v1"
+    }
+  ]
+}
