@@ -9,6 +9,7 @@ export function makeContent(cast) {
   const m = cast.painter;
   return {
     title: 'The Unfinished Postcard', subtitle: 'A mystery told by objects',
+    sceneLabels: { description: 'A station workbench and lightbox' },
     description: 'A closed station. Three things left on a workbench. Find the picture its sign painter was still making.',
     welcome: `The station closed on a Thursday. On Friday, its sign painter, ${m.name}, was still at the workbench. The room is empty now. What was ${m.subject} making?`,
     investigate: 'The workbench is just as it was left: a timetable, a paint-marked postcard, and two thin sheets of drawings. You can begin with any of them.',

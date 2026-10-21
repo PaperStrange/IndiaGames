@@ -76,6 +76,7 @@ export function createMaraPack({ id = 'mara', cast = defaultCast } = {}) {
       title: content.title, kicker: content.subtitle, speaker: '', text, phase: s.phase, progress, actions,
       scene: {
         kind: 'workbench', view: 0, actorId: null, light: s.phase === 'intro' ? 'low' : 'steady', placement: null,
+        caption: content.subtitle, descriptionLabel: content.sceneLabels.description,
         details: s.inspected.map(id => content.objects[id].short),
         alignment: s.alignment, alignmentTarget: 3, clueCount: s.inspected.length,
         revealed: ['reveal', 'end'].includes(s.phase),

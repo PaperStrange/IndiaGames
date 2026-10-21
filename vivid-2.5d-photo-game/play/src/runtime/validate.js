@@ -112,6 +112,9 @@ export function validateViewModel(viewModel, manifest) {
   require(Array.isArray(scene.details) && scene.details.every(detail => typeof detail === 'string'),
     'Scene details must provide text equivalents');
   require(scene.placement === null || typeof scene.placement === 'string', 'Scene placement must be a semantic id');
+  for (const key of ['caption', 'descriptionLabel']) {
+    if (scene[key] !== undefined) require(nonempty(scene[key]), `Scene ${key} must provide readable text`);
+  }
   const assetIds = new Set(manifest.assets.map(asset => asset.id));
   for (const id of [...(scene.assetIds || []), ...(scene.portraitAssetId ? [scene.portraitAssetId] : [])]) {
     require(assetIds.has(id), `Scene references unknown asset ${id}`);

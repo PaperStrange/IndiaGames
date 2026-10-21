@@ -480,9 +480,8 @@ function render() {
     current.manifest.assets.find((a) => a.id === "portrait")?.src;
   if (portrait) $("flat-art").src = localAsset(portrait);
   else $("flat-art").removeAttribute("src");
-  $("scene-caption").textContent = vm.scene.memory
-    ? "An earlier watch · a recollection"
-    : current.manifest.subtitle;
+  $("scene-caption").textContent =
+    vm.scene.caption || current.manifest.subtitle;
   $("scene-description").textContent = vm.scene.details?.length
     ? vm.scene.details.join(" · ")
     : actor?.description || "A workbench waits for a closer look.";
@@ -491,7 +490,7 @@ function render() {
     : "";
   $("world").setAttribute(
     "aria-label",
-    `${vm.scene.kind === "portrait" ? "A framed painted portrait" : "A station workbench and lightbox"}. ${$("scene-description").textContent}${vm.scene.placement ? " An object is now in its remembered place." : ""}`,
+    `${vm.scene.descriptionLabel || (vm.scene.kind === "portrait" ? "A framed painted portrait" : "An illustrated workbench")}. ${$("scene-description").textContent}${vm.scene.placement ? " An object is now in its remembered place." : ""}`,
   );
   if (world) {
     const active = world,

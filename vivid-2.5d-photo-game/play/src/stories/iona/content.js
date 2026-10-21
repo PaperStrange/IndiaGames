@@ -11,6 +11,7 @@ export function makeContent(cast) {
   const k = cast.keeper;
   return {
     title: 'A Place for the Promise', subtitle: 'An evening at the harbour',
+    sceneLabels: { description: 'A framed painted portrait', recollection: 'An earlier watch · a recollection' },
     description: 'Help a keeper bring a ferry home. Learn what steadies a light, and choose where a promise belongs.',
     welcome: `The last ferry is somewhere in the fog. ${k.name} cannot reach beyond the painted frame. Two harbour marks will tell you how to call it home. There is time to look carefully.`,
     invitation: 'You there. Will you help me with the light? The marks are tucked around the frame. Lean a little; you will find them.',

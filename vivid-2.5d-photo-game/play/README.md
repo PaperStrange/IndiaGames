@@ -5,7 +5,7 @@ A browser anthology with two playable stories:
 - **A Place for the Promise:** help Iona bring a ferry home, repair a lamp in an earlier memory, then choose where a private letter or approved public dedication belongs on a later visit.
 - **The Unfinished Postcard:** examine Mara's workbench in any order and align the drawings to discover a community workshop inside a closed station.
 
-The technical package/release ID is `keepers-frame`. Version `0.1.1` is a candidate, not an approved official release. Human playtests are pending. Approximate story durations in the collection are content estimates.
+The technical package/release ID is `keepers-frame`. Version `0.1.2` is a candidate, not an approved official release. Human playtests are pending. Approximate story durations in the collection are content estimates.
 
 ## Run and verify
 
@@ -50,4 +50,4 @@ Builds use relative URLs and bundle all required runtime dependencies. Serve the
 
 [Iteration decision and research](../../docs/gamejam/vivid-iteration-2026-10-21/DECISION.md) · [human-study preparation](../../docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md)
 
-The portable build includes `third-party-notices.txt` for bundled Three.js and Vite code. Candidate 0.1.0 is retained on master; 0.1.1 adds these notices without changing story behavior.
+The portable build includes `third-party-notices.txt` for bundled Three.js and Vite code. Candidates 0.1.0 and 0.1.1 are retained on master. Version 0.1.1 added these notices; 0.1.2 lets each story supply its own visible scene caption and accessible illustration label, preserving existing wording and save behavior.

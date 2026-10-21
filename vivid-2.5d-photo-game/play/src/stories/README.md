@@ -16,6 +16,8 @@ Each module exports `pack`:
 
 Write prose in each pack's `content.js`. Actors and objects connect through stable IDs such as `keeper`, `painter`, `letter`, or `sketches`; display names are not identifiers. Cast metadata can change names, pronouns, descriptions and portrait paths. The development-only `fixtures/recast.js` uses Eris in place of Iona with the same rules and changed prose. It is intentionally absent from the shipping catalog. A portrait source and its accessible description should be replaced together for a new production character.
 
+Optional `scene.caption` supplies the visible scene caption, including any recollection framing. Optional `scene.descriptionLabel` supplies the introductory text of the illustration's accessible label; the UI adds the current scene details and placement status. Both fields must be nonempty strings when supplied. Without them, the UI uses the manifest subtitle and a generic portrait/workbench label. Keep narrative or setting-specific wording in the pack, not the shared UI. The shipped packs author these labels in `content.js`, preserving their existing presentation.
+
 ## Existing narrative checkpoints
 
 **A Place for the Promise:** inspect both harbour marks, choose east and short/long/short, send the signal, enter a clearly marked earlier watch, brace the shade, place the wedge, return to the present, choose a private letter or approved public dedication, revisit and place the chosen object. The brace latches; there is no sustained hold, simultaneous input or timer. Recollection actions make an ordinary repair meaningful without treating fear as a moral failure. Both endings remain warm and both acknowledge an earlier intrusion if the player opened the letter without permission.

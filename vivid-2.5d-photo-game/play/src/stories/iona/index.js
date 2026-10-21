@@ -170,6 +170,8 @@ export function createIonaPack({ id = 'iona', cast = defaultCast } = {}) {
       title: content.title, kicker, speaker, text, phase: s.phase, progress, actions,
       scene: {
         kind: 'portrait', view: s.view, actorId: 'keeper', light: hasLight ? 'steady' : 'low',
+        caption: s.phase === 'recollection' ? content.sceneLabels.recollection : content.subtitle,
+        descriptionLabel: content.sceneLabels.description,
         placement: s.placement, details: [...s.clues.map(c => content.marks[c].short), ...(s.notchNoticed ? [content.marks.notch.short] : [])],
         notchBraced: ['braced', 'wedged', 'complete'].includes(s.recollectionStage),
         wedgePlaced: ['wedged', 'complete'].includes(s.recollectionStage),

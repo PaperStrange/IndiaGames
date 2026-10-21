@@ -90,6 +90,45 @@ test('stories and study profiles own independent records', () => {
   assert.equal(remembered.getState().visits, 0);
 });
 
+test('alternate scene labels survive normal play and save recovery without another story setting', () => {
+  const base = fixturePack();
+  const pack = fixturePack({
+    getViewModel(state) {
+      const vm = base.getViewModel(state);
+      return { ...vm, scene: { ...vm.scene, kind: 'workbench', actorId: null,
+        caption: state.visits ? 'Winter remembered · the last rehearsal' : 'A paper theatre at dusk',
+        descriptionLabel: 'A miniature theatre stage with folded scenery' } };
+    },
+  });
+  const storage = memoryStorage();
+  const first = createSession({ pack, storage });
+  assert.equal(pack.getViewModel(first.getState()).scene.caption, 'A paper theatre at dusk');
+  first.dispatch({ type: 'VISIT' });
+  first.dispose();
+  const restored = createSession({ pack, storage });
+  const scene = pack.getViewModel(restored.getState()).scene;
+  assert.equal(scene.caption, 'Winter remembered · the last rehearsal');
+  assert.equal(scene.descriptionLabel, 'A miniature theatre stage with folded scenery');
+  assert.doesNotMatch(JSON.stringify(scene), /Iona|Mara|station|earlier watch/i);
+  const vm = pack.getViewModel(restored.getState());
+  for (const key of ['caption', 'descriptionLabel']) {
+    for (const value of ['', '  ', null, { text: 'not a label' }]) {
+      assert.throws(() => validateViewModel({ ...vm, scene: { ...scene, [key]: value } }, manifest), /readable text/);
+    }
+  }
+});
+
+test('shipped story captions and accessible labels remain authored in their packs', () => {
+  const recollection = iona.validationStates().find(state => state.phase === 'recollection');
+  const flashback = iona.getViewModel(recollection);
+  assert.equal(flashback.scene.caption, 'An earlier watch · a recollection');
+  assert.equal(flashback.scene.descriptionLabel, 'A framed painted portrait');
+  assert.equal(iona.getViewModel(iona.createState()).scene.caption, iona.manifest.subtitle);
+  const workbench = mara.getViewModel(mara.createState());
+  assert.equal(workbench.scene.caption, mara.manifest.subtitle);
+  assert.equal(workbench.scene.descriptionLabel, 'A station workbench and lightbox');
+});
+
 test('future save schema, content revision, and story version are preserved during play', () => {
   for (const field of ['schemaVersion', 'contentRevision', 'storySaveVersion']) {
     const original = record(undefined, { [field]: 7 });
