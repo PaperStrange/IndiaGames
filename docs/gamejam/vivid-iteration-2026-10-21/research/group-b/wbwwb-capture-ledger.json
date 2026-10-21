@@ -1,0 +1,194 @@
+{
+  "observer": "agent",
+  "date": "2026-10-21",
+  "endpoint": "partial: attack broadcast and fearful-circle consequence",
+  "completion": false,
+  "captures": [
+    {
+      "file": "wbwwb-00-tls-block.png",
+      "captured_at": "2026-10-21T07:22:08.565048+00:00",
+      "retained_in_repository": true,
+      "sha256": "36e794b7b90d2c02dca03b1b1e1ccfa999304ab13728c187d4ca7db4b420a790"
+    },
+    {
+      "file": "wbwwb-01-arrival.png",
+      "captured_at": "2026-10-21T07:22:49.231066+00:00",
+      "retained_in_repository": false,
+      "sha256": "443de5744600e6941441f1cb860b6a197670c059535ff8dbc4a9f7fb97074ba7"
+    },
+    {
+      "file": "wbwwb-02-ready.png",
+      "captured_at": "2026-10-21T07:23:59.924495+00:00",
+      "retained_in_repository": true,
+      "sha256": "d2b3ebe86c61dd854684daff038d142edfb05c7770f8071669bf78127d22f13e"
+    },
+    {
+      "file": "wbwwb-03-instructions.png",
+      "captured_at": "2026-10-21T07:24:23.249323+00:00",
+      "retained_in_repository": false,
+      "sha256": "5d82df7458a5859323322156e6b26d66b7923875016f00fd356d3c7af2ac4bc4"
+    },
+    {
+      "file": "wbwwb-04-first-frame.png",
+      "captured_at": "2026-10-21T07:24:42.297756+00:00",
+      "retained_in_repository": false,
+      "sha256": "31314be54c26d9fee9c58fcb4e1f618199062eda20aca6dfb9fbfa149177d94d"
+    },
+    {
+      "file": "wbwwb-05-ordinary-photo.png",
+      "captured_at": "2026-10-21T07:24:57.450170+00:00",
+      "retained_in_repository": false,
+      "sha256": "645663464ba6945a3e5dee810b667e30d68878a0762192607fd053b0f2632be2"
+    },
+    {
+      "file": "wbwwb-06-ordinary-result.png",
+      "captured_at": "2026-10-21T07:25:13.186625+00:00",
+      "retained_in_repository": true,
+      "sha256": "94056202fa4fedea5b579252b37b97571434e77f418eac7354c1742bb804083e"
+    },
+    {
+      "file": "wbwwb-07-seek-novelty.png",
+      "captured_at": "2026-10-21T07:25:31.127145+00:00",
+      "retained_in_repository": false,
+      "sha256": "03b78f5778ed4f7156677b0e60d62c70c70628df66d301df2c342b015d92b787"
+    },
+    {
+      "file": "wbwwb-08-hat-result.png",
+      "captured_at": "2026-10-21T07:25:47.159598+00:00",
+      "retained_in_repository": false,
+      "sha256": "7c4a8f177c117db49941b5198dfd008d9fc7179c43269fce918cb53684a2c934"
+    },
+    {
+      "file": "wbwwb-09-hat-broadcast.png",
+      "captured_at": "2026-10-21T07:26:02.996052+00:00",
+      "retained_in_repository": true,
+      "sha256": "c2909f0736fd1922610b29680a808c667d73ec7eb918fdaafec6c472e176c494"
+    },
+    {
+      "file": "wbwwb-10-love-photo.png",
+      "captured_at": "2026-10-21T07:26:21.696590+00:00",
+      "retained_in_repository": false,
+      "sha256": "3b34e14efa8f649d1f8c10e9389fa4c059fbbdd0b612d8cc73f80d4f8f09e5a2"
+    },
+    {
+      "file": "wbwwb-11-love-result.png",
+      "captured_at": "2026-10-21T07:26:36.048998+00:00",
+      "retained_in_repository": true,
+      "sha256": "3ad6cfb38f2b9f18c52c2975096a502167cf3db8566cc0d2847bc2ba1002d02f"
+    },
+    {
+      "file": "wbwwb-12-love-retry.png",
+      "captured_at": "2026-10-21T07:26:55.593551+00:00",
+      "retained_in_repository": false,
+      "sha256": "1a8701f3498e04c1359bf6e26f8ddecde28f9fd5656a8856a0563e0ed5ec8149"
+    },
+    {
+      "file": "wbwwb-13-single-active-game.png",
+      "captured_at": "2026-10-21T07:27:16.910157+00:00",
+      "retained_in_repository": false,
+      "sha256": "c83791ddbdcfe70329792ac19c0d2de88cc4554fe142d28b623acb3efb24c627"
+    },
+    {
+      "file": "wbwwb-14-positive-framing.png",
+      "captured_at": "2026-10-21T07:27:36.114708+00:00",
+      "retained_in_repository": false,
+      "sha256": "9e7e510857e51033d399ee44e88f8d265ce9508c4f0af73498d29ae91d2726b6"
+    },
+    {
+      "file": "wbwwb-15-hearts-visual-target.png",
+      "captured_at": "2026-10-21T07:28:16.539766+00:00",
+      "retained_in_repository": false,
+      "sha256": "9d18347c269ed18e1fb40fc9dd30d32d7bcf032c48d33c9eb9db8a14e6649c4e"
+    },
+    {
+      "file": "wbwwb-16-headline.png",
+      "captured_at": "2026-10-21T07:28:41.772491+00:00",
+      "retained_in_repository": true,
+      "sha256": "a2cf44c31d458c01607cd3c175669f448e8c7598e049dc1fa6d6260822874623"
+    },
+    {
+      "file": "wbwwb-17-conflict-attempt.png",
+      "captured_at": "2026-10-21T07:29:17.293489+00:00",
+      "retained_in_repository": false,
+      "sha256": "eb59435a7ef3084c406c1403df6e46139e48f01bbfebc87cb7d4605c7abb555e"
+    },
+    {
+      "file": "wbwwb-18-spiky-visual-target.png",
+      "captured_at": "2026-10-21T07:30:14.403190+00:00",
+      "retained_in_repository": false,
+      "sha256": "d9a57c65d2ba48e0d7b13e4c30ec13331d5624e9700b172960cbe417b747f663"
+    },
+    {
+      "file": "wbwwb-19-conflict-photo.png",
+      "captured_at": "2026-10-21T07:31:30.181428+00:00",
+      "retained_in_repository": true,
+      "sha256": "d81d3bf936a8e56a88baa7ca85617ef682d6a35b23ce982d39933055ae0062be"
+    },
+    {
+      "file": "wbwwb-20-0-conflict-retry.png",
+      "captured_at": "2026-10-21T07:32:04.826436+00:00",
+      "retained_in_repository": true,
+      "sha256": "f44d8b8ed754de2b397997df21dc2623266d58813041321ff8cdc9837b5f8ea0"
+    },
+    {
+      "file": "wbwwb-20-1-conflict-retry.png",
+      "captured_at": "2026-10-21T07:32:22.198933+00:00",
+      "retained_in_repository": true,
+      "sha256": "3f9a9e447441bcc16a31e64898d818c556d6a4e1545f4b116aa91b6a35d68f80"
+    },
+    {
+      "file": "wbwwb-20-2-conflict-retry.png",
+      "captured_at": "2026-10-21T07:32:39.531306+00:00",
+      "retained_in_repository": false,
+      "sha256": "d1b61d641a9053f42bb2fd5a70193b5bf412d737b852f25fb202d615f58ce81a"
+    },
+    {
+      "file": "wbwwb-21-fear-photo.png",
+      "captured_at": "2026-10-21T07:33:17.744363+00:00",
+      "retained_in_repository": false,
+      "sha256": "1c728d487f26730809b53073b281b00d027a6e92c2a900deadf2ec8911383be1"
+    },
+    {
+      "file": "wbwwb-22-0-fear-retry.png",
+      "captured_at": "2026-10-21T07:34:36.438659+00:00",
+      "retained_in_repository": false,
+      "sha256": "02fc65453b0a2dd94f8db1c702f843c22caf9ae26493509b2c682548a176600a"
+    },
+    {
+      "file": "wbwwb-22-1-fear-retry.png",
+      "captured_at": "2026-10-21T07:34:54.963205+00:00",
+      "retained_in_repository": false,
+      "sha256": "df1c301ad97dd1873b39397d32a0397ec5e4288d0fe36857a517b08af4d3f1d9"
+    },
+    {
+      "file": "wbwwb-22-2-fear-retry.png",
+      "captured_at": "2026-10-21T07:35:13.903830+00:00",
+      "retained_in_repository": false,
+      "sha256": "b6f2fee3d37100f5bfe6b1bff9d2db271a378f104657fe3dfb9115951f321a6c"
+    },
+    {
+      "file": "wbwwb-23-waited.png",
+      "captured_at": "2026-10-21T07:35:58.513188+00:00",
+      "retained_in_repository": false,
+      "sha256": "745ca27c9614647deb444f0e3c27aaa919ce0bd30a10a56f9e44c7f833a2fafe"
+    },
+    {
+      "file": "wbwwb-24-framed-fear.png",
+      "captured_at": "2026-10-21T07:36:34.473932+00:00",
+      "retained_in_repository": false,
+      "sha256": "b94784f481271c99862f1029c24532213b90aec852d92b2443a8cccbe513cc4f"
+    },
+    {
+      "file": "wbwwb-25-fear-waited.png",
+      "captured_at": "2026-10-21T07:36:56.694730+00:00",
+      "retained_in_repository": false,
+      "sha256": "7fe5811dea98fa70415aa32247ab49a864bb103edd7f6fb58a49889d7aa1f0a2"
+    },
+    {
+      "file": "wbwwb-26-fear-active.png",
+      "captured_at": "2026-10-21T07:38:21.641229+00:00",
+      "retained_in_repository": true,
+      "sha256": "640493e7472bafbafeeae04049bcd148174b552ae6e31cb3d3f405938e94cf54"
+    }
+  ]
+}

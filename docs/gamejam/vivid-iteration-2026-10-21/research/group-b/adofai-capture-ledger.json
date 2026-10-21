@@ -1,0 +1,101 @@
+{
+  "observer": "agent",
+  "date": "2026-10-21",
+  "edition": "browser demo v0.4.2 December 2018",
+  "endpoint": "calibration/menu interaction and recalibration recovery only",
+  "track_attempted": false,
+  "track_completed": false,
+  "audio_listened_to": false,
+  "captures": [
+    {
+      "file": "dance-00-tls-block.png",
+      "captured_at": "2026-10-21T07:22:08.633049+00:00",
+      "retained_in_repository": false,
+      "sha256": "2220dcbbaf9a23af35b14d8440fdfd0fc91a72204ed0d14f4d90d455ab7445e7"
+    },
+    {
+      "file": "dance-01-arrival.png",
+      "captured_at": "2026-10-21T07:23:01.271108+00:00",
+      "retained_in_repository": false,
+      "sha256": "7add845924c3fa0959bfce9210bd7454a5f388e4dd1b76e689b12d533c32f955"
+    },
+    {
+      "file": "dance-02-start.png",
+      "captured_at": "2026-10-21T07:23:30.547350+00:00",
+      "retained_in_repository": true,
+      "sha256": "be363cfb6ab55b985f3689ace413010e99312779ee3f70aca427de131dea7549"
+    },
+    {
+      "file": "dance-03-calibration.png",
+      "captured_at": "2026-10-21T07:24:01.184540+00:00",
+      "retained_in_repository": true,
+      "sha256": "bbdd2019fa87d6f3cdc073d8b2d292530bf6f7f194c66ed88a17c884e27d42e0"
+    },
+    {
+      "file": "dance-04-reentry.png",
+      "captured_at": "2026-10-21T07:46:53.383789+00:00",
+      "retained_in_repository": false,
+      "sha256": "4077dd80cc80d79f70c1362a28cffd52f684a18a77d383cac1ae93dfc6a26bf3"
+    },
+    {
+      "file": "dance-05-calibration-inputs.png",
+      "captured_at": "2026-10-21T07:47:25.948706+00:00",
+      "retained_in_repository": true,
+      "sha256": "ceb01e9d9de8cedd3faffe377d92dbee03ac985c4c6911826c5136896f854ad8"
+    },
+    {
+      "file": "dance-06-calibration-second-cadence.png",
+      "captured_at": "2026-10-21T07:48:17.070223+00:00",
+      "retained_in_repository": true,
+      "sha256": "6a520d4045cf42ffda717a81d818e4a058b6ae8d3e7fc3e2f0e7383797c4504d"
+    },
+    {
+      "file": "dance-07-escape.png",
+      "captured_at": "2026-10-21T07:48:18.930278+00:00",
+      "retained_in_repository": true,
+      "sha256": "0ec7558ec3184b358f6e8862405c88bb87e43714f9be6725b81313feec6039fb"
+    },
+    {
+      "file": "dance-08-world-selection.png",
+      "captured_at": "2026-10-21T07:48:49.951104+00:00",
+      "retained_in_repository": false,
+      "sha256": "eaf66cabc37664064dd3a6f3a50689c5c653db0defbf3be6628ba4b0c2aebe39"
+    },
+    {
+      "file": "dance-09-menu-movement.png",
+      "captured_at": "2026-10-21T07:49:36.776448+00:00",
+      "retained_in_repository": true,
+      "sha256": "2fa6d2fddb9b5294078459a1d324aa4171bdfd9ae7b2d10537a03786b4d7e832"
+    },
+    {
+      "file": "dance-10-visual-navigation.png",
+      "captured_at": "2026-10-21T07:52:48.685804+00:00",
+      "retained_in_repository": true,
+      "sha256": "2f55182ad4c1de98909e7bebfba9595bca62b69caf406bfc99154b604efd6847"
+    },
+    {
+      "file": "dance-11-navigation-retry.png",
+      "captured_at": "2026-10-21T07:54:02.388157+00:00",
+      "retained_in_repository": false,
+      "sha256": "d275e5d5673821fd698f5e536941d8bf39287b515733f4c2943b3e2b209fd7a7"
+    },
+    {
+      "file": "dance-12-first-route-attempt.png",
+      "captured_at": "2026-10-21T07:55:02.125755+00:00",
+      "retained_in_repository": true,
+      "sha256": "f00097043e3ff5b1f47472e3fcda38e89ff75b89c0e4d2c2c22d1f82c8b216a3"
+    },
+    {
+      "file": "dance-13-reopen-calibration.png",
+      "captured_at": "2026-10-21T07:55:55.163243+00:00",
+      "retained_in_repository": true,
+      "sha256": "f6385f42e76baee5dc59022fb8d8d191ba87cec723782119dd93d565da72ae36"
+    },
+    {
+      "file": "dance-14-return-to-menu.png",
+      "captured_at": "2026-10-21T07:55:56.635280+00:00",
+      "retained_in_repository": true,
+      "sha256": "c218666905394d01abde08a214fc7b35e530f7347e40a695a0a57994d0589941"
+    }
+  ]
+}

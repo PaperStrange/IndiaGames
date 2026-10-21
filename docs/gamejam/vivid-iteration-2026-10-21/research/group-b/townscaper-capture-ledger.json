@@ -1,0 +1,99 @@
+{
+  "observer": "agent",
+  "date": "2026-10-21",
+  "endpoint": "intentional composition, revision, voluntary finish and exit/re-entry",
+  "bounded_observation_task_complete": true,
+  "game_has_authored_ending": false,
+  "captures": [
+    {
+      "file": "town-00-tls-block.png",
+      "captured_at": "2026-10-21T07:22:08.601048+00:00",
+      "retained_in_repository": false,
+      "sha256": "2317dcdb873fe03cf0fd35b918816cabb5f2409de28b30e1450a4a640f01fe50"
+    },
+    {
+      "file": "town-01-arrival.png",
+      "captured_at": "2026-10-21T07:22:55.303195+00:00",
+      "retained_in_repository": false,
+      "sha256": "854d1f5a3b689a28176f0ff2fbdae42a2cebaa37f34af97d1f799496f76a9f5d"
+    },
+    {
+      "file": "town-02-ready.png",
+      "captured_at": "2026-10-21T07:23:15.130999+00:00",
+      "retained_in_repository": false,
+      "sha256": "537b49d1e154f06046360a7e465b6d64043906b0a9de3139d09cb3e9f5e0199a"
+    },
+    {
+      "file": "town-03-start.png",
+      "captured_at": "2026-10-21T07:23:33.203395+00:00",
+      "retained_in_repository": true,
+      "sha256": "725a28a31d2fd838c36b07f8b6ec5aa1f3760b4f4273183c9fc1e1b04a80ecb8"
+    },
+    {
+      "file": "town-04-first-extension.png",
+      "captured_at": "2026-10-21T07:23:58.668449+00:00",
+      "retained_in_repository": true,
+      "sha256": "45d35c73e512d975f6c3eb1292cd334af9f1d533c697fa49606c98ceb2490b98"
+    },
+    {
+      "file": "town-05-reopen.png",
+      "captured_at": "2026-10-21T07:42:13.475943+00:00",
+      "retained_in_repository": false,
+      "sha256": "98cd961e333d34fdb52c43fcfccae94db48f58940e3218d1f0a8f77d1727b584"
+    },
+    {
+      "file": "town-06-reentry-state.png",
+      "captured_at": "2026-10-21T07:42:38.160607+00:00",
+      "retained_in_repository": true,
+      "sha256": "0185bea7e008d8471226d79adf65165a057edc61ef5cc48fb79ba81ae8020fd8"
+    },
+    {
+      "file": "town-07-blue-annex.png",
+      "captured_at": "2026-10-21T07:43:10.865519+00:00",
+      "retained_in_repository": true,
+      "sha256": "1c3e820b2e27920c25a940e2f6f2b8b3b992c25af54e7248c96893d4be8fbbe0"
+    },
+    {
+      "file": "town-08-landing.png",
+      "captured_at": "2026-10-21T07:43:28.738019+00:00",
+      "retained_in_repository": true,
+      "sha256": "8f9c98f98e6f0be19746a77f1a78ead643c96cf69f250135d87306621a12c552"
+    },
+    {
+      "file": "town-09-connect-landing.png",
+      "captured_at": "2026-10-21T07:43:51.046659+00:00",
+      "retained_in_repository": true,
+      "sha256": "61b4f910e2e5c23afb760261774af8aaa88d5f149f03bcdb53a1d2cf42b252a3"
+    },
+    {
+      "file": "town-10-revised-shorter-pier.png",
+      "captured_at": "2026-10-21T07:44:27.755671+00:00",
+      "retained_in_repository": true,
+      "sha256": "bbbf10793f2b1a7a5d1ed5afdf06fb1a7ab41dc2108eefb739aed07dafef06f8"
+    },
+    {
+      "file": "town-11-chosen-finish.png",
+      "captured_at": "2026-10-21T07:44:43.880125+00:00",
+      "retained_in_repository": true,
+      "sha256": "9455e40ec5276479877df6a98d06e73dbb9bf3352fac2590b7069817befc7d32"
+    },
+    {
+      "file": "town-12-menu-before-exit.png",
+      "captured_at": "2026-10-21T07:45:01.868631+00:00",
+      "retained_in_repository": true,
+      "sha256": "f4cfcac4ff3135dbed683a8d352a25404899281cbe844e75358c100457deed29"
+    },
+    {
+      "file": "town-13-reentry-after-finish.png",
+      "captured_at": "2026-10-21T07:45:57.666221+00:00",
+      "retained_in_repository": false,
+      "sha256": "86d0d09e6397b14a984bf7e1f8a1c02c39057cce1be2e75793b209e870e2839a"
+    },
+    {
+      "file": "town-14-reentry-settled.png",
+      "captured_at": "2026-10-21T07:46:37.599355+00:00",
+      "retained_in_repository": true,
+      "sha256": "eae8685436c94cf38988eb7d366ddd28fe18ccbdd2d1ce32862ccf9a505551c4"
+    }
+  ]
+}
