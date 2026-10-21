@@ -23,7 +23,7 @@
       "implementation_started": true,
       "qa_date_utc": "2026-10-21",
       "qa_status": "automated_pass_human_pending",
-      "candidate_version": "0.1.1",
+      "candidate_version": "0.1.2",
       "candidate_status": "staged_awaiting_human_validation",
       "official_release": false
     },
@@ -64,7 +64,7 @@
         "vivid",
         "bell"
       ],
-      "requirement": "Keep six distinct titles and at least four broad families per lane. Vivid’s approved browser roster is being reconciled; label every partial/access block and retain the original native gaps. No lane is declared complete here."
+      "requirement": "Keep six distinct titles and at least four broad families per lane. Vivid has six core-play titles across five families, with three declared units completed and three endpoint gaps. Keep partials and original native gaps explicit; no lane is declared fully studied."
     },
     {
       "id": "human-validation",
@@ -556,7 +556,7 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md"
       ],
       "focus": "research_product",
       "completion_note": "User-approved direction recorded and implemented; research hypotheses remain unvalidated.",
@@ -568,21 +568,26 @@
       "priority": "P0",
       "status": "active",
       "owner_role": "Research lead",
-      "title": "Reconcile six approved browser competitors and their actual endpoints",
-      "deliverable": "An edition-specific journey ledger for the six approved browser comparators, with capture links, failures and unresolved endpoint gaps.",
+      "title": "Finish missing competitor endpoints after six-title reconciliation",
+      "deliverable": "Preserve the six-title journey ledger and qualified synthesis, then add the missing Six Cats ending, WBWWB full cycle and ADOFAI tutorial completion as new dated sessions.",
       "acceptance_criteria": [
         "Use Sort the Court! Poki edition, Six Cats Under HTML5, Adventures With Anxiety, We Become What We Behold, Townscaper browser demo and A Dance of Fire and Ice browser demo.",
         "Record entry, goals, inputs, feedback, mistakes, recovery, observed stopping point and re-entry where actually reached; partial or blocked access is not completion.",
         "Keep Event[0], TOEM, full native Townscaper and Rhythm Doctor as unplayed native gaps. Do not pool older editions, screenshots, criticism or agent interpretation into fresh play results.",
-        "Retain at least four broad families and two titles outside narrative/deduction. Reconcile the complete records before updating comparative counts or conclusions."
+        "Retain at least four broad families and two titles outside narrative/deduction. Reconcile the complete records before updating comparative counts or conclusions.",
+        "Complete Six Cats rescue/post-ending restart, WBWWB cycle/post-completion re-entry and ADOFAI tutorial with heard audio and reliable calibration. Preserve partials and disclose assistance; do not pool separate runs as completion."
       ],
       "depends_on": [],
       "lane": "vivid",
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/coverage.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md"
+      ],
       "focus": "research_competitors",
-      "completion_note": "Approved roster replaces inaccessible native slots for this iteration; journey reconciliation is still in progress.",
+      "completion_note": "Six core-play titles and five families are documented; three declared units completed and three remain partial. The synthesis answers all three product questions as hypotheses. Endpoint follow-ups remain open.",
       "assigned_person_or_agent": "Codex research agents and coordinator"
     },
     {
@@ -606,8 +611,8 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/iona/index.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/stories.test.js"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/iona/index.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/stories.test.js"
       ],
       "focus": "core_gameplay",
       "completion_note": "Rules and state scenarios implemented; human understanding is not yet measured.",
@@ -635,9 +640,9 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/iona/content.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/mara/content.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/fixtures/recast.js"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/iona/content.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/mara/content.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/fixtures/recast.js"
       ],
       "focus": "narrative",
       "completion_note": "Authoring and continuity checks are present; emotional effect remains a human question.",
@@ -666,9 +671,9 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/art/README.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/art/build_models.py",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/art/verification-2026-10-21/renderer-verification.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/build_models.py",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/verification-2026-10-21/renderer-verification.json"
       ],
       "focus": "art",
       "completion_note": "Nine automated renderer/art checks passed. This does not establish art appeal or physical-device FPS.",
@@ -696,9 +701,9 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/app.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/renderers/world.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/app-edge-browser.mjs"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/app.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/renderers/world.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/app-edge-browser.mjs"
       ],
       "focus": "ux_accessibility",
       "completion_note": "Controls and failure paths implemented; integrated browser evidence is finalized by KF-10.",
@@ -726,8 +731,8 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/runtime/session.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/runtime.test.js"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/runtime/session.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/runtime.test.js"
       ],
       "focus": "engineering_persistence",
       "completion_note": "Versioning, isolation, blocked storage and explicit recovery scenarios are implemented and covered by unit tests.",
@@ -759,8 +764,8 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/iona/index.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/stories.test.js"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/iona/index.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/stories.test.js"
       ],
       "focus": "engineering_core",
       "completion_note": "Implemented on the game branch; human causality and enjoyment remain pending.",
@@ -792,9 +797,9 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/app.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/runtime/validate.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/renderers/world.js"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/app.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/runtime/validate.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/renderers/world.js"
       ],
       "focus": "engineering_integration",
       "completion_note": "Both stories are playable; final frozen-build browser coverage remains KF-10.",
@@ -821,12 +826,13 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T07-50-14-245Z/browser-observations.json",
-        "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/edge-2026-10-21/report.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/browser-observations.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/edge-2026-10-21/report.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json"
       ],
       "focus": "qa",
-      "completion_note": "49 unit tests, 16 full browser scenarios on 0.1.1, 10 input/lifecycle checks and 9 art checks passed. Physical-device and human evidence remain separate blockers.",
+      "completion_note": "51 unit tests and 16 full browser scenarios passed on the exact 0.1.2 build; authored labels checked. Prior 10 input/lifecycle and 9 renderer checks remain supporting evidence for unchanged logic/art. No human or physical-device pass.",
       "assigned_person_or_agent": "Codex coordinating and QA agents"
     },
     {
@@ -852,10 +858,10 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/protocol.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/recruitment.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/protocol.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/recruitment.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md"
       ],
       "focus": "research_protocol",
       "completion_note": "Study preparation is complete; actual recruitment and every participant result remain unfilled.",
@@ -933,11 +939,11 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/TEAM-CONTRACT.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/TEAM-CONTRACT.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md"
       ],
       "focus": "team_ownership",
-      "completion_note": "Agent ownership and implementation checkpoint recorded; source links are pinned to 97695df.",
+      "completion_note": "Agent ownership and implementation checkpoint recorded; source links are pinned to 0c72da9.",
       "assigned_person_or_agent": "Codex coordinating agent"
     },
     {
@@ -946,7 +952,7 @@
       "priority": "P1",
       "status": "done",
       "owner_role": "Release/UX owner",
-      "title": "Freeze the portable 0.1.1 browser pilot package",
+      "title": "Freeze the portable 0.1.2 browser pilot package",
       "deliverable": "A local-asset candidate build, shipping-story catalog, honest entry copy and exact-build facilitator instructions.",
       "acceptance_criteria": [
         "Bundle dependencies and selected story assets with relative paths; verify nested deployment and record the final source/build identity.",
@@ -963,12 +969,12 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/candidate.json",
-        "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/build/third-party-notices.txt",
-        "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/notes.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/build/third-party-notices.txt",
+        "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/notes.md"
       ],
       "focus": "distribution",
-      "completion_note": "Portable 0.1.1 bundle frozen: 1,400,828 bytes across 15 files, relative paths and bundled dependency notices; human approval is pending.",
+      "completion_note": "Frozen 0.1.2 contains 15 files/1,401,263 bytes, dependency notices and pack-owned scene labels. Exact served files match master packet; no human approval.",
       "assigned_person_or_agent": "Codex coordinating agent"
     },
     {
@@ -1005,8 +1011,8 @@
       "priority": "P0",
       "status": "done",
       "owner_role": "Release integrator",
-      "title": "Stage the complete two-story 0.1.1 candidate on master",
-      "deliverable": "An immutable release-candidates/keepers-frame/0.1.1 packet with both stories, build inventory, notes and pending human evidence.",
+      "title": "Stage the complete two-story 0.1.2 candidate on master",
+      "deliverable": "An immutable release-candidates/keepers-frame/0.1.2 packet with both stories, build inventory, notes and pending human evidence.",
       "acceptance_criteria": [
         "Record exact implementation SHA, artifact version, build file hashes and shipping-story catalog; include only intended portable files.",
         "Run staging validation with blank human fields still pending. Confirm every inventoried build file is tracked.",
@@ -1021,11 +1027,11 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/candidate.json",
-        "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/human-playtest.json",
-        "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/notes.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/human-playtest.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/notes.md"
       ],
-      "completion_note": "Staged and remote-synced at master f0ef54626eaadb32892b0f748ff245515fa54128. All 15 build files are tracked; staging validates both preserved 0.1.0 and current 0.1.1 packets. Human readiness remains pending.",
+      "completion_note": "Candidate 0.1.2 staged on master at f9488e5079d1d193caef560d1fe72936add6cba3; 0.1.0 and 0.1.1 remain byte-identical to their earlier packets. Pending per-story reports contain no human sessions.",
       "assigned_person_or_agent": "Codex coordinating agent"
     },
     {
@@ -1097,12 +1103,12 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/README.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/catalog.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/runtime/validate.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/runtime.test.js"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/catalog.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/runtime/validate.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/runtime.test.js"
       ],
-      "completion_note": "Implemented pack interface and replacement fixture; source and tests are available.",
+      "completion_note": "Lazy pure story packs, independent saves, validated cast replacement and optional authored scene captions/accessible labels are implemented. A theatre fixture checks another setting through save restoration.",
       "assigned_person_or_agent": "Codex story/runtime agents"
     },
     {
@@ -1125,9 +1131,9 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/mara/index.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/src/stories/mara/content.js",
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/test/stories.test.js"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/mara/index.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/mara/content.js",
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/stories.test.js"
       ],
       "completion_note": "Second playable story implemented; human interpretation and completion remain untested.",
       "assigned_person_or_agent": "Codex story agent"
@@ -1180,7 +1186,7 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": true,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md"
       ],
       "completion_note": "No physical-phone or human screen-reader measurements are available."
     },

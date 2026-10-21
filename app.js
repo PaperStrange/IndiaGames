@@ -9,7 +9,7 @@ const STATUS_NAMES = { active: 'In progress', done: 'Done', not_selected: 'Not s
 const TODO_PATHS = { memorable: 'docs/games/small-hours/TODO.md', vivid: 'docs/games/keepers-frame/TODO.md', bell: 'docs/games/thirteenth-bell/TODO.md' };
 const PROJECTS = [
   { lane: 'memorable', number: '01', label: 'Memorable Moments', tagline: 'Make a small shared memory.', decision: 'Does the existing shared action feel authored by both people? Observe real pairs before selecting a change.', state: 'Provisional · intake first', plan: 'memorable-next.md' },
-  { lane: 'vivid', number: '02', label: 'Vivid', tagline: 'Two small worlds. Different ways to care.', decision: 'Do Iona’s remembered placement and Mara’s object-led reveal make their actions meaningful to real players?', state: 'Candidate 0.1.1 · human validation pending', plan: 'vivid-next.md' },
+  { lane: 'vivid', number: '02', label: 'Vivid', tagline: 'Two small worlds. Different ways to care.', decision: 'Do Iona’s remembered placement and Mara’s object-led reveal make their actions meaningful to real players?', state: 'Candidate 0.1.2 · human validation pending', plan: 'vivid-next.md' },
   { lane: 'bell', number: '03', label: 'The Thirteenth Bell', tagline: 'Learn the town. Change an outcome.', decision: 'Can witnessing a town event help the player plan an intervention that changes an outcome?', state: 'Provisional · intake first', plan: 'bell-next.md' }
 ];
 const GATE_COPY = {
@@ -86,19 +86,24 @@ function renderProjects() {
     if (reviewed.stories?.length) {
       body.append(node('p', 'project-source', reviewed.stories.map(story => story.title).join(' · ')));
       body.append(node('p', 'project-source', reviewed.qa_scope));
-      const implementation = node('a', 'reviewed-plan-link', 'Current implementation & run instructions ↗');
+      const implementation = node('a', 'reviewed-plan-link', 'Current implementation & run instructions');
       implementation.href = reviewed.implementation_readme;
       body.append(implementation);
-      const decisionLink = node('a', 'reviewed-plan-link', 'Approved direction & product hypotheses ↗');
+      const decisionLink = node('a', 'reviewed-plan-link', 'Approved direction & product hypotheses');
       decisionLink.href = reviewed.current_decision_document;
       body.append(decisionLink);
       if (reviewed.candidate_manifest) {
-        const candidate = node('a', 'reviewed-plan-link', `Staged ${reviewed.candidate_version} packet · human review pending ↗`);
+        const candidate = node('a', 'reviewed-plan-link', `Staged ${reviewed.candidate_version} packet · human review pending`);
         candidate.href = reviewed.candidate_manifest.replace('/blob/', '/tree/').replace('/candidate.json', '');
         body.append(candidate);
       }
+      if (reviewed.research_readme) {
+        const research = node('a', 'reviewed-plan-link', 'Competitor journeys & design findings');
+        research.href = reviewed.research_readme;
+        body.append(research);
+      }
       if (reviewed.release_policy_review?.url) {
-        const policy = node('a', 'reviewed-plan-link', 'Separate release-policy review ↗');
+        const policy = node('a', 'reviewed-plan-link', 'Separate release-policy review');
         policy.href = reviewed.release_policy_review.url;
         body.append(policy);
       }
@@ -304,7 +309,7 @@ function renderPlanningMetadata() {
     const vivid = manifest.sources.find(source => source.lane === 'vivid');
     el('snapshot-note').textContent = `Vivid: two playable stories, candidate ${vivid.candidate_version}. Small Hours and Bell retain their earlier scope and QA. No official release.`;
     el('incoming-label').textContent = 'Vivid implementation · 21 October';
-    el('incoming-copy').textContent = 'Iona and Mara now have different playable story structures. Candidate 0.1.1 is staged on master with passing automated checks. Six-title browser research is being reconciled; real human validation and separate release-policy review remain open.';
+    el('incoming-copy').textContent = 'Iona and Mara now have different playable story structures. Candidate 0.1.2 is staged on master with passing automated checks. Six browser competitors have actual-play records; three intended endpoints remain open. Real human validation and separate release-policy review remain open.';
     el('incoming-status').textContent = 'Human validation pending';
   } else if (snapshot.incoming_evidence_reviewed === true) {
     el('incoming-label').textContent = 'Planning update · 21 October';

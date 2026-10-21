@@ -1,6 +1,8 @@
 // Run against the already served main dashboard; this script does not publish.
 // DASHBOARD_URL=http://127.0.0.1:8115 node docs/verification-vivid-2026-10-21/dashboard-browser.mjs
 // Optional: PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs CHROMIUM_PATH=/path/to/chromium
+// Override a later frozen identity with EXPECTED_CANDIDATE_VERSION,
+// EXPECTED_MASTER_SHA and EXPECTED_SOURCE_SHA. Defaults identify the current 0.1.2 snapshot.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -17,12 +19,19 @@ let playwright;
 try { playwright = await import(process.env.PLAYWRIGHT_MODULE || 'playwright'); }
 catch { playwright = await import('/workspace/indiagames-env/toms-notebook-deps/node_modules/playwright/index.mjs'); }
 const base = process.env.DASHBOARD_URL || 'http://127.0.0.1:8115/';
-const candidate = 'https://github.com/PaperStrange/IndiaGames/tree/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1';
+const expectedVersion = process.env.EXPECTED_CANDIDATE_VERSION || '0.1.2';
+const expectedMaster = process.env.EXPECTED_MASTER_SHA || 'f9488e5079d1d193caef560d1fe72936add6cba3';
+const expectedSource = process.env.EXPECTED_SOURCE_SHA || '0c72da97994d9f2d315e6aba1afba5219936b78b';
+assert.match(expectedVersion, /^\d+\.\d+\.\d+$/);
+assert.match(expectedMaster, /^[0-9a-f]{40}$/);
+assert.match(expectedSource, /^[0-9a-f]{40}$/);
+const candidate = `https://github.com/PaperStrange/IndiaGames/tree/${expectedMaster}/release-candidates/keepers-frame/${expectedVersion}`;
 const policy = 'https://github.com/PaperStrange/IndiaGames/pull/1';
 const report = {
   observed_at: date,
   method: 'Automated local Chromium dashboard integration; not game playtesting, human evidence or a deployed Pages check.',
   base_url: base,
+  expected_candidate: { version: expectedVersion, master_commit: expectedMaster, source_commit: expectedSource },
   checkout_head_at_run: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
   tracked_changes_at_run: execFileSync('git', ['status', '--short', '--untracked-files=no'], { cwd: root, encoding: 'utf8' }).trim().split('\n'),
   file_sha256: {},
@@ -51,12 +60,13 @@ try {
   assert.equal(await page.locator('#load-error').isVisible(), false);
   assert.equal(await page.locator('#project-grid .project-card').count(), 3);
   assert.match(await page.locator('.project-card.vivid').innerText(), /A Place for the Promise.*The Unfinished Postcard/s);
-  assert.match(await page.locator('.project-card.vivid .project-state').innerText(), /Candidate 0\.1\.1.*human validation pending/);
+  const candidateState = await page.locator('.project-card.vivid .project-state').innerText();
+  assert.ok(candidateState.includes(`Candidate ${expectedVersion}`) && candidateState.includes('human validation pending'));
   assert.match(await page.locator('.project-card.memorable .project-state').innerText(), /Proposed/);
   assert.match(await page.locator('.project-card.bell .project-state').innerText(), /Proposed/);
-  pass('project-scope', 'Three projects remain; Vivid contains two stories and a pending 0.1.1 candidate; the other lanes remain proposed.');
+  pass('project-scope', `Three projects remain; Vivid contains two stories and a pending ${expectedVersion} candidate; the other lanes remain proposed.`);
 
-  assert.equal(await page.locator('.project-card.vivid a', { hasText: 'Staged 0.1.1 packet' }).getAttribute('href'), candidate);
+  assert.equal(await page.locator('.project-card.vivid a', { hasText: `Staged ${expectedVersion} packet` }).getAttribute('href'), candidate);
   assert.equal(await page.locator('.project-card.vivid a', { hasText: 'Separate release-policy review' }).getAttribute('href'), policy);
   assert.match(await page.locator('#release-grid').innerText(), /No official releases yet/i);
   assert.equal(await page.locator('#human-rows').innerText(), '0');
@@ -64,6 +74,10 @@ try {
   pass('release-boundary', 'Candidate link pins the exact master packet, policy link opens PR #1, the official registry is empty and human rows remain zero.');
 
   const data = await page.evaluate(async () => ({ tasks: await (await fetch('./data/tasks.json')).json(), manifest: await (await fetch('./data/source-manifest.json')).json() }));
+  const vivid = data.manifest.sources.find(source => source.lane === 'vivid');
+  assert.equal(vivid.reviewed_head, expectedSource);
+  assert.equal(vivid.candidate_master_commit, expectedMaster);
+  assert.equal(vivid.candidate_version, expectedVersion);
   assert.equal(data.tasks.implementation_started, true);
   assert.equal(data.tasks.lane_status.vivid.implementation_started, true);
   assert.equal(data.tasks.lane_status.memorable.implementation_started, false);
@@ -72,6 +86,13 @@ try {
   assert.equal(data.tasks.lane_status.memorable.qa_date_utc, '2026-10-20');
   assert.equal(data.tasks.lane_status.bell.qa_date_utc, '2026-10-20');
   assert.equal(data.tasks.tasks.find(task => task.id === 'KF-22').status, 'active');
+  assert.equal(data.tasks.tasks.find(task => task.id === 'KF-02').status, 'active');
+  const research = data.manifest.research.vivid_browser_iteration;
+  assert.equal(research.core_gameplay_titles, 6);
+  assert.equal(research.distinct_families, 5);
+  assert.equal(research.declared_units_completed, 3);
+  assert.equal(research.declared_units_incomplete, 3);
+  assert.equal(await page.locator('.project-card.vivid a', { hasText: 'Competitor journeys & design findings' }).getAttribute('href'), research.journeys_url);
   assert.equal(data.manifest.research.aggregate_count_scope, 'historical_original_roster_baseline');
   assert.match(await page.locator('#evidence').innerText(), /Historical original-roster gameplay baseline/i);
   pass('provenance-and-claims', 'Implementation/QA dates are lane-specific, policy review stays active and the old aggregate is explicitly historical.');
@@ -84,7 +105,8 @@ try {
   await first.locator('summary').focus();
   await page.keyboard.press('Enter');
   assert.equal(await first.locator('details').getAttribute('open'), '');
-  assert.ok(await first.locator('.detail-body a[href*="/blob/97695df"]').count() > 0);
+  const evidenceLink = await first.locator('.detail-body a[href*="/blob/"]').first().getAttribute('href');
+  assert.match(evidenceLink, /\/blob\/[0-9a-f]{40}\//);
   pass('tasks-and-evidence', 'Vivid has 23 cards and 15 completed deliverables; keyboard opens task details with immutable evidence links.');
 
   await page.locator('#status-filter').selectOption('blocked_human');

@@ -36,38 +36,38 @@
     },
     {
       "lane": "vivid",
-      "name": "Vivid — small worlds, lasting traces",
+      "name": "Vivid \u2014 small worlds, lasting traces",
       "branch": "vivid-2.5d-photo-game",
-      "reviewed_head": "97695df223b7bf336f6b2c1fb87dce64d5ab5599",
+      "reviewed_head": "0c72da97994d9f2d315e6aba1afba5219936b78b",
       "prior_manifest_source": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
       "runtime_scope": [
         "vivid-2.5d-photo-game/play"
       ],
-      "runtime_tree": "489a4d0e77adbf203f8d457ee45e0f1f28d1eafe",
+      "runtime_tree": "f71624877383721f412af6b91ecd36cd35bdd955",
       "runtime_diff_empty": false,
-      "qa_source_commit": "97695df223b7bf336f6b2c1fb87dce64d5ab5599",
+      "qa_source_commit": "0c72da97994d9f2d315e6aba1afba5219936b78b",
       "qa_date_utc": "2026-10-21",
       "latest_runtime_unchanged_from_qa": true,
       "planning_document": "docs/games/keepers-frame/TODO.md",
       "implementation_started": true,
       "implementation_status": "two_playable_stories_candidate",
-      "candidate_version": "0.1.1",
+      "candidate_version": "0.1.2",
       "candidate_status": "staged_awaiting_human_validation",
-      "candidate_master_commit": "f0ef54626eaadb32892b0f748ff245515fa54128",
+      "candidate_master_commit": "f9488e5079d1d193caef560d1fe72936add6cba3",
       "official_release": false,
       "human_participant_rows": 0,
-      "qa_scope": "49 unit tests, 16 browser scenarios on 0.1.1, 10 input/lifecycle checks and 9 art checks passed; physical-device and human validation pending.",
+      "qa_scope": "51 unit tests and 16 browser scenarios passed on 0.1.2; earlier 10 input/lifecycle and 9 renderer checks support unchanged logic/assets. Physical-device and human validation pending.",
       "qa_status": "automated_pass_human_pending",
-      "current_decision_document": "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md",
-      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/97695df223b7bf336f6b2c1fb87dce64d5ab5599/vivid-2.5d-photo-game/play/README.md",
+      "current_decision_document": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md",
+      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/README.md",
       "qa_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/a0e11d9bd35859878f5e1dc267d0c6455f354914/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T07-50-14-245Z/browser-observations.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/browser-observations.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json"
       ],
-      "candidate_build_sha256": "cb4fdcb325f0c05180e94d8a198aeab472f405b15dda61f01d228034c9f965f6",
-      "candidate_build_bytes": 1400828,
+      "candidate_build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+      "candidate_build_bytes": 1401263,
       "candidate_file_count": 15,
-      "gameplay_byte_identical_to_candidate": "0.1.0",
       "stories": [
         {
           "id": "iona",
@@ -80,12 +80,16 @@
           "release_profile": "mara-object-v1"
         }
       ],
-      "qa_evidence_commit": "a0e11d9bd35859878f5e1dc267d0c6455f354914",
-      "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/f0ef54626eaadb32892b0f748ff245515fa54128/release-candidates/keepers-frame/0.1.1/candidate.json",
+      "qa_evidence_commit": "76eb93eacb001808a0fc66c9bdb25f740d76c441",
+      "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
       "release_policy_review": {
         "status": "pending",
         "url": "https://github.com/PaperStrange/IndiaGames/pull/1"
-      }
+      },
+      "candidate_change": "Story-owned visible captions and accessible illustration labels; existing wording, saves and game rules preserved.",
+      "research_readme": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
+      "research_synthesis": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md",
+      "research_evidence_commit": "931118f19f22cee53d82a0248e0e073aa1551252"
     },
     {
       "lane": "bell",
@@ -133,9 +137,9 @@
       },
       "vivid": {
         "required": 6,
-        "core_gameplay_evidence": null,
-        "qualification": "Approved browser roster; fresh journey and endpoint reconciliation in progress. No current completed-coverage count is claimed.",
-        "status": "active_reconciliation"
+        "core_gameplay_evidence": 6,
+        "qualification": "Six browser titles with core play across five families; three declared units complete and three endpoint gaps. Agent evidence, not six completed games.",
+        "status": "active_endpoint_followups"
       },
       "bell": {
         "required": 6,
@@ -169,41 +173,97 @@
     },
     "aggregate_count_scope": "historical_original_roster_baseline",
     "vivid_browser_iteration": {
-      "status": "active_reconciliation",
+      "status": "qualified_synthesis_with_open_endpoints",
       "required_titles": 6,
       "minimum_families": 4,
       "recorded_human_participants": 0,
       "synthesis_complete": false,
       "titles": [
         {
+          "id": "sort-the-court",
           "title": "Sort the Court!",
-          "edition": "Poki updated browser edition",
-          "family": "decision and management"
+          "edition": "Poki browser edition 2.5.2",
+          "family": "decision and management",
+          "record": "group-a/sort-the-court/README.md",
+          "core_gameplay_observed": true,
+          "declared_unit_completed": true,
+          "full_game_completed": false,
+          "assistance": "No walkthrough or input aiming assistance; agent-operated visible controls.",
+          "endpoint": "Two days, funded-jester payoff and same-context day-three reload; exact pending visitor changed.",
+          "record_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/group-a/sort-the-court/README.md"
         },
         {
+          "id": "six-cats-under",
           "title": "Six Cats Under",
-          "edition": "original HTML5",
-          "family": "indirect puzzle"
+          "edition": "Original itch.io HTML5",
+          "family": "indirect puzzle",
+          "record": "group-a/six-cats-under/README.md",
+          "core_gameplay_observed": true,
+          "declared_unit_completed": false,
+          "full_game_completed": false,
+          "assistance": "Initial public-comment hints, then deliberate walkthrough; no source/state injection.",
+          "endpoint": "Room changes and remote exposed; channel interaction unresolved. Actual unfinished-run reload restarted opening.",
+          "remaining": "Rescue ending and post-ending restart.",
+          "record_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/group-a/six-cats-under/README.md"
         },
         {
+          "id": "adventures-with-anxiety",
           "title": "Adventures With Anxiety",
-          "edition": "browser edition",
-          "family": "interactive narrative"
+          "edition": "Creator-hosted English HTML5",
+          "family": "interactive narrative",
+          "record": "group-a/adventures-with-anxiety.md",
+          "core_gameplay_observed": true,
+          "declared_unit_completed": true,
+          "full_game_completed": false,
+          "one_story_path_completed": true,
+          "assistance": "Screenshot/OCR-based dialogue controls; creator interview read after initial chapter choices; no walkthrough used to choose options.",
+          "endpoint": "One safe story path, epilogue, credits and resources/Replay panel; actual chapter resume and post-completion reload to Replay/Chapter Select verified. Alternate bad ending and two optional discussion branches unplayed.",
+          "record_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/group-a/adventures-with-anxiety.md"
         },
         {
+          "id": "we-become-what-we-behold",
           "title": "We Become What We Behold",
-          "edition": "browser edition",
-          "family": "interactive narrative"
+          "edition": "Creator itch browser release, embed 300364",
+          "family": "interactive narrative",
+          "record": "group-b/wbwwb.md",
+          "followup": "group-b/wbwwb-completion/README.md",
+          "core_gameplay_observed": true,
+          "declared_unit_completed": false,
+          "full_game_completed": false,
+          "assistance": "Visible-image aiming; prior strategy and later criticism disclosed; two separate runs.",
+          "endpoint": "First run: hat adoption and attack/fear consequence. Follow-up: mocked couple/embarrassment and title re-entry. Neither reached ending.",
+          "remaining": "Complete cycle and post-completion re-entry; do not pool runs into one completion.",
+          "record_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/group-b/wbwwb.md",
+          "followup_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/group-b/wbwwb-completion/README.md"
         },
         {
+          "id": "townscaper",
           "title": "Townscaper",
-          "edition": "browser demo, not the full native game",
-          "family": "creative construction"
+          "edition": "Browser demo 0.23",
+          "family": "creative construction",
+          "record": "group-b/townscaper.md",
+          "core_gameplay_observed": true,
+          "declared_unit_completed": true,
+          "full_game_completed": false,
+          "assistance": "Desktop-edition review exposed deletion controls before resumed composition.",
+          "endpoint": "Blue annex and connected pier, correction, revision, voluntary finish, exit/re-entry. Default starter returned; explicit save not tested.",
+          "record_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/group-b/townscaper.md"
         },
         {
+          "id": "a-dance-of-fire-and-ice",
           "title": "A Dance of Fire and Ice",
-          "edition": "browser demo, not the full native game",
-          "family": "rhythm action"
+          "edition": "Browser demo v0.4.2, December 2018",
+          "family": "rhythm action",
+          "record": "group-b/adofai.md",
+          "followup": "group-b/adofai-followup/README.md",
+          "core_gameplay_observed": true,
+          "declared_unit_completed": false,
+          "full_game_completed": false,
+          "assistance": "Screenshot-guided navigation and timed key cadence; audio not heard and calibration unverified.",
+          "endpoint": "Track 1-1 entered; collapse, explicit Late!!, Space retry and Escape/menu observed. Highest Level Reached 1 is not completion.",
+          "remaining": "Complete tutorial with audible playback and reliable calibration; observe return separately.",
+          "record_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/group-b/adofai.md",
+          "followup_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/group-b/adofai-followup/README.md"
         }
       ],
       "preserved_native_gaps": [
@@ -212,14 +272,24 @@
         "Townscaper full native edition",
         "Rhythm Doctor"
       ],
-      "note": "Do not pool different editions or count criticism/access screens as gameplay. Final research URLs and counts are added after coordinator reconciliation."
+      "note": "A declared unit may be two days, an open-ended composition task or one narrative path. It is not a count of full games completed. Partial attempts remain partial despite core gameplay evidence.",
+      "reviewed_head": "931118f19f22cee53d82a0248e0e073aa1551252",
+      "core_gameplay_titles": 6,
+      "distinct_families": 5,
+      "declared_units_completed": 3,
+      "declared_units_incomplete": 3,
+      "roster_core_presence_gate_met": true,
+      "qualified_synthesis_available": true,
+      "ledger_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/coverage.json",
+      "journeys_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
+      "synthesis_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md"
     }
   },
   "review_methods": [
-    "Vivid implementation source and contract review at pinned 97695df checkpoint; gameplay artifacts match the earlier verified candidate.",
-    "49 unit tests, 16 complete browser scenarios on candidate 0.1.1, 10 input/lifecycle checks and 9 renderer/art checks passed; records are pinned separately from human evidence.",
-    "Vivid comparator agents are collecting browser journeys; edition-specific synthesis and coverage counts remain pending.",
-    "Small Hours and Bell retain their prior source/QA metadata. No new implementation or human sessions are claimed for either lane.",
+    "Vivid source and authoring contract reviewed at pinned 0c72da9, including story-owned scene labels.",
+    "51 unit tests and 16 browser scenarios passed on frozen candidate 0.1.2; all 15 served files match the packet inventory. Prior 10 lifecycle and 9 renderer checks remain separately dated supporting evidence.",
+    "Six browser competitor titles have core gameplay records across five families. Three declared units completed; SixCats, WBWWB and ADOFAI retain explicit endpoint gaps. Criticism, assistance and editions remain separate.",
+    "Small Hours and Bell retain their prior source/QA metadata; no new implementation or human sessions are claimed for either lane.",
     "No real human participant, physical-phone FPS or human screen-reader result exists for the Vivid candidate."
   ],
   "environment": {

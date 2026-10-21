@@ -90,7 +90,7 @@ def build():
             {'id': 'plan-settlement', 'status': 'partially_settled', 'applies_to': ['memorable', 'vivid', 'bell'],
              'requirement': 'Vivid’s two-story plan is approved and implemented. Small Hours and Bell retain their proposed/conditional plans; their implementation has not started in this iteration.'},
             {'id': 'competitor-coverage', 'status': 'open', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'Keep six distinct titles and at least four broad families per lane. Vivid’s approved browser roster is being reconciled; label every partial/access block and retain the original native gaps. No lane is declared complete here.'},
+             'requirement': 'Keep six distinct titles and at least four broad families per lane. Vivid has six core-play titles across five families, with three declared units completed and three endpoint gaps. Keep partials and original native gaps explicit; no lane is declared fully studied.'},
             {'id': 'human-validation', 'status': 'not_run', 'applies_to': ['memorable', 'vivid', 'bell'],
              'requirement': 'Observe actual people using the per-game protocol; automated checks and emotional agent prose are not human evidence.'}
         ],
