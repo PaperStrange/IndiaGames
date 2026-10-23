@@ -28,6 +28,6 @@ Market research for the three paid originals is in `market-research/` (record + 
 
 ## Package layout
 - `records/` — the play records, each with its evidence gallery embedded at the end.
-- `evidence/` — the filed capture originals (PDFs and PNG screenshots); `evidence/img/` holds the rendered page views the galleries embed.
+- `evidence/` — the filed capture originals (PDFs and PNG screenshots); `evidence/img/` holds the rendered page views the galleries embed. Page-shell originals were removed after embedding (views preserved; see `notes/cleanup-2026-10-22.md`).
 - `market-research/` — market records for the titles that could not be played, with their storefront captures, rendered views (`img/`), and trailers.
 - `notes/` — the review records behind this package.
