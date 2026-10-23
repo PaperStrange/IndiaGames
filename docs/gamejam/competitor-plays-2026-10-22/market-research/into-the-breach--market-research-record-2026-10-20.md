@@ -12,3 +12,13 @@
 
 ## Market read (labeled interpretation)
 A compact tactics game still selling at undiscounted list seven years after release, with Very Positive depth across ~19k reviews — durable validation of the perfect-information, small-grid, run-based tactics design the matrix targets. Its multi-platform footprint (including Linux) makes it the most installable of the paid Bell slots if a purchase is ever approved.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Steam storefront, top of page (page 1).](img/into-the-breach-storefront-top.png)
+*Steam storefront, top of page (page 1).*
+
+![The capture's About + System Requirements page (page 2 of the filed PDF).](img/into-the-breach-storefront-about-sysreq.png)
+*The capture's About + System Requirements page (page 2 of the filed PDF).*
+

@@ -3,7 +3,7 @@
 **Role in the matrix:** substitute for Into the Breach (B3), a paid native install. Desktop Dungeons preserves B3's family — compact tactics under perfect information, where repeated short runs reward better decisions: one small dungeon per run, every enemy's stats and the outcome of your next hit shown *before* you commit, health as the resource that exploration replenishes.
 **What the substitute leaves unanswered:** Into the Breach's squad dimension — three mechs, telegraphed enemy intent you manipulate by pushing units around. Desktop Dungeons is a solo hero and its enemies don't telegraph multi-unit intent. Recorded as the gap.
 **Coverage:** FULL PLAY of one complete run to death, plus a partial second (tutorial) stage. Played as profile "guest" — no download, no purchase, no account. Blind: no walkthroughs or guides (the teaching dialogs quoted below are the game's own in-dungeon text).
-**Evidence:** 7 full-page PDF captures banked in `captures/` of the filed package, render-verified by the coordinator (the mid-run fight shows the Goblin at 1/6 with a VICTORY estimate; the death screen shows "You die..." with the warlock at 5/15).
+**Evidence:** 7 full-page PDF captures banked in `evidence/` of the filed package, render-verified by the coordinator (the mid-run fight shows the Goblin at 1/6 with a VICTORY estimate; the death screen shows "You die..." with the warlock at 5/15).
 
 ## The run (Dwarf Fighter, "Tutorial Dungeon Alpha")
 An honest discrepancy first: I clicked "Normal" with Human/Fighter selected, but the game loaded its own scripted Tutorial Dungeon Alpha as a Dwarf Fighter, teaching dialogs included. I played what the game gave me.
@@ -20,3 +20,28 @@ Completely. The game showed me the estimate — DEATH — and I chose the gamble
 
 ## Other access facts (for the record)
 The itch.io listing is download-only (Windows/macOS/Linux); the official Legacy page's free 2010 alpha is a PC/Mac **download**, not browser play; on Steam the game is a paid download, and "Desktop Dungeons: Rewind" has a free demo that is likewise a Steam download (600 MB), not browser play. The HTML5 build above is the only browser route, and it is on the official domain.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Run start — the tutorial dungeon (page 1).](../evidence/img/desktop-dungeons-beat1-run-start.png)
+*Run start — the tutorial dungeon (page 1).*
+
+![Fight frame (page 1).](../evidence/img/desktop-dungeons-beat2-fight-frame-a.png)
+*Fight frame (page 1).*
+
+![Fight frame (page 1).](../evidence/img/desktop-dungeons-beat3-fight-frame-b.png)
+*Fight frame (page 1).*
+
+![Mid-run fight — Goblin at 1/6, estimate VICTORY (page 1).](../evidence/img/desktop-dungeons-beat4-midrun-fight-victory-estimate.png)
+*Mid-run fight — Goblin at 1/6, estimate VICTORY (page 1).*
+
+![The warlock standoff at 1 HP (page 1).](../evidence/img/desktop-dungeons-beat5-warlock-standoff-1hp.png)
+*The warlock standoff at 1 HP (page 1).*
+
+![Death screen — 'You die...', the warlock at 5/15 (page 1).](../evidence/img/desktop-dungeons-beat6-death-screen.png)
+*Death screen — 'You die...', the warlock at 5/15 (page 1).*
+
+![Second stage stop point — the Gnome Wizard before the goo blob (page 1).](../evidence/img/desktop-dungeons-beat7-wizard-stage-stop-point.png)
+*Second stage stop point — the Gnome Wizard before the goo blob (page 1).*
+

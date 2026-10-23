@@ -12,3 +12,13 @@
 
 ## Market read (labeled interpretation)
 A premium single-purchase exploration game with exceptional review depth (90k+ reviews, Overwhelmingly Positive in English) still commanding full list price five years after Steam release, discounted only in event windows. For the Bell matrix, its weight is the knowledge-progression design the desk research already documents; the storefront evidence confirms sustained commercial validation of that design at premium pricing.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Steam storefront, top of page (page 1).](img/outer-wilds-storefront-top.png)
+*Steam storefront, top of page (page 1).*
+
+![The capture's About section (page 2 of the filed PDF; System Requirements follow on page 3).](img/outer-wilds-storefront-about-sysreq.png)
+*The capture's About section (page 2 of the filed PDF; System Requirements follow on page 3).*
+

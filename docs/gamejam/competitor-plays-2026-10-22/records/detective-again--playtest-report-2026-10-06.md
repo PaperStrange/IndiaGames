@@ -34,3 +34,16 @@
 **Make the studied detail load-bearing twice** — first as a pure observation task (spot the red gun on the suspect), then gate a later encounter on the *decision* you made about it (e.g., if you took the gun yourself in the past loop, the suspect can't threaten you with it in the future loop), so "studying" converts into agency rather than a one-shot pixel hunt.
 
 **Falsification:** if players can reach the solved state by clicking every hotspot at random without ever noticing the red object, then the "study the image" mechanic is decorative, not design.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![The detective in the bathroom at the brown door '05', the clock at 11:30.](../evidence/detective-again-01-bathroom-detective-door-05.png)
+*The detective in the bathroom at the brown door '05', the clock at 11:30.*
+
+![The red-gun tell — the client scene's decisive detail.](../evidence/detective-again-02-red-gun-tell.png)
+*The red-gun tell — the client scene's decisive detail.*
+
+![Loop reset — the opening repeats after the solve.](../evidence/detective-again-03-loop-reset-opening.png)
+*Loop reset — the opening repeats after the solve.*
+

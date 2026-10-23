@@ -16,3 +16,22 @@ Built lodge ("the hunting lodge stands in the forest, a ways out of town.") and 
 
 ## What kind of fun this was
 Tending something fragile in the dark. First half is special — few lines of text creating real attachment and dread. The beast attack is a top-tier "oh no" moment. Back half is idle-game spreadsheet. I loved the village, mourned the villagers, ran out of road at the trading post.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![The firelit room as the stranger arrives.](../evidence/a-dark-room-01-stranger-arrives-firelit-room.png)
+*The firelit room as the stranger arrives.*
+
+![Progression change — the silent forest and stores.](../evidence/a-dark-room-02-progression-change-silent-forest-stores.png)
+*Progression change — the silent forest and stores.*
+
+![The re-verification capture — BLANK: this file is a pure-white frame (the capture came back empty); no legible image of that moment exists, and the moment rests on the session account above.](../evidence/a-dark-room-03-reverification-stranger-builds-things.png)
+*The re-verification capture — BLANK: this file is a pure-white frame (the capture came back empty); no legible image of that moment exists, and the moment rests on the session account above.*
+
+![Oct-15 re-shoot — the village.](../evidence/a-dark-room-2026-10-15-reshoot-02-village.png)
+*Oct-15 re-shoot — the village.*
+
+![Oct-15 re-shoot — the build list.](../evidence/a-dark-room-2026-10-15-reshoot-03-build-list.png)
+*Oct-15 re-shoot — the build list.*
+

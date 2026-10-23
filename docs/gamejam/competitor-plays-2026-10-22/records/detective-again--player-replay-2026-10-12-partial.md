@@ -34,3 +34,17 @@ Third attempt, fresh session. The itch.io page sat on a blurred loading screen a
 Then the wall, same signature: screenshots repeatedly came back with no image, clicks failed with capture errors. Two reloads; each briefly restored screenshots but reset the game to the bedroom at 05:40, wiping progress. After the second reload, screenshots failed again after only two successful views. Stopped rather than fake progress. Did NOT reach Mark, the four guns, or the solve.
 
 Verdict after three attempts: the wall is definitive for this environment. No further Detective retries — the three attempts' honest fragments stand as the record (victim briefing + office + Mark's entrance from attempt 2; bedroom + alley + loop reset from attempt 3). Player's feeling across all three: "cozy, curious... the ticking clock and the time loop making me want one more try to get it right."
+
+## Evidence gallery (embedded)
+Attribution: these three images are from the **2026-10-06 playtest session** (the companion playtest report), embedded here because they document the same case. The 2026-10-12 replay this record covers produced **no capturable screenshots** — its addenda above are eyewitness account only, as they state.
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![The detective in the bathroom at the brown door '05', the clock at 11:30.](../evidence/detective-again-01-bathroom-detective-door-05.png)
+*The detective in the bathroom at the brown door '05', the clock at 11:30.*
+
+![The red-gun tell — the client scene's decisive detail.](../evidence/detective-again-02-red-gun-tell.png)
+*The red-gun tell — the client scene's decisive detail.*
+
+![Loop reset — the opening repeats after the solve.](../evidence/detective-again-03-loop-reset-opening.png)
+*Loop reset — the opening repeats after the solve.*
+

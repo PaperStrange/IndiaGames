@@ -3,7 +3,7 @@
 **Role in the matrix:** substitute for Outer Wilds (B2), a paid native install. Anchorhead preserves B2's core structure exactly: you progress by *learning* — a strange town and a decaying house open up only as names, records, and histories are cross-referenced into understanding. No stats, no grind: knowledge is the keyring.
 **What the substitute leaves unanswered:** Outer Wilds' loop is spatial and time-boxed (a 22-minute solar system, piloting, dying and re-entering with what you know). Anchorhead is a fixed three-day text world explored by typed commands. The knowledge-gating is the same; the vehicle and the clock are not. Recorded as the gap.
 **Coverage:** DEEP PARTIAL — two full in-game days played across several hundred moves, score 9 points; the third day (the comet's arrival) and any ending were not reached. Blind: no walkthroughs, guides, hints, or maps.
-**Evidence:** 4 full-page PDF captures banked in `captures/` of the filed package, text-verified by the coordinator (Anchorhead renders as web text in Parchment, so the captures are legible transcripts of actual play, including the deepest capture's full-day scrollback).
+**Evidence:** 4 full-page PDF captures banked in `evidence/` of the filed package, text-verified by the coordinator (Anchorhead renders as web text in Parchment, so the captures are legible transcripts of actual play; the deepest capture holds the Observatory segment — one page, 349 words; it was delivered under a 'full scrollback' name it does not live up to, and the file has been renamed accordingly).
 
 ## The session (shape, not transcript)
 November 1997. I play the wife of Michael, who has inherited a decaying ancestral mansion in the town of Anchorhead. My first errand — collecting the house keys from the real-estate agent — fails in the game's first knowledge beat: the office is deserted, and the answering machine offers one whispered word: **"Verlac."**
@@ -21,3 +21,19 @@ Like being handed a town that only answers specific questions. Every system in A
 
 ## Tooling (separate from the game)
 Three intermittent command-entry failures (recovered by re-observing the page; no progress lost); the game's input box needed fill-typing plus Enter rather than direct clicks. One fault was the game's own: selecting the empty second page of a clippings menu raised an in-game run-time error; it recovered on the next keypress. The Parchment host ran cleanly throughout.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Title screen (transcript PDF, page 1).](../evidence/img/anchorhead-beat0-title-screen.png)
+*Title screen (transcript PDF, page 1).*
+
+![Opening — the deserted real-estate office (transcript PDF, page 1).](../evidence/img/anchorhead-beat1-opening.png)
+*Opening — the deserted real-estate office (transcript PDF, page 1).*
+
+![The Verlac file — one overheard word becomes the house keys (transcript PDF, page 1).](../evidence/img/anchorhead-beat2-verlac-file-keys.png)
+*The Verlac file — one overheard word becomes the house keys (transcript PDF, page 1).*
+
+![The hidden Observatory (transcript PDF — the capture's single page, holding this segment only).](../evidence/img/anchorhead-beat3-hidden-observatory.png)
+*The hidden Observatory (transcript PDF — the capture's single page, holding this segment only).*
+

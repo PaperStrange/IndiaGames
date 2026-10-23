@@ -39,4 +39,23 @@ No tooling failures affected this session.
 
 ## Session 2 (2026-10-20, later) — second full play, with captures
 A second complete run, played to settlement: four planets scouted and weighed, and this time the colony ship settled — on **"Arcadia"** — with **677 survivors** reaching the surface and a final score of **10,357** (against session 1's 2,873 and total loss). The contrast between the two runs is the record's real evidence for the B5 question: the same priced-inventory decisions, taken with one session's knowledge of what the trade-offs cost, produced a surviving colony instead of a wiped one — the responsibility arithmetic is learnable, and the score line keeps both outcomes permanently comparable.
-**Evidence:** five full-page PDF captures from session 2, banked with this record and render-verified (first planet decision, planet-2 probe result, the comet trade-off, the Arcadia profile decision, and the colony outcome/score screen) — `captures/` of the filed package.
+**Evidence:** five full-page PDF captures from session 2, banked with this record and render-verified (first planet decision, planet-2 probe result, the comet trade-off, the Arcadia profile decision, and the colony outcome/score screen) — `evidence/` of the filed package.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Session 2 — the first planet decision (page 1).](../evidence/img/seedship-s2-beat1-first-planet-decision.png)
+*Session 2 — the first planet decision (page 1).*
+
+![Session 2 — planet 2 probe result (page 1).](../evidence/img/seedship-s2-beat2-planet2-probe-result.png)
+*Session 2 — planet 2 probe result (page 1).*
+
+![Session 2 — the comet trade-off (page 1).](../evidence/img/seedship-s2-beat3-comet-tradeoff.png)
+*Session 2 — the comet trade-off (page 1).*
+
+![Session 2 — the Arcadia profile decision (page 1).](../evidence/img/seedship-s2-beat4-arcadia-profile-decision.png)
+*Session 2 — the Arcadia profile decision (page 1).*
+
+![Session 2 — colony outcome: Arcadia settled, score 10,357 (page 1).](../evidence/img/seedship-s2-beat5-colony-outcome-score.png)
+*Session 2 — colony outcome: Arcadia settled, score 10,357 (page 1).*
+
