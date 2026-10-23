@@ -3,7 +3,7 @@
 **Game:** Galatea, by Emily Short — conversational interactive fiction
 **Role in the matrix:** substitute for Event[0] (V3), which is a paid native install. Galatea preserves V3's family and question exactly: the interaction *is* a typed conversation with an artificial person — does conversation with a machine produce story, or only topics? Galatea is also Event[0]'s acknowledged design ancestor (a single conversational NPC as the entire game), so the substitution loses less than any other slot's.
 **Coverage:** COMPLETE — a full conversation played blind (all questions my own; no guides, hints, or transcripts) to a genuine ending ("*** The End ***", the departure ending).
-**Evidence:** 3 full-page PDF captures banked in `captures/` of the filed package (opening + first exchanges; mid-conversation; ending), text-verified against this report.
+**Evidence:** 3 full-page PDF captures banked in `evidence/` of the filed package (opening + first exchanges; mid-conversation; ending), text-verified against this report.
 
 ## The conversation
 The piece opens in "The Gallery's End": a dark room, black velvet, a placard, and Galatea on a pedestal. She speaks first — she was told I was coming. The placard gives the fiction its chill: the work is by the late Pygmalion of Cyprus, who has since died by suicide; she was "originally not an animate," and her waking is unexplained.
@@ -19,3 +19,17 @@ Story — but only because the topics are load-bearing. Every subject (the wakin
 
 ## Tooling
 None — the interpreter ran cleanly and the PDF captures landed as files.
+
+## Evidence gallery (embedded)
+Note on the views: in these rendered pages, long transcript lines clip mid-word at the PDF's right edge — a print artifact of the original capture. The filed PDFs' text layer is complete (extract it with any PDF text tool); nothing is missing from the evidence, only from the edges of these views.
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Opening and first exchanges (transcript PDF, page 1).](../evidence/img/galatea-beat1-opening-first-exchanges.png)
+*Opening and first exchanges (transcript PDF, page 1).*
+
+![Mid-conversation (transcript PDF, page 1).](../evidence/img/galatea-beat2-mid-conversation.png)
+*Mid-conversation (transcript PDF, page 1).*
+
+![The ending — '*** The End ***' (transcript PDF, page 1).](../evidence/img/galatea-beat3-ending.png)
+*The ending — '*** The End ***' (transcript PDF, page 1).*
+

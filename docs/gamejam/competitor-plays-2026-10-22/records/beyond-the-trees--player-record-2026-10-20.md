@@ -3,7 +3,7 @@
 **Role in the matrix:** substitute for TOEM (V4), a paid native install. Beyond the Trees preserves V4's core verb — your device becomes a camera: look around a place, find subjects, line up the shot, snap, and keep the photograph. Discovery swept itch's photography tag (118–120 browser/free candidates) and rejected: Shutter Stroll, Beasts of Maravilla Island, Interior Worlds, 1,000 Heads Among the Trees (all paid), Toripon (download-only), Shutterbug by vividfax (free browser, but its controls require moving/resizing the physical browser window — impossible in a managed browser — and recent comments report a black camera), Fotoshu and Alphabet Maze (photography as theme, not verb), Kelp Forest Snap! (a goal-less WIP sandbox). Runners-up noted, unplayed: StickerScout (web demo), Click! by Claus (Pico-8).
 **What the substitute leaves unanswered:** TOEM's photos complete characters' requests inside a storybook world — photography as social errand. Beyond the Trees is a timed arcade round with no characters or requests, and its scoring (promised by its own page copy) was **never observed in seven rounds** — see the gap note below.
 **Coverage:** DEEP PARTIAL — the game's only mode (timed rounds) completed 7 times, 15+ photographs taken; stopped at the Game Over screen of round 7. Blind: no guides.
-**Evidence — read before trusting:** all four full-page PDF captures are **identical title-state shells** (coordinator render check: same image, the game's loaded title/phone frame with a blank lower canvas — they prove the game loaded and show its phone UI, but none of the gameplay beats). One is banked in `captures/` of the filed package labeled as a shell. The play account below rests on the session report, labeled as such.
+**Evidence — read before trusting:** all four full-page PDF captures are **identical title-state shells** (coordinator render check: same image, the game's loaded title/phone frame with a blank lower canvas — they prove the game loaded and show its phone UI, but none of the gameplay beats). One is banked in `evidence/` of the filed package labeled as a shell. The play account below rests on the session report, labeled as such.
 
 ## The loop, from the seat
 The game presents itself inside a phone frame: a 3×3 gallery, a round shutter button, and a timer bar. On Enter, the phone becomes a viewfinder — a pastel forest of pink, purple, and yellow trees, framing corners, a centre reticle. In the browser build you look with WASD/arrows and shoot with Space/Enter or the on-screen button. The page's own description of the contract: "Every shot gets scored based on your framing and the quantity of birds."
@@ -15,3 +15,10 @@ Across seven rounds I never saw a numeric score or rating popup, though the page
 
 ## Tooling (separate from the game)
 The PDF printer timed out or returned "Unavailable" several times before recovering; page screenshots of the Unity build were intermittently withheld by the browser's privacy check, and several rounds ended mid-observation-cycle — part of why my framing was often poor. An audio-listen attempt at the Game Over screen returned a one-word fragment, so the "listen closely" birdsong cue could not be verified through this tooling.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Title-state shell — all four captures are this identical loaded-title frame (Unity canvas); it proves the game loaded and shows its phone UI, not a gameplay beat.](../evidence/img/beyond-the-trees-00-page-shell.png)
+*Title-state shell — all four captures are this identical loaded-title frame (Unity canvas); it proves the game loaded and shows its phone UI, not a gameplay beat.*
+

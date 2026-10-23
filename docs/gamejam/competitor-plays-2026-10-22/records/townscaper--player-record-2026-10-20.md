@@ -22,3 +22,7 @@ Surprises: (1) the whole town state is encoded live in the URL fragment — ever
 
 ## The matrix question (M5/V5): does it produce an artifact worth showing another person?
 Yes — literally as a link. The URL-as-save means the artifact is shareable with zero export friction, and the auto-detailing makes a novice's town presentable. What it does not produce is a *kept* moment between people: the artifact is an object, not a shared event.
+
+## Evidence gallery
+No embeddable capture exists for this session: the game is a Unity WebGL build whose page captures print blank (see the record's evidence note). The evidence is the town itself — the save-state URL in this record re-opens the exact town that was built:
+`https://oskarstalberg.com/Townscaper/#nzyVACkKJNX0v83kT7P1qObvfT_Ur6s9_9im8lAud`

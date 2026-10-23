@@ -11,3 +11,10 @@
 - **Positioning (paraphrased):** a sci-fi narrative exploration game about building a relationship with a lonely spaceship computer, Kaizen, to get home to Earth — conversation itself is the interface.
 - **Trailer archived:** `event-0-trailer.mp4` (Launch Trailer, 72 MB, 1:47), pulled from the Steam CDN.
 - **Player-record status:** NOT played (paid native). Substitute Galatea played to a genuine ending — Event[0]'s own persistent, personality-bearing AI relationship across a whole voyage remains the unanswered question for a future purchase decision.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Steam storefront as displayed 2026-10-21 — 19,99€ (page 1).](img/event-0-storefront-capture.png)
+*Steam storefront as displayed 2026-10-21 — 19,99€ (page 1).*
+
