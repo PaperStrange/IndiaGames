@@ -21,3 +21,16 @@ Three or four friends on a voice call, ninety seconds each to caption a cursed i
 
 ## One honest line
 A real session needs one actual human friend, with a link in their hand and a voice call open, because Make it Meme is a room with no show until someone else walks in.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![The lobby (Oct-15 re-shoot).](../evidence/make-it-meme-2026-10-15-reshoot-01-lobby.png)
+*The lobby (Oct-15 re-shoot).*
+
+![The topic-choice step of the pre-game flow (Oct-15 re-shoot; the walk's modes step is described in the record — the captured frame shows topic selection).](../evidence/make-it-meme-2026-10-15-reshoot-02-modes-topics.png)
+*The topic-choice step of the pre-game flow (Oct-15 re-shoot; the walk's modes step is described in the record — the captured frame shows topic selection).*
+
+![The two-player gate — the public flow waits for a second player (Oct-15 re-shoot).](../evidence/make-it-meme-2026-10-15-reshoot-03-two-player-gate.png)
+*The two-player gate — the public flow waits for a second player (Oct-15 re-shoot).*
+

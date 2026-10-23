@@ -2,7 +2,7 @@
 **Filed:** 2026-10-20 · **Source:** two live browser sessions, first-person player voice
 **URL:** https://www.geoguessr.com (main game) · https://www.geoguessr.com/horrorguessr (free Halloween mode)
 **Coverage:** PARTIAL PLAY with an access finding. The main GeoGuessr game is account-walled (see below) and was not played. The free no-account mode, HorrorGuessr, was played honestly across two sessions — six runs total, 0 days survived, 0 pins placed. The matrix's core M4 question (shared simultaneous guessing; how much communication happens before guesses lock) remains UNTESTED: it lives in the account-walled main game and needs at least an account, which only Sakura can authorize.
-**Evidence:** session 2's beats are banked as full-page PDF captures in `captures/` of the filed package (7 files, verified against the session report). Session 1's captures exist only as in-session references and are NOT banked — stated plainly, per the evidence standard.
+**Evidence:** session 2's beats are banked as full-page PDF captures in `evidence/` of the filed package (7 files, verified against the session report). Session 1's captures exist only as in-session references and are NOT banked — stated plainly, per the evidence standard.
 
 ## Access finding (session 1, 2026-10-20)
 A no-account visitor to geoguessr.com is offered a "Sign up to play" panel (Google / Apple / Facebook / email) for the main modes. No plan names or prices are displayed to visitors — the offer is binary: create an account, or play the free limited-time Halloween mode. No free daily challenge, demo, or single-player map exists outside HorrorGuessr. A "PLAY SETERRA NOW!" link points to GeoGuessr's separate free quiz site.
@@ -27,3 +27,28 @@ The geography skill is real — signage, plates, language, vegetation, and road 
 
 ## Tooling (separate from the game)
 Real-time play vs agent action latency is the structural issue: each browser action/observation takes many seconds while the monster advances ~1m per couple of seconds — and evidence capture (a full-page PDF) is the slowest action of all, measurably costing distance in Run 3 of session 2. One region click was refused as "covered" (session 2, Run 2); element references went stale across game transitions. In session 1, /horrorguessr rendered blank once and a single reload fixed it. No CAPTCHAs or bot walls in the free mode; the end-screen account upsell was ignored throughout. No account was created, no trial started, no payment details entered in either session.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![HorrorGuessr start screen (page 1).](../evidence/img/geoguessr-beat1-start-screen.png)
+*HorrorGuessr start screen (page 1).*
+
+![Run 1 — live view in blackout (page 1).](../evidence/img/geoguessr-beat2-run1-live-view-blackout.png)
+*Run 1 — live view in blackout (page 1).*
+
+![Run 1 end screen (page 1).](../evidence/img/geoguessr-beat3-run1-end-screen.png)
+*Run 1 end screen (page 1).*
+
+![Run 2 — live view (page 1).](../evidence/img/geoguessr-beat4-run2-live-view-uruguay.png)
+*Run 2 — live view (page 1).*
+
+![Run 2 — the monster closing in: the in-frame readout says 13 m (the capture's filename keeps the session's 20 m label from the moment it was triggered; the counter kept falling while the capture rendered) (page 1).](../evidence/img/geoguessr-beat5-run2-monster-20m.png)
+*Run 2 — the monster closing in: the in-frame readout says 13 m (the capture's filename keeps the session's 20 m label from the moment it was triggered; the counter kept falling while the capture rendered) (page 1).*
+
+![Run 3 — the unfold-map minigame (page 1).](../evidence/img/geoguessr-beat6-run3-unfold-map-minigame.png)
+*Run 3 — the unfold-map minigame (page 1).*
+
+![Run 3 end screen (page 1).](../evidence/img/geoguessr-beat7-run3-end-screen.png)
+*Run 3 end screen (page 1).*
+

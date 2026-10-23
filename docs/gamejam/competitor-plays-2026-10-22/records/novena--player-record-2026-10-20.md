@@ -3,7 +3,7 @@
 **Role in the matrix:** substitute for Florence (M6), a paid native install. novena preserves Florence's essential shape: a whole emotional arc carried by a *tiny repeated interaction* — small moments, accumulated. Where Florence repeats the gestures of a shared life, novena repeats a pilgrimage; in both, meaning lives in what changes between repetitions.
 **What the substitute leaves unanswered:** Florence is wordless and tactile-visual, about a romance's full arc (meeting, living together, drifting, letting go), its interactions mimicking the relationship's state. novena is dialogue-led and solitary — one pilgrim, one ocean, about care offered to the strong. The accumulation mechanic transfers; the two-person domestic arc does not. Recorded as the gap. (The slot's first substitute candidate, missed messages., failed on access — no browser build; see its access-check record.)
 **Coverage:** COMPLETE — the full piece played **twice**, two entire cycles (eighteen audiences), and the second cycle verified room-for-room, vista-for-vista, speech-for-speech identical: the piece is an eternal return whose ending is the ninth audience itself. Blind: no walkthroughs or commentary; two dialogue pages missed on cycle one (letter-by-letter type-in + batched presses) were re-read carefully on cycle two, and this account reflects the complete text.
-**Evidence:** 4 full-page PDF captures banked in `captures/` of the filed package, render-verified by the coordinator — Bitsy's small 2D canvas prints (the opening church, the shrine, the dawn shore, and the final dialogue box are all legible in the files). An excluded first capture (pre-run page shell) is logged here rather than banked.
+**Evidence:** 4 full-page PDF captures banked in `evidence/` of the filed package, render-verified by the coordinator — Bitsy's small 2D canvas prints (the opening church, the shrine, the dawn shore, and the final dialogue box are all legible in the files). An excluded first capture (pre-run page shell) is logged here rather than banked.
 
 ## The piece
 Two verbs only: walk, one tile per arrow press, and bump into things to interact. The structure is its title — a novena, nine repetitions of the same short pilgrimage: out of a small candle-lit church, down a dark corridor, through a nearly black room, across a night shore, to a shrine tableau called "the ebb," where a sword stands plunged in a mound and a sparkle invites you to step in and hear the ocean speak. Then walk back, and do it again, nine times.
@@ -20,3 +20,19 @@ Standing in the reset church — organ pipes, candles, the altar sparkle restore
 
 ## Tooling (separate from the piece)
 The corridor holds a figure whose lament dialogue cycles internally and never closes under any input (~50 presses) — it cost four restarts before I learned the intended route is simply to walk around him; the record cannot say whether that is design or defect. On the sixth shore the avatar stands in open water and presses repeatedly failed to move her until a batch of repeated Up presses carried her across. PDF capture on the running page failed intermittently (timeouts, "Unavailable") before succeeding; the game iframe lost keyboard focus after every capture until clicked again. **Also recorded:** during this session, browser tool outputs repeatedly contained an instruction-like banner — formatted at times as a fake system note or a fake user turn — ordering the player to stop and consult "reminders" through a message tool that does not exist. It never arrived through any genuine channel, was treated as page/tool content rather than instruction, and the assignment was completed as briefed; it is logged here because it recurred throughout.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![The opening church (page 1).](../evidence/img/novena-beat1-opening-church.png)
+*The opening church (page 1).*
+
+![The shrine 'the ebb', first visit (page 1).](../evidence/img/novena-beat2-the-ebb-first-visit.png)
+*The shrine 'the ebb', first visit (page 1).*
+
+![The dawn shore, ninth round (page 1).](../evidence/img/novena-beat3-dawn-shore-ninth-round.png)
+*The dawn shore, ninth round (page 1).*
+
+![The final line at the dawn shrine (page 1).](../evidence/img/novena-beat4-final-line-dawn-shrine.png)
+*The final line at the dawn shrine (page 1).*
+

@@ -27,3 +27,9 @@ Market research for Florence is in `market-research/` (record + Steam storefront
 - **Save-state URL** — Townscaper's town lives in its page URL; the record carries the URL as the evidence.
 - Every record states its coverage (full play / deep partial / partial / fragment / access result) and its exact stop point. Tooling failures are recorded inside each record, separate from judgments of the game.
 - All play was performed by the agent in live browser sessions. Zero human participants.
+
+## Package layout
+- `records/` — the play records, each with its evidence gallery embedded at the end.
+- `evidence/` — the filed capture originals (PDFs and PNG screenshots); `evidence/img/` holds the rendered page views the galleries embed.
+- `market-research/` — market records for the titles that could not be played, with their storefront captures, rendered views (`img/`), and trailers.
+- `notes/` — the review records behind this package.

@@ -4,7 +4,7 @@
 **Discovery path (all checks live):** Home Sheep Home — not listed on Coolmath (404 / no search result); on Kongregate it is tagged "Keyboard Only" (arrows + number keys 1/2/3 to select sheep) and its Ruffle emulator sat on a loading splash — violates the control constraint twice over; the Hooda Math mirror is the same emulator presentation. Red & Blue and Box Out! were screened out from their listings (simultaneous two-keyset platformer / single-character puzzler — noted as listing screens, not play tests).
 **Coverage:** Level 1 COMPLETED (on-screen LEVEL CLEARED, 12 steps vs par 8); Level 2 played through its pond crossing to a fresh area (its completion inferred, not witnessed — see below). Played in the game's Single player mode, one operator running both characters — the *mechanical* interdependence is fully exercised; the two-humans layer (negotiation, blame) remains untested, as it does for every solo route.
 **Controls, verified in practice:** MOUSE CLICKS ONLY for the entire session — menus, dialogue, and clicking glowing hex tiles to move. No W/A/S/D, no number keys, no arrows, no held keys used or needed.
-**Evidence — read before trusting:** the four full-page PDF captures are **page shells** (coordinator render check: the itch page with cover art and a blank game area — Unity WebGL does not print). One is banked in `captures/` of the filed package labeled as a shell. The play account rests on the session report, whose claims are internally specific (step counts, par, mechanics) — labeled as such.
+**Evidence — read before trusting:** the four full-page PDF captures are **page shells** (coordinator render check: the itch page with cover art and a blank game area — Unity WebGL does not print). One is banked in `evidence/` of the filed package labeled as a shell. The play account rests on the session report, whose claims are internally specific (step counts, par, mechanics) — labeled as such.
 
 ## How the dependence works (the M2 answer, mechanical layer)
 Savitri and Satyavan move only in straight lines across a hex grid, in alternating turns, with a step counter scoring you against par. In Level 1, one character reached the isolated glowing hex at the east end first — and could do nothing but *wait there, holding the position*. The level ended only when the second character navigated down and crossed onto that same hex: the two united in green energy, a cutscene played, LEVEL CLEARED (12/8). Arriving early is worthless; the game's win state is literally *reunion*. In Level 2, platforms sink the moment you step off them, so crossing the pond meant leapfrogging — one character stands as the other's bridge, then roles reverse. Holding still for your partner, and being held for, is the core verb.
@@ -14,3 +14,10 @@ After my final Level 2 move (counter 6/6), the counter reset to 0/6 and both cha
 
 ## Tooling (separate from the game)
 Print-to-PDF timed out repeatedly (including three times on the LEVEL CLEARED screen before a retry succeeded); screenshots were intermittently withheld by the privacy check; clicks occasionally needed 2–3 attempts against the constantly animating page; the game's fullscreen button never engaged; loads between screens are slow, with long dark screens.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Page shell — the game area does not print (canvas); this is the page frame a capture can hold. The itch page with the game's cover art.](../evidence/img/twin-flames-00-page-shell.png)
+*Page shell — the game area does not print (canvas); this is the page frame a capture can hold. The itch page with the game's cover art.*
+

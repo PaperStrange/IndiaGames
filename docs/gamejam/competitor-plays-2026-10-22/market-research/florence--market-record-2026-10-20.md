@@ -11,3 +11,10 @@
 - **Positioning (paraphrased):** a young woman stuck in a work-sleep-phone routine meets a cellist, Krish, who changes how she sees the world — an interactive story about love's small routines.
 - **Trailer archived:** `florence-trailer.mp4` (Florence – Release Date Trailer, 24 MB, 0:33), pulled from the Steam CDN.
 - **Player-record status:** NOT played (paid native). Substitute novena played complete — Florence's own tactile, wordless handling of a relationship's arc remains the unanswered question for a future purchase decision.
+
+## Evidence gallery (embedded)
+The captures are filed under `evidence/` in this package (market records: beside the record, in `market-research/`). PDF captures are shown as rendered page views; PNG captures are embedded as-is.
+
+![Steam storefront as displayed 2026-10-21 — $0.94 at −75% (page 1).](img/florence-storefront-capture.png)
+*Steam storefront as displayed 2026-10-21 — $0.94 at −75% (page 1).*
+
