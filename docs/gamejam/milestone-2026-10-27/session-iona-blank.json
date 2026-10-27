@@ -1,0 +1,19 @@
+{
+  "id": null,
+  "story_id": "iona",
+  "condition": "remembered",
+  "participant_count": 1,
+  "participant_ids": [],
+  "method": null,
+  "observer_is_human": false,
+  "observer_id": null,
+  "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+  "started_at": null,
+  "completed_at": null,
+  "observation_notes": null,
+  "metrics": {
+    "completed_unassisted": null,
+    "explained_choice_to_return_action": null,
+    "expected_unrestricted_ai": null
+  }
+}

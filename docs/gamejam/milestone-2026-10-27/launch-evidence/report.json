@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-27T01:54:53.663Z",
+  "kind": "automated artifact launch only; no human results",
+  "build": "/workspace/indiagames-milestone-2026-10-27/vivid-0.1.2-pilot/build",
+  "checks": [
+    {
+      "mount": "/",
+      "story": "iona",
+      "profile": "remembered",
+      "started": true
+    },
+    {
+      "mount": "/",
+      "story": "mara",
+      "profile": "remembered",
+      "started": true
+    },
+    {
+      "mount": "/",
+      "story": "iona",
+      "profile": "neutral",
+      "started": true
+    },
+    {
+      "mount": "/IndiaGames/pilots/vivid/",
+      "story": "iona",
+      "profile": "remembered",
+      "started": true
+    },
+    {
+      "mount": "/IndiaGames/pilots/vivid/",
+      "story": "mara",
+      "profile": "remembered",
+      "started": true
+    },
+    {
+      "mount": "/IndiaGames/pilots/vivid/",
+      "story": "iona",
+      "profile": "neutral",
+      "started": true
+    }
+  ],
+  "pageErrors": [],
+  "failedResponses": [],
+  "passed": true,
+  "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4"
+}

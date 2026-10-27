@@ -1,0 +1,15 @@
+{
+  "checked_at_utc": "2026-10-27T01:53:32.720110Z",
+  "scope": "documentation links, blank-template compatibility and exact immutable artifact export; not gameplay or human testing",
+  "relative_document_links_checked": 16,
+  "relative_document_links_missing": [],
+  "blank_session_templates": 3,
+  "template_schema_fields_match_master": true,
+  "artifact_export_file_hashes_match": true,
+  "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+  "build_files": 15,
+  "build_bytes": 1401263,
+  "automated_browser_runs": 0,
+  "human_sessions": 0,
+  "physical_device_checks": 0
+}
