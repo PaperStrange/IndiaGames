@@ -32,3 +32,7 @@ GAMEJAM_RELEASE_ROOT=/path/to/release GAMEJAM_BASE_URL=http://127.0.0.1:8120 CHR
 ## Recover or continue
 
 Keep one game per branch; commit validated milestones and verify the matching remote ref after push. Avoid switching a shared checkout while another agent has files open. The coordinator used isolated working directories for the parallel team, left `/workspace/IndiaGames` on its original `work` branch, and preserved a pre-jam Git bundle. No source/branch history was force-reset. The final bundle and browser ZIP are local delivery artifacts, while the game code and this evidence are synced to the three remote game branches.
+
+## 27 October pilot readiness
+
+[Unchanged Small Hours baseline, facilitator protocol and download](milestone-2026-10-27/README.md). Six real pairs remain the next design gate; this packet contains no human results.

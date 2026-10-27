@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-27T01:56:12.984Z",
+  "kind": "automated artifact launch only; no human results",
+  "build": "/workspace/indiagames-milestone-2026-10-27/small-hours-baseline-validation/build",
+  "checks": [
+    {
+      "mount": "/",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "pairEntryByKeyboard": true,
+      "privateChoiceLoaded": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "mount": "/IndiaGames/pilots/small-hours/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pairEntryByKeyboard": true,
+      "privateChoiceLoaded": true,
+      "noHorizontalOverflow": true
+    }
+  ],
+  "pageErrors": [],
+  "failedResponses": [],
+  "passed": true,
+  "build_sha256": "fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3"
+}

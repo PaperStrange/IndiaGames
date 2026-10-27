@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "study-baseline-not-release",
+  "game": "small-hours",
+  "baseline_id": "SH-BASELINE-2026-10-27",
+  "source_branch": "memorable-moments-game",
+  "source_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
+  "runtime_matches_historical_source": "822366ad3eb309f7009bb7a05e26cddfb466422f",
+  "build": {
+    "entrypoint": "index.html",
+    "sha256": "fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3",
+    "files": {
+      "README.md": "96b5c3acfd128e12a407d13723dd56d1fc66cface97f1b8a95b92986faab6d20",
+      "content.js": "8845632466083261dcc83152a3d6dd1ed196e7b0fd62626948e2abbd92911755",
+      "game.js": "a1468af7ac47eb61d043a7eea6abf69d1f86b0bde3f6c013d6e3722422965a79",
+      "icons.js": "7c05b43160356b9697665ae9cf0f0eb759441830aae030c2dfa867e28f61e2dd",
+      "index.html": "960c5b00cc6cbc20613cb0f324fa380a4f81192a32da6168eebb6caa5cab0171",
+      "state.js": "8c38ec0889be5c3342197a31e47368fcfa5481a61cb88c39133bbd79d1332137",
+      "style.css": "f6a3ae0f42d4ca59e1a1b4fdcf8b9f420cf8b7837b2ec357ae76f07fb22f1016",
+      "views.js": "ebd89111ec8a4d538e52d284d83339281c2ab88363d38ea216177dd45bf615cc"
+    }
+  },
+  "build_file_count": 8,
+  "build_bytes": 58313,
+  "archive": {
+    "file": "small-hours-baseline-2026-10-27.zip",
+    "sha256": "64ebb3bdfd69b4a643a06817cc023754e94fc114c5a812fae6fb111af1ad2fd2"
+  },
+  "human_sessions_recorded": 0,
+  "human_approval": false,
+  "new_browser_verification": null
+}

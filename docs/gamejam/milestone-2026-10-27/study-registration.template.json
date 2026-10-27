@@ -1,0 +1,18 @@
+{
+  "template": true,
+  "status": "prepared-not-started",
+  "protocol_id": "SH-BASELINE-2026-10-27",
+  "protocol_registered_at": null,
+  "sampling_rule": "first-six-predeclared-sessions",
+  "session_ids": [],
+  "source_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
+  "build_sha256": null,
+  "host_url": null,
+  "facilitator_id": null,
+  "independent_reviewer_id": null,
+  "device_plan": [],
+  "sessions": [],
+  "critical_bugs_open": null,
+  "decision": null,
+  "approved": false
+}

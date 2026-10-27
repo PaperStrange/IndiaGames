@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-27T01:54:19.402162+00:00",
+  "actor": "agent:/root/small_hours_packet",
+  "scope": "static documentation and immutable baseline packaging; no browser gameplay or human sessions",
+  "source_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
+  "build_sha256": "fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3",
+  "checks": [
+    {
+      "name": "JSON templates parse and Python syntax parses",
+      "result": "pass"
+    },
+    {
+      "name": "19 relative documentation links resolve against staged packet or pinned source",
+      "result": "pass"
+    },
+    {
+      "name": "runtime/tests have no delta from 822366ad",
+      "result": "pass"
+    },
+    {
+      "name": "two fresh exports have equal manifest and ZIP hash",
+      "result": "pass"
+    },
+    {
+      "name": "all eight ZIP entries match manifest byte hashes",
+      "result": "pass"
+    },
+    {
+      "name": "existing output directory is refused without overwrite",
+      "result": "pass"
+    }
+  ],
+  "not_run": [
+    "fresh game browser suite",
+    "host-specific launch and embed",
+    "physical phone and assistive technology",
+    "six-pair human pilot",
+    "independent human review"
+  ],
+  "human_participants": 0
+}

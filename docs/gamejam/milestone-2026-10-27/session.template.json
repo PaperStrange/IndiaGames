@@ -1,0 +1,59 @@
+{
+  "template": true,
+  "protocol_id": "SH-BASELINE-2026-10-27",
+  "id": null,
+  "ordinal": null,
+  "participant_count": null,
+  "participant_ids": [],
+  "method": null,
+  "observer_is_human": false,
+  "observer_id": null,
+  "source_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
+  "build_sha256": null,
+  "served_url": null,
+  "started_at": null,
+  "completed_at": null,
+  "device": {
+    "model": null,
+    "os": null,
+    "browser": null,
+    "input": null,
+    "accessibility_arrangements": null
+  },
+  "consent_recorded_privately": null,
+  "quotes_permitted": null,
+  "prior_exposure": null,
+  "scene": null,
+  "scene_changes": [],
+  "timing_seconds": {
+    "setup": null,
+    "play": null,
+    "to_reveal": null,
+    "debrief": null
+  },
+  "journey": [],
+  "contributions": {
+    "participant_a_observed": null,
+    "participant_b_observed": null
+  },
+  "assistance": [],
+  "metrics": {
+    "reached_reveal_unaided": null,
+    "both_contributed": null,
+    "voluntarily_saved_or_replayed": null
+  },
+  "save_or_replay": {
+    "action": null,
+    "prompted": null,
+    "both_agreed": null,
+    "download_delivered": null,
+    "replay_started": null
+  },
+  "stopping_point": null,
+  "missing_observations": [],
+  "issues": [],
+  "approved_quotes": [],
+  "observation_notes": null,
+  "follow_up_at": null,
+  "follow_up_notes": null
+}
