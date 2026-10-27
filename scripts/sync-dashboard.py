@@ -37,6 +37,8 @@ def build():
                 raise ValueError(f'{task["id"]}: dependencies must be an array')
             if not isinstance(task['completion_evidence'], list) or not all(isinstance(item, str) and item.strip() for item in task['completion_evidence']):
                 raise ValueError(f'{task["id"]}: evidence must be an array of nonempty strings')
+            if any(not item.startswith('https://github.com/PaperStrange/IndiaGames/') for item in task['completion_evidence']):
+                raise ValueError(f'{task["id"]}: evidence must use repository GitHub URLs, as required by the dashboard')
             if task['status'] == 'done' and not task['completion_evidence']:
                 raise ValueError(f'{task["id"]}: completion needs evidence')
             plan = ROOT / task['source_plan']
@@ -75,6 +77,9 @@ def build():
             'qa_status': source.get('qa_status', 'historical_review'),
             'candidate_version': source.get('candidate_version'),
             'candidate_status': source.get('candidate_status'),
+            'milestone_status_label': source.get('milestone_status_label'),
+            'pilot_packet': source.get('pilot_packet'),
+            'human_staffing': source.get('human_staffing'),
             'official_release': source.get('official_release', False),
         } for lane, source in sources.items()},
         'source_manifest': 'source-manifest.json',
@@ -87,10 +92,10 @@ def build():
             'not_selected': 'Explicitly closed by a recorded design decision.'
         },
         'gates': [
-            {'id': 'plan-settlement', 'status': 'partially_settled', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'Vivid’s two-story plan is approved and implemented. Small Hours and Bell retain their proposed/conditional plans; their implementation has not started in this iteration.'},
+            {'id': 'plan-settlement', 'status': 'settled', 'applies_to': ['memorable', 'vivid', 'bell'],
+             'requirement': 'The approved milestone prepares three human playtest packets: Small Hours keeps its baseline, Vivid keeps 0.1.2, and Bell implements Prepare Mina’s route. Human observations still determine subsequent feature and release decisions.'},
             {'id': 'competitor-coverage', 'status': 'open', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'Keep six distinct titles and at least four broad families per lane. Vivid has six core-play titles across five families, with three declared units completed and three endpoint gaps. Keep partials and original native gaps explicit; no lane is declared fully studied.'},
+             'requirement': 'Retain each lane’s six-title roster, broad-family coverage, substituted editions and unfinished endpoints. The October 22 uploads add evidence, not human validation or six completed journeys. Current competitor and pilot packets carry the qualifications; historical original-roster counts remain separate.'},
             {'id': 'human-validation', 'status': 'not_run', 'applies_to': ['memorable', 'vivid', 'bell'],
              'requirement': 'Observe actual people using the per-game protocol; automated checks and emotional agent prose are not human evidence.'}
         ],

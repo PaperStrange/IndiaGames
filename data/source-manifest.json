@@ -1,20 +1,22 @@
 {
   "schema_version": 2,
-  "review_date_utc": "2026-10-21",
+  "review_date_utc": "2026-10-27",
   "repository": "https://github.com/PaperStrange/IndiaGames",
   "coordination_branch": "main",
-  "coordination_base": "ba756cb2876834d4ecbf3cb055381db5ca6660ec",
+  "coordination_base": "63b1b27d33b202ae652fa28602d9c084d68b00a8",
   "implementation_started": true,
   "incoming_evidence": {
-    "status": "reviewed_records_incorporated_into_proposed_plans",
+    "status": "reviewed_records_incorporated_into_settled_milestone",
     "lanes": [
       "memorable",
+      "vivid",
       "bell"
     ],
     "automatic_polling_scheduled": false,
     "limitations": [
-      "Small Hours and Bell intake changed neither runtime and created no human sessions; Vivid implementation is tracked separately below.",
-      "Rogue Fable IV roster promotion remains a recorded decision, not automatically counted"
+      "The October 22 uploads contain agent competitor records; they create no human sessions for our demos.",
+      "Underlying sessions retain their actual dates, editions, assistance and partial endpoints. Blank game-canvas captures establish page entry only.",
+      "Substitutions and the shared Townscaper session are not pooled into additional independent journeys."
     ]
   },
   "sources": [
@@ -22,7 +24,7 @@
       "lane": "memorable",
       "name": "Small Hours",
       "branch": "memorable-moments-game",
-      "reviewed_head": "875230b1619482e485b71441bcc551edea613438",
+      "reviewed_head": "cc0b9ddd777d5772358df272bec69fe5c7ba8daf",
       "prior_manifest_source": "f8b725d2ce3038a38c0b49dce564bc0c7b0856d0",
       "runtime_scope": [
         "memorable-moments-game/play",
@@ -32,13 +34,39 @@
       "qa_source_commit": "822366ad3eb309f7009bb7a05e26cddfb466422f",
       "qa_date_utc": "2026-10-20",
       "latest_runtime_unchanged_from_qa": true,
-      "planning_document": "docs/games/small-hours/TODO.md"
+      "planning_document": "docs/games/small-hours/TODO.md",
+      "research_evidence_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
+      "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
+      "milestone_status_label": "Baseline packet prepared · human pilot pending",
+      "milestone_summary": "Freeze the existing two-person journey. Observe real pairs before selecting gameplay changes.",
+      "human_participant_rows": 0,
+      "human_staffing": "Facilitator, participants and independent reviewer remain unassigned.",
+      "official_release": false,
+      "implementation_started": false,
+      "implementation_status": "unchanged_baseline_pilot_preparation",
+      "qa_status": "historical_unchanged_runtime",
+      "candidate_status": "not_staged_pilot_decision_required",
+      "qa_scope": "Runtime unchanged from the 20 October verification at 822366ad (33 historical behavioral assertions). On 27 October, two targeted root/nested launch groups passed with keyboard entry, private-choice controls, reload reset, no overflow and no JavaScript/HTTP errors. Human and physical-device validation remain pending.",
+      "baseline_source_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
+      "baseline_build_sha256": "fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3",
+      "baseline_build_bytes": 58313,
+      "baseline_file_count": 8,
+      "launch_verification": {
+        "date_utc": "2026-10-27",
+        "scope": "Two targeted launch groups: root desktop and nested 390px viewport. Keyboard entry, private-choice controls, reload reset and no horizontal overflow; not a rerun of the 33 behavioral assertions.",
+        "groups_passed": 2,
+        "javascript_errors": 0,
+        "http_errors": 0,
+        "evidence": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+        "checker": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
+      }
     },
     {
       "lane": "vivid",
-      "name": "Vivid \u2014 small worlds, lasting traces",
+      "name": "Vivid — small worlds, lasting traces",
       "branch": "vivid-2.5d-photo-game",
-      "reviewed_head": "0c72da97994d9f2d315e6aba1afba5219936b78b",
+      "reviewed_head": "545a867fe0d6b1fe2555526e2b48278b96372f9a",
       "prior_manifest_source": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
       "runtime_scope": [
         "vivid-2.5d-photo-game/play"
@@ -56,7 +84,7 @@
       "candidate_master_commit": "f9488e5079d1d193caef560d1fe72936add6cba3",
       "official_release": false,
       "human_participant_rows": 0,
-      "qa_scope": "51 unit tests and 16 browser scenarios passed on 0.1.2; earlier 10 input/lifecycle and 9 renderer checks support unchanged logic/assets. Physical-device and human validation pending.",
+      "qa_scope": "51 unit tests and 16 browser scenarios passed on 0.1.2 on 21 October; earlier lifecycle/art checks retain their own dates. On 27 October the exact 15-file artifact passed six direct/nested launch checks, not a new full story suite. Physical-device and human validation pending.",
       "qa_status": "automated_pass_human_pending",
       "current_decision_document": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md",
       "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/README.md",
@@ -84,18 +112,34 @@
       "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
       "release_policy_review": {
         "status": "pending",
-        "url": "https://github.com/PaperStrange/IndiaGames/pull/1"
+        "url": "https://github.com/PaperStrange/IndiaGames/pull/1",
+        "checked_date_utc": "2026-10-27",
+        "head_commit": "4a4f3996fefc198370814c71acb45af3470bd47f",
+        "human_reviews": 0
       },
       "candidate_change": "Story-owned visible captions and accessible illustration labels; existing wording, saves and game rules preserved.",
       "research_readme": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
       "research_synthesis": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md",
-      "research_evidence_commit": "931118f19f22cee53d82a0248e0e073aa1551252"
+      "research_evidence_commit": "12ecc786d27a9d17d1bf93e07893bed16490a5b8",
+      "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/12ecc786d27a9d17d1bf93e07893bed16490a5b8/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md",
+      "milestone_status_label": "Candidate 0.1.2 · sessions prepared, humans pending",
+      "milestone_summary": "Prepare separate Iona and Mara sessions using the exact existing 0.1.2 build.",
+      "human_staffing": "Facilitator, participants and independent reviewer remain unassigned.",
+      "launch_verification": {
+        "date_utc": "2026-10-27",
+        "scope": "Six targeted entry routes: direct and nested mounts × Iona remembered, Mara, Iona neutral. Launch only; the full story suite was not rerun.",
+        "checks_passed": 6,
+        "javascript_errors": 0,
+        "http_errors_4xx": 0,
+        "evidence": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json"
+      }
     },
     {
       "lane": "bell",
       "name": "The Thirteenth Bell",
       "branch": "the-thirteenth-bell",
-      "reviewed_head": "c28b29771ed17661c43437eed3042903afc687cf",
+      "reviewed_head": "1f0fe0798ca991a05686e17c08f043d2c225f162",
       "prior_manifest_source": "c2a0a3e385be5b75324f978e84eb273b7d23e404",
       "runtime_scope": [
         "index.html",
@@ -105,11 +149,38 @@
         "build.mjs",
         "tests"
       ],
-      "runtime_diff_empty": true,
-      "qa_source_commit": "1be02bc9fc0b846e4c24cb1ceb67ddd69ebfe590",
-      "qa_date_utc": "2026-10-20",
+      "runtime_diff_empty": false,
+      "qa_source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06",
+      "qa_date_utc": "2026-10-27",
       "latest_runtime_unchanged_from_qa": true,
-      "planning_document": "docs/games/thirteenth-bell/TODO.md"
+      "planning_document": "docs/games/thirteenth-bell/TODO.md",
+      "research_evidence_commit": "252cc55e8515da1438c3e74af2e7dcc58eb13118",
+      "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/252cc55e8515da1438c3e74af2e7dcc58eb13118/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "milestone_status_label": "Candidate 0.1.0 · verified, human playtests pending",
+      "milestone_summary": "Witness the blocked alley, prepare a side passage next loop, and see Mina reach the market well.",
+      "human_participant_rows": 0,
+      "human_staffing": "Facilitator, participants and independent reviewer remain unassigned.",
+      "official_release": false,
+      "implementation_started": true,
+      "implementation_status": "mina_route_candidate_verified",
+      "qa_status": "automated_pass_human_pending",
+      "candidate_status": "staged_awaiting_human_validation",
+      "qa_scope": "15 pure tests (unchanged rule-file identity), 19 final static checks, 16 browser scenario groups, 19 legacy journey steps and 19 HTTP smoke assertions passed. Candidate browser/resource errors: 0. Physical devices and human approval pending.",
+      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/README.md",
+      "current_decision_document": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "candidate_version": "0.1.0",
+      "candidate_master_commit": "02c78ad9739622fb447850fbecb5f46e7dec8de8",
+      "candidate_build_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+      "candidate_build_bytes": 1455336,
+      "candidate_file_count": 1,
+      "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/02c78ad9739622fb447850fbecb5f46e7dec8de8/release-candidates/thirteenth-bell/0.1.0/candidate.json",
+      "qa_evidence_commit": "1f0fe0798ca991a05686e17c08f043d2c225f162",
+      "qa_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/report.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/source-binding.json"
+      ]
     }
   ],
   "research": {
@@ -128,12 +199,12 @@
     "required_unique_titles": 17,
     "core_gameplay_evidence_assignments": 5,
     "six_title_four_family_gate_met_by_any_lane": false,
-    "coverage_as_of": "2026-10-21",
+    "coverage_as_of": "2026-10-24",
     "coverage_by_lane": {
       "memorable": {
         "required": 6,
         "core_gameplay_evidence": 0,
-        "qualification": "one lobby-only, one menu-only/tooling-blocked, four source-only/unplayed"
+        "qualification": "Historical original-roster baseline only. The October 22 package adds reported substitute play; full human social journeys remain unobserved."
       },
       "vivid": {
         "required": 6,
@@ -144,7 +215,7 @@
       "bell": {
         "required": 6,
         "core_gameplay_evidence": 3,
-        "qualification": "Detective original recovered, Seedship terminal run, A Dark Room partial; Rogue Fable IV candidate substitution not included"
+        "qualification": "Historical original-roster baseline only. The October 22 package adds Anchorhead, Desktop Dungeons and Rogue Fable IV records with partial/provenance limits; do not read 3/6 as current adjusted-roster coverage."
       }
     },
     "snapshot_inventory_as_of": "2026-10-20",
@@ -283,14 +354,29 @@
       "ledger_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/coverage.json",
       "journeys_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
       "synthesis_url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md"
-    }
+    },
+    "latest_intake": {
+      "filed_package_date": "2026-10-22",
+      "review_date": "2026-10-24",
+      "human_participant_rows": 0,
+      "summary": "Each lane has a six-slot roster with explicit substitutions and incomplete endpoints. The old 5/18 metric remains the historical original-roster baseline, not a total of new records.",
+      "record_packages": {
+        "memorable": "https://github.com/PaperStrange/IndiaGames/blob/ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649/docs/gamejam/competitor-plays-2026-10-22/README.md",
+        "vivid": "https://github.com/PaperStrange/IndiaGames/blob/12ecc786d27a9d17d1bf93e07893bed16490a5b8/docs/gamejam/competitor-plays-2026-10-22/README.md",
+        "bell": "https://github.com/PaperStrange/IndiaGames/blob/252cc55e8515da1438c3e74af2e7dcc58eb13118/docs/gamejam/competitor-plays-2026-10-22/README.md"
+      }
+    },
+    "six_title_four_family_gate_scope": "historical_original_roster_baseline"
   },
   "review_methods": [
-    "Vivid source and authoring contract reviewed at pinned 0c72da9, including story-owned scene labels.",
-    "51 unit tests and 16 browser scenarios passed on frozen candidate 0.1.2; all 15 served files match the packet inventory. Prior 10 lifecycle and 9 renderer checks remain separately dated supporting evidence.",
-    "Six browser competitor titles have core gameplay records across five families. Three declared units completed; SixCats, WBWWB and ADOFAI retain explicit endpoint gaps. Criticism, assistance and editions remain separate.",
-    "Small Hours and Bell retain their prior source/QA metadata; no new implementation or human sessions are claimed for either lane.",
-    "No real human participant, physical-phone FPS or human screen-reader result exists for the Vivid candidate."
+    "Read-only review of the October 22 competitor packages at the three pinned research heads; underlying play dates remain in their records.",
+    "The October 24 decision settled prepare-sessions-first and Bell option A, Prepare Mina’s route.",
+    "Small Hours retains its unchanged baseline; Vivid retains the immutable 0.1.2 artifact and historical verification.",
+    "Bell implementation and new verification are tracked independently from its preserved previous Contrast reference.",
+    "Human participants, physical-device checks and independent release approval remain pending.",
+    "27 October: the coordinator verified Vivid’s exact artifact and six direct/nested launch routes with no JavaScript errors or HTTP 4xx; no full story suite rerun or human session.",
+    "27 October: the coordinator verified two Small Hours launch groups (root desktop and nested 390px). The 33 behavioral assertions retain their historical October 20 date; no new human or physical-device results.",
+    "27 October: Bell source/hash-bound pure,static, 16-group browser,legacy journey and HTTP smoke verification completed; frozen candidate staged on master with pending human evidence."
   ],
   "environment": {
     "node": "v24.19.0",
@@ -301,11 +387,11 @@
     "rebuilt_in_this_review": false,
     "retested_in_this_review": false
   },
-  "plan_date_utc": "2026-10-21",
-  "evidence_intake_date_utc": "2026-10-21",
+  "plan_date_utc": "2026-10-24",
+  "evidence_intake_date_utc": "2026-10-24",
   "publication_branch": "main",
   "historical_review_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee",
-  "dashboard_date_utc": "2026-10-21",
+  "dashboard_date_utc": "2026-10-27",
   "historical_coordination_branch": "gamejam-next-iteration-2026-10-20",
   "historical_coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
   "historical_review_methods": [
@@ -315,5 +401,25 @@
     "All 33 uploaded competitor snapshots inspected by coordinator in contact sheets",
     "No new competitor gameplay, participant sessions or gameplay implementation",
     "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
-  ]
+  ],
+  "milestone": {
+    "id": "pilot-readiness-2026-10-27",
+    "title": "Prepare three human playtest packets",
+    "status": "agent_preparation_complete_human_pending",
+    "plan_settled": true,
+    "document": "docs/milestones/2026-10-27.md",
+    "summary": "Three playtest packets prepared. Small Hours remains an unchanged baseline; Vivid 0.1.2 and Bell 0.1.0 are staged with empty human reports. Human staffing and independent review remain pending.",
+    "human_staffing": "No facilitator, participants or independent reviewer assigned.",
+    "allowance_visibility": "unavailable",
+    "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
+  },
+  "publication": {
+    "checked_date_utc": "2026-10-27",
+    "pages_api_status": 403,
+    "pages_api_error": "Resource not accessible by integration",
+    "expected_url": "https://paperstrange.github.io/IndiaGames/",
+    "expected_url_http_status": 404,
+    "live_deployment_verified": false,
+    "required_action": "Repository administrator must enable main/root Pages and verify its actual deployment."
+  }
 }

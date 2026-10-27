@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "type": "versioned development snapshot; coding-agent assignments are explicit, human staffing is not implied",
-  "snapshot_date_utc": "2026-10-21",
-  "plan_date_utc": "2026-10-21",
+  "snapshot_date_utc": "2026-10-27",
+  "plan_date_utc": "2026-10-24",
   "demo_qa_date_utc_by_lane": {
     "memorable": "2026-10-20",
     "vivid": "2026-10-21",
-    "bell": "2026-10-20"
+    "bell": "2026-10-27"
   },
   "incoming_evidence_reviewed": true,
   "implementation_started": true,
@@ -14,9 +14,12 @@
     "memorable": {
       "implementation_started": false,
       "qa_date_utc": "2026-10-20",
-      "qa_status": "historical_review",
+      "qa_status": "historical_unchanged_runtime",
       "candidate_version": null,
-      "candidate_status": null,
+      "candidate_status": "not_staged_pilot_decision_required",
+      "milestone_status_label": "Baseline packet prepared · human pilot pending",
+      "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
+      "human_staffing": "Facilitator, participants and independent reviewer remain unassigned.",
       "official_release": false
     },
     "vivid": {
@@ -25,14 +28,20 @@
       "qa_status": "automated_pass_human_pending",
       "candidate_version": "0.1.2",
       "candidate_status": "staged_awaiting_human_validation",
+      "milestone_status_label": "Candidate 0.1.2 · sessions prepared, humans pending",
+      "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md",
+      "human_staffing": "Facilitator, participants and independent reviewer remain unassigned.",
       "official_release": false
     },
     "bell": {
-      "implementation_started": false,
-      "qa_date_utc": "2026-10-20",
-      "qa_status": "historical_review",
-      "candidate_version": null,
-      "candidate_status": null,
+      "implementation_started": true,
+      "qa_date_utc": "2026-10-27",
+      "qa_status": "automated_pass_human_pending",
+      "candidate_version": "0.1.0",
+      "candidate_status": "staged_awaiting_human_validation",
+      "milestone_status_label": "Candidate 0.1.0 · verified, human playtests pending",
+      "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "human_staffing": "Facilitator, participants and independent reviewer remain unassigned.",
       "official_release": false
     }
   },
@@ -48,13 +57,13 @@
   "gates": [
     {
       "id": "plan-settlement",
-      "status": "partially_settled",
+      "status": "settled",
       "applies_to": [
         "memorable",
         "vivid",
         "bell"
       ],
-      "requirement": "Vivid’s two-story plan is approved and implemented. Small Hours and Bell retain their proposed/conditional plans; their implementation has not started in this iteration."
+      "requirement": "The approved milestone prepares three human playtest packets: Small Hours keeps its baseline, Vivid keeps 0.1.2, and Bell implements Prepare Mina’s route. Human observations still determine subsequent feature and release decisions."
     },
     {
       "id": "competitor-coverage",
@@ -64,7 +73,7 @@
         "vivid",
         "bell"
       ],
-      "requirement": "Keep six distinct titles and at least four broad families per lane. Vivid has six core-play titles across five families, with three declared units completed and three endpoint gaps. Keep partials and original native gaps explicit; no lane is declared fully studied."
+      "requirement": "Retain each lane’s six-title roster, broad-family coverage, substituted editions and unfinished endpoints. The October 22 uploads add evidence, not human validation or six completed journeys. Current competitor and pilot packets carry the qualifications; historical original-roster counts remain separate."
     },
     {
       "id": "human-validation",
@@ -83,47 +92,55 @@
       "lane": "memorable",
       "perspective": "Research",
       "priority": "P0",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Small Hours research lead",
-      "title": "Publish the incoming-record delta and provenance ledger",
-      "deliverable": "A lane intake note linked to the immutable source, with one row per M1–M6 assignment and an explicit TEAM-01 lane-intake disposition.",
+      "title": "Publish the October 22 intake and six-slot provenance ledger",
+      "deliverable": "A current M1–M6 ledger pinned to ca7fb8e, with original editions, explicit substitutes, actual endpoints and remaining social questions.",
       "acceptance_criteria": [
-        "Record that 875230b adds six documentation/evidence files and changes no gameplay or tests relative to 822366ad.",
-        "Classify M1 as lobby-only, M2 as menu-only/tooling-blocked with zero gameplay, and M3–M6 as source-only/unplayed in this reviewed package.",
-        "Record that the Make it Meme note and three PNGs are byte-identical to the older Vivid package; preserve October 13 session and October 15 reshoot dates.",
-        "Flag the M1 index/raw-record wording discrepancy and the unsupported-in-this-package Townscaper cross-branch reference for reconciliation.",
-        "Close only the Small Hours incoming-record intake when incorporated; keep competitor coverage and human validation open."
+        "Pin the October 22 rebuilt package to ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649; verify that game and test files remain unchanged from 822366ad. Keep filing dates separate from the underlying October 13–20 sessions and October 15 reshoots.",
+        "Classify Make it Meme as lobby-only; Fireboy & Watergirl as a Level 1 tooling fragment; and Twin Flames as a reported solo Level 1 unit with uncertain later progression. One operator and page-shell captures do not establish human cooperation or independently verify gameplay.",
+        "Record the hanabi.live game with two bots as 57 turns and 18 points, not a perfect 25-point game or a BGA human session. Record GeoGuessr main modes as unplayed and HorrorGuessr as six runs with zero days and pins, without a successful guess-to-feedback cycle.",
+        "Identify Townscaper as the official web prototype with six reported structures and a save URL, without independently verified reopening; count its shared M5/V5 session once. Keep Florence unplayed and novena as a reported two-cycle narrative substitute, not equivalent tactile domestic play.",
+        "Separate verified images/transcripts, report-based progression, source/critic evidence and human observations. State the lost questions for every substitute; close only the lane intake, leaving qualifying journeys, original-edition questions and human validation open."
       ],
       "depends_on": [],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Research / evidence"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md"
+      ],
+      "focus": "Research / evidence",
+      "assigned_person_or_agent": "/root/small_hours_packet + /root",
+      "completion_note": "The current six-slot ledger reconciles the October 22 package at ca7fb8e and supersedes the older intake-only zero-gameplay tally. Runtime/test identity is preserved; original-edition and human social questions remain open."
     },
     {
       "id": "SH-02",
       "lane": "memorable",
       "perspective": "Research",
       "priority": "P0",
-      "status": "proposed",
+      "status": "active",
       "owner_role": "Small Hours research lead + access coordinator",
-      "title": "Make the remaining M3–M6 coverage executable",
-      "deliverable": "A versioned access/edition ledger and future session briefs for Hanabi, GeoGuessr, Townscaper and Florence; source recovery for any claimed shared Townscaper session.",
+      "title": "Prepare the remaining original-edition and social comparisons",
+      "deliverable": "Access-conditional session briefs for the unresolved human social and original-edition questions, using the reconciled six-slot ledger as the starting point.",
       "acceptance_criteria": [
-        "For Hanabi, document legitimate accounts, separate views, same-IP conditions and a real partner; for GeoGuessr, identify the exact consumer mode, eligible host and agreed round boundary.",
-        "For Townscaper and Florence, record existing license/device availability or keep the rows blocked; do not treat a browser demo as the selected full desktop edition.",
-        "Retrieve and reconcile the claimed Townscaper record before reuse: exact edition, actor, date, creation/revision/finish/save boundary and original evidence; shared M5/V5 evidence counts as one title.",
-        "Write each future journey target from the matrix, including failure/recovery when encountered, ending or bounded unit, exit and actual repeat; distinguish planned from observed stages.",
-        "Any reserve promotion includes the lost question and recalculated six-title/four-family rules, at least two outside narrative/deduction, no more than two per family and at most one occasion comparator.",
-        "Do not purchase, create accounts or launch a competitor while preparing this plan; unavailable access remains an explicit gap."
+        "For a human Hanabi comparison, specify exact platform, legitimate access, separate views and real partners; the completed hanabi.live bot session does not answer human convention/coordination questions. For GeoGuessr, specify the intended consumer mode, host/guest conditions and bounded location-feedback unit rather than treating HorrorGuessr as that session.",
+        "Keep full-edition Townscaper and Florence access/device needs explicit. The known official web-prototype record and novena substitute provide limited contrasts; they do not establish the original native journeys.",
+        "Retain the recovered Townscaper save URL and shared M5/V5 provenance without claiming reopening. Any future re-entry check is a separately dated observation, not another distinct title.",
+        "Write remaining journey targets with entry, meaningful decision, mistake/recovery when encountered, bounded ending or finish, exit and actual repeat. Mark each stage planned or observed, and name the question each substitute leaves unanswered.",
+        "Reconcile six distinct titles and family rules before final comparative claims, including at least two outside narrative/deduction, no more than two per family and at most one occasion comparator; record the taxonomy and endpoint limits instead of converting six slots into six completed journeys.",
+        "This preparation does not purchase licenses, create accounts, recruit participants or launch new competitor sessions. Unavailable access and missing human partners remain explicit gaps."
       ],
       "depends_on": [
         "SH-01"
       ],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Research / competitive coverage"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md"
+      ],
+      "focus": "Research / competitive coverage",
+      "assigned_person_or_agent": "/root/small_hours_packet + /root",
+      "completion_note": "Records/provenance now reconciled; original social/edition access and qualifying journeys remain pending. Substitutions do not silently close BGA/private GeoGuessr/full Townscaper/Florence questions."
     },
     {
       "id": "SH-03",
@@ -156,25 +173,32 @@
       "lane": "memorable",
       "perspective": "Research",
       "priority": "P0",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Research lead + game designer",
       "title": "Settle the unchanged-build six-pair protocol",
-      "deliverable": "A short neutral facilitator script, observation sheet and predeclared decision rules for the current build.",
+      "deliverable": "An unchanged-build first-six-pairs protocol, neutral facilitator script, registration template and observation forms pinned to the current frozen baseline.",
       "acceptance_criteria": [
-        "Pin 875230b as the reviewed source and state that its game files match 822366ad; log the actual tested build if the study later uses another export.",
-        "Observe entry, private choice/prediction, handoff, reveal, actual offscreen activity, optional writing, save/leave and voluntary repeat without explaining the intended payoff.",
-        "Record both people’s contributions, assistance, stopping, device/browser, time to reveal and voluntary comments; do not solicit or collect keepsakes by default.",
-        "Predeclare the formative gates: 5/6 pairs reach reveal unaided, 4/6 show both contributing and 3/6 voluntarily save or replay; these are diagnostic thresholds, not population or retention estimates.",
-        "Give the unchanged build first. Record prediction and writing friction qualitatively; do not mix an unimplemented no-prediction variant into the baseline.",
-        "A person may stop without explanation; seated/imaginary participation and blank writing stay valid."
+        "Pin baseline source ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649, whose runtime/test files match 822366ad; identify the eight-file export with inventory SHA-256 fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3. Record the actual artifact identity for every later session.",
+        "Prepare a first-six-pairs registration rule that retains failed and abandoned attempts; leave IDs, recruitment, timestamps and results blank until a real facilitator arranges them. Keep consent/contact mappings private.",
+        "Provide neutral prompts and observation fields for entry, private choice/prediction, handoff, reveal, actual offscreen activity, optional writing, save/leave and voluntary repeat, without explaining the intended payoff.",
+        "Record each person’s contribution, help, stopping, device/browser, time to reveal and voluntary comments. Do not collect or solicit keepsakes by default; allow stopping without explanation, seated/imaginary participation and blank writing.",
+        "Predeclare the diagnostic thresholds: at least 5/6 pairs reach reveal unaided, 4/6 both contribute and 3/6 voluntarily save or replay. These are formative criteria, not population conversion or retention estimates.",
+        "Use the unchanged build for all baseline attempts. Explicitly supersede the old facilitator no-prediction comparison; prediction/writing friction is recorded qualitatively before any variant decision."
       ],
       "depends_on": [
         "SH-01"
       ],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Research / experiment design"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/protocol.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/session.template.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/study-registration.template.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/observation-template.md"
+      ],
+      "focus": "Research / experiment design",
+      "assigned_person_or_agent": "/root/small_hours_packet + /root",
+      "completion_note": "The unchanged-build protocol and blank forms are ready for ca7fb8e’s frozen artifact. The prior no-prediction facilitator comparison is superseded. No participants, registration IDs or human results are fabricated."
     },
     {
       "id": "SH-05",
@@ -366,22 +390,31 @@
       ],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "QA / verification"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/package-baseline.py",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/baseline-inventory.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/packet-verification.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
+      ],
+      "focus": "QA / verification",
+      "assigned_person_or_agent": "/root/small_hours_packet + /root",
+      "completion_note": "The unchanged baseline retains the separately dated October 20 result of 33 synthetic assertions. On October 27, two targeted launch groups passed (root desktop and nested 390px), checking keyboard entry, private-choice controls, reload reset, no horizontal overflow, no JavaScript errors and no HTTP errors. These are two launch groups, not a rerun of the 33-assertion behavioral suite; variant verification and human/device checks remain pending."
     },
     {
       "id": "SH-13",
       "lane": "memorable",
       "perspective": "Distribution",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Distribution owner + product writer",
       "title": "Prepare a truthful browser invitation and hosting checklist",
       "deliverable": "A reviewable invitation, short platform-fit brief and package checklist for a direct link/itch.io browser context.",
       "acceptance_criteria": [
         "Explain the actual occasion: two willing people, one screen, private choices, a shared activity and an optional keepsake; describe five minutes as a design target until observed timings support it.",
         "Keep a portal such as CrazyGames as a separate acquisition hypothesis with requirements still to verify; do not claim acceptance or audience demand.",
-        "Specify relative static assets, full play/ package, embed sizing, keyboard/touch access and download behavior; link actual host checks when later performed.",
+        "Specify the pinned eight-file static export, relative assets, embed sizing, input and download behavior. Link actual local root/nested launch checks with their scope; keep public-host and physical-device behavior unverified until observed.",
         "State that the active session clears on reload/leave and a downloaded file remains with the player; curtains are visual courtesy rather than device security.",
         "Do not claim market uniqueness, memory improvement, relationship benefit, human-tested accessibility or retention; no upload, publication or campaign is part of this card."
       ],
@@ -390,8 +423,14 @@
       ],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Distribution / positioning"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
+      ],
+      "focus": "Distribution / positioning",
+      "assigned_person_or_agent": "/root/small_hours_packet + /root",
+      "completion_note": "Truthful invitation and pinned export/hosting checklist prepared. Two local launch groups are separately evidenced; no public-host deployment, participant study or campaign is claimed."
     },
     {
       "id": "SH-14",
@@ -422,7 +461,7 @@
       "lane": "memorable",
       "perspective": "Game design",
       "priority": "P1",
-      "status": "proposed",
+      "status": "active",
       "owner_role": "Game designer + research lead + art reviewer",
       "title": "Write the three-question decision brief with unresolved evidence visible",
       "deliverable": "A separate Small Hours brief comparing complete player stories and deciding advance, revise, further study or stop.",
@@ -442,15 +481,20 @@
       ],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Product / synthesis"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/handoff.md"
+      ],
+      "focus": "Product / synthesis",
+      "assigned_person_or_agent": "/root/small_hours_packet + /root",
+      "completion_note": "Interim three-question hypotheses and bounded alternative responses documented; final decision waits for human and qualifying competitor evidence."
     },
     {
       "id": "SH-16",
       "lane": "memorable",
       "perspective": "Production",
       "priority": "P0",
-      "status": "proposed",
+      "status": "active",
       "owner_role": "Project coordinator + lane lead",
       "title": "Assign accountable owners and protect the pilot-first sequence",
       "deliverable": "A role-to-person ownership map, dependency review and acceptance/evidence handoff convention.",
@@ -466,8 +510,12 @@
       ],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Team / ownership"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/handoff.md"
+      ],
+      "focus": "Team / ownership",
+      "assigned_person_or_agent": "/root/small_hours_packet + /root",
+      "completion_note": "Agent responsibilities recorded; real facilitator, physical-device reviewer and independent human reviewer unassigned. Assign explicitly before sessions."
     },
     {
       "id": "SH-17",
@@ -584,11 +632,12 @@
       "completion_evidence": [
         "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
         "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/coverage.json",
-        "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/research-and-product-questions.md"
       ],
       "focus": "research_competitors",
-      "completion_note": "Six core-play titles and five families are documented; three declared units completed and three remain partial. The synthesis answers all three product questions as hypotheses. Endpoint follow-ups remain open.",
-      "assigned_person_or_agent": "Codex research agents and coordinator"
+      "completion_note": "October 22 uploads reconciled on October 27 with the distinct October 21 six-title/five-family roster. Galatea supplies one authored conversation ending; photography and rhythm substitutes retain partial/tooling limits. Six Cats, WBWWB and audible/calibrated ADOFAI endpoints remain open; no new competitor sessions or human results were added.",
+      "assigned_person_or_agent": "/root/vivid_packet + /root"
     },
     {
       "id": "KF-03",
@@ -829,10 +878,12 @@
         "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
         "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/browser-observations.json",
         "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/edge-2026-10-21/report.json",
-        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
       ],
       "focus": "qa",
-      "completion_note": "51 unit tests and 16 full browser scenarios passed on the exact 0.1.2 build; authored labels checked. Prior 10 input/lifecycle and 9 renderer checks remain supporting evidence for unchanged logic/art. No human or physical-device pass.",
+      "completion_note": "51 unit tests and 16 full browser scenarios passed on the exact 0.1.2 build; authored labels checked. Prior 10 input/lifecycle and 9 renderer checks remain supporting evidence for unchanged logic/art. No human or physical-device pass. On 27 October, coordinator checks passed six direct/nested entry routes on the exact artifact with no JavaScript errors or HTTP 4xx. This is targeted launch verification, not a new full-suite run or human test.",
       "assigned_person_or_agent": "Codex coordinating and QA agents"
     },
     {
@@ -861,11 +912,15 @@
         "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md",
         "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/protocol.md",
         "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/recruitment.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-and-session-setup.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/session-iona-blank.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/session-mara-blank.json"
       ],
       "focus": "research_protocol",
-      "completion_note": "Study preparation is complete; actual recruitment and every participant result remain unfilled.",
-      "assigned_person_or_agent": "Codex coordinating agent"
+      "completion_note": "Operational 0.1.2 session packet prepared: pinned artifact export, separate Iona/Mara routes and clean-context procedures, optional neutral setup, canonical facilitator/observation protocol and schema-compatible blank forms. Recruitment, registration IDs/timestamps and all human results remain pending.",
+      "assigned_person_or_agent": "/root/vivid_packet + /root"
     },
     {
       "id": "KF-12",
@@ -892,7 +947,7 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "completion_evidence": [],
       "focus": "human_comparison",
-      "completion_note": "Zero real participant sessions recorded; willing human participants are not yet arranged."
+      "completion_note": "Sessions are operationally prepared against exact candidate 0.1.2. Zero actual participants are enrolled/observed; six fresh Iona and six different fresh Mara participants plus human facilitator/reviewer remain required."
     },
     {
       "id": "KF-13",
@@ -971,11 +1026,16 @@
       "completion_evidence": [
         "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
         "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/build/third-party-notices.txt",
-        "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/notes.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/notes.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/prepare-vivid-pilot.py",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/packet-verification.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-and-session-setup.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
       ],
       "focus": "distribution",
-      "completion_note": "Frozen 0.1.2 contains 15 files/1,401,263 bytes, dependency notices and pack-owned scene labels. Exact served files match master packet; no human approval.",
-      "assigned_person_or_agent": "Codex coordinating agent"
+      "completion_note": "Existing immutable 0.1.2 candidate retained without rebuild/version change. October 27 helper verified/exported all 15 files (1,401,263 bytes), matching the original inventory hash. New session instructions preserve story/profile storage across Iona return. Integrity checks do not redate prior gameplay tests or establish public hosting. On 27 October, coordinator checks passed six direct/nested entry routes on the exact artifact with no JavaScript errors or HTTP 4xx. This is targeted launch verification, not a new full-suite run or human test.",
+      "assigned_person_or_agent": "/root/vivid_packet + /root"
     },
     {
       "id": "KF-16",
@@ -1056,7 +1116,7 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": true,
       "completion_evidence": [],
-      "completion_note": "No participant reports or human approval are available."
+      "completion_note": "Both exact-build human story reports, physical-input evidence and independent approval remain pending. Prepared forms and verified artifact export are not human evidence."
     },
     {
       "id": "KF-19",
@@ -1186,31 +1246,43 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": true,
       "completion_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md"
+        "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/journey-and-device-form.md"
       ],
-      "completion_note": "No physical-phone or human screen-reader measurements are available."
+      "completion_note": "Blank physical-device/accessibility handoff prepared. No real phone performance, touch completion, hardware keyboard or screen-reader measurements have been added."
     },
     {
       "id": "TB-01",
       "lane": "bell",
       "perspective": "Research",
       "priority": "P0",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Bell research lead",
-      "title": "Reconcile the October 20 evidence delta and the B4 substitution",
-      "deliverable": "A versioned B1–B6 ledger, source-conflict note and explicit roster decision for Rogue Fable IV.",
+      "title": "Reconcile the October 22 records and explicit roster substitutions",
+      "deliverable": "A reconciled six-title adjusted roster for the October 22 package, with explicit native-title substitutions, actual endpoints and provenance limits.",
       "acceptance_criteria": [
-        "Record Detective’s recovered October 6 SOLVED report and reload restart separately from October 12–13 partial retries; do not describe the in-game replay control as verified.",
-        "Record Seedship v1.4.0 as one terminal colony run with 9 planets and score 2,873; record no actual second run, share action or banked session screenshots.",
-        "Preserve the original roster count of 3/6 gameplay titles across three families. If Rogue Fable IV is adopted, record the B4 replacement, v0.26 browser build, precise title URL/provenance gap, tactical relevance and unanswered party-dice allocation question; only then label the adjusted count 4/6 across four families.",
-        "Use A Dark Room’s raw trading-post/compass endpoint; explicitly flag the package README’s contradictory “no stranger” summary. Do not count duplicated records/images as new sessions.",
-        "Label Slice & Dice access findings and archived Steam trailer as October 20 market evidence, not gameplay; scope the no-browser finding to the checked creator listings and keep the free native demo distinct from the paid full game."
+        "Pin the October 22 package at 252cc55e8515da1438c3e74af2e7dcc58eb13118 and preserve actual October 6–20 agent session dates. Separate the package filing date, reported play, verified captures/transcripts, market sources and human evidence.",
+        "Record Detective: Again!’s solved case and later partial replay as one title; record Seedship’s two terminal colonies rather than retaining the earlier one-run intake summary. Do not turn repeated runs into additional competitors or human emotional evidence.",
+        "Name all three substitutions explicitly: Anchorhead for the Outer Wilds exploration question, Desktop Dungeons for the Into the Breach tactical-cost question, and Rogue Fable IV for the Slice & Dice combat question. Preserve the originals’ unplayed native questions and any market/trailer evidence separately.",
+        "Keep Anchorhead at two in-game days and score 9, Desktop Dungeons at a death plus partial second stage, and A Dark Room at partial progression/replay. These are bounded or partial observations, not completed full games.",
+        "Record Rogue Fable IV’s four reported runs across two sessions with its creator/build URL provenance gap. Page-shell captures establish entry rather than independently verifying reported canvas progression. It does not answer party-dice drafting/allocation.",
+        "Present the six adjusted titles and their working design families with tactical overlap disclosed. Do not silently retain the old 3/6 or intermediate 4/6 tally as current coverage, or claim six complete journeys, final competitive superiority, human validation or blanket genre coverage."
       ],
       "depends_on": [],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Research / evidence provenance"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "Research / evidence provenance",
+      "assigned_person_or_agent": "/root",
+      "completion_note": "October 22 intake reconciled in the Bell packet at 928a85f: six adjusted titles, two terminal Seedship colonies and all three native-title substitutions are explicit. Partial/provenance limits remain; TB-02 still owns remaining native and full-comparison questions.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-02",
@@ -1234,14 +1306,15 @@
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
       "completion_evidence": [],
-      "focus": "Research / comparison design"
+      "focus": "Research / comparison design",
+      "completion_note": "Current adjusted records inform the Mina-route experiment but do not close Outer Wilds spatial re-entry, Into the Breach squad intent/sacrifice, Slice & Dice drafting or the complete comparison gate. This preparation remains open."
     },
     {
       "id": "TB-03",
       "lane": "bell",
       "perspective": "Game design",
       "priority": "P0",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Bell design lead + coordinator",
       "title": "Settle the two-loop causal experiment before implementation",
       "deliverable": "A chosen concept, state/choice table, scope boundary and signed-off comparison protocol.",
@@ -1257,15 +1330,25 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Product / gameplay direction"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "Product / gameplay direction",
+      "assigned_person_or_agent": "/root",
+      "completion_note": "The user selected option A, Prepare Mina’s route, and prepare-sessions-first. The settled state/cost/provenance/interruption contract is recorded in the current milestone; B and C are not added scope.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-04",
       "lane": "bell",
       "perspective": "Engineering",
       "priority": "P0",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Bell systems owner",
       "title": "Make Bell Square’s Dawn→Noon event occur in the world",
       "deliverable": "One bounded event transition and a documented clue-provenance schema, after TB-03 is settled.",
@@ -1280,15 +1363,25 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Engineering / event state"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "Engineering / event state",
+      "assigned_person_or_agent": "/root/bell_runtime",
+      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-05",
       "lane": "bell",
       "perspective": "Game design",
       "priority": "P0",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Bell gameplay designer + systems owner",
       "title": "Make one learned intervention change Mina’s outcome",
       "deliverable": "One clue-gated route preparation action and two visible outcomes.",
@@ -1305,15 +1398,25 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Gameplay / knowledge and action economy"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "Gameplay / knowledge and action economy",
+      "assigned_person_or_agent": "/root/bell_runtime",
+      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-06",
       "lane": "bell",
       "perspective": "Narrative",
       "priority": "P0",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Bell narrative designer",
       "title": "Write the clue, intervention and aftermath as a checkable story",
       "deliverable": "A compact script sheet for two Square states, one action, two outcomes and one receipt.",
@@ -1329,15 +1432,25 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Narrative / character consequence"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "Narrative / character consequence",
+      "assigned_person_or_agent": "/root/bell_runtime",
+      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-07",
       "lane": "bell",
       "perspective": "UX & accessibility",
       "priority": "P1",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Bell UX writer + interaction designer",
       "title": "Put the usable clue and its cost beside the next decision",
       "deliverable": "A focused action panel and short evidence receipt within the existing journal.",
@@ -1353,15 +1466,25 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "UX / memory and uncertainty"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "UX / memory and uncertainty",
+      "assigned_person_or_agent": "/root/bell_runtime",
+      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-08",
       "lane": "bell",
       "perspective": "Art",
       "priority": "P1",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Bell art lead",
       "title": "Create a small scene kit that makes the route change visible",
       "deliverable": "Two Bell Square scene states and one changed-outcome inset, with annotated composition references.",
@@ -1377,15 +1500,27 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Art / visual storytelling"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/witnessed-blockage-before-outcome.png",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/borrowed-route-visible-outcome.png"
+      ],
+      "focus": "Art / visual storytelling",
+      "assigned_person_or_agent": "/root/bell_runtime",
+      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-09",
       "lane": "bell",
       "perspective": "UX & accessibility",
       "priority": "P0",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Bell accessibility reviewer + UI owner",
       "title": "Keep the full decision path reachable and understandable",
       "deliverable": "Keyboard, touch-layout, focus and reduced-motion acceptance evidence for both outcomes.",
@@ -1403,15 +1538,28 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "UX / accessibility and devices"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/mina-route-keyboard-complete.png",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/mina-route-text-200-percent-outcome.png"
+      ],
+      "focus": "UX / accessibility and devices",
+      "assigned_person_or_agent": "/root/bell_runtime",
+      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "remaining_manual_checks": "Physical phone/Safari, screen reader and human usability remain pending under the release gate; this card records the automated path and disclosed limits.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-10",
       "lane": "bell",
       "perspective": "Engineering",
       "priority": "P0",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Bell systems owner",
       "title": "Preserve restart, loop and mode boundaries",
       "deliverable": "A state ownership/reset table and a small implementation patch with one engine integrator.",
@@ -1429,15 +1577,25 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Engineering / state lifecycle"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "Engineering / state lifecycle",
+      "assigned_person_or_agent": "/root/bell_runtime",
+      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-11",
       "lane": "bell",
       "perspective": "QA",
       "priority": "P0",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Bell QA owner",
       "title": "Verify the cause-and-effect slice and the complete existing path",
       "deliverable": "A scenario matrix, exact build identifiers and visible-control traces/screenshots.",
@@ -1454,15 +1612,25 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "QA / causal and regression coverage"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "QA / causal and regression coverage",
+      "assigned_person_or_agent": "/root/bell_qa",
+      "completion_note": "Independent visible-control regression checks are being prepared and run against the selected slice. Final results pending.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-12",
       "lane": "bell",
       "perspective": "Research",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Human playtest owner + Bell design lead",
       "title": "Prepare a six-person formative comparison without teaching the solution",
       "deliverable": "A consent/observation template, counterbalanced build order and predeclared decision sheet.",
@@ -1478,8 +1646,18 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Research / human pilot protocol"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/protocol.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/session-template.json"
+      ],
+      "focus": "Research / human pilot protocol",
+      "assigned_person_or_agent": "/root",
+      "completion_note": "Protocol and evidence handoff preparation in progress. Human facilitator and reviewer remain unassigned.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-13",
@@ -1537,7 +1715,7 @@
       "lane": "bell",
       "perspective": "Production",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Bell coordinator",
       "title": "Keep the plan, dependencies and evidence reviewable",
       "deliverable": "A dashboard-ready task export and phase decision log with artifact links.",
@@ -1554,15 +1732,25 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Project / handoff and scope control"
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+      ],
+      "focus": "Project / handoff and scope control",
+      "assigned_person_or_agent": "/root",
+      "completion_note": "Protocol and evidence handoff preparation in progress. Human facilitator and reviewer remain unassigned.",
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-16",
       "lane": "bell",
       "perspective": "Production",
       "priority": "P0",
-      "status": "conditional",
+      "status": "done",
       "owner_role": "Release integrator",
       "title": "Stage one immutable candidate on master",
       "deliverable": "A versioned release-candidates/thirteenth-bell/<version>/ package on master, built from the owning game branch.",
@@ -1577,7 +1765,14 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": []
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/02c78ad9739622fb447850fbecb5f46e7dec8de8/release-candidates/thirteenth-bell/0.1.0/candidate.json"
+      ],
+      "assigned_agents": [
+        "bell_runtime",
+        "bell_qa",
+        "root"
+      ]
     },
     {
       "id": "TB-17",

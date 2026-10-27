@@ -4,47 +4,55 @@
     "lane": "memorable",
     "perspective": "Research",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Small Hours research lead",
-    "title": "Publish the incoming-record delta and provenance ledger",
-    "deliverable": "A lane intake note linked to the immutable source, with one row per M1–M6 assignment and an explicit TEAM-01 lane-intake disposition.",
+    "title": "Publish the October 22 intake and six-slot provenance ledger",
+    "deliverable": "A current M1–M6 ledger pinned to ca7fb8e, with original editions, explicit substitutes, actual endpoints and remaining social questions.",
     "acceptance_criteria": [
-      "Record that 875230b adds six documentation/evidence files and changes no gameplay or tests relative to 822366ad.",
-      "Classify M1 as lobby-only, M2 as menu-only/tooling-blocked with zero gameplay, and M3–M6 as source-only/unplayed in this reviewed package.",
-      "Record that the Make it Meme note and three PNGs are byte-identical to the older Vivid package; preserve October 13 session and October 15 reshoot dates.",
-      "Flag the M1 index/raw-record wording discrepancy and the unsupported-in-this-package Townscaper cross-branch reference for reconciliation.",
-      "Close only the Small Hours incoming-record intake when incorporated; keep competitor coverage and human validation open."
+      "Pin the October 22 rebuilt package to ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649; verify that game and test files remain unchanged from 822366ad. Keep filing dates separate from the underlying October 13–20 sessions and October 15 reshoots.",
+      "Classify Make it Meme as lobby-only; Fireboy & Watergirl as a Level 1 tooling fragment; and Twin Flames as a reported solo Level 1 unit with uncertain later progression. One operator and page-shell captures do not establish human cooperation or independently verify gameplay.",
+      "Record the hanabi.live game with two bots as 57 turns and 18 points, not a perfect 25-point game or a BGA human session. Record GeoGuessr main modes as unplayed and HorrorGuessr as six runs with zero days and pins, without a successful guess-to-feedback cycle.",
+      "Identify Townscaper as the official web prototype with six reported structures and a save URL, without independently verified reopening; count its shared M5/V5 session once. Keep Florence unplayed and novena as a reported two-cycle narrative substitute, not equivalent tactile domestic play.",
+      "Separate verified images/transcripts, report-based progression, source/critic evidence and human observations. State the lost questions for every substitute; close only the lane intake, leaving qualifying journeys, original-edition questions and human validation open."
     ],
     "depends_on": [],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Research / evidence"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md"
+    ],
+    "focus": "Research / evidence",
+    "assigned_person_or_agent": "/root/small_hours_packet + /root",
+    "completion_note": "The current six-slot ledger reconciles the October 22 package at ca7fb8e and supersedes the older intake-only zero-gameplay tally. Runtime/test identity is preserved; original-edition and human social questions remain open."
   },
   {
     "id": "SH-02",
     "lane": "memorable",
     "perspective": "Research",
     "priority": "P0",
-    "status": "proposed",
+    "status": "active",
     "owner_role": "Small Hours research lead + access coordinator",
-    "title": "Make the remaining M3–M6 coverage executable",
-    "deliverable": "A versioned access/edition ledger and future session briefs for Hanabi, GeoGuessr, Townscaper and Florence; source recovery for any claimed shared Townscaper session.",
+    "title": "Prepare the remaining original-edition and social comparisons",
+    "deliverable": "Access-conditional session briefs for the unresolved human social and original-edition questions, using the reconciled six-slot ledger as the starting point.",
     "acceptance_criteria": [
-      "For Hanabi, document legitimate accounts, separate views, same-IP conditions and a real partner; for GeoGuessr, identify the exact consumer mode, eligible host and agreed round boundary.",
-      "For Townscaper and Florence, record existing license/device availability or keep the rows blocked; do not treat a browser demo as the selected full desktop edition.",
-      "Retrieve and reconcile the claimed Townscaper record before reuse: exact edition, actor, date, creation/revision/finish/save boundary and original evidence; shared M5/V5 evidence counts as one title.",
-      "Write each future journey target from the matrix, including failure/recovery when encountered, ending or bounded unit, exit and actual repeat; distinguish planned from observed stages.",
-      "Any reserve promotion includes the lost question and recalculated six-title/four-family rules, at least two outside narrative/deduction, no more than two per family and at most one occasion comparator.",
-      "Do not purchase, create accounts or launch a competitor while preparing this plan; unavailable access remains an explicit gap."
+      "For a human Hanabi comparison, specify exact platform, legitimate access, separate views and real partners; the completed hanabi.live bot session does not answer human convention/coordination questions. For GeoGuessr, specify the intended consumer mode, host/guest conditions and bounded location-feedback unit rather than treating HorrorGuessr as that session.",
+      "Keep full-edition Townscaper and Florence access/device needs explicit. The known official web-prototype record and novena substitute provide limited contrasts; they do not establish the original native journeys.",
+      "Retain the recovered Townscaper save URL and shared M5/V5 provenance without claiming reopening. Any future re-entry check is a separately dated observation, not another distinct title.",
+      "Write remaining journey targets with entry, meaningful decision, mistake/recovery when encountered, bounded ending or finish, exit and actual repeat. Mark each stage planned or observed, and name the question each substitute leaves unanswered.",
+      "Reconcile six distinct titles and family rules before final comparative claims, including at least two outside narrative/deduction, no more than two per family and at most one occasion comparator; record the taxonomy and endpoint limits instead of converting six slots into six completed journeys.",
+      "This preparation does not purchase licenses, create accounts, recruit participants or launch new competitor sessions. Unavailable access and missing human partners remain explicit gaps."
     ],
     "depends_on": [
       "SH-01"
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Research / competitive coverage"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md"
+    ],
+    "focus": "Research / competitive coverage",
+    "assigned_person_or_agent": "/root/small_hours_packet + /root",
+    "completion_note": "Records/provenance now reconciled; original social/edition access and qualifying journeys remain pending. Substitutions do not silently close BGA/private GeoGuessr/full Townscaper/Florence questions."
   },
   {
     "id": "SH-03",
@@ -77,25 +85,32 @@
     "lane": "memorable",
     "perspective": "Research",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Research lead + game designer",
     "title": "Settle the unchanged-build six-pair protocol",
-    "deliverable": "A short neutral facilitator script, observation sheet and predeclared decision rules for the current build.",
+    "deliverable": "An unchanged-build first-six-pairs protocol, neutral facilitator script, registration template and observation forms pinned to the current frozen baseline.",
     "acceptance_criteria": [
-      "Pin 875230b as the reviewed source and state that its game files match 822366ad; log the actual tested build if the study later uses another export.",
-      "Observe entry, private choice/prediction, handoff, reveal, actual offscreen activity, optional writing, save/leave and voluntary repeat without explaining the intended payoff.",
-      "Record both people’s contributions, assistance, stopping, device/browser, time to reveal and voluntary comments; do not solicit or collect keepsakes by default.",
-      "Predeclare the formative gates: 5/6 pairs reach reveal unaided, 4/6 show both contributing and 3/6 voluntarily save or replay; these are diagnostic thresholds, not population or retention estimates.",
-      "Give the unchanged build first. Record prediction and writing friction qualitatively; do not mix an unimplemented no-prediction variant into the baseline.",
-      "A person may stop without explanation; seated/imaginary participation and blank writing stay valid."
+      "Pin baseline source ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649, whose runtime/test files match 822366ad; identify the eight-file export with inventory SHA-256 fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3. Record the actual artifact identity for every later session.",
+      "Prepare a first-six-pairs registration rule that retains failed and abandoned attempts; leave IDs, recruitment, timestamps and results blank until a real facilitator arranges them. Keep consent/contact mappings private.",
+      "Provide neutral prompts and observation fields for entry, private choice/prediction, handoff, reveal, actual offscreen activity, optional writing, save/leave and voluntary repeat, without explaining the intended payoff.",
+      "Record each person’s contribution, help, stopping, device/browser, time to reveal and voluntary comments. Do not collect or solicit keepsakes by default; allow stopping without explanation, seated/imaginary participation and blank writing.",
+      "Predeclare the diagnostic thresholds: at least 5/6 pairs reach reveal unaided, 4/6 both contribute and 3/6 voluntarily save or replay. These are formative criteria, not population conversion or retention estimates.",
+      "Use the unchanged build for all baseline attempts. Explicitly supersede the old facilitator no-prediction comparison; prediction/writing friction is recorded qualitatively before any variant decision."
     ],
     "depends_on": [
       "SH-01"
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Research / experiment design"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/protocol.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/session.template.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/study-registration.template.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/observation-template.md"
+    ],
+    "focus": "Research / experiment design",
+    "assigned_person_or_agent": "/root/small_hours_packet + /root",
+    "completion_note": "The unchanged-build protocol and blank forms are ready for ca7fb8e’s frozen artifact. The prior no-prediction facilitator comparison is superseded. No participants, registration IDs or human results are fabricated."
   },
   {
     "id": "SH-05",
@@ -287,22 +302,31 @@
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "QA / verification"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/package-baseline.py",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/baseline-inventory.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/packet-verification.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
+    ],
+    "focus": "QA / verification",
+    "assigned_person_or_agent": "/root/small_hours_packet + /root",
+    "completion_note": "The unchanged baseline retains the separately dated October 20 result of 33 synthetic assertions. On October 27, two targeted launch groups passed (root desktop and nested 390px), checking keyboard entry, private-choice controls, reload reset, no horizontal overflow, no JavaScript errors and no HTTP errors. These are two launch groups, not a rerun of the 33-assertion behavioral suite; variant verification and human/device checks remain pending."
   },
   {
     "id": "SH-13",
     "lane": "memorable",
     "perspective": "Distribution",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Distribution owner + product writer",
     "title": "Prepare a truthful browser invitation and hosting checklist",
     "deliverable": "A reviewable invitation, short platform-fit brief and package checklist for a direct link/itch.io browser context.",
     "acceptance_criteria": [
       "Explain the actual occasion: two willing people, one screen, private choices, a shared activity and an optional keepsake; describe five minutes as a design target until observed timings support it.",
       "Keep a portal such as CrazyGames as a separate acquisition hypothesis with requirements still to verify; do not claim acceptance or audience demand.",
-      "Specify relative static assets, full play/ package, embed sizing, keyboard/touch access and download behavior; link actual host checks when later performed.",
+      "Specify the pinned eight-file static export, relative assets, embed sizing, input and download behavior. Link actual local root/nested launch checks with their scope; keep public-host and physical-device behavior unverified until observed.",
       "State that the active session clears on reload/leave and a downloaded file remains with the player; curtains are visual courtesy rather than device security.",
       "Do not claim market uniqueness, memory improvement, relationship benefit, human-tested accessibility or retention; no upload, publication or campaign is part of this card."
     ],
@@ -311,8 +335,14 @@
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Distribution / positioning"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
+    ],
+    "focus": "Distribution / positioning",
+    "assigned_person_or_agent": "/root/small_hours_packet + /root",
+    "completion_note": "Truthful invitation and pinned export/hosting checklist prepared. Two local launch groups are separately evidenced; no public-host deployment, participant study or campaign is claimed."
   },
   {
     "id": "SH-14",
@@ -343,7 +373,7 @@
     "lane": "memorable",
     "perspective": "Game design",
     "priority": "P1",
-    "status": "proposed",
+    "status": "active",
     "owner_role": "Game designer + research lead + art reviewer",
     "title": "Write the three-question decision brief with unresolved evidence visible",
     "deliverable": "A separate Small Hours brief comparing complete player stories and deciding advance, revise, further study or stop.",
@@ -363,15 +393,20 @@
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Product / synthesis"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/handoff.md"
+    ],
+    "focus": "Product / synthesis",
+    "assigned_person_or_agent": "/root/small_hours_packet + /root",
+    "completion_note": "Interim three-question hypotheses and bounded alternative responses documented; final decision waits for human and qualifying competitor evidence."
   },
   {
     "id": "SH-16",
     "lane": "memorable",
     "perspective": "Production",
     "priority": "P0",
-    "status": "proposed",
+    "status": "active",
     "owner_role": "Project coordinator + lane lead",
     "title": "Assign accountable owners and protect the pilot-first sequence",
     "deliverable": "A role-to-person ownership map, dependency review and acceptance/evidence handoff convention.",
@@ -387,8 +422,12 @@
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Team / ownership"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/handoff.md"
+    ],
+    "focus": "Team / ownership",
+    "assigned_person_or_agent": "/root/small_hours_packet + /root",
+    "completion_note": "Agent responsibilities recorded; real facilitator, physical-device reviewer and independent human reviewer unassigned. Assign explicitly before sessions."
   },
   {
     "id": "SH-17",

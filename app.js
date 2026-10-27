@@ -8,13 +8,13 @@ const LANE_NAMES = { memorable: 'Small Hours', vivid: 'Vivid', bell: 'The Thirte
 const STATUS_NAMES = { active: 'In progress', done: 'Done', not_selected: 'Not selected', proposed: 'Proposed', conditional: 'Conditional', waiting_for_records: 'Awaiting records', blocked_human: 'Needs human validation' };
 const TODO_PATHS = { memorable: 'docs/games/small-hours/TODO.md', vivid: 'docs/games/keepers-frame/TODO.md', bell: 'docs/games/thirteenth-bell/TODO.md' };
 const PROJECTS = [
-  { lane: 'memorable', number: '01', label: 'Memorable Moments', tagline: 'Make a small shared memory.', decision: 'Does the existing shared action feel authored by both people? Observe real pairs before selecting a change.', state: 'Provisional · intake first', plan: 'memorable-next.md' },
+  { lane: 'memorable', number: '01', label: 'Memorable Moments', tagline: 'Make a small shared memory.', decision: 'Does the existing shared action feel authored by both people? Observe real pairs before selecting a change.', state: 'Pilot preparation · human validation pending', plan: 'memorable-next.md' },
   { lane: 'vivid', number: '02', label: 'Vivid', tagline: 'Two small worlds. Different ways to care.', decision: 'Do Iona’s remembered placement and Mara’s object-led reveal make their actions meaningful to real players?', state: 'Candidate 0.1.2 · human validation pending', plan: 'vivid-next.md' },
-  { lane: 'bell', number: '03', label: 'The Thirteenth Bell', tagline: 'Learn the town. Change an outcome.', decision: 'Can witnessing a town event help the player plan an intervention that changes an outcome?', state: 'Provisional · intake first', plan: 'bell-next.md' }
+  { lane: 'bell', number: '03', label: 'The Thirteenth Bell', tagline: 'Learn the town. Change an outcome.', decision: 'Can witnessing a town event help the player plan an intervention that changes an outcome?', state: 'Pilot preparation · human validation pending', plan: 'bell-next.md' }
 ];
 const GATE_COPY = {
-  'plan-settlement': { title: 'Track the settled scope', note: 'Vivid is implemented; the other lane plans remain provisional.' },
-  'incoming-records': { title: 'Reconcile new records', note: 'Small Hours and Bell remain provisional.' },
+  'plan-settlement': { title: 'Track the settled scope', note: 'Three playtest packets; Bell’s Mina-route scene is the selected gameplay change.' },
+  'incoming-records': { title: 'Reconcile new records', note: 'Keep new records, substitutions and unfinished journeys traceable.' },
   'competitor-coverage': { title: 'Close coverage gaps', note: 'Six titles and four broad families per demo.' },
   'human-validation': { title: 'Observe real people', note: 'Use diagnostic gates on actual participants.' }
 };
@@ -82,10 +82,24 @@ function renderProjects() {
     body.append(node('h3', '', LANE_NAMES[project.lane]), node('p', 'project-tagline', project.tagline));
     const decision = node('div', 'project-decision');
     decision.append(node('p', 'eyebrow', 'Next decision'), node('p', '', project.decision));
-    body.append(decision, node('p', 'project-state', reviewed.implementation_started ? `Candidate ${reviewed.candidate_version} · human validation pending` : snapshot.incoming_evidence_reviewed ? 'Proposed · human validation open' : project.state));
+    body.append(decision, node('p', 'project-state', reviewed.milestone_status_label || project.state));
+    if (reviewed.milestone_summary) body.append(node('p', 'project-source', reviewed.milestone_summary));
+    if (reviewed.qa_scope) body.append(node('p', 'project-source', reviewed.qa_scope));
+    if (reviewed.pilot_packet) {
+      const packet = node('a', 'reviewed-plan-link', 'Playtest packet & launch instructions');
+      packet.href = reviewed.pilot_packet;
+      body.append(packet);
+    }
+    if (reviewed.latest_research_readme) {
+      const research = node('a', 'reviewed-plan-link', 'Latest competitor records · limits included');
+      research.href = reviewed.latest_research_readme;
+      body.append(research);
+    }
+    if (reviewed.human_staffing) body.append(node('p', 'project-source', reviewed.human_staffing));
     if (reviewed.stories?.length) {
       body.append(node('p', 'project-source', reviewed.stories.map(story => story.title).join(' · ')));
-      body.append(node('p', 'project-source', reviewed.qa_scope));
+    }
+    if (reviewed.implementation_readme && reviewed.current_decision_document) {
       const implementation = node('a', 'reviewed-plan-link', 'Current implementation & run instructions');
       implementation.href = reviewed.implementation_readme;
       body.append(implementation);
@@ -304,16 +318,15 @@ function renderPlanningMetadata() {
     option.value = status;
     return option;
   }));
-  if (snapshot.implementation_started === true) {
-    el('snapshot-title').textContent = 'Development edition';
-    const vivid = manifest.sources.find(source => source.lane === 'vivid');
-    el('snapshot-note').textContent = `Vivid: two playable stories, candidate ${vivid.candidate_version}. Small Hours and Bell retain their earlier scope and QA. No official release.`;
-    el('incoming-label').textContent = 'Vivid implementation · 21 October';
-    el('incoming-copy').textContent = 'Iona and Mara now have different playable story structures. Candidate 0.1.2 is staged on master with passing automated checks. Six browser competitors have actual-play records; three intended endpoints remain open. Real human validation and separate release-policy review remain open.';
+  if (manifest.milestone) {
+    el('snapshot-title').textContent = 'Playtest preparation';
+    el('snapshot-note').textContent = manifest.milestone.summary;
+    el('incoming-label').textContent = 'Settled milestone · 27 October';
+    el('incoming-copy').textContent = 'Each game has its own packet and evidence trail. Small Hours keeps its baseline; Vivid keeps candidate 0.1.2; Bell adds the selected Mina-route scene. See each card for verification and staging status.';
     el('incoming-status').textContent = 'Human validation pending';
   } else if (snapshot.incoming_evidence_reviewed === true) {
-    el('incoming-label').textContent = 'Planning update · 21 October';
-    el('incoming-copy').textContent = 'Research is incorporated into proposed work. Human validation remains open; per-game source records retain their own QA dates.';
+    el('incoming-label').textContent = 'Evidence reviewed';
+    el('incoming-copy').textContent = 'Human validation remains open; per-game source records retain their own QA dates.';
     el('incoming-status').textContent = 'Human validation open';
   }
 }
@@ -334,7 +347,10 @@ function validateData(tasks, sources) {
   PROJECTS.forEach((project) => {
     const source = sources.sources.find((item) => item.lane === project.lane);
     if (!source || !/^[0-9a-f]{40}$/.test(source.reviewed_head)) throw new Error('Invalid reviewed source');
-    if (source.implementation_started && (!Array.isArray(source.stories) || !source.stories.length || ![source.implementation_readme, source.current_decision_document].every((url) => typeof url === 'string' && url.startsWith('https://github.com/PaperStrange/IndiaGames/')))) throw new Error('Invalid implemented story metadata');
+    ['pilot_packet', 'latest_research_readme', 'candidate_manifest'].forEach(field => {
+      if (source[field] !== undefined && (typeof source[field] !== 'string' || !source[field].startsWith('https://github.com/PaperStrange/IndiaGames/'))) throw new Error('Invalid project evidence link');
+    });
+    if (source.implementation_started && (![source.implementation_readme, source.current_decision_document].every((url) => typeof url === 'string' && url.startsWith('https://github.com/PaperStrange/IndiaGames/')))) throw new Error('Invalid implementation metadata');
   });
   if (tasks.gates && !tasks.gates.every((gate) => Object.hasOwn(GATE_COPY, gate.id) && typeof gate.requirement === 'string')) throw new Error('Invalid gate content');
   ['core_gameplay_evidence_assignments', 'required_assignments', 'snapshot_unique_sha256_count', 'human_participant_rows'].forEach((key) => {

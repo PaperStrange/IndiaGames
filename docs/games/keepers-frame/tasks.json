@@ -46,11 +46,12 @@
     "completion_evidence": [
       "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
       "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/coverage.json",
-      "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md"
+      "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/research-and-product-questions.md"
     ],
     "focus": "research_competitors",
-    "completion_note": "Six core-play titles and five families are documented; three declared units completed and three remain partial. The synthesis answers all three product questions as hypotheses. Endpoint follow-ups remain open.",
-    "assigned_person_or_agent": "Codex research agents and coordinator"
+    "completion_note": "October 22 uploads reconciled on October 27 with the distinct October 21 six-title/five-family roster. Galatea supplies one authored conversation ending; photography and rhythm substitutes retain partial/tooling limits. Six Cats, WBWWB and audible/calibrated ADOFAI endpoints remain open; no new competitor sessions or human results were added.",
+    "assigned_person_or_agent": "/root/vivid_packet + /root"
   },
   {
     "id": "KF-03",
@@ -151,7 +152,7 @@
     "deliverable": "Shared inspect, choose, place and adjust controls with accessible text, focus behavior and optional 3D motion.",
     "acceptance_criteria": [
       "Every drag has select-then-tap and keyboard equivalents; sketch adjustment supports a slider and step controls.",
-      "Treat camera movement as preview only, clamp tilt to \u00b112 degrees, and let explicit view controls select discoverable evidence.",
+      "Treat camera movement as preview only, clamp tilt to ±12 degrees, and let explicit view controls select discoverable evidence.",
       "Honor OS and manual reduced motion. Keep a complete flat mode for WebGL, asset and context failures without resetting progress.",
       "Support cancellation and repeated input without losing an object. Keep real screen-reader and physical-phone checks on KF-23."
     ],
@@ -206,12 +207,12 @@
     "priority": "P0",
     "status": "done",
     "owner_role": "Rules/persistence engineer",
-    "title": "Complete Iona\u2019s playable remembered-action story",
+    "title": "Complete Iona’s playable remembered-action story",
     "deliverable": "A full Iona story with the original rescue, action-led recollection, two legitimate choices and persistent return objects.",
     "acceptance_criteria": [
       "Preserve the approved rescue and complete the recollection before the new choice.",
       "Offer only the correct placement for the saved choice/profile, and display it on later visits.",
-      "Cover private/archive \u00d7 peek/no peek, neutral control, repeats, checkpoint reload and truthful legacy migration.",
+      "Cover private/archive × peek/no peek, neutral control, repeats, checkpoint reload and truthful legacy migration.",
       "Keep optional legacy access to the new recollection without forcing a new emergency or overwriting the previous ending."
     ],
     "depends_on": [
@@ -291,10 +292,12 @@
       "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
       "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/browser-observations.json",
       "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/edge-2026-10-21/report.json",
-      "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json"
+      "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
     ],
     "focus": "qa",
-    "completion_note": "51 unit tests and 16 full browser scenarios passed on the exact 0.1.2 build; authored labels checked. Prior 10 input/lifecycle and 9 renderer checks remain supporting evidence for unchanged logic/art. No human or physical-device pass.",
+    "completion_note": "51 unit tests and 16 full browser scenarios passed on the exact 0.1.2 build; authored labels checked. Prior 10 input/lifecycle and 9 renderer checks remain supporting evidence for unchanged logic/art. No human or physical-device pass. On 27 October, coordinator checks passed six direct/nested entry routes on the exact artifact with no JavaScript errors or HTTP 4xx. This is targeted launch verification, not a new full-suite run or human test.",
     "assigned_person_or_agent": "Codex coordinating and QA agents"
   },
   {
@@ -323,11 +326,15 @@
       "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md",
       "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/protocol.md",
       "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/recruitment.md",
-      "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md"
+      "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-and-session-setup.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/session-iona-blank.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/session-mara-blank.json"
     ],
     "focus": "research_protocol",
-    "completion_note": "Study preparation is complete; actual recruitment and every participant result remain unfilled.",
-    "assigned_person_or_agent": "Codex coordinating agent"
+    "completion_note": "Operational 0.1.2 session packet prepared: pinned artifact export, separate Iona/Mara routes and clean-context procedures, optional neutral setup, canonical facilitator/observation protocol and schema-compatible blank forms. Recruitment, registration IDs/timestamps and all human results remain pending.",
+    "assigned_person_or_agent": "/root/vivid_packet + /root"
   },
   {
     "id": "KF-12",
@@ -354,7 +361,7 @@
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "completion_evidence": [],
     "focus": "human_comparison",
-    "completion_note": "Zero real participant sessions recorded; willing human participants are not yet arranged."
+    "completion_note": "Sessions are operationally prepared against exact candidate 0.1.2. Zero actual participants are enrolled/observed; six fresh Iona and six different fresh Mara participants plus human facilitator/reviewer remain required."
   },
   {
     "id": "KF-13",
@@ -362,7 +369,7 @@
     "priority": "P1",
     "status": "blocked_human",
     "owner_role": "Research lead",
-    "title": "Optionally collect predeclared 48\u201372-hour prompted recall",
+    "title": "Optionally collect predeclared 48–72-hour prompted recall",
     "deliverable": "A consented later-session record with elapsed time, invitation history and attrition.",
     "acceptance_criteria": [
       "Select this follow-up before testing, with consent and a human facilitator; this implementation sends no outreach.",
@@ -433,11 +440,16 @@
     "completion_evidence": [
       "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
       "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/build/third-party-notices.txt",
-      "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/notes.md"
+      "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/notes.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/prepare-vivid-pilot.py",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/packet-verification.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-and-session-setup.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
     ],
     "focus": "distribution",
-    "completion_note": "Frozen 0.1.2 contains 15 files/1,401,263 bytes, dependency notices and pack-owned scene labels. Exact served files match master packet; no human approval.",
-    "assigned_person_or_agent": "Codex coordinating agent"
+    "completion_note": "Existing immutable 0.1.2 candidate retained without rebuild/version change. October 27 helper verified/exported all 15 files (1,401,263 bytes), matching the original inventory hash. New session instructions preserve story/profile storage across Iona return. Integrity checks do not redate prior gameplay tests or establish public hosting. On 27 October, coordinator checks passed six direct/nested entry routes on the exact artifact with no JavaScript errors or HTTP 4xx. This is targeted launch verification, not a new full-suite run or human test.",
+    "assigned_person_or_agent": "/root/vivid_packet + /root"
   },
   {
     "id": "KF-16",
@@ -446,10 +458,10 @@
     "status": "conditional",
     "owner_role": "Product/design lead with research and QA",
     "title": "Decide advance, revise or stop from real observations",
-    "deliverable": "A decision linking each story\u2019s human results, contrary cases, competitor journeys and next bounded change.",
+    "deliverable": "A decision linking each story’s human results, contrary cases, competitor journeys and next bounded change.",
     "acceptance_criteria": [
       "Evaluate each story independently against its predeclared criterion; one passing story cannot compensate for another failing shipping story.",
-      "If Iona\u2019s picture is remembered but choice-to-action causality is not, revise or stop that hypothesis. Do not claim memory wins without the neutral comparison.",
+      "If Iona’s picture is remembered but choice-to-action causality is not, revise or stop that hypothesis. Do not claim memory wins without the neutral comparison.",
       "For Mara, evaluate unaided completion and action-to-visible-consequence explanation without grading emotional interpretation.",
       "Keep competitor coverage, automated quality, physical-device results and human evidence separate. New stories or services need their own scoped decision."
     ],
@@ -518,7 +530,7 @@
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": true,
     "completion_evidence": [],
-    "completion_note": "No participant reports or human approval are available."
+    "completion_note": "Both exact-build human story reports, physical-input evidence and independent approval remain pending. Prepared forms and verified artifact export are not human evidence."
   },
   {
     "id": "KF-19",
@@ -580,7 +592,7 @@
     "priority": "P0",
     "status": "done",
     "owner_role": "Narrative/systems designer",
-    "title": "Deliver Mara\u2019s object-led mystery",
+    "title": "Deliver Mara’s object-led mystery",
     "deliverable": "The Unfinished Postcard: nonlinear inspection, sketch alignment and a workshop reveal with ungraded interpretation.",
     "acceptance_criteria": [
       "Allow timetable, paint-marked postcard and drawings in any inspection order.",
@@ -610,7 +622,7 @@
     "title": "Review the multi-story release policy separately",
     "deliverable": "A separately reviewed release-gate change binding one report per shipping story to the same catalog and build hash.",
     "acceptance_criteria": [
-      "Require exactly the catalog\u2019s shipped stories, fixed reviewed threshold profiles, distinct cohorts and independent approval across all participants and observers.",
+      "Require exactly the catalog’s shipped stories, fixed reviewed threshold profiles, distinct cohorts and independent approval across all participants and observers.",
       "Reject missing/extra story reports, identity/hash mismatches and legacy-schema bypass for new multi-story candidates; preserve older release readability and immutability.",
       "Keep tooling review separate from game promotion and retain the empty official registry until actual human evidence passes."
     ],
@@ -639,7 +651,7 @@
     "acceptance_criteria": [
       "Measure the exact master artifact on physical phone hardware, recording device, browser, settings, cold load and observed frame pacing; target 30 FPS.",
       "Manually complete both stories with touch and assess keyboard/focus, text readability and a real screen reader; record assistance and every blocker.",
-      "Keep \u22648 MiB cold-load, \u2264100,000 active triangles and DPR \u22641.5 checks separate from actual phone performance. Headless emulation is not a physical pass."
+      "Keep ≤8 MiB cold-load, ≤100,000 active triangles and DPR ≤1.5 checks separate from actual phone performance. Headless emulation is not a physical pass."
     ],
     "depends_on": [
       "KF-10",
@@ -648,8 +660,9 @@
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": true,
     "completion_evidence": [
-      "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md"
+      "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/journey-and-device-form.md"
     ],
-    "completion_note": "No physical-phone or human screen-reader measurements are available."
+    "completion_note": "Blank physical-device/accessibility handoff prepared. No real phone performance, touch completion, hardware keyboard or screen-reader measurements have been added."
   }
 ]

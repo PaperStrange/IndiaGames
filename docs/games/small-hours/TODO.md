@@ -1,6 +1,16 @@
-# Small Hours — proposed work plan
+# Small Hours — unchanged-baseline pilot
 
-**Lane:** Memorable Moments (`memorable`). **Prepared:** 21 October 2026. **Status:** proposed, not active. This document organizes future work; it does not start competitor play, participant recruitment, purchases, code changes or feature implementation. The next product experiment remains an **unchanged-build real-pair pilot**, followed by at most one observation-driven change or a no-change/stop decision.
+## Current milestone · 27 October 2026
+
+The settled milestone prepares the unchanged build and six-pair observation packet. Gameplay changes remain conditional on real-pair observations; SH-17 retains its existing post-pilot dependencies. No participant results or master candidate are created by preparation.
+
+[Current playtest packet](https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
+
+The current packet reconciles the October 22 research uploads with edition, substitution and partial-journey limits. Underlying play dates remain explicit. The detailed baseline below is retained for design rationale and acceptance criteria; its historical coverage/status statements do not replace the current packet, task JSON or source manifest. No human facilitator or independent reviewer is assigned.
+
+## Preserved design rationale and acceptance criteria
+
+**Historical planning baseline — 21 October 2026.** At that time the lane was proposed, not active. This document organizes future work; it does not start competitor play, participant recruitment, purchases, code changes or feature implementation. The next product experiment remains an **unchanged-build real-pair pilot**, followed by at most one observation-driven change or a no-change/stop decision.
 
 ## Scope and immutable sources
 

@@ -44,3 +44,11 @@ No additional game release is needed to activate the dashboard. Do not fill the 
 ## 21 October implementation recheck
 
 After staging Vivid 0.1.1, a fresh `GET /repos/PaperStrange/IndiaGames/pages` still returned HTTP 403, “Resource not accessible by integration.” The dashboard source is maintained on main, but no live Pages deployment is claimed. A repository administrator must enable/configure Pages and verify the resulting URL using the steps above. Candidate source links are GitHub repository views, not public playable URLs.
+
+## Fresh publication check · 27 October 2026
+
+The coordinator queried Pages again: `GET /repos/PaperStrange/IndiaGames/pages` returned **403, Resource not accessible by integration**. The actual expected URL, `https://paperstrange.github.io/IndiaGames/`, returned **404**. No live deployment is verified. Repository source updates and local browser checks do not change that result.
+
+A repository administrator still needs to enable **Deploy from a branch → main → / (root)** in [Pages settings](https://github.com/PaperStrange/IndiaGames/settings/pages), then verify the deployed revision and actual URL. Do not alter repository visibility as a workaround. Main/master protection settings are not newly verified by this Pages request.
+
+Vivid policy [PR #1](https://github.com/PaperStrange/IndiaGames/pull/1) remains open at `4a4f3996fefc198370814c71acb45af3470bd47f`, with no human reviews at this check. Its earlier CI result is separate from current human approval and Pages publication.

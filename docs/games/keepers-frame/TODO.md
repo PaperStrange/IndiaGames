@@ -1,5 +1,15 @@
 # Vivid — implemented stories and remaining release work
 
+## Current milestone · 27 October 2026
+
+Prepare separate Iona and Mara sessions against the exact existing 0.1.2 candidate. Its runtime and historical QA are unchanged. The operational packet supplements the canonical October 21 protocol; physical-device observations, both human cohorts and separate policy review remain pending.
+
+[Current playtest packet](https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
+
+The current packet reconciles the October 22 research uploads with edition, substitution and partial-journey limits. Underlying play dates remain explicit. The detailed baseline below is retained for design rationale and acceptance criteria; its historical coverage/status statements do not replace the current packet, task JSON or source manifest. No human facilitator or independent reviewer is assigned.
+
+## Preserved design rationale and acceptance criteria
+
 Updated **21 October 2026**. Vivid now contains two playable stories on `vivid-2.5d-photo-game`: **A Place for the Promise** and **The Unfinished Postcard**. The technical release ID remains `keepers-frame`; this is one of the same three game projects. **Candidate 0.1.2 is staged on master. There is no official release and there are zero human participant results.**
 
 The user approved a multi-day iteration with a tactile 3D frame, painted art, narrative methods informed by developer accounts of *What Remains of Edith Finch*, replaceable protagonists and a second story with a different structure. This supersedes the earlier return-only restrictions. The [accepted decision](https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md), [implementation](https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/README.md) and [authoring contract](https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/README.md) are pinned. The [20 October review](https://github.com/PaperStrange/IndiaGames/blob/e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee/docs/gamejam/iteration-2026-10-20/vivid-next.md) remains historical evidence.
