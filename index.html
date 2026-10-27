@@ -42,6 +42,28 @@
           <div id="mapPlaces"></div>
           <div class="legend">Red: new activity · Green: visited this loop</div>
         </div>
+        <section class="square-status contrast-only" id="squareStatus" hidden aria-labelledby="squareStatusTitle" aria-live="polite">
+          <div><b id="squareStatusTitle">Bell Square · before Noon</b><p id="squareStatusText"></p></div>
+          <svg class="square-map" viewBox="0 0 460 142" aria-hidden="true" focusable="false">
+            <path class="square-ground" d="M20 52H440V112H20Z"/>
+            <path class="square-main-route" d="M116 79H339"/>
+            <path id="squareSideRoute" class="square-side-route" d="M115 94V123H348V99"/>
+            <g class="square-stall"><path d="M28 35H142L133 53H37Z"/><path d="M40 54V104M130 54V104M37 104H134"/></g>
+            <g class="square-well"><path d="M320 38L375 17L430 38ZM331 40V103M419 40V103"/><ellipse cx="375" cy="87" rx="28" ry="10"/><path d="M347 87V103Q375 121 403 103V87"/></g>
+            <g id="squareCrowd" class="square-crowd">
+              <circle cx="204" cy="64" r="8"/><path d="M194 92V77Q204 69 214 77V92Z"/>
+              <circle cx="230" cy="58" r="8"/><path d="M220 92V71Q230 63 240 71V92Z"/>
+              <circle cx="256" cy="64" r="8"/><path d="M246 92V77Q256 69 266 77V92Z"/>
+              <path class="square-masks" d="M199 62L204 65L209 62M225 56L230 59L235 56M251 62L256 65L261 62"/>
+            </g>
+            <g id="squareMinaMarker" class="square-mina" transform="translate(72 69)">
+              <circle cx="0" cy="0" r="8"/><path d="M-9 28L-6 11Q0 6 6 11L9 28ZM-5 29V36M5 29V36"/>
+              <g class="square-crate"><path d="M11 17H39V36H11ZM11 17L39 36M39 17L11 36"/></g>
+              <g class="square-redflower"><path d="M25 17V8"/><circle cx="25" cy="5" r="4"/><circle cx="21" cy="8" r="3"/><circle cx="29" cy="8" r="3"/></g>
+            </g>
+          </svg>
+          <div class="square-route" aria-label="Mina's crossing"><span id="squareStalls">Auction stalls</span><i aria-hidden="true">→</i><span id="squareWell">Sheltered market well</span></div>
+        </section>
         <section class="encounter-panel" id="eventModal" aria-labelledby="eventTitle">
           <div class="event-art"><div id="eventIcon"></div><div class="weather" id="eventWeather"></div></div>
           <div class="event-body"><div class="encounter-top"><div><div class="event-label" id="eventLabel"></div><h2 id="eventTitle"></h2></div><button class="close-encounter" id="closeEncounter" type="button">Choose elsewhere</button></div><p id="eventText"></p><div class="borrow-minute" id="borrowPanel" hidden><p id="borrowCopy"></p><button class="skip-scene" id="borrowMinute" type="button" aria-pressed="false">Borrow a minute · 1 Momentum</button></div><button class="skip-scene" id="skipScene" type="button" hidden>Skip mastered scene · Spend 1 Momentum</button><div class="choices" id="choices"></div><div id="result" hidden><p class="result-note" id="resultText"></p><button class="primary" id="continueBtn" type="button">Continue the day</button></div></div>
@@ -75,6 +97,7 @@
         </section>
         <section class="panel contrast-only" id="contrastJournalPanel" hidden>
           <h3>Two-view journal</h3>
+          <p id="squareClue" class="square-clue"></p>
           <div class="journal-tabs" role="tablist" aria-label="Journal view"><button class="journal-tab" id="placeTab" type="button" role="tab" aria-selected="true" aria-controls="placeJournal">Place</button><button class="journal-tab" id="theoryTab" type="button" role="tab" aria-selected="false" aria-controls="theoryJournal">Theory</button></div>
           <div id="placeJournal" class="place-journal" role="tabpanel" aria-labelledby="placeTab"></div>
           <div id="theoryJournal" class="theory-board" role="tabpanel" aria-labelledby="theoryTab" hidden>
@@ -109,6 +132,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="js/echo-time.js"></script>
+  <script src="js/square-event.js"></script>
   <script src="js/data.js"></script>
     <script src="js/engine.js"></script>
 </body>

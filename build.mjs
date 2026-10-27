@@ -14,6 +14,7 @@ let html = read('index.html');
 const css = read('css/main.css');
 const dataJs = read('js/data.js');
 const echoJs = read('js/echo-time.js');
+const squareJs = read('js/square-event.js');
 const engineJs = read('js/engine.js');
 const mapB64 = readFileSync(join(root, 'assets/images/town-map.webp')).toString('base64');
 
@@ -28,6 +29,7 @@ function replaceOrThrow(haystack, needle, replacer, label) {
 // String.replace interprets `$` patterns (e.g. `$$` -> `$`) in a string
 // replacement, which would silently corrupt the game's `$$` helper.
 html = replaceOrThrow(html, '<script src="js/echo-time.js"></script>', () => `<script>\n${echoJs}\n</script>`, 'echo rules');
+html = replaceOrThrow(html, '<script src="js/square-event.js"></script>', () => `<script>\n${squareJs}\n</script>`, 'square event rules');
 html = replaceOrThrow(
   html,
   '<link rel="stylesheet" href="css/main.css">',

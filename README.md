@@ -69,3 +69,11 @@ python3 tests/smoke_cdp.py      # headless-Chromium smoke test: boot, start clic
 
 - Code (`index.html`, `css/`, `js/engine.js`, `tests/`, `build.mjs`): MIT — see LICENSE.
 - Game content and art (`js/data.js`, `assets/`, `docs/`, the design dossier): all rights reserved. Do not redistribute or reuse the story, art, or design documents without permission.
+
+## 27 October milestone: a route remembered
+
+The Contrast demo now contains **Prepare Mina's route**: witness the alley blockage, keep the clue through midnight, and prepare a side passage on a later morning. Ordinary and borrowed visits have different time costs; the outcome shows Mina and her crate at the stalls or sheltered well. Fracture still matters. This is an agent-verified pilot candidate, not a human-approved release.
+
+Start with the [pilot packet](docs/gamejam/milestone-2026-10-27/README.md), [launch instructions](docs/gamejam/milestone-2026-10-27/launch.md), and [human protocol](docs/gamejam/milestone-2026-10-27/protocol.md). The [frozen previous build](docs/gamejam/milestone-2026-10-27/reference/index.html) preserves Original and previous Contrast for comparison. New candidate fonts are local system fallbacks; all gameplay stays in the browser tab and reload clears the run.
+
+Run `node --test tests/*.test.cjs`, `node build.mjs`, and `python3 tests/check_static.py` for rules/build checks. `tests/square-journey.cjs` self-hosts the browser scenarios and accepts `PLAYWRIGHT_MODULE`; consult its header for evidence output settings. Do not count automated journeys or blank study forms as human observations. Candidate 0.1.0 is delivered to master for manual review before any official main release.

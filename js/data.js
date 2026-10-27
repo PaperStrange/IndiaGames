@@ -49,5 +49,42 @@ window.TTB_DATA = {
       {title:'What breaks before dusk?',clue:'The town clock skips a tooth; one district answers.',options:['The archive floods upward','The Glassworks furnace sings','Saint Orra’s empties its ward'],answer:1,reveal:'The Glassworks furnace begins to sing.'},
       {title:'Where does midnight strike first?',clue:'The last schedule is smudged with redflower pollen.',options:['Underbell opens below the tower','North Gate rises from the road','The archive sheds its walls'],answer:0,reveal:'Underbell opens before the thirteenth bell.'}
     ],
+  squareScenes: {
+    pending: {hint:'Mina waits at the auction stalls',title:'The alley before Noon',weather:'Bootsteps approach the market.',text:'Mina has packed her redflowers into a damaged crate. Inspector Brann is marking the main alley for the masked procession. A narrow side passage runs behind the stalls toward the sheltered market well. The crowd has not arrived yet.'},
+    ready: {hint:'A remembered blockage; a different route',title:'A route remembered',weather:'The same bootsteps approach.',text:'Mina is packing the crate again. Brann is marking the same main alley. You remember how the crowd closed it at Noon. The side passage toward the sheltered market well is still tangled with empty stands.'},
+    prepared: {hint:'Side passage cleared; Noon still ahead',title:'A passage waiting for Mina',weather:'A redflower marks the cleared way.',text:'You have moved the empty stands aside. Mina knows the side passage leads to the sheltered market well. The crowd has not arrived yet; the result will be known at Noon. Your saved minute can still carry you to another district before that bell.'},
+    blocked: {hint:'Mina and her crate at the auction stalls',title:'The alley has closed',weather:'Masks press shoulder to shoulder.',text:'The masked crowd fills the main alley. Mina and her crate remain at the auction stalls, unable to pass. The shelter at the market well is still beyond them. Arriving after the bell shows the aftermath; it does not tell you how the blockage began.'},
+    safe: {hint:'Mina and her crate at the sheltered well',title:'Redflowers beside the market well',weather:'The crowd passes beyond the shelter.',text:'Mina and her crate reach the sheltered market well through the side passage you cleared. She puts one uncrushed redflower on the well stones. The main alley is still blocked; the changed route, not a changed crowd, brought her here.'},
+    interrupted: {hint:'Noon interrupted by catastrophe',title:'The market before the broken bell',weather:'Midnight cuts across the morning.',text:'Fracture reached four before Noon. The planned crossing never happened. No one can claim that Mina reached the shelter or witnessed the scheduled blockage in this interrupted day.'}
+  },
+  squareLoopDetails: ['Brann’s delivery marks lead toward the clocktower. Mina is trying to save the flowers he has not bought.', 'The market wears fox masks this morning. A length of red thread hangs from Mina’s crate; Brann’s sealed ledger records the market’s repeated days.', 'Small paper memories cling to Mina’s crate. The fractured town has left a trail between the old well and the tower foundation.'],
+  squareChoices: [
+    [
+      {id:'square-flowers',label:'Help Mina sort the crate',effect:'item:redflower',fracture:1,result:'You save a redflower from the damaged crate. Mina gives it to you; its pollen glows when the tower chimes. Sorting the crate does not open an alley.',descriptions:{pending:'Sort the damaged flowers beside the auction stalls. Mina has not crossed the market yet.',blocked:'Save the crushed flowers beside the auction stalls. This does not reopen the crowded alley.',safe:'Set the flowers in order beside the sheltered well. Mina’s crossing is already complete.'}},
+      {id:'square-deliveries',label:'Read Brann’s delivery marks',effect:'note',fracture:1,result:'The marks show that Brann delivers redflowers to the tower to keep its gears asleep. His purchase does not explain a safe route through the crowd.',descriptions:{pending:'Follow the chalk marks on the auction stands before the procession arrives.',blocked:'Read the delivery marks still visible on the blocked auction stalls.',safe:'Read the marks on the crate now resting beside the market well.'}}
+    ],
+    [
+      {id:'square-thread',label:'Tie a red thread to Mina’s crate',effect:'item:red-thread',fracture:1,result:'Mina ties the spare red thread around your wrist. It points toward people displaced by the loop. It does not clear the side passage.',descriptions:{pending:'Fasten the loose crate panels before the crowd arrives.',blocked:'Fasten the crate where Mina is stranded at the auction stalls.',safe:'Fasten the crate beside Mina at the sheltered market well.'}},
+      {id:'square-ledger',label:'Unseal Brann’s private ledger',effect:'note',fracture:2,result:'Breaking the seal strains the town. The ledger shows an exhausted inspector feeding flowers to the bell for years to postpone the fracture.',descriptions:{pending:'Risk breaking the wax seal beneath an empty auction stand. +2 Fracture.',blocked:'Reach the sealed ledger beneath the crowded stalls. +2 Fracture; the alley stays blocked.',safe:'Read the ledger copy Mina brought to the shelter. Breaking its seal adds +2 Fracture.'}}
+    ],
+    [
+      {id:'square-memories',label:'Gather the market’s memories',effect:'note',fracture:1,result:'The rescued paper memories reveal a bright line from the old market well to the tower foundation.',descriptions:{pending:'Gather the scraps caught on Mina’s crate before the procession scatters them.',blocked:'Catch the paper scraps tumbling through the stranded auction stalls.',safe:'Collect the paper memories Mina has laid around the sheltered well.'}},
+      {id:'square-remembered-route',label:'Trace the route through your keepsakes',effect:'route',fracture:1,result:'Your keepsakes and the market’s memories align. The hidden route from the old well to the tower sharpens in memory; your possessions remain with you.',descriptions:{pending:'Compare your keepsakes with Mina’s scraps while the crossing is still ahead.',blocked:'Trace the old well from the memories gathered at the blocked stalls.',safe:'Lay your keepsakes beside Mina’s memories at the well and trace the tower route.'}}
+    ]
+  ],
+  squareAction: {id:'prepare-mina-route',label:'Prepare the side passage',description:'Move the empty stands before Noon. Ordinary visit: one phase +1 Fracture. A valid borrowed visit saves the phase, not the Fracture.',effect:'prepare-mina-route',result:'You clear the side passage and show Mina where it reaches the sheltered market well. Her crossing still waits for Noon.',fracture:1},
+  squareLimits: {
+    unseen:'You have no eyewitness clue about this blockage. A report or a late visit is not the same as seeing it happen.',
+    'next-loop':'Carry this witnessed clue into the next loop before preparing a different route.',
+    late:'The preparation window ended at Noon. The outcome cannot be changed by arriving late; another loop offers another morning.',
+    resolved:'This morning’s crossing has already resolved.',
+    prepared:'The side passage is already prepared. No second preparation is needed or charged.',
+    ready:'You witnessed why the main alley failed. Prepare the side passage before Noon: +1 Fracture and one phase, or use an eligible borrowed minute to preserve the phase.'
+  },
+  squareOutcomes: {
+    blocked:'The masked crowd closes the main alley. Mina and her crate remain at the auction stalls. The crowd, not Brann’s flower purchase, stops the crossing.',
+    safe:'The masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.',
+    interrupted:'Fracture reaches four before Noon. The crossing is interrupted: no Mina outcome, eyewitness clue or forecast reward is claimed for the skipped bell.'
+  },
   risky: /^(Release|Unmask|Touch|Break|Cross|Offer|Descend)/
 };
