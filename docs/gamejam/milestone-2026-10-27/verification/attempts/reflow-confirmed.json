@@ -1,0 +1,102 @@
+{
+  "startedAt": "2026-10-27T02:15:59.477Z",
+  "sourceCommit": "928a85fed6e77bbe9bd5111a79fcd5daf3b50c26",
+  "sourceIdentityNote": "HEAD identifies ancestry; sourceFiles and artifacts identify the exact tested bytes, including any uncommitted implementation.",
+  "interaction": "Visible controls; repeated DOM button activation only for race regression. No game-state injection.",
+  "limitations": "Automated Chromium; mobile and iframe dimensions are emulated. No human participants, physical device, screen-reader or fun assessment.",
+  "scenarios": [
+    {
+      "name": "200 percent text enlargement reflows at a 390px viewport",
+      "startedAt": "2026-10-27T02:15:59.685Z",
+      "trace": [
+        {
+          "label": "Every computed text size doubled without enlarging layout widths; outcome and scene remain within the narrow page",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "0",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:16:01.496Z"
+    }
+  ],
+  "notRunScenarios": [
+    "immutable comparison retains Original and previous Contrast",
+    "cancel and late arrival never manufacture eyewitness knowledge",
+    "correct forecast does not gate witnessing or ordinary preparation",
+    "wrong forecast does not gate witnessing or ordinary preparation",
+    "blank forecast does not gate witnessing or ordinary preparation",
+    "borrowed preparation is atomic and preserves an expedition action",
+    "Fracture four before Noon interrupts the event and its forecast",
+    "catastrophe after Noon preserves the already observed outcome",
+    "missed intervention is legible and daily state resets while knowledge remains",
+    "mode isolation and reload clear only their intended run state",
+    "Mina intervention retains the complete ending and restart",
+    "complete keyboard journey witnesses remembers prepares and sees the outcome",
+    "390px touch emulation exposes the same causal outcome",
+    "821x462 embedded candidate supports a full boundary",
+    "portable single-file distribution carries the causal scene"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "sourceFiles": [
+    {
+      "file": "index.html",
+      "sha256": "50c9740c7885f8e1c74d21f8201e066d2e8e85a8e9a4f05ae45516986c355817"
+    },
+    {
+      "file": "css/main.css",
+      "sha256": "e657f162b5483eb9c150afed248b81509daaf0297678ac8560198da9f2802cae"
+    },
+    {
+      "file": "js/data.js",
+      "sha256": "2b85c32c616b6b522f7fb375412a0eabe27852b81cf92672ab334f549b6e234b"
+    },
+    {
+      "file": "js/echo-time.js",
+      "sha256": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f"
+    },
+    {
+      "file": "js/square-event.js",
+      "sha256": "ba313b38bd226de8b2571784eae2a4f96af6ead49cb19e917dce7eee4fab227a"
+    },
+    {
+      "file": "js/engine.js",
+      "sha256": "b2dda386e6a63fe76b68c2fa9a780adf76d6c3b354941d4ad4438a02919d0c01"
+    },
+    {
+      "file": "build.mjs",
+      "sha256": "25af36813f9097d16fe65992471af25d1af9ebeb66372b3cd48af01efc51bedf"
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "dist/thirteenth-bell-playable-demo.html",
+      "bytes": 1455336,
+      "sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973"
+    },
+    {
+      "file": "docs/gamejam/milestone-2026-10-27/reference/index.html",
+      "bytes": 1434008,
+      "sha256": "c2facc2a008c7bb232a629c4bd79efcb07cb5e46b73c4ebf6e55ceaa5337f405"
+    }
+  ],
+  "base": "http://127.0.0.1:33837/",
+  "sourceFilesUnchangedDuringRun": true,
+  "artifactsUnchangedDuringRun": true,
+  "finishedAt": "2026-10-27T02:16:01.511Z",
+  "passed": 1,
+  "failed": 0,
+  "optionalReferenceFontFailures": {
+    "requests": [],
+    "console": [],
+    "limit": "The frozen comparison rendered with fallback fonts; its requested web-font appearance was not verified."
+  },
+  "blockingConsoleErrors": [],
+  "blockingFailedRequests": [],
+  "result": "PASS_SELECTED"
+}

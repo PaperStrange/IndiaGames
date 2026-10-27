@@ -1,0 +1,9 @@
+{
+  "verified_at": "2026-10-27T02:22:54.216619+00:00",
+  "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06",
+  "all_browser_runtime_files_match_committed_source": true,
+  "build_reexport_matches_tested_html": true,
+  "build_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+  "html_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973",
+  "bytes": 1455336
+}

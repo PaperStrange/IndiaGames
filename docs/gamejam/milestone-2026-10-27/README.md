@@ -49,3 +49,5 @@ Fracture four before Noon interrupts the event, with no fabricated Mina outcome 
 Read [the facilitator protocol](protocol.md) and use a copy of [the blank observation form](session-template.json). `reference/index.html` is the old two-mode build; the new candidate is served separately. Do not show this design explanation to a participant before their attempt. No invitations have been sent; facilitator, participants, physical-device tester and independent reviewer remain unstaffed.
 
 Runtime integrator: `bell_runtime`; browser reviewer: `bell_qa`; release/documentation integrator: root. Human staffing is not implied by these agent assignments. `master` may hold this candidate with pending evidence; `main` receives no game release until the human gate passes.
+
+[Launch the frozen candidate](launch.md) · [Verification and actual agent journey](verification.md) · [Candidate identity](candidate-identity.json).

@@ -1,0 +1,138 @@
+{
+  "startedAt": "2026-10-27T02:18:04.906Z",
+  "finishedAt": "2026-10-27T02:18:14.045Z",
+  "base": "http://127.0.0.1:45965/",
+  "interaction": "Visible browser controls only; no state injection",
+  "trace": [
+    {
+      "action": "Bell Square choice 0",
+      "run": "Contrast · Loop 1 · Noon",
+      "visits": "1",
+      "momentum": "1",
+      "fracture": "Fracture 1 of 4"
+    },
+    {
+      "action": "Flooded Archive choice 0",
+      "run": "Contrast · Loop 1 · Dusk",
+      "visits": "2",
+      "momentum": "2",
+      "fracture": "Fracture 2 of 4"
+    },
+    {
+      "action": "Glassworks choice 1",
+      "run": "Contrast · Loop 1 · Midnight",
+      "visits": "3",
+      "momentum": "3",
+      "fracture": "Fracture 3 of 4"
+    },
+    {
+      "action": "Borrowed Bell Square visit: no phase advance or forecast reward",
+      "run": "Contrast · Loop 2 · Dawn",
+      "visits": "4",
+      "momentum": "2",
+      "fracture": "Fracture 1 of 4"
+    },
+    {
+      "action": "Saint Orra's Hospice choice 0",
+      "run": "Contrast · Loop 2 · Noon",
+      "visits": "5",
+      "momentum": "3",
+      "fracture": "Fracture 2 of 4"
+    },
+    {
+      "action": "Glassworks choice 0",
+      "run": "Contrast · Loop 2 · Dusk",
+      "visits": "6",
+      "momentum": "4",
+      "fracture": "Fracture 3 of 4"
+    },
+    {
+      "action": "Flooded Archive choice 1",
+      "run": "Contrast · Loop 2 · Midnight",
+      "visits": "7",
+      "momentum": "4",
+      "fracture": "Fracture 4 of 4"
+    },
+    {
+      "action": "Restart clears earned memory and Momentum",
+      "run": "Contrast · Loop 1 · Dawn",
+      "visits": "0",
+      "momentum": "0",
+      "fracture": "Fracture 0 of 4"
+    },
+    {
+      "action": "Bell Square choice 0",
+      "run": "Contrast · Loop 1 · Noon",
+      "visits": "1",
+      "momentum": "1",
+      "fracture": "Fracture 1 of 4"
+    },
+    {
+      "action": "Flooded Archive choice 0",
+      "run": "Contrast · Loop 1 · Dusk",
+      "visits": "2",
+      "momentum": "2",
+      "fracture": "Fracture 2 of 4"
+    },
+    {
+      "action": "Glassworks choice 1",
+      "run": "Contrast · Loop 1 · Midnight",
+      "visits": "3",
+      "momentum": "3",
+      "fracture": "Fracture 3 of 4"
+    },
+    {
+      "action": "Saint Orra's Hospice choice 0",
+      "run": "Contrast · Loop 2 · Noon",
+      "visits": "4",
+      "momentum": "4",
+      "fracture": "Fracture 1 of 4"
+    },
+    {
+      "action": "North Gate choice 1",
+      "run": "Contrast · Loop 2 · Dusk",
+      "visits": "5",
+      "momentum": "5",
+      "fracture": "Fracture 2 of 4"
+    },
+    {
+      "action": "Risky borrowed visit at Fracture 2 still forces midnight at 4",
+      "run": "Contrast · Loop 2 · Midnight",
+      "visits": "6",
+      "momentum": "4",
+      "fracture": "Fracture 4 of 4"
+    },
+    {
+      "action": "Bell Square choice 0",
+      "run": "Contrast · Loop 1 · Noon",
+      "visits": "1",
+      "momentum": "1",
+      "fracture": "Fracture 1 of 4"
+    },
+    {
+      "action": "Flooded Archive choice 0",
+      "run": "Contrast · Loop 1 · Dusk",
+      "visits": "2",
+      "momentum": "2",
+      "fracture": "Fracture 2 of 4"
+    },
+    {
+      "action": "Glassworks choice 1",
+      "run": "Contrast · Loop 1 · Midnight",
+      "visits": "3",
+      "momentum": "3",
+      "fracture": "Fracture 3 of 4"
+    },
+    {
+      "action": "390px viewport: played borrowed return with no horizontal overflow",
+      "run": "Contrast · Loop 2 · Dawn",
+      "visits": "4",
+      "momentum": "2",
+      "fracture": "Fracture 1 of 4"
+    },
+    {
+      "action": "821×462 iframe: start, choose, resolve, advance with no horizontal overflow"
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,21 @@
+PASS debugger attached
+PASS split: scripts executed
+PASS split: game boots after start
+PASS split: title present
+PASS split: run label set
+PASS split: 6 place buttons
+PASS split: Original/Contrast toggle
+PASS split: 4 clock phases
+PASS split: visiting a place renders choices
+PASS split: contrast toggle switches mode
+PASS dist: scripts executed
+PASS dist: game boots after start
+PASS dist: title present
+PASS dist: run label set
+PASS dist: 6 place buttons
+PASS dist: Original/Contrast toggle
+PASS dist: 4 clock phases
+PASS dist matches split run label
+PASS zero console/page errors across both loads
+
+smoke test green

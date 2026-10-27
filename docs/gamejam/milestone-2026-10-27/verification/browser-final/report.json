@@ -1,0 +1,628 @@
+{
+  "startedAt": "2026-10-27T02:16:51.367Z",
+  "sourceCommit": "928a85fed6e77bbe9bd5111a79fcd5daf3b50c26",
+  "sourceIdentityNote": "HEAD identifies ancestry; sourceFiles and artifacts identify the exact tested bytes, including any uncommitted implementation.",
+  "interaction": "Visible controls; repeated DOM button activation only for race regression. No game-state injection.",
+  "limitations": "Automated Chromium; mobile and iframe dimensions are emulated. No human participants, physical device, screen-reader or fun assessment.",
+  "scenarios": [
+    {
+      "name": "immutable comparison retains Original and previous Contrast",
+      "startedAt": "2026-10-27T02:16:51.578Z",
+      "trace": [
+        {
+          "label": "Frozen comparison retains its old loop-driven Square scene and both modes",
+          "phase": "Contrast · Loop 2 · Dawn"
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:16:54.029Z"
+    },
+    {
+      "name": "cancel and late arrival never manufacture eyewitness knowledge",
+      "startedAt": "2026-10-27T02:16:54.043Z",
+      "trace": [
+        {
+          "label": "A cancelled Dawn visit and an actual Noon visit do not grant the missing witnessed clue",
+          "phase": "Contrast · Loop 2 · Dawn",
+          "actions": "3",
+          "momentum": "1",
+          "fracture": "Fracture 0 of 4",
+          "square": "Bell Square · before Noon\n\nMina waits with her crate. The market crossing has not happened yet.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "No eyewitness clue about the alley. Town reports and arriving after Noon do not supply one."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:16:55.841Z"
+    },
+    {
+      "name": "correct forecast does not gate witnessing or ordinary preparation",
+      "startedAt": "2026-10-27T02:16:55.851Z",
+      "trace": [
+        {
+          "label": "Ordinary preparation succeeds without requiring a forecast reward or borrowed time",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "1",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:16:57.987Z"
+    },
+    {
+      "name": "wrong forecast does not gate witnessing or ordinary preparation",
+      "startedAt": "2026-10-27T02:16:57.994Z",
+      "trace": [
+        {
+          "label": "Ordinary preparation succeeds without requiring a forecast reward or borrowed time",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "0",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:16:59.606Z"
+    },
+    {
+      "name": "blank forecast does not gate witnessing or ordinary preparation",
+      "startedAt": "2026-10-27T02:16:59.619Z",
+      "trace": [
+        {
+          "label": "Ordinary preparation succeeds without requiring a forecast reward or borrowed time",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "0",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:01.571Z"
+    },
+    {
+      "name": "borrowed preparation is atomic and preserves an expedition action",
+      "startedAt": "2026-10-27T02:17:01.582Z",
+      "trace": [
+        {
+          "label": "The saved minute permits an Archive action before Noon; only the actual boundary rewards the locked forecast",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "5",
+          "momentum": "3",
+          "fracture": "Fracture 2 of 4",
+          "square": "Bell Square · town report\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:04.306Z"
+    },
+    {
+      "name": "Fracture four before Noon interrupts the event and its forecast",
+      "startedAt": "2026-10-27T02:17:04.325Z",
+      "trace": [
+        {
+          "label": "A correct declaration earns nothing when catastrophe skips the scheduled event",
+          "phase": "Contrast · Loop 2 · Midnight",
+          "actions": "5",
+          "momentum": "2",
+          "fracture": "Fracture 4 of 4",
+          "square": "Bell Square · Noon interrupted\n\nFracture reaches four before Noon. The crossing is interrupted: no Mina outcome, eyewitness clue or forecast reward is claimed for the skipped bell.\n\nCrossing interrupted\n→\nSheltered market well",
+          "clue": "No eyewitness clue about the alley. Town reports and arriving after Noon do not supply one."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:06.656Z"
+    },
+    {
+      "name": "catastrophe after Noon preserves the already observed outcome",
+      "startedAt": "2026-10-27T02:17:06.665Z",
+      "trace": [
+        {
+          "label": "Later catastrophe does not erase the observed blocked alley or mint a skipped Dusk reward",
+          "phase": "Contrast · Loop 1 · Midnight",
+          "actions": "3",
+          "momentum": "2",
+          "fracture": "Fracture 4 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate remain at the auction stalls. The crowd, not Brann’s flower purchase, stops the crossing.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:08.104Z"
+    },
+    {
+      "name": "missed intervention is legible and daily state resets while knowledge remains",
+      "startedAt": "2026-10-27T02:17:08.111Z",
+      "trace": [
+        {
+          "label": "Missing the window costs this day, while the original sourced clue still permits a later attempt",
+          "phase": "Contrast · Loop 3 · Dawn",
+          "actions": "6",
+          "momentum": "4",
+          "fracture": "Fracture 0 of 4",
+          "square": "Bell Square · before Noon\n\nMina waits with her crate. The market crossing has not happened yet.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:10.874Z"
+    },
+    {
+      "name": "mode isolation and reload clear only their intended run state",
+      "startedAt": "2026-10-27T02:17:10.881Z",
+      "trace": [
+        {
+          "label": "Original has no candidate clue; returning to Contrast preserves its run; reload starts fresh",
+          "phase": "Contrast · Loop 1 · Dawn",
+          "actions": "0",
+          "momentum": "0",
+          "fracture": "Fracture 0 of 4",
+          "square": "Bell Square · before Noon\n\nMina waits with her crate. The market crossing has not happened yet.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "No eyewitness clue about the alley. Town reports and arriving after Noon do not supply one."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:13.040Z"
+    },
+    {
+      "name": "Mina intervention retains the complete ending and restart",
+      "startedAt": "2026-10-27T02:17:13.049Z",
+      "trace": [
+        {
+          "label": "All three anchors still release the day; restart clears clue, preparation and resources",
+          "phase": "Contrast · Loop 1 · Dawn",
+          "actions": "0",
+          "momentum": "0",
+          "fracture": "Fracture 0 of 4",
+          "square": "Bell Square · before Noon\n\nMina waits with her crate. The market crossing has not happened yet.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "No eyewitness clue about the alley. Town reports and arriving after Noon do not supply one."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:16.868Z"
+    },
+    {
+      "name": "complete keyboard journey witnesses remembers prepares and sees the outcome",
+      "startedAt": "2026-10-27T02:17:16.876Z",
+      "trace": [
+        {
+          "keyboardActivation": "#tryContrastBtn",
+          "tabs": 15,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "startBtn",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#startBtn",
+          "tabs": 0,
+          "focusAfter": {
+            "tag": "B",
+            "id": "objectiveTitle",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#predictionChoices button:nth-child(1)",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "forecastState",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": ".place[data-place=\"bell-square\"]",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "H2",
+            "id": "eventTitle",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#choices button:nth-child(1)",
+          "tabs": 2,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "continueBtn",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#continueBtn",
+          "tabs": 0,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "batchLabel",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#batchContinue",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#predictionChoices button:nth-child(2)",
+          "tabs": 15,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "forecastState",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": ".place[data-place=\"flooded-archive\"]",
+          "tabs": 5,
+          "focusAfter": {
+            "tag": "H2",
+            "id": "eventTitle",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#choices button:nth-child(1)",
+          "tabs": 2,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "continueBtn",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#continueBtn",
+          "tabs": 0,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "batchLabel",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#batchContinue",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#predictionChoices button:nth-child(1)",
+          "tabs": 10,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "forecastState",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": ".place[data-place=\"glassworks\"]",
+          "tabs": 3,
+          "focusAfter": {
+            "tag": "H2",
+            "id": "eventTitle",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#choices button:nth-child(2)",
+          "tabs": 3,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "continueBtn",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#continueBtn",
+          "tabs": 0,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "batchLabel",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#batchContinue",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#bondOptions button:first-child",
+          "tabs": 0,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#objectOptions button:first-child",
+          "tabs": 3,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#wakeBtn",
+          "tabs": 3,
+          "focusAfter": {
+            "tag": "H3",
+            "id": "forecastTitle",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#predictionChoices button:first-child",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "forecastState",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": ".place[data-place=\"bell-square-1\"]",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "H2",
+            "id": "eventTitle",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#borrowMinute",
+          "tabs": 2,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "borrowMinute",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "[data-action=\"prepare-mina-route\"]",
+          "tabs": 3,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "continueBtn",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#continueBtn",
+          "tabs": 0,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "batchLabel",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#batchContinue",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": ".place[data-place=\"north-gate-1\"]",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "H2",
+            "id": "eventTitle",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#choices button:nth-child(1)",
+          "tabs": 2,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "continueBtn",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#continueBtn",
+          "tabs": 0,
+          "focusAfter": {
+            "tag": "DIV",
+            "id": "batchLabel",
+            "action": null
+          }
+        },
+        {
+          "keyboardActivation": "#batchContinue",
+          "tabs": 1,
+          "focusAfter": {
+            "tag": "BUTTON",
+            "id": "",
+            "action": null
+          }
+        },
+        {
+          "label": "Entire witness→midnight→borrowed preparation→extra visit→outcome path uses Tab and Enter only; not a screen-reader audit",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "5",
+          "momentum": "3",
+          "fracture": "Fracture 2 of 4",
+          "square": "Bell Square · town report\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:18.666Z"
+    },
+    {
+      "name": "390px touch emulation exposes the same causal outcome",
+      "startedAt": "2026-10-27T02:17:18.673Z",
+      "trace": [
+        {
+          "label": "Tap-activated preparation and the visible outcome fit an emulated phone viewport",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "5",
+          "momentum": "3",
+          "fracture": "Fracture 2 of 4",
+          "square": "Bell Square · town report\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:20.522Z"
+    },
+    {
+      "name": "200 percent text enlargement reflows at a 390px viewport",
+      "startedAt": "2026-10-27T02:17:20.529Z",
+      "trace": [
+        {
+          "label": "Every computed text size doubled without enlarging layout widths; outcome and scene remain within the narrow page",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "0",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:22.241Z"
+    },
+    {
+      "name": "821x462 embedded candidate supports a full boundary",
+      "startedAt": "2026-10-27T02:17:22.247Z",
+      "trace": [],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:23.023Z"
+    },
+    {
+      "name": "portable single-file distribution carries the causal scene",
+      "startedAt": "2026-10-27T02:17:23.031Z",
+      "trace": [
+        {
+          "label": "The generated portable HTML supports the same witnessed clue and ordinary intervention",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "0",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T02:17:24.877Z"
+    }
+  ],
+  "notRunScenarios": [],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "scenario": "immutable comparison retains Original and previous Contrast",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID",
+      "location": {
+        "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "failedRequests": [
+    {
+      "scenario": "immutable comparison retains Original and previous Contrast",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "file": "index.html",
+      "sha256": "50c9740c7885f8e1c74d21f8201e066d2e8e85a8e9a4f05ae45516986c355817"
+    },
+    {
+      "file": "css/main.css",
+      "sha256": "e657f162b5483eb9c150afed248b81509daaf0297678ac8560198da9f2802cae"
+    },
+    {
+      "file": "js/data.js",
+      "sha256": "2b85c32c616b6b522f7fb375412a0eabe27852b81cf92672ab334f549b6e234b"
+    },
+    {
+      "file": "js/echo-time.js",
+      "sha256": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f"
+    },
+    {
+      "file": "js/square-event.js",
+      "sha256": "ba313b38bd226de8b2571784eae2a4f96af6ead49cb19e917dce7eee4fab227a"
+    },
+    {
+      "file": "js/engine.js",
+      "sha256": "b2dda386e6a63fe76b68c2fa9a780adf76d6c3b354941d4ad4438a02919d0c01"
+    },
+    {
+      "file": "build.mjs",
+      "sha256": "25af36813f9097d16fe65992471af25d1af9ebeb66372b3cd48af01efc51bedf"
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "dist/thirteenth-bell-playable-demo.html",
+      "bytes": 1455336,
+      "sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973"
+    },
+    {
+      "file": "docs/gamejam/milestone-2026-10-27/reference/index.html",
+      "bytes": 1434008,
+      "sha256": "c2facc2a008c7bb232a629c4bd79efcb07cb5e46b73c4ebf6e55ceaa5337f405"
+    }
+  ],
+  "base": "http://127.0.0.1:46141/",
+  "sourceFilesUnchangedDuringRun": true,
+  "artifactsUnchangedDuringRun": true,
+  "finishedAt": "2026-10-27T02:17:24.895Z",
+  "passed": 16,
+  "failed": 0,
+  "optionalReferenceFontFailures": {
+    "requests": [
+      {
+        "scenario": "immutable comparison retains Original and previous Contrast",
+        "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+        "error": "net::ERR_CERT_AUTHORITY_INVALID"
+      }
+    ],
+    "console": [
+      {
+        "scenario": "immutable comparison retains Original and previous Contrast",
+        "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID",
+        "location": {
+          "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      }
+    ],
+    "limit": "The frozen comparison rendered with fallback fonts; its requested web-font appearance was not verified."
+  },
+  "blockingConsoleErrors": [],
+  "blockingFailedRequests": [],
+  "result": "PASS"
+}

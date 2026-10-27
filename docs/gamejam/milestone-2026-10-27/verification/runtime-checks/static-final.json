@@ -1,0 +1,50 @@
+{
+  "command": "python3 tests/check_static.py",
+  "cwd": "/workspace/IndiaGames",
+  "execution_started_at_utc": "2026-10-27T02:10:42.526328+00:00",
+  "execution_completed_at_utc": "2026-10-27T02:10:42.697346+00:00",
+  "exit_code": 0,
+  "passed": 19,
+  "source_hashes_before": {
+    "js/engine.js": "b2dda386e6a63fe76b68c2fa9a780adf76d6c3b354941d4ad4438a02919d0c01",
+    "js/data.js": "2b85c32c616b6b522f7fb375412a0eabe27852b81cf92672ab334f549b6e234b",
+    "js/echo-time.js": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f",
+    "js/square-event.js": "ba313b38bd226de8b2571784eae2a4f96af6ead49cb19e917dce7eee4fab227a",
+    "css/main.css": "71502ecc63604414718dbd902598254885a78f2fb72e0b23dd025b9900d29f3a",
+    "index.html": "50c9740c7885f8e1c74d21f8201e066d2e8e85a8e9a4f05ae45516986c355817",
+    "build.mjs": "25af36813f9097d16fe65992471af25d1af9ebeb66372b3cd48af01efc51bedf",
+    "tests/check_static.py": "40cab4b86da52140033842977b465137798d6ee03b1e67790dbffafa74f744ed",
+    "tests/echo-time.test.cjs": "2d6e26e8ee652c5f14d6fde91fe3c7fdd35b2665fa3c3e9d3f25285f54a486ea",
+    "tests/square-event.test.cjs": "4b8c05bdb97fcfb587d4d777c40d21cd74edd900d0526b1ba2a17d30636a5687",
+    "assets/images/town-map.webp": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+    "dist/thirteenth-bell-playable-demo.html": "80342fa78e4a66f02db2cb98fde4275c91110658581a700d0bf197994158316a"
+  },
+  "source_hashes_after": {
+    "js/engine.js": "b2dda386e6a63fe76b68c2fa9a780adf76d6c3b354941d4ad4438a02919d0c01",
+    "js/data.js": "2b85c32c616b6b522f7fb375412a0eabe27852b81cf92672ab334f549b6e234b",
+    "js/echo-time.js": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f",
+    "js/square-event.js": "ba313b38bd226de8b2571784eae2a4f96af6ead49cb19e917dce7eee4fab227a",
+    "css/main.css": "71502ecc63604414718dbd902598254885a78f2fb72e0b23dd025b9900d29f3a",
+    "index.html": "50c9740c7885f8e1c74d21f8201e066d2e8e85a8e9a4f05ae45516986c355817",
+    "build.mjs": "25af36813f9097d16fe65992471af25d1af9ebeb66372b3cd48af01efc51bedf",
+    "tests/check_static.py": "40cab4b86da52140033842977b465137798d6ee03b1e67790dbffafa74f744ed",
+    "tests/echo-time.test.cjs": "2d6e26e8ee652c5f14d6fde91fe3c7fdd35b2665fa3c3e9d3f25285f54a486ea",
+    "tests/square-event.test.cjs": "4b8c05bdb97fcfb587d4d777c40d21cd74edd900d0526b1ba2a17d30636a5687",
+    "assets/images/town-map.webp": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+    "dist/thirteenth-bell-playable-demo.html": "80342fa78e4a66f02db2cb98fde4275c91110658581a700d0bf197994158316a"
+  },
+  "source_unchanged_during_check": true,
+  "reason_for_run": "Scoped focus management and measured narrow text-reflow fix changed JS/CSS after the previous checks.",
+  "pure_test_reuse": {
+    "output": "pure-tests.txt",
+    "count": 15,
+    "reused_unchanged_files": [
+      "js/echo-time.js",
+      "js/square-event.js",
+      "tests/echo-time.test.cjs",
+      "tests/square-event.test.cjs"
+    ],
+    "unchanged_since_recorded_pass": true
+  },
+  "output": "static-final.txt"
+}

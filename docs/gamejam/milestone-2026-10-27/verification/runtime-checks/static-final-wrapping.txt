@@ -1,0 +1,21 @@
+PASS js files found
+PASS node --check js/data.js
+PASS node --check js/echo-time.js
+PASS node --check js/engine.js
+PASS node --check js/square-event.js
+PASS data.js declares keys
+PASS engine refs resolve in data.js
+PASS engine declares no extracted story-data vars
+PASS data.js has no functions/DOM access
+PASS asset refs resolve on disk
+PASS case-exact assets/images/town-map.webp
+PASS case-exact css/main.css
+PASS case-exact js/data.js
+PASS case-exact js/echo-time.js
+PASS case-exact js/engine.js
+PASS case-exact js/square-event.js
+PASS build.mjs runs
+PASS dist exists after build
+PASS committed dist matches fresh build
+
+all static checks green

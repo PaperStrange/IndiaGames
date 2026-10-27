@@ -1,0 +1,43 @@
+{
+  "recorded_at_utc": "2026-10-27T02:06:46.651905+00:00",
+  "executed_on": "2026-10-27",
+  "execution_started_at_utc": null,
+  "execution_completed_at_utc": null,
+  "timing_limitation": "The original exec call did not capture a UTC timestamp. These are copied actual tool outputs; recorded_at_utc is the preservation time, not an invented test execution time.",
+  "cwd": "/workspace/IndiaGames",
+  "commands": [
+    {
+      "command": "node --test tests/echo-time.test.cjs tests/square-event.test.cjs",
+      "exit_code": 0,
+      "passed": 15,
+      "output": "pure-tests.txt"
+    },
+    {
+      "command": "node build.mjs",
+      "exit_code": 0,
+      "output": "wrote /workspace/IndiaGames/dist/thirteenth-bell-playable-demo.html 1454243 bytes"
+    },
+    {
+      "command": "python3 tests/check_static.py",
+      "exit_code": 0,
+      "passed": 19,
+      "output": "static-checks.txt"
+    }
+  ],
+  "source_hashes_at_recording": {
+    "js/engine.js": "9e6409ecfe641fac2dd6156624b2a7be8350ff9e0b030de62cbde0f7f44748e5",
+    "js/data.js": "2b85c32c616b6b522f7fb375412a0eabe27852b81cf92672ab334f549b6e234b",
+    "js/echo-time.js": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f",
+    "js/square-event.js": "ba313b38bd226de8b2571784eae2a4f96af6ead49cb19e917dce7eee4fab227a",
+    "css/main.css": "9c2cd97ff1789c4cdc5635a7336cc97972c8f840fdf8fa204b936e01c443fb4c",
+    "index.html": "50c9740c7885f8e1c74d21f8201e066d2e8e85a8e9a4f05ae45516986c355817",
+    "build.mjs": "25af36813f9097d16fe65992471af25d1af9ebeb66372b3cd48af01efc51bedf",
+    "tests/echo-time.test.cjs": "2d6e26e8ee652c5f14d6fde91fe3c7fdd35b2665fa3c3e9d3f25285f54a486ea",
+    "tests/square-event.test.cjs": "4b8c05bdb97fcfb587d4d777c40d21cd74edd900d0526b1ba2a17d30636a5687",
+    "assets/images/town-map.webp": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+    "dist/thirteenth-bell-playable-demo.html": "a7a34d2109ddc77efdb930b1368c2f6b133e9e9bb33b4b250faa86ca39eec2f7"
+  },
+  "source_hashes_at_execution": null,
+  "post_test_changes": "The final trailing-whitespace blank line was removed from js/engine.js, reducing engine/build by 3 bytes, then node build.mjs succeeded (1454240 bytes) and git diff --check passed. No runtime behavior, pure rules or test files changed. Exact final source is undergoing the separate browser run; these static outputs describe the pre-whitespace-cleanup bytes.",
+  "rerun_policy": "No repeated green pure/static runs solely to manufacture timestamps. Exact final source/build hashes supplied for traceability; root may run justified final-artifact checks."
+}

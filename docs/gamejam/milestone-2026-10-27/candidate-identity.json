@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "game": "thirteenth-bell",
+  "version": "0.1.0",
+  "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06",
+  "build": {
+    "entrypoint": "index.html",
+    "sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+    "files": {
+      "index.html": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973"
+    }
+  }
+}

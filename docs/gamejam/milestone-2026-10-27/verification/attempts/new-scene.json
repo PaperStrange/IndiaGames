@@ -1,0 +1,447 @@
+{
+  "startedAt": "2026-10-27T01:58:21.670Z",
+  "sourceCommit": "928a85fed6e77bbe9bd5111a79fcd5daf3b50c26",
+  "sourceIdentityNote": "HEAD identifies ancestry; sourceFiles and artifacts identify the exact tested bytes, including any uncommitted implementation.",
+  "interaction": "Visible controls; repeated DOM button activation only for race regression. No game-state injection.",
+  "limitations": "Automated Chromium; mobile and iframe dimensions are emulated. No human participants, physical device, screen-reader or fun assessment.",
+  "scenarios": [
+    {
+      "name": "immutable comparison retains Original and previous Contrast",
+      "startedAt": "2026-10-27T01:58:21.861Z",
+      "trace": [
+        {
+          "label": "Frozen comparison retains its old loop-driven Square scene and both modes",
+          "phase": "Contrast · Loop 2 · Dawn"
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:24.152Z"
+    },
+    {
+      "name": "cancel and late arrival never manufacture eyewitness knowledge",
+      "startedAt": "2026-10-27T01:58:24.167Z",
+      "trace": [
+        {
+          "label": "A cancelled Dawn visit and an actual Noon visit do not grant the missing witnessed clue",
+          "phase": "Contrast · Loop 2 · Dawn",
+          "actions": "3",
+          "momentum": "1",
+          "fracture": "Fracture 0 of 4",
+          "square": "Bell Square · before Noon\n\nMina waits with her crate. The market crossing has not happened yet.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "No eyewitness clue about the alley. Town reports and arriving after Noon do not supply one."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:25.824Z"
+    },
+    {
+      "name": "correct forecast does not gate witnessing or ordinary preparation",
+      "startedAt": "2026-10-27T01:58:25.836Z",
+      "trace": [
+        {
+          "label": "Ordinary preparation succeeds without requiring a forecast reward or borrowed time",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "1",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:27.561Z"
+    },
+    {
+      "name": "wrong forecast does not gate witnessing or ordinary preparation",
+      "startedAt": "2026-10-27T01:58:27.568Z",
+      "trace": [
+        {
+          "label": "Ordinary preparation succeeds without requiring a forecast reward or borrowed time",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "0",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:29.297Z"
+    },
+    {
+      "name": "blank forecast does not gate witnessing or ordinary preparation",
+      "startedAt": "2026-10-27T01:58:29.304Z",
+      "trace": [
+        {
+          "label": "Ordinary preparation succeeds without requiring a forecast reward or borrowed time",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "0",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:31.282Z"
+    },
+    {
+      "name": "borrowed preparation is atomic and preserves an expedition action",
+      "startedAt": "2026-10-27T01:58:31.290Z",
+      "trace": [
+        {
+          "label": "The saved minute permits an Archive action before Noon; only the actual boundary rewards the locked forecast",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "5",
+          "momentum": "3",
+          "fracture": "Fracture 2 of 4",
+          "square": "Bell Square · town report\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:33.855Z"
+    },
+    {
+      "name": "Fracture four before Noon interrupts the event and its forecast",
+      "startedAt": "2026-10-27T01:58:33.866Z",
+      "trace": [
+        {
+          "label": "A correct declaration earns nothing when catastrophe skips the scheduled event",
+          "phase": "Contrast · Loop 2 · Midnight",
+          "actions": "5",
+          "momentum": "2",
+          "fracture": "Fracture 4 of 4",
+          "square": "Bell Square · Noon interrupted\n\nFracture reaches four before Noon. The crossing is interrupted: no Mina outcome, eyewitness clue or forecast reward is claimed for the skipped bell.\n\nCrossing interrupted\n→\nSheltered market well",
+          "clue": "No eyewitness clue about the alley. Town reports and arriving after Noon do not supply one."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:36.230Z"
+    },
+    {
+      "name": "catastrophe after Noon preserves the already observed outcome",
+      "startedAt": "2026-10-27T01:58:36.242Z",
+      "trace": [
+        {
+          "label": "Later catastrophe does not erase the observed blocked alley or mint a skipped Dusk reward",
+          "phase": "Contrast · Loop 1 · Midnight",
+          "actions": "3",
+          "momentum": "2",
+          "fracture": "Fracture 4 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate remain at the auction stalls. The crowd, not Brann’s flower purchase, stops the crossing.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:37.636Z"
+    },
+    {
+      "name": "missed intervention is legible and daily state resets while knowledge remains",
+      "startedAt": "2026-10-27T01:58:37.647Z",
+      "trace": [
+        {
+          "label": "Missing the window costs this day, while the original sourced clue still permits a later attempt",
+          "phase": "Contrast · Loop 3 · Dawn",
+          "actions": "6",
+          "momentum": "4",
+          "fracture": "Fracture 0 of 4",
+          "square": "Bell Square · before Noon\n\nMina waits with her crate. The market crossing has not happened yet.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:40.376Z"
+    },
+    {
+      "name": "mode isolation and reload clear only their intended run state",
+      "startedAt": "2026-10-27T01:58:40.383Z",
+      "trace": [
+        {
+          "label": "Original has no candidate clue; returning to Contrast preserves its run; reload starts fresh",
+          "phase": "Contrast · Loop 1 · Dawn",
+          "actions": "0",
+          "momentum": "0",
+          "fracture": "Fracture 0 of 4",
+          "square": "Bell Square · before Noon\n\nMina waits with her crate. The market crossing has not happened yet.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "No eyewitness clue about the alley. Town reports and arriving after Noon do not supply one."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:42.422Z"
+    },
+    {
+      "name": "Mina intervention retains the complete ending and restart",
+      "startedAt": "2026-10-27T01:58:42.434Z",
+      "trace": [
+        {
+          "label": "All three anchors still release the day; restart clears clue, preparation and resources",
+          "phase": "Contrast · Loop 1 · Dawn",
+          "actions": "0",
+          "momentum": "0",
+          "fracture": "Fracture 0 of 4",
+          "square": "Bell Square · before Noon\n\nMina waits with her crate. The market crossing has not happened yet.\n\nMina + crate · auction stalls\n→\nSheltered market well",
+          "clue": "No eyewitness clue about the alley. Town reports and arriving after Noon do not supply one."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:46.268Z"
+    },
+    {
+      "name": "keyboard can reach and activate the earned action",
+      "startedAt": "2026-10-27T01:58:46.276Z",
+      "trace": [
+        {
+          "label": "Tab and Enter activate preparation and commitment; this is not a screen-reader audit",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "3",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:48.294Z"
+    },
+    {
+      "name": "390px touch emulation exposes the same causal outcome",
+      "startedAt": "2026-10-27T01:58:48.300Z",
+      "trace": [
+        {
+          "label": "Tap-activated preparation and the visible outcome fit an emulated phone viewport",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "5",
+          "momentum": "3",
+          "fracture": "Fracture 2 of 4",
+          "square": "Bell Square · town report\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:50.146Z"
+    },
+    {
+      "name": "821x462 embedded candidate supports a full boundary",
+      "startedAt": "2026-10-27T01:58:50.159Z",
+      "trace": [],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:50.831Z"
+    },
+    {
+      "name": "portable single-file distribution carries the causal scene",
+      "startedAt": "2026-10-27T01:58:50.842Z",
+      "trace": [
+        {
+          "label": "The generated portable HTML supports the same witnessed clue and ordinary intervention",
+          "phase": "Contrast · Loop 2 · Noon",
+          "actions": "4",
+          "momentum": "0",
+          "fracture": "Fracture 1 of 4",
+          "square": "Bell Square · witnessed at Noon\n\nThe masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.\n\nAuction stalls\n→\nMina + crate · sheltered market well",
+          "clue": "Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight."
+        }
+      ],
+      "status": "PASS",
+      "finishedAt": "2026-10-27T01:58:52.642Z"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "scenario": "immutable comparison retains Original and previous Contrast",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "cancel and late arrival never manufacture eyewitness knowledge",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "correct forecast does not gate witnessing or ordinary preparation",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "wrong forecast does not gate witnessing or ordinary preparation",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "blank forecast does not gate witnessing or ordinary preparation",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "borrowed preparation is atomic and preserves an expedition action",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "Fracture four before Noon interrupts the event and its forecast",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "catastrophe after Noon preserves the already observed outcome",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "missed intervention is legible and daily state resets while knowledge remains",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "mode isolation and reload clear only their intended run state",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "mode isolation and reload clear only their intended run state",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "Mina intervention retains the complete ending and restart",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "keyboard can reach and activate the earned action",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "390px touch emulation exposes the same causal outcome",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "821x462 embedded candidate supports a full boundary",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "portable single-file distribution carries the causal scene",
+      "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ],
+  "failedRequests": [
+    {
+      "scenario": "immutable comparison retains Original and previous Contrast",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "cancel and late arrival never manufacture eyewitness knowledge",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "correct forecast does not gate witnessing or ordinary preparation",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "wrong forecast does not gate witnessing or ordinary preparation",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "blank forecast does not gate witnessing or ordinary preparation",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "borrowed preparation is atomic and preserves an expedition action",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "Fracture four before Noon interrupts the event and its forecast",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "catastrophe after Noon preserves the already observed outcome",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "missed intervention is legible and daily state resets while knowledge remains",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "mode isolation and reload clear only their intended run state",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "mode isolation and reload clear only their intended run state",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "Mina intervention retains the complete ending and restart",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "keyboard can reach and activate the earned action",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "390px touch emulation exposes the same causal outcome",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "821x462 embedded candidate supports a full boundary",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "scenario": "portable single-file distribution carries the causal scene",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "file": "index.html",
+      "sha256": "e00caf2e045769e602f87fdb39d619e7c1a6305f32f1a1a6b3f4295743bfb173"
+    },
+    {
+      "file": "css/main.css",
+      "sha256": "1f4cf98e89c1d4c887da5997b091d33e5e70268c3146ea716bbef74437877957"
+    },
+    {
+      "file": "js/data.js",
+      "sha256": "d4571c79db187accd52b23b1fea1696eddfa86b998c3d20d002b2d157c68ae1a"
+    },
+    {
+      "file": "js/echo-time.js",
+      "sha256": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f"
+    },
+    {
+      "file": "js/square-event.js",
+      "sha256": "ba313b38bd226de8b2571784eae2a4f96af6ead49cb19e917dce7eee4fab227a"
+    },
+    {
+      "file": "js/engine.js",
+      "sha256": "e3331a545c1df4b1a9187ea66a6f56b532f29fe594730c54e3961e90f11a1e18"
+    },
+    {
+      "file": "build.mjs",
+      "sha256": "25af36813f9097d16fe65992471af25d1af9ebeb66372b3cd48af01efc51bedf"
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "dist/thirteenth-bell-playable-demo.html",
+      "bytes": 1447338,
+      "sha256": "c360ab72dd7e8831d4636fdea39d98a09dcd757b3aa93fa887f919ec257e2dfb"
+    },
+    {
+      "file": "docs/gamejam/milestone-2026-10-27/reference/index.html",
+      "bytes": 1434008,
+      "sha256": "c2facc2a008c7bb232a629c4bd79efcb07cb5e46b73c4ebf6e55ceaa5337f405"
+    }
+  ],
+  "base": "http://127.0.0.1:39601/",
+  "sourceFilesUnchangedDuringRun": true,
+  "artifactsUnchangedDuringRun": true,
+  "finishedAt": "2026-10-27T01:58:52.653Z",
+  "passed": 15,
+  "failed": 0,
+  "result": "FAIL"
+}

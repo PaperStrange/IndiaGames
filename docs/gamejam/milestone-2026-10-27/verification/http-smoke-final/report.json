@@ -1,0 +1,11 @@
+{
+  "execution_date_utc": "2026-10-27",
+  "exact_execution_timestamps": null,
+  "output_source": "Verbatim stdout preserved from completed tool command, exit 0",
+  "command": "BELL_SMOKE_TMP=/workspace/indiagames-milestone-2026-10-27/bell-qa/http-smoke-fresh/browser /workspace/indiagames-env/.venv/bin/python /workspace/indiagames-milestone-2026-10-27/bell-smoke-fresh.py /workspace/IndiaGames",
+  "exit_code": 0,
+  "assertions_passed": 19,
+  "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06",
+  "html_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973",
+  "initial_failure": "Restored October5 browser profile retained SingletonLock for a previous host; debugger attach failed before game checks. Fresh profile passed without changing game or assertions."
+}

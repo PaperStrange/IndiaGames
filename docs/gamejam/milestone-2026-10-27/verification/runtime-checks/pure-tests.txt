@@ -1,0 +1,23 @@
+✔ only a district learned in an earlier loop can buy time (1.009035ms)
+✔ the time budget requires Momentum, resets each loop, and ends at midnight (0.159431ms)
+✔ catastrophe overrides borrowed time; normal actions never hold the bell (0.111349ms)
+✔ Noon blockage is independent of a correct, wrong or blank forecast (1.679458ms)
+✔ ordinary travel elsewhere produces a report, not an eyewitness clue (0.161744ms)
+✔ late arrival cannot manufacture a clue or resolve the event again (0.263247ms)
+✔ earned preparation requires a prior-loop clue, Dawn and an unused opportunity (0.197538ms)
+✔ ordinary preparation works without Momentum and yields the well outcome (1.071299ms)
+✔ borrowed preparation holds Dawn; following normal travel resolves the prepared crossing (0.236447ms)
+✔ a borrowed ordinary visit cannot witness a bell that has not rung (0.137588ms)
+✔ Fracture four interrupts a normal or borrowed Dawn before the scheduled event (0.218069ms)
+✔ interrupted preparation is not a successful crossing and does not erase prior knowledge (0.220564ms)
+✔ catastrophe after Noon preserves an already resolved outcome and its original provenance (0.356659ms)
+✔ another loop resets only its event state; prior-loop clue and route can still enable borrowing (0.21824ms)
+✔ event settlement does not mutate inputs and a consumed day cannot award another event (0.246092ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 63.65125
