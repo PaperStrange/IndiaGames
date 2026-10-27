@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "game": "thirteenth-bell",
+  "version": "0.1.0",
+  "build_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+  "critical_bugs_open": null,
+  "protocol": {
+    "sampling_rule": "first-six-predeclared-sessions",
+    "registered_at": null,
+    "session_ids": [],
+    "delayed_recall_min_hours": 0.03333333333333333
+  },
+  "sessions": [],
+  "human_approval": {
+    "approved": false,
+    "reviewer_is_human": false,
+    "reviewed_manual_evidence": false,
+    "reviewer_id": null,
+    "reviewed_at": null
+  }
+}

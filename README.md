@@ -2,11 +2,17 @@
 
 `master` is the staging branch for every game-demo release. Game development stays on the individual game branches; candidates arrive here for measured manual human playtests. Only an approved game/version is promoted to `main` as an official release.
 
-**Vivid 0.1.2 is staged for human playtests. There are no official releases.** The packet contains two stories, A Place for the Promise and The Unfinished Postcard. Its human observations and approval remain empty. The original Python battle prototype and its history are preserved.
+**Vivid 0.1.2 and Thirteenth Bell 0.1.0 are staged for human playtests. There are no official releases.** The packet contains two stories, A Place for the Promise and The Unfinished Postcard. Its human observations and approval remain empty. The original Python battle prototype and its history are preserved.
 
 [Candidate packet](release-candidates/keepers-frame/0.1.2/) · [Candidate notes](release-candidates/keepers-frame/0.1.2/notes.md) · [Human-study preparation](https://github.com/PaperStrange/IndiaGames/tree/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/human-study)
 
 To play this exact packet locally, run `python3 -m http.server 8114 --bind 127.0.0.1 --directory release-candidates/keepers-frame/0.1.2/build`, then open `http://127.0.0.1:8114/`. Master is not a public Pages deployment. The packet hash is `e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4`. Earlier 0.1.0 and 0.1.1 packets are preserved, unapproved. Version 0.1.1 added dependency notices; 0.1.2 gives story packs control of scene captions and accessible labels while preserving current wording and saves. [The main policy extension](https://github.com/PaperStrange/IndiaGames/pull/1) requires separate owner review before any promotion.
+
+## Bell 0.1.0 · Prepare Mina's route
+
+[Candidate packet](release-candidates/thirteenth-bell/0.1.0/) · [Notes](release-candidates/thirteenth-bell/0.1.0/notes.md) · [Pilot protocol and comparison](https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md)
+
+Serve `release-candidates/thirteenth-bell/0.1.0/build` over local HTTP, select Contrast and Start. The exact tested source is `700dcea61eaedc704ddce5adc98d5a6bd5d42a06`; inventory hash `fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e`. The pending human report has no sessions and approval is false. Small Hours remains on its owning branch until its unchanged-baseline human pilot decision; no Small Hours candidate is staged here.
 
 ## Prepare a candidate
 
