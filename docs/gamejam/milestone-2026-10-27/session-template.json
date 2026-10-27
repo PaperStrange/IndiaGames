@@ -1,0 +1,38 @@
+{
+  "id": null,
+  "participant_count": null,
+  "participant_ids": [],
+  "method": null,
+  "observer_is_human": false,
+  "observer_id": null,
+  "build_sha256": null,
+  "started_at": null,
+  "completed_at": null,
+  "observation_notes": null,
+  "metrics": {
+    "explained_cause": null,
+    "predicted_before_outcome": null,
+    "earned_action_uncoached": null,
+    "explained_fracture": null,
+    "delayed_recalled_specific_mina_outcome": null
+  },
+  "follow_up_at": null,
+  "follow_up_notes": null,
+  "context": {
+    "comparison_build_sha256": null,
+    "first_build": null,
+    "device": null,
+    "browser": null,
+    "genre_familiarity": null,
+    "prior_exposure": null,
+    "assistance": null
+  },
+  "journey": [],
+  "reference_run": {
+    "started_at": null,
+    "completed_at": null,
+    "follow_up_at": null,
+    "observations": null,
+    "metrics": null
+  }
+}
