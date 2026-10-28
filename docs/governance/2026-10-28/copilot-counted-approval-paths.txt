@@ -1,0 +1,9 @@
+index.html
+app.js
+styles.css
+assets/hub/**
+data/hub-presentation.json
+tests/hub/**
+docs/hub/**
+README.md
+docs/PUBLISHING.md
