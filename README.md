@@ -4,7 +4,11 @@ Three browser experiments, one shared design practice: state a player promise, o
 
 **Main is the project hub and reusable design kit.** Development implementations stay on their own branches; approved, versioned browser builds are published on main after human review on master. The website source is this branch’s `index.html`; its planned GitHub Pages address is [paperstrange.github.io/IndiaGames](https://paperstrange.github.io/IndiaGames/). See [publishing status and instructions](docs/PUBLISHING.md).
 
-## Current milestone
+## Launch target · 20 November 2026
+
+The [launch plan and decision calendar](docs/launch/2026-11-20/README.md) schedules first human pilots, one bounded correction per game, an 11 November candidate freeze and a 16 November go/no-go decision. Each game has its own [human test list and blank recording templates](docs/launch/2026-11-20/README.md#game-packets). Dates are targets; real observations, exact-build approval and live publication still determine which games can ship. No human results are supplied by this planning update.
+
+## Completed preparation milestone
 
 The [27 October playtest-readiness handoff](docs/milestones/2026-10-27.md) prepares three separate packets: Small Hours’ unchanged baseline, Vivid’s existing 0.1.2 candidate and Bell’s selected Mina-route scene. Each project retains its own source/QA identity. Human participants and independent approval remain pending; the [dashboard manifest](data/source-manifest.json) records current preparation and staging state.
 
@@ -28,15 +32,15 @@ Use the selected game branch in its own task environment. Check for local change
 | `vivid-2.5d-photo-game` | `npm --prefix vivid-2.5d-photo-game/play run dev` | `/` on port 8112 |
 | `the-thirteenth-bell` | `python3 -m http.server 8113 --bind 127.0.0.1` | `/` |
 
-GitHub branch/file links above open source, not hosted playable games. This hub is prepared to host the overview, planning dashboard and, after approval, versioned official builds. On 27 October the Pages API still returned 403 and the expected website returned 404; no live deployment is verified and there are no official game releases yet.
+GitHub branch/file links above open source, not hosted playable games. This hub is prepared to host the overview, planning dashboard and, after approval, versioned official builds. On 28 October the Pages API became accessible and the expected URL returned a page built from master’s staging README. The hub’s required source is main/root; see [current publication checks](docs/PUBLISHING.md) before treating that response as the game dashboard. There are no official game releases yet.
 
-For Vivid, first install its locked dependencies with `npm --prefix vivid-2.5d-photo-game/play ci` (Node ≥22.12). Its [source README](https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/README.md) explains builds, input and local memory. The portable [0.1.2 candidate](https://github.com/PaperStrange/IndiaGames/tree/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2) is staged on master with both stories and pending human reports. Serve its `build/` directory for manual review; master is not a live Pages deployment. Candidates 0.1.0 and 0.1.1 are preserved unchanged. The current 0.1.2 adds story-owned captions and accessible labels. See the [six-game journeys and qualified design findings](https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md).
+For Vivid, first install its locked dependencies with `npm --prefix vivid-2.5d-photo-game/play ci` (Node ≥22.12). Its [source README](https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/README.md) explains builds, input and local memory. The portable [0.1.2 candidate](https://github.com/PaperStrange/IndiaGames/tree/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2) is staged on master with both stories and pending human reports. Serve its exact `build/` directory for manual review; a GitHub candidate tree link is not a hosted game. Candidates 0.1.0 and 0.1.1 are preserved unchanged. The current 0.1.2 adds story-owned captions and accessible labels. See the [six-game journeys and qualified design findings](https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md).
 
 ## Start another experiment
 
 Use the [game demo design template kit](templates/game-demo/README.md). It contains a concept brief, player journey, systems contract, art/UX brief, evidence ledger, playtest protocol, task card and release/handoff checklist. Copy it into a new game’s branch and replace the prompts with evidence and decisions. Templates are blank design tools, not completed findings.
 
-The [team workflow](docs/TEAM.md) explains role ownership, plan settlement, cross-branch updates and backup milestones. Keep one game per source branch and one integration owner per shared state/rendering contract.
+The [team workflow](docs/TEAM.md) explains role ownership, plan settlement, cross-branch updates and backup milestones. Keep one game per source branch and one integration owner per shared state/rendering contract. The [28 October cleanup record](docs/maintenance/2026-10-28.md) documents archived branches and recoverable backups.
 
 ## Main branch structure
 
@@ -44,6 +48,7 @@ The [team workflow](docs/TEAM.md) explains role ownership, plan settlement, cros
 index.html / styles.css / app.js  Static project hub and task dashboard
 data/                           Combined task board and source provenance
 docs/games/<game>/               Separate detailed plans and structured task cards
+docs/launch/2026-11-20/          Launch calendar, human gates and role handoff
 docs/TEAM.md                     Collaboration and update rules
 docs/PUBLISHING.md               Pages setup and verification
 templates/game-demo/             Reusable game-design templates

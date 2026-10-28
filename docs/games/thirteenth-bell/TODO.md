@@ -1,5 +1,9 @@
 # The Thirteenth Bell — Mina-route experiment and human handoff
 
+## Next iteration · launch target 20 November 2026
+
+Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
+
 ## Current milestone · 27 October 2026
 
 Option A, Prepare Mina’s route, was selected on October 24. The bounded scene is implemented and verified, and candidate 0.1.0 is staged on master with human approval pending; the manifest pins its exact source and artifacts. Original and previous Contrast remain comparison references. No human results or official release are implied.

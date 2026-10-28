@@ -136,3 +136,9 @@ dmypy.json
 
 # Browser dependencies retained across serialized branch switches
 node_modules/
+
+# Local editor, automation output and private human-session records
+.idea/
+test-results/
+playwright-report/
+playtest-private/

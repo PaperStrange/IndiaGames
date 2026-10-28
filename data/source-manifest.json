@@ -24,7 +24,7 @@
       "lane": "memorable",
       "name": "Small Hours",
       "branch": "memorable-moments-game",
-      "reviewed_head": "cc0b9ddd777d5772358df272bec69fe5c7ba8daf",
+      "reviewed_head": "b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
       "prior_manifest_source": "f8b725d2ce3038a38c0b49dce564bc0c7b0856d0",
       "runtime_scope": [
         "memorable-moments-game/play",
@@ -60,13 +60,14 @@
         "http_errors": 0,
         "evidence": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
         "checker": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs"
-      }
+      },
+      "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/docs/gamejam/launch-2026-11-20/README.md"
     },
     {
       "lane": "vivid",
       "name": "Vivid — small worlds, lasting traces",
       "branch": "vivid-2.5d-photo-game",
-      "reviewed_head": "545a867fe0d6b1fe2555526e2b48278b96372f9a",
+      "reviewed_head": "a63834557de0a8132ce5355c0d50858e200a3914",
       "prior_manifest_source": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
       "runtime_scope": [
         "vivid-2.5d-photo-game/play"
@@ -113,7 +114,7 @@
       "release_policy_review": {
         "status": "pending",
         "url": "https://github.com/PaperStrange/IndiaGames/pull/1",
-        "checked_date_utc": "2026-10-27",
+        "checked_date_utc": "2026-10-28",
         "head_commit": "4a4f3996fefc198370814c71acb45af3470bd47f",
         "human_reviews": 0
       },
@@ -133,13 +134,14 @@
         "javascript_errors": 0,
         "http_errors_4xx": 0,
         "evidence": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json"
-      }
+      },
+      "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/a63834557de0a8132ce5355c0d50858e200a3914/docs/gamejam/launch-2026-11-20/README.md"
     },
     {
       "lane": "bell",
       "name": "The Thirteenth Bell",
       "branch": "the-thirteenth-bell",
-      "reviewed_head": "1f0fe0798ca991a05686e17c08f043d2c225f162",
+      "reviewed_head": "fce070bd9ee3006f0a017b9c33ee11f5b5133657",
       "prior_manifest_source": "c2a0a3e385be5b75324f978e84eb273b7d23e404",
       "runtime_scope": [
         "index.html",
@@ -180,7 +182,8 @@
         "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md",
         "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/report.json",
         "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/source-binding.json"
-      ]
+      ],
+      "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/docs/gamejam/launch-2026-11-20/README.md"
     }
   ],
   "research": {
@@ -387,11 +390,11 @@
     "rebuilt_in_this_review": false,
     "retested_in_this_review": false
   },
-  "plan_date_utc": "2026-10-24",
+  "plan_date_utc": "2026-10-28",
   "evidence_intake_date_utc": "2026-10-24",
   "publication_branch": "main",
   "historical_review_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee",
-  "dashboard_date_utc": "2026-10-27",
+  "dashboard_date_utc": "2026-10-28",
   "historical_coordination_branch": "gamejam-next-iteration-2026-10-20",
   "historical_coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
   "historical_review_methods": [
@@ -414,12 +417,26 @@
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
   },
   "publication": {
-    "checked_date_utc": "2026-10-27",
-    "pages_api_status": 403,
-    "pages_api_error": "Resource not accessible by integration",
+    "checked_date_utc": "2026-10-28",
+    "pages_api_status": 200,
+    "source_branch": "master",
+    "source_path": "/",
     "expected_url": "https://paperstrange.github.io/IndiaGames/",
-    "expected_url_http_status": 404,
+    "expected_url_http_status": 200,
     "live_deployment_verified": false,
-    "required_action": "Repository administrator must enable main/root Pages and verify its actual deployment."
+    "observed_page": "Pre-commit candidate README from master; main dashboard deployment pending",
+    "required_action": "Correct source to main/root after validating and pushing the hub, then verify deployed commit and content.",
+    "branch_protection_read_status": 403,
+    "branch_protection_enforcement_verified": false
+  },
+  "launch": {
+    "target_date_utc": "2026-11-20",
+    "decision_date_utc": "2026-11-16",
+    "candidate_freeze_date_utc": "2026-11-11",
+    "status": "planned_human_gates_pending",
+    "plan_document": "docs/launch/2026-11-20/README.md",
+    "cleanup_document": "docs/maintenance/2026-10-28.md",
+    "staffing_status": "unassigned",
+    "human_sessions_completed": 0
   }
 }

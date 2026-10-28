@@ -1,5 +1,9 @@
 # Vivid — implemented stories and remaining release work
 
+## Next iteration · launch target 20 November 2026
+
+Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/a63834557de0a8132ce5355c0d50858e200a3914/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
+
 ## Current milestone · 27 October 2026
 
 Prepare separate Iona and Mara sessions against the exact existing 0.1.2 candidate. Its runtime and historical QA are unchanged. The operational packet supplements the canonical October 21 protocol; physical-device observations, both human cohorts and separate policy review remain pending.

@@ -1,0 +1,55 @@
+{
+  "recorded_at": "2026-10-28T08:56:44.623380+00:00",
+  "reason": "Preserve stale generated output outside shared branch checkout; no runtime server active. Rebuild selected branch before use. Dependencies and .wrangler data retained in place.",
+  "entries": [
+    {
+      "path": "dist",
+      "file_count": 83,
+      "bytes": 178894357
+    },
+    {
+      "path": "dist-mobile",
+      "file_count": 45,
+      "bytes": 149910470
+    },
+    {
+      "path": "work",
+      "file_count": 149,
+      "bytes": 22811265
+    },
+    {
+      "path": "tsconfig.tsbuildinfo",
+      "file_count": 1,
+      "bytes": 612352
+    },
+    {
+      "path": "scripts/__pycache__",
+      "file_count": 3,
+      "bytes": 40237
+    },
+    {
+      "path": "tests/__pycache__",
+      "file_count": 2,
+      "bytes": 68408
+    },
+    {
+      "path": "xiaor_battle_system",
+      "file_count": 10,
+      "bytes": 71459
+    }
+  ],
+  "archived_branch": "gamejam-next-iteration-2026-10-20",
+  "archive_tag": "archive/gamejam-next-iteration-2026-10-20",
+  "archive_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee",
+  "archive_tag_object": "7f52c879b0d9946564af351b68c7093968318d0e",
+  "retired_local_initial_branch": "work",
+  "initial_commit": "e0af9d5ec44544f9e47454e40fe2984131a9fa99",
+  "worktree_count": 1,
+  "stale_worktrees": 0,
+  "master_cleanup_commit": "2c4d230e40e64b2789b6814393d92cbb6f7f0cf3",
+  "notebook_fast_forward_from": "282124f007eea8a2db88b030fa089ff797acf0fd",
+  "notebook_fast_forward_to": "4754462065184a308cb836717cc9f0dc91d6dc50",
+  "pre_cleanup_bundle": "/workspace/indiagames-backups/pre-cleanup-2026-10-28.bundle",
+  "generated_backup": "/workspace/indiagames-backups/cleanup-generated-2026-10-28",
+  "human_results_created": 0
+}

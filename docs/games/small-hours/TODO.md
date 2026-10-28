@@ -1,5 +1,9 @@
 # Small Hours — unchanged-baseline pilot
 
+## Next iteration · launch target 20 November 2026
+
+Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
+
 ## Current milestone · 27 October 2026
 
 The settled milestone prepares the unchanged build and six-pair observation packet. Gameplay changes remain conditional on real-pair observations; SH-17 retains its existing post-pilot dependencies. No participant results or master candidate are created by preparation.
@@ -334,7 +338,7 @@ Acceptance:
 Acceptance:
 
 - [ ] Name one accountable research owner, human facilitator, designer, content/visual owners, transition integrator, QA reviewer and distribution owner; roles may be combined without inflating sample size.
-- [ ] Confirm that all cards are proposed, conditional or blocked_human and no future feature has completion evidence yet.
+- [ ] Distinguish completed preparation from open human and conditional gameplay work; no future feature has implementation evidence before selection and verification.
 - [ ] Do not assign parallel edits to shared transition files; preserve the game branch/worktree ownership contract and source/evidence pinning.
 - [ ] For each conditional card, record selection or not-selected/no-build disposition after the decision; a disposition is not an implemented feature.
 - [ ] Track participant/device/access needs separately from person-hours; share only de-identified observations and agreed artifacts with the integration reviewer.

@@ -1,8 +1,12 @@
 # Team workflow
 
+## Launch coordination · target 20 November 2026
+
+Use the [dated launch plan](launch/2026-11-20/README.md) and each game’s linked human-test packet. Role names remain assignment slots until a real person accepts them. Name a facilitator, device QA owner, release integrator, repository administrator and independent human reviewer by 30 October; otherwise revise the affected launch target. Keep the 60 existing task cards and their completion evidence authoritative. The new schedule does not mark human work complete.
+
 ## Ownership and status
 
-`main` owns the project overview, current per-game to-do lists, reusable templates and approved official game versions. `master` owns pre-commit candidate packages and their pending or completed human evidence. Each game branch owns its implementation, game-specific research and test evidence. The `gamejam-next-iteration-2026-10-20` branch preserves the earlier cross-game review. Do not merge entire game branches into main to update a plan; copy only the intended documentation/data or link to a pinned source.
+`main` owns the project overview, current per-game to-do lists, reusable templates and approved official game versions. `master` owns pre-commit candidate packages and their pending or completed human evidence. Each game branch owns its implementation, game-specific research and test evidence. The retired coordination branch is preserved by [`archive/gamejam-next-iteration-2026-10-20`](https://github.com/PaperStrange/IndiaGames/tree/archive/gamejam-next-iteration-2026-10-20) at immutable commit `e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee`; it is not an active work lane. See the [28 October cleanup record](maintenance/2026-10-28.md) for retained branches, backups and recovery. Do not merge entire game branches into main to update a plan; copy only the intended documentation/data or link to a pinned source.
 
 Each task has a role owner, a deliverable, dependencies and acceptance criteria. The current [milestone handoff](milestones/2026-10-27.md) names the packet, runtime, QA and integration agents. Human facilitator and reviewer roles remain unstaffed. `proposed` means not started; `conditional` means a preceding observation must justify selecting it; `blocked_human` means real participants are required. An implemented card is not an official release or human approval. No progress percentage is inferred from the number of cards.
 

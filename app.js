@@ -90,6 +90,11 @@ function renderProjects() {
       packet.href = reviewed.pilot_packet;
       body.append(packet);
     }
+    if (reviewed.human_playtest_packet) {
+      const humanPacket = node('a', 'reviewed-plan-link', 'Human test list, recording forms & next iteration');
+      humanPacket.href = reviewed.human_playtest_packet;
+      body.append(humanPacket);
+    }
     if (reviewed.latest_research_readme) {
       const research = node('a', 'reviewed-plan-link', 'Latest competitor records · limits included');
       research.href = reviewed.latest_research_readme;
@@ -318,7 +323,18 @@ function renderPlanningMetadata() {
     option.value = status;
     return option;
   }));
-  if (manifest.milestone) {
+  if (manifest.launch) {
+    const target = new Date(`${manifest.launch.target_date_utc}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+    const decision = new Date(`${manifest.launch.decision_date_utc}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' });
+    const freeze = new Date(`${manifest.launch.candidate_freeze_date_utc}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' });
+    el('snapshot-title').textContent = 'Launch preparation';
+    el('snapshot-note').textContent = `Target ${target}. Go/no-go ${decision}; human approval remains pending for each game.`;
+    el('incoming-label').textContent = `Launch target · ${target}`;
+    const plan = node('a', '', 'Read the launch plan');
+    plan.href = `https://github.com/PaperStrange/IndiaGames/blob/main/${manifest.launch.plan_document}`;
+    el('incoming-copy').replaceChildren(document.createTextNode(`Run the human pilots, select evidence-backed corrections, freeze candidates on ${freeze}, then decide which games can ship on ${decision}. `), plan);
+    el('incoming-status').textContent = 'Human gates pending';
+  } else if (manifest.milestone) {
     el('snapshot-title').textContent = 'Playtest preparation';
     el('snapshot-note').textContent = manifest.milestone.summary;
     el('incoming-label').textContent = 'Settled milestone · 27 October';
@@ -347,11 +363,18 @@ function validateData(tasks, sources) {
   PROJECTS.forEach((project) => {
     const source = sources.sources.find((item) => item.lane === project.lane);
     if (!source || !/^[0-9a-f]{40}$/.test(source.reviewed_head)) throw new Error('Invalid reviewed source');
-    ['pilot_packet', 'latest_research_readme', 'candidate_manifest'].forEach(field => {
+    ['pilot_packet', 'human_playtest_packet', 'latest_research_readme', 'candidate_manifest'].forEach(field => {
       if (source[field] !== undefined && (typeof source[field] !== 'string' || !source[field].startsWith('https://github.com/PaperStrange/IndiaGames/'))) throw new Error('Invalid project evidence link');
     });
     if (source.implementation_started && (![source.implementation_readme, source.current_decision_document].every((url) => typeof url === 'string' && url.startsWith('https://github.com/PaperStrange/IndiaGames/')))) throw new Error('Invalid implementation metadata');
   });
+  if (sources.launch) {
+    const launch = sources.launch;
+    const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+    if (!['target_date_utc', 'decision_date_utc', 'candidate_freeze_date_utc'].every(field => validDate(launch[field])) || launch.candidate_freeze_date_utc > launch.decision_date_utc || launch.decision_date_utc > launch.target_date_utc || launch.status !== 'planned_human_gates_pending' || launch.plan_document !== `docs/launch/${launch.target_date_utc}/README.md`) throw new Error('Invalid launch plan metadata');
+    const packetPattern = new RegExp(`^https://github\\.com/PaperStrange/IndiaGames/blob/[0-9a-f]{40}/docs/gamejam/launch-${launch.target_date_utc}/README\\.md$`);
+    if (!sources.sources.every(source => packetPattern.test(source.human_playtest_packet || ''))) throw new Error('Missing pinned human playtest packet');
+  }
   if (tasks.gates && !tasks.gates.every((gate) => Object.hasOwn(GATE_COPY, gate.id) && typeof gate.requirement === 'string')) throw new Error('Invalid gate content');
   ['core_gameplay_evidence_assignments', 'required_assignments', 'snapshot_unique_sha256_count', 'human_participant_rows'].forEach((key) => {
     if (!Number.isInteger(sources.research[key]) || sources.research[key] < 0) throw new Error('Invalid evidence counts');

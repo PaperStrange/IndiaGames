@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Validate authored task lists and rebuild a per-lane development snapshot."""
 import json
+import re
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,6 +19,21 @@ REQUIRED = {'id', 'lane', 'perspective', 'priority', 'status', 'owner_role', 'ti
 def build():
     manifest = json.loads((ROOT / 'data' / 'source-manifest.json').read_text())
     sources = {source['lane']: source for source in manifest['sources']}
+    launch = manifest.get('launch')
+    if launch is not None:
+        for field in ('target_date_utc', 'decision_date_utc', 'candidate_freeze_date_utc'):
+            if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', launch.get(field, '')):
+                raise ValueError(f'Invalid launch {field}')
+            date.fromisoformat(launch[field])
+        if not launch['candidate_freeze_date_utc'] <= launch['decision_date_utc'] <= launch['target_date_utc'] or launch.get('status') != 'planned_human_gates_pending':
+            raise ValueError('Invalid launch decision or status')
+        document = launch.get('plan_document', '')
+        if document != f"docs/launch/{launch['target_date_utc']}/README.md" or not (ROOT / document).is_file():
+            raise ValueError('Missing launch plan document')
+        packet_pattern = r'https://github\.com/PaperStrange/IndiaGames/blob/[0-9a-f]{40}/docs/gamejam/launch-' + re.escape(launch['target_date_utc']) + r'/README\.md'
+        for lane, source in sources.items():
+            if not re.fullmatch(packet_pattern, source.get('human_playtest_packet', '')):
+                raise ValueError(f'{lane}: missing pinned human playtest packet')
     tasks = []
     for folder, (lane, prefix) in LANES.items():
         path = ROOT / 'docs' / 'games' / folder / 'tasks.json'
@@ -79,10 +96,12 @@ def build():
             'candidate_status': source.get('candidate_status'),
             'milestone_status_label': source.get('milestone_status_label'),
             'pilot_packet': source.get('pilot_packet'),
+            'human_playtest_packet': source.get('human_playtest_packet'),
             'human_staffing': source.get('human_staffing'),
             'official_release': source.get('official_release', False),
         } for lane, source in sources.items()},
         'source_manifest': 'source-manifest.json',
+        'launch': launch,
         'status_definitions': {
             'proposed': 'Planned; not started.',
             'conditional': 'Select only if preceding observations support the change.',

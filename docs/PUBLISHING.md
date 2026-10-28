@@ -4,6 +4,14 @@ The site is plain HTML, CSS, JavaScript and local JSON on **`main`**. `.nojekyll
 
 https://paperstrange.github.io/IndiaGames/
 
+## Current verification · 28 October 2026
+
+A fresh API query succeeds. Pages is configured to **master / (root)**, status `built`; the expected URL returns HTTP 200 but serves the pre-commit candidate README. This is a real change from the historical 403/404 results below. It is not the requested main-branch game dashboard.
+
+The coordinator is correcting the source to **main / (root)** after validating and pushing the hub. Main deployment identity, the actual page content and project asset paths must then be verified. **Main deployment verification is pending in this preparation record.** Replace this sentence only with observed deployment evidence; a configuration response or HTTP 200 alone is insufficient. Fresh reads of main and master branch-protection settings still return **403, Resource not accessible by integration**; enforcement remains unverified and no protections were changed. Vivid policy PR #1 still has no human reviews on 28 October.
+
+Publication is on the [20 November critical path](launch/2026-11-20/README.md). The hub can be published while official game releases remain empty.
+
 ## Configuration
 
 In [Settings → Pages](https://github.com/PaperStrange/IndiaGames/settings/pages), choose **Deploy from a branch**, then **main** and **/ (root)**, and Save. GitHub creates the Pages build/deployment automatically. Subsequent pushes to main update the published site.

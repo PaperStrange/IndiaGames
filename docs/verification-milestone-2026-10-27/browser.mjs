@@ -157,6 +157,20 @@ try {
   report.pilot_packets = {};
   for (const lane of Object.keys(laneCounts)) report.pilot_packets[lane] = pinnedFile(sources[lane].pilot_packet, 'docs/gamejam/milestone-2026-10-27/README.md');
   check('immutable-packets', 'Vivid 0.1.2 and Bell 0.1.0 point to existing immutable master candidate manifests with matching identities and pending human reports; all three pilot links pin existing files.');
+  if (manifest.launch) {
+    assert.equal(manifest.launch.target_date_utc, '2026-11-20');
+    assert.equal(manifest.launch.decision_date_utc, '2026-11-16');
+    assert.equal(manifest.launch.candidate_freeze_date_utc, '2026-11-11');
+    assert.equal(manifest.launch.status, 'planned_human_gates_pending');
+    assert.deepEqual(tasks.launch, manifest.launch);
+    assert.ok((await stat(join(root, manifest.launch.plan_document))).isFile());
+    report.human_playtest_packets = {};
+    for (const lane of Object.keys(laneCounts)) {
+      report.human_playtest_packets[lane] = pinnedFile(sources[lane].human_playtest_packet, 'docs/gamejam/launch-2026-11-20/README.md');
+      assert.equal(tasks.lane_status[lane].human_playtest_packet, sources[lane].human_playtest_packet);
+    }
+    check('launch-plan-and-human-packets', 'November 20 target, November 11 freeze, November 16 decision and three existing pinned blank human playtest packets; no new approval.');
+  }
 
   const contentTypes = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp' };
   server = createServer(async (request, response) => {
@@ -214,6 +228,15 @@ try {
         const card = page.locator('.project-card.' + lane);
         assert.equal(await card.locator('a', { hasText: 'Playtest packet & launch instructions' }).getAttribute('href'), sources[lane].pilot_packet);
         assert.equal(await card.locator('.project-state').innerText(), sources[lane].milestone_status_label);
+        if (manifest.launch) assert.equal(await card.locator('a', { hasText: 'Human test list, recording forms & next iteration' }).getAttribute('href'), sources[lane].human_playtest_packet);
+      }
+      if (manifest.launch) {
+        assert.match(await page.locator('#incoming-label').innerText(), /20 November 2026/i);
+        assert.match(await page.locator('#snapshot-note').innerText(), /16 November.*human approval remains pending/i);
+        assert.equal(await page.locator('#incoming-copy a').getAttribute('href'), github + 'blob/main/' + manifest.launch.plan_document);
+        await page.locator('.hero').screenshot({ path: join(out, id + '-launch.jpg'), type: 'jpeg', quality: 76 });
+        report.screenshots.push(id + '-launch.jpg');
+        group.checks.push('Visible launch target, decision date, pending human status and three exact human-packet links.');
       }
       for (const lane of ['vivid', 'bell']) {
         const expected = report.candidates[lane];
