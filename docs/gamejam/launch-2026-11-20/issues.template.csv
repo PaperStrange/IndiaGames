@@ -1,0 +1,1 @@
+issue_id,reported_at_utc,source_commit,build_sha256,host,device_browser_input,session_or_check_reference,expected_behavior,observed_behavior,reproduction_steps,player_impact,severity_human_assessment,owner,status,fix_source_commit,retest_build_sha256,retest_reference,closed_by,closed_at_utc

@@ -1,5 +1,7 @@
 # Small Hours: unchanged-baseline playtest packet
 
+Next: [November 20 human checklist, recording templates and iteration plan](../launch-2026-11-20/README.md). This frozen protocol and artifact remain authoritative.
+
 Prepared 27 October 2026. **Ready for facilitator preparation; zero human sessions recorded.** This milestone packages the current game without changing its mechanics, art, prompts or instrumentation. The first product decision follows observation of six willing pairs.
 
 **Frozen source:** [`ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649`](https://github.com/PaperStrange/IndiaGames/commit/ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649), branch `memorable-moments-game`. Its `memorable-moments-game/play/` files match `822366ad3eb309f7009bb7a05e26cddfb466422f` byte for byte. The added October 22 package changes the research evidence, not the game.
