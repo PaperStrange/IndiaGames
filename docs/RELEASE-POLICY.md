@@ -80,10 +80,20 @@ The main gate requires the source SHA to be an ancestor of fetched `origin/maste
 
 The workflow is an implementable gate, **not evidence that branch rules are already enabled**. A repository administrator must configure and verify:
 
-- Protect `main`: require pull requests, a human approving review, dismissal of stale approvals, resolved conversations, and the required `release-gate` status on the latest changes. Prevent direct/force pushes and deletion, including administrator bypass where supported.
+- Protect `main`: require pull requests, one approving review, dismissal of stale approvals, approval of the latest push, resolved conversations, code-owner review for owned paths, and the required `release-gate` status on the latest changes. Prevent direct/force pushes and deletion, including administrator bypass where supported. Governed changes and game releases require an eligible human approval; only the narrow routine-hub exception below may use a verified counted robot approval.
 - Require owner review for `.github/workflows/`, `scripts/validate-release.py`, `scripts/publish-releases.py`, `tests/test_release_gate.py`, this policy and the ownership file itself. The gate loads its validator from the trusted PR base when available, but an editable workflow still needs independent owner review. Review policy changes separately from promotion packets.
 - Protect `master` from force pushes/deletion so immutable source commits remain reachable. Its staging check intentionally permits incomplete human evidence.
 - Restrict creation/movement/deletion of official tags, and verify Pages uses `main` at the repository root. Enable GitHub Actions permissions needed by the publication job.
+
+### Narrow routine-hub robot approval
+
+The owner authorized a presentation-only exception on 28 October 2026. It becomes operational only after the repository's supported counted-approval controls and effective merge requirements are actually verified in [issue #2](https://github.com/PaperStrange/IndiaGames/issues/2). A review request or advisory comment is not an approval.
+
+Only these nine file patterns are eligible: `index.html`, `app.js`, `styles.css`, `assets/hub/**`, `data/hub-presentation.json`, `tests/hub/**`, `docs/hub/**`, `README.md`, and `docs/PUBLISHING.md`. Every changed file must match. Do not widen the list to admit a mixed change. A failed required check still blocks the PR, and a later push requires a new qualifying approval.
+
+Ownership, workflows, release policy/tooling/tests, source/evidence manifest, task source data, registry, candidate packages and official builds remain outside this exception. Existing human CODEOWNERS entries remain authoritative; do not add an unverified bot identity or an unconfirmed person. Nemo's invitation is deferred. If no eligible human can approve a governed change, keep it blocked.
+
+This exception does not alter any game threshold, immutable artifact rule, real participant requirement, physical-device check or independent human release approval. Do not put governance settings into an allowed presentation directory to evade review. The [administrator runbook](governance/2026-10-28/ADMIN-RUNBOOK.md) contains the exact separate configuration and verification steps. Preparation of that runbook does not activate the exception.
 
 Until these rules are actually configured and verified, checks provide review feedback but cannot prevent all unauthorized direct writes. The PR's human reviewer verifies real participants, protocol preregistration, raw observations, uncoached metrics, build identity, bug severity, notes and actual playability. The approving reviewer must be a different person from every participant and observer; the gate checks distinct pseudonymous IDs and humans verify actual independence. JSON booleans never substitute for that review.
 

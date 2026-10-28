@@ -1,0 +1,66 @@
+{
+  "checked_at_utc": "2026-10-28T10:05:36.387877+00:00",
+  "openapi_url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+  "openapi_sha256": "b81f098026e98084a83f0a33db43502213919f68449b028543c373757766a758",
+  "payload_validation": "All three create-ruleset payloads pass JSON Schema validation using the current GitHub public OpenAPI document.",
+  "counted_approval_settings_endpoint_in_public_openapi": false,
+  "automatic_review_request_rule_available": true,
+  "request_rule_requires_author_copilot_access_and_ai_credits": true,
+  "counted_approval_globs": [
+    "index.html",
+    "app.js",
+    "styles.css",
+    "assets/hub/**",
+    "data/hub-presentation.json",
+    "tests/hub/**",
+    "docs/hub/**",
+    "README.md",
+    "docs/PUBLISHING.md"
+  ],
+  "globs_count": 9,
+  "code_owner_eligibility": "None of the nine allowed presentation globs matches the existing human CODEOWNERS patterns. No bot CODEOWNERS entry is proposed.",
+  "repository_entitlement": "unverified",
+  "settings_applied_by_this_agent": false,
+  "sources": [
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+      "quotes": [
+        "Allow Copilot to approve pull requests: Toggle on to let Copilot submit approving reviews.",
+        "Allow Copilot approvals to count toward merge requirements: Toggle on so Copilot approvals can satisfy pull request approval requirements.",
+        "Enter one file glob per line to count approvals only on pull requests where every changed file matches one of the globs. Leave blank to count approvals for all files. Up to 15 globs are supported.",
+        "Copilot approvals are in public preview and subject to change."
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review",
+      "quotes": [
+        "By default, Copilot's reviews do not count toward required approvals for the pull request.",
+        "When Copilot approvals are enabled in repository, organization, and enterprise settings, Copilot can submit an approving review that satisfies your repository's required-approval rule the same way a teammate's approval would."
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners",
+      "quotes": [
+        "The people you choose as code owners must have write permissions for the repository.",
+        "When reviews from code owners are required, an approval from any of the owners is sufficient to meet this requirement."
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/approving-a-pull-request-with-required-reviews",
+      "quotes": [
+        "Pull request authors cannot approve their own pull requests.",
+        "You will also not be able to approve a pull request that was raised by GitHub Copilot if it was you who assigned Copilot to the issue to which the pull request relates."
+      ],
+      "qualification": "This general review page still says Copilot reviews do not count, while the current Copilot-specific pages describe opt-in counted approvals. Treat feature availability and a real eligible PR result as necessary evidence; the review sidebar alone is not proof."
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review",
+      "quotes": [
+        "You can also request a review from Copilot through the GitHub REST API by requesting copilot-pull-request-reviewer[bot] as a reviewer.",
+        "gh pr edit PR-NUMBER --add-reviewer @copilot"
+      ],
+      "qualification": "The supported reviewer identity is the bracketed [bot] identity. The similarly named unsuffixed GitHub account is an organization and must not be requested or granted access as the robot."
+    }
+  ],
+  "copilot_review_request_identity": "copilot-pull-request-reviewer[bot]"
+}

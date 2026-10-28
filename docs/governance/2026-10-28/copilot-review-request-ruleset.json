@@ -1,0 +1,23 @@
+{
+  "name": "IndiaGames routine hub review requests",
+  "target": "branch",
+  "enforcement": "active",
+  "bypass_actors": [],
+  "conditions": {
+    "ref_name": {
+      "include": [
+        "refs/heads/main"
+      ],
+      "exclude": []
+    }
+  },
+  "rules": [
+    {
+      "type": "copilot_code_review",
+      "parameters": {
+        "review_draft_pull_requests": false,
+        "review_on_push": true
+      }
+    }
+  ]
+}
