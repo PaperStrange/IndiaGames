@@ -132,3 +132,7 @@ dmypy.json
 node_modules/
 test-results/
 playwright-report/
+
+# Local editor settings and private human-session records
+.idea/
+playtest-private/

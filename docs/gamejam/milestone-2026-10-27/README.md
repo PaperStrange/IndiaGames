@@ -1,5 +1,7 @@
 # Vivid: ready-to-run human session packet · 27 October 2026
 
+Next: [November 20 human checklist, recording templates and iteration plan](../launch-2026-11-20/README.md). These frozen artifacts and protocols remain authoritative.
+
 **Preparation, not human validation.** The game remains the existing two-story candidate **0.1.2**. No gameplay, artwork, story contract or save schema changes are required for this milestone. No participants have been enrolled, no invitations sent and no human gate passed by this packet.
 
 ## Start here

@@ -1,0 +1,1 @@
+issue_id,reported_at_utc,session_or_device_record_id,version,build_sha256,story_id,device_os_browser,severity,severity_reason,observed_action,expected_visible_response,actual_response,reproduction_steps,private_evidence_ref,owner,status,fix_source_commit,retest_build_sha256,retest_result,reviewer_pseudonym

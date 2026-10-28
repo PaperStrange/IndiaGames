@@ -1,6 +1,12 @@
 # Shared GameJam evidence and packaging
 
-**Current status: planning only, revised 6 October.** Read [One More Turn — revised research plan](research-plan-2026-10-06.md), the [six-competitors-per-demo matrix](competitor-matrix-2026-10-06.md), the [earlier browser candidate pool](candidate-roster-2026-10-06.md), and the [observation templates index](observation-templates.md). No further gameplay or game coding begins until the research plan is settled. The per-demo matrix replaces the earlier shared shortlist as the coverage requirement. The plan supersedes the field report's proposed next-step schedule; historical observations remain preserved below.
+**Current handoff · 28 October 2026:** [Human playtest list, recording templates and November 20 iteration plan](launch-2026-11-20/README.md). Vivid retains its two-story 0.1.2 candidate; separate human cohorts and independent review remain pending. Use the current exact-artifact export helper and one serialized shared checkout.
+
+## Historical October 6 research and packaging
+
+The following records retain their original date and artifact scope; they are not current build or branch instructions.
+
+**Historical status: planning only, revised 6 October.** Read [One More Turn — revised research plan](research-plan-2026-10-06.md), the [six-competitors-per-demo matrix](competitor-matrix-2026-10-06.md), the [earlier browser candidate pool](candidate-roster-2026-10-06.md), and the [observation templates index](observation-templates.md). No further gameplay or game coding begins until the research plan is settled. The per-demo matrix replaces the earlier shared shortlist as the coverage requirement. The plan supersedes the field report's proposed next-step schedule; historical observations remain preserved below.
 
 Start with [field-report.md](field-report.md). The game-specific report remains with each game's existing docs. `market-research.json` distinguishes publisher claims, critic reports and hypotheses; `evidence/` contains actual action traces and screenshots. Large competitor Playwright traces remain in the local `gamejam-shared` backup, as noted in each report.
 
