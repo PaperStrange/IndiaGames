@@ -19,7 +19,7 @@ The immediate experiment remains the unchanged baseline in [this packet](README.
 | Nov 17–19 | SH-19 · release maintainer + repository administrator | Prepare reviewed promotion of only the approved package; verify branch rules, Pages administration, release notes/version links, real nested path and distribution copy. Complete a publication/rollback rehearsal using the approved bytes. Late changes require a new version and appropriate retesting, not an exception. |
 | Nov 20 | SH-19 · release maintainer | After approved merge, verify the actual official playable URL, tag, GitHub Release and notes. If administration, gate or deployment is blocked, mark delayed and retain the candidate; a pushed branch is not a launch. |
 
-Allow approximately 30 minutes per pair plus setup, transcription and review; participant availability is the main schedule dependency. A changed candidate needs another six pairs / twelve people unless an explicitly reviewed protocol says otherwise before play. Reserving facilitator capacity is not recruiting or evidence. If baseline staffing slips beyond Nov 4, reschedule honestly and prioritize no-change evaluation; do not compress consent, observation or review to save the date.
+Allow approximately 30 minutes per pair plus setup, transcription and review; participant availability is the main schedule dependency. A changed candidate needs another six preregistered pairs / twelve distinct people on its exact bytes. Reserving facilitator capacity is not recruiting or evidence. If baseline staffing slips beyond Nov 4, reschedule honestly and prioritize no-change evaluation; do not compress consent, observation or review to save the date.
 
 ## Perspective-specific work
 
