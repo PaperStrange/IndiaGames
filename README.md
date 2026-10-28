@@ -4,6 +4,8 @@ A time-loop mystery adventure that plays in the browser. One town, one cracked
 bell, three loops to understand what the thirteenth chime is pulling out of the
 day — then break it.
 
+Current handoff: [human playtest checklist, recording templates and November 20 plan](docs/gamejam/launch-2026-11-20/README.md). Human approval is still pending.
+
 **Play it:** serve this folder over a local static server and open the printed URL:
 
 ```sh
@@ -17,8 +19,8 @@ game is hosted on itch.io. For sharing (e.g. Google Drive previews), send
 references don't survive Drive's preview sandbox.)
 
 **Single-file build:** `dist/thirteenth-bell-playable-demo.html` is the whole game
-in one file (CSS/JS inlined, town map embedded as a data URI — web fonts excepted:
-the CSS references Google Fonts, which degrade to system fallbacks offline).
+in one file (CSS/JS inlined, town map embedded as a data URI, system fonts).
+The current candidate makes no external font request.
 Regenerate it any time with:
 
 ```sh
@@ -43,6 +45,7 @@ index.html            thin shell — loads css/, js/, assets/
 css/main.css          all styling
 js/data.js            story/world content: locations, NPC schedules, scenes, tuning (edit story here)
 js/echo-time.js       pure borrowed-minute rules (no DOM or state mutation)
+js/square-event.js    pure witnessed-clue, preparation and Mina-route rules
 js/engine.js          game systems + UI copy: loop, clock, scenes, predictions, journal, meters
                       (story data lives in js/data.js; engine.js keeps narrative UI copy with the
                       systems that render it)
@@ -60,10 +63,13 @@ copy those systems render (theory text, consequence leads, mode labels).
 ## Tests
 
 ```sh
-node --test tests/echo-time.test.cjs # earned-time rules
+node --test tests/*.test.cjs   # earned-time and Square causal rules
+node build.mjs                 # regenerate current branch output
 python3 tests/check_static.py   # syntax, JSON, asset references, dist freshness
-python3 tests/smoke_cdp.py      # headless-Chromium smoke test: boot, start click, first scene, mode toggle, no console errors
+node tests/square-journey.cjs   # HTTP-hosted browser journeys; set PLAYWRIGHT_MODULE if needed
 ```
+
+The browser runner needs Playwright and Chromium; its header documents executable/module/output settings. The older `tests/smoke_cdp.py` uses file URLs, which managed browsers may block. For that environment use the preserved [HTTP adapter and smoke notes](docs/gamejam/milestone-2026-10-27/verification.md) with a fresh `BELL_SMOKE_TMP` profile. Do not reuse old profile locks or treat archived output as a new run.
 
 ## License
 

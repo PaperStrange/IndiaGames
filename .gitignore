@@ -138,3 +138,10 @@ Thumbs.db
 
 # game test artifacts
 tests/.tmp/
+
+# Local browser dependencies, editor output and private human-session records
+node_modules/
+.idea/
+test-results/
+playwright-report/
+playtest-private/

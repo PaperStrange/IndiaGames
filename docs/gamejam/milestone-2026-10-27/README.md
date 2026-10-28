@@ -1,5 +1,7 @@
 # The Thirteenth Bell — a route remembered
 
+Next: [November 20 human checklist, paired recording templates and iteration plan](../launch-2026-11-20/README.md). The frozen candidate, reference and protocol remain authoritative.
+
 Milestone: one test-ready causal scene, not a human-approved release. The settled story is **Prepare Mina's route**. An agent may check the game's state and controls; only real players can tell us whether the experience feels earned.
 
 ## Three design questions
