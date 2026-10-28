@@ -424,10 +424,13 @@
     "expected_url": "https://paperstrange.github.io/IndiaGames/",
     "expected_url_http_status": 200,
     "live_deployment_verified": false,
-    "observed_page": "Pre-commit candidate README from master; main dashboard deployment pending",
-    "required_action": "Correct source to main/root after validating and pushing the hub, then verify deployed commit and content.",
+    "observed_page": "Pre-commit candidate README from master; main dashboard not deployed",
+    "required_action": "Repository administrator must select main / root in Settings → Pages, then verify the deployed commit, dashboard and assets.",
     "branch_protection_read_status": 403,
-    "branch_protection_enforcement_verified": false
+    "branch_protection_enforcement_verified": false,
+    "pages_update_http_status": 403,
+    "pages_update_error": "Resource not accessible by integration",
+    "deployed_commit": "2c4d230e40e64b2789b6814393d92cbb6f7f0cf3"
   },
   "launch": {
     "target_date_utc": "2026-11-20",

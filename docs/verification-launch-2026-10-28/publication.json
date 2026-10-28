@@ -1,0 +1,33 @@
+{
+  "checked_at_utc": "2026-10-28T09:10:14.218872+00:00",
+  "method": "Actual GitHub REST reads, authorized settings PUT, follow-up reads and HTTPS page fetch",
+  "read_settings_http_status": 200,
+  "settings": {
+    "source": {
+      "branch": "master",
+      "path": "/"
+    },
+    "status": "built",
+    "build_type": "legacy"
+  },
+  "attempted_source": {
+    "branch": "main",
+    "path": "/"
+  },
+  "update_http_status": 403,
+  "update_error": "Resource not accessible by integration",
+  "build_commit": "2c4d230e40e64b2789b6814393d92cbb6f7f0cf3",
+  "build_api_url": "https://api.github.com/repos/PaperStrange/IndiaGames/pages/builds/1321068455",
+  "expected_url": "https://paperstrange.github.io/IndiaGames/",
+  "actual_http_status": 200,
+  "actual_title": "IndiaGames \u00b7 Pre-commit release candidates | IndiaGames",
+  "page_sha256": "4bc847cbb166e24852da043f9406c57a672e1dc5f41dcef15609cd9c8585d3d4",
+  "main_dashboard_deployed": false,
+  "main_branch_protection_read_http_status": 403,
+  "master_branch_protection_read_http_status": 403,
+  "branch_protection_enforcement_verified": false,
+  "human_reviews_on_policy_pr_1": 0,
+  "main_ci": "https://github.com/PaperStrange/IndiaGames/actions/runs/40661895787",
+  "master_ci": "https://github.com/PaperStrange/IndiaGames/actions/runs/40660564551",
+  "official_releases_created": 0
+}

@@ -51,5 +51,10 @@
   "notebook_fast_forward_to": "4754462065184a308cb836717cc9f0dc91d6dc50",
   "pre_cleanup_bundle": "/workspace/indiagames-backups/pre-cleanup-2026-10-28.bundle",
   "generated_backup": "/workspace/indiagames-backups/cleanup-generated-2026-10-28",
-  "human_results_created": 0
+  "human_results_created": 0,
+  "generated_backup_verification": {
+    "files": 293,
+    "bytes": 352408548,
+    "all_recorded_hashes_match": true
+  }
 }

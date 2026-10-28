@@ -1,0 +1,19 @@
+{
+  "browser_tested_commit": "2832cf4d2d275dc8463f32a42a297dba0f58c21a",
+  "unchanged_tested_files": [
+    "index.html",
+    "app.js",
+    "styles.css",
+    "data/tasks.json",
+    "data/releases.json",
+    "scripts/sync-dashboard.py",
+    "docs/games/small-hours/tasks.json",
+    "docs/games/keepers-frame/tasks.json",
+    "docs/games/thirteenth-bell/tasks.json",
+    "docs/verification-milestone-2026-10-27/browser.mjs"
+  ],
+  "changed_file": "data/source-manifest.json",
+  "only_changed_top_level_key": "publication",
+  "reason": "Record the actual Pages write403 and still-master deployment after attempted publication. UI/code/task inputs are unchanged; no repeated gameplay or human test claim.",
+  "current_manifest_sha256": "91308e4b32f17e08eab435e43c0e9834ba41af48c5f42e8ccdd5f73222cfed3d"
+}

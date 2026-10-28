@@ -63,7 +63,7 @@ All require **zero open critical bugs**, truthful device support and an independ
 
 ## Publication dependencies and release records
 
-On 28 October, Pages settings became readable: source **master/root**, status `built`, and the expected URL returned the staging README. Correcting it to **main/root** and verifying the actual dashboard is current work, not a continuation of the historical API 403. Read [PUBLISHING.md](../../PUBLISHING.md) for the final checked state. Branch-protection enforcement is a separate dependency and must be observed, not inferred from workflow files.
+On 28 October, Pages settings became readable: source **master/root**, status `built`, and the expected URL returned the staging README. The attempted correction to **main/root** was rejected with HTTP 403 despite readable settings. The latest verified deployment is still master `2c4d230`; an administrator must change the source and verify the main dashboard before launch. Read [PUBLISHING.md](../../PUBLISHING.md) for the exact read/write distinction. Branch-protection enforcement is a separate dependency and must be observed, not inferred from workflow files.
 
 The release path stays **game branch → master candidate → measured human evidence → independently reviewed promotion PR → main**. Do not merge whole game branches or the whole staging queue. The release registry is empty until a game qualifies. Keep current candidate numbers (Vivid 0.1.2; Bell 0.1.0) if their exact bytes qualify; any revised build gets a new unused version. Small Hours receives its first candidate version only when its prerequisite decision and checks support staging. No future version number or tag is claimed as published here.
 
