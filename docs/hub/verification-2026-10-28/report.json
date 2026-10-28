@@ -1,0 +1,1000 @@
+{
+  "observed_at": "2026-10-28T10:20:38.435Z",
+  "method": "Local Chromium dashboard integration, direct/project mounts, responsive layouts, keyboard and navigation, immutable asset/source checks. No human session, game regression, physical-device or deployed-site claim.",
+  "viewport_groups": [
+    {
+      "id": "root-1440",
+      "mount": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All 60 tasks reachable in five 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 333,
+      "overview_height_px": 2147
+    },
+    {
+      "id": "root-390",
+      "mount": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All 60 tasks reachable in five 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 330,
+      "overview_height_px": 4243
+    },
+    {
+      "id": "project-1440",
+      "mount": "/IndiaGames/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All 60 tasks reachable in five 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 333,
+      "overview_height_px": 2147
+    },
+    {
+      "id": "project-390",
+      "mount": "/IndiaGames/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All 60 tasks reachable in five 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 330,
+      "overview_height_px": 4243
+    }
+  ],
+  "extra_scenarios": [
+    {
+      "id": "load-failure-retry",
+      "status": "pass",
+      "expected_fault": "one 503 response for tasks.json",
+      "result": "Visible error recovered through keyboard activation of Retry; three projects and the task board load."
+    },
+    {
+      "id": "tablet-layout",
+      "status": "pass",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": "Images loaded, overview and board have no horizontal overflow, keyboard detail works. Browser viewport only; no physical-device claim."
+    },
+    {
+      "id": "enlarged-text",
+      "status": "pass",
+      "before": 43,
+      "after": 86,
+      "method": "Doubled computed CSS font sizes at 390 CSS px; not browser zoom.",
+      "result": "Overview and board reflow without horizontal overflow; keyboard task detail remains operable."
+    }
+  ],
+  "static_checks": [
+    {
+      "id": "human-and-runtime-boundaries",
+      "status": "pass",
+      "detail": "60 task IDs and 19/23/18 lane counts; human counts remain zero; official registry empty; game branch heads equal the source review; runtime/test scopes equal their verified source (Vivid later play/evidence records excluded)."
+    },
+    {
+      "id": "candidate-identity",
+      "status": "pass",
+      "detail": "Current master candidate trees and file hashes equal their pinned packets; no human report populated or approval granted."
+    },
+    {
+      "id": "genuine-images",
+      "status": "pass",
+      "detail": "Three displayed assets are byte-identical to pinned game captures/art; total 2041402 bytes."
+    },
+    {
+      "id": "navigation-targets",
+      "status": "pass",
+      "detail": "105 unique rendered destinations classified; local anchors/files and GitHub source targets resolve. The paused candidate URL is not repaired or claimed successful."
+    }
+  ],
+  "images": [
+    {
+      "lane": "memorable",
+      "path": "assets/hub/small-hours-opening.png",
+      "sha256": "b88ae8d49eb69f173ec333c3cad8b6365118481c861a3c182e4ee37d7592b2a6",
+      "bytes": 131915,
+      "source_commit": "b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
+      "source_path": "memorable-moments-game/docs/evidence/01-desktop-home.png",
+      "kind": "automated_game_capture"
+    },
+    {
+      "lane": "vivid",
+      "path": "assets/hub/vivid-iona-opening.png",
+      "sha256": "befb61b8eaff29115ee1b8447f4ffc8646edf883ad6af23e2abcee4b678da75b",
+      "bytes": 897287,
+      "source_commit": "a63834557de0a8132ce5355c0d50858e200a3914",
+      "source_path": "docs/gamejam/milestone-2026-10-27/launch-evidence/iona-nested-launch.png",
+      "kind": "automated_game_capture"
+    },
+    {
+      "lane": "bell",
+      "path": "assets/hub/bell-town-map.webp",
+      "sha256": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+      "bytes": 1012200,
+      "source_commit": "fce070bd9ee3006f0a017b9c33ee11f5b5133657",
+      "source_path": "assets/images/town-map.webp",
+      "kind": "in_game_artwork"
+    }
+  ],
+  "links": [
+    {
+      "href": "#main",
+      "text": "Skip to dashboard",
+      "url": "http://127.0.0.1:43171/#main",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "#overview",
+      "text": "IndiaGames\nA game studio notebook",
+      "url": "http://127.0.0.1:43171/#overview",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "#tasks",
+      "text": "Team board\n60",
+      "url": "http://127.0.0.1:43171/#tasks",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/launch/2026-11-20/README.md",
+      "text": "launch plan and game packets",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/launch/2026-11-20/README.md",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "./assets/hub/small-hours-opening.png",
+      "text": "",
+      "url": "http://127.0.0.1:43171/assets/hub/small-hours-opening.png",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/docs/gamejam/launch-2026-11-20/README.md",
+      "text": "Playtest setup",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/docs/gamejam/launch-2026-11-20/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/tree/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
+      "text": "View source",
+      "url": "https://github.com/PaperStrange/IndiaGames/tree/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/memorable-moments-game/docs/evidence/01-desktop-home.png",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/memorable-moments-game/docs/evidence/01-desktop-home.png",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "./assets/hub/vivid-iona-opening.png",
+      "text": "",
+      "url": "http://127.0.0.1:43171/assets/hub/vivid-iona-opening.png",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/a63834557de0a8132ce5355c0d50858e200a3914/docs/gamejam/launch-2026-11-20/README.md",
+      "text": "Playtest setup",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/a63834557de0a8132ce5355c0d50858e200a3914/docs/gamejam/launch-2026-11-20/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/tree/a63834557de0a8132ce5355c0d50858e200a3914",
+      "text": "View source",
+      "url": "https://github.com/PaperStrange/IndiaGames/tree/a63834557de0a8132ce5355c0d50858e200a3914",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/a63834557de0a8132ce5355c0d50858e200a3914/docs/gamejam/milestone-2026-10-27/launch-evidence/iona-nested-launch.png",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/a63834557de0a8132ce5355c0d50858e200a3914/docs/gamejam/milestone-2026-10-27/launch-evidence/iona-nested-launch.png",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "./assets/hub/bell-town-map.webp",
+      "text": "",
+      "url": "http://127.0.0.1:43171/assets/hub/bell-town-map.webp",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/docs/gamejam/launch-2026-11-20/README.md",
+      "text": "Playtest setup",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/docs/gamejam/launch-2026-11-20/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/tree/fce070bd9ee3006f0a017b9c33ee11f5b5133657",
+      "text": "View source",
+      "url": "https://github.com/PaperStrange/IndiaGames/tree/fce070bd9ee3006f0a017b9c33ee11f5b5133657",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/assets/images/town-map.webp",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/assets/images/town-map.webp",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/RELEASE-POLICY.md",
+      "text": "Read the criteria",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/RELEASE-POLICY.md",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/tree/main/templates/game-demo",
+      "text": "Open the design kit",
+      "url": "https://github.com/PaperStrange/IndiaGames/tree/main/templates/game-demo",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/small-hours/TODO.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/small-hours/TODO.md",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/12ecc786d27a9d17d1bf93e07893bed16490a5b8/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/12ecc786d27a9d17d1bf93e07893bed16490a5b8/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/keepers-frame/TODO.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/keepers-frame/TODO.md",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/pull/1",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/pull/1",
+      "validation": "repository service link; no remote HTTP claim"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/252cc55e8515da1438c3e74af2e7dcc58eb13118/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/252cc55e8515da1438c3e74af2e7dcc58eb13118/docs/gamejam/competitor-plays-2026-10-22/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/thirteenth-bell/TODO.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/games/thirteenth-bell/TODO.md",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/02c78ad9739622fb447850fbecb5f46e7dec8de8/release-candidates/thirteenth-bell/0.1.0/candidate.json",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/02c78ad9739622fb447850fbecb5f46e7dec8de8/release-candidates/thirteenth-bell/0.1.0/candidate.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/hub/requirements-and-evidence.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/hub/requirements-and-evidence.md",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/TEAM.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/TEAM.md",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/PUBLISHING.md",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/PUBLISHING.md",
+      "validation": "intended main publication working-tree target (not yet a live HTTP assertion)"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/issues/2",
+      "text": "",
+      "url": "https://github.com/PaperStrange/IndiaGames/issues/2",
+      "validation": "repository service link; no remote HTTP claim"
+    },
+    {
+      "href": "./data/source-manifest.json",
+      "text": "",
+      "url": "http://127.0.0.1:43171/data/source-manifest.json",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "./data/tasks.json",
+      "text": "",
+      "url": "http://127.0.0.1:43171/data/tasks.json",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/protocol.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/protocol.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/session.template.json",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/session.template.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/study-registration.template.json",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/study-registration.template.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/observation-template.md",
+      "text": "Evidence 4",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/observation-template.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/package-baseline.py",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/package-baseline.py",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/baseline-inventory.json",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/baseline-inventory.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/packet-verification.json",
+      "text": "Evidence 4",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/packet-verification.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+      "text": "Evidence 5",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs",
+      "text": "Evidence 6",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/launch.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/handoff.md",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/handoff.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/coverage.json",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/coverage.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/931118f19f22cee53d82a0248e0e073aa1551252/docs/gamejam/vivid-iteration-2026-10-21/research/SYNTHESIS.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/research-and-product-questions.md",
+      "text": "Evidence 4",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/research-and-product-questions.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/iona/index.js",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/iona/index.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/stories.test.js",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/stories.test.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/iona/content.js",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/iona/content.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/mara/content.js",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/mara/content.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/fixtures/recast.js",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/fixtures/recast.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/README.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/build_models.py",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/build_models.py",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/verification-2026-10-21/renderer-verification.json",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/art/verification-2026-10-21/renderer-verification.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/app.js",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/app.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/renderers/world.js",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/renderers/world.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/app-edge-browser.mjs",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/app-edge-browser.mjs",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/runtime/session.js",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/runtime/session.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/runtime.test.js",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/test/runtime.test.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/runtime/validate.js",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/runtime/validate.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/ITERATION-2026-10-21.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/browser-observations.json",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/browser-observations.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/edge-2026-10-21/report.json",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/edge-2026-10-21/report.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json",
+      "text": "Evidence 4",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+      "text": "Evidence 5",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-evidence/report.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs",
+      "text": "Evidence 6",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/check-pilot-launch.cjs",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/protocol.md",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/protocol.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/recruitment.md",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/recruitment.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md",
+      "text": "Evidence 4",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/observation-sheet.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-and-session-setup.md",
+      "text": "Evidence 6",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/launch-and-session-setup.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/session-iona-blank.json",
+      "text": "Evidence 7",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/session-iona-blank.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/session-mara-blank.json",
+      "text": "Evidence 8",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/session-mara-blank.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/TEAM-CONTRACT.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/TEAM-CONTRACT.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/build/third-party-notices.txt",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/build/third-party-notices.txt",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/notes.md",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/notes.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/prepare-vivid-pilot.py",
+      "text": "Evidence 4",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/prepare-vivid-pilot.py",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/packet-verification.json",
+      "text": "Evidence 5",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/packet-verification.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/human-playtest.json",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/human-playtest.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/README.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/README.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/catalog.js",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/catalog.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/mara/index.js",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/vivid-2.5d-photo-game/play/src/stories/mara/index.js",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/human-study/devices-and-recall.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/journey-and-device-form.md",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/journey-and-device-form.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/witnessed-blockage-before-outcome.png",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/witnessed-blockage-before-outcome.png",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/borrowed-route-visible-outcome.png",
+      "text": "Evidence 4",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/borrowed-route-visible-outcome.png",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/mina-route-keyboard-complete.png",
+      "text": "Evidence 3",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/mina-route-keyboard-complete.png",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/mina-route-text-200-percent-outcome.png",
+      "text": "Evidence 4",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/mina-route-text-200-percent-outcome.png",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/protocol.md",
+      "text": "Evidence 1",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/protocol.md",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/session-template.json",
+      "text": "Evidence 2",
+      "url": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/session-template.json",
+      "validation": "existing Git object and link type"
+    },
+    {
+      "href": "#main",
+      "text": "Skip to dashboard",
+      "url": "http://127.0.0.1:43171/IndiaGames/#main",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "#overview",
+      "text": "IndiaGames\nA game studio notebook",
+      "url": "http://127.0.0.1:43171/IndiaGames/#overview",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "#tasks",
+      "text": "Team board\n60",
+      "url": "http://127.0.0.1:43171/IndiaGames/#tasks",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "./assets/hub/small-hours-opening.png",
+      "text": "",
+      "url": "http://127.0.0.1:43171/IndiaGames/assets/hub/small-hours-opening.png",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "./assets/hub/vivid-iona-opening.png",
+      "text": "",
+      "url": "http://127.0.0.1:43171/IndiaGames/assets/hub/vivid-iona-opening.png",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "./assets/hub/bell-town-map.webp",
+      "text": "",
+      "url": "http://127.0.0.1:43171/IndiaGames/assets/hub/bell-town-map.webp",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "./data/source-manifest.json",
+      "text": "",
+      "url": "http://127.0.0.1:43171/IndiaGames/data/source-manifest.json",
+      "validation": "local file / document anchor"
+    },
+    {
+      "href": "./data/tasks.json",
+      "text": "",
+      "url": "http://127.0.0.1:43171/IndiaGames/data/tasks.json",
+      "validation": "local file / document anchor"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "root-1440-overview.jpg",
+    "root-1440-board.jpg",
+    "root-390-overview.jpg",
+    "root-390-board.jpg",
+    "project-1440-overview.jpg",
+    "project-1440-board.jpg",
+    "project-390-overview.jpg",
+    "project-390-board.jpg",
+    "project-768-overview.jpg",
+    "project-390-enlarged-text.jpg"
+  ],
+  "input_sha256": {
+    "index.html": "22a12a375950375faea48354f83763a81b7e8b860b59248443fd56f05400fb15",
+    "app.js": "01d76130232471fc91e5af2e4629bdff328a81d9c490fc96ab973fc6ba0c6db8",
+    "styles.css": "9b2d96f9b60b139dd38327498a02cc5bf82370ab42152e162820f2992e6a8bbe",
+    "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+    "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+    "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+    "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+    "tests/hub/browser.mjs": "1abe2eee97d07ac26425988660a5298bd44d6872e78b2531735acab37b55fb01"
+  },
+  "checkout_before": {
+    "commit": "710c1adaab349f20bbc460ff80fd83c44a5cea42",
+    "branch": "hub/visual-readiness-2026-10-28",
+    "status": "M README.md\n M app.js\n M docs/PUBLISHING.md\n M index.html\n M styles.css\n?? assets/hub/README.md\n?? assets/hub/bell-town-map.webp\n?? assets/hub/small-hours-opening.png\n?? assets/hub/vivid-iona-opening.png\n?? data/hub-presentation.json\n?? docs/hub/requirements-and-evidence.md\n?? tests/hub/README.md\n?? tests/hub/browser.mjs"
+  },
+  "candidates": [
+    {
+      "game": "keepers-frame",
+      "version": "0.1.2",
+      "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+      "files": 15,
+      "source_commit": "0c72da97994d9f2d315e6aba1afba5219936b78b"
+    },
+    {
+      "game": "thirteenth-bell",
+      "version": "0.1.0",
+      "build_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+      "files": 1,
+      "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06"
+    }
+  ],
+  "playwright_module": "file:///workspace/IndiaGames/vivid-2.5d-photo-game/play/node_modules/playwright/index.js",
+  "browser_version": "151.0.7922.173",
+  "document_ids": [
+    "overview-link",
+    "board-link",
+    "task-count",
+    "main",
+    "load-error",
+    "retry-load",
+    "overview-view",
+    "overview",
+    "project-count",
+    "page-title",
+    "launch-date",
+    "launch-year",
+    "launch-plan-link",
+    "projects",
+    "projects-title",
+    "project-grid",
+    "readiness",
+    "readiness-title",
+    "readiness-note",
+    "readiness-rows",
+    "milestones",
+    "milestones-title",
+    "timeline",
+    "releases",
+    "releases-title",
+    "release-grid",
+    "design-kit",
+    "design-kit-title",
+    "evidence",
+    "evidence-details",
+    "evidence-title",
+    "question-grid",
+    "source-ledger",
+    "sources",
+    "tasks",
+    "tasks-title",
+    "board-summary",
+    "task-search",
+    "lane-filter",
+    "status-filter",
+    "perspective-filter",
+    "result-count",
+    "clear-filters",
+    "task-grid",
+    "task-SH-01",
+    "details-SH-01",
+    "task-SH-02",
+    "details-SH-02",
+    "task-SH-03",
+    "details-SH-03",
+    "task-SH-04",
+    "details-SH-04",
+    "task-SH-05",
+    "details-SH-05",
+    "task-SH-06",
+    "details-SH-06",
+    "task-SH-07",
+    "details-SH-07",
+    "task-SH-08",
+    "details-SH-08",
+    "task-SH-09",
+    "details-SH-09",
+    "task-SH-10",
+    "details-SH-10",
+    "task-SH-11",
+    "details-SH-11",
+    "task-SH-12",
+    "details-SH-12",
+    "empty-state",
+    "empty-clear",
+    "pagination",
+    "page-previous",
+    "page-status",
+    "page-next",
+    "status-definitions",
+    "plan-date",
+    "task-SH-13",
+    "details-SH-13",
+    "task-SH-14",
+    "details-SH-14",
+    "task-SH-15",
+    "details-SH-15",
+    "task-SH-16",
+    "details-SH-16",
+    "task-SH-17",
+    "details-SH-17",
+    "task-SH-18",
+    "details-SH-18",
+    "task-SH-19",
+    "details-SH-19",
+    "task-KF-01",
+    "details-KF-01",
+    "task-KF-02",
+    "details-KF-02",
+    "task-KF-03",
+    "details-KF-03",
+    "task-KF-04",
+    "details-KF-04",
+    "task-KF-05",
+    "details-KF-05",
+    "task-KF-06",
+    "details-KF-06",
+    "task-KF-07",
+    "details-KF-07",
+    "task-KF-08",
+    "details-KF-08",
+    "task-KF-09",
+    "details-KF-09",
+    "task-KF-10",
+    "details-KF-10",
+    "task-KF-11",
+    "details-KF-11",
+    "task-KF-12",
+    "details-KF-12",
+    "task-KF-13",
+    "details-KF-13",
+    "task-KF-14",
+    "details-KF-14",
+    "task-KF-15",
+    "details-KF-15",
+    "task-KF-16",
+    "details-KF-16",
+    "task-KF-17",
+    "details-KF-17",
+    "task-KF-18",
+    "details-KF-18",
+    "task-KF-19",
+    "details-KF-19",
+    "task-KF-20",
+    "details-KF-20",
+    "task-KF-21",
+    "details-KF-21",
+    "task-KF-22",
+    "details-KF-22",
+    "task-KF-23",
+    "details-KF-23",
+    "task-TB-01",
+    "details-TB-01",
+    "task-TB-02",
+    "details-TB-02",
+    "task-TB-03",
+    "details-TB-03",
+    "task-TB-04",
+    "details-TB-04",
+    "task-TB-05",
+    "details-TB-05",
+    "task-TB-06",
+    "details-TB-06",
+    "task-TB-07",
+    "details-TB-07",
+    "task-TB-08",
+    "details-TB-08",
+    "task-TB-09",
+    "details-TB-09",
+    "task-TB-10",
+    "details-TB-10",
+    "task-TB-11",
+    "details-TB-11",
+    "task-TB-12",
+    "details-TB-12",
+    "task-TB-13",
+    "details-TB-13",
+    "task-TB-14",
+    "details-TB-14",
+    "task-TB-15",
+    "details-TB-15",
+    "task-TB-16",
+    "details-TB-16",
+    "task-TB-17",
+    "details-TB-17",
+    "task-TB-18",
+    "details-TB-18"
+  ],
+  "status": "pass",
+  "completed_at": "2026-10-28T10:20:50.778Z"
+}

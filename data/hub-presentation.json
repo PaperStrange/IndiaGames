@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "description": "Presentation-only content; existing task, artifact and release records remain authoritative.",
+  "questions_label": "Product hypotheses · human tests pending",
+  "projects": [
+    {
+      "lane": "memorable",
+      "promise": "Make a small shared memory, together.",
+      "next_action": "Observe six real pairs on the unchanged baseline.",
+      "image": {
+        "src": "assets/hub/small-hours-opening.png",
+        "alt": "Small Hours opening screen with a moonlit window, two cups and a shared postcard.",
+        "caption": "Opening screen · automated capture, 5 Oct 2026",
+        "kind": "automated_game_capture",
+        "width": 1440,
+        "height": 1062,
+        "bytes": 131915,
+        "source_commit": "b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
+        "source_path": "memorable-moments-game/docs/evidence/01-desktop-home.png",
+        "source_url": "https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/memorable-moments-game/docs/evidence/01-desktop-home.png",
+        "sha256": "b88ae8d49eb69f173ec333c3cad8b6365118481c861a3c182e4ee37d7592b2a6",
+        "captured_at": null,
+        "evidence_date_utc": "2026-10-05",
+        "preservation": "Byte-for-byte copy of the pinned repository file; no image edits."
+      },
+      "questions": {
+        "why_play": "A short shared ritual may offer curiosity, mutual contribution and a keepsake.",
+        "differentiation": "Test whether each person recognizes their contribution in the shared result.",
+        "unique_experience": "A reveal leads into an activity both people create and may choose to keep."
+      }
+    },
+    {
+      "lane": "vivid",
+      "promise": "Two small worlds. Two ways to care.",
+      "next_action": "Test Iona and Mara with six different people per story.",
+      "image": {
+        "src": "assets/hub/vivid-iona-opening.png",
+        "alt": "Vivid opening scene with harbour keeper Iona beside a lamp inside a wooden frame.",
+        "caption": "Iona’s opening scene · automated capture, 27 Oct 2026",
+        "kind": "automated_game_capture",
+        "width": 1280,
+        "height": 1165,
+        "bytes": 897287,
+        "source_commit": "a63834557de0a8132ce5355c0d50858e200a3914",
+        "source_path": "docs/gamejam/milestone-2026-10-27/launch-evidence/iona-nested-launch.png",
+        "source_url": "https://github.com/PaperStrange/IndiaGames/blob/a63834557de0a8132ce5355c0d50858e200a3914/docs/gamejam/milestone-2026-10-27/launch-evidence/iona-nested-launch.png",
+        "sha256": "befb61b8eaff29115ee1b8447f4ffc8646edf883ad6af23e2abcee4b678da75b",
+        "captured_at": null,
+        "evidence_date_utc": "2026-10-27",
+        "preservation": "Byte-for-byte copy of the pinned repository file; no image edits."
+      },
+      "questions": {
+        "why_play": "Caring for a small world may make an authored consequence feel personal.",
+        "differentiation": "Different actions give each story its own structure and expression.",
+        "unique_experience": "A remembered promise and aligned sketches create two distinct story experiences."
+      }
+    },
+    {
+      "lane": "bell",
+      "promise": "Learn the town. Change an outcome.",
+      "next_action": "Run six counterbalanced comparisons with the frozen previous build.",
+      "image": {
+        "src": "assets/hub/bell-town-map.webp",
+        "alt": "Illustrated town map with six districts surrounding a clock marked Dawn, Noon, Dusk and Midnight.",
+        "caption": "Original in-game town map",
+        "kind": "in_game_artwork",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 1012200,
+        "source_commit": "fce070bd9ee3006f0a017b9c33ee11f5b5133657",
+        "source_path": "assets/images/town-map.webp",
+        "source_url": "https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/assets/images/town-map.webp",
+        "sha256": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+        "captured_at": null,
+        "evidence_date_utc": null,
+        "preservation": "Byte-for-byte copy of the pinned repository file; no image edits."
+      },
+      "questions": {
+        "why_play": "Recognizing a repeated event may turn uncertainty into an achievable plan.",
+        "differentiation": "Test whether learned causes support new actions with readable costs and consequences.",
+        "unique_experience": "Knowledge survives the loop and makes a later intervention possible."
+      }
+    }
+  ]
+}
