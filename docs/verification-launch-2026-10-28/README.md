@@ -16,3 +16,7 @@ PLAYWRIGHT_MODULE=/path/to/playwright DASHBOARD_EVIDENCE_DIR=/tmp/new-dashboard-
 ```
 
 The output destination must not already exist. It self-hosts and stops its own server/browser. Publication verification is separate in [PUBLISHING.md](../PUBLISHING.md); local success alone does not prove deployment.
+
+## Actual Pages verification
+
+A later read showed main/root and Pages deployed commit `1dd2330`. [Six HTTPS asset hashes](live-assets.json) match that commit exactly. The local browser tested the same runtime bytes. [The direct live-browser attempt](live-browser/report.json) failed before page rendering with `ERR_CERT_AUTHORITY_INVALID` from the managed proxy trust path; no successful live-browser journey is claimed and TLS verification was not disabled. The earlier settings-write403 and master deployment remain preserved in the publication record. Main dashboard publication is now verified; games remain unapproved.

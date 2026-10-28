@@ -419,18 +419,21 @@
   "publication": {
     "checked_date_utc": "2026-10-28",
     "pages_api_status": 200,
-    "source_branch": "master",
+    "source_branch": "main",
     "source_path": "/",
     "expected_url": "https://paperstrange.github.io/IndiaGames/",
     "expected_url_http_status": 200,
-    "live_deployment_verified": false,
-    "observed_page": "Pre-commit candidate README from master; main dashboard not deployed",
-    "required_action": "Repository administrator must select main / root in Settings → Pages, then verify the deployed commit, dashboard and assets.",
+    "live_deployment_verified": true,
+    "observed_page": "IndiaGames development hub with three projects, 60 tasks and November20 launch plan",
+    "required_action": "Confirm main/master branch-protection enforcement and complete real-human approvals before official game promotion.",
     "branch_protection_read_status": 403,
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
     "pages_update_error": "Resource not accessible by integration",
-    "deployed_commit": "2c4d230e40e64b2789b6814393d92cbb6f7f0cf3"
+    "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
+    "verified_assets": 6,
+    "verification_document": "docs/verification-launch-2026-10-28/live-assets.json",
+    "settings_change_attribution": "Unknown; earlier PUT rejected403, later GET and Pages deployment show main/root."
   },
   "launch": {
     "target_date_utc": "2026-11-20",

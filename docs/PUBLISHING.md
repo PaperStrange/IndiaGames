@@ -6,11 +6,11 @@ https://paperstrange.github.io/IndiaGames/
 
 ## Current verification · 28 October 2026
 
-A fresh API query succeeds. Pages is configured to **master / (root)**, status `built`; the expected URL returns HTTP 200 but serves the pre-commit candidate README. This is a real change from the historical 403/404 results below. It is not the requested main-branch game dashboard.
+**The main dashboard is now live at [paperstrange.github.io/IndiaGames](https://paperstrange.github.io/IndiaGames/).** A later settings read shows **main / (root)** and a successful Pages deployment of `1dd23301fdd3046a0c7f5403bcd25957e2176562`. Six actual HTTPS files (HTML, JavaScript, CSS and three JSON data files) exactly match that commit; see [live asset verification](verification-launch-2026-10-28/live-assets.json). The local browser checks cover the same runtime at root/project paths and desktop/narrow widths. Direct remote Chromium was blocked by this environment's proxy certificate trust before rendering; that failed attempt is preserved, and TLS verification was not bypassed.
 
-After validating and pushing main at `2832cf4d2d275dc8463f32a42a297dba0f58c21a`, the coordinator attempted `PUT /repos/PaperStrange/IndiaGames/pages` with source `main` / `/`. GitHub rejected the update with **HTTP 403, Resource not accessible by integration**. A follow-up read confirms the source remains **master/root**, built at `2c4d230e40e64b2789b6814393d92cbb6f7f0cf3`; the actual HTTP 200 page is still the staging README. **The main dashboard is uploaded and locally verified, but is not the deployed page.** A repository administrator must change Settings → Pages to main / root, then verify the deployed commit, dashboard content and project assets. This is a GitHub write-permission rejection, not an automatic approval-review rejection. Fresh reads of main and master branch-protection settings still return **403, Resource not accessible by integration**; enforcement remains unverified and no protections were changed. Vivid policy PR #1 still has no human reviews on 28 October.
+Earlier in this work, settings were **master/root** and the live page was the candidate README. The authorized source-update PUT returned **403, Resource not accessible by integration**; an immediate follow-up still showed master. The subsequent successful main deployment is an observed new state, not proof that the rejected request succeeded or that this integration now has Pages write permission. Both observations remain in [publication.json](verification-launch-2026-10-28/publication.json).
 
-Publication is on the [20 November critical path](launch/2026-11-20/README.md). The hub can be published while official game releases remain empty.
+Main and master branch-protection reads still return **403, Resource not accessible by integration**; enforcement remains unverified and no protections were changed. Vivid policy PR #1 has no human reviews. These remain dependencies for the [20 November game launch](launch/2026-11-20/README.md). Publishing this dashboard does not approve or release any game; the official registry remains empty.
 
 ## Configuration
 
@@ -40,7 +40,9 @@ Confirm that `https://paperstrange.github.io/IndiaGames/` returns the project hu
 - The authorized request to create Pages with `main` / root returned **403: Resource not accessible by integration**. The expected Pages URL returned **404**. The site source is uploaded; the website is **not live**.
 - Reading main and master branch-protection settings also returned **403**. Existing settings could not be inspected, so no protection configuration was overwritten. Required gate enforcement is **not verified**. CODEOWNERS and workflow files alone do not enable branch protection.
 
-### Administrator actions still required
+### Historical administrator checklist · October 21
+
+Pages configuration is now verified above. Branch-protection enforcement and actual promotion review remain outstanding.
 
 1. In [Pages settings](https://github.com/PaperStrange/IndiaGames/settings/pages), select **Deploy from a branch → main → / (root)** and Save. Then verify the deployment’s revision and actual site URL.
 2. In [branch settings](https://github.com/PaperStrange/IndiaGames/settings/branches), protect **main** with required PRs, at least one approving human review, code-owner review, dismissed stale approvals, resolved conversations and the required **release-gate** check on the latest changes. Disable force pushes, deletion and bypass of these requirements where available.

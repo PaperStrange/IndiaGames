@@ -29,5 +29,50 @@
   "human_reviews_on_policy_pr_1": 0,
   "main_ci": "https://github.com/PaperStrange/IndiaGames/actions/runs/40661895787",
   "master_ci": "https://github.com/PaperStrange/IndiaGames/actions/runs/40660564551",
-  "official_releases_created": 0
+  "official_releases_created": 0,
+  "later_successful_verification": {
+    "observed_at_utc": "2026-10-28T09:16:00.452702+00:00",
+    "method": "Real HTTPS fetches through configured proxy with TLS verification enabled; exact served bytes compared with checked-out commit. Local browser journey validated identical runtime bytes.",
+    "base_url": "https://paperstrange.github.io/IndiaGames/",
+    "source_branch": "main",
+    "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
+    "deployment_workflow": "https://github.com/PaperStrange/IndiaGames/actions/runs/40662279546",
+    "release_gate_workflow": "https://github.com/PaperStrange/IndiaGames/actions/runs/40662280445",
+    "files": [
+      {
+        "path": "index.html",
+        "sha256": "fbfbe3205fe9d1b08571b265039588596b9b92e94eb1fc4470aae2088fc7e821",
+        "matches_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562"
+      },
+      {
+        "path": "app.js",
+        "sha256": "151a2ca34333d22bbd75cdda81b5a81654d3441023ac8a9bd32ad9b1d799a1ee",
+        "matches_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562"
+      },
+      {
+        "path": "styles.css",
+        "sha256": "a9a55cfa1603bb6d65c2153cf7c57163271ee22d739562bae3e041a88dc4d087",
+        "matches_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562"
+      },
+      {
+        "path": "data/source-manifest.json",
+        "sha256": "91308e4b32f17e08eab435e43c0e9834ba41af48c5f42e8ccdd5f73222cfed3d",
+        "matches_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562"
+      },
+      {
+        "path": "data/tasks.json",
+        "sha256": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+        "matches_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562"
+      },
+      {
+        "path": "data/releases.json",
+        "sha256": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+        "matches_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562"
+      }
+    ],
+    "status": "pass",
+    "limitation": "Direct live Chromium attempt failed on managed proxy certificate trust (ERR_CERT_AUTHORITY_INVALID), before UI execution; no TLS bypass used. This is actual HTTPS asset identity verification plus the successful local browser checks, not a successful live-browser journey."
+  },
+  "current_main_dashboard_deployed": true,
+  "settings_change_attribution": "Unknown; earlier rejected request is retained as observed."
 }
