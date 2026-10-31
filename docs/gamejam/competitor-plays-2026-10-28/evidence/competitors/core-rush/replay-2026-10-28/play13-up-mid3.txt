@@ -1,0 +1,2 @@
+URL=file:///tmp/corerush-game/index.html
+(canvas game; HUD read from PNG)

@@ -1,0 +1,5 @@
+This site can’t be reached
+
+The webpage at https://bluewater78.itch.io/core-rush might be temporarily down or it may have moved permanently to a new web address.
+
+ERR_TUNNEL_CONNECTION_FAILED

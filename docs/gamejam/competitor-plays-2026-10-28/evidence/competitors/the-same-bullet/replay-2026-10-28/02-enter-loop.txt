@@ -1,0 +1,13 @@
+{
+  "title": "THE SAME BULLET",
+  "text": "THE SAME\nBULLETTIME-LOOP BALLISTICS\nROOM\n01\nLOOP\n01\nECHOES\n00\nTIME\n06.0\n\nAN ANOMALY IN TEN ACTS\n\nEVERY SHOT\nCOMES BACK.\nENTER THE LOOP ↗\n▲◀▼▶\nFIRE",
+  "canvas": {
+    "w": 1222,
+    "h": 612,
+    "x": 29,
+    "y": 105
+  },
+  "canvases": 1,
+  "loadingBar": null,
+  "warning": null
+}

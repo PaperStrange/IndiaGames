@@ -1,0 +1,163 @@
+Contrast · Loop 2 · Noon
+Original
+Contrast
+How to play
+CONTRAST DEMO · CONSEQUENCE-LED
+The 13th Bell
+
+You wake to an altered town. Bell Square wears masks; the North Gate road climbs skyward; the bellkeeper walks where no street existed yesterday.
+
+Dawn
+7:00
+Noon
+12:00
+Dusk
+18:20
+Midnight
+13th bell
+13
+Follow the people displaced by your first return.
+The floodwater runs uphill. The archive opens early. Familiar faces have moved to unfamiliar places.
+Companion layer
+The screen handles schedules, compression, and consequences. The tabletop kit keeps the clue cards, hidden envelopes, and debate at the table.
+People × phase ledger
+Plan from patterns, not waypoints.
+Person
+Dawn
+Noon
+Dusk
+Midnight
+Mina
+Flower auction
+Sheltered well
+Sheltered well
+Tower vigil
+Orrin
+Saint Orra’s
+North Gate
+Twin ward
+Underbell
+Sella
+Furnace shift
+Mirror fire
+Inverted shop
+Cold forge
+Vale
+Archive doors
+Buried stair
+Living map
+Bell records
+PREDICTION · DECLARE BEFORE TRAVEL
+What breaks before dusk?
+
+Use the people × phase ledger, then commit. The bell validates later.
+
+Undeclared
+
+Reported in loop 1: The Glassworks furnace begins to sing. Use the source of this knowledge when planning.
+
+The archive floods upward
+The Glassworks furnace sings
+Saint Orra’s empties its ward
+Where do you go?
+
+Three bells before midnight. Memory can buy one extra visit.
+
+LOOP II · THE DAY ANSWERS BACK
+NOON · 12:00
+Bell Square
+Mina and her crate at the sheltered well
+North Gate
+The road climbs into the sky
+Glassworks
+A mirror fire burns cold
+Saint Orra's Hospice
+A child tends the empty ward
+Flooded Archive
+Open before sunrise
+Underbell
+The door below is suddenly ajar
+Red: new activity · Green: visited this loop
+Bell Square · witnessed at Noon
+
+The masked crowd closes the main alley. Mina and her crate reach the sheltered market well through the side passage you prepared. One uncrushed redflower rests on the well stones.
+
+Auction stalls
+→
+Mina + crate · sheltered market well
+The crowd passes beyond the shelter.
+NOON · BELL SQUARE
+Redflowers beside the market well
+Choose elsewhere
+
+Mina and her crate reach the sheltered market well through the side passage you cleared. She puts one uncrushed redflower on the well stones. The main alley is still blocked; the changed route, not a changed crowd, brought her here. The market wears fox masks this morning. A length of red thread hangs from Mina’s crate; Brann’s sealed ledger records the market’s repeated days.
+
+You know the way here. Spend 1 Momentum to make this visit without moving the clock. One extra visit per loop; every new choice stays yours.
+
+Borrow a minute · 1 Momentum
+
+The preparation window ended at Noon. The outcome cannot be changed by arriving late; another loop offers another morning.
+
+Tie a red thread to Mina’s crate
++1 Fracture
+Fasten the crate beside Mina at the sheltered market well.
+Unseal Brann’s private ledger
++2 Fracture
+Read the ledger copy Mina brought to the shelter. Breaking its seal adds +2 Fracture.
+Prepare the side passage
++1 Fracture
+Move the empty stands before Noon. Ordinary visit: one phase +1 Fracture. A valid borrowed visit saves the phase, not the Fracture.
+Journey
+5:19
+ELAPSED
+2
+LOOP
+4
+VISITS
+Momentum
+2
+Fracture
+Satchel this loop
+redflower petal
+I know how to play
+Anchored memories
+Ⅰ
+Hidden route
+Find a way beneath the tower.
+Ⅱ
+Bell's true song
+Learn what wakes the mechanism.
+Ⅲ
+Ember lens
+Carry one change across midnight.
+Carried through midnight
+Bond · Mina, redflower seller
+Object · redflower petal
+Scars
+Bellmarked
+Two-view journal
+
+Eyewitness clue · Loop 1 · Noon · Bell Square: you saw the masked crowd close the main alley and strand Mina’s crate. This clue survives midnight.
+
+Place
+Theory
+01
+Bell Square
+Loop 1 · Read Brann’s delivery marks
+Loop 2 · Prepare the side passage
+02
+North Gate
+No visit recorded.
+03
+Glassworks
+No visit recorded.
+04
+Saint Orra’s Hospice
+No visit recorded.
+05
+Flooded Archive
+No visit recorded.
+06
+Underbell
+Loop 1 · Join the procession
+Prediction locked until the next bell

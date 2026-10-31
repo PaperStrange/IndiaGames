@@ -1,0 +1,6 @@
+URL=file:///tmp/corerush-game/index.html
+TITLE=CORE RUSH
+TEXTLEN=112
+CORE RUSH
+
+Time-loop mining run. Drill a pod through five layers, sell ore in town, upgrade, and reach the Core.
