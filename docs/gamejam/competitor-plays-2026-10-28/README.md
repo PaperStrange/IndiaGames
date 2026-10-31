@@ -36,3 +36,26 @@ human gate; Iona neutral profile (optional); Field Guide creature photo + filled
   `play-2026-10-28/competitors/` prefixes map to `evidence/<demo>/` and
   `evidence/competitors/` here.
 - Companion packages: Bell on the-thirteenth-bell, Small Hours on memorable-moments-game.
+
+## Derived documents and raw captures
+
+How the non-record files relate to `records/`:
+
+- `critique--one-page-2026-10-28.md` — conclusions drawn FROM the records
+  (the one-page report). The same file is filed on all three branches; it is
+  package-wide, so its embeds point at `evidence/` paths that resolve fully
+  only across the three branches together (each branch holds its own demo's
+  evidence). The self-contained HTML beside it resolves fully on every branch.
+- `html/` — self-contained renderings of the markdown (base64-embedded
+  images) for readers whose viewer cannot render markdown image embeds. Content
+  is identical to the markdown: the critique plus this branch's coverage
+  record. The markdown in `records/` remains the original.
+- `evidence/competitors/<game>/pdf/<task-uuid>/` — the raw browser-task PDF
+  captures BEHIND the competitor records, original filenames, one subdir per
+  cited task. The renders in the parent dir are conversions of these pages.
+  Shells and black frames are preserved, not cleaned: a canvas that prints
+  blank stays blank here, and the records say so. Morning-round tasks are not
+  duplicated: their beat PDFs are already filed in curated form in the parent
+  dir (verified byte-identical). Tranquility captures are not filed: no task
+  ID for them is cited in the filed records (the failure is recorded in prose
+  in the Vivid coverage).
