@@ -1,0 +1,2 @@
+URL: file:///tmp/games/field-guide/index.html
+Clicked Start from main menu; island gameplay should be live.

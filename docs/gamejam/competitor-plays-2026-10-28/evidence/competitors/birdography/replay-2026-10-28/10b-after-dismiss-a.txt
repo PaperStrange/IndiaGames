@@ -1,0 +1,5 @@
+PAGE URL: file:///tmp/birdography-local/index.html
+canvas game (Godot, DOM text empty by design)
+
+--- page innerText ---
+

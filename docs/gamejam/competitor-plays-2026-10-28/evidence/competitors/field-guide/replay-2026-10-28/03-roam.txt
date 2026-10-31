@@ -1,0 +1,2 @@
+URL: file:///tmp/games/field-guide/index.html
+Roamed the island on foot (WASD, sneak toggled with Z).

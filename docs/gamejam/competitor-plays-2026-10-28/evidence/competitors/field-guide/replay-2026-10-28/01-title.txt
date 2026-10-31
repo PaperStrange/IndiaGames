@@ -1,0 +1,2 @@
+URL: file:///tmp/games/field-guide/index.html (local copy of itch HTML5 build, see REPORT.md)
+Main menu rendered: Field Guide title over low-poly island; buttons Start / Gallery / Settings / Quit.

@@ -1,0 +1,5 @@
+PAGE URL: file:///tmp/birdography-local/index.html
+canvas 1280x800 at 0,0
+
+--- page innerText ---
+

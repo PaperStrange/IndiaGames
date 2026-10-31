@@ -1,0 +1,2 @@
+URL: file:///tmp/games/field-guide/index.html
+Camera mode toggled with C.
