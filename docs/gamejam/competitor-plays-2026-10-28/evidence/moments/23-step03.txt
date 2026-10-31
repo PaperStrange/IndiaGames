@@ -1,0 +1,60 @@
+Index of /tmp/
+[parent directory]
+Name	Size	Date Modified
+.font-unix/		10/28/26, 2:11:17 AM
+.ICE-unix/		10/28/26, 2:11:17 AM
+.X11-unix/		10/28/26, 2:11:17 AM
+.XIM-unix/		10/28/26, 2:11:17 AM
+node-compile-cache/		10/28/26, 2:50:07 AM
+org.chromium.Chromium.05Ns1s/		10/28/26, 3:04:26 AM
+org.chromium.Chromium.2jVEPg/		10/28/26, 3:03:51 AM
+org.chromium.Chromium.2WS3sI/		10/28/26, 3:13:45 AM
+org.chromium.Chromium.2XnVmI/		10/28/26, 3:06:22 AM
+org.chromium.Chromium.37hhOu/		10/28/26, 3:08:34 AM
+org.chromium.Chromium.75xxvw/		10/28/26, 3:09:45 AM
+org.chromium.Chromium.80kjVq/		10/28/26, 3:09:45 AM
+org.chromium.Chromium.8BRzyv/		10/28/26, 3:06:50 AM
+org.chromium.Chromium.ALYB87/		10/28/26, 2:51:35 AM
+org.chromium.Chromium.cdOzSs/		10/28/26, 3:08:15 AM
+org.chromium.Chromium.Ckkib1/		10/28/26, 3:11:09 AM
+org.chromium.Chromium.gJafHJ/		10/28/26, 3:06:50 AM
+org.chromium.Chromium.go4BCS/		10/28/26, 3:03:13 AM
+org.chromium.Chromium.jxO5rJ/		10/28/26, 3:09:45 AM
+org.chromium.Chromium.Lk5vDn/		10/28/26, 3:03:43 AM
+org.chromium.Chromium.Oe3IlU/		10/28/26, 3:11:49 AM
+org.chromium.Chromium.oRr7FX/		10/28/26, 3:07:34 AM
+org.chromium.Chromium.pBcOk4/		10/28/26, 3:04:06 AM
+org.chromium.Chromium.sbCA8E/		10/28/26, 2:50:19 AM
+org.chromium.Chromium.smKR3Q/		10/28/26, 3:06:50 AM
+org.chromium.Chromium.uWpCjQ/		10/28/26, 3:05:19 AM
+org.chromium.Chromium.WsK6Qj/		10/28/26, 3:13:45 AM
+org.chromium.Chromium.x8jPMR/		10/28/26, 3:08:25 AM
+org.chromium.Chromium.ZSxtYM/		10/28/26, 3:13:44 AM
+playwright_chromiumdev_profile-3kHAVC/		10/28/26, 2:51:29 AM
+playwright-artifacts-199zyL/		10/28/26, 3:06:56 AM
+playwright-artifacts-3hLFmW/		10/28/26, 3:13:51 AM
+playwright-artifacts-6FiFb3/		10/28/26, 3:03:57 AM
+playwright-artifacts-aeeh2B/		10/28/26, 3:09:52 AM
+playwright-artifacts-BWldnt/		10/28/26, 3:06:56 AM
+playwright-artifacts-EJXT2H/		10/28/26, 3:11:15 AM
+playwright-artifacts-GUUNwQ/		10/28/26, 3:09:52 AM
+playwright-artifacts-ovHZ6c/		10/28/26, 2:51:40 AM
+playwright-artifacts-oYEKwZ/		10/28/26, 2:51:29 AM
+playwright-artifacts-uxE2xa/		10/28/26, 3:13:50 AM
+playwright-artifacts-W8GXDI/		10/28/26, 3:13:51 AM
+playwright-artifacts-WWTyN2/		10/28/26, 3:06:56 AM
+pw/		10/28/26, 3:13:44 AM
+small-hours-baseline-2026-10-27/		10/28/26, 2:47:14 AM
+vivid-pilot-0.1.2/		10/28/26, 2:47:14 AM
+chrome-dbg.log	11.0 kB	10/28/26, 3:12:14 AM
+cloudflared	38.4 MB	10/28/26, 2:48:56 AM
+dom-flag.err	4.6 kB	10/28/26, 2:51:12 AM
+dom-flag.html	0 B	10/28/26, 2:51:11 AM
+dom-noflag.err	4.8 kB	10/28/26, 2:51:14 AM
+dom-noflag.html	0 B	10/28/26, 2:51:13 AM
+srv-bell.log	120 B	10/28/26, 2:47:32 AM
+srv-moments.log	120 B	10/28/26, 2:47:32 AM
+srv-vivid.log	180 B	10/28/26, 2:48:44 AM
+tun-bell.log	809 B	10/28/26, 2:49:05 AM
+tun-moments.log	809 B	10/28/26, 2:49:05 AM
+tun-vivid.log	809 B	10/28/26, 2:49:05 AM

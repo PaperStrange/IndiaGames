@@ -1,0 +1,5 @@
+This site can’t be reached
+
+The webpage at https://skribbl.io/ might be temporarily down or it may have moved permanently to a new web address.
+
+ERR_NO_SUPPORTED_PROXIES

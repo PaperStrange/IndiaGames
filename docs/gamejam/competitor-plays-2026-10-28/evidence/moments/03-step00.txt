@@ -1,0 +1,11 @@
+Index of /tmp/small-hours-baseline-2026-10-27/build/
+[parent directory]
+Name	Size	Date Modified
+content.js	3.8 kB	10/28/26, 2:47:14 AM
+game.js	5.3 kB	10/28/26, 2:47:14 AM
+icons.js	1.5 kB	10/28/26, 2:47:14 AM
+index.html	2.4 kB	10/28/26, 2:47:14 AM
+README.md	1.6 kB	10/28/26, 2:47:14 AM
+state.js	3.2 kB	10/28/26, 2:47:14 AM
+style.css	25.3 kB	10/28/26, 2:47:14 AM
+views.js	13.8 kB	10/28/26, 2:47:14 AM

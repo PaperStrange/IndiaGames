@@ -1,0 +1,28 @@
+Index of /
+Name	Size	Date Modified
+bin/		
+bin.usr-is-merged/		
+boot/		
+dev/		10/28/26, 2:11:16 AM
+efi/		
+etc/		10/28/26, 2:11:18 AM
+home/		10/28/26, 2:11:14 AM
+lib/		
+lib.usr-is-merged/		
+lib32/		
+lib64/		
+libx32/		
+media/		
+mnt/		
+opt/		10/28/26, 2:11:16 AM
+proc/		10/28/26, 2:11:16 AM
+root/		
+run/		10/28/26, 2:11:17 AM
+sbin/		10/28/26, 2:11:15 AM
+sbin.usr-is-merged/		
+srv/		
+sys/		10/28/26, 2:11:16 AM
+tmp/		10/28/26, 3:13:57 AM
+usr/		
+var/		10/28/26, 2:11:18 AM
+init	98.5 kB	
