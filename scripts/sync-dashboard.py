@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""Validate the three authored task lists and rebuild the static dashboard data."""
+"""Validate authored task lists and rebuild a per-lane development snapshot."""
 import json
+import re
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +17,23 @@ REQUIRED = {'id', 'lane', 'perspective', 'priority', 'status', 'owner_role', 'ti
             'human_participants_required', 'completion_evidence'}
 
 def build():
+    manifest = json.loads((ROOT / 'data' / 'source-manifest.json').read_text())
+    sources = {source['lane']: source for source in manifest['sources']}
+    launch = manifest.get('launch')
+    if launch is not None:
+        for field in ('target_date_utc', 'decision_date_utc', 'candidate_freeze_date_utc'):
+            if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', launch.get(field, '')):
+                raise ValueError(f'Invalid launch {field}')
+            date.fromisoformat(launch[field])
+        if not launch['candidate_freeze_date_utc'] <= launch['decision_date_utc'] <= launch['target_date_utc'] or launch.get('status') != 'planned_human_gates_pending':
+            raise ValueError('Invalid launch decision or status')
+        document = launch.get('plan_document', '')
+        if document != f"docs/launch/{launch['target_date_utc']}/README.md" or not (ROOT / document).is_file():
+            raise ValueError('Missing launch plan document')
+        packet_pattern = r'https://github\.com/PaperStrange/IndiaGames/blob/[0-9a-f]{40}/docs/gamejam/launch-' + re.escape(launch['target_date_utc']) + r'/README\.md'
+        for lane, source in sources.items():
+            if not re.fullmatch(packet_pattern, source.get('human_playtest_packet', '')):
+                raise ValueError(f'{lane}: missing pinned human playtest packet')
     tasks = []
     for folder, (lane, prefix) in LANES.items():
         path = ROOT / 'docs' / 'games' / folder / 'tasks.json'
@@ -33,6 +52,10 @@ def build():
                 raise ValueError(f'{task["id"]}: acceptance criteria must be a nonempty array')
             if not isinstance(task['depends_on'], list):
                 raise ValueError(f'{task["id"]}: dependencies must be an array')
+            if not isinstance(task['completion_evidence'], list) or not all(isinstance(item, str) and item.strip() for item in task['completion_evidence']):
+                raise ValueError(f'{task["id"]}: evidence must be an array of nonempty strings')
+            if any(not item.startswith('https://github.com/PaperStrange/IndiaGames/') for item in task['completion_evidence']):
+                raise ValueError(f'{task["id"]}: evidence must use repository GitHub URLs, as required by the dashboard')
             if task['status'] == 'done' and not task['completion_evidence']:
                 raise ValueError(f'{task["id"]}: completion needs evidence')
             plan = ROOT / task['source_plan']
@@ -59,13 +82,26 @@ def build():
         visit(task_id)
     result = {
         'schema_version': 2,
-        'type': 'versioned planning snapshot; role owners are proposed, not external assignments',
-        'snapshot_date_utc': '2026-10-21',
-        'plan_date_utc': '2026-10-21',
-        'demo_qa_date_utc': '2026-10-20',
+        'type': 'versioned development snapshot; coding-agent assignments are explicit, human staffing is not implied',
+        'snapshot_date_utc': manifest.get('dashboard_date_utc', manifest['review_date_utc']),
+        'plan_date_utc': manifest['plan_date_utc'],
+        'demo_qa_date_utc_by_lane': {lane: source['qa_date_utc'] for lane, source in sources.items()},
         'incoming_evidence_reviewed': True,
-        'implementation_started': False,
+        'implementation_started': any(source.get('implementation_started', False) for source in sources.values()),
+        'lane_status': {lane: {
+            'implementation_started': source.get('implementation_started', False),
+            'qa_date_utc': source['qa_date_utc'],
+            'qa_status': source.get('qa_status', 'historical_review'),
+            'candidate_version': source.get('candidate_version'),
+            'candidate_status': source.get('candidate_status'),
+            'milestone_status_label': source.get('milestone_status_label'),
+            'pilot_packet': source.get('pilot_packet'),
+            'human_playtest_packet': source.get('human_playtest_packet'),
+            'human_staffing': source.get('human_staffing'),
+            'official_release': source.get('official_release', False),
+        } for lane, source in sources.items()},
         'source_manifest': 'source-manifest.json',
+        'launch': launch,
         'status_definitions': {
             'proposed': 'Planned; not started.',
             'conditional': 'Select only if preceding observations support the change.',
@@ -75,10 +111,10 @@ def build():
             'not_selected': 'Explicitly closed by a recorded design decision.'
         },
         'gates': [
-            {'id': 'plan-settlement', 'status': 'open', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'Settle each bounded game experiment before implementation or new competitor play.'},
+            {'id': 'plan-settlement', 'status': 'settled', 'applies_to': ['memorable', 'vivid', 'bell'],
+             'requirement': 'The approved milestone prepares three human playtest packets: Small Hours keeps its baseline, Vivid keeps 0.1.2, and Bell implements Prepare Mina’s route. Human observations still determine subsequent feature and release decisions.'},
             {'id': 'competitor-coverage', 'status': 'open', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'Retain six distinct titles and four broad families before final comparative synthesis; label partials and explicitly decide substitutions.'},
+             'requirement': 'Retain each lane’s six-title roster, broad-family coverage, substituted editions and unfinished endpoints. The October 22 uploads add evidence, not human validation or six completed journeys. Current competitor and pilot packets carry the qualifications; historical original-roster counts remain separate.'},
             {'id': 'human-validation', 'status': 'not_run', 'applies_to': ['memorable', 'vivid', 'bell'],
              'requirement': 'Observe actual people using the per-game protocol; automated checks and emotional agent prose are not human evidence.'}
         ],

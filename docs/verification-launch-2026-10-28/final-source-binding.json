@@ -1,0 +1,19 @@
+{
+  "browser_tested_commit": "2832cf4d2d275dc8463f32a42a297dba0f58c21a",
+  "unchanged_tested_files": [
+    "index.html",
+    "app.js",
+    "styles.css",
+    "data/tasks.json",
+    "data/releases.json",
+    "scripts/sync-dashboard.py",
+    "docs/games/small-hours/tasks.json",
+    "docs/games/keepers-frame/tasks.json",
+    "docs/games/thirteenth-bell/tasks.json",
+    "docs/verification-milestone-2026-10-27/browser.mjs"
+  ],
+  "changed_file": "data/source-manifest.json",
+  "only_changed_top_level_key": "publication",
+  "reason": "Only publication metadata changed after the local browser run: record initial write403/master state, then independently observed main deployment and exact served assets. UI code and task inputs are unchanged.",
+  "current_manifest_sha256": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c"
+}

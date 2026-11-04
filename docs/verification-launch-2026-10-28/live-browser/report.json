@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-10-28T09:15:00.729Z",
+  "url": "https://paperstrange.github.io/IndiaGames/",
+  "method": "Actual HTTPS Pages visit through configured proxy, desktop/narrow Chromium; automated dashboard verification, not human game play or physical device test.",
+  "page_errors": [],
+  "http_failures": [],
+  "request_failures": [
+    {
+      "url": "https://paperstrange.github.io/IndiaGames/",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ],
+  "groups": [],
+  "files": [],
+  "status": "fail",
+  "error": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://paperstrange.github.io/IndiaGames/\nCall log:\n\u001b[2m  - navigating to \"https://paperstrange.github.io/IndiaGames/\", waiting until \"networkidle\"\u001b[22m\n\n    at /workspace/indiagames-launch-2026-11-20/verify-live.mjs:17:29"
+}

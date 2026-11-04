@@ -1,6 +1,20 @@
-# The Thirteenth Bell — detailed proposed to-do list
+# The Thirteenth Bell — Mina-route experiment and human handoff
 
-**Planning snapshot: 21 October 2026. No game implementation is active.** The proposed next experiment is small: **witness a Bell Square event → retain usable knowledge → spend the earned minute on an intervention → see Mina reach a different outcome.** Settle that experiment before coding. The six-title research gate applies before final competitive conclusions; incomplete coverage does not automatically prohibit a disclosed, bounded design specification.
+## Next iteration · launch target 20 November 2026
+
+Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
+
+## Current milestone · 27 October 2026
+
+Option A, Prepare Mina’s route, was selected on October 24. The bounded scene is implemented and verified, and candidate 0.1.0 is staged on master with human approval pending; the manifest pins its exact source and artifacts. Original and previous Contrast remain comparison references. No human results or official release are implied.
+
+[Current playtest packet](https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
+
+The current packet reconciles the October 22 research uploads with edition, substitution and partial-journey limits. Underlying play dates remain explicit. The detailed baseline below is retained for design rationale and acceptance criteria; its historical coverage/status statements do not replace the current packet, task JSON or source manifest. No human facilitator or independent reviewer is assigned.
+
+## Preserved design rationale and acceptance criteria
+
+**Historical planning baseline — 21 October 2026.** No game implementation was active in that snapshot. The proposed next experiment is small: **witness a Bell Square event → retain usable knowledge → spend the earned minute on an intervention → see Mina reach a different outcome.** Settle that experiment before coding. The six-title research gate applies before final competitive conclusions; incomplete coverage does not automatically prohibit a disclosed, bounded design specification.
 
 [Back to project overview](../../../README.md) · [Machine-readable cards](tasks.json) · [Earlier Bell proposal][old-plan] · [Historical evidence audit][old-audit]
 

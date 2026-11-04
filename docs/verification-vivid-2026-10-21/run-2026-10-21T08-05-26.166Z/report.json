@@ -1,0 +1,68 @@
+{
+  "observed_at": "2026-10-21T08:05:26.166Z",
+  "method": "Automated local Chromium dashboard integration; not game playtesting, human evidence or a deployed Pages check.",
+  "base_url": "http://127.0.0.1:8115/",
+  "checkout_head_at_run": "ba756cb2876834d4ecbf3cb055381db5ca6660ec",
+  "tracked_changes_at_run": [
+    "M .gitignore",
+    " M README.md",
+    " M app.js",
+    " M data/source-manifest.json",
+    " M data/tasks.json",
+    " M docs/PUBLISHING.md",
+    " M docs/TEAM.md",
+    " M docs/games/keepers-frame/TODO.md",
+    " M docs/games/keepers-frame/tasks.json",
+    " M index.html",
+    " M scripts/sync-dashboard.py"
+  ],
+  "file_sha256": {
+    "index.html": "fc17d58721a37a7c94f2a470654d3de1b3fb6e197d253a543c0dc046af76d1e4",
+    "app.js": "a31d0d06097448e358f1adafdb07fe64bdb0f5a58fabc213f2d40e7f0340d34a",
+    "styles.css": "a9a55cfa1603bb6d65c2153cf7c57163271ee22d739562bae3e041a88dc4d087",
+    "data/tasks.json": "f0c7e196d39eb7e988e3b52a3e7730db09671cf45065c188721860082048f026",
+    "data/source-manifest.json": "4e5d6adc21e4b17686e77b79c39d08cb36032d7f36410c2f7d0d8f590b7c8cae",
+    "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4"
+  },
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "id": "project-scope",
+      "status": "pass",
+      "detail": "Three projects remain; Vivid contains two stories and a pending 0.1.1 candidate; the other lanes remain proposed."
+    },
+    {
+      "id": "release-boundary",
+      "status": "pass",
+      "detail": "Candidate link pins the exact master packet, policy link opens PR #1, the official registry is empty and human rows remain zero."
+    },
+    {
+      "id": "provenance-and-claims",
+      "status": "pass",
+      "detail": "Implementation/QA dates are lane-specific, policy review stays active and the old aggregate is explicitly historical."
+    },
+    {
+      "id": "tasks-and-evidence",
+      "status": "pass",
+      "detail": "Vivid has 23 cards and 15 completed deliverables; keyboard opens task details with immutable evidence links."
+    },
+    {
+      "id": "filter-recovery",
+      "status": "pass",
+      "detail": "Four human blockers remain visible; search and empty-result recovery restore the complete board."
+    },
+    {
+      "id": "responsive-layout",
+      "status": "pass",
+      "detail": "1440px desktop and 390px mobile captures saved; no narrow-screen horizontal overflow."
+    },
+    {
+      "id": "load-and-errors",
+      "status": "pass",
+      "detail": "No uncaught page errors or failed required HTTP resources. Optional browser favicon is excluded."
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "status": "pass"
+}

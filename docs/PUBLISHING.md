@@ -4,6 +4,14 @@ The site is plain HTML, CSS, JavaScript and local JSON on **`main`**. `.nojekyll
 
 https://paperstrange.github.io/IndiaGames/
 
+## Current verification · 28 October 2026
+
+**The main dashboard is now live at [paperstrange.github.io/IndiaGames](https://paperstrange.github.io/IndiaGames/).** A later settings read shows **main / (root)** and a successful Pages deployment of `1dd23301fdd3046a0c7f5403bcd25957e2176562`. Six actual HTTPS files (HTML, JavaScript, CSS and three JSON data files) exactly match that commit; see [live asset verification](verification-launch-2026-10-28/live-assets.json). The local browser checks cover the same runtime at root/project paths and desktop/narrow widths. Direct remote Chromium was blocked by this environment's proxy certificate trust before rendering; that failed attempt is preserved, and TLS verification was not bypassed.
+
+Earlier in this work, settings were **master/root** and the live page was the candidate README. The authorized source-update PUT returned **403, Resource not accessible by integration**; an immediate follow-up still showed master. The subsequent successful main deployment is an observed new state, not proof that the rejected request succeeded or that this integration now has Pages write permission. Both observations remain in [publication.json](verification-launch-2026-10-28/publication.json).
+
+Main and master branch-protection reads still return **403, Resource not accessible by integration**; enforcement remains unverified and no protections were changed. Vivid policy PR #1 has no human reviews. These remain dependencies for the [20 November game launch](launch/2026-11-20/README.md). Publishing this dashboard does not approve or release any game; the official registry remains empty.
+
 ## Configuration
 
 In [Settings → Pages](https://github.com/PaperStrange/IndiaGames/settings/pages), choose **Deploy from a branch**, then **main** and **/ (root)**, and Save. GitHub creates the Pages build/deployment automatically. Subsequent pushes to main update the published site.
@@ -32,7 +40,9 @@ Confirm that `https://paperstrange.github.io/IndiaGames/` returns the project hu
 - The authorized request to create Pages with `main` / root returned **403: Resource not accessible by integration**. The expected Pages URL returned **404**. The site source is uploaded; the website is **not live**.
 - Reading main and master branch-protection settings also returned **403**. Existing settings could not be inspected, so no protection configuration was overwritten. Required gate enforcement is **not verified**. CODEOWNERS and workflow files alone do not enable branch protection.
 
-### Administrator actions still required
+### Historical administrator checklist · October 21
+
+Pages configuration is now verified above. Branch-protection enforcement and actual promotion review remain outstanding.
 
 1. In [Pages settings](https://github.com/PaperStrange/IndiaGames/settings/pages), select **Deploy from a branch → main → / (root)** and Save. Then verify the deployment’s revision and actual site URL.
 2. In [branch settings](https://github.com/PaperStrange/IndiaGames/settings/branches), protect **main** with required PRs, at least one approving human review, code-owner review, dismissed stale approvals, resolved conversations and the required **release-gate** check on the latest changes. Disable force pushes, deletion and bypass of these requirements where available.
@@ -40,3 +50,15 @@ Confirm that `https://paperstrange.github.io/IndiaGames/` returns the project hu
 4. Confirm these settings with an actual promotion PR before calling the process enforced. Follow the [release policy](RELEASE-POLICY.md); review workflow/policy changes separately from game promotion.
 
 No additional game release is needed to activate the dashboard. Do not fill the empty registry or invent participant records to make the page appear complete.
+
+## 21 October implementation recheck
+
+After staging Vivid 0.1.1, a fresh `GET /repos/PaperStrange/IndiaGames/pages` still returned HTTP 403, “Resource not accessible by integration.” The dashboard source is maintained on main, but no live Pages deployment is claimed. A repository administrator must enable/configure Pages and verify the resulting URL using the steps above. Candidate source links are GitHub repository views, not public playable URLs.
+
+## Fresh publication check · 27 October 2026
+
+The coordinator queried Pages again: `GET /repos/PaperStrange/IndiaGames/pages` returned **403, Resource not accessible by integration**. The actual expected URL, `https://paperstrange.github.io/IndiaGames/`, returned **404**. No live deployment is verified. Repository source updates and local browser checks do not change that result.
+
+A repository administrator still needs to enable **Deploy from a branch → main → / (root)** in [Pages settings](https://github.com/PaperStrange/IndiaGames/settings/pages), then verify the deployed revision and actual URL. Do not alter repository visibility as a workaround. Main/master protection settings are not newly verified by this Pages request.
+
+Vivid policy [PR #1](https://github.com/PaperStrange/IndiaGames/pull/1) remains open at `4a4f3996fefc198370814c71acb45af3470bd47f`, with no human reviews at this check. Its earlier CI result is separate from current human approval and Pages publication.

@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-27T02:26:46.012370+00:00",
+  "staging_integrity": "passed",
+  "readiness_checks": [
+    {
+      "candidate": "thirteenth-bell/0.1.0",
+      "exit_code": 1,
+      "output": "Release gate failed: all critical bugs must be closed\n",
+      "expected": "reject pending real human evidence"
+    },
+    {
+      "candidate": "keepers-frame/0.1.2",
+      "exit_code": 1,
+      "output": "Release gate failed: all critical bugs must be closed\n",
+      "expected": "reject pending real human evidence"
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "observed_at": "2026-10-27T02:32:12.906Z",
+  "method": "Automated local Chromium dashboard integration at direct and /IndiaGames/ mounts. No game playthrough, human observation, physical device or deployed Pages claim.",
+  "output_directory": "/workspace/IndiaGames/docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z",
+  "viewport_groups": [
+    {
+      "id": "root-1440",
+      "url": "http://127.0.0.1:34349/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Three project cards, 60 task cards, exact served data, immutable pilot/candidate links and no official/human release claim.",
+        "Lane/status/perspective filters, unique task search, keyboard details, empty-state recovery, focus restoration and no horizontal overflow."
+      ]
+    },
+    {
+      "id": "root-390",
+      "url": "http://127.0.0.1:34349/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Three project cards, 60 task cards, exact served data, immutable pilot/candidate links and no official/human release claim.",
+        "Lane/status/perspective filters, unique task search, keyboard details, empty-state recovery, focus restoration and no horizontal overflow."
+      ]
+    },
+    {
+      "id": "project-1440",
+      "url": "http://127.0.0.1:34349/IndiaGames/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Three project cards, 60 task cards, exact served data, immutable pilot/candidate links and no official/human release claim.",
+        "Lane/status/perspective filters, unique task search, keyboard details, empty-state recovery, focus restoration and no horizontal overflow."
+      ]
+    },
+    {
+      "id": "project-390",
+      "url": "http://127.0.0.1:34349/IndiaGames/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Three project cards, 60 task cards, exact served data, immutable pilot/candidate links and no official/human release claim.",
+        "Lane/status/perspective filters, unique task search, keyboard details, empty-state recovery, focus restoration and no horizontal overflow."
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "scope-and-human-boundaries",
+      "status": "pass",
+      "detail": "Three projects; 19/23/18 task counts; no official releases or human rows; required human cards blocked; KF-22 active; Small Hours unstaged."
+    },
+    {
+      "id": "immutable-packets",
+      "status": "pass",
+      "detail": "Vivid 0.1.2 and Bell 0.1.0 point to existing immutable master candidate manifests with matching identities and pending human reports; all three pilot links pin existing files."
+    },
+    {
+      "id": "browser-resources",
+      "status": "pass",
+      "detail": "No page errors, HTTP failures or failed browser requests across all four mount/viewport groups."
+    }
+  ],
+  "source_file_sha256": {
+    "index.html": "85d7b7bcf36a3cc3f9f6aaf40b1e01728e38a9cf558f7cbec87b18e9ab906e6f",
+    "app.js": "73661ff26ed367176d040dd268ff858a87ddbec0b66c452b3d9e934f8c64a37d",
+    "styles.css": "a9a55cfa1603bb6d65c2153cf7c57163271ee22d739562bae3e041a88dc4d087",
+    "data/tasks.json": "18fa472bae003e794851dca799763ac5a01d67130c102eee9285683279e1b39d",
+    "data/source-manifest.json": "62b76195641c77f8f4f8a9780a380c6721a59f0c8a9557fa2083913adae12bed",
+    "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+    "scripts/sync-dashboard.py": "1c244b90da054342b163e4820f5ee4631093604881af0ce55d34c56cc7aeb1f0",
+    "docs/games/small-hours/tasks.json": "8eb82a92119393764b6313caf9671d7b50850179a95e2a9a5191c4d90dab2f4c",
+    "docs/games/keepers-frame/tasks.json": "3f8762ec3f321f6753cd3de0f4dd45673c2c051a075a15181e0119f6333b10ae",
+    "docs/games/thirteenth-bell/tasks.json": "88c8f292ef390dec56a0b4bc1da923e354b1891fe4cd2e72ee292c4927f4f79d",
+    "docs/verification-milestone-2026-10-27/browser.mjs": "de9259f3115ae8a607909ee25f13231033b2c0c50c4710decf0ca928cad72520"
+  },
+  "page_errors": [],
+  "http_failures": [],
+  "request_failures": [],
+  "screenshots": [
+    "root-1440-projects.jpg",
+    "root-1440-human-gates.jpg",
+    "root-390-projects.jpg",
+    "root-390-human-gates.jpg",
+    "project-1440-projects.jpg",
+    "project-1440-human-gates.jpg",
+    "project-390-projects.jpg",
+    "project-390-human-gates.jpg"
+  ],
+  "checkout_before": {
+    "head": "63b1b27d33b202ae652fa28602d9c084d68b00a8",
+    "branch": "main",
+    "tracked_dirty": true,
+    "untracked_present": true,
+    "dirty": true,
+    "tracked_changes": [
+      " M README.md",
+      " M app.js",
+      " M data/source-manifest.json",
+      " M data/tasks.json",
+      " M docs/PUBLISHING.md",
+      " M docs/TEAM.md",
+      " M docs/games/keepers-frame/TODO.md",
+      " M docs/games/keepers-frame/tasks.json",
+      " M docs/games/small-hours/TODO.md",
+      " M docs/games/small-hours/tasks.json",
+      " M docs/games/thirteenth-bell/TODO.md",
+      " M docs/games/thirteenth-bell/tasks.json",
+      " M index.html",
+      " M scripts/sync-dashboard.py"
+    ],
+    "untracked_files": [
+      "?? docs/milestones/2026-10-27.md",
+      "?? docs/verification-milestone-2026-10-27/browser.mjs",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-28-54.558Z/failure.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-28-54.558Z/report.json",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/failure.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/report.json",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/root-1440-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/root-1440-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/staging-readiness.json"
+    ],
+    "status_porcelain": [
+      " M README.md",
+      " M app.js",
+      " M data/source-manifest.json",
+      " M data/tasks.json",
+      " M docs/PUBLISHING.md",
+      " M docs/TEAM.md",
+      " M docs/games/keepers-frame/TODO.md",
+      " M docs/games/keepers-frame/tasks.json",
+      " M docs/games/small-hours/TODO.md",
+      " M docs/games/small-hours/tasks.json",
+      " M docs/games/thirteenth-bell/TODO.md",
+      " M docs/games/thirteenth-bell/tasks.json",
+      " M index.html",
+      " M scripts/sync-dashboard.py",
+      "?? docs/milestones/2026-10-27.md",
+      "?? docs/verification-milestone-2026-10-27/browser.mjs",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-28-54.558Z/failure.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-28-54.558Z/report.json",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/failure.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/report.json",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/root-1440-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/root-1440-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/staging-readiness.json"
+    ]
+  },
+  "candidates": {
+    "vivid": {
+      "version": "0.1.2",
+      "master_commit": "f9488e5079d1d193caef560d1fe72936add6cba3",
+      "source_commit": "0c72da97994d9f2d315e6aba1afba5219936b78b",
+      "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+      "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
+      "expected_source_override": null
+    },
+    "bell": {
+      "version": "0.1.0",
+      "master_commit": "02c78ad9739622fb447850fbecb5f46e7dec8de8",
+      "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06",
+      "build_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+      "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/02c78ad9739622fb447850fbecb5f46e7dec8de8/release-candidates/thirteenth-bell/0.1.0/candidate.json",
+      "expected_source_override": null
+    }
+  },
+  "pilot_packets": {
+    "memorable": {
+      "commit": "cc0b9ddd777d5772358df272bec69fe5c7ba8daf",
+      "path": "docs/gamejam/milestone-2026-10-27/README.md"
+    },
+    "vivid": {
+      "commit": "545a867fe0d6b1fe2555526e2b48278b96372f9a",
+      "path": "docs/gamejam/milestone-2026-10-27/README.md"
+    },
+    "bell": {
+      "commit": "1f0fe0798ca991a05686e17c08f043d2c225f162",
+      "path": "docs/gamejam/milestone-2026-10-27/README.md"
+    }
+  },
+  "base_url": "http://127.0.0.1:34349",
+  "playwright_module": "file:///workspace/IndiaGames/vivid-2.5d-photo-game/play/node_modules/playwright/index.js",
+  "browser_version": "151.0.7922.173",
+  "source_files_stable_during_run": true,
+  "status": "pass",
+  "checkout_after": {
+    "head": "63b1b27d33b202ae652fa28602d9c084d68b00a8",
+    "branch": "main",
+    "tracked_dirty": true,
+    "untracked_present": true,
+    "dirty": true,
+    "tracked_changes": [
+      " M README.md",
+      " M app.js",
+      " M data/source-manifest.json",
+      " M data/tasks.json",
+      " M docs/PUBLISHING.md",
+      " M docs/TEAM.md",
+      " M docs/games/keepers-frame/TODO.md",
+      " M docs/games/keepers-frame/tasks.json",
+      " M docs/games/small-hours/TODO.md",
+      " M docs/games/small-hours/tasks.json",
+      " M docs/games/thirteenth-bell/TODO.md",
+      " M docs/games/thirteenth-bell/tasks.json",
+      " M index.html",
+      " M scripts/sync-dashboard.py"
+    ],
+    "untracked_files": [
+      "?? docs/milestones/2026-10-27.md",
+      "?? docs/verification-milestone-2026-10-27/browser.mjs",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-28-54.558Z/failure.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-28-54.558Z/report.json",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/failure.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/report.json",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/root-1440-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/root-1440-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/project-1440-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/project-1440-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/project-390-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/project-390-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/root-1440-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/root-1440-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/root-390-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/root-390-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/staging-readiness.json"
+    ],
+    "status_porcelain": [
+      " M README.md",
+      " M app.js",
+      " M data/source-manifest.json",
+      " M data/tasks.json",
+      " M docs/PUBLISHING.md",
+      " M docs/TEAM.md",
+      " M docs/games/keepers-frame/TODO.md",
+      " M docs/games/keepers-frame/tasks.json",
+      " M docs/games/small-hours/TODO.md",
+      " M docs/games/small-hours/tasks.json",
+      " M docs/games/thirteenth-bell/TODO.md",
+      " M docs/games/thirteenth-bell/tasks.json",
+      " M index.html",
+      " M scripts/sync-dashboard.py",
+      "?? docs/milestones/2026-10-27.md",
+      "?? docs/verification-milestone-2026-10-27/browser.mjs",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-28-54.558Z/failure.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-28-54.558Z/report.json",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/failure.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/report.json",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/root-1440-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-31-11.689Z/root-1440-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/project-1440-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/project-1440-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/project-390-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/project-390-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/root-1440-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/root-1440-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/root-390-human-gates.jpg",
+      "?? docs/verification-milestone-2026-10-27/run-2026-10-27T02-32-12.906Z/root-390-projects.jpg",
+      "?? docs/verification-milestone-2026-10-27/staging-readiness.json"
+    ]
+  },
+  "checkout_after_includes_generated_evidence": true,
+  "finished_at": "2026-10-27T02:32:19.302Z",
+  "groups_passed": 4,
+  "group_count": 4,
+  "check_count": 3,
+  "count_note": "Counts are integration groups/checks, not game behavioral assertions, unit tests or human participants."
+}

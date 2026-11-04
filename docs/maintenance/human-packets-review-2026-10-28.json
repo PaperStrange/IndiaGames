@@ -1,0 +1,117 @@
+{
+  "date_utc": "2026-10-28",
+  "scope": "Independent read-only documentation consistency review; no human sessions, gameplay or artifact regression runs",
+  "packets": {
+    "small-hours": {
+      "branch_at_review": "b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
+      "files_sha256": {
+        "docs/gamejam/launch-2026-11-20/iteration-plan.md": "b3f39a8a463a0e090e36fac72e42f96d9645e758e34cb8b2b32c97b1e12e7ae3",
+        "docs/gamejam/launch-2026-11-20/session-index.template.csv": "4411d151d876581e454249df839eb7dc36fe0af30fca9871e88a5132a2b4346f",
+        "docs/gamejam/launch-2026-11-20/README.md": "32d54ede90281149a6f52dc577e8f8c19056e607f40d553397c34a8b01ca0e01",
+        "docs/gamejam/launch-2026-11-20/session-recording-template.md": "36b790e449f4d9c3e3789b3016e382404ffd81556b49e60cc9ebd159adacdbce",
+        "docs/gamejam/launch-2026-11-20/issues.template.csv": "9d4aa1473805dd88ddec617e425649c4814c654a1a43a072f0681497e3c5ac6a",
+        "docs/gamejam/launch-2026-11-20/human-playtest-checklist.md": "95778293a65214e5c69ce96b9e5a69084da17745fe9c5e3013f44853801acf12",
+        "docs/gamejam/launch-2026-11-20/device-checks.template.csv": "343fa07ae8afab596faac4a2531771a3b0f46ca5ccf4e2b1bcfe5cf857a3c828",
+        "docs/gamejam/launch-2026-11-20/decision-template.md": "f9a20e109a397ad67d94de870b0d00641f941b3fc5fac05d4bc61eb8462c6e3d"
+      },
+      "relative_links_checked": 23,
+      "missing_relative_targets": [],
+      "csv_templates": {
+        "session-index.template.csv": {
+          "rows_after_header": 0,
+          "columns": 21
+        },
+        "issues.template.csv": {
+          "rows_after_header": 0,
+          "columns": 19
+        },
+        "device-checks.template.csv": {
+          "rows_after_header": 0,
+          "columns": 18
+        }
+      },
+      "integrated_commit": "b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
+      "integration_hash_mismatches": [
+        "docs/gamejam/launch-2026-11-20/iteration-plan.md"
+      ],
+      "integration_reviewed_correction": {
+        "path": "docs/gamejam/launch-2026-11-20/iteration-plan.md",
+        "prior_staged_sha256": "b3f39a8a463a0e090e36fac72e42f96d9645e758e34cb8b2b32c97b1e12e7ae3",
+        "integrated_sha256": "71262d9eb85c33a9d618bfe7b6322afb96813530d8178adfdc6af573f13c9495",
+        "change": "Applied independent reviewer request: remove potential protocol waiver; require six preregistered pairs/twelve distinct people on changed bytes. Exact single replacement verified.",
+        "commit": "b9953cd01e95a32c631f8fb6bce9eb72c176d1e4"
+      },
+      "integration_unresolved_mismatches": []
+    },
+    "vivid": {
+      "branch_at_review": "545a867fe0d6b1fe2555526e2b48278b96372f9a",
+      "files_sha256": {
+        "docs/gamejam/launch-2026-11-20/issue-register.csv": "83200048204d39f77f4e59c238d28039f416911c5e7f20b6ccd6cf3d7d462b70",
+        "docs/gamejam/launch-2026-11-20/SESSION-RECORD.md": "22621d6a84749b2b3139f8455fde8b5fc6a8bef35637ce93c4d41759a3b7d1e3",
+        "docs/gamejam/launch-2026-11-20/README.md": "03cd4fc117ecbe806acaab942bcd6af30a11298e8a08cb1ee2e577c1e6ed0d8e",
+        "docs/gamejam/launch-2026-11-20/PLAYTEST-CHECKLIST.md": "1b2283f9dcc6f52ed875b6a902c635134a9ac06fa5ed3b4b8f9abe8284565005",
+        "docs/gamejam/launch-2026-11-20/session-register.csv": "8a77bdbcf9bd89e3aea844cc19628914e7d500b92123ff7e72350dc7f1530649",
+        "docs/gamejam/launch-2026-11-20/NEXT-ITERATION.md": "bca9644579131c435ac8b0ff15d68209179a4623e4b903d41b50e667425dd2b5"
+      },
+      "relative_links_checked": 24,
+      "missing_relative_targets": [],
+      "csv_templates": {
+        "issue-register.csv": {
+          "rows_after_header": 0,
+          "columns": 20
+        },
+        "session-register.csv": {
+          "rows_after_header": 0,
+          "columns": 22
+        }
+      },
+      "integrated_commit": "a63834557de0a8132ce5355c0d50858e200a3914",
+      "integration_hash_mismatches": []
+    },
+    "bell": {
+      "branch_at_review": "1f0fe0798ca991a05686e17c08f043d2c225f162",
+      "files_sha256": {
+        "docs/gamejam/launch-2026-11-20/SESSION-RECORD.md": "b655cb04bdd3c408f1e7e9d5377798c61b2e25f4f4a49aa13319bb238334a9b1",
+        "docs/gamejam/launch-2026-11-20/MANUAL-CHECKS.md": "0c2aa24a83325d6f5c148942da2c84da972f2acb8b9f93a24a963870eaf6287b",
+        "docs/gamejam/launch-2026-11-20/README.md": "5f75daae12af2e09a21ee5e9f6527076086d0cbd9ff7d6953108080da8238f35",
+        "docs/gamejam/launch-2026-11-20/PLAYTEST-LIST.md": "4ad16508bcd2e6992ec96a214110b455dcfc07dd33b9642d7d4ffd900d73de3f",
+        "docs/gamejam/launch-2026-11-20/ITERATION.md": "fbc4cfca458ec8ce263f232872d9c57850655d6482c5010d6483dc996222776e",
+        "docs/gamejam/launch-2026-11-20/roster-template.csv": "f7c2ea79b5fd5b049f0c00e0849b42166a23dd5c452dc9bcfe25a46008c3e377",
+        "docs/gamejam/launch-2026-11-20/DECISION-RECORD.md": "de57d64b8c3a9bf0edc10d942b38019c1b68ac97dc21f44f61075453b724111d"
+      },
+      "relative_links_checked": 18,
+      "missing_relative_targets": [],
+      "csv_templates": {
+        "roster-template.csv": {
+          "rows_after_header": 0,
+          "columns": 21
+        }
+      },
+      "integrated_commit": "fce070bd9ee3006f0a017b9c33ee11f5b5133657",
+      "integration_hash_mismatches": []
+    }
+  },
+  "findings": [
+    {
+      "id": "D1",
+      "lane": "bell",
+      "severity": "schedule_consistency",
+      "finding": "Pilot row originally Oct30\u2013Nov4; shared calendar Oct31\u2013Nov4",
+      "resolution": "Author corrected staged ITERATION.md to Oct31\u2013Nov4 and notified root"
+    },
+    {
+      "id": "D2",
+      "lane": "small-hours",
+      "severity": "release_gate_wording",
+      "finding": "Phrase allowing different pair count after explicitly reviewed protocol could be read as waiver of fixed release policy",
+      "resolution": "Resolved in committed Small Hours b9953cd01e95a32c631f8fb6bce9eb72c176d1e4: changed candidate requires another six preregistered pairs/twelve distinct people on exact bytes; read-only reviewer confirmed text via git show."
+    }
+  ],
+  "confirmed": [
+    "Small Hours: 6 pairs/12 distinct people; >=5/6 unaided reveal, >=4/6 both contribute, >=3/6 voluntary save/replay; exact frozen baseline; unstaged before SH06/10/12.",
+    "Vivid: separate 6-person Iona and 6-person Mara cohorts, distinct people; Iona joint completion+causality>=4/6 and unrestrictedAI<=1/6; Mara joint completion+causality>=4/6; optional neutral and48\u201372hrecall separate; schema2 envelope retained.",
+    "Bell: six fresh people, each both Contrast builds, alternating firstbuild3/3; >=4/6 joint cause+prediction and >=4/6 joint action+Fracture, >=3/6 Mina recall; recall minimum120seconds, not2hours; candidateonly release rows.",
+    "All packets: human roles pending; checklists blank; CSVs headeronly; private storage and explicit anonymized publication; real devices distinct from emulation; independent reviewer distinct participants/observers; changed bytes require newcandidate/evidence; launch conditional.",
+    "Calendar: setupOct28\u201330; pilotOct31\u2013Nov4 afterD1fix; decisionNov5; bounded selectedfixNov6\u201310; freezeNov11; finalexactbuildreviewsNov12\u201315; go/no-goNov16; delivery/rehearsalNov17\u201319; conditionalNov20."
+  ]
+}

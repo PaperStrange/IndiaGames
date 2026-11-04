@@ -4,22 +4,33 @@
     "lane": "bell",
     "perspective": "Research",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Bell research lead",
-    "title": "Reconcile the October 20 evidence delta and the B4 substitution",
-    "deliverable": "A versioned B1–B6 ledger, source-conflict note and explicit roster decision for Rogue Fable IV.",
+    "title": "Reconcile the October 22 records and explicit roster substitutions",
+    "deliverable": "A reconciled six-title adjusted roster for the October 22 package, with explicit native-title substitutions, actual endpoints and provenance limits.",
     "acceptance_criteria": [
-      "Record Detective’s recovered October 6 SOLVED report and reload restart separately from October 12–13 partial retries; do not describe the in-game replay control as verified.",
-      "Record Seedship v1.4.0 as one terminal colony run with 9 planets and score 2,873; record no actual second run, share action or banked session screenshots.",
-      "Preserve the original roster count of 3/6 gameplay titles across three families. If Rogue Fable IV is adopted, record the B4 replacement, v0.26 browser build, precise title URL/provenance gap, tactical relevance and unanswered party-dice allocation question; only then label the adjusted count 4/6 across four families.",
-      "Use A Dark Room’s raw trading-post/compass endpoint; explicitly flag the package README’s contradictory “no stranger” summary. Do not count duplicated records/images as new sessions.",
-      "Label Slice & Dice access findings and archived Steam trailer as October 20 market evidence, not gameplay; scope the no-browser finding to the checked creator listings and keep the free native demo distinct from the paid full game."
+      "Pin the October 22 package at 252cc55e8515da1438c3e74af2e7dcc58eb13118 and preserve actual October 6–20 agent session dates. Separate the package filing date, reported play, verified captures/transcripts, market sources and human evidence.",
+      "Record Detective: Again!’s solved case and later partial replay as one title; record Seedship’s two terminal colonies rather than retaining the earlier one-run intake summary. Do not turn repeated runs into additional competitors or human emotional evidence.",
+      "Name all three substitutions explicitly: Anchorhead for the Outer Wilds exploration question, Desktop Dungeons for the Into the Breach tactical-cost question, and Rogue Fable IV for the Slice & Dice combat question. Preserve the originals’ unplayed native questions and any market/trailer evidence separately.",
+      "Keep Anchorhead at two in-game days and score 9, Desktop Dungeons at a death plus partial second stage, and A Dark Room at partial progression/replay. These are bounded or partial observations, not completed full games.",
+      "Record Rogue Fable IV’s four reported runs across two sessions with its creator/build URL provenance gap. Page-shell captures establish entry rather than independently verifying reported canvas progression. It does not answer party-dice drafting/allocation.",
+      "Present the six adjusted titles and their working design families with tactical overlap disclosed. Do not silently retain the old 3/6 or intermediate 4/6 tally as current coverage, or claim six complete journeys, final competitive superiority, human validation or blanket genre coverage."
     ],
     "depends_on": [],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Research / evidence provenance"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "Research / evidence provenance",
+    "assigned_person_or_agent": "/root",
+    "completion_note": "October 22 intake reconciled in the Bell packet at 928a85f: six adjusted titles, two terminal Seedship colonies and all three native-title substitutions are explicit. Partial/provenance limits remain; TB-02 still owns remaining native and full-comparison questions.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-02",
@@ -43,14 +54,15 @@
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
     "completion_evidence": [],
-    "focus": "Research / comparison design"
+    "focus": "Research / comparison design",
+    "completion_note": "Current adjusted records inform the Mina-route experiment but do not close Outer Wilds spatial re-entry, Into the Breach squad intent/sacrifice, Slice & Dice drafting or the complete comparison gate. This preparation remains open."
   },
   {
     "id": "TB-03",
     "lane": "bell",
     "perspective": "Game design",
     "priority": "P0",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Bell design lead + coordinator",
     "title": "Settle the two-loop causal experiment before implementation",
     "deliverable": "A chosen concept, state/choice table, scope boundary and signed-off comparison protocol.",
@@ -66,15 +78,25 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Product / gameplay direction"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "Product / gameplay direction",
+    "assigned_person_or_agent": "/root",
+    "completion_note": "The user selected option A, Prepare Mina’s route, and prepare-sessions-first. The settled state/cost/provenance/interruption contract is recorded in the current milestone; B and C are not added scope.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-04",
     "lane": "bell",
     "perspective": "Engineering",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Bell systems owner",
     "title": "Make Bell Square’s Dawn→Noon event occur in the world",
     "deliverable": "One bounded event transition and a documented clue-provenance schema, after TB-03 is settled.",
@@ -89,15 +111,25 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Engineering / event state"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "Engineering / event state",
+    "assigned_person_or_agent": "/root/bell_runtime",
+    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-05",
     "lane": "bell",
     "perspective": "Game design",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Bell gameplay designer + systems owner",
     "title": "Make one learned intervention change Mina’s outcome",
     "deliverable": "One clue-gated route preparation action and two visible outcomes.",
@@ -114,15 +146,25 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Gameplay / knowledge and action economy"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "Gameplay / knowledge and action economy",
+    "assigned_person_or_agent": "/root/bell_runtime",
+    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-06",
     "lane": "bell",
     "perspective": "Narrative",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Bell narrative designer",
     "title": "Write the clue, intervention and aftermath as a checkable story",
     "deliverable": "A compact script sheet for two Square states, one action, two outcomes and one receipt.",
@@ -138,15 +180,25 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Narrative / character consequence"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "Narrative / character consequence",
+    "assigned_person_or_agent": "/root/bell_runtime",
+    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-07",
     "lane": "bell",
     "perspective": "UX & accessibility",
     "priority": "P1",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Bell UX writer + interaction designer",
     "title": "Put the usable clue and its cost beside the next decision",
     "deliverable": "A focused action panel and short evidence receipt within the existing journal.",
@@ -162,15 +214,25 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "UX / memory and uncertainty"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "UX / memory and uncertainty",
+    "assigned_person_or_agent": "/root/bell_runtime",
+    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-08",
     "lane": "bell",
     "perspective": "Art",
     "priority": "P1",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Bell art lead",
     "title": "Create a small scene kit that makes the route change visible",
     "deliverable": "Two Bell Square scene states and one changed-outcome inset, with annotated composition references.",
@@ -186,15 +248,27 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Art / visual storytelling"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/witnessed-blockage-before-outcome.png",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/borrowed-route-visible-outcome.png"
+    ],
+    "focus": "Art / visual storytelling",
+    "assigned_person_or_agent": "/root/bell_runtime",
+    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-09",
     "lane": "bell",
     "perspective": "UX & accessibility",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Bell accessibility reviewer + UI owner",
     "title": "Keep the full decision path reachable and understandable",
     "deliverable": "Keyboard, touch-layout, focus and reduced-motion acceptance evidence for both outcomes.",
@@ -212,15 +286,28 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "UX / accessibility and devices"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/mina-route-keyboard-complete.png",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification/browser-final/mina-route-text-200-percent-outcome.png"
+    ],
+    "focus": "UX / accessibility and devices",
+    "assigned_person_or_agent": "/root/bell_runtime",
+    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "remaining_manual_checks": "Physical phone/Safari, screen reader and human usability remain pending under the release gate; this card records the automated path and disclosed limits.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-10",
     "lane": "bell",
     "perspective": "Engineering",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Bell systems owner",
     "title": "Preserve restart, loop and mode boundaries",
     "deliverable": "A state ownership/reset table and a small implementation patch with one engine integrator.",
@@ -238,15 +325,25 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Engineering / state lifecycle"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "Engineering / state lifecycle",
+    "assigned_person_or_agent": "/root/bell_runtime",
+    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-11",
     "lane": "bell",
     "perspective": "QA",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Bell QA owner",
     "title": "Verify the cause-and-effect slice and the complete existing path",
     "deliverable": "A scenario matrix, exact build identifiers and visible-control traces/screenshots.",
@@ -263,15 +360,25 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "QA / causal and regression coverage"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "QA / causal and regression coverage",
+    "assigned_person_or_agent": "/root/bell_qa",
+    "completion_note": "Independent visible-control regression checks are being prepared and run against the selected slice. Final results pending.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-12",
     "lane": "bell",
     "perspective": "Research",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Human playtest owner + Bell design lead",
     "title": "Prepare a six-person formative comparison without teaching the solution",
     "deliverable": "A consent/observation template, counterbalanced build order and predeclared decision sheet.",
@@ -287,8 +394,18 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Research / human pilot protocol"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/protocol.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/session-template.json"
+    ],
+    "focus": "Research / human pilot protocol",
+    "assigned_person_or_agent": "/root",
+    "completion_note": "Protocol and evidence handoff preparation in progress. Human facilitator and reviewer remain unassigned.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-13",
@@ -346,7 +463,7 @@
     "lane": "bell",
     "perspective": "Production",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Bell coordinator",
     "title": "Keep the plan, dependencies and evidence reviewable",
     "deliverable": "A dashboard-ready task export and phase decision log with artifact links.",
@@ -363,15 +480,25 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Project / handoff and scope control"
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/verification.md"
+    ],
+    "focus": "Project / handoff and scope control",
+    "assigned_person_or_agent": "/root",
+    "completion_note": "Protocol and evidence handoff preparation in progress. Human facilitator and reviewer remain unassigned.",
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-16",
     "lane": "bell",
     "perspective": "Production",
     "priority": "P0",
-    "status": "conditional",
+    "status": "done",
     "owner_role": "Release integrator",
     "title": "Stage one immutable candidate on master",
     "deliverable": "A versioned release-candidates/thirteenth-bell/<version>/ package on master, built from the owning game branch.",
@@ -386,7 +513,14 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": []
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/02c78ad9739622fb447850fbecb5f46e7dec8de8/release-candidates/thirteenth-bell/0.1.0/candidate.json"
+    ],
+    "assigned_agents": [
+      "bell_runtime",
+      "bell_qa",
+      "root"
+    ]
   },
   {
     "id": "TB-17",

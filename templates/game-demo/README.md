@@ -12,6 +12,7 @@ Copy this folder into a new game's documentation, keep one implementation branch
 | [04 · Art and UX](04-ART-UX.md) | How composition, objects, motion and sound communicate playable information |
 | [05 · Evidence and competitors](05-EVIDENCE.md) | What was tested, what remains a hypothesis and whether comparisons cover different experiences |
 | [06 · Playtest protocol](06-PLAYTEST.md) | A neutral session that can contradict the design hypothesis |
+| [06A · Human session record](06A-HUMAN-SESSION.md) | Blank firsthand journey, assistance, metric evidence and device record; copy privately for each actual session |
 | [07 · Task and handoff](07-TASK-HANDOFF.md) | Work an agent or teammate can take without guessing the contract |
 | [08 · Release and decision](08-RELEASE-DECISION.md) | Whether to advance, revise or stop, with reproducible verification and backups |
 
