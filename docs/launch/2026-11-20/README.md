@@ -1,8 +1,8 @@
 # Launch plan · 20 November 2026
 
-Prepared **28 October 2026**. Status: **planned; human gates pending**. Target: a browser-first release of whichever demos meet their own criteria by 20 November. No game has human approval or an official release today. This plan schedules the next decisions; it does not record future work as completed.
+Updated **4 November 2026**; October 28 planning windows remain below as dated history. Status: **planned; human gates pending**. Target: a browser-first release of whichever demos meet their own criteria by 20 November. No game has human approval or an official release today. This plan schedules the next decisions; it does not record future work as completed.
 
-The [27 October handoff](../../milestones/2026-10-27.md) is the completed preparation baseline. Its game artifacts and QA dates remain unchanged. The [60 task cards](../../../data/tasks.json), [per-game TODOs](../../games/) and [release policy](../../RELEASE-POLICY.md) remain authoritative for dependencies and acceptance. A calendar deadline cannot waive a human criterion. Keep each failed or incomplete candidate on `master`; another approved game may ship independently.
+The [27 October handoff](../../milestones/2026-10-27.md) is the completed preparation baseline. Its historical game artifacts and QA dates remain preserved; current technical follow-ups are recorded separately in the [November 4 readiness handoff](../../iteration-2026-11-04/README.md). The [Task cards](../../../data/tasks.json), [per-game TODOs](../../games/) and [release policy](../../RELEASE-POLICY.md) remain authoritative for dependencies and acceptance. A calendar deadline cannot waive a human criterion. Keep each failed or incomplete candidate on `master`; another approved game may ship independently.
 
 ## Game packets
 
@@ -16,7 +16,13 @@ Each owning game branch contains its own test list, blank human records, setup a
 
 For each game, the decision note must answer: **why did these people choose to continue or stop; what was clearer or different from the recorded competitors; which specific action and consequence did they remember?** Quote actual observations and contradictory cases. Competitor records and small formative cohorts do not establish market superiority, universal fun or retention. Keep incomplete comparator journeys explicitly incomplete.
 
-## Calendar and exit criteria
+## November 4 schedule correction
+
+The October 31–November 4 human pilots below did not occur. Technical readiness reports are published; candidate staging and human studies remain pending. Human studies will be arranged later. No facilitator, participant session, physical-device result or independent game approval is supplied by the agent batch. Reforecast each game after staffing. November 11 freeze, November 16 go/no-go and November 20 launch remain conditional cut lines; defer any game that cannot satisfy its unchanged gate in time.
+
+Vivid's bounded shared alignment-helper correction and reproducible 0.1.3 export passed the published technical checks; [PR #6](https://github.com/PaperStrange/IndiaGames/pull/6) awaits master staging. The 0.1.2 archive remains immutable. Iona consent history and Mara interpretation rules are not rewritten from the historical critique. Bell receives no routine copy fix without human evidence unless a visible-control defect is reproduced. Small Hours keeps its baseline. See the [issue plan](../../iteration-2026-11-04/issues.md) for browser transport and protection dependencies.
+
+## Historical October 28 calendar and exit criteria
 
 All dates are in **2026**, UTC for repository timestamps. Human sessions use their local time zones recorded alongside UTC. Dates below are planned windows, not completed checks.
 
@@ -34,7 +40,7 @@ All dates are in **2026**, UTC for repository timestamps. Human sessions use the
 
 ## Capacity and ownership
 
-No facilitator, participants, device QA person or independent reviewer has accepted an assignment in these records. By 30 October, the coordinator fills actual owner IDs and availability in each private roster and records only role assignments in the public handoff. Preparing invitations does not send them; no recruiting outreach is performed by this update.
+No facilitator, participants, device QA person or independent reviewer has accepted an assignment in these records. Before human sessions begin, the coordinator fills actual owner IDs and availability in each private roster and records only role assignments in the public handoff. Preparing invitations does not send them; no recruiting outreach is performed by this update.
 
 The first round needs **24 registered candidate sessions involving 30 people** if participants are kept fresh across games: six Small Hours pairs (12 people), 12 Vivid people across two stories and six Bell people. Bell also has six reference runs within those same six paired comparisons. An optional neutral Iona cohort adds six more people/sessions. Preregistered failed attempts stay in the denominator; nonattendance remains visible and cannot be silently replaced with a success. Any rescheduling or exclusion follows the canonical protocol.
 
@@ -59,7 +65,7 @@ Reserve approximately **24 facilitator-hours plus device/reviewer time** for tha
 | **Vivid** | Iona's choice-to-return arc and Mara's object/alignment arc in the same anthology, with equivalent inputs and story-isolated local memory | Iona ≥4/6 each both complete unassisted and explain choice→return; ≤1/6 unrestricted-AI expectation. Mara ≥4/6 each both complete unassisted and explain action→visible consequence | Address the observed story's entry, interaction cue or consequence clarity without baking a protagonist or narrative structure into the shared runtime | No third story/recast campaign. One passing story cannot compensate for the other. Removing a story requires separately reviewed scope/policy and a new artifact; it is not a last-minute bypass. |
 | **Bell** | Witnessed event → persistent clue → later preparation → Mina's visible changed outcome, with honest timing/costs | ≥4/6 each both explain cause and predict before outcome; ≥4/6 each both earn action uncoached and explain Fracture; ≥3/6 recall specific Mina outcome after ≥120s neutral break | Clarify evidence provenance or the actual Mina consequence only if a repeated observed failure identifies it | No expanded town, extra character system or another time mechanic. Wrong-state, duplicate reward, inaccessible action or missing recall evidence keeps the candidate staged. |
 
-All require **zero open critical bugs**, truthful device support and an independent human approval on the exact artifact. These are small formative thresholds, not population estimates. Vivid's [separate policy PR #1](https://github.com/PaperStrange/IndiaGames/pull/1) must receive owner review before promotion; it is not merged by this plan. Optional neutral comparison and prompted 48–72-hour recall do not become required release metrics or evidence of retention.
+All require **zero open critical bugs**, truthful device support and an independent human approval on the exact artifact. These are small formative thresholds, not population estimates. Vivid's [separate policy PR #1](https://github.com/PaperStrange/IndiaGames/pull/1) was merged on November 4 after the dated agent code-review exception. This does not supply either story cohort or independent human game approval. Optional neutral comparison and prompted 48–72-hour recall do not become required release metrics or evidence of retention.
 
 ## Publication dependencies and release records
 

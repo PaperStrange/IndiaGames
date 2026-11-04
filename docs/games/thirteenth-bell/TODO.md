@@ -1,5 +1,31 @@
 # The Thirteenth Bell — Mina-route experiment and human handoff
 
+## Current readiness handoff · 4 November 2026
+
+4 November: 33 scenario executions passed (16 root, 16 nested, one nested desktop ending/restart) on unchanged 0.1.0. Candidate resources had no failures. The frozen historical reference used fallback fonts after its optional Google Fonts certificate failure. Known-route and race-regression checks are not fresh-player comprehension, recall or physical-device evidence.
+
+[Current game handoff](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Blank human handoff](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
+
+Required human studies, physical devices and independent approval remain pending. Historical completed IDs and evidence are preserved; dated follow-ups do not erase prior verification.
+
+### TB-19 · Verify Bell through supported HTTP and hand off causal testing
+
+**Status:** `done` · **Owner:** QA/tooling lead and game integrator · **Priority:** P0
+
+Dated supported-HTTP evidence and an exact-artifact human-study handoff for issue #5.
+
+- Document a co-located HTTP browser route, exact frozen 0.1.0 identity, browser/version and root/project-style nested mounts; preserve the original managed-browser/LNA limitation from issue #5.
+- Record visible scene action, resolution and phase progression, including blank forecast, borrowed-time costs, Fracture 4, anchor selection/confirmation and Mina's changed outcome; preserve failure evidence.
+- Separate scripted known-route checks from exploratory observations. Compare frozen inventory before and after and report browser/network errors; select a copy or rule change only after a reproduced defect and bounded decision.
+- Publish the unchanged six-person counterbalanced protocol and blank handoff, including at least 120 seconds neutral recall. Repeated agent attempts are not independent first-time players or human gate evidence.
+
+4 November: 33 scenario executions passed (16 root, 16 nested, one nested desktop ending/restart) on unchanged 0.1.0. Candidate resources had no failures. The frozen historical reference used fallback fonts after its optional Google Fonts certificate failure. Known-route and race-regression checks are not fresh-player comprehension, recall or physical-device evidence. This closes technical handoff only; required human studies, devices and release approval remain pending.
+
+**Evidence:** [record 1](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/README.md) · [record 2](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [record 3](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/technical-qa.json)
+
+<details>
+<summary>Archived October 28 coordination note</summary>
+
 ## Next iteration · launch target 20 November 2026
 
 Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
@@ -11,6 +37,9 @@ Option A, Prepare Mina’s route, was selected on October 24. The bounded scene 
 [Current playtest packet](https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
 
 The current packet reconciles the October 22 research uploads with edition, substitution and partial-journey limits. Underlying play dates remain explicit. The detailed baseline below is retained for design rationale and acceptance criteria; its historical coverage/status statements do not replace the current packet, task JSON or source manifest. No human facilitator or independent reviewer is assigned.
+
+
+</details>
 
 ## Preserved design rationale and acceptance criteria
 

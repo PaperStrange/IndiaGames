@@ -107,6 +107,7 @@ function renderProjects() {
     const code = link('View source ↗', REPOSITORY + 'tree/' + source.reviewed_head);
     code.setAttribute('aria-label', `View ${LANE_NAMES[lane]} source on GitHub`);
     links.append(setup, code);
+    if (source.current_readiness_document) links.append(link('Readiness notes ↗', source.current_readiness_document));
     body.append(kicker, node('h3', '', LANE_NAMES[lane]), node('p', 'project-promise', display.promise), next, links);
     const provenance = node('details', 'image-details');
     const summary = node('summary', '', 'Image & provenance');
@@ -119,6 +120,7 @@ function renderProjects() {
 }
 
 function renderReadiness() {
+  el('delivery-note').textContent = manifest.readiness?.delivery_note || 'Delivery status is in the current readiness report.';
   const humanZero = manifest.sources.every(source => source.human_participant_rows === 0);
   el('readiness-note').textContent = humanZero
     ? 'No human sessions recorded. Physical-device checks and independent approval are pending.'
@@ -130,6 +132,7 @@ function renderReadiness() {
     const name = node('th', '', LANE_NAMES[lane]); name.scope = 'row';
     const build = node('td'); build.dataset.label = 'Build';
     build.append(node('span', '', source.candidate_version ? 'Candidate ' + source.candidate_version : 'Pilot baseline'));
+    build.append(node('small', '', source.technical_readiness_label || 'Technical status in evidence notes'));
     const sessions = node('td'); sessions.dataset.label = 'Human sessions';
     const counts = node('span', 'human-session-count');
     if (source.human_participant_rows === 0) {
@@ -146,14 +149,7 @@ function renderReadiness() {
 
 function renderTimeline() {
   const launch = manifest.launch;
-  const steps = [
-    ['31 Oct–4 Nov', 'Human pilots', 'Observe all attempts'],
-    ['5 November', 'Select a response', 'Change, hold or stop'],
-    ['6–10 November', 'Bounded corrections', 'Only evidence-led work'],
-    [shortDate(launch.candidate_freeze_date_utc), 'Freeze candidates', 'Exact source and build'],
-    [shortDate(launch.decision_date_utc), 'Go / no-go', 'Human review complete'],
-    [shortDate(launch.target_date_utc), 'Conditional launch', 'Only approved games']
-  ];
+  const steps = launch.timeline;
   el('timeline').replaceChildren(...steps.map(([date, title, note]) => {
     const step = node('li');
     step.append(node('span', 'milestone-date', date), node('strong', '', title), node('p', '', note));
@@ -178,9 +174,10 @@ function renderEvidence() {
   el('source-ledger').replaceChildren(...LANES.map(lane => {
     const source = manifest.sources.find(item => item.lane === lane);
     const record = node('article', 'source-record');
-    record.append(node('h3', '', LANE_NAMES[lane]), node('p', '', source.qa_scope));
+    record.append(node('h3', '', LANE_NAMES[lane]), node('p', '', source.research_adjudication_summary || ''), node('p', '', source.qa_scope));
     const list = node('ul');
     const refs = [
+      ['Current readiness adjudication', source.current_readiness_document],
       ['Frozen pilot packet', source.pilot_packet],
       ['Competitor records & limitations', source.latest_research_readme],
       ['Detailed game plan', MAIN_ROOT + TODO_PATHS[lane]],
@@ -334,10 +331,11 @@ function validateData(tasks, sources, visuals) {
   LANES.forEach(lane => {
     const source = sources.sources.find(item => item.lane === lane);
     if (!source || !/^[0-9a-f]{40}$/.test(source.reviewed_head) || !Number.isInteger(source.human_participant_rows) || source.human_participant_rows < 0) throw new Error('Invalid project metadata');
-    ['pilot_packet', 'human_playtest_packet', 'latest_research_readme'].forEach(field => { if (!githubUrl(source[field])) throw new Error('Missing project evidence link'); });
+    ['pilot_packet', 'human_playtest_packet', 'latest_research_readme', 'current_readiness_document'].forEach(field => { if (!githubUrl(source[field])) throw new Error('Missing project evidence link'); });
     ['candidate_manifest'].forEach(field => { if (source[field] !== undefined && !githubUrl(source[field])) throw new Error('Invalid project evidence link'); });
   });
   const launch = sources.launch;
+  if (!Array.isArray(launch?.timeline) || launch.timeline.length !== 6 || !launch.timeline.every(step => Array.isArray(step) && step.length === 3 && step.every(item => typeof item === 'string' && item.trim()))) throw new Error('Invalid readiness timeline');
   if (!launch || !['target_date_utc', 'decision_date_utc', 'candidate_freeze_date_utc'].every(field => validDate(launch[field])) || launch.candidate_freeze_date_utc > launch.decision_date_utc || launch.decision_date_utc > launch.target_date_utc || launch.plan_document !== `docs/launch/${launch.target_date_utc}/README.md`) throw new Error('Invalid launch plan');
   if (!visuals || visuals.schema_version !== 1 || !Array.isArray(visuals.projects) || visuals.projects.length !== LANES.length) throw new Error('Invalid visual presentation');
   LANES.forEach(lane => {

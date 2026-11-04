@@ -1,0 +1,204 @@
+{
+  "kind": "automated-local-dashboard-qa-not-live-deployment",
+  "status": "pass",
+  "observed_at": "2026-11-04T16:12:20.282Z",
+  "completed_at": "2026-11-04T16:12:34.041Z",
+  "branch": "hub/readiness-2026-11-04",
+  "ancestry_commit": "9bc2934c2550a4bd0699e5ee690c19e3bac438e9",
+  "source_identity_note": "Executed on the final stable working tree before the readiness commit; ancestry is not the complete tested revision. input_sha256 identifies the exact eleven checked runtime/data/test inputs. Report files can be committed afterward without changing those inputs.",
+  "input_sha256": {
+    "index.html": "056431c6ddb63acc85ab7f66fabd996f68e46ab4e4f848b6b70dbf9f0b2a9fe3",
+    "app.js": "da88db600347d9db781df99bfea4f534250764c7cc2d24a61a0a05bd23815d42",
+    "styles.css": "9b2d96f9b60b139dd38327498a02cc5bf82370ab42152e162820f2992e6a8bbe",
+    "data/hub-presentation.json": "55b96cf41f785442cf680d64e0968494ddcf96d6a185791c18859e88fcdd5d5d",
+    "data/tasks.json": "71f4663ff33a9bb52c3caadc860f91c9ec016b9b9dbee7edc86511165670c3a1",
+    "data/source-manifest.json": "3819d0cbddbe01d25d9fd24995269c1a21362c9dddea5aede1e8aee94600bd23",
+    "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+    "tests/hub/browser.mjs": "1006b89c5b8dd190ad5895086acb2439be61ef4e31a4f1f46b1be94fc5aa9efc",
+    "docs/games/small-hours/tasks.json": "0948ee18d9f310374047e08efec36e9e9f726e1c268fb8e55cbfb5abfe0f55a4",
+    "docs/games/keepers-frame/tasks.json": "5334cccbc99be31dd3811f73202699a87d474a87784701009471e8fb761d310d",
+    "docs/games/thirteenth-bell/tasks.json": "4dcd40e6fc7dbf50ae09904042394a3cc859609cc92781b15159941523af3c0d"
+  },
+  "browser_version": "151.0.7922.173",
+  "task_count": 65,
+  "task_counts_by_lane": {
+    "memorable": 20,
+    "vivid": 26,
+    "bell": 19
+  },
+  "viewport_groups": [
+    {
+      "id": "root-1440",
+      "mount": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 384,
+      "overview_height_px": 2268
+    },
+    {
+      "id": "root-390",
+      "mount": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 381,
+      "overview_height_px": 4637
+    },
+    {
+      "id": "project-1440",
+      "mount": "/IndiaGames/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 384,
+      "overview_height_px": 2268
+    },
+    {
+      "id": "project-390",
+      "mount": "/IndiaGames/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 381,
+      "overview_height_px": 4637
+    }
+  ],
+  "extra_scenarios": [
+    {
+      "id": "load-failure-retry",
+      "status": "pass",
+      "expected_fault": "one 503 response for tasks.json",
+      "result": "Visible error recovered through keyboard activation of Retry; three projects and the task board load."
+    },
+    {
+      "id": "tablet-layout",
+      "status": "pass",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": "Images loaded, overview and board have no horizontal overflow, keyboard detail works. Browser viewport only; no physical-device claim."
+    },
+    {
+      "id": "enlarged-text",
+      "status": "pass",
+      "before": 43,
+      "after": 86,
+      "method": "Doubled computed CSS font sizes at 390 CSS px; not browser zoom.",
+      "result": "Overview and board reflow without horizontal overflow; keyboard task detail remains operable."
+    }
+  ],
+  "static_checks": [
+    {
+      "id": "human-and-runtime-boundaries",
+      "status": "pass",
+      "detail": "Authored task IDs and lane counts match the generated snapshot; human counts remain zero; official registry empty; game branch heads equal the source review; runtime/test scopes equal their verified source (Vivid later play/evidence records excluded)."
+    },
+    {
+      "id": "candidate-identity",
+      "status": "pass",
+      "detail": "Current master candidate trees and file hashes equal their pinned packets; no human report populated or approval granted."
+    },
+    {
+      "id": "genuine-images",
+      "status": "pass",
+      "detail": "Three displayed assets are byte-identical to pinned game captures/art; total 2041402 bytes."
+    },
+    {
+      "id": "navigation-targets",
+      "status": "pass",
+      "detail": "119 unique rendered destinations classified; local anchors/files and GitHub source targets resolve. The paused candidate URL is not repaired or claimed successful."
+    }
+  ],
+  "images": [
+    {
+      "lane": "memorable",
+      "path": "assets/hub/small-hours-opening.png",
+      "sha256": "b88ae8d49eb69f173ec333c3cad8b6365118481c861a3c182e4ee37d7592b2a6",
+      "bytes": 131915,
+      "source_commit": "b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
+      "source_path": "memorable-moments-game/docs/evidence/01-desktop-home.png",
+      "kind": "automated_game_capture"
+    },
+    {
+      "lane": "vivid",
+      "path": "assets/hub/vivid-iona-opening.png",
+      "sha256": "befb61b8eaff29115ee1b8447f4ffc8646edf883ad6af23e2abcee4b678da75b",
+      "bytes": 897287,
+      "source_commit": "a63834557de0a8132ce5355c0d50858e200a3914",
+      "source_path": "docs/gamejam/milestone-2026-10-27/launch-evidence/iona-nested-launch.png",
+      "kind": "automated_game_capture"
+    },
+    {
+      "lane": "bell",
+      "path": "assets/hub/bell-town-map.webp",
+      "sha256": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+      "bytes": 1012200,
+      "source_commit": "fce070bd9ee3006f0a017b9c33ee11f5b5133657",
+      "source_path": "assets/images/town-map.webp",
+      "kind": "in_game_artwork"
+    }
+  ],
+  "candidate_identities": [
+    {
+      "game": "keepers-frame",
+      "version": "0.1.2",
+      "build_sha256": "e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4",
+      "files": 15,
+      "source_commit": "0c72da97994d9f2d315e6aba1afba5219936b78b"
+    },
+    {
+      "game": "thirteenth-bell",
+      "version": "0.1.0",
+      "build_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+      "files": 1,
+      "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06"
+    }
+  ],
+  "unique_destinations": 119,
+  "destination_validation_classes": {
+    "local file / document anchor": 16,
+    "intended main publication working-tree target (not yet a live HTTP assertion)": 10,
+    "existing Git object and link type": 88,
+    "repository service link; no remote HTTP claim": 5
+  },
+  "unexpected_page_or_network_errors": [],
+  "full_external_report_sha256": "640fb3829e342134709d7d14a3b414aa72d3fc9950cf0f0cc4fcc4ca540fe52b",
+  "limitations": [
+    "Same-host HTTP only; November4 GitHub Pages deployment remains unverified and CI pending.",
+    "External/service links are classified, not fetched; GitHub blob/tree targets resolve against Git objects or intended main working-tree files.",
+    "All three lane filters, blocked_human status, first-authored-task perspective, representative SH-17 dependency search and TB-17 task deep link exercised; not every possible filter combination.",
+    "Keyboard detail and retry activation are covered; this is not a full keyboard/screen-reader accessibility audit.",
+    "200% scenario doubles computed CSS text sizes; it is not physical browser zoom.",
+    "No game playthrough, human participant or physical-device claim."
+  ]
+}

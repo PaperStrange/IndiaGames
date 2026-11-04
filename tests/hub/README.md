@@ -22,6 +22,6 @@ actual input hashes, failures, screenshots, and observation time. A successful
 local run does not establish a live Pages deployment.
 
 Coverage includes desktop and narrow layouts on both mounts, a tablet viewport,
-all 60 tasks and their filters/navigation, keyboard details, late-task and
+all authored tasks and their filters/navigation, keyboard details, late-task and
 legacy anchors, load failure/retry, and doubled computed font sizes. The latter
 is a 200% text reflow check, not a browser zoom or physical-device test.

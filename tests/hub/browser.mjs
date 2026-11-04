@@ -17,7 +17,7 @@ const githubRoot = 'https://github.com/PaperStrange/IndiaGames/';
 const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
 const blob = object => execFileSync('git', ['show', object], { cwd: root, maxBuffer: 16 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
-const inputFiles = ['index.html', 'app.js', 'styles.css', 'data/hub-presentation.json', 'data/tasks.json', 'data/source-manifest.json', 'data/releases.json', 'tests/hub/browser.mjs'];
+const inputFiles = ['index.html', 'app.js', 'styles.css', 'data/hub-presentation.json', 'data/tasks.json', 'data/source-manifest.json', 'data/releases.json', 'tests/hub/browser.mjs', 'docs/games/small-hours/tasks.json', 'docs/games/keepers-frame/tasks.json', 'docs/games/thirteenth-bell/tasks.json'];
 const report = { observed_at: observedAt, method: 'Local Chromium dashboard integration, direct/project mounts, responsive layouts, keyboard and navigation, immutable asset/source checks. No human session, game regression, physical-device or deployed-site claim.', viewport_groups: [], extra_scenarios: [], static_checks: [], images: [], links: [], errors: [], screenshots: [], input_sha256: {} };
 let server, browser, activePage, created = false;
 const allLinks = new Map();
@@ -42,11 +42,13 @@ async function hashes() {
 }
 
 async function verifyIdentity(tasks, manifest, presentation, releases) {
-  assert.equal(tasks.tasks.length, 60);
-  assert.equal(new Set(tasks.tasks.map(task => task.id)).size, 60);
+  const authored = (await Promise.all(['small-hours', 'keepers-frame', 'thirteenth-bell'].map(folder => readFile(join(root, 'docs/games', folder, 'tasks.json'), 'utf8').then(JSON.parse)))).flat();
+  assert.deepEqual(tasks.tasks, authored);
+  assert.equal(tasks.tasks.length, authored.length);
+  assert.equal(new Set(tasks.tasks.map(task => task.id)).size, authored.length);
   assert.deepEqual(releases.releases, []);
   assert.equal(manifest.research.human_participant_rows, 0);
-  const lanes = { memorable: 19, vivid: 23, bell: 18 };
+  const lanes = Object.fromEntries(['memorable', 'vivid', 'bell'].map(lane => [lane, authored.filter(task => task.lane === lane).length]));
   for (const [lane, count] of Object.entries(lanes)) {
     assert.equal(tasks.tasks.filter(task => task.lane === lane).length, count);
     const source = manifest.sources.find(source => source.lane === lane);
@@ -57,7 +59,7 @@ async function verifyIdentity(tasks, manifest, presentation, releases) {
     const exclusions = lane === 'vivid' ? [':(exclude)vivid-2.5d-photo-game/play/evidence/**'] : [];
     git(['diff', '--exit-code', source.qa_source_commit, source.branch, '--', ...source.runtime_scope, ...exclusions]);
   }
-  pass('human-and-runtime-boundaries', '60 task IDs and 19/23/18 lane counts; human counts remain zero; official registry empty; game branch heads equal the source review; runtime/test scopes equal their verified source (Vivid later play/evidence records excluded).');
+  pass('human-and-runtime-boundaries', 'Authored task IDs and lane counts match the generated snapshot; human counts remain zero; official registry empty; game branch heads equal the source review; runtime/test scopes equal their verified source (Vivid later play/evidence records excluded).');
   report.candidates = [];
   for (const source of manifest.sources.filter(source => source.candidate_manifest)) {
     const path = new URL(source.candidate_manifest).pathname.split('/').slice(5).join('/');
@@ -156,7 +158,7 @@ async function makeServer() {
 }
 
 async function ready(page) {
-  await page.waitForFunction(() => document.querySelector('#task-count')?.textContent === '60');
+  await page.waitForFunction(() => Number(document.querySelector('#task-count')?.textContent) > 0);
   assert.equal(await page.locator('#load-error').isVisible(), false);
 }
 
@@ -276,15 +278,15 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       assert.equal((await taskIds(page)).length, 12);
       assert.equal(await page.locator('#page-previous').isDisabled(), true);
       const seen = await allTaskIds(page);
-      assert.equal(seen.length, 60); assert.equal(new Set(seen).size, 60);
+      assert.equal(seen.length, tasks.tasks.length); assert.equal(new Set(seen).size, tasks.tasks.length);
       assert.deepEqual([...seen].sort(), expectedIds);
       assert.equal(await page.locator('#page-next').isDisabled(), true);
       await page.locator('#page-previous').click();
-      assert.match(await page.locator('#page-status').innerText(), /4\s*(of|\/)\s*5/i);
+      assert.equal(await page.locator('#page-status').innerText(), `Page ${Math.ceil(tasks.tasks.length / 12) - 1} of ${Math.ceil(tasks.tasks.length / 12)}`);
 
-      for (const [lane, count] of Object.entries({ memorable: 19, vivid: 23, bell: 18 })) {
+      for (const [lane, count] of Object.entries(Object.fromEntries(['memorable', 'vivid', 'bell'].map(lane => [lane, tasks.tasks.filter(task => task.lane === lane).length])))) {
         await page.locator('#lane-filter').selectOption(lane);
-        assert.match(await page.locator('#page-status').innerText(), /1\s*(of|\/)\s*2/i);
+        assert.equal(await page.locator('#page-status').innerText(), `Page 1 of ${Math.ceil(count / 12)}`);
         const filtered = await allTaskIds(page);
         assert.equal(filtered.length, count);
         assert.deepEqual(filtered.sort(), tasks.tasks.filter(task => task.lane === lane).map(task => task.id).sort());
@@ -311,7 +313,7 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       const boardShot = id + '-board.jpg';
       await page.screenshot({ path: join(out, boardShot), type: 'jpeg', quality: 78, fullPage: true });
       report.screenshots.push(boardShot);
-      group.checks.push('All 60 tasks reachable in five 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.');
+      group.checks.push('All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.');
 
       await page.locator('#overview-link').click();
       await page.locator('#overview-view').waitFor({ state: 'visible' });
