@@ -1,61 +1,33 @@
 # Keeper's Frame 0.1.2 — demo records + competitor plays, 2026-10-28
 
-Reviewed package from the 2026-10-28 play session (plus the 2026-10-30
-PhotoHacks retry where noted in the Vivid coverage). Observations, not
-conclusions: the one-page critique is not filed here.
+Reviewed package from the October 28 play session, with the October 30 PhotoHacks retry and the raw captures filed on November 4. These are historical agent records, not human playtest results. Read the [November 4 adjudication and readiness handoff](../readiness-2026-11-04/README.md) before using the historical conclusions as implementation guidance.
 
 ## Contents
 
-- `records/` — the demo's five original records: journey, art, coverage,
-  decision, session (markdown). Embeds resolve within this tree.
-- `evidence/vivid/` — per-beat PNG frames + text dumps for the demo play.
-- `evidence/competitors/` — competitor studies cited by the coverage record:
-  birdography, field-guide, photohacks, pixel-harbor (task reports, renders, captures).
+- `records/` — the demo's five original records: journey, art, coverage, decision and session. Their contents are preserved.
+- `evidence/vivid/` — per-beat PNG frames and text dumps for the demo play.
+- `evidence/competitors/` — Birdography, Field Guide, PhotoHacks and Pixel Harbor task reports, renders and captures.
 - `market-research/` — desk sweeps behind the coverage record.
-- `notes/` — the plural-review trail for this package (adversarial +
-  mistake-hunt reviews and applied fixes, rectification logs, display audit).
+- `notes/` — the plural-review trail, applied fixes, rectification logs and display audit.
+- [Shared historical critique](critique--one-page-2026-10-28.md) — the original conclusions with a dated historical notice and immutable image links to each owning branch.
+- `html/` — historical self-contained critique and Vivid coverage renderings with embedded images. They preserve the October content and do not include the November 4 notice or current adjudication. The original Markdown in `records/` remains the historical record.
+- `evidence/competitors/<game>/pdf/<task-uuid>/` — raw live browser-task PDFs, filed on November 4 with original filenames. Their page captures support the recorded observations; filing them is not a new play session.
 
 ## Evidence classes
 
-[REAL] = frame- or text-layer-verified captures. [SECONDARY] = browser-task
-prose (competitor live rounds). [OPEN] = unfinished, listed below and in the
-session record. Unsuccessful and contradictory experiences are preserved, not
-cleaned up. Filenames in places differ from content (audited 2026-10-29);
-captions describe the frame, not the filename.
+Historical `[REAL]` means a frame- or text-layer-verified capture, not human validation. `[SECONDARY]` covers browser-task prose and desk material; `[OPEN]` marks unfinished or unproven work. The current adjudication distinguishes source behavior, visible captured states, task narration and human observations. Filenames sometimes differ from the visible state, so an `ending` filename is not proof of a canonical endpoint. Unsuccessful, contradictory and black captures remain preserved.
 
 ## Still open for this demo
 
-human gate; Iona neutral profile (optional); Field Guide creature photo + filled gallery entry; Tranquility exploration/photo/album; Pathipelago (unplayed backup).
+Full canonical journeys over the supported HTTP delivery route and the shared alignment-helper layout check are tracked in the current handoff. Required human cohorts, physical-device/accessibility checks and independent human approval remain pending. Iona neutral is an optional additional cohort. Field Guide's creature photograph and populated gallery, Tranquility exploration/photo/album and the unplayed Pathipelago backup remain open research items.
 
-## Notes on this filing
+## Filing and provenance
 
-- Play scripts and logs intentionally NOT filed (local only); neither are HTML
-  review copies, the one-page critique, or live browser-task PDFs (cited by
-  task ID in-record).
-- Local path mapping: the records' original `play-2026-10-28/<demo>/` and
-  `play-2026-10-28/competitors/` prefixes map to `evidence/<demo>/` and
-  `evidence/competitors/` here.
-- Companion packages: Bell on the-thirteenth-bell, Small Hours on memorable-moments-game.
+- Play scripts and step logs remain local and are not filed in this package. Their absence limits reconstruction of inputs and timing; it does not erase a visibly captured state.
+- HTML review copies, the one-page critique and live browser-task PDFs **are filed**, as listed above. Earlier statements that they were absent were superseded by the November 4 upload.
+- Original local `play-2026-10-28/<demo>/` and `play-2026-10-28/competitors/` prefixes map to `evidence/<demo>/` and `evidence/competitors/` here.
+- The shared critique is filed across three branches. Its 17 image destinations now pin each asset to its immutable owning commit; the `skribbl-io` directory spelling is corrected. Original records, HTML and raw captures are unchanged.
+- Morning-round PDFs are not duplicated where their curated copies are byte-identical. Tranquility PDFs are not filed because no task ID for them is cited in the original records; the failed attempts remain described in the coverage.
+- Companion uploads: [Bell](https://github.com/PaperStrange/IndiaGames/tree/3d4e205c417272f00b87c76c00532f4456d31e38/docs/gamejam/competitor-plays-2026-10-28) and [Small Hours](https://github.com/PaperStrange/IndiaGames/tree/45042578e549d0aba3ee10702384d0a86c780aa9/docs/gamejam/competitor-plays-2026-10-28).
 
-## Derived documents and raw captures
-
-How the non-record files relate to `records/`:
-
-- `critique--one-page-2026-10-28.md` — conclusions drawn FROM the records
-  (the one-page report). The same file is filed on all three branches; it is
-  package-wide, so its embeds point at `evidence/` paths that resolve fully
-  only across the three branches together (each branch holds its own demo's
-  evidence). The self-contained HTML beside it resolves fully on every branch.
-- `html/` — self-contained renderings of the markdown (base64-embedded
-  images) for readers whose viewer cannot render markdown image embeds. Content
-  is identical to the markdown: the critique plus this branch's coverage
-  record. The markdown in `records/` remains the original.
-- `evidence/competitors/<game>/pdf/<task-uuid>/` — the raw browser-task PDF
-  captures BEHIND the competitor records, original filenames, one subdir per
-  cited task. The renders in the parent dir are conversions of these pages.
-  Shells and black frames are preserved, not cleaned: a canvas that prints
-  blank stays blank here, and the records say so. Morning-round tasks are not
-  duplicated: their beat PDFs are already filed in curated form in the parent
-  dir (verified byte-identical). Tranquility captures are not filed: no task
-  ID for them is cited in the filed records (the failure is recorded in prose
-  in the Vivid coverage).
+For current candidate identity and blank human handoff fields, use [HUMAN-HANDOFF](../readiness-2026-11-04/HUMAN-HANDOFF.md). A historical report saying “ready” is not a release approval.

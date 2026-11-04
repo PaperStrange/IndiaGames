@@ -1,0 +1,101 @@
+{
+  "kind": "automated-technical-qa-not-human-study",
+  "game": "vivid",
+  "version": "0.1.3",
+  "source_ancestry": "b9e1560cc641691bc8d48b4254cab0bac73fe64c",
+  "source_note": "Runtime source committed and pushed by coordinator; coordinator verified source bytes match tested build. Candidate staging and human approval remain separate.",
+  "build_inventory_sha256": "7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00",
+  "browser": "151.0.7922.173",
+  "layout_result": "8/8 PASS",
+  "semantic_result": "20 unique visible-control cases functionally PASS across retained attempts, with one error-free targeted navigation retry",
+  "human_sessions": 0,
+  "build_unchanged": true,
+  "attempts": [
+    {
+      "id": "mara-before-01",
+      "started_at": "2026-11-04T15:45:46.877Z",
+      "finished_at": "2026-11-04T15:45:53.423Z",
+      "reported_result": "reproduction completed",
+      "functional_passes": 0,
+      "functional_failures": 0,
+      "errors": []
+    },
+    {
+      "id": "mara-negative-control-01",
+      "started_at": "2026-11-04T15:54:18.461Z",
+      "finished_at": "2026-11-04T15:54:31.804Z",
+      "reported_result": "FAIL",
+      "functional_passes": 0,
+      "functional_failures": 8,
+      "errors": []
+    },
+    {
+      "id": "mara-after-01",
+      "started_at": "2026-11-04T15:52:33.341Z",
+      "finished_at": "2026-11-04T15:52:47.043Z",
+      "reported_result": "PASS",
+      "functional_passes": 8,
+      "functional_failures": 0,
+      "errors": []
+    },
+    {
+      "id": "vivid-semantic-01",
+      "started_at": "2026-11-04T15:54:38.579Z",
+      "finished_at": "2026-11-04T15:55:21.040Z",
+      "reported_result": "FAIL",
+      "functional_passes": 12,
+      "functional_failures": 8,
+      "errors": []
+    },
+    {
+      "id": "vivid-semantic-iona-02",
+      "started_at": "2026-11-04T15:55:41.603Z",
+      "finished_at": "2026-11-04T15:56:12.766Z",
+      "reported_result": "FAIL",
+      "functional_passes": 4,
+      "functional_failures": 4,
+      "errors": []
+    },
+    {
+      "id": "vivid-semantic-private-03",
+      "started_at": "2026-11-04T15:56:35.191Z",
+      "finished_at": "2026-11-04T15:56:53.243Z",
+      "reported_result": "FAIL",
+      "functional_passes": 4,
+      "functional_failures": 0,
+      "errors": [
+        {
+          "id": "root-1280-iona-private",
+          "type": "requestfailed",
+          "url": "http://127.0.0.1:45561/art/keeper-portrait.svg",
+          "error": "net::ERR_ABORTED"
+        }
+      ]
+    },
+    {
+      "id": "vivid-semantic-private-retry-04",
+      "started_at": "2026-11-04T15:58:26.936Z",
+      "finished_at": "2026-11-04T15:58:33.147Z",
+      "reported_result": "PASS",
+      "functional_passes": 1,
+      "functional_failures": 0,
+      "errors": []
+    }
+  ],
+  "qualifications": [
+    "Negative control expected failure on immutable0.1.2; not an unresolved0.1.3 failure",
+    "Attempt01 Iona harness expected mixed-case innerText but CSS uppercases rendered caption",
+    "Attempt02 private reload harness expected persisted phase return; saved end migrates to live return until next action",
+    "Attempt03 all four private functional paths passed but one keeper-portrait.svg request aborted during rapid navigation; strict report remains FAIL",
+    "Attempt04 rechecked only affected root1280private with network-idle navigation boundaries; PASS, no resource/page errors"
+  ],
+  "not_run": [
+    "neutral profile in this pass",
+    "save corruption/legacy/future migration in this pass",
+    "forced WebGL failure in this pass",
+    "human empathy/recall/choice comprehension",
+    "physical phones and screen readers",
+    "external deployment and original separate managed browser route"
+  ],
+  "source_commit": "813f264400bfc01d7e3e5f668de29bb835f5a70d"
+}

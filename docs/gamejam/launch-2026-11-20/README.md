@@ -1,5 +1,7 @@
 # Vivid: human playtests and the 20 November launch
 
+**November 4 update:** the [current readiness handoff](../readiness-2026-11-04/README.md) supersedes this packet's choice of candidate for any new study. The [blank handoff fields and diagnostics](../readiness-2026-11-04/HUMAN-HANDOFF.md) await the exact verified candidate identity. The 0.1.2 table and October 27 exporter below remain a historical frozen-build reference; do not use that dated helper to export a changed version. Human execution is arranged later, and no approval is recorded.
+
 Prepared **28 October 2026** for `vivid-2.5d-photo-game`; release ID `keepers-frame`. Target: a browser launch on **20 November 2026**, conditional on actual human results, physical-device checks, independent approval and verified hosting. This packet contains **no completed sessions or approvals**. The October 21 study protocol and October 27 frozen artifact remain authoritative.
 
 ## Use this packet

@@ -1,5 +1,7 @@
 # Vivid human playtest preparation
 
+**November 4 handoff:** use the [current readiness adjudication](../../readiness-2026-11-04/README.md) and [blank candidate handoff / post-scoring diagnostics](../../readiness-2026-11-04/HUMAN-HANDOFF.md). Agent verification and a possible new patch candidate are tracked there. Human cohorts and approval remain pending; the protocol below is unchanged.
+
 **Prepared, not conducted.** There are no recruited participants, completed human sessions, physical-phone measurements or human release approvals in this packet. Agent gameplay and automated browser checks do not fill those gaps. All numerical criteria below are provisional acceptance rules for a small pilot, not validated estimates of market demand.
 
 The planned study has **18 fresh adult participants in three separate cohorts**: six for Iona's remembered return, six for Iona's neutral return, and six for Mara's object-led story. Twelve people can satisfy the release evidence requirement if the neutral cohort cannot be recruited; that smaller study supports no remembered-versus-neutral comparison. Declare the intended cohorts before testing, preserve incomplete observations, and never hide an unfavorable neutral result.
