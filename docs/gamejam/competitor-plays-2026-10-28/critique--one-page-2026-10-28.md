@@ -1,4 +1,6 @@
-# One-page critique — three demos, played first-hand (2026-10-28)
+# One-page critique — three demos, played first-hand (2026-10-28) 
+
+> **Historical report, retained with its original conclusions.** This October 28–30 account is not the current readiness verdict or a human release approval. Read [the November 4 adjudication and handoff](../readiness-2026-11-04/README.md) before using its proposed fixes or claims. The original records, archived HTML and raw captures remain unchanged. On November 4, only this notice and image destinations were updated: the 17 images now use immutable links to their owning branches, including the `skribbl-io` directory.
 
 ## Verdicts (one line each)
 
@@ -10,21 +12,21 @@
 
 **Small Hours.** Pair flow (impossible postcard): curtain → private choice + guess → seal → reveal ("TWO WAYS OF SEEING — the same or different — both make a good beginning") → activity → detail (120-char cap; A 44/120 for "a brass key that hums when the tide comes in", B 38/120 for "the smell of rain on the harbour steps") → keepsake → verified SVG download (1,425 bytes, banked). Solo rehearsal (weather for two): same skeleton, "See the rehearsal reveal", two detail rounds, keepsake reached. Friction: two labels for the same submit ("Tuck away my detail" vs "Bring our details together"); two reveal labels for pair vs rehearsal; the rehearsal's second detail round is easy to miss.
 
-![Small Hours pair reveal: TWO WAYS OF SEEING (true pair reveal)](evidence/moments/71-reveal.png)
-![Small Hours Person A private choice screen (file misnamed "reveal"; not the pair reveal)](evidence/moments/42-reveal.png)
+![Small Hours pair reveal: TWO WAYS OF SEEING (true pair reveal)](https://raw.githubusercontent.com/PaperStrange/IndiaGames/45042578e549d0aba3ee10702384d0a86c780aa9/docs/gamejam/competitor-plays-2026-10-28/evidence/moments/71-reveal.png)
+![Small Hours Person A private choice screen (file misnamed "reveal"; not the pair reveal)](https://raw.githubusercontent.com/PaperStrange/IndiaGames/45042578e549d0aba3ee10702384d0a86c780aa9/docs/gamejam/competitor-plays-2026-10-28/evidence/moments/42-reveal.png)
 
 **Vivid.** Iona: two marks gate the signal (page: aim EAST; plate: Short-Long-Short); wrong pattern fails soft ("Nothing is lost; you can try again"); correct signal → ferry home. Return visit → recollection → brace the shade → fit the wedge → the private letter opens ("To whoever keeps this light after me: I was frightened every night. I turned it on anyway. — Iona"). Mara: three objects → lightbox notch 3 → "The picture comes together". Friction: the wedge step resolves without a clear player action; the letter action's label stays stale after opening; the notch is easy to miss.
 
-![Vivid Iona signal-selection state: controls configured (East, Short-long-short); the 'ferry is safely home' panel is in the record text, not this frame](evidence/vivid/m5-ending.png)
-![Vivid return visit: letter action with stale 'not offered' sublabel; the letter text is in the record transcript, not this frame](evidence/vivid/n0-letter.png)
-![Vivid private letter, actually visible: A FOLDED LETTER panel (earlier-run frame; lamp settings not relied on)](evidence/vivid/68-private-letter.png)
-![Vivid Mara ending: The Unfinished Postcard](evidence/vivid/43-mara-ending.png)
+![Vivid Iona signal-selection state: controls configured (East, Short-long-short); the 'ferry is safely home' panel is in the record text, not this frame](https://raw.githubusercontent.com/PaperStrange/IndiaGames/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28/evidence/vivid/m5-ending.png)
+![Vivid return visit: letter action with stale 'not offered' sublabel; the letter text is in the record transcript, not this frame](https://raw.githubusercontent.com/PaperStrange/IndiaGames/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28/evidence/vivid/n0-letter.png)
+![Vivid private letter, actually visible: A FOLDED LETTER panel (earlier-run frame; lamp settings not relied on)](https://raw.githubusercontent.com/PaperStrange/IndiaGames/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28/evidence/vivid/68-private-letter.png)
+![Vivid Mara ending: The Unfinished Postcard](https://raw.githubusercontent.com/PaperStrange/IndiaGames/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28/evidence/vivid/43-mara-ending.png)
 
 **Bell.** Witness path proven (marks → eyewitness clue → survives midnight); prediction grading works ("Foresight fulfilled · Momentum +1" / "Prediction disproved — No Momentum is lost"); Dusk → Midnight via "Ring the boundary bell" → "Face the thirteenth bell"; anchor board confirmed (Mina + redflower petal → "Anchor these into tomorrow") → Loop 2 Dawn ("LOOP II · THE DAY ANSWERS BACK", scar "Bellmarked", altered town) → preparation in Loop 2 Dawn → **Loop 2 Noon: Mina and her crate reach the sheltered market well through the side passage you prepared ("The main alley is still blocked; the changed route, not a changed crowd, brought her here")**. Friction (the critique's center): the advance rule is never stated in the game — a visit registers only on a scene action, the prediction must be tested, Dusk advances via the boundary bell, midnight needs a confirm click, Loop 2 map destinations are pins, not buttons. Five runs stalled on it — three in Noon, two at Midnight (see the Bell journey record). A first-time player hits the same wall.
 
-![Bell Loop 2 Dawn: Prepare the side passage clicked](evidence/bell/p9-prepared.png)
-![Bell Loop 2 Noon: Mina and her crate reach the sheltered market well](evidence/bell/q1-outcome.png)
-![Bell Loop 2 Dawn town AFTER the anchor (not the anchor board itself)](evidence/bell/p6-anchored.png)
+![Bell Loop 2 Dawn: Prepare the side passage clicked](https://raw.githubusercontent.com/PaperStrange/IndiaGames/3d4e205c417272f00b87c76c00532f4456d31e38/docs/gamejam/competitor-plays-2026-10-28/evidence/bell/p9-prepared.png)
+![Bell Loop 2 Noon: Mina and her crate reach the sheltered market well](https://raw.githubusercontent.com/PaperStrange/IndiaGames/3d4e205c417272f00b87c76c00532f4456d31e38/docs/gamejam/competitor-plays-2026-10-28/evidence/bell/q1-outcome.png)
+![Bell Loop 2 Dawn town AFTER the anchor (not the anchor board itself)](https://raw.githubusercontent.com/PaperStrange/IndiaGames/3d4e205c417272f00b87c76c00532f4456d31e38/docs/gamejam/competitor-plays-2026-10-28/evidence/bell/p6-anchored.png)
 
 ## What the competitors say
 
@@ -54,29 +56,30 @@ Small Hours and Vivid stay ready for the human gate; Bell stays proven end to en
 - ROLLBACK, reproduced: "THE PROMISE" reached again in Run 2 [REAL text-layer state markers: RUN 2 @ desk, 03:32, "PROMISE", "restore_policy: DISABLED." — the game canvas prints blank, so no visible ending frame exists]; the patience mechanism is pinned (document reads + answers drain patience 9→0, unstated in-game) [SECONDARY] — ROLLBACK punishes a good first run with a hidden rule, the mirror of Bell's hidden advance rule. Lesson stands: state the rule once, in-game, whole. The other ROLLBACK endings stay [OPEN].
 - Birdography, resolved: journal entries sit in FIXED species order [SECONDARY] — the old "unlock inconsistency" is explained, not open. The exactness lesson for Vivid stands.
 
-![Birdography journal: Black-Capped Chickadee frame, heading clipped at right edge](evidence/competitors/birdography/render-journal-1.png)
+![Birdography journal: Black-Capped Chickadee frame, heading clipped at right edge](https://raw.githubusercontent.com/PaperStrange/IndiaGames/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28/evidence/competitors/birdography/render-journal-1.png)
 - Gartic Phone, re-verified: full Solo session, album reached [REAL capture], GIF re-verified (GIF89a, 770×490, 208,955 bytes) [REAL]. Normal mode and the telephone chain stay [OPEN].
 
-![Gartic Phone Solo album export (GIF, 770x490)](evidence/competitors/gartic-phone/album-2026-10-28.gif)
+![Gartic Phone Solo album export (GIF, 770x490)](https://raw.githubusercontent.com/PaperStrange/IndiaGames/45042578e549d0aba3ee10702384d0a86c780aa9/docs/gamejam/competitor-plays-2026-10-28/evidence/competitors/gartic-phone/album-2026-10-28.gif)
 - skribbl.io, completed: full 3 rounds, winner screen, BrowserTester 1,015 points, 1st [REAL capture]. Stranger degradation persists through a completed session.
 
-![skribbl.io winner screen: BrowserTester 1st, 1,015 points](evidence/competitors/skribbl/render-winner-1.png)
+![skribbl.io winner screen: BrowserTester 1st, 1,015 points](https://raw.githubusercontent.com/PaperStrange/IndiaGames/45042578e549d0aba3ee10702384d0a86c780aa9/docs/gamejam/competitor-plays-2026-10-28/evidence/competitors/skribbl-io/render-winner-1.png)
 - Template-cap note, carried from Moments coverage: the nine-title set exceeds the template's max-2-per-family cap in draw-guess (skribbl.io, Drawize, Drawasaurus = 3); the cap still holds for the original six. The second deep family stays [OPEN].
 - Pixel Harbor, re-solved fresh: Sailboat and Anchor charted [REAL capture]; fresh times 0:55/0:45 [SECONDARY]; stale-text defect recurs.
 
-![Pixel Harbor fresh solve: Sailboat CHARTED, 0:55](evidence/competitors/pixel-harbor/render-charted-1.png)
+![Pixel Harbor fresh solve: Sailboat CHARTED, 0:55](https://raw.githubusercontent.com/PaperStrange/IndiaGames/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28/evidence/competitors/pixel-harbor/render-charted-1.png)
 - Core Rush, corrected: partial again, and the "1 coal" claim above is STRUCK — HOLD 1/8 is not verified coal (no ore breakdown in HUD text or capture text layers). No sale, no upgrade, no loop reset; the loop question stays [OPEN].
 - Expansion partials, all [OPEN] where unfinished: Same Bullet loop counters advanced [REAL]; echo-replay behavior [SECONDARY], Room 1 uncleared; Night OClock corridor + tutorial signs reached [REAL render strips: corridor timers, WASD/SHIFT/RUN signs, clock item, green-lit view; title screen also render-verified; only the corridor strip is embedded here, other strips rest on cited live PDFs], carry-over unverified [OPEN]; last seen online desktop reached [SECONDARY], photos4em.zip gate unsolved (3124 confirmed wrong; 1243/3142 no unlock observed); Reign Round 3 reached, road never placed; Drawize Quick Draw session finished (word FORK), no submitted guess; Drawasaurus guessing only [SECONDARY], drawing turn never completed (AFK banner covering choice buttons, timer frozen).
 
-![Drawize live round: a drawing in progress on the canvas, TIME 1:42, guess keyboard below; the word is not visible in this frame](evidence/competitors/drawize/render-live-drawing.png)
-![Night OClock corridor gameplay strip: timer 0:43, skull icon, WASD sign (Unity strip; rest of page white by print)](evidence/competitors/night-oclock/render-corridor-1.png)
+![Drawize live round: a drawing in progress on the canvas, TIME 1:42, guess keyboard below; the word is not visible in this frame](https://raw.githubusercontent.com/PaperStrange/IndiaGames/45042578e549d0aba3ee10702384d0a86c780aa9/docs/gamejam/competitor-plays-2026-10-28/evidence/competitors/drawize/render-live-drawing.png)
+![Night OClock corridor gameplay strip: timer 0:43, skull icon, WASD sign (Unity strip; rest of page white by print)](https://raw.githubusercontent.com/PaperStrange/IndiaGames/3d4e205c417272f00b87c76c00532f4456d31e38/docs/gamejam/competitor-plays-2026-10-28/evidence/competitors/night-oclock/render-corridor-1.png)
 - Expansion blocked/failed, all [OPEN]: Field Guide menu + in-game island view (health/stamina bars) + pause menu [REAL renders], no creature photo or gallery entry; Tranquility failed twice, no beats (camera bug unobserved, not absent).
 - Expansion completed: PhotoHacks Arcade Level 1 assignment completed — photograph of the assigned person (red beret, black shirt, red leggings, walking a small brown dog), result 94/100, Level cleared [REAL render, embedded below]; tutorial complete with Steps 8–9 skipped (tracking needs held keys) and Steps 14/18 unseen as separate dialogs.
 
-![PhotoHacks Arcade Level 1 assignment photo: person walking a small brown dog, red beret, black shirt, red leggings; result 94/100](evidence/competitors/photohacks/render-assignment.png)
+![PhotoHacks Arcade Level 1 assignment photo: person walking a small brown dog, red beret, black shirt, red leggings; result 94/100](https://raw.githubusercontent.com/PaperStrange/IndiaGames/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28/evidence/competitors/photohacks/render-assignment.png)
 
-![Field Guide in-game island view: low-poly island over water, health/stamina bars top-left; no creature visible in this frame](evidence/competitors/field-guide/render-ingame-1.png)
+![Field Guide in-game island view: low-poly island over water, health/stamina bars top-left; no creature visible in this frame](https://raw.githubusercontent.com/PaperStrange/IndiaGames/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28/evidence/competitors/field-guide/render-ingame-1.png)
 - Second deep family stays [OPEN] for Moments (Reign partial is the diorama family's first real play, not a completed deep play) and for Bell (all three expansion plays partial).
 - Iona neutral profile stays [OPEN] (not played; optional per the launch doc).
 - Standing constraint, unchanged: official-site / video records are file-keeping only and never complete a play slot. Blocked plays stay [OPEN] until first-hand play succeeds.
 - The 20 November actions above are unchanged; the live round adds no new demo action. One tooling note for the record: the live-browser visual-click path failed with page_busy across canvas/WebGL boards in this round, which is what blocked Reign's road, Same Bullet's aim, and Field Guide's Start; Tranquility's retry failed separately on a browser-wide click/PDF failure (page_busy even on example.com), not a canvas-board failure — the route past those blocks is a human at a local machine, not another agent window.
+

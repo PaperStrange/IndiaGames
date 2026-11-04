@@ -1,61 +1,62 @@
 # Small Hours — demo records + competitor plays, 2026-10-28
 
-Reviewed package from the 2026-10-28 play session (plus the 2026-10-30
-PhotoHacks retry where noted in the Vivid coverage). Observations, not
-conclusions: the one-page critique is not filed here.
+This is the historical October play package. **Current interpretation and
+readiness status: [4 November adjudication](../readiness-2026-11-04/evidence-adjudication.md)
+and [human handoff](../readiness-2026-11-04/README.md).** The later filing of raw
+PDFs, a critique and HTML copies improves access to existing evidence; it does
+not represent additional play sessions, human results or a release approval.
 
-## Contents
+## Contents and evidence status
 
-- `records/` — the demo's five original records: journey, art, coverage,
-  decision, session (markdown). Embeds resolve within this tree.
-- `evidence/moments/` — per-beat PNG frames + text dumps for the demo play.
-- `evidence/competitors/` — competitor studies cited by the coverage record:
-  drawasaurus, drawize, gartic-phone, skribbl-io (task reports, renders, captures).
-- `market-research/` — desk sweeps behind the coverage record.
-- `notes/` — the plural-review trail for this package (adversarial +
-  mistake-hunt reviews and applied fixes, rectification logs, display audit).
+| Material | Purpose and limits |
+|---|---|
+| [records/](records/) | Five original Markdown records: journey, art, coverage, decision and agent session. Preserved as historical observations and interpretations. |
+| [evidence/moments/](evidence/moments/) | Per-beat PNG frames and text dumps for the demo walkthrough. One operator enacted both player roles. |
+| [evidence/competitors/](evidence/competitors/) | Drawasaurus, Drawize, Gartic Phone, Reign and skribbl.io reports, renders and captures. Mode and completion limits remain in the coverage record. |
+| [market-research/](market-research/) | Desk sweeps; not first-hand gameplay or completed play slots. |
+| [notes/](notes/) | Historical adversarial/mistake-hunt reviews, applied fixes, rectification logs and display audit. |
+| [One-page critique](critique--one-page-2026-10-28.md) | Historical package-wide conclusions, now carrying a current-review notice and pinned image links. Read the adjudication before reusing its claims. |
+| [html/](html/) | Self-contained historical critique and Small Hours coverage copies with embedded images. These preserve the old wording and do not include the November adjudication. |
 
-## Evidence classes
+The historical labels are `[REAL]` for frame/text-supported states,
+`[SECONDARY]` for reported or desk material as defined in each record, and
+`[OPEN]` for unfinished questions. **`[REAL]` does not mean a human playtest or
+proof of fun.** Distinguish what the frame shows, what a browser-task report
+says, and what the author interprets. Unsuccessful and contradictory experiences
+remain preserved. Some filenames differ from content; captions describe the
+frame rather than treating its filename as proof.
 
-[REAL] = frame- or text-layer-verified captures. [SECONDARY] = browser-task
-prose (competitor live rounds). [OPEN] = unfinished, listed below and in the
-session record. Unsuccessful and contradictory experiences are preserved, not
-cleaned up. Filenames in places differ from content (audited 2026-10-29);
-captions describe the frame, not the filename.
+## Still open
 
-## Still open for this demo
+- Six-pair baseline study, genuine two-person activity, physical-device checks
+  and independent human release review. No human results are added here.
+- Gartic Normal multi-human telephone play; the completed recorded mode is Solo
+  animation, not the telephone chain.
+- Drawasaurus agent drawing turn; Drawize successful agent drawing and submitted
+  guess; a completed deep comparison from a different play family.
+- Human motivation, contribution balance, demand and distinctiveness. An SVG
+  download proves a file was delivered, not that a pair wants to keep it.
 
-six-pair human gate; true two-person play (needs humans); Gartic Normal multi-human session; Drawasaurus agent drawing turn; Drawize agent drawing turn + submitted guess.
+## Filing and provenance
 
-## Notes on this filing
+The original five records, review notes, HTML copies and raw evidence remain
+historical. Play scripts and detailed execution logs are intentionally local
+only; they have **not** been filed. The critique, two HTML copies and 28 raw
+browser-task PDFs **are now filed** in this branch. The PDFs have their original
+names under `evidence/competitors/<game>/pdf/<task-uuid>/`. Their addition does
+not add 28 play sessions: several captures belong to one existing task.
 
-- Play scripts and logs intentionally NOT filed (local only); neither are HTML
-  review copies, the one-page critique, or live browser-task PDFs (cited by
-  task ID in-record).
-- Local path mapping: the records' original `play-2026-10-28/<demo>/` and
-  `play-2026-10-28/competitors/` prefixes map to `evidence/<demo>/` and
-  `evidence/competitors/` here.
-- Companion packages: Bell on the-thirteenth-bell, Keeper's Frame on vivid-2.5d-photo-game.
+The raw PDFs sit behind the earlier reports and page renders. Blank canvas
+prints, shells and failures are retained. Morning task captures already filed
+in curated form are not duplicated. The original filing notes record that
+Tranquility captures were not filed because no task ID was cited; that concern
+belongs to the Vivid package, not a completed Small Hours comparison.
 
-## Derived documents and raw captures
+Record prefixes `play-2026-10-28/moments/` and
+`play-2026-10-28/competitors/` map to `evidence/moments/` and
+`evidence/competitors/` here. The shared critique's images now use pinned raw
+GitHub URLs to the owning game commit; its former `skribbl/` path is corrected
+to `skribbl-io/`. The historical HTML remains self-contained.
 
-How the non-record files relate to `records/`:
-
-- `critique--one-page-2026-10-28.md` — conclusions drawn FROM the records
-  (the one-page report). The same file is filed on all three branches; it is
-  package-wide, so its embeds point at `evidence/` paths that resolve fully
-  only across the three branches together (each branch holds its own demo's
-  evidence). The self-contained HTML beside it resolves fully on every branch.
-- `html/` — self-contained renderings of the markdown (base64-embedded
-  images) for readers whose viewer cannot render markdown image embeds. Content
-  is identical to the markdown: the critique plus this branch's coverage
-  record. The markdown in `records/` remains the original.
-- `evidence/competitors/<game>/pdf/<task-uuid>/` — the raw browser-task PDF
-  captures BEHIND the competitor records, original filenames, one subdir per
-  cited task. The renders in the parent dir are conversions of these pages.
-  Shells and black frames are preserved, not cleaned: a canvas that prints
-  blank stays blank here, and the records say so. Morning-round tasks are not
-  duplicated: their beat PDFs are already filed in curated form in the parent
-  dir (verified byte-identical). Tranquility captures are not filed: no task
-  ID for them is cited in the filed records (the failure is recorded in prose
-  in the Vivid coverage).
+Companion packages: [Bell](https://github.com/PaperStrange/IndiaGames/tree/3d4e205c417272f00b87c76c00532f4456d31e38/docs/gamejam/competitor-plays-2026-10-28)
+and [Keeper's Frame](https://github.com/PaperStrange/IndiaGames/tree/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28).

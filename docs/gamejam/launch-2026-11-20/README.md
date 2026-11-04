@@ -1,5 +1,7 @@
 # Small Hours · human playtests and November 20 launch plan
 
+> **4 November readiness handoff:** use the [current agent-verification status and blank supplemental observations](../readiness-2026-11-04/README.md) alongside this packet. The present work prepares the handoff; the user will arrange humans afterward. Earlier calendar targets are planning history, not booked or completed sessions. The canonical protocol, baseline bytes and release thresholds remain unchanged.
+
 Prepared **28 October 2026** on `memorable-moments-game`. Target: **20 November 2026**, conditional on the human release gate. **No human sessions have been run or registered by this packet; facilitator, participants and reviewer are unassigned.** No runtime, artifact or acceptance threshold changes are proposed by this preparation.
 
 1. Assign people and complete the [human playtest checklist](human-playtest-checklist.md).

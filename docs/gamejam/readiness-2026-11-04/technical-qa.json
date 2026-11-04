@@ -1,0 +1,66 @@
+{
+  "kind": "automated-technical-qa-not-human-study",
+  "game": "small-hours",
+  "source_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
+  "baseline": "SH-BASELINE-2026-10-27",
+  "build_inventory_sha256": "fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3",
+  "started_at": "2026-11-04T15:50:03.669Z",
+  "finished_at": "2026-11-04T15:50:17.751Z",
+  "browser": "151.0.7922.173",
+  "result": "PASS",
+  "build_unchanged": true,
+  "cases": [
+    {
+      "id": "root-1280-pair",
+      "status": "PASS",
+      "svg_sha256": "5aeda7c75ac70e9ce1f776ffc0d8e61668724eaa250b7af44d21ab5353216894"
+    },
+    {
+      "id": "root-1280-solo",
+      "status": "PASS",
+      "svg_sha256": "f053edbe76c7f5ec924578b09c0d878a46a1a8c652cad38448c8a2127b3463e3"
+    },
+    {
+      "id": "root-390-pair",
+      "status": "PASS",
+      "svg_sha256": "5aeda7c75ac70e9ce1f776ffc0d8e61668724eaa250b7af44d21ab5353216894"
+    },
+    {
+      "id": "root-390-solo",
+      "status": "PASS",
+      "svg_sha256": "f053edbe76c7f5ec924578b09c0d878a46a1a8c652cad38448c8a2127b3463e3"
+    },
+    {
+      "id": "nested-1280-pair",
+      "status": "PASS",
+      "svg_sha256": "5aeda7c75ac70e9ce1f776ffc0d8e61668724eaa250b7af44d21ab5353216894"
+    },
+    {
+      "id": "nested-1280-solo",
+      "status": "PASS",
+      "svg_sha256": "f053edbe76c7f5ec924578b09c0d878a46a1a8c652cad38448c8a2127b3463e3"
+    },
+    {
+      "id": "nested-390-pair",
+      "status": "PASS",
+      "svg_sha256": "5aeda7c75ac70e9ce1f776ffc0d8e61668724eaa250b7af44d21ab5353216894"
+    },
+    {
+      "id": "nested-390-solo",
+      "status": "PASS",
+      "svg_sha256": "f053edbe76c7f5ec924578b09c0d878a46a1a8c652cad38448c8a2127b3463e3"
+    }
+  ],
+  "errors": [],
+  "human_sessions": 0,
+  "not_run": [
+    "blank optional details",
+    "maximum-length details",
+    "keyboard-only/focus audit",
+    "physical devices",
+    "real dyad experience",
+    "voluntary saving",
+    "45-second timer expiry",
+    "offline/external deployment"
+  ]
+}
