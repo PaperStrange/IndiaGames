@@ -2,9 +2,9 @@
 
 ## Current readiness handoff · 4 November 2026
 
-4 November: 20 distinct semantic cases functionally passed across retained attempts, with disclosed harness corrections and one aborted asset request followed by an error-free targeted retry; 8 layout cases and 51 unit tests passed, and two clean builds matched. Canonical Iona return placement and Mara interpretation were exercised. Neutral profile, migration/recovery, forced WebGL failure, physical devices and humans were not retested in this pass. Exported 0.1.3 awaits master staging.
+4 November: 20 distinct semantic cases functionally passed across retained attempts, with disclosed harness corrections and one aborted asset request followed by an error-free targeted retry; 8 layout cases and 51 unit tests passed, and two clean builds matched. Canonical Iona return placement and Mara interpretation were exercised. Neutral profile, migration/recovery, forced WebGL failure, physical devices and humans were not retested in this pass. The exact verified 0.1.3 artifact is staged on master; human validation remains pending.
 
-[Current game handoff](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Blank human handoff](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
+[Current game handoff](https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Blank human handoff](https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
 
 Required human studies, physical devices and independent approval remain pending. Historical completed IDs and evidence are preserved; dated follow-ups do not erase prior verification.
 
@@ -19,9 +19,9 @@ Dated supported-HTTP evidence and an exact-artifact human-study handoff for issu
 - Verify the reproduced Mara helper layout correction at desktop, narrow width and enlarged text with working keyboard alignment; record before/after geometry, screenshots and errors.
 - Preserve frozen 0.1.2; any changed game bytes use a new immutable candidate version. Publish evidence and blank human handoffs; do not convert agent completion into either six-person story cohort or physical-device approval.
 
-4 November: 20 distinct semantic cases functionally passed across retained attempts, with disclosed harness corrections and one aborted asset request followed by an error-free targeted retry; 8 layout cases and 51 unit tests passed, and two clean builds matched. Canonical Iona return placement and Mara interpretation were exercised. Neutral profile, migration/recovery, forced WebGL failure, physical devices and humans were not retested in this pass. Exported 0.1.3 awaits master staging. This closes technical handoff only; required human studies, devices and release approval remain pending.
+4 November: 20 distinct semantic cases functionally passed across retained attempts, with disclosed harness corrections and one aborted asset request followed by an error-free targeted retry; 8 layout cases and 51 unit tests passed, and two clean builds matched. Canonical Iona return placement and Mara interpretation were exercised. Neutral profile, migration/recovery, forced WebGL failure, physical devices and humans were not retested in this pass. The exact verified 0.1.3 artifact is staged on master; human validation remains pending. This closes technical handoff only; required human studies, devices and release approval remain pending.
 
-**Evidence:** [record 1](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/README.md) · [record 2](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [record 3](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/technical-qa.json)
+**Evidence:** [record 1](https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/README.md) · [record 2](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [record 3](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/technical-qa.json)
 
 ### KF-25 · Give the alignment helper a full row and export an immutable candidate
 
@@ -34,13 +34,13 @@ The verified shared-grid correction, regression evidence and reproducible immuta
 - Run existing unit/build checks plus relevant browser regression, record exact source and inventory, export the new unused version with blank human reports, and hand it to a separately reviewed master staging PR. Actual staging is KF-26.
 - Keep six Iona plus six distinct Mara humans, physical-device checks and independent approval pending; no official release follows from this technical patch.
 
-Shared helper CSS correction verified:8 layout cases,51 unit tests and20 distinct semantic cases across disclosed attempts. Two clean builds match inventory 7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00. Export complete; PR #6 master staging pending. No Iona consent/state-copy change.
+Shared helper CSS correction verified: 8 layout cases, 51 unit tests and 20 distinct semantic cases across disclosed attempts. Two clean builds match inventory 7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00. Export complete; PR #6 master staging is complete; see KF-26. No Iona consent/state-copy change.
 
 **Evidence:** [record 1](https://github.com/PaperStrange/IndiaGames/commit/813f264400bfc01d7e3e5f668de29bb835f5a70d) · [record 2](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [record 3](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/CANDIDATE-EXPORT.md) · [record 4](https://github.com/PaperStrange/IndiaGames/pull/6)
 
 ### KF-26 · Stage the verified 0.1.3 export through the reviewed master PR
 
-**Status:** `active` · **Owner:** Release integrator + independent code reviewer · **Priority:** P0
+**Status:** `done` · **Owner:** Release integrator + independent code reviewer · **Priority:** P0
 
 An immutable keepers-frame/0.1.3 candidate on master, with blank human reports and actual merge identity.
 
@@ -48,7 +48,9 @@ An immutable keepers-frame/0.1.3 candidate on master, with blank human reports a
 - Preserve existing 0.1.2 and verify all 15 files plus inventory 7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00 on the merged master commit.
 - Record the actual master SHA and candidate manifest link before changing dashboard staging status. Human reports remain blank, approval false and official registry empty.
 
-PR #6 open at6ac31873f21159943801d5646c3ac37c0eba3e5a. Export and code review are not a master merge or official game release.
+PR #6 merged to master 2be5f3648fed5422eb4459486661385df73c91be. The merged packet matches the reviewed 15-file export and inventory 7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00. Both human cohorts remain empty and approval remains false; no official release.
+
+**Evidence:** [merged PR #6](https://github.com/PaperStrange/IndiaGames/pull/6) · [candidate manifest](https://github.com/PaperStrange/IndiaGames/blob/2be5f3648fed5422eb4459486661385df73c91be/release-candidates/keepers-frame/0.1.3/candidate.json) · [story catalog](https://github.com/PaperStrange/IndiaGames/blob/2be5f3648fed5422eb4459486661385df73c91be/release-candidates/keepers-frame/0.1.3/build/story-catalog.json) · [empty human report](https://github.com/PaperStrange/IndiaGames/blob/2be5f3648fed5422eb4459486661385df73c91be/release-candidates/keepers-frame/0.1.3/human-playtest.json)
 
 <details>
 <summary>Archived October 28 coordination note</summary>

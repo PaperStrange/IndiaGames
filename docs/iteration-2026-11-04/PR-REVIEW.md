@@ -116,3 +116,8 @@ A later cache-bypassing read (`Cache-Control: no-cache` plus unique query) of th
 ## PR #3 refreshed after #4 merge
 
 New #3 head `aa513ec621d5a47ecfc15330674a14aff146cc71` has parents exactly the previously reviewed `39a8ebf51e65f82865dafeffaad872b8d52b9ab6` and merged main `e27a774b6bef95b7a48e4eeb910dce819e3082c9`. Its complete remote tree `f62357c104b47907a7c858a9f108223040da2fa4` equals local independently reviewed #1 + #4 + #3 integration `9bc2934c2550a4bd0699e5ee690c19e3bac438e9` exactly. No content change, no new finding. The cache-bypassing current-head read reports release-gate queued at run `41866071797`, job `126700484966`. Code review remains satisfied; normal merge awaits actual successful current-head CI. Preserve future observations with explicit freshness and exact job identity.
+
+
+## Actual PR #3 / #6 merge readback
+
+Root confirmed successful current-head checks using fresh uniquely named GraphQL queries and normal merges: PR #3 into main `c49eee9aa7fd818949b04348a861f0bb06afbc9c`; PR #6 into master `2be5f3648fed5422eb4459486661385df73c91be`. Independently verified master has the same complete tree as reviewed candidate head `6ac31873f21159943801d5646c3ac37c0eba3e5a`, recomputed all 15 build hashes (1,401,316 bytes), confirmed old 0.1.2 remains unchanged and human reports remain empty with approval false. Staging is complete; official game release is not approved. Earlier queued snapshots remain observation history rather than current status. No review or human gate was bypassed.

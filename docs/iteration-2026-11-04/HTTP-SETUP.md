@@ -40,7 +40,7 @@ This dated exporter intentionally freezes **0.1.2**, inventory `e768b0fc12e34d1c
 
 ## Current Vivid 0.1.3 export
 
-The historical command above continues to export 0.1.2. For the verified 0.1.3 correction, follow the [version-aware candidate exporter instructions](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/CANDIDATE-EXPORT.md). The committed runtime is `813f264400bfc01d7e3e5f668de29bb835f5a70d`; two clean builds matched inventory `7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00`. Use that exact exported build for the regression below. [Candidate PR #6](https://github.com/PaperStrange/IndiaGames/pull/6) has passed independent code review at its submitted head; required CI and actual master staging remain pending. No human or official-release approval is implied.
+The historical command above continues to export 0.1.2. For the verified 0.1.3 correction, follow the [version-aware candidate exporter instructions](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/CANDIDATE-EXPORT.md). The committed runtime is `813f264400bfc01d7e3e5f668de29bb835f5a70d`; two clean builds matched inventory `7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00`. Use that exact exported build for the regression below. [Candidate PR #6](https://github.com/PaperStrange/IndiaGames/pull/6) has passed independent code review at its submitted head; required CI succeeded and PR #6 merged to master `2be5f3648fed5422eb4459486661385df73c91be`. No human or official-release approval is implied.
 
 ## Run the checked-in Vivid layout regression
 
