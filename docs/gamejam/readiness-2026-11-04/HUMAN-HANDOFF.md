@@ -4,12 +4,12 @@
 
 ## Candidate and staffing handoff
 
-The previous `keepers-frame/0.1.2` identity and dated exporter are historical. A changed build needs an unused version, a new exact inventory and fresh human evidence. `0.1.3` is now reproducibly exported after the bounded helper-layout fix; reviewed master staging remains pending. Do not start a study from an unspecified candidate.
+The previous `keepers-frame/0.1.2` identity and dated exporter are historical. A changed build needs an unused version, a new exact inventory and fresh human evidence. `0.1.3` is now reproducibly exported after the bounded helper-layout fix; reviewed [PR #6](https://github.com/PaperStrange/IndiaGames/pull/6) has staged it on master; human work remains pending. Do not start a study from an unspecified candidate.
 
 | Required field | Verified value / evidence |
 |---|---|
 | Candidate version and implementation commit | 0.1.3; `813f264400bfc01d7e3e5f668de29bb835f5a70d` |
-| Reviewed master staging PR and immutable master commit | Pending; export is not master staging |
+| Reviewed master staging PR and immutable master commit | [PR #6](https://github.com/PaperStrange/IndiaGames/pull/6); master `2be5f3648fed5422eb4459486661385df73c91be` |
 | Build inventory SHA-256 and shipping-story catalog | `7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00`; 15 files, Iona + Mara |
 | Exact export command and exported directory | [Version-aware export](CANDIDATE-EXPORT.md); dual clean builds, 1,401,316 bytes |
 | Actual HTTP URL / path / origin | |

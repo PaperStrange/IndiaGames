@@ -1,15 +1,15 @@
 # Keeper's Frame — November 4 readiness handoff
 
-**Scope: agent verification, bounded fixes and a packet for humans to use later.** No human sessions, recruitment, physical-device results or release approval are recorded by this update. The target remains November 20, conditional on the existing release gate. Agent verification is complete within the scope of [the technical report](TECHNICAL-QA.md). Candidate 0.1.3 is reproducibly exported; its reviewed master staging remains pending.
+**Scope: agent verification, bounded fixes and a packet for humans to use later.** No human sessions, recruitment, physical-device results or release approval are recorded by this update. The target remains November 20, conditional on the existing release gate. Agent verification is complete within the scope of [the technical report](TECHNICAL-QA.md). Candidate 0.1.3 is reproducibly exported and staged through reviewed [PR #6](https://github.com/PaperStrange/IndiaGames/pull/6) at master `2be5f3648fed5422eb4459486661385df73c91be`; real human approval remains pending.
 
 | Workstream | Current evidence and next decision |
 |---|---|
 | Research adjudication | Completed source/capture review below; agent observations remain separate from human evidence. |
 | Shared alignment-helper layout | Reproduced and fixed in source `813f264`; eight layout/keyboard cases pass, with frozen 0.1.2 as a negative control. [Evidence](TECHNICAL-QA.md). |
 | Full Iona and Mara journeys | Twenty unique semantic cases reach final placement/interpretation and reload; retained harness corrections and one successful navigation retry are documented. 51 unit tests and build pass. |
-| Candidate | Existing 0.1.2 remains immutable. Two clean builds of 0.1.3 match the tested 15-file inventory `7498c636…`; staging validation passes with blank human evidence. [Export instructions](CANDIDATE-EXPORT.md); reviewed master PR pending. |
+| Candidate | Existing 0.1.2 remains immutable. Two clean builds of 0.1.3 match the tested 15-file inventory `7498c636…`; staging validation passes with blank human evidence. [Export instructions](CANDIDATE-EXPORT.md); reviewed [PR #6](https://github.com/PaperStrange/IndiaGames/pull/6) merged to master `2be5f3648fed5422eb4459486661385df73c91be`. |
 | Human handoff | [Blank packet and post-scoring diagnostics](HUMAN-HANDOFF.md) prepared; six Iona plus six distinct Mara participants remain pending. |
-| Promotion | Reviewed candidate PR to `master` may stage a candidate; human approval and official `main` promotion remain pending. |
+| Promotion | Candidate 0.1.3 is staged on master; human approval and official `main` promotion remain pending. |
 
 ## What was reviewed
 
@@ -66,4 +66,4 @@ PhotoHacks reached its tutorial-complete screen with steps 8–9 skipped and ste
 
 Canonical Iona fresh journey: rescue → begin recollection → brace → explicitly place wedge → finish recollection → privacy/dedication choice → first ending → return → corresponding placement. Its completion condition is return **and placement**. A legacy save can offer optional recollection; that does not make recollection optional in the fresh journey. Mara: inspect all three objects → align at notch 3 → reveal → choose any interpretation → end. The guided notch is an expressive action, not a secret deduction answer.
 
-Executed verification is recorded in [TECHNICAL-QA.md](TECHNICAL-QA.md). The new [version-aware exporter](CANDIDATE-EXPORT.md) built immutable source `813f264400bfc01d7e3e5f668de29bb835f5a70d` twice with identical output; staging integrity passed, human readiness did not become approval. Policy PR [#1](https://github.com/PaperStrange/IndiaGames/pull/1) merged at `7a26e07a71062766e357b51aece9cce8b00c9b17` after independent agent review and current CI, under the owner’s batch-specific code-review exception. Actual candidate master staging remains pending. If a deadline arrives before the human gate is satisfied, leave the candidate staged and postpone the official release.
+Executed verification is recorded in [TECHNICAL-QA.md](TECHNICAL-QA.md). The new [version-aware exporter](CANDIDATE-EXPORT.md) built immutable source `813f264400bfc01d7e3e5f668de29bb835f5a70d` twice with identical output; staging integrity passed, human readiness did not become approval. Policy PR [#1](https://github.com/PaperStrange/IndiaGames/pull/1) merged at `7a26e07a71062766e357b51aece9cce8b00c9b17` after independent agent review and current CI, under the owner’s batch-specific code-review exception. Candidate [PR #6](https://github.com/PaperStrange/IndiaGames/pull/6) merged normally after independent review and successful current-head CI. The exact 0.1.3 packet is on master at `2be5f3648fed5422eb4459486661385df73c91be`; its human report remains blank. If a deadline arrives before the human gate is satisfied, leave the candidate staged and postpone the official release.
