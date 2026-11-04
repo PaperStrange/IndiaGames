@@ -1,0 +1,123 @@
+{
+  "observed_at": "2026-10-28T10:20:32.981577+00:00",
+  "items": {
+    "rulesets": {
+      "returncode": 0,
+      "response": [],
+      "stderr": ""
+    },
+    "main": {
+      "returncode": 0,
+      "response": {
+        "name": "main",
+        "protected": false,
+        "commit": {
+          "sha": "710c1adaab349f20bbc460ff80fd83c44a5cea42",
+          "node_id": "C_kwDOIYLMxNoAKDcxMGMxYWRhYWIzNDlmMjBiYmM0NjBmZjgwZmQ4M2M0NGE1Y2VhNDI",
+          "commit": {
+            "author": {
+              "name": "Sakura",
+              "email": "sakuraasuna1212@gmail.com",
+              "date": "2026-10-28T09:17:21Z"
+            },
+            "committer": {
+              "name": "Sakura",
+              "email": "sakuraasuna1212@gmail.com",
+              "date": "2026-10-28T09:17:21Z"
+            },
+            "message": "Confirm the main Pages dashboard with exact live asset verification",
+            "tree": {
+              "sha": "cf6e22bdf7f0a504137accb2ac17156b49880580",
+              "url": "https://api.github.com/repos/PaperStrange/IndiaGames/git/trees/cf6e22bdf7f0a504137accb2ac17156b49880580"
+            },
+            "url": "https://api.github.com/repos/PaperStrange/IndiaGames/git/commits/710c1adaab349f20bbc460ff80fd83c44a5cea42",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/PaperStrange/IndiaGames/commits/710c1adaab349f20bbc460ff80fd83c44a5cea42",
+          "html_url": "https://github.com/PaperStrange/IndiaGames/commit/710c1adaab349f20bbc460ff80fd83c44a5cea42",
+          "comments_url": "https://api.github.com/repos/PaperStrange/IndiaGames/commits/710c1adaab349f20bbc460ff80fd83c44a5cea42/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
+              "url": "https://api.github.com/repos/PaperStrange/IndiaGames/commits/1dd23301fdd3046a0c7f5403bcd25957e2176562",
+              "html_url": "https://github.com/PaperStrange/IndiaGames/commit/1dd23301fdd3046a0c7f5403bcd25957e2176562"
+            }
+          ]
+        }
+      },
+      "stderr": ""
+    },
+    "master": {
+      "returncode": 0,
+      "response": {
+        "name": "master",
+        "protected": false,
+        "commit": {
+          "sha": "2c4d230e40e64b2789b6814393d92cbb6f7f0cf3",
+          "node_id": "C_kwDOIYLMxNoAKDJjNGQyMzBlNDBlNjRiMjc4OWI2ODE0MzkzZDkyY2JiNmY3ZjBjZjM",
+          "commit": {
+            "author": {
+              "name": "Sakura",
+              "email": "sakuraasuna1212@gmail.com",
+              "date": "2026-10-28T08:57:41Z"
+            },
+            "committer": {
+              "name": "Sakura",
+              "email": "sakuraasuna1212@gmail.com",
+              "date": "2026-10-28T08:57:41Z"
+            },
+            "message": "Remove obsolete editor configuration and ignore private playtest output",
+            "tree": {
+              "sha": "4ad13ea2f63756a300c3b9898931ac64de3973ea",
+              "url": "https://api.github.com/repos/PaperStrange/IndiaGames/git/trees/4ad13ea2f63756a300c3b9898931ac64de3973ea"
+            },
+            "url": "https://api.github.com/repos/PaperStrange/IndiaGames/git/commits/2c4d230e40e64b2789b6814393d92cbb6f7f0cf3",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/PaperStrange/IndiaGames/commits/2c4d230e40e64b2789b6814393d92cbb6f7f0cf3",
+          "html_url": "https://github.com/PaperStrange/IndiaGames/commit/2c4d230e40e64b2789b6814393d92cbb6f7f0cf3",
+          "comments_url": "https://api.github.com/repos/PaperStrange/IndiaGames/commits/2c4d230e40e64b2789b6814393d92cbb6f7f0cf3/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "02c78ad9739622fb447850fbecb5f46e7dec8de8",
+              "url": "https://api.github.com/repos/PaperStrange/IndiaGames/commits/02c78ad9739622fb447850fbecb5f46e7dec8de8",
+              "html_url": "https://github.com/PaperStrange/IndiaGames/commit/02c78ad9739622fb447850fbecb5f46e7dec8de8"
+            }
+          ]
+        }
+      },
+      "stderr": ""
+    },
+    "pages": {
+      "returncode": 0,
+      "response": {
+        "status": "built",
+        "source": {
+          "branch": "main",
+          "path": "/"
+        },
+        "build_type": "legacy",
+        "html_url": "https://paperstrange.github.io/IndiaGames/"
+      },
+      "stderr": ""
+    }
+  }
+}

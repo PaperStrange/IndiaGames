@@ -1,0 +1,9 @@
+{
+  "requested_at_utc": "2026-10-28T10:25:02Z",
+  "pr_url": "https://github.com/PaperStrange/IndiaGames/pull/3",
+  "reviewer": "copilot-pull-request-reviewer[bot]",
+  "connector_result": "Action completed; no isError",
+  "readback": "No requested reviewers and no submitted reviews visible immediately after the request; release-gate passed.",
+  "counted_approval_verified": false,
+  "notes": "An accepted request is not evidence of a completed or counted approval. No governance or release PR was requested for robot approval."
+}
