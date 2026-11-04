@@ -425,7 +425,7 @@
     "expected_url_http_status": 200,
     "live_deployment_verified": true,
     "observed_page": "IndiaGames development hub with three projects, 60 tasks and November20 launch plan",
-    "required_action": "Confirm main/master branch-protection enforcement and complete real-human approvals before official game promotion.",
+    "required_action": "Resolve protection issue#2 and verify scoped robot approval; human game-release approval remains mandatory.",
     "branch_protection_read_status": 403,
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
@@ -433,7 +433,7 @@
     "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
     "verified_assets": 6,
     "verification_document": "docs/verification-launch-2026-10-28/live-assets.json",
-    "settings_change_attribution": "Unknown; earlier PUT rejected403, later GET and Pages deployment show main/root."
+    "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned403."
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -444,5 +444,15 @@
     "cleanup_document": "docs/maintenance/2026-10-28.md",
     "staffing_status": "unassigned",
     "human_sessions_completed": 0
+  },
+  "governance": {
+    "issue": "https://github.com/PaperStrange/IndiaGames/issues/2",
+    "checked_date_utc": "2026-10-28",
+    "main_protected": false,
+    "master_protected": false,
+    "ruleset_creation_http_status": 403,
+    "robot_counted_approval_status": "unverified",
+    "nemo_invitation": "deferred",
+    "legacy_candidate_url_repair": "paused_by_owner"
   }
 }

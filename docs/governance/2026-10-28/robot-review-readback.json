@@ -1,0 +1,306 @@
+{
+  "observed_at": "2026-10-28T10:25:30.981174+00:00",
+  "pr": 3,
+  "items": {
+    "requested_reviewers": {
+      "returncode": 0,
+      "response": {
+        "users": [],
+        "teams": []
+      },
+      "stderr": ""
+    },
+    "reviews": {
+      "returncode": 0,
+      "response": [],
+      "stderr": ""
+    },
+    "checks": {
+      "returncode": 0,
+      "response": {
+        "total_count": 2,
+        "check_runs": [
+          {
+            "id": 122760081945,
+            "name": "publish-approved-releases",
+            "node_id": "CR_kwDOIYLMxM8AAAAclRIyGQ",
+            "head_sha": "a0d5a14363a6c13f28cb7de56ba813b7b2c8bdc2",
+            "external_id": "5be2f65d-49dc-5b23-96a4-eb2d906109c5",
+            "url": "https://api.github.com/repos/PaperStrange/IndiaGames/check-runs/122760081945",
+            "html_url": "https://github.com/PaperStrange/IndiaGames/actions/runs/40671731900/job/122760081945",
+            "details_url": "https://github.com/PaperStrange/IndiaGames/actions/runs/40671731900/job/122760081945",
+            "status": "completed",
+            "conclusion": "skipped",
+            "started_at": "2026-10-28T10:23:48Z",
+            "completed_at": "2026-10-28T10:23:48Z",
+            "output": {
+              "title": null,
+              "summary": null,
+              "text": null,
+              "annotations_count": 0,
+              "annotations_url": "https://api.github.com/repos/PaperStrange/IndiaGames/check-runs/122760081945/annotations"
+            },
+            "check_suite": {
+              "id": 110239216531
+            },
+            "app": {
+              "id": 15368,
+              "client_id": "Iv1.05c79e9ad1f6bdfa",
+              "slug": "github-actions",
+              "node_id": "MDM6QXBwMTUzNjg=",
+              "owner": {
+                "login": "github",
+                "id": 9919,
+                "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+                "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/github",
+                "html_url": "https://github.com/github",
+                "followers_url": "https://api.github.com/users/github/followers",
+                "following_url": "https://api.github.com/users/github/following{/other_user}",
+                "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+                "organizations_url": "https://api.github.com/users/github/orgs",
+                "repos_url": "https://api.github.com/users/github/repos",
+                "events_url": "https://api.github.com/users/github/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/github/received_events",
+                "type": "Organization",
+                "user_view_type": "public",
+                "site_admin": false
+              },
+              "name": "GitHub Actions",
+              "description": "Automate your workflow from idea to production",
+              "external_url": "https://help.github.com/en/actions",
+              "html_url": "https://github.com/apps/github-actions",
+              "created_at": "2018-07-30T09:30:17Z",
+              "updated_at": "2026-06-18T16:17:48Z",
+              "permissions": {
+                "actions": "write",
+                "administration": "read",
+                "artifact_metadata": "write",
+                "attestations": "write",
+                "checks": "write",
+                "code_quality": "write",
+                "contents": "write",
+                "copilot_requests": "write",
+                "deployments": "write",
+                "discussions": "write",
+                "drives": "write",
+                "issues": "write",
+                "merge_queues": "write",
+                "metadata": "read",
+                "models": "read",
+                "packages": "write",
+                "pages": "write",
+                "pull_requests": "write",
+                "repository_hooks": "write",
+                "repository_projects": "write",
+                "security_events": "write",
+                "statuses": "write",
+                "vulnerability_alerts": "read"
+              },
+              "events": [
+                "branch_protection_rule",
+                "check_run",
+                "check_suite",
+                "create",
+                "delete",
+                "deployment",
+                "deployment_status",
+                "discussion",
+                "discussion_comment",
+                "fork",
+                "gollum",
+                "issues",
+                "issue_comment",
+                "label",
+                "merge_group",
+                "milestone",
+                "page_build",
+                "public",
+                "pull_request",
+                "pull_request_review",
+                "pull_request_review_comment",
+                "push",
+                "registry_package",
+                "release",
+                "repository",
+                "repository_dispatch",
+                "status",
+                "watch",
+                "workflow_dispatch",
+                "workflow_run"
+              ]
+            },
+            "pull_requests": [
+              {
+                "url": "https://api.github.com/repos/PaperStrange/IndiaGames/pulls/3",
+                "id": 5048880913,
+                "number": 3,
+                "head": {
+                  "ref": "hub/visual-readiness-2026-10-28",
+                  "sha": "a0d5a14363a6c13f28cb7de56ba813b7b2c8bdc2",
+                  "repo": {
+                    "id": 562220228,
+                    "url": "https://api.github.com/repos/PaperStrange/IndiaGames",
+                    "name": "IndiaGames"
+                  }
+                },
+                "base": {
+                  "ref": "main",
+                  "sha": "710c1adaab349f20bbc460ff80fd83c44a5cea42",
+                  "repo": {
+                    "id": 562220228,
+                    "url": "https://api.github.com/repos/PaperStrange/IndiaGames",
+                    "name": "IndiaGames"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": 122759923075,
+            "name": "release-gate",
+            "node_id": "CR_kwDOIYLMxM8AAAAclQ_Fgw",
+            "head_sha": "a0d5a14363a6c13f28cb7de56ba813b7b2c8bdc2",
+            "external_id": "5831a7fb-1e78-5cba-be1d-59fdca77f568",
+            "url": "https://api.github.com/repos/PaperStrange/IndiaGames/check-runs/122759923075",
+            "html_url": "https://github.com/PaperStrange/IndiaGames/actions/runs/40671731900/job/122759923075",
+            "details_url": "https://github.com/PaperStrange/IndiaGames/actions/runs/40671731900/job/122759923075",
+            "status": "completed",
+            "conclusion": "success",
+            "started_at": "2026-10-28T10:23:29Z",
+            "completed_at": "2026-10-28T10:23:47Z",
+            "output": {
+              "title": null,
+              "summary": null,
+              "text": null,
+              "annotations_count": 2,
+              "annotations_url": "https://api.github.com/repos/PaperStrange/IndiaGames/check-runs/122759923075/annotations"
+            },
+            "check_suite": {
+              "id": 110239216531
+            },
+            "app": {
+              "id": 15368,
+              "client_id": "Iv1.05c79e9ad1f6bdfa",
+              "slug": "github-actions",
+              "node_id": "MDM6QXBwMTUzNjg=",
+              "owner": {
+                "login": "github",
+                "id": 9919,
+                "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+                "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/github",
+                "html_url": "https://github.com/github",
+                "followers_url": "https://api.github.com/users/github/followers",
+                "following_url": "https://api.github.com/users/github/following{/other_user}",
+                "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+                "organizations_url": "https://api.github.com/users/github/orgs",
+                "repos_url": "https://api.github.com/users/github/repos",
+                "events_url": "https://api.github.com/users/github/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/github/received_events",
+                "type": "Organization",
+                "user_view_type": "public",
+                "site_admin": false
+              },
+              "name": "GitHub Actions",
+              "description": "Automate your workflow from idea to production",
+              "external_url": "https://help.github.com/en/actions",
+              "html_url": "https://github.com/apps/github-actions",
+              "created_at": "2018-07-30T09:30:17Z",
+              "updated_at": "2026-06-18T16:17:48Z",
+              "permissions": {
+                "actions": "write",
+                "administration": "read",
+                "artifact_metadata": "write",
+                "attestations": "write",
+                "checks": "write",
+                "code_quality": "write",
+                "contents": "write",
+                "copilot_requests": "write",
+                "deployments": "write",
+                "discussions": "write",
+                "drives": "write",
+                "issues": "write",
+                "merge_queues": "write",
+                "metadata": "read",
+                "models": "read",
+                "packages": "write",
+                "pages": "write",
+                "pull_requests": "write",
+                "repository_hooks": "write",
+                "repository_projects": "write",
+                "security_events": "write",
+                "statuses": "write",
+                "vulnerability_alerts": "read"
+              },
+              "events": [
+                "branch_protection_rule",
+                "check_run",
+                "check_suite",
+                "create",
+                "delete",
+                "deployment",
+                "deployment_status",
+                "discussion",
+                "discussion_comment",
+                "fork",
+                "gollum",
+                "issues",
+                "issue_comment",
+                "label",
+                "merge_group",
+                "milestone",
+                "page_build",
+                "public",
+                "pull_request",
+                "pull_request_review",
+                "pull_request_review_comment",
+                "push",
+                "registry_package",
+                "release",
+                "repository",
+                "repository_dispatch",
+                "status",
+                "watch",
+                "workflow_dispatch",
+                "workflow_run"
+              ]
+            },
+            "pull_requests": [
+              {
+                "url": "https://api.github.com/repos/PaperStrange/IndiaGames/pulls/3",
+                "id": 5048880913,
+                "number": 3,
+                "head": {
+                  "ref": "hub/visual-readiness-2026-10-28",
+                  "sha": "a0d5a14363a6c13f28cb7de56ba813b7b2c8bdc2",
+                  "repo": {
+                    "id": 562220228,
+                    "url": "https://api.github.com/repos/PaperStrange/IndiaGames",
+                    "name": "IndiaGames"
+                  }
+                },
+                "base": {
+                  "ref": "main",
+                  "sha": "710c1adaab349f20bbc460ff80fd83c44a5cea42",
+                  "repo": {
+                    "id": 562220228,
+                    "url": "https://api.github.com/repos/PaperStrange/IndiaGames",
+                    "name": "IndiaGames"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "stderr": ""
+    }
+  }
+}
