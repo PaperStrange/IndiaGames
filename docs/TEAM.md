@@ -2,13 +2,13 @@
 
 ## Launch coordination · target 20 November 2026
 
-Use the [dated launch plan](launch/2026-11-20/README.md) and each game’s linked human-test packet. Role names remain assignment slots until a real person accepts them. Name a facilitator, device QA owner, release integrator, repository administrator and independent human reviewer by 30 October; otherwise revise the affected launch target. Keep the 60 existing task cards and their completion evidence authoritative. The new schedule does not mark human work complete.
+Use the [dated launch plan](launch/2026-11-20/README.md) and each game’s linked human-test packet. Role names remain assignment slots until a real person accepts them. The November 4 milestone is a [technical readiness handoff](iteration-2026-11-04/README.md); human studies will be arranged later. Name a facilitator, device QA owner, release integrator, repository administrator and independent human reviewer before sessions, then reforecast the affected launch target. Keep the historical task cards and dated follow-ups and their completion evidence authoritative. The new schedule does not mark human work complete.
 
 ## Ownership and status
 
 `main` owns the project overview, current per-game to-do lists, reusable templates and approved official game versions. `master` owns pre-commit candidate packages and their pending or completed human evidence. Each game branch owns its implementation, game-specific research and test evidence. The retired coordination branch is preserved by [`archive/gamejam-next-iteration-2026-10-20`](https://github.com/PaperStrange/IndiaGames/tree/archive/gamejam-next-iteration-2026-10-20) at immutable commit `e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee`; it is not an active work lane. See the [28 October cleanup record](maintenance/2026-10-28.md) for retained branches, backups and recovery. Do not merge entire game branches into main to update a plan; copy only the intended documentation/data or link to a pinned source.
 
-Each task has a role owner, a deliverable, dependencies and acceptance criteria. The current [milestone handoff](milestones/2026-10-27.md) names the packet, runtime, QA and integration agents. Human facilitator and reviewer roles remain unstaffed. `proposed` means not started; `conditional` means a preceding observation must justify selecting it; `blocked_human` means real participants are required. An implemented card is not an official release or human approval. No progress percentage is inferred from the number of cards.
+Each task has a role owner, a deliverable, dependencies and acceptance criteria. The current [readiness handoff](iteration-2026-11-04/README.md) separates technical agents from unstaffed human roles; the [October 27 milestone](milestones/2026-10-27.md) remains historical. Human facilitator and reviewer roles remain unstaffed. `proposed` means not started; `conditional` means a preceding observation must justify selecting it; `blocked_human` means real participants are required. An implemented card is not an official release or human approval. No progress percentage is inferred from the number of cards.
 
 ## Parallel work that stays compatible
 
@@ -48,10 +48,14 @@ Use explicit categories: source/critic-only, access/menu/lobby-only, partial gam
 
 Follow [RELEASE-POLICY.md](RELEASE-POLICY.md). A release integrator packages a source-branch revision on `master`; a facilitator observes six predeclared human sessions on that exact artifact; an independent human reviewer assesses the raw records and thresholds. Failed or incomplete candidates stay on master. Publish a correction as a new version, preserving the previous evidence.
 
-Vivid's two-story extension is pending owner review in [PR #1](https://github.com/PaperStrange/IndiaGames/pull/1). Its candidate requires separate six-person cohorts for Iona and Mara on the same build, with an optional additional neutral Iona cohort. Do not promote Vivid before that policy review and real human approval; no facilitator or participants are staffed by these agent assignments.
+Vivid's two-story extension was merged in [PR #1](https://github.com/PaperStrange/IndiaGames/pull/1) on November 4 after independent agent review under the user-authorized exception for this batch. Its candidate requires separate six-person cohorts for Iona and Mara on the same build, with an optional additional neutral Iona cohort. Policy integration is not real human game approval; do not promote Vivid before that approval; no facilitator or participants are staffed by these agent assignments.
 
 A maintainer promotes only an approved `game/version` into main through a reviewed PR. The gate checks source provenance, hashes, human criteria and prior-version immutability. After merge, the workflow publishes the GitHub release and the dashboard provides the official build, version and notes. Agent-written check results cannot replace human playtest or approval. Main documentation and hub maintenance may proceed with an empty release registry; this does not certify any game.
 
 ## Allowance and restart checkpoint
 
 Remaining Codex allowance is not visible to the agent. If the user reports it below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait. Include branch/commit and working-tree state, artifact hashes, active-agent ownership, remote verification and recovery-bundle location; do not infer a percentage or claim automatic monitoring.
+
+## Dated code-review exception · 4 November 2026
+
+For this readiness and existing-PR batch, the user authorized independent agent code review. The batch record must identify each reviewed head, checks, reviewer findings and actual merge result. This is a dated execution exception, not a standing relaxation of branch protection, code-owner enforcement or the human playtest/release gate. Physical-device evidence and independent human game approval remain required. See [current readiness](iteration-2026-11-04/README.md) and [issue dispositions](iteration-2026-11-04/issues.md).

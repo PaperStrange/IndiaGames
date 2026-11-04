@@ -30,7 +30,7 @@ def build():
         document = launch.get('plan_document', '')
         if document != f"docs/launch/{launch['target_date_utc']}/README.md" or not (ROOT / document).is_file():
             raise ValueError('Missing launch plan document')
-        packet_pattern = r'https://github\.com/PaperStrange/IndiaGames/blob/[0-9a-f]{40}/docs/gamejam/launch-' + re.escape(launch['target_date_utc']) + r'/README\.md'
+        packet_pattern = r'https://github\.com/PaperStrange/IndiaGames/blob/[0-9a-f]{40}/docs/gamejam/(?:launch-' + re.escape(launch['target_date_utc']) + r'/README\.md|readiness-2026-11-04/HUMAN-HANDOFF\.md)'
         for lane, source in sources.items():
             if not re.fullmatch(packet_pattern, source.get('human_playtest_packet', '')):
                 raise ValueError(f'{lane}: missing pinned human playtest packet')
@@ -98,9 +98,12 @@ def build():
             'pilot_packet': source.get('pilot_packet'),
             'human_playtest_packet': source.get('human_playtest_packet'),
             'human_staffing': source.get('human_staffing'),
+            'current_readiness_document': source.get('current_readiness_document'),
+            'technical_readiness_label': source.get('technical_readiness_label'),
             'official_release': source.get('official_release', False),
         } for lane, source in sources.items()},
         'source_manifest': 'source-manifest.json',
+        'readiness': manifest.get('readiness'),
         'launch': launch,
         'status_definitions': {
             'proposed': 'Planned; not started.',
@@ -112,9 +115,9 @@ def build():
         },
         'gates': [
             {'id': 'plan-settlement', 'status': 'settled', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'The approved milestone prepares three human playtest packets: Small Hours keeps its baseline, Vivid keeps 0.1.2, and Bell implements Prepare Mina’s route. Human observations still determine subsequent feature and release decisions.'},
+             'requirement': 'The November 4 readiness handoff preserves Small Hours and Bell, permits the bounded shared-helper correction for Vivid, and separates supported HTTP verification from human studies arranged later. Human observations still determine subsequent feature and release decisions.'},
             {'id': 'competitor-coverage', 'status': 'open', 'applies_to': ['memorable', 'vivid', 'bell'],
-             'requirement': 'Retain each lane’s six-title roster, broad-family coverage, substituted editions and unfinished endpoints. The October 22 uploads add evidence, not human validation or six completed journeys. Current competitor and pilot packets carry the qualifications; historical original-roster counts remain separate.'},
+             'requirement': 'Retain each lane’s six-title roster, broad-family coverage, substituted editions and unfinished endpoints. The October 28–30 records and November archive uploads add inspectable evidence, not human validation or six completed journeys. Current competitor and pilot packets carry the qualifications; historical original-roster counts remain separate.'},
             {'id': 'human-validation', 'status': 'not_run', 'applies_to': ['memorable', 'vivid', 'bell'],
              'requirement': 'Observe actual people using the per-game protocol; automated checks and emotional agent prose are not human evidence.'}
         ],

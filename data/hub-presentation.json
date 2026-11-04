@@ -6,7 +6,7 @@
     {
       "lane": "memorable",
       "promise": "Make a small shared memory, together.",
-      "next_action": "Observe six real pairs on the unchanged baseline.",
+      "next_action": "Arrange six real pairs using the verified unchanged baseline.",
       "image": {
         "src": "assets/hub/small-hours-opening.png",
         "alt": "Small Hours opening screen with a moonlit window, two cups and a shared postcard.",
@@ -32,7 +32,7 @@
     {
       "lane": "vivid",
       "promise": "Two small worlds. Two ways to care.",
-      "next_action": "Test Iona and Mara with six different people per story.",
+      "next_action": "Arrange six people per story on staged 0.1.3.",
       "image": {
         "src": "assets/hub/vivid-iona-opening.png",
         "alt": "Vivid opening scene with harbour keeper Iona beside a lamp inside a wooden frame.",
@@ -58,7 +58,7 @@
     {
       "lane": "bell",
       "promise": "Learn the town. Change an outcome.",
-      "next_action": "Run six counterbalanced comparisons with the frozen previous build.",
+      "next_action": "Arrange six counterbalanced comparisons on unchanged 0.1.0.",
       "image": {
         "src": "assets/hub/bell-town-map.webp",
         "alt": "Illustrated town map with six districts surrounding a clock marked Dawn, Noon, Dusk and Midnight.",

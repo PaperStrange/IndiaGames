@@ -2,21 +2,23 @@
 
 [Open the game dashboard](https://paperstrange.github.io/IndiaGames/) · [Team board](https://paperstrange.github.io/IndiaGames/#tasks) · [Design templates](templates/game-demo/README.md)
 
-The **Overview** combines real game images, playtest readiness and the November timeline. The **Team board** keeps all 60 tasks, filters and acceptance details available without a long wall of cards. These are development views; no game has an approved official release yet.
+The **Overview** combines real game images, playtest readiness and the November timeline. The **Team board** keeps the historical tasks and dated readiness follow-ups, filters and acceptance details available without a long wall of cards. These are development views; no game has an approved official release yet.
 
 | Game | Experience being tested | Current artifact | Human work still required |
 |---|---|---|---|
 | **Small Hours** · Memorable Moments | Two people make a brief shared activity their own. | Unchanged baseline; not staged on master | Six pairs |
-| **Vivid** · formerly Keeper’s Frame | Two stories express meaning through different actions. | Candidate 0.1.2: Iona and Mara | Six people per story, in separate cohorts |
+| **Vivid** · formerly Keeper’s Frame | Two stories express meaning through different actions. | Candidate 0.1.3 staged on master; 0.1.2 preserved | Six people per story, in separate cohorts |
 | **The Thirteenth Bell** | Understanding a repeated event enables a meaningful intervention. | Candidate 0.1.0: Mina’s route | Six people, balanced comparison order |
 
 [Per-game checklists, recording templates and launch plans](docs/launch/2026-11-20/README.md#game-packets) include exact-artifact setup. GitHub source links open repository files; they are not browser play buttons. Repair of the older candidate Pages URL is paused at the owner’s request.
+
+[November 4 readiness handoff](docs/iteration-2026-11-04/README.md) separates current evidence adjudication, published supported HTTP checks and human studies arranged later. Vivid 0.1.3 is staged on master; human approval and official publication remain pending. [Issue dispositions](docs/iteration-2026-11-04/issues.md) retain the protection and original managed-browser limitations.
 
 ## November 20 target
 
 | Pilot | Select one correction | Freeze | Go / no-go | Conditional launch |
 |---|---|---|---|---|
-| Oct 31–Nov 4 | Nov 5; implement Nov 6–10 | Nov 11 | Nov 16 | Nov 20 |
+| Schedule after technical handoff; all human cohorts pending | One observed issue or no change | Nov 11 target | Nov 16 target | Nov 20 conditional |
 
 Actual observations, physical-device checks and independent approval determine which games can ship. The [full calendar](docs/launch/2026-11-20/README.md) preserves the required cohorts and decision criteria.
 

@@ -1,5 +1,31 @@
 # Small Hours — unchanged-baseline pilot
 
+## Current readiness handoff · 4 November 2026
+
+4 November: 8 supported-HTTP lifecycle cases passed across root/nested mounts, 1280/390px and pair/rehearsal modes; actual SVG contents and replay/reset/reload checked, zero reported errors, frozen baseline unchanged. Keyboard/focus, blank/maximum-length details, timer expiry, physical devices and real pair experience were not tested in this pass.
+
+[Current game handoff](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Human handoff](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/README.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
+
+Required human studies, physical devices and independent approval remain pending. Historical completed IDs and evidence are preserved; dated follow-ups do not erase prior verification.
+
+### SH-20 · Verify Small Hours through supported HTTP and hand off pair testing
+
+**Status:** `done` · **Owner:** QA/tooling lead and game integrator · **Priority:** P0
+
+Dated supported-HTTP evidence and an exact-artifact human-study handoff for issue #5.
+
+- Document a co-located HTTP browser route, exact frozen baseline identity, browser/version and root/project-style nested mounts; preserve the original managed-browser/LNA limitation from issue #5.
+- Complete pair-flow and solo rehearsal with visible controls, both privacy handoffs, both choice/guess stages and both detail rounds; record mode-specific labels rather than treating them as equivalent driver selectors.
+- Verify the actual downloaded SVG and its two details, Make another moment, End & forget, reload behavior and browser/network errors; compare frozen inventory before and after.
+- Preserve the unchanged baseline and six-pair protocol. Publish blank human handoff and assistance fields; one operator filling both roles cannot establish voluntary replay, mutual contribution or pair comfort.
+
+4 November: 8 supported-HTTP lifecycle cases passed across root/nested mounts, 1280/390px and pair/rehearsal modes; actual SVG contents and replay/reset/reload checked, zero reported errors, frozen baseline unchanged. Keyboard/focus, blank/maximum-length details, timer expiry, physical devices and real pair experience were not tested in this pass. This closes technical handoff only; required human studies, devices and release approval remain pending.
+
+**Evidence:** [record 1](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/README.md) · [record 2](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [record 3](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/technical-qa.json)
+
+<details>
+<summary>Archived October 28 coordination note</summary>
+
 ## Next iteration · launch target 20 November 2026
 
 Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
@@ -11,6 +37,9 @@ The settled milestone prepares the unchanged build and six-pair observation pack
 [Current playtest packet](https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
 
 The current packet reconciles the October 22 research uploads with edition, substitution and partial-journey limits. Underlying play dates remain explicit. The detailed baseline below is retained for design rationale and acceptance criteria; its historical coverage/status statements do not replace the current packet, task JSON or source manifest. No human facilitator or independent reviewer is assigned.
+
+
+</details>
 
 ## Preserved design rationale and acceptance criteria
 
