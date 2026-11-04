@@ -1,0 +1,243 @@
+{
+  "kind": "automated-technical-qa-not-human-study",
+  "game": "thirteenth-bell",
+  "version": "0.1.0",
+  "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06",
+  "master_packet_commit": "02c78ad9739622fb447850fbecb5f46e7dec8de8",
+  "harness_source_commit": "3d4e205c417272f00b87c76c00532f4456d31e38",
+  "build_inventory_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+  "entrypoint_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973",
+  "browser": "151.0.7922.173",
+  "human_sessions": 0,
+  "result": "PASS, with historical reference optional-font qualification",
+  "runs": [
+    {
+      "id": "bell-root-01",
+      "started_at": "2026-11-04T15:50:56.048Z",
+      "finished_at": "2026-11-04T15:51:31.140Z",
+      "result": "PASS",
+      "passed": 16,
+      "failed": 0,
+      "artifacts_unchanged": true,
+      "scenarios": [
+        {
+          "name": "immutable comparison retains Original and previous Contrast",
+          "status": "PASS"
+        },
+        {
+          "name": "cancel and late arrival never manufacture eyewitness knowledge",
+          "status": "PASS"
+        },
+        {
+          "name": "correct forecast does not gate witnessing or ordinary preparation",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong forecast does not gate witnessing or ordinary preparation",
+          "status": "PASS"
+        },
+        {
+          "name": "blank forecast does not gate witnessing or ordinary preparation",
+          "status": "PASS"
+        },
+        {
+          "name": "borrowed preparation is atomic and preserves an expedition action",
+          "status": "PASS"
+        },
+        {
+          "name": "Fracture four before Noon interrupts the event and its forecast",
+          "status": "PASS"
+        },
+        {
+          "name": "catastrophe after Noon preserves the already observed outcome",
+          "status": "PASS"
+        },
+        {
+          "name": "missed intervention is legible and daily state resets while knowledge remains",
+          "status": "PASS"
+        },
+        {
+          "name": "mode isolation and reload clear only their intended run state",
+          "status": "PASS"
+        },
+        {
+          "name": "Mina intervention retains the complete ending and restart",
+          "status": "PASS"
+        },
+        {
+          "name": "complete keyboard journey witnesses remembers prepares and sees the outcome",
+          "status": "PASS"
+        },
+        {
+          "name": "390px touch emulation exposes the same causal outcome",
+          "status": "PASS"
+        },
+        {
+          "name": "200 percent text enlargement reflows at a 390px viewport",
+          "status": "PASS"
+        },
+        {
+          "name": "821x462 embedded candidate supports a full boundary",
+          "status": "PASS"
+        },
+        {
+          "name": "portable single-file distribution carries the causal scene",
+          "status": "PASS"
+        }
+      ],
+      "optional_reference_font_failures": {
+        "requests": [
+          {
+            "scenario": "immutable comparison retains Original and previous Contrast",
+            "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+            "error": "net::ERR_CERT_AUTHORITY_INVALID"
+          }
+        ],
+        "console": [
+          {
+            "scenario": "immutable comparison retains Original and previous Contrast",
+            "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID",
+            "location": {
+              "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          }
+        ],
+        "limit": "The frozen comparison rendered with fallback fonts; its requested web-font appearance was not verified."
+      },
+      "blocking_console_errors": [],
+      "blocking_failed_requests": [],
+      "page_errors": []
+    },
+    {
+      "id": "bell-nested-390-02",
+      "started_at": "2026-11-04T15:58:42.698Z",
+      "finished_at": "2026-11-04T15:59:09.605Z",
+      "result": "PASS",
+      "passed": 16,
+      "failed": 0,
+      "artifacts_unchanged": true,
+      "scenarios": [
+        {
+          "name": "immutable comparison retains Original and previous Contrast",
+          "status": "PASS"
+        },
+        {
+          "name": "cancel and late arrival never manufacture eyewitness knowledge",
+          "status": "PASS"
+        },
+        {
+          "name": "correct forecast does not gate witnessing or ordinary preparation",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong forecast does not gate witnessing or ordinary preparation",
+          "status": "PASS"
+        },
+        {
+          "name": "blank forecast does not gate witnessing or ordinary preparation",
+          "status": "PASS"
+        },
+        {
+          "name": "borrowed preparation is atomic and preserves an expedition action",
+          "status": "PASS"
+        },
+        {
+          "name": "Fracture four before Noon interrupts the event and its forecast",
+          "status": "PASS"
+        },
+        {
+          "name": "catastrophe after Noon preserves the already observed outcome",
+          "status": "PASS"
+        },
+        {
+          "name": "missed intervention is legible and daily state resets while knowledge remains",
+          "status": "PASS"
+        },
+        {
+          "name": "mode isolation and reload clear only their intended run state",
+          "status": "PASS"
+        },
+        {
+          "name": "Mina intervention retains the complete ending and restart",
+          "status": "PASS"
+        },
+        {
+          "name": "complete keyboard journey witnesses remembers prepares and sees the outcome",
+          "status": "PASS"
+        },
+        {
+          "name": "390px touch emulation exposes the same causal outcome",
+          "status": "PASS"
+        },
+        {
+          "name": "200 percent text enlargement reflows at a 390px viewport",
+          "status": "PASS"
+        },
+        {
+          "name": "821x462 embedded candidate supports a full boundary",
+          "status": "PASS"
+        },
+        {
+          "name": "portable single-file distribution carries the causal scene",
+          "status": "PASS"
+        }
+      ],
+      "optional_reference_font_failures": {
+        "requests": [
+          {
+            "scenario": "immutable comparison retains Original and previous Contrast",
+            "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+            "error": "net::ERR_CERT_AUTHORITY_INVALID"
+          }
+        ],
+        "console": [
+          {
+            "scenario": "immutable comparison retains Original and previous Contrast",
+            "message": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID",
+            "location": {
+              "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          }
+        ],
+        "limit": "The frozen comparison rendered with fallback fonts; its requested web-font appearance was not verified."
+      },
+      "blocking_console_errors": [],
+      "blocking_failed_requests": [],
+      "page_errors": []
+    },
+    {
+      "id": "bell-nested-1280-ending-03",
+      "started_at": "2026-11-04T16:00:59.068Z",
+      "finished_at": "2026-11-04T16:01:03.156Z",
+      "result": "PASS_SELECTED",
+      "passed": 1,
+      "failed": 0,
+      "artifacts_unchanged": true,
+      "scenarios": [
+        {
+          "name": "Mina intervention retains the complete ending and restart",
+          "status": "PASS"
+        }
+      ],
+      "optional_reference_font_failures": {
+        "requests": [],
+        "console": [],
+        "limit": "The frozen comparison rendered with fallback fonts; its requested web-font appearance was not verified."
+      },
+      "blocking_console_errors": [],
+      "blocking_failed_requests": [],
+      "page_errors": []
+    }
+  ],
+  "limitations": [
+    "Historical reference Google Fonts request failed certificate validation; its system-font fallback was used. Candidate resources had no failures.",
+    "Repeated DOM button activation appears only in the explicitly labelled atomicity/race regression; normal flows use visible click/tap/keyboard controls.",
+    "No human reading comprehension, tension, fairness, recall or player comparison measured.",
+    "No physical-device/screen-reader result.",
+    "No verdict on externally hosted candidate or separate managed Chromium152 route."
+  ]
+}

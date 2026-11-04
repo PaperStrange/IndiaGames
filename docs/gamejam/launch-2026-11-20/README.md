@@ -2,6 +2,8 @@
 
 Prepared **28 October 2026**. Target: **20 November 2026**, conditional on the exact build passing the existing human release gate. No people have been scheduled, sessions conducted, or approval supplied by these documents. This packet makes the next work assignable; it does not change the game or the study criteria.
 
+Current evidence adjudication and the supplementary diagnostic sheet are in the [November 4 readiness handoff](../readiness-2026-11-04/README.md). The protocol, thresholds, frozen identities and blank forms below remain authoritative; technical checks do not constitute human approval.
+
 | Start here | Purpose |
 |---|---|
 | [Playtest list](PLAYTEST-LIST.md) | Staffing, registration, facilitator tasks, device coverage and release mapping |

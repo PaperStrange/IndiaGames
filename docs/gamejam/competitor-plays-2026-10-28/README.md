@@ -1,8 +1,10 @@
 # Bell 0.1.0 — demo records + competitor plays, 2026-10-28
 
 Reviewed package from the 2026-10-28 play session (plus the 2026-10-30
-PhotoHacks retry where noted in the Vivid coverage). Observations, not
-conclusions: the one-page critique is not filed here.
+PhotoHacks retry where noted in the Vivid coverage). Original observations and
+historical conclusions are filed together; their evidence limits remain visible.
+For the current decision, start with the [November 4 readiness adjudication and
+human handoff](../readiness-2026-11-04/README.md).
 
 ## Contents
 
@@ -23,33 +25,35 @@ session record. Unsuccessful and contradictory experiences are preserved, not
 cleaned up. Filenames in places differ from content (audited 2026-10-29);
 captions describe the frame, not the filename.
 
-## Still open for this demo
+## Current open work
 
-one-line in-game advance-rule fix + fresh-player re-test; Fracture 4; Original run; ROLLBACK's other 7 endings; Core Rush loop reset; Same Bullet Room 1 clear; Night OClock carry-over; last seen online photos4em.zip gate (3124 confirmed wrong; 1243/3142 no unlock observed).
+Technical phase/anchor/Fracture verification and real human studies remain separate workstreams; see the [readiness dashboard](../readiness-2026-11-04/README.md). The historical one-line advance-rule proposal is not an approved runtime patch: predictions are optional, map destinations are buttons, and the older patch spec quotes a different stage copy. No routine copy change is selected before human evidence unless an actual visible-control defect is reproduced.
+
+The October 28 agent session did not cover Fracture 4 or a full Original run. That session limit is not a statement about all technical checks. Competitor gaps remain: ROLLBACK's other 7 endings; Core Rush's loop reset; Same Bullet Room 1; Night OClock carry-over; last seen online photos4em.zip (3124 reported wrong; 1243/3142 produced no observed unlock). The missing second completed deep comparison is a research gap, not an added release gate.
 
 ## Notes on this filing
 
-- Play scripts and logs intentionally NOT filed (local only); neither are HTML
-  review copies, the one-page critique, or live browser-task PDFs (cited by
-  task ID in-record).
+- Play scripts and raw execution logs remain local only. The historical critique,
+  self-contained HTML review copies and cited live browser-task PDFs are now filed
+  below. Their presence improves inspectability; it does not add human results.
 - Local path mapping: the records' original `play-2026-10-28/<demo>/` and
   `play-2026-10-28/competitors/` prefixes map to `evidence/<demo>/` and
   `evidence/competitors/` here.
-- Companion packages: Small Hours on memorable-moments-game, Keeper's Frame on vivid-2.5d-photo-game.
+- Companion packages: [Small Hours](https://github.com/PaperStrange/IndiaGames/tree/45042578e549d0aba3ee10702384d0a86c780aa9/docs/gamejam/competitor-plays-2026-10-28) and [Keeper's Frame](https://github.com/PaperStrange/IndiaGames/tree/b9e1560cc641691bc8d48b4254cab0bac73fe64c/docs/gamejam/competitor-plays-2026-10-28).
 
 ## Derived documents and raw captures
 
 How the non-record files relate to `records/`:
 
-- `critique--one-page-2026-10-28.md` — conclusions drawn FROM the records
-  (the one-page report). The same file is filed on all three branches; it is
-  package-wide, so its embeds point at `evidence/` paths that resolve fully
-  only across the three branches together (each branch holds its own demo's
-  evidence). The self-contained HTML beside it resolves fully on every branch.
+- [Historical critique](critique--one-page-2026-10-28.md) — package-wide conclusions
+  drawn from the records. Its claims remain historical; the readiness adjudication
+  supplies current corrections. Images use pinned raw links to each owning branch
+  so this Markdown is viewable independently.
 - `html/` — self-contained renderings of the markdown (base64-embedded
   images) for readers whose viewer cannot render markdown image embeds. Content
-  is identical to the markdown: the critique plus this branch's coverage
-  record. The markdown in `records/` remains the original.
+  reflects the archived report and this branch's coverage record. These historical
+  HTML bytes are preserved; the Markdown critique now adds a dated notice and
+  repaired image destinations. The five Markdown files in `records/` remain original.
 - `evidence/competitors/<game>/pdf/<task-uuid>/` — the raw browser-task PDF
   captures BEHIND the competitor records, original filenames, one subdir per
   cited task. The renders in the parent dir are conversions of these pages.
@@ -59,3 +63,4 @@ How the non-record files relate to `records/`:
   dir (verified byte-identical). Tranquility captures are not filed: no task
   ID for them is cited in the filed records (the failure is recorded in prose
   in the Vivid coverage).
+
