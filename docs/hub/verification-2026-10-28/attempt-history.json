@@ -1,0 +1,138 @@
+[
+  {
+    "run": "run-01",
+    "observed_at": "2026-10-28T10:13:50.833Z",
+    "status": "fail",
+    "failure": "Error: Command failed: git diff --exit-code 0c72da97994d9f2d315e6aba1afba5219936b78b vivid-2.5d-photo-game -- vivid-2.5d-photo-game/play\n    at genericNodeError (node:internal/errors:985:15)\n    at wrappedFn (node:internal/errors:539:14)\n    at checkExecSyncError (node:child_process:942:11)\n    at execFileSync (node:child_process:978:15)\n    at git (file:///workspace/IndiaGames/tests/hub/browser.mjs:17:21)\n    at verifyIdentity (file:///workspace/IndiaGames/tests/hub/browser.mjs:55:5)\n    at file:///workspace/IndiaGames/tests/hub/browser.mjs:383:9",
+    "errors": [],
+    "input_sha256": {
+      "index.html": "f4b7058383f2678b8a1fbba46aa0fe9116933b7d860ee204fdb10940c313bfd1",
+      "app.js": "3e2cc65f7432dac1df55dc0ec694b9a6a85fb6d4e5c561b1df77d9be5ec96d38",
+      "styles.css": "6abe4ed8f75be663c725b8f6537f893149d32c0ded4f51acaac05c70ed287d75",
+      "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+      "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+      "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+      "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "tests/hub/browser.mjs": "5c34434f54b1d729d361f781189c6fbaf82c24ae8d6aa9ece4a9f7f07df05adb"
+    }
+  },
+  {
+    "run": "run-02",
+    "observed_at": "2026-10-28T10:14:14.091Z",
+    "status": "fail",
+    "failure": "Error: spawnSync git ENOBUFS\n    at Object.spawnSync (node:internal/child_process:1160:20)\n    at spawnSync (node:child_process:928:24)\n    at execFileSync (node:child_process:971:15)\n    at blob (file:///workspace/IndiaGames/tests/hub/browser.mjs:18:24)\n    at verifyIdentity (file:///workspace/IndiaGames/tests/hub/browser.mjs:69:81)\n    at file:///workspace/IndiaGames/tests/hub/browser.mjs:386:9",
+    "errors": [],
+    "input_sha256": {
+      "index.html": "f4b7058383f2678b8a1fbba46aa0fe9116933b7d860ee204fdb10940c313bfd1",
+      "app.js": "3e2cc65f7432dac1df55dc0ec694b9a6a85fb6d4e5c561b1df77d9be5ec96d38",
+      "styles.css": "6abe4ed8f75be663c725b8f6537f893149d32c0ded4f51acaac05c70ed287d75",
+      "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+      "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+      "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+      "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "tests/hub/browser.mjs": "b522eac639fea424a6d50ba48d5dd1d774c6c938ea516a322bd09fdf4de2fec2"
+    }
+  },
+  {
+    "run": "run-03",
+    "observed_at": "2026-10-28T10:14:21.426Z",
+    "status": "fail",
+    "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'SH-17',\n+   'SH-18'\n  ]\n\n    at checkJourney (file:///workspace/IndiaGames/tests/hub/browser.mjs:290:14)\n    at async file:///workspace/IndiaGames/tests/hub/browser.mjs:392:3",
+    "errors": [],
+    "input_sha256": {
+      "index.html": "f4b7058383f2678b8a1fbba46aa0fe9116933b7d860ee204fdb10940c313bfd1",
+      "app.js": "3e2cc65f7432dac1df55dc0ec694b9a6a85fb6d4e5c561b1df77d9be5ec96d38",
+      "styles.css": "6abe4ed8f75be663c725b8f6537f893149d32c0ded4f51acaac05c70ed287d75",
+      "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+      "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+      "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+      "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "tests/hub/browser.mjs": "3ef30473314a3b80df0dc144a89e48a0b9ecf7ffeebd2935fb80f28c7700eab3"
+    }
+  },
+  {
+    "run": "run-04",
+    "observed_at": "2026-10-28T10:14:46.430Z",
+    "status": "fail",
+    "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at checkJourney (file:///workspace/IndiaGames/tests/hub/browser.mjs:262:14)\n    at async file:///workspace/IndiaGames/tests/hub/browser.mjs:393:3",
+    "errors": [],
+    "input_sha256": {
+      "index.html": "f4b7058383f2678b8a1fbba46aa0fe9116933b7d860ee204fdb10940c313bfd1",
+      "app.js": "9cf051dfe09bbf982776fb4231627240eed5b95358fa51511d201d61c02656e6",
+      "styles.css": "6abe4ed8f75be663c725b8f6537f893149d32c0ded4f51acaac05c70ed287d75",
+      "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+      "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+      "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+      "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "tests/hub/browser.mjs": "ab7e5b9841c098ec6f4e1ca169bf61b5ee8ac76f0b4d79a2866b3371dd1ed14a"
+    }
+  },
+  {
+    "run": "run-05",
+    "observed_at": "2026-10-28T10:15:22.633Z",
+    "status": "fail",
+    "failure": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:43265/IndiaGames/\", waiting until \"networkidle\"\u001b[22m\n\n    at checkJourney (/workspace/IndiaGames/tests/hub/browser.mjs:353:16)\n    at async file:///workspace/IndiaGames/tests/hub/browser.mjs:402:3",
+    "errors": [],
+    "input_sha256": {
+      "index.html": "df1efa51d59388591ddf30e3187945c93bb17e8435058532eac5cc28f8cb447a",
+      "app.js": "9cf051dfe09bbf982776fb4231627240eed5b95358fa51511d201d61c02656e6",
+      "styles.css": "6abe4ed8f75be663c725b8f6537f893149d32c0ded4f51acaac05c70ed287d75",
+      "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+      "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+      "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+      "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "tests/hub/browser.mjs": "58d0bb218870769c06c2332465d245821ec4ed608823e48faae726ba928b84e9"
+    }
+  },
+  {
+    "run": "run-06",
+    "observed_at": "2026-10-28T10:17:03.096Z",
+    "status": "pass",
+    "failure": null,
+    "errors": [],
+    "input_sha256": {
+      "index.html": "df1efa51d59388591ddf30e3187945c93bb17e8435058532eac5cc28f8cb447a",
+      "app.js": "38dceee01cc6844517ffbf6e612f230e186b6158c92c4638f0adc5e7c8be8b86",
+      "styles.css": "6abe4ed8f75be663c725b8f6537f893149d32c0ded4f51acaac05c70ed287d75",
+      "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+      "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+      "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+      "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "tests/hub/browser.mjs": "5540da3bb8e27495fec1f0490bf9b6415b322392a6673feb1a780b954ce1099d"
+    }
+  },
+  {
+    "run": "run-07",
+    "observed_at": "2026-10-28T10:18:27.975Z",
+    "status": "pass",
+    "failure": null,
+    "errors": [],
+    "input_sha256": {
+      "index.html": "df1efa51d59388591ddf30e3187945c93bb17e8435058532eac5cc28f8cb447a",
+      "app.js": "38dceee01cc6844517ffbf6e612f230e186b6158c92c4638f0adc5e7c8be8b86",
+      "styles.css": "6abe4ed8f75be663c725b8f6537f893149d32c0ded4f51acaac05c70ed287d75",
+      "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+      "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+      "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+      "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "tests/hub/browser.mjs": "1abe2eee97d07ac26425988660a5298bd44d6872e78b2531735acab37b55fb01"
+    }
+  },
+  {
+    "run": "run-08",
+    "observed_at": "2026-10-28T10:20:38.435Z",
+    "status": "pass",
+    "failure": null,
+    "errors": [],
+    "input_sha256": {
+      "index.html": "22a12a375950375faea48354f83763a81b7e8b860b59248443fd56f05400fb15",
+      "app.js": "01d76130232471fc91e5af2e4629bdff328a81d9c490fc96ab973fc6ba0c6db8",
+      "styles.css": "9b2d96f9b60b139dd38327498a02cc5bf82370ab42152e162820f2992e6a8bbe",
+      "data/hub-presentation.json": "5e40b88bbf95cf1e7c89ac597981ea202ac092e509da6eabef73a5509d193057",
+      "data/tasks.json": "019188bbf63763e828304c3b325a15e61850f7da9b14e86a1e763543f8075f81",
+      "data/source-manifest.json": "8aeeb66fee8abd3737b752f36322065e11afc506c594f0e35d74b152a393273c",
+      "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "tests/hub/browser.mjs": "1abe2eee97d07ac26425988660a5298bd44d6872e78b2531735acab37b55fb01"
+    }
+  }
+]
