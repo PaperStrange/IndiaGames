@@ -1,0 +1,15 @@
+{
+  "id": null,
+  "story_id": null,
+  "condition": null,
+  "participant_count": 1,
+  "participant_ids": [],
+  "method": null,
+  "observer_is_human": false,
+  "observer_id": null,
+  "build_sha256": null,
+  "started_at": null,
+  "completed_at": null,
+  "observation_notes": null,
+  "metrics": {}
+}
