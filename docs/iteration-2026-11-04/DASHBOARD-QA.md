@@ -4,13 +4,15 @@
 
 | Execution identity | Value |
 | --- | --- |
-| UTC window | 2026-11-04 16:12:20–16:12:34 |
+| UTC window | 2026-11-04 16:22:55–16:23:09 |
 | Tested branch | `hub/readiness-2026-11-04` |
-| Ancestry commit | `9bc2934c2550a4bd0699e5ee690c19e3bac438e9` plus the final readiness working-tree changes |
+| Ancestry commit | `e7da54fb810e48229917771f13ce6ac27f1596a4` plus the final readiness working-tree changes |
 | Exact bytes | Eleven runtime/data/test input SHA-256 values in [dashboard-qa.json](dashboard-qa.json); unchanged throughout the run |
 | Browser | Chromium 151.0.7922.173, installed Playwright 1.56.1, Linux managed cloud |
 | Transport | Same-host ephemeral HTTP; inherited proxy/TLS unchanged; no `file://` fallback |
 | Errors | Zero unexpected page errors, failed requests or HTTP error responses |
+
+This second run supersedes the first dashboard pass after a factual delivery-status correction: PR #4 was confirmed successful and merged, and current delivery metadata was refreshed. Only `data/source-manifest.json` and generated `data/tasks.json` changed among the eleven tested inputs. Run01 and its original handoff remain retained; the task count, UI code, human gates and candidate bytes did not change.
 
 The ancestry commit alone is not the tested revision. The compact JSON records exact input hashes; the release coordinator should bind the eventual commit to those inputs before publishing. GitHub CI and deployment must still verify that published revision.
 
@@ -45,4 +47,4 @@ PLAYWRIGHT_MODULE=/workspace/IndiaGames/vivid-2.5d-photo-game/play/node_modules/
 
 `PLAYWRIGHT_MODULE` can point to another installed module; `CHROMIUM_PATH` defaults to `/usr/bin/chromium`. The runner starts and stops its own same-host server, validates Git/source inventories before browsing, and records failed attempts rather than changing policy or falling back to another transport. No tracked files were changed by QA. Browser and server were closed in `finally`.
 
-Detailed output and ten screenshots remain at `/workspace/indiagames-readiness-2026-11-04/qa/dashboard-final-01/` (a retained workspace path, not a public link). The compact JSON includes the full external report's hash. No live Pages request, paused candidate-URL repair, game regression, physical-device session or human approval is implied by this dashboard pass. Test coverage includes the specific filter/search/deep-link cases above, not every possible combination or a full screen-reader audit.
+Detailed output and ten screenshots remain at `/workspace/indiagames-readiness-2026-11-04/qa/dashboard-final-02/` (a retained workspace path, not a public link). The compact JSON includes the full external report's hash. No live Pages request, paused candidate-URL repair, game regression, physical-device session or human approval is implied by this dashboard pass. Test coverage includes the specific filter/search/deep-link cases above, not every possible combination or a full screen-reader audit.

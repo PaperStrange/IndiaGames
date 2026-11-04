@@ -116,22 +116,29 @@
       },
       {
         "number": 4,
-        "status": "review_pass_ci_queued",
+        "status": "merged",
         "reviewed_head": "16ac76f3cdb3fc9efb69daad31f8d04166838e30",
-        "ci_queued_since_utc": "2026-11-04 15:51 UTC"
+        "merge_commit": "e27a774b6bef95b7a48e4eeb910dce819e3082c9",
+        "ci_conclusion": "success",
+        "ci_completed_at": "2026-11-04T15:51:58Z"
       },
       {
         "number": 3,
         "status": "review_pass_ci_queued",
-        "reviewed_head": "39a8ebf51e65f82865dafeffaad872b8d52b9ab6"
+        "reviewed_head": "aa513ec621d5a47ecfc15330674a14aff146cc71"
       },
       {
         "number": 6,
         "status": "open_staging_not_merged",
         "head": "6ac31873f21159943801d5646c3ac37c0eba3e5a"
+      },
+      {
+        "number": 7,
+        "status": "review_pass_current_ci_pending"
       }
     ],
-    "delivery_note": "Delivery: PRs #3, #4 and #6 await GitHub CI, with no runner assigned. Candidate staging and dashboard publication remain pending; the queue cause is unestablished."
+    "delivery_note": "Delivery: policy/governance PRs #1 and #4 are merged. Reviewed Vivid staging (#6) and dashboard publication (#7) await current CI; real human release approval remains pending.",
+    "status_checked_at": "2026-11-04T16:21:06Z"
   },
   "launch": {
     "target_date_utc": "2026-11-20",

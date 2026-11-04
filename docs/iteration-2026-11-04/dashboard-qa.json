@@ -1,18 +1,18 @@
 {
   "kind": "automated-local-dashboard-qa-not-live-deployment",
   "status": "pass",
-  "observed_at": "2026-11-04T16:12:20.282Z",
-  "completed_at": "2026-11-04T16:12:34.041Z",
+  "observed_at": "2026-11-04T16:22:55.642Z",
+  "completed_at": "2026-11-04T16:23:09.623Z",
   "branch": "hub/readiness-2026-11-04",
-  "ancestry_commit": "9bc2934c2550a4bd0699e5ee690c19e3bac438e9",
-  "source_identity_note": "Executed on the final stable working tree before the readiness commit; ancestry is not the complete tested revision. input_sha256 identifies the exact eleven checked runtime/data/test inputs. Report files can be committed afterward without changing those inputs.",
+  "ancestry_commit": "e7da54fb810e48229917771f13ce6ac27f1596a4",
+  "source_identity_note": "Executed on the final stable working tree after factual PR/CI metadata correction; ancestry is not the complete tested revision. input_sha256 identifies the exact eleven checked runtime/data/test inputs. Only data/tasks.json and data/source-manifest.json changed from run01.",
   "input_sha256": {
     "index.html": "056431c6ddb63acc85ab7f66fabd996f68e46ab4e4f848b6b70dbf9f0b2a9fe3",
     "app.js": "da88db600347d9db781df99bfea4f534250764c7cc2d24a61a0a05bd23815d42",
     "styles.css": "9b2d96f9b60b139dd38327498a02cc5bf82370ab42152e162820f2992e6a8bbe",
     "data/hub-presentation.json": "55b96cf41f785442cf680d64e0968494ddcf96d6a185791c18859e88fcdd5d5d",
-    "data/tasks.json": "71f4663ff33a9bb52c3caadc860f91c9ec016b9b9dbee7edc86511165670c3a1",
-    "data/source-manifest.json": "3819d0cbddbe01d25d9fd24995269c1a21362c9dddea5aede1e8aee94600bd23",
+    "data/tasks.json": "d1164f15961e897b2e0162291cefcc3917899a0a61c95a6201e562d9919f5499",
+    "data/source-manifest.json": "e112abcbadec58a7eca3c8d29fb32b57435031a184bd8e31e8e40b1a220ea577",
     "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
     "tests/hub/browser.mjs": "1006b89c5b8dd190ad5895086acb2439be61ef4e31a4f1f46b1be94fc5aa9efc",
     "docs/games/small-hours/tasks.json": "0948ee18d9f310374047e08efec36e9e9f726e1c268fb8e55cbfb5abfe0f55a4",
@@ -192,7 +192,7 @@
     "repository service link; no remote HTTP claim": 5
   },
   "unexpected_page_or_network_errors": [],
-  "full_external_report_sha256": "640fb3829e342134709d7d14a3b414aa72d3fc9950cf0f0cc4fcc4ca540fe52b",
+  "full_external_report_sha256": "cc8b8aef8353e42a4c766bc1b1b1bad0dba39ada71f686185614ba05e169f41e",
   "limitations": [
     "Same-host HTTP only; November4 GitHub Pages deployment remains unverified and CI pending.",
     "External/service links are classified, not fetched; GitHub blob/tree targets resolve against Git objects or intended main working-tree files.",
@@ -200,5 +200,15 @@
     "Keyboard detail and retry activation are covered; this is not a full keyboard/screen-reader accessibility audit.",
     "200% scenario doubles computed CSS text sizes; it is not physical browser zoom.",
     "No game playthrough, human participant or physical-device claim."
+  ],
+  "superseded_run": {
+    "id": "dashboard-final-01",
+    "status": "pass",
+    "reason": "Factual PR/CI delivery metadata corrected after fresh GitHub status read; no UI/runtime, task ID or human/candidate change.",
+    "full_report_sha256": "640fb3829e342134709d7d14a3b414aa72d3fc9950cf0f0cc4fcc4ca540fe52b"
+  },
+  "inputs_changed_from_previous": [
+    "data/tasks.json",
+    "data/source-manifest.json"
   ]
 }

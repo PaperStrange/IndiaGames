@@ -38,7 +38,7 @@
       "research_evidence_commit": "e94aa04273e581d1a27ade1988fe6d422b6111ec",
       "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/competitor-plays-2026-10-28/README.md",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
-      "milestone_status_label": "Technical handoff complete · humans pending",
+      "milestone_status_label": "Technical handoff complete \u00b7 humans pending",
       "milestone_summary": "Supported HTTP verification and current adjudication/handoff are published. The unchanged baseline awaits six real pairs.",
       "human_participant_rows": 0,
       "human_staffing": "Human studies will be arranged later; facilitator, participants, physical-device tester and independent reviewer remain unassigned.",
@@ -77,7 +77,7 @@
     },
     {
       "lane": "vivid",
-      "name": "Vivid — small worlds, lasting traces",
+      "name": "Vivid \u2014 small worlds, lasting traces",
       "branch": "vivid-2.5d-photo-game",
       "reviewed_head": "23d19663c78935e70307dca33acc8f1ce07bcf48",
       "prior_manifest_source": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
@@ -134,12 +134,12 @@
       "research_evidence_commit": "23d19663c78935e70307dca33acc8f1ce07bcf48",
       "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/competitor-plays-2026-10-28/README.md",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md",
-      "milestone_status_label": "Technical handoff complete · humans pending",
+      "milestone_status_label": "Technical handoff complete \u00b7 humans pending",
       "milestone_summary": "The shared alignment helper now spans its grid row. Full story endpoints and immutable 0.1.3 export are verified; PR #6 awaits master integration. Both human cohorts remain pending.",
       "human_staffing": "Human studies will be arranged later; facilitator, participants, physical-device tester and independent reviewer remain unassigned.",
       "launch_verification": {
         "date_utc": "2026-10-27",
-        "scope": "Six targeted entry routes: direct and nested mounts × Iona remembered, Mara, Iona neutral. Launch only; the full story suite was not rerun.",
+        "scope": "Six targeted entry routes: direct and nested mounts \u00d7 Iona remembered, Mara, Iona neutral. Launch only; the full story suite was not rerun.",
         "checks_passed": 6,
         "javascript_errors": 0,
         "http_errors_4xx": 0,
@@ -150,7 +150,7 @@
       "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/README.md",
       "research_adjudication_summary": "Rescue/reveal captures are not full canonical endpoints; early letter availability is not permission. Mara alignment is expressive, not a harder deduction puzzle. The shared helper layout is the bounded technical target.",
       "historical_qa_scope": "51 unit tests and 16 browser scenarios passed on 0.1.2 on 21 October; earlier lifecycle/art checks retain their own dates. On 27 October the exact 15-file artifact passed six direct/nested launch checks, not a new full story suite. Physical-device and human validation pending.",
-      "technical_readiness_label": "0.1.3 exported · staging pending",
+      "technical_readiness_label": "0.1.3 exported \u00b7 staging pending",
       "reviewed_archive_upload": "b9e1560cc641691bc8d48b4254cab0bac73fe64c",
       "human_readiness_handoff": "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md",
       "historical_qa_evidence": [
@@ -194,7 +194,7 @@
       "research_evidence_commit": "56eec3e7d96410492ad70bf39b5eb5ae003feec8",
       "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/competitor-plays-2026-10-28/README.md",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
-      "milestone_status_label": "Technical handoff complete · humans pending",
+      "milestone_status_label": "Technical handoff complete \u00b7 humans pending",
       "milestone_summary": "Supported HTTP verification and current adjudication/handoff are published. Unchanged 0.1.0 awaits six counterbalanced people; no copy patch selected.",
       "human_participant_rows": 0,
       "human_staffing": "Human studies will be arranged later; facilitator, participants, physical-device tester and independent reviewer remain unassigned.",
@@ -430,11 +430,11 @@
   },
   "review_methods": [
     "Read-only review of the October 22 competitor packages at the three pinned research heads; underlying play dates remain in their records.",
-    "The October 24 decision settled prepare-sessions-first and Bell option A, Prepare Mina’s route.",
+    "The October 24 decision settled prepare-sessions-first and Bell option A, Prepare Mina\u2019s route.",
     "Small Hours retains its unchanged baseline; Vivid retains the immutable 0.1.2 artifact and historical verification.",
     "Bell implementation and new verification are tracked independently from its preserved previous Contrast reference.",
     "Human participants, physical-device checks and independent release approval remain pending.",
-    "27 October: the coordinator verified Vivid’s exact artifact and six direct/nested launch routes with no JavaScript errors or HTTP 4xx; no full story suite rerun or human session.",
+    "27 October: the coordinator verified Vivid\u2019s exact artifact and six direct/nested launch routes with no JavaScript errors or HTTP 4xx; no full story suite rerun or human session.",
     "27 October: the coordinator verified two Small Hours launch groups (root desktop and nested 390px). The 33 behavioral assertions retain their historical October 20 date; no new human or physical-device results.",
     "27 October: Bell source/hash-bound pure,static, 16-group browser,legacy journey and HTTP smoke verification completed; frozen candidate staged on master with pending human evidence.",
     "4 November: source/capture adjudication across pinned archive uploads; supported-HTTP readiness is tracked separately. No human sessions or physical-device results are created by agent review."
@@ -505,7 +505,7 @@
     "staffing_status": "human_studies_arranged_later",
     "human_sessions_completed": 0,
     "readiness_document": "docs/iteration-2026-11-04/README.md",
-    "schedule_note": "Earlier Oct31–Nov4 human-pilot window was not completed. Reforecast after human staffing; the November20 target never shortens a gate.",
+    "schedule_note": "Earlier Oct31\u2013Nov4 human-pilot window was not completed. Reforecast after human staffing; the November20 target never shortens a gate.",
     "timeline": [
       [
         "4 November",
@@ -601,22 +601,29 @@
       },
       {
         "number": 4,
-        "status": "review_pass_ci_queued",
+        "status": "merged",
         "reviewed_head": "16ac76f3cdb3fc9efb69daad31f8d04166838e30",
-        "ci_queued_since_utc": "2026-11-04 15:51 UTC"
+        "merge_commit": "e27a774b6bef95b7a48e4eeb910dce819e3082c9",
+        "ci_conclusion": "success",
+        "ci_completed_at": "2026-11-04T15:51:58Z"
       },
       {
         "number": 3,
         "status": "review_pass_ci_queued",
-        "reviewed_head": "39a8ebf51e65f82865dafeffaad872b8d52b9ab6"
+        "reviewed_head": "aa513ec621d5a47ecfc15330674a14aff146cc71"
       },
       {
         "number": 6,
         "status": "open_staging_not_merged",
         "head": "6ac31873f21159943801d5646c3ac37c0eba3e5a"
+      },
+      {
+        "number": 7,
+        "status": "review_pass_current_ci_pending"
       }
     ],
-    "delivery_note": "Delivery: PRs #3, #4 and #6 await GitHub CI, with no runner assigned. Candidate staging and dashboard publication remain pending; the queue cause is unestablished."
+    "delivery_note": "Delivery: policy/governance PRs #1 and #4 are merged. Reviewed Vivid staging (#6) and dashboard publication (#7) await current CI; real human release approval remains pending.",
+    "status_checked_at": "2026-11-04T16:21:06Z"
   },
   "governance": {
     "issue": "https://github.com/PaperStrange/IndiaGames/issues/2",
