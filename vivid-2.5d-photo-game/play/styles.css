@@ -732,6 +732,9 @@ main {
   grid-column: 1/-1;
   font-size: 12px;
 }
+.adjust-control > .action-group-label {
+  grid-column: 1 / -1;
+}
 .adjust-control input {
   width: 100%;
   accent-color: #426b5b;
