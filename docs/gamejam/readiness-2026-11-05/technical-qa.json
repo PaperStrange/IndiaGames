@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "kind": "automated-targeted-qa-not-human-evidence",
+  "game": "small-hours",
+  "date_utc": "2026-11-05",
+  "baseline_id": "SH-BASELINE-2026-10-27",
+  "source_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
+  "reviewed_branch_commit": "e94aa04273e581d1a27ade1988fe6d422b6111ec",
+  "build_sha256": "fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3",
+  "build_file_count": 8,
+  "build_bytes": 58313,
+  "runtime_unchanged": true,
+  "inventory_before": {
+    "README.md": "96b5c3acfd128e12a407d13723dd56d1fc66cface97f1b8a95b92986faab6d20",
+    "content.js": "8845632466083261dcc83152a3d6dd1ed196e7b0fd62626948e2abbd92911755",
+    "game.js": "a1468af7ac47eb61d043a7eea6abf69d1f86b0bde3f6c013d6e3722422965a79",
+    "icons.js": "7c05b43160356b9697665ae9cf0f0eb759441830aae030c2dfa867e28f61e2dd",
+    "index.html": "960c5b00cc6cbc20613cb0f324fa380a4f81192a32da6168eebb6caa5cab0171",
+    "state.js": "8c38ec0889be5c3342197a31e47368fcfa5481a61cb88c39133bbd79d1332137",
+    "style.css": "f6a3ae0f42d4ca59e1a1b4fdcf8b9f420cf8b7837b2ec357ae76f07fb22f1016",
+    "views.js": "ebd89111ec8a4d538e52d284d83339281c2ab88363d38ea216177dd45bf615cc"
+  },
+  "inventory_after": {
+    "README.md": "96b5c3acfd128e12a407d13723dd56d1fc66cface97f1b8a95b92986faab6d20",
+    "content.js": "8845632466083261dcc83152a3d6dd1ed196e7b0fd62626948e2abbd92911755",
+    "game.js": "a1468af7ac47eb61d043a7eea6abf69d1f86b0bde3f6c013d6e3722422965a79",
+    "icons.js": "7c05b43160356b9697665ae9cf0f0eb759441830aae030c2dfa867e28f61e2dd",
+    "index.html": "960c5b00cc6cbc20613cb0f324fa380a4f81192a32da6168eebb6caa5cab0171",
+    "state.js": "8c38ec0889be5c3342197a31e47368fcfa5481a61cb88c39133bbd79d1332137",
+    "style.css": "f6a3ae0f42d4ca59e1a1b4fdcf8b9f420cf8b7837b2ec357ae76f07fb22f1016",
+    "views.js": "ebd89111ec8a4d538e52d284d83339281c2ab88363d38ea216177dd45bf615cc"
+  },
+  "started_at": "2026-11-05T15:58:46.345Z",
+  "finished_at": "2026-11-05T15:59:34.875Z",
+  "browser": "Chromium 151.0.7922.173",
+  "playwright": "1.56.1",
+  "route": "same-machine HTTP; root and /IndiaGames/pilots/small-hours/",
+  "result": "PASS",
+  "scenario_groups": 4,
+  "assertions_passed": 64,
+  "assertion_count_note": "Includes repeated focus checks; not 64 independent gameplay scenarios.",
+  "cases": [
+    {
+      "id": "keyboard-pair-root",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "mount": "/",
+      "checks": [
+        "focus ring: #about-button",
+        "about modal opens with focus inside",
+        "about modal escape restores trigger focus",
+        "focus ring: [data-action=\"start-pair\"]",
+        "heading focus: [data-action=\"start-pair\"]",
+        "focus ring: [data-action=\"start-scene\"]",
+        "heading focus: [data-action=\"start-scene\"]",
+        "focus ring: [data-action=\"ready-a\"]",
+        "heading focus: [data-action=\"ready-a\"]",
+        "seal initially disabled",
+        "focus ring: [data-action=\"choose\"][data-id=\"color\"]",
+        "choice keeps focus on selected control",
+        "focus ring: [data-action=\"guess\"][data-id=\"shape\"]",
+        "focus ring: [data-action=\"seal\"]",
+        "heading focus: [data-action=\"seal\"]",
+        "private A answer controls removed on handoff",
+        "focus ring: [data-action=\"ready-b\"]",
+        "heading focus: [data-action=\"ready-b\"]",
+        "focus ring: [data-action=\"choose\"][data-id=\"shape\"]",
+        "focus ring: [data-action=\"guess\"][data-id=\"color\"]",
+        "focus ring: [data-action=\"seal\"]",
+        "heading focus: [data-action=\"seal\"]",
+        "focus ring: [data-action=\"reveal\"]",
+        "heading focus: [data-action=\"reveal\"]",
+        "focus ring: [data-action=\"action\"]",
+        "heading focus: [data-action=\"action\"]",
+        "focus ring: [data-action=\"write\"]",
+        "heading focus: [data-action=\"write\"]",
+        "focus ring: [data-action=\"ready-write-a\"]",
+        "heading focus: [data-action=\"ready-write-a\"]",
+        "focus ring: [data-action=\"seal-line\"]",
+        "heading focus: [data-action=\"seal-line\"]",
+        "A authored detail removed from handoff DOM",
+        "focus ring: [data-action=\"ready-write-b\"]",
+        "heading focus: [data-action=\"ready-write-b\"]",
+        "focus ring: [data-action=\"seal-line\"]",
+        "heading focus: [data-action=\"seal-line\"]",
+        "both typed lines reach keepsake",
+        "focus ring: [data-action=\"download\"]",
+        "keyboard activation delivers SVG with both lines",
+        "focus ring: [data-action=\"again\"]",
+        "heading focus: [data-action=\"again\"]",
+        "replay clears prior contribution DOM",
+        "focus ring: [data-action=\"end\"]",
+        "End dialog focus stays inside",
+        "End escape restores trigger focus and leaves scene",
+        "focus ring: [data-action=\"end\"]",
+        "focus ring: [data-cancel]",
+        "cancel button restores trigger focus",
+        "focus ring: [data-action=\"end\"]",
+        "focus ring: [data-confirm]",
+        "heading focus: [data-confirm]",
+        "confirm clears session and local storage remains empty"
+      ]
+    },
+    {
+      "id": "blank-and-maximum-nested",
+      "status": "PASS",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "mount": "/IndiaGames/pilots/small-hours/",
+      "checks": [
+        "empty and whitespace contributions use exact optional fallback",
+        "blank SVG contains both fallback lines and is valid XML",
+        "real keyboard typing enforces native 120-code-unit cap and counter",
+        "maximum-length lines are rendered literally without injected elements",
+        "maximum-length SVG parses and preserves text through wrapping",
+        "forget plus reload removes all long authored content"
+      ]
+    },
+    {
+      "id": "timer-real-deadline-root",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "mount": "/",
+      "checks": [
+        "timer disables repeat start and begins from 45 seconds",
+        "real wall-clock deadline expires gently without forced navigation",
+        "writing remains available after expiry"
+      ],
+      "elapsed_ms": 45060,
+      "clock": "real wall clock"
+    },
+    {
+      "id": "timer-interruption-clock-nested",
+      "status": "PASS",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "mount": "/IndiaGames/pilots/small-hours/",
+      "checks": [
+        "clock-assisted deadline advances by elapsed time",
+        "leaving activity cancels timer without detached-DOM writes"
+      ],
+      "clock": "Playwright clock fast-forward for interruption regression only; separate case uses real elapsed time"
+    }
+  ],
+  "page_console_network_http_errors": [],
+  "failed_attempts": 0,
+  "local_driver_sha256": "332ce5187ecf1c213f072495aa92a5e34c24d7fbf68b9d6f07849d5b732626c1",
+  "local_report_sha256": "8c924e815a2608e5ddda40b12591a2b9501cf9ffe3a1fc4f6f6a50379334f201",
+  "human_sessions_completed": 0,
+  "physical_devices_tested": false,
+  "human_approval": false,
+  "limitations": [
+    "Single synthetic operator; pair mode only in this dated pass.",
+    "Scene 0 only; prior scene and solo-mode results retain their original dates.",
+    "Keyboard/focus ring checks used headless Chromium on Linux, not a screen reader or physical device.",
+    "Real timer check was foreground; background suspension and OS throttling not retested.",
+    "Maximum-input check used native keyboard entry and 120 UTF-16 code units; not an exhaustive Unicode/IME test.",
+    "All study appointments and actual facilitator/reviewer assignments remain unconfirmed."
+  ]
+}
