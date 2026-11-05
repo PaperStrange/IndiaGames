@@ -1,0 +1,207 @@
+{
+  "kind": "automated-facilitator-setup-smoke-not-human-study",
+  "game": "thirteenth-bell",
+  "version": "0.1.0",
+  "started_at": "2026-11-05T15:58:22.540Z",
+  "finished_at": "2026-11-05T15:58:34.616Z",
+  "browser": "151.0.7922.173",
+  "source_branch_head": "56eec3e7d96410492ad70bf39b5eb5ae003feec8",
+  "master_packet_commit": "02c78ad9739622fb447850fbecb5f46e7dec8de8",
+  "identities_before": {
+    "candidate": {
+      "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06",
+      "version": "0.1.0",
+      "files": {
+        "index.html": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973"
+      },
+      "inventory_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+      "bytes": 1455336
+    },
+    "reference": {
+      "source_commit": "252cc55e8515da1438c3e74af2e7dcc58eb13118",
+      "version": null,
+      "files": {
+        "index.html": "c2facc2a008c7bb232a629c4bd79efcb07cb5e46b73c4ebf6e55ceaa5337f405"
+      },
+      "inventory_sha256": "47793d0ebc1801226a6b1f1e4fc11fb056d632c54919f179b91e14520c54fda8",
+      "bytes": 1434008
+    }
+  },
+  "identities_after": {
+    "candidate": {
+      "source_commit": "700dcea61eaedc704ddce5adc98d5a6bd5d42a06",
+      "version": "0.1.0",
+      "files": {
+        "index.html": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973"
+      },
+      "inventory_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e",
+      "bytes": 1455336
+    },
+    "reference": {
+      "source_commit": "252cc55e8515da1438c3e74af2e7dcc58eb13118",
+      "version": null,
+      "files": {
+        "index.html": "c2facc2a008c7bb232a629c4bd79efcb07cb5e46b73c4ebf6e55ceaa5337f405"
+      },
+      "inventory_sha256": "47793d0ebc1801226a6b1f1e4fc11fb056d632c54919f179b91e14520c54fda8",
+      "bytes": 1434008
+    }
+  },
+  "artifacts_unchanged": true,
+  "result": "FUNCTIONAL_PASS_WITH_REFERENCE_FONT_FAILURES",
+  "passed_scenario_executions": 4,
+  "failed_scenario_executions": 0,
+  "assertion_checks": 24,
+  "serving": "Two independent same-machine HTTP origins; desktop Chromium at desktop/narrow viewports; fresh context per run; no request interception",
+  "runs": [
+    {
+      "kind": "candidate",
+      "width": 1280,
+      "height": 1000,
+      "started_at": "2026-11-05T15:58:23.814Z",
+      "assertions": [
+        "Actual browser response matches frozen HTML hash",
+        "Fresh Contrast entry: loop 1, Dawn, zero visits",
+        "Visible scene/choice/resolution produces one visit and Noon",
+        "Candidate/reference structural difference remains intact",
+        "No horizontal document overflow at selected viewport",
+        "Reload loses run as disclosed; new run has no visits or learned clue"
+      ],
+      "served_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973",
+      "status": "PASS",
+      "finished_at": "2026-11-05T15:58:26.620Z"
+    },
+    {
+      "kind": "candidate",
+      "width": 390,
+      "height": 844,
+      "started_at": "2026-11-05T15:58:26.641Z",
+      "assertions": [
+        "Actual browser response matches frozen HTML hash",
+        "Fresh Contrast entry: loop 1, Dawn, zero visits",
+        "Visible scene/choice/resolution produces one visit and Noon",
+        "Candidate/reference structural difference remains intact",
+        "No horizontal document overflow at selected viewport",
+        "Reload loses run as disclosed; new run has no visits or learned clue"
+      ],
+      "served_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973",
+      "status": "PASS",
+      "finished_at": "2026-11-05T15:58:28.910Z"
+    },
+    {
+      "kind": "reference",
+      "width": 1280,
+      "height": 1000,
+      "started_at": "2026-11-05T15:58:28.924Z",
+      "assertions": [
+        "Actual browser response matches frozen HTML hash",
+        "Fresh Contrast entry: loop 1, Dawn, zero visits",
+        "Visible scene/choice/resolution produces one visit and Noon",
+        "Candidate/reference structural difference remains intact",
+        "No horizontal document overflow at selected viewport",
+        "Reload loses run as disclosed; new run has no visits or learned clue"
+      ],
+      "served_sha256": "c2facc2a008c7bb232a629c4bd79efcb07cb5e46b73c4ebf6e55ceaa5337f405",
+      "status": "PASS",
+      "finished_at": "2026-11-05T15:58:31.816Z"
+    },
+    {
+      "kind": "reference",
+      "width": 390,
+      "height": 844,
+      "started_at": "2026-11-05T15:58:31.839Z",
+      "assertions": [
+        "Actual browser response matches frozen HTML hash",
+        "Fresh Contrast entry: loop 1, Dawn, zero visits",
+        "Visible scene/choice/resolution produces one visit and Noon",
+        "Candidate/reference structural difference remains intact",
+        "No horizontal document overflow at selected viewport",
+        "Reload loses run as disclosed; new run has no visits or learned clue"
+      ],
+      "served_sha256": "c2facc2a008c7bb232a629c4bd79efcb07cb5e46b73c4ebf6e55ceaa5337f405",
+      "status": "PASS",
+      "finished_at": "2026-11-05T15:58:34.491Z"
+    }
+  ],
+  "page_errors": [],
+  "http_errors": [],
+  "console_errors": [
+    {
+      "run": "reference-1280",
+      "error": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap"
+    },
+    {
+      "run": "reference-1280",
+      "error": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap"
+    },
+    {
+      "run": "reference-390",
+      "error": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap"
+    },
+    {
+      "run": "reference-390",
+      "error": "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap"
+    }
+  ],
+  "failed_requests": [
+    {
+      "run": "reference-1280",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "run": "reference-1280",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "run": "reference-390",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    },
+    {
+      "run": "reference-390",
+      "url": "https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;600;700&display=swap",
+      "error": "net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ],
+  "reference_qualification": "Four optional Google Fonts certificate failures: initial and reload at each viewport; fallback fonts used, requested web-font appearance unverified.",
+  "protocol_review": {
+    "order": "Reference-first for planned slots 1/3/5; candidate-first for 2/4/6; no slots registered",
+    "maximum_minutes_per_build": 20,
+    "minimum_neutral_break_seconds": 120,
+    "recall_before_next_build": true,
+    "game_timer_enforces_protocol": false
+  },
+  "human_sessions_completed": 0,
+  "human_studies_booked": false,
+  "physical_device_passes": 0,
+  "human_approval": false,
+  "human_critical_bug_assessment": null,
+  "owned_servers_and_browser_closed": true,
+  "limitations": [
+    "Four scripted setup checks are not four people or the full 33-scenario regression.",
+    "No fresh-player understanding, causal recall, fun or preference measured.",
+    "No physical phone, screen reader or actual facilitator-machine access result.",
+    "Separate managed Chromium152 route remains unresolved.",
+    "Game elapsed timer does not enforce the facilitator cap or neutral break."
+  ],
+  "screenshots": [
+    "candidate-390.png",
+    "reference-1280.png"
+  ],
+  "source_integrity": {
+    "base_commit": "56eec3e7d96410492ad70bf39b5eb5ae003feec8",
+    "existing_files_compared": 917,
+    "changed_existing_files": []
+  },
+  "facilitator_command_validation": {
+    "archive_and_inventory_portion": "passed",
+    "remote_fetch": "not rerun by lane; root already fetched current refs",
+    "human_machine_setup": "not performed"
+  }
+}
