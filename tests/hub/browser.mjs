@@ -239,6 +239,13 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       assert.equal(await page.locator('#tasks').isVisible(), false);
       assert.equal(await page.locator('#project-grid .project-card').count(), 3);
       assert.equal(await page.locator('#project-grid .project-image').count(), 3);
+      // Images below the narrow-screen fold load only when reached by the reader.
+      // Exercise that journey before asserting loaded image content.
+      for (const picture of await page.locator('#project-grid .project-image').all()) {
+        await picture.scrollIntoViewIfNeeded();
+        await page.waitForFunction(image => image.complete && image.naturalWidth > 0, await picture.elementHandle());
+      }
+      await page.evaluate(() => window.scrollTo(0, 0));
       const imageStates = await page.locator('#project-grid .project-image').evaluateAll(images => images.map(image => ({ loaded: image.complete && image.naturalWidth > 0, src: image.getAttribute('src'), alt: image.getAttribute('alt') })));
       assert.ok(imageStates.every(image => image.loaded && image.alt?.trim()));
       assert.deepEqual(imageStates.map(image => image.src.replace(/^\.\//, '')).sort(), presentation.projects.map(project => project.image.src).sort());

@@ -531,7 +531,7 @@
     "lane": "memorable",
     "perspective": "QA",
     "priority": "P0",
-    "status": "active",
+    "status": "done",
     "owner_role": "Small Hours integrator + QA",
     "title": "Close targeted input/timer gaps and prepare facilitator machines",
     "deliverable": "Dated targeted technical evidence and a practical exact-artifact facilitator-machine handoff; human results remain separate.",
@@ -545,9 +545,13 @@
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md"
+    ],
     "focus": "Technical preparation / facilitator setup",
-    "assigned_person_or_agent": "/root/small_hours_nov5",
-    "completion_note": "November 5 preparation assigned. Actual checks and immutable evidence links are pending; no human appointments or results are implied."
+    "assigned_person_or_agent": "/root/small_hours_nov5 + /root",
+    "completion_note": "5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested."
   }
 ]

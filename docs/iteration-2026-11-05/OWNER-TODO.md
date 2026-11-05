@@ -27,7 +27,11 @@ Provide role names or stable IDs, accepted availability, earliest participant da
 
 ## Session packets and practical limits
 
-Use the [game packets and recording templates](../launch/2026-11-20/README.md#game-packets). Copy them into a private study workspace before entering participant details. The dated per-game facilitator handoffs supplement, but do not replace, the canonical protocols and thresholds.
+Use the [game packets and recording templates](../launch/2026-11-20/README.md#game-packets). Copy them into a private study workspace before entering participant details. The dated facilitator handoffs below supplement, but do not replace, the canonical protocols and thresholds.
+
+- [Small Hours setup](https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md)
+- [Vivid — small worlds, lasting traces setup](https://github.com/PaperStrange/IndiaGames/blob/2070902d7b5ea0da59ab07d35d218f9a66f7791f/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md)
+- [The Thirteenth Bell setup](https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md)
 
 - **Small Hours:** two real people share a device. Observe privacy handoffs and each person's creative contribution; inspect the actual saved SVG. Do not prompt the voluntary save/replay metric.
 - **Vivid:** two separate cohorts on the same 0.1.3 artifact; Iona's return is scheduled within the session. Do not mix saved story/profile histories or score Mara's emotional interpretation as correct/incorrect.

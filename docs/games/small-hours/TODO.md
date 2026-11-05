@@ -428,3 +428,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 - [ ] If publication fails, preserve the approved artifact, report the actual failure and rerun only the failed publication step. Never rewrite a released version; publish corrections under a new version.
 
 **Completion evidence:** none; future release work.
+
+### November 5 completed preparation · SH-21
+
+5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested.
+
+[Technical evidence](https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md) · [Facilitator setup and blank-form links](https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md). The new preparation card is done; existing human and release cards keep their prior gates.

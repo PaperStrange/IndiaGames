@@ -1,0 +1,156 @@
+{
+  "observed_at": "2026-11-05T16:13:23.859Z",
+  "method": "Local Chromium dashboard integration, direct/project mounts, responsive layouts, keyboard and navigation, immutable asset/source checks. No human session, game regression, physical-device or deployed-site claim.",
+  "status": "pass",
+  "viewport_groups": [
+    {
+      "id": "root-1440",
+      "mount": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 465,
+      "overview_height_px": 2667
+    },
+    {
+      "id": "root-390",
+      "mount": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 459,
+      "overview_height_px": 5200
+    },
+    {
+      "id": "project-1440",
+      "mount": "/IndiaGames/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 465,
+      "overview_height_px": 2667
+    },
+    {
+      "id": "project-390",
+      "mount": "/IndiaGames/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.",
+        "All authored tasks reachable in 12-row pages; previous/next boundaries, each lane/status/perspective filter, ID/dependency search, empty recovery, and keyboard detail open/close.",
+        "Browser back/forward preserves the selected view; legacy anchors remain reachable; sources opens evidence; late-task deep links select and open the task; malformed hashes do not crash."
+      ],
+      "visible_words": 459,
+      "overview_height_px": 5200
+    }
+  ],
+  "extra_scenarios": [
+    {
+      "id": "load-failure-retry",
+      "status": "pass",
+      "expected_fault": "one 503 response for tasks.json",
+      "result": "Visible error recovered through keyboard activation of Retry; three projects and the task board load."
+    },
+    {
+      "id": "tablet-layout",
+      "status": "pass",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": "Images loaded, overview and board have no horizontal overflow, keyboard detail works. Browser viewport only; no physical-device claim."
+    },
+    {
+      "id": "enlarged-text",
+      "status": "pass",
+      "before": 43,
+      "after": 86,
+      "method": "Doubled computed CSS font sizes at 390 CSS px; not browser zoom.",
+      "result": "Overview and board reflow without horizontal overflow; keyboard task detail remains operable."
+    }
+  ],
+  "static_checks": [
+    {
+      "id": "human-and-runtime-boundaries",
+      "status": "pass",
+      "detail": "Authored task IDs and lane counts match the generated snapshot; human counts remain zero; official registry empty; game branch heads equal the source review; runtime/test scopes equal their verified source (Vivid later play/evidence records excluded)."
+    },
+    {
+      "id": "candidate-identity",
+      "status": "pass",
+      "detail": "Current master candidate trees and file hashes equal their pinned packets; no human report populated or approval granted."
+    },
+    {
+      "id": "genuine-images",
+      "status": "pass",
+      "detail": "Three displayed assets are byte-identical to pinned game captures/art; total 2041402 bytes."
+    },
+    {
+      "id": "navigation-targets",
+      "status": "pass",
+      "detail": "134 unique rendered destinations classified; local anchors/files and GitHub source targets resolve. The paused candidate URL is not repaired or claimed successful."
+    }
+  ],
+  "errors": [],
+  "input_sha256": {
+    "index.html": "4fea000c6d2adb0229b360b4801396e6434e12683b92929a04f4a8bf3959d8b1",
+    "app.js": "ea5afe760cf9a7be491b449018e3e54a14d8ab31e0baa855fc4269d98b79f5ed",
+    "styles.css": "06168c9680a23ac46ba9f317a473f1c6327b986aea904a4236bc45098a590427",
+    "data/hub-presentation.json": "024c36626d1acf6d5c2e05a1e9da8a6e685695b678692ce34338e8327cf27baf",
+    "data/tasks.json": "3680c169e270988a94cd21aa472567714693643f37833a82fbd8159bc3ce5eff",
+    "data/source-manifest.json": "916b30855fbcbf971a9eaad6178a277f91387eaac30f5bf7a69bbb5be9cca722",
+    "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+    "tests/hub/browser.mjs": "9388277d1ebc7d2e4abc9a0f9b93a8e3b1d3e94467066a09ff0dff6824bf3bfe",
+    "docs/games/small-hours/tasks.json": "0b5be1826b7b70df4817213cfde8f777b2bce6dfc7481bfef45ccad6cd395981",
+    "docs/games/keepers-frame/tasks.json": "04272097a535e07476f89a7c780a151393b1e6449db1fbcec9f49b42010b0f31",
+    "docs/games/thirteenth-bell/tasks.json": "48d69ad557be0835163de2282b92d99530bd48a1137981ff10decd596bfbf2ea"
+  },
+  "task_count": 69,
+  "completed_task_count": 40,
+  "human_sessions": 0,
+  "physical_device_results": 0,
+  "official_releases": 0,
+  "rendered_destinations": 134,
+  "release_gate_unit_tests": {
+    "count": 35,
+    "result": "pass"
+  },
+  "screenshots": [
+    "root-1440-overview.jpg",
+    "root-390-overview.jpg"
+  ],
+  "first_attempt": {
+    "result": "fail",
+    "completed_viewport_groups": 1,
+    "reason": "The runner asserted offscreen lazy images loaded before scrolling at the narrow viewport. The correction scrolls to each image and waits for actual content; source/alt/hash assertions remain intact. Original evidence is retained locally."
+  },
+  "intermediate_attempt": {
+    "result": "pass",
+    "reason": "Full four-group check passed after the journey correction. A later premerge-wording cleanup changed the dashboard snapshot; this final report reruns the changed snapshot."
+  },
+  "publication": "Local integration only; PR review and deployed-site verification are separate."
+}

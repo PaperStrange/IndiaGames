@@ -425,3 +425,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 - [ ] If publication fails, preserve the approved artifact, report the actual failure and rerun only the failed publication step. Never rewrite a released version; publish corrections under a new version.
 
 **Completion evidence:** none; future release work.
+
+### November 5 completed preparation · TB-20
+
+5 November: four facilitator-setup journeys and 24 checks passed for frozen candidate/reference across desktop/narrow HTTP origins. Candidate/reference inventories and served HTML matched; no candidate failures. Four optional reference Google Fonts certificate failures remain disclosed. These setup checks do not rerun all November 4 causal scenarios or establish human recall/physical-device results.
+
+[Technical evidence](https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md) · [Facilitator setup and blank-form links](https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md). The new preparation card is done; existing human and release cards keep their prior gates.
