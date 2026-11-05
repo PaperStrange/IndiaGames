@@ -1,5 +1,15 @@
 # Vivid — implemented stories and remaining release work
 
+## November 5 parallel preparation · KF-27
+
+All three preparation lanes remain active; the owner selected facilitator-machine sessions and needs more recruitment time. Human dates remain unbooked. [Current iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
+
+**Verify recovery/fallback gaps and prepare both story sessions.** Check save migration/recovery and forced WebGL failure on the exact staged 0.1.3 artifact; record actual failure behavior and retained retries without changing story rules or save contracts. Prepare Iona and Mara on the same frozen build with explicit story/profile isolation and local HTTP setup. Keep neutral comparison optional and separate from the two required cohorts.
+
+This dated task is active until its actual results and immutable evidence links are filed. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
+
+**KF-28 · proposed next-build follow-up:** 0.1.3 displays a stale 0.1.2 badge. Use the manifest/inventory to identify facilitator artifacts. Correct the label only in a future separately versioned build; current candidate bytes remain immutable. No critical severity or human result is inferred.
+
 ## Current readiness handoff · 4 November 2026
 
 4 November: 20 distinct semantic cases functionally passed across retained attempts, with disclosed harness corrections and one aborted asset request followed by an error-free targeted retry; 8 layout cases and 51 unit tests passed, and two clean builds matched. Canonical Iona return placement and Mara interpretation were exercised. Neutral profile, migration/recovery, forced WebGL failure, physical devices and humans were not retested in this pass. The exact verified 0.1.3 artifact is staged on master; human validation remains pending.

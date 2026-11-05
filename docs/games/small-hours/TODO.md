@@ -1,5 +1,13 @@
 # Small Hours — unchanged-baseline pilot
 
+## November 5 parallel preparation · SH-21
+
+All three preparation lanes remain active; the owner selected facilitator-machine sessions and needs more recruitment time. Human dates remain unbooked. [Current iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
+
+**Close targeted input/timer gaps and prepare facilitator machines.** Check keyboard/focus through the full baseline path, blank and maximum/long detail inputs, and timer expiry against actual implemented semantics; retain failures and separate driver mistakes from product defects. Record the exact unchanged eight-file baseline inventory before/after and a local HTTP facilitator setup; verify downloads/privacy reset where needed rather than rerunning every historical case.
+
+This dated task is active until its actual results and immutable evidence links are filed. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
+
 ## Current readiness handoff · 4 November 2026
 
 4 November: 8 supported-HTTP lifecycle cases passed across root/nested mounts, 1280/390px and pair/rehearsal modes; actual SVG contents and replay/reset/reload checked, zero reported errors, frozen baseline unchanged. Keyboard/focus, blank/maximum-length details, timer expiry, physical devices and real pair experience were not tested in this pass.

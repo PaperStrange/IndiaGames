@@ -595,5 +595,29 @@
     "focus": "qa",
     "completion_note": "4 November: 33 scenario executions passed (16 root, 16 nested, one nested desktop ending/restart) on unchanged 0.1.0. Candidate resources had no failures. The frozen historical reference used fallback fonts after its optional Google Fonts certificate failure. Known-route and race-regression checks are not fresh-player comprehension, recall or physical-device evidence. This closes technical handoff only; required human studies, devices and release approval remain pending.",
     "assigned_person_or_agent": "/root/plan_test_infrastructure + /root"
+  },
+  {
+    "id": "TB-20",
+    "lane": "bell",
+    "perspective": "QA",
+    "priority": "P0",
+    "status": "active",
+    "owner_role": "Bell integrator + QA",
+    "title": "Verify the two-build facilitator setup and recall handoff",
+    "deliverable": "Dated targeted technical evidence and a practical exact-artifact facilitator-machine handoff; human results remain separate.",
+    "acceptance_criteria": [
+      "Verify frozen candidate 0.1.0 and its previous Contrast reference are accessible over local HTTP with exact identities; disclose no-save and optional font limitations.",
+      "Prepare the canonical six-person comparison with three people per first-build order. Require at least 120 seconds neutral activity after each run before recall and before exposing the next build.",
+      "Keep participant-facing instructions neutral, preserve all failed/assisted attempts and distinguish reference versus candidate errors. Real sessions, physical-device observations and approval remain unbooked; no routine copy or rules change is selected."
+    ],
+    "depends_on": [
+      "TB-19"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Technical preparation / facilitator setup",
+    "assigned_person_or_agent": "/root/bell_nov5",
+    "completion_note": "November 5 preparation assigned. Actual checks and immutable evidence links are pending; no human appointments or results are implied."
   }
 ]

@@ -4,6 +4,8 @@
 
 Use the [dated launch plan](launch/2026-11-20/README.md) and each game’s linked human-test packet. Role names remain assignment slots until a real person accepts them. The November 4 milestone is a [technical readiness handoff](iteration-2026-11-04/README.md); human studies will be arranged later. Name a facilitator, device QA owner, release integrator, repository administrator and independent human reviewer before sessions, then reforecast the affected launch target. Keep the historical task cards and dated follow-ups and their completion evidence authoritative. The new schedule does not mark human work complete.
 
+**November 5 owner decision:** prepare all three lanes in parallel on facilitator machines; recruitment needs more time. No human dates or accepted role assignments are inferred. Follow the [current iteration](iteration-2026-11-05/README.md) and [owner unblock checklist](iteration-2026-11-05/OWNER-TODO.md).
+
 ## Ownership and status
 
 `main` owns the project overview, current per-game to-do lists, reusable templates and approved official game versions. `master` owns pre-commit candidate packages and their pending or completed human evidence. Each game branch owns its implementation, game-specific research and test evidence. The retired coordination branch is preserved by [`archive/gamejam-next-iteration-2026-10-20`](https://github.com/PaperStrange/IndiaGames/tree/archive/gamejam-next-iteration-2026-10-20) at immutable commit `e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee`; it is not an active work lane. See the [28 October cleanup record](maintenance/2026-10-28.md) for retained branches, backups and recovery. Do not merge entire game branches into main to update a plan; copy only the intended documentation/data or link to a pinned source.

@@ -41,7 +41,7 @@
       "milestone_status_label": "Technical handoff complete · humans pending",
       "milestone_summary": "Supported HTTP verification and current adjudication/handoff are published. The unchanged baseline awaits six real pairs.",
       "human_participant_rows": 0,
-      "human_staffing": "Human studies will be arranged later; facilitator, participants, physical-device tester and independent reviewer remain unassigned.",
+      "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
       "official_release": false,
       "implementation_started": false,
       "implementation_status": "unchanged_baseline_pilot_preparation",
@@ -136,7 +136,7 @@
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md",
       "milestone_status_label": "Technical handoff complete · humans pending",
       "milestone_summary": "The shared alignment helper now spans its grid row. Full story endpoints and reproducible 0.1.3 inventory are verified; PR #6 is merged to master. Both human cohorts remain pending.",
-      "human_staffing": "Human studies will be arranged later; facilitator, participants, physical-device tester and independent reviewer remain unassigned.",
+      "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
       "launch_verification": {
         "date_utc": "2026-10-27",
         "scope": "Six targeted entry routes: direct and nested mounts × Iona remembered, Mara, Iona neutral. Launch only; the full story suite was not rerun.",
@@ -215,7 +215,7 @@
       "milestone_status_label": "Technical handoff complete · humans pending",
       "milestone_summary": "Supported HTTP verification and current adjudication/handoff are published. Unchanged 0.1.0 awaits six counterbalanced people; no copy patch selected.",
       "human_participant_rows": 0,
-      "human_staffing": "Human studies will be arranged later; facilitator, participants, physical-device tester and independent reviewer remain unassigned.",
+      "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
       "official_release": false,
       "implementation_started": true,
       "implementation_status": "mina_route_candidate_verified",
@@ -455,7 +455,8 @@
     "27 October: the coordinator verified Vivid’s exact artifact and six direct/nested launch routes with no JavaScript errors or HTTP 4xx; no full story suite rerun or human session.",
     "27 October: the coordinator verified two Small Hours launch groups (root desktop and nested 390px). The 33 behavioral assertions retain their historical October 20 date; no new human or physical-device results.",
     "27 October: Bell source/hash-bound pure,static, 16-group browser,legacy journey and HTTP smoke verification completed; frozen candidate staged on master with pending human evidence.",
-    "4 November: source/capture adjudication across pinned archive uploads; supported-HTTP readiness is tracked separately. No human sessions or physical-device results are created by agent review."
+    "4 November: source/capture adjudication across pinned archive uploads; supported-HTTP readiness is tracked separately. No human sessions or physical-device results are created by agent review.",
+    "5 November: remote issue/branch review and accepted three-parallel-lane plan; facilitator machines selected, recruitment needs more time. Targeted technical follow-ups are dated separately and human gates remain empty."
   ],
   "environment": {
     "node": "v24.19.0",
@@ -466,11 +467,11 @@
     "rebuilt_in_this_review": false,
     "retested_in_this_review": false
   },
-  "plan_date_utc": "2026-11-04",
+  "plan_date_utc": "2026-11-05",
   "evidence_intake_date_utc": "2026-11-04",
   "publication_branch": "main",
   "historical_review_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee",
-  "dashboard_date_utc": "2026-11-04",
+  "dashboard_date_utc": "2026-11-05",
   "historical_coordination_branch": "gamejam-next-iteration-2026-10-20",
   "historical_coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
   "historical_review_methods": [
@@ -482,38 +483,45 @@
     "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
   ],
   "milestone": {
-    "id": "readiness-handoff-2026-11-04",
-    "title": "Verify supported HTTP delivery and hand off human testing",
-    "status": "technical_handoff_and_staging_complete_humans_pending",
+    "id": "parallel-preparation-2026-11-05",
+    "title": "Prepare three facilitator-machine studies and resolve bounded technical gaps",
+    "status": "targeted_preparation_active_human_staffing_unbooked",
     "plan_settled": true,
-    "document": "docs/iteration-2026-11-04/README.md",
-    "summary": "Published supported-HTTP evidence: Small Hours 8 lifecycle cases, Bell 33 scenario executions, Vivid 20 distinct semantic cases across retained attempts plus 8 layout cases and 51 unit tests. Vivid 0.1.3 is staged at master 2be5f3648fed5422eb4459486661385df73c91be with the unchanged verified inventory; actual humans, devices and approval remain pending.",
-    "human_staffing": "Human studies will be arranged later; no facilitator, participants or independent reviewer assigned.",
+    "document": "docs/iteration-2026-11-05/README.md",
+    "summary": "Three parallel technical-preparation lanes; facilitator-machine access selected. Recruitment needs more time. Candidate identities and all human thresholds remain unchanged.",
+    "human_staffing": "Unbooked: recruitment needs more time; no accepted facilitator, participant or reviewer assignments recorded.",
     "allowance_visibility": "unavailable",
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
   },
   "publication": {
-    "checked_date_utc": "2026-10-28",
+    "checked_date_utc": "2026-11-04",
     "pages_api_status": 200,
     "source_branch": "main",
     "source_path": "/",
     "expected_url": "https://paperstrange.github.io/IndiaGames/",
     "expected_url_http_status": 200,
     "live_deployment_verified": true,
-    "observed_page": "IndiaGames development hub with three projects, 60 tasks and November20 launch plan",
+    "observed_page": "IndiaGames development hub with three projects and 65 tasks",
     "required_action": "Resolve protection issue#2 and verify scoped robot approval; human game-release approval remains mandatory.",
-    "branch_protection_read_status": 403,
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
     "pages_update_error": "Resource not accessible by integration",
-    "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
-    "verified_assets": 6,
-    "verification_document": "docs/verification-launch-2026-10-28/live-assets.json",
+    "deployed_commit": "f68c755c6b738ff219561faaaf2f78b0ceee3a83",
+    "verified_assets": 11,
+    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/7#issuecomment-6637048654",
     "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned403.",
-    "verification_scope": "Dated premerge snapshot on November 4: historical October 28 deployment evidence remains below; this readiness update was not yet verified live. The PR #7 conversation records the subsequent deployed SHA and asset/hash checks when performed.",
+    "verification_scope": "November 4 final main deployment: all 11 served files and browser responses matched the commit; desktop/narrow checks passed with zero unexpected errors. November 5 working changes need their own deployment verification.",
     "current_iteration_deployment_verified": false,
-    "verification_stage": "premerge_snapshot",
-    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/7"
+    "verification_stage": "november_4_deployment_verified_november_5_update_pending",
+    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/7#issuecomment-6637048654",
+    "historical_october_28_deployment": {
+      "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
+      "verified_assets": 6,
+      "verification_document": "docs/verification-launch-2026-10-28/live-assets.json"
+    },
+    "historical_october_28_branch_protection_read_status": 403,
+    "current_branch_rules_readback": "docs/iteration-2026-11-05/admin/readback.json",
+    "branch_rules_checked_date_utc": "2026-11-05"
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -522,20 +530,20 @@
     "status": "planned_human_gates_pending",
     "plan_document": "docs/launch/2026-11-20/README.md",
     "cleanup_document": "docs/maintenance/2026-10-28.md",
-    "staffing_status": "human_studies_arranged_later",
+    "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
-    "readiness_document": "docs/iteration-2026-11-04/README.md",
-    "schedule_note": "Earlier Oct31–Nov4 human-pilot window was not completed. Reforecast after human staffing; the November20 target never shortens a gate.",
+    "readiness_document": "docs/iteration-2026-11-05/README.md",
+    "schedule_note": "All three preparation lanes continue in parallel on facilitator machines. Recruitment needs more time; no dates are booked. November 11 freeze, November 16 go/no-go and November 20 launch do not waive human gates.",
     "timeline": [
       [
-        "4 November",
-        "Technical handoff",
-        "Exact builds and supported HTTP"
+        "5–10 November",
+        "Prepare three lanes",
+        "Targeted QA and facilitator setup"
       ],
       [
-        "When scheduled",
+        "Unbooked",
         "Human pilots",
-        "Six pairs; six + six; six people"
+        "Recruitment needs more time"
       ],
       [
         "Before freeze",
@@ -545,26 +553,26 @@
       [
         "11 November",
         "Freeze candidates",
-        "Exact source and build"
+        "Small Hours needs its pilot first"
       ],
       [
-        "16 November",
-        "Go / no-go",
-        "Human review required"
+        "12–16 November",
+        "Review / go-no-go",
+        "Humans, devices and approval"
       ],
       [
         "20 November",
         "Conditional launch",
-        "Only approved games"
+        "Only individually approved games"
       ]
     ]
   },
   "historical_manifest_review_date_utc": "2026-10-27",
   "readiness": {
-    "date_utc": "2026-11-04",
-    "status": "technical_handoff_and_staging_complete_humans_pending",
-    "document": "docs/iteration-2026-11-04/README.md",
-    "issues_document": "docs/iteration-2026-11-04/issues.md",
+    "date_utc": "2026-11-05",
+    "status": "targeted_preparation_active_human_staffing_unbooked",
+    "document": "docs/iteration-2026-11-05/README.md",
+    "issues_document": "docs/iteration-2026-11-05/README.md#issues-and-publication-reconciliation",
     "shared_blockers": [
       {
         "issue": 2,
@@ -572,7 +580,7 @@
         "status": "blocked_admin",
         "owner_role": "Repository administrator",
         "title": "Activate and verify main/master protection and scoped counted approval",
-        "evidence": "November 4 readback: no rulesets; main/master protected=false. Prior writes403. Counted approval unverified.",
+        "evidence": "November 5 readback: rulesets/effective main/master rules empty; both protected=false. Only PaperStrange listed as collaborator. Prior writes403; counted approval unverified.",
         "milestone": "Before Nov16 go/no-go; preferably before Nov11 freeze",
         "closure_requires": [
           "Exact effective rules and rule IDs verified",
@@ -584,15 +592,15 @@
       {
         "issue": 5,
         "url": "https://github.com/PaperStrange/IndiaGames/issues/5",
-        "status": "supported_route_verified_issue_handoff_pending",
+        "status": "supported_route_and_issue_handoff_complete_original_route_open",
         "owner_role": "QA/tooling lead",
         "title": "Adopt a reproducible supported HTTP browser route",
         "closure_requires": [
-          "Committed protocol and actual per-game semantic reports at root/nested mounts",
-          "Frozen identities preserved; any changed artifact separatelyversioned",
-          "Original managed Chromium 152/LNA limitation disclosed",
-          "No human result claimed from automation"
-        ]
+          "Original managed Chromium 152/LNA route resolved or explicit maintainer-approved disposition recorded",
+          "Facilitator/device setup failures tracked separately from already delivered supported-HTTP reports",
+          "No human result inferred from automation"
+        ],
+        "evidence": "November 4 supported-HTTP reports and issue comment delivered; original managed Chromium 152/LNA route remains unresolved. Facilitator and physical-phone setups require actual verification."
       }
     ],
     "human_studies_arranged": false,
@@ -643,11 +651,19 @@
       },
       {
         "number": 7,
-        "status": "pending_publication_at_premerge_snapshot"
+        "status": "merged",
+        "merge_commit": "49911d794790ecf5e09ae86519675cecc8befaf2",
+        "ci_conclusion": "success"
+      },
+      {
+        "number": 8,
+        "status": "merged",
+        "merge_commit": "f68c755c6b738ff219561faaaf2f78b0ceee3a83",
+        "ci_conclusion": "success"
       }
     ],
-    "delivery_note": "Delivery: Vivid 0.1.3 is staged on master. Human studies, physical-device checks and independent release approval remain pending.",
-    "status_checked_at": "2026-11-04T16:35:27.604185Z"
+    "delivery_note": "Vivid 0.1.3 and Bell 0.1.0 are staged; Small Hours awaits its pair-study decision. Three preparation lanes are active. Human appointments, physical-device results and independent approval remain pending.",
+    "status_checked_at": "2026-11-05T16:01:39.672098Z"
   },
   "governance": {
     "issue": "https://github.com/PaperStrange/IndiaGames/issues/2",
@@ -658,8 +674,9 @@
     "robot_counted_approval_status": "unverified",
     "nemo_invitation": "deferred",
     "legacy_candidate_url_repair": "paused_by_owner",
-    "latest_readback_date_utc": "2026-11-04",
-    "latest_readback": "No rulesets; main/master protected=false; counted approval remains unverified."
+    "latest_readback_date_utc": "2026-11-05",
+    "latest_readback": "No rulesets or effective main/master rules; both protected=false. Only PaperStrange listed as collaborator. Counted robot approval remains unverified.",
+    "latest_readback_document": "docs/iteration-2026-11-05/admin/STATUS.md"
   },
   "environment_scope": "Historical verification environment; current technical reports record their actual browser and execution environment separately."
 }

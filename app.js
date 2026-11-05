@@ -147,6 +147,18 @@ function renderReadiness() {
   }));
 }
 
+function renderLaunchReadiness() {
+  // A dated snapshot, never a live countdown that could imply fresh verification.
+  const asOf = snapshot.snapshot_date_utc;
+  const days = target => Math.round((Date.parse(target) - Date.parse(asOf)) / 86400000);
+  el('risk-date').dateTime = asOf;
+  el('risk-date').textContent = shortDate(asOf, true);
+  el('days-to-freeze').textContent = days(manifest.launch.candidate_freeze_date_utc);
+  el('days-to-launch').textContent = days(manifest.launch.target_date_utc);
+  el('human-sessions-filed').textContent = manifest.readiness.human_sessions_completed;
+  el('launch-readiness').hidden = false;
+}
+
 function renderTimeline() {
   const launch = manifest.launch;
   const steps = launch.timeline;
@@ -369,12 +381,13 @@ async function loadDashboard() {
     if (attempt !== loadAttempt) return;
     snapshot = tasks; manifest = sources; releaseRegistry = releases; presentation = visuals;
     currentPage = 1;
-    renderPlanningMetadata(); renderProjects(); renderReadiness(); renderTimeline(); renderEvidence(); renderReleases(); renderBoardSummary(); renderTasks();
+    renderPlanningMetadata(); renderProjects(); renderReadiness(); renderLaunchReadiness(); renderTimeline(); renderEvidence(); renderReleases(); renderBoardSummary(); renderTasks();
     ['task-search', 'lane-filter', 'status-filter', 'perspective-filter'].forEach(id => { el(id).disabled = false; });
     setViewFromHash();
   } catch (error) {
     if (attempt !== loadAttempt) return;
     snapshot = null;
+    el('launch-readiness').hidden = true;
     el('load-error').hidden = false;
     el('project-grid').replaceChildren(node('p', 'loading-state', 'Project data unavailable. Open the launch plan above.'));
     el('task-grid').replaceChildren();

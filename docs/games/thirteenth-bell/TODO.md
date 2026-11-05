@@ -1,5 +1,13 @@
 # The Thirteenth Bell — Mina-route experiment and human handoff
 
+## November 5 parallel preparation · TB-20
+
+All three preparation lanes remain active; the owner selected facilitator-machine sessions and needs more recruitment time. Human dates remain unbooked. [Current iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
+
+**Verify the two-build facilitator setup and recall handoff.** Verify frozen candidate 0.1.0 and its previous Contrast reference are accessible over local HTTP with exact identities; disclose no-save and optional font limitations. Prepare the canonical six-person comparison with three people per first-build order. Require at least 120 seconds neutral activity after each run before recall and before exposing the next build.
+
+This dated task is active until its actual results and immutable evidence links are filed. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
+
 ## Current readiness handoff · 4 November 2026
 
 4 November: 33 scenario executions passed (16 root, 16 nested, one nested desktop ending/restart) on unchanged 0.1.0. Candidate resources had no failures. The frozen historical reference used fallback fonts after its optional Google Fonts certificate failure. Known-route and race-regression checks are not fresh-player comprehension, recall or physical-device evidence.

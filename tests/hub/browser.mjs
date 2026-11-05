@@ -246,6 +246,14 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       group.overview_height_px = await page.evaluate(() => document.documentElement.scrollHeight);
       assert.ok(group.visible_words <= 650, `${id}: ${group.visible_words} overview words exceeds 650`);
       await noOverflow(page, id + ' overview');
+      assert.equal(await page.locator('#launch-readiness').isVisible(), true);
+      assert.equal(await page.locator('#risk-date').getAttribute('datetime'), tasks.snapshot_date_utc);
+      const daysFromSnapshot = target => String(Math.round((Date.parse(target) - Date.parse(tasks.snapshot_date_utc)) / 86400000));
+      assert.equal(await page.locator('#days-to-freeze').innerText(), daysFromSnapshot(manifest.launch.candidate_freeze_date_utc));
+      assert.equal(await page.locator('#days-to-launch').innerText(), daysFromSnapshot(manifest.launch.target_date_utc));
+      assert.equal(await page.locator('#human-sessions-filed').innerText(), '0');
+      assert.match(await page.locator('#launch-readiness').innerText(), /unbooked/i);
+      assert.equal(await page.locator('.owner-actions li').count(), 3);
       const readiness = page.locator('#readiness-rows tr');
       assert.equal(await readiness.count(), 3);
       const rowWords = await readiness.allInnerTexts();
