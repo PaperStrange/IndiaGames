@@ -1,5 +1,6 @@
 import { createRequire } from 'node:module';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 const require = createRequire(import.meta.url);
@@ -7,8 +8,11 @@ let chromium;
 try { ({ chromium } = require('playwright')); }
 catch { ({ chromium } = require(process.env.PLAYWRIGHT_PATH || '/workspace/indiagames-env/toms-notebook-deps/node_modules/playwright')); }
 const base = process.env.BASE_URL || 'http://127.0.0.1:8111/memorable-moments-game/';
-const out = path.resolve(new URL('../docs/evidence', import.meta.url).pathname);
-await mkdir(out, { recursive: true });
+// Each run owns a new evidence folder; historical committed observations are immutable.
+const out = process.env.EVIDENCE_DIR
+  ? path.resolve(process.env.EVIDENCE_DIR)
+  : await mkdtemp(path.join(tmpdir(), 'small-hours-browser-'));
+if (process.env.EVIDENCE_DIR) await mkdir(out);
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium', headless: true, args: ['--no-sandbox'] });
 const trace = [];
 let checks = 0;
@@ -20,12 +24,11 @@ async function click(page, action, id) {
 async function fits(page, label) {
   await check(`${label}: no horizontal overflow`, async () => assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)));
 }
-const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 const errors = [];
+try {
+const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 page.on('pageerror', err => errors.push(err.message));
-await page.goto(base + 'research-report.html');
-await page.screenshot({ path: path.join(out, '00-before-research-only.png'), fullPage: false });
-trace.push({ baseline: 'Existing branch has a research report, no playable start/reveal/keepsake path.' });
+trace.push({ method: 'Automated development-build journey; not a frozen-baseline study, human session or physical-device observation.' });
 await page.goto(base + 'play/');
 await page.screenshot({ path: path.join(out, '01-desktop-home.png'), fullPage: true });
 await fits(page, 'Desktop home');
@@ -145,5 +148,11 @@ await check('Sandboxed 821x462 iframe runs the same-device flow', async () => as
 await page.screenshot({path:path.join(out,'10-iframe-interaction.png'),fullPage:false});
 await check('No uncaught browser errors in observed sessions', async () => assert.deepEqual(errors, []));
 await writeFile(path.join(out,'browser-observations.json'),JSON.stringify({ runAt: new Date().toISOString(), browser:'Headless Chromium via Playwright; simulated viewports, not physical-device tests', checks, trace }, null, 2)+'\n');
-await browser.close();
 console.log(`${checks} checks passed. Screenshots, downloads, and action trace: ${out}`);
+} catch (error) {
+  await writeFile(path.join(out, 'browser-failure.json'), JSON.stringify({ runAt: new Date().toISOString(), checks, trace, errors, failure: String(error) }, null, 2) + '\n');
+  console.error(`Browser verification failed; partial evidence: ${out}`);
+  throw error;
+} finally {
+  await browser.close();
+}

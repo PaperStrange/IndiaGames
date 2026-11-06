@@ -1,0 +1,12 @@
+{
+  "name": "small-hours-development",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/countdown.test.mjs",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

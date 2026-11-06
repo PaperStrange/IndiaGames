@@ -1,14 +1,15 @@
 import { fresh, begin, choose, seal, sealLine, keepsakeSvg } from './state.js';
 import { view } from './views.js';
+import { createCountdown } from './countdown.js';
 let state = fresh();
-let clock = null;
-let remaining = 45;
-let timerStarted = false;
 const app = document.querySelector('#app');
 const dateLabel = new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date());
-function clearClock() { clearInterval(clock); clock = null; remaining = 45; timerStarted = false; }
+const countdown = createCountdown({
+  onTick: remaining => { app.querySelector('#timer').textContent = `0:${String(remaining).padStart(2, '0')}`; },
+  onFinish: () => { app.querySelector('#timer-status').textContent = 'A little time has passed. Keep going as long as you like.'; },
+});
 function render(focus = true) {
-  clearClock();
+  countdown.cancel();
   app.innerHTML = view(state, dateLabel);
   if (focus) {
     const heading = app.querySelector('h1');
@@ -30,20 +31,9 @@ function confirmEnd() {
   dialog.showModal();
 }
 function startTimer(button) {
-  if (timerStarted) return;
-  timerStarted = true;
+  if (!countdown.start()) return;
   button.disabled = true;
   button.textContent = 'Your moment is yours';
-  const deadline = Date.now() + 45000;
-  const tick = () => {
-    remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
-    document.querySelector('#timer').textContent = `0:${String(remaining).padStart(2, '0')}`;
-    if (remaining <= 0) {
-      clearInterval(clock); clock = null;
-      document.querySelector('#timer-status').textContent = 'A little time has passed. Keep going as long as you like.';
-    }
-  };
-  clock = setInterval(tick, 1000);
 }
 function download() {
   const blob = new Blob([keepsakeSvg(state, dateLabel)], { type: 'image/svg+xml;charset=utf-8' });
@@ -80,6 +70,6 @@ app.addEventListener('input', event => {
 });
 document.querySelector('#about-button').addEventListener('click', () => document.querySelector('#about').showModal());
 // Never retain private DOM in the browser's back-forward cache.
-window.addEventListener('pagehide', () => { state = fresh(); clearClock(); app.replaceChildren(); });
+window.addEventListener('pagehide', () => { state = fresh(); countdown.cancel(); app.replaceChildren(); });
 window.addEventListener('pageshow', event => { if (event.persisted) render(); });
 render(false);

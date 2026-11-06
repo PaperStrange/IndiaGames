@@ -7,8 +7,9 @@ One game, one branch: `memorable-moments-game`. Work only in this worktree. Keep
 | Content / player experience | `play/content.js` | Stable scene and choice IDs; exactly three concrete choices per current scene; an accessible imaginary/seated alternative. No personal-disclosure demand. |
 | Rules / session | `play/state.js` | Pure choice and seal operations; validate stage and choice IDs; export escaping; ephemeral session policy. Do not introduce persistence without updating player copy and tests. |
 | Interaction | `play/game.js` | DOM event adapter, explicit stage transitions, optional wall-clock timer, download, teardown. Keyboard and touch call the same actions. |
+| Timer lifecycle | `play/countdown.js` | Own the one-shot 45-second deadline, interval and cancellation. Report elapsed time through callbacks; do not read or write DOM. Cancel on render/pagehide; leave the timer running when an End dialog is dismissed. |
 | Presentation | `play/views.js`, `play/style.css`, `play/icons.js` | Render only current-stage information. Escape every player-authored string. Preserve text labels and reduced-motion support. Keep authored vector art local. |
-| QA | `tests/browser.mjs`, `docs/evidence/` | Exercise behavior through the UI; record replayable actions and screenshots. Label simulation vs. real device vs. human observation. |
+| QA | `tests/browser.mjs`, `tests/countdown.test.mjs` | Exercise behavior through the UI and test timer lifecycle boundaries. Write each run to a fresh external evidence directory; preserve committed historical `docs/evidence/`. Label simulation vs. real device vs. human observation. |
 
 The renderer currently receives the full in-memory state and selects only fields appropriate to the current stage. This is a visual privacy boundary, not a secure process boundary. Never claim encryption or protection from the device owner.
 
@@ -30,3 +31,7 @@ The research teammate inspected pinned GitHub source. These are structural lesso
 4. Before integration, run this game's browser checks against the exact files being reviewed. If only prose changed, check links/copy instead of repeating gameplay tests without a reason.
 
 For a fresh browser package, include every file under `play/`; exclude research and evidence if size matters. No bundler is required. Do not silently switch to a native capture product: browser-first is the current user direction.
+
+## Current engineering milestone · November 6
+
+The [maintenance handoff](../../docs/gamejam/maintenance-2026-11-06/README.md) records the selected behavior-preserving timer cleanup and safer verification runner. The private, dependency-free `package.json` supplies Node test commands; it is development tooling, not a browser dependency. New development bytes are separate from the immutable eight-file study baseline. Preparing and checking code can proceed while human recruitment is pending; changing the human protocol or staging a release still follows the existing pilot decision and approval gate.
