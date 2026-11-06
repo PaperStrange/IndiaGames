@@ -55,6 +55,6 @@ Raw logs, traces, synthetic keepsake downloads and browser captures go only into
 
 ## Progress boundary
 
-The preliminary implementation check passed against committed development source `4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500`. Final evidence is recorded separately after the implementation is integrated and its committed tooling can be identified. The initial run is retained; no failed game journey is hidden.
+**SH-23 engineering acceptance passed** on committed implementation `15d60d225186d655ad926e18ccc153fbe6ae7dfa`: 13 unit tests, two matching exports, 18 direct HTTP file comparisons, 66 existing browser checks and three timer groups/nine assertions. Real root expiry took 45,051 ms. The final run recorded four real favicon404 responses and four matching console diagnostics; other observed errors were zero. The earlier preliminary run recorded five favicon404 responses and is retained separately. [Exact verification](VERIFICATION.md) · [Machine-readable evidence](verification.json).
 
 Human prerequisites remain unchanged: six willing pairs, physical-device/privacy checks, the evidence-linked pilot/design decision and independent human review. Keep the 5/6 unaided reveal, 4/6 both-contribute and 3/6 voluntary save/replay thresholds. Recruitment does not block this tooling work; engineering checks do not fill human results.

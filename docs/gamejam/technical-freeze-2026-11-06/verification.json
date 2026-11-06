@@ -1,0 +1,164 @@
+{
+  "date_utc": "2026-11-06",
+  "task": "SH-23",
+  "status": "engineering_acceptance_passed",
+  "source_commit": "15d60d225186d655ad926e18ccc153fbe6ae7dfa",
+  "source_path": "memorable-moments-game/play",
+  "implementation_input_sha256": {
+    "README.md": "ff33fa8892175b2494b35bba28883d24ee91bc98a85169025a4fc8b14e22bb19",
+    "memorable-moments-game/package.json": "3e1dbda382d56395cc3e77a7e364360e0d7d235acfd1a736d667f7e6856ac696",
+    "docs/gamejam/technical-freeze-2026-11-06/README.md": "1a83b1dee3988bb1d1391324a6885f353762a251c9a11037c9d9376fe8106e3c",
+    "memorable-moments-game/tests/timer-browser.mjs": "df1843f8223148d43f17ba3c984d14f4d0884b04d79815507693247aee142d48",
+    "memorable-moments-game/tests/development-export.test.mjs": "56937e1d18e1660181b2e8feb651100fc0eb359397ee3045f71944605c0f1879",
+    "memorable-moments-game/tests/browser.mjs": "7afbe0d35787f423a5de1f259f211c7b64467d7ad8adcf75580884723902b0a4",
+    "memorable-moments-game/scripts/verify-development-export.mjs": "7c167df3d3dc8e47ae6dee65e8f66256af56d14f712fd1f30b92c7e32c90da0d",
+    "memorable-moments-game/scripts/development-export.mjs": "3586b4ab94bf706e2d8f1e4a4931fdec846401f40dd47fe7a5280027c229b408"
+  },
+  "verifier_sha256": {
+    "memorable-moments-game/scripts/development-export.mjs": "3586b4ab94bf706e2d8f1e4a4931fdec846401f40dd47fe7a5280027c229b408",
+    "memorable-moments-game/scripts/verify-development-export.mjs": "7c167df3d3dc8e47ae6dee65e8f66256af56d14f712fd1f30b92c7e32c90da0d",
+    "memorable-moments-game/tests/browser.mjs": "7afbe0d35787f423a5de1f259f211c7b64467d7ad8adcf75580884723902b0a4",
+    "memorable-moments-game/tests/timer-browser.mjs": "df1843f8223148d43f17ba3c984d14f4d0884b04d79815507693247aee142d48"
+  },
+  "started_at": "2026-11-06T06:37:55.473Z",
+  "completed_at": "2026-11-06T06:38:55.431Z",
+  "runtime_versions": {
+    "node": "v24.19.0",
+    "git": "git version 2.52.0",
+    "playwright": "1.56.1",
+    "chromium": "151.0.7922.173"
+  },
+  "development_build": {
+    "files": {
+      "README.md": "e126cb295a7a1f3f6e084532e802da572215dc3df260fccc39bffdbf83ff5468",
+      "content.js": "8845632466083261dcc83152a3d6dd1ed196e7b0fd62626948e2abbd92911755",
+      "countdown.js": "91083a0e752e8c0e81a9b3adc7ef54c15ea17df0cb8e902ced0780b0fbd86b48",
+      "game.js": "475414dd61e4269ecebf809f08f647c34b1c28cb87b36882e932e960e6fc5ad3",
+      "icons.js": "7c05b43160356b9697665ae9cf0f0eb759441830aae030c2dfa867e28f61e2dd",
+      "index.html": "960c5b00cc6cbc20613cb0f324fa380a4f81192a32da6168eebb6caa5cab0171",
+      "state.js": "8c38ec0889be5c3342197a31e47368fcfa5481a61cb88c39133bbd79d1332137",
+      "style.css": "f6a3ae0f42d4ca59e1a1b4fdcf8b9f420cf8b7837b2ec357ae76f07fb22f1016",
+      "views.js": "ebd89111ec8a4d538e52d284d83339281c2ab88363d38ea216177dd45bf615cc"
+    },
+    "file_count": 9,
+    "bytes": 60443,
+    "inventory_sha256": "6be6da63685f88eb5b4a12d0be34c56b6774b2fc04e9ed22dc4c0ba0d28ff0cb"
+  },
+  "second_export_identical": true,
+  "exports_unchanged_after_http": true,
+  "frozen_baseline": {
+    "inventory_sha256": "fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3",
+    "archive_sha256": "64ebb3bdfd69b4a643a06817cc023754e94fc114c5a812fae6fb111af1ad2fd2",
+    "unchanged": true
+  },
+  "checks": {
+    "unit_tests": {
+      "passed": 13,
+      "failed": 0,
+      "countdown_cases": 5,
+      "export_contract_cases": 8,
+      "log_sha256": "345dc373c56ecd2b9af4b6eec6f69d30601a1265fd66b75d41bc7769bc431064"
+    },
+    "direct_http_files": {
+      "files_per_mount": 9,
+      "mounts": [
+        "/",
+        "/IndiaGames/development/small-hours/"
+      ],
+      "hash_comparisons_passed": 18
+    },
+    "existing_browser_journeys": [
+      {
+        "mount": "/",
+        "checks": 33,
+        "trace_sha256": "44b704b0ba7d77ff85abf44e194e78b6cefa40419764563961f929bd8edaf96d",
+        "known_favicon_console_404": 1,
+        "unexpected_errors": []
+      },
+      {
+        "mount": "/IndiaGames/development/small-hours/",
+        "checks": 33,
+        "trace_sha256": "415f82612365a4c387c14d384e97576c48cf390a948c7ff6bacdf5e37bceff0f",
+        "known_favicon_console_404": 1,
+        "unexpected_errors": []
+      }
+    ],
+    "timer": {
+      "groups": 3,
+      "assertions": 9,
+      "cases": [
+        {
+          "id": "real-expiry-root",
+          "width": 1280,
+          "checks": [
+            "repeated start disabled; initial 45 seconds shown",
+            "real expiry keeps the optional activity playable"
+          ],
+          "real_elapsed_ms": 45051,
+          "status": "pass"
+        },
+        {
+          "id": "dialog-and-navigation-nested",
+          "width": 390,
+          "checks": [
+            "elapsed time updates countdown",
+            "canceling End retains the active countdown",
+            "confirm forget clears timer and stage without late writes",
+            "new activity has its own optional 45-second timer",
+            "leaving activity cancels the old timer"
+          ],
+          "clock_method": "Playwright clock emulation",
+          "status": "pass"
+        },
+        {
+          "id": "page-lifecycle-root",
+          "width": 1280,
+          "checks": [
+            "simulated pagehide clears private DOM and interval",
+            "simulated persisted pageshow restores a fresh welcome"
+          ],
+          "lifecycle_method": "Synthetic PageTransitionEvent dispatch, not an actual browser bfcache test",
+          "status": "pass"
+        }
+      ],
+      "report_sha256": "39dbbc13585d16a2ccfc99dc14cc868c65a2dc79bf56118e1f35d487f0476c9c",
+      "known_favicon_console_404": 2,
+      "unexpected_errors": []
+    },
+    "verifier_report_sha256": "24f4d22bed605f55df446d2cb4cc046afbd0ac29c8cfda17ccff68c07a2066a9"
+  },
+  "known_diagnostics": {
+    "missing_favicon_path": "/favicon.ico",
+    "actual_http_404_responses": 4,
+    "actual_console_404_events": 4,
+    "description": "Unchanged development artifact has no favicon. Real server404 responses and browser diagnostics were retained, not suppressed or replaced with204. This is not a zero-total-errors claim."
+  },
+  "unexpected_errors": [],
+  "attempts": [
+    {
+      "id": "preliminary",
+      "source_commit": "4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500",
+      "result": "pass",
+      "browser_checks": 66,
+      "timer_groups": 3,
+      "known_http_404": 5,
+      "changes_after": "Added explicit tooling hashes/version identity; independent review tightened canonical output-root handling with a subdirectory/symlink-parent fixture."
+    },
+    {
+      "id": "final-committed-implementation",
+      "source_commit": "15d60d225186d655ad926e18ccc153fbe6ae7dfa",
+      "result": "pass",
+      "known_http_404": 4
+    }
+  ],
+  "human_sessions": 0,
+  "physical_devices": 0,
+  "staged": false,
+  "approval": false,
+  "limits": [
+    "Browser viewports and synthetic input do not establish human enjoyment, physical-device support or approval.",
+    "Clock emulation and synthetic page transitions are not real-time or bfcache claims; only root expiry was timed against wall clock.",
+    "This verifies the nine-file development build, not the frozen eight-file human-study baseline.",
+    "Raw logs, drivers, synthetic downloads and complete captures remain outside Git; summaries and a selected screenshot are public."
+  ]
+}
