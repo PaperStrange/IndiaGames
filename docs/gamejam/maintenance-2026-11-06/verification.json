@@ -1,0 +1,185 @@
+{
+  "date_utc": "2026-11-06",
+  "source_base_commit": "2070902d7b5ea0da59ab07d35d218f9a66f7791f",
+  "version": "0.1.4",
+  "actor": "Automated code/build and browser verification",
+  "source_input_sha256": {
+    "vivid-2.5d-photo-game/play/package.json": "eb723d13e1feba3cc0fcbac3dc990e46fca3da379f11c6c633706cf03a25a9df",
+    "vivid-2.5d-photo-game/play/package-lock.json": "d5265d8cff667cb84a35e2f6455d70df9dc74a313f64d8970143e894cb16b55d",
+    "vivid-2.5d-photo-game/play/vite.config.js": "9108752c7d7c91a2e80edc43e6d5b07766b8c408049e150c58244fde7b960d7f",
+    "vivid-2.5d-photo-game/play/index.html": "99faa093dbbc3f44fd05ac761ce1015a20aa408a93b6e88f3bea879217a56e1c",
+    "vivid-2.5d-photo-game/play/scripts/check-build-version.mjs": "916b1a679e03fde45e2437e60226fda441b55c6565ede7882d5c7c854b83954d"
+  },
+  "build": {
+    "files": {
+      "art/frame.glb": "f58216181104f2ebb9babd7d6fb536db66b3af178fc472beabdbbfb90bec244a",
+      "art/keeper-portrait.svg": "ce2e5ad30f0c2327d4874cb6d3f51f7d6ea2d94754237b0a5eaa5f4b39a9535f",
+      "art/model-metrics.json": "596f3b694e0782b28602789675e5b034eba841b887e4422aac8a02192f91d63a",
+      "art/postcard.svg": "fc8e7b8152cf01b09506bdc852a7d0ded509d64ac5c355a91e07e66848afefb3",
+      "art/sketch-overlay.svg": "2d1e247b3424e2d35ad6ef7493bdfd9711d5505e881267b4f4238c6985f901a9",
+      "art/sketch-underlay.svg": "9b489cddd713563f5a6a4f17856d6b8fb7cc996d84c32786718bc7d607d40b25",
+      "art/workbench.glb": "0da0115735a527aa6afb2276dceb58754a5fdd5118206ee94c4ae830cbc24446",
+      "assets/index-BWZuLwrg.js": "bf48b4e44c3d67bf88cd5ad14dc9d36e213d9e0c73d4744668b0dac2feba6c8a",
+      "assets/index-Bj1qgVaG.css": "07dfe7be85a9844e42efceae498c1d9ae271e942a5af25aee5de79d0b42b98d6",
+      "assets/iona-CUvUWMAu.js": "5848954d4fdad15a24415a65d0fa0a60711a201430f0ce3ee3e26e28dda60e59",
+      "assets/mara-D9h6TfjT.js": "13be7fa92007b3b0d30e320c4b77c64ff785c59c641731d68e2a2a654870a93e",
+      "assets/world-BIfCt15a.js": "b6841fa12456a7ac9910e56100638b63ef8f399398b912852ee4c88f4d3f6719",
+      "index.html": "766780e0d42b5a5f4c0a6403966fb7e0eeec47e4c347cbf159b0ddabcbf1ef44",
+      "story-catalog.json": "1b17343c35df541f9c1ef52579412667d0376b51e180cd409ef449115037d6fc",
+      "third-party-notices.txt": "b9229f490630a80cb4968dea0483aea95706b1e8dd5645ece366a7cea3c4f560"
+    },
+    "sha256": "a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1",
+    "bytes": 1401606,
+    "changed_vs_0_1_3": [
+      "index.html"
+    ]
+  },
+  "unit_tests": {
+    "count": 51,
+    "passed": 51,
+    "failed": 0
+  },
+  "story_validation": {
+    "packs": 2,
+    "representative_views": 25,
+    "local_asset_references": 6,
+    "result": "PASS"
+  },
+  "built_metadata_guard": {
+    "positive": "PASS",
+    "stale_0_1_2_fixture_rejected": true
+  },
+  "browser": "151.0.7922.173",
+  "final_browser": {
+    "started_at": "2026-11-06T05:44:10.726Z",
+    "finished_at": "2026-11-06T05:44:37.485Z",
+    "result": "PASS",
+    "cases": [
+      {
+        "id": "root-1280-iona",
+        "story": "iona",
+        "mount": "/",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "status": "PASS",
+        "endpoint": "Remembered private letter placed on return, retained after reload"
+      },
+      {
+        "id": "root-1280-mara",
+        "story": "mara",
+        "mount": "/",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "status": "PASS",
+        "endpoint": "Repair interpretation reached and retained after reload"
+      },
+      {
+        "id": "root-390-iona",
+        "story": "iona",
+        "mount": "/",
+        "viewport": {
+          "width": 390,
+          "height": 900
+        },
+        "status": "PASS",
+        "endpoint": "Remembered private letter placed on return, retained after reload"
+      },
+      {
+        "id": "root-390-mara",
+        "story": "mara",
+        "mount": "/",
+        "viewport": {
+          "width": 390,
+          "height": 900
+        },
+        "status": "PASS",
+        "endpoint": "Repair interpretation reached and retained after reload"
+      },
+      {
+        "id": "nested-1280-iona",
+        "story": "iona",
+        "mount": "/IndiaGames/release-candidates/keepers-frame/0.1.4/build/",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "status": "PASS",
+        "endpoint": "Remembered private letter placed on return, retained after reload"
+      },
+      {
+        "id": "nested-1280-mara",
+        "story": "mara",
+        "mount": "/IndiaGames/release-candidates/keepers-frame/0.1.4/build/",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "status": "PASS",
+        "endpoint": "Repair interpretation reached and retained after reload"
+      },
+      {
+        "id": "nested-390-iona",
+        "story": "iona",
+        "mount": "/IndiaGames/release-candidates/keepers-frame/0.1.4/build/",
+        "viewport": {
+          "width": 390,
+          "height": 900
+        },
+        "status": "PASS",
+        "endpoint": "Remembered private letter placed on return, retained after reload"
+      },
+      {
+        "id": "nested-390-mara",
+        "story": "mara",
+        "mount": "/IndiaGames/release-candidates/keepers-frame/0.1.4/build/",
+        "viewport": {
+          "width": 390,
+          "height": 900
+        },
+        "status": "PASS",
+        "endpoint": "Repair interpretation reached and retained after reload"
+      }
+    ],
+    "dev_badge": {
+      "status": "PASS",
+      "version": "0.1.4",
+      "note": "Fresh Vite server rendered the current package version without a committed HTML version literal."
+    },
+    "errors": []
+  },
+  "attempt_history": [
+    {
+      "attempt": "01",
+      "result": "HARNESS_COMPILE_FAILURE",
+      "detail": "Missing closing brace in the local QA driver; no browser execution. Original driver and log retained locally."
+    },
+    {
+      "attempt": "02",
+      "result": "FAIL",
+      "detail": "Four Iona journeys passed; four Mara checks incorrectly expected the word interpretation instead of the authored completed-invitation label. Dev check also failed to resolve Vite by an absolute package directory. No browser resource errors."
+    },
+    {
+      "attempt": "03",
+      "result": "FAIL",
+      "detail": "The four targeted Mara retries passed and dev badge rendered correctly; aggregate failed on an unrequested favicon404."
+    },
+    {
+      "attempt": "04",
+      "result": "FAIL",
+      "detail": "A dev-only diagnostic identified the exact console location as /favicon.ico. No suppression or interception applied to the Vite server."
+    },
+    {
+      "attempt": "05",
+      "result": "PASS",
+      "detail": "After the approved inline favicon addition, all eight story journeys and fresh dev badge passed on the final inventory with zero unexpected browser/resource errors."
+    }
+  ],
+  "clean_committed_source_export": "Pending immutable source commit and version-aware exporter run; initial local builds are not represented as that provenance.",
+  "human_sessions": 0,
+  "physical_device_results": 0,
+  "human_approval": false
+}

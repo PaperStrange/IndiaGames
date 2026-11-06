@@ -1,6 +1,6 @@
 {
   "name": "keepers-frame",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "type": "module",
   "engines": {
@@ -11,7 +11,7 @@
     "serve": "vite --host 127.0.0.1 --port 8112",
     "test": "node --test test/*.test.js",
     "validate": "node scripts/validate-stories.mjs",
-    "build": "npm run validate && vite build && node scripts/write-catalog.mjs",
+    "build": "npm run validate && vite build && node scripts/write-catalog.mjs && node scripts/check-build-version.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 8112",
     "test:browser": "node test/iteration-browser.mjs"
   },
