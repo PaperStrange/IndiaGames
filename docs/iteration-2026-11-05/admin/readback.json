@@ -1,0 +1,101 @@
+{
+  "observed_at_utc": "2026-11-05T15:57:22.548664+00:00",
+  "repository": "PaperStrange/IndiaGames",
+  "read_only": true,
+  "endpoints": {
+    "rulesets": {
+      "exit_code": 0,
+      "data": []
+    },
+    "rules/branches/main": {
+      "exit_code": 0,
+      "data": []
+    },
+    "rules/branches/master": {
+      "exit_code": 0,
+      "data": []
+    },
+    "branches/main": {
+      "exit_code": 0,
+      "data": {
+        "name": "main",
+        "protected": false,
+        "commit_sha": "f68c755c6b738ff219561faaaf2f78b0ceee3a83"
+      }
+    },
+    "branches/master": {
+      "exit_code": 0,
+      "data": {
+        "name": "master",
+        "protected": false,
+        "commit_sha": "2be5f3648fed5422eb4459486661385df73c91be"
+      }
+    },
+    "pages": {
+      "exit_code": 0,
+      "data": {
+        "status": "built",
+        "html_url": "https://paperstrange.github.io/IndiaGames/",
+        "build_type": "legacy",
+        "source": {
+          "branch": "main",
+          "path": "/"
+        },
+        "https_enforced": true,
+        "public": true
+      }
+    },
+    "pages/builds/latest": {
+      "exit_code": 0,
+      "data": {
+        "status": "built",
+        "commit": "f68c755c6b738ff219561faaaf2f78b0ceee3a83",
+        "created_at": "2026-11-04T17:06:31Z",
+        "updated_at": "2026-11-04T17:07:04Z",
+        "error": {
+          "message": null
+        }
+      }
+    }
+  },
+  "completed_at_utc": "2026-11-05T15:58:09Z",
+  "connector_readbacks": {
+    "issues": [
+      {
+        "number": 2,
+        "state": "open",
+        "updated_at": "2026-11-04T17:03:10Z",
+        "comments": 5,
+        "latest_comment_url": "https://github.com/PaperStrange/IndiaGames/issues/2#issuecomment-6636823465"
+      },
+      {
+        "number": 5,
+        "state": "open",
+        "updated_at": "2026-11-04T16:17:12Z",
+        "comments": 1,
+        "latest_comment_url": "https://github.com/PaperStrange/IndiaGames/issues/5#issuecomment-6635762133"
+      }
+    ],
+    "open_pull_request_count": 0,
+    "PaperStrange_permission": "admin"
+  },
+  "collaborators": [
+    {
+      "login": "PaperStrange",
+      "role_name": "admin",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "pull": true,
+        "push": true,
+        "triage": true
+      }
+    }
+  ],
+  "counted_robot_approval": "not_verified; no settings mutation attempted",
+  "limitations": [
+    "Readback is a dated observation; later settings or pull requests can change it.",
+    "A successful Pages API status does not re-run browser interaction or hash verification.",
+    "No original managed Chromium 152 route, physical device, human study or release approval was tested by this readback."
+  ]
+}

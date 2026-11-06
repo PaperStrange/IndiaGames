@@ -1,5 +1,13 @@
 # Small Hours — unchanged-baseline pilot
 
+## November 5 parallel preparation · SH-21
+
+All three preparation lanes remain active; the owner selected facilitator-machine sessions and needs more recruitment time. Human dates remain unbooked. [Current iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
+
+**Close targeted input/timer gaps and prepare facilitator machines.** Check keyboard/focus through the full baseline path, blank and maximum/long detail inputs, and timer expiry against actual implemented semantics; retain failures and separate driver mistakes from product defects. Record the exact unchanged eight-file baseline inventory before/after and a local HTTP facilitator setup; verify downloads/privacy reset where needed rather than rerunning every historical case.
+
+This dated task is active until its actual results and immutable evidence links are filed. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
+
 ## Current readiness handoff · 4 November 2026
 
 4 November: 8 supported-HTTP lifecycle cases passed across root/nested mounts, 1280/390px and pair/rehearsal modes; actual SVG contents and replay/reset/reload checked, zero reported errors, frozen baseline unchanged. Keyboard/focus, blank/maximum-length details, timer expiry, physical devices and real pair experience were not tested in this pass.
@@ -420,3 +428,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 - [ ] If publication fails, preserve the approved artifact, report the actual failure and rerun only the failed publication step. Never rewrite a released version; publish corrections under a new version.
 
 **Completion evidence:** none; future release work.
+
+### November 5 completed preparation · SH-21
+
+5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested.
+
+[Technical evidence](https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md) · [Facilitator setup and blank-form links](https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md). The new preparation card is done; existing human and release cards keep their prior gates.

@@ -1,5 +1,7 @@
 # Issue-led iteration · 4 November 2026
 
+> **November 5 status correction:** This document preserves the November 4 premerge account. Vivid 0.1.3 staging, issue #5 comment delivery, PRs #7/#8 and live hub verification subsequently completed. The [current iteration](../iteration-2026-11-05/README.md) records their evidence and remaining human/admin blockers. Statements below that say those deliveries are pending are historical.
+
 Issue/comment readback: **2026-11-04 15:55:06–15:55:07 UTC**. This review covers every repository issue, including closed-state results and all issue comments. GitHub returned **two actual issues, both open**, plus three pull requests sharing the same number sequence. The second 100-item page was empty. There were no closed issues to carry forward at this snapshot. The local source snapshot retains the fetched bodies/comments; the links below are the public record.
 
 The [supported HTTP setup](HTTP-SETUP.md) documents the co-located route and its evidence limits.

@@ -12,13 +12,13 @@ The **Overview** combines real game images, playtest readiness and the November 
 
 [Per-game checklists, recording templates and launch plans](docs/launch/2026-11-20/README.md#game-packets) include exact-artifact setup. GitHub source links open repository files; they are not browser play buttons. Repair of the older candidate Pages URL is paused at the owner’s request.
 
-[November 4 readiness handoff](docs/iteration-2026-11-04/README.md) separates current evidence adjudication, published supported HTTP checks and human studies arranged later. Vivid 0.1.3 is staged on master; human approval and official publication remain pending. [Issue dispositions](docs/iteration-2026-11-04/issues.md) retain the protection and original managed-browser limitations.
+[November 5 iteration and progress review](docs/iteration-2026-11-05/README.md) keeps all three preparation lanes active. **November 20 is at risk:** studies are unbooked, recruitment needs more time, and human/device/approval gates remain pending. [Owner unblock checklist](docs/iteration-2026-11-05/OWNER-TODO.md) lists the actual roles, appointments, devices and administrator actions needed. The [November 4 evidence](docs/iteration-2026-11-04/README.md) remains preserved.
 
 ## November 20 target
 
 | Pilot | Select one correction | Freeze | Go / no-go | Conditional launch |
 |---|---|---|---|---|
-| Schedule after technical handoff; all human cohorts pending | One observed issue or no change | Nov 11 target | Nov 16 target | Nov 20 conditional |
+| Unbooked; facilitator-machine sessions when staffed | One observed issue or no change | Nov 11 target | Nov 16 target | Nov 20 conditional |
 
 Actual observations, physical-device checks and independent approval determine which games can ship. The [full calendar](docs/launch/2026-11-20/README.md) preserves the required cohorts and decision criteria.
 

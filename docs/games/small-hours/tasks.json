@@ -525,5 +525,33 @@
     "focus": "qa",
     "completion_note": "4 November: 8 supported-HTTP lifecycle cases passed across root/nested mounts, 1280/390px and pair/rehearsal modes; actual SVG contents and replay/reset/reload checked, zero reported errors, frozen baseline unchanged. Keyboard/focus, blank/maximum-length details, timer expiry, physical devices and real pair experience were not tested in this pass. This closes technical handoff only; required human studies, devices and release approval remain pending.",
     "assigned_person_or_agent": "/root/plan_test_infrastructure + /root"
+  },
+  {
+    "id": "SH-21",
+    "lane": "memorable",
+    "perspective": "QA",
+    "priority": "P0",
+    "status": "done",
+    "owner_role": "Small Hours integrator + QA",
+    "title": "Close targeted input/timer gaps and prepare facilitator machines",
+    "deliverable": "Dated targeted technical evidence and a practical exact-artifact facilitator-machine handoff; human results remain separate.",
+    "acceptance_criteria": [
+      "Check keyboard/focus through the full baseline path, blank and maximum/long detail inputs, and timer expiry against actual implemented semantics; retain failures and separate driver mistakes from product defects.",
+      "Record the exact unchanged eight-file baseline inventory before/after and a local HTTP facilitator setup; verify downloads/privacy reset where needed rather than rerunning every historical case.",
+      "Link the canonical blank six-pair protocol and practical physical-phone setup boundary. Human recruitment, sessions, device observations and approval remain unbooked/pending; baseline pilot and decision still precede staging."
+    ],
+    "depends_on": [
+      "SH-20"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md"
+    ],
+    "focus": "Technical preparation / facilitator setup",
+    "assigned_person_or_agent": "/root/small_hours_nov5 + /root",
+    "completion_note": "5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested."
   }
 ]

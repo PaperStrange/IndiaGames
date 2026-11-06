@@ -1,5 +1,7 @@
 # November 4 iteration — technical readiness, then human studies
 
+> **November 5 status correction:** This document preserves the November 4 premerge account. Vivid 0.1.3 staging, issue #5 comment delivery, PRs #7/#8 and live hub verification subsequently completed. The [current iteration](../iteration-2026-11-05/README.md) records their evidence and remaining human/admin blockers. Statements below that say those deliveries are pending are historical.
+
 **Current goal:** verify the exact game artifacts over supported HTTP, correct bounded reproduced defects, and hand over usable human study packets. Human studies will be arranged later. The November 20 launch target remains conditional; no game has an approved official release.
 
 | Game | Current technical work | Required human evidence | Next decision |

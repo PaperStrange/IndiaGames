@@ -1,8 +1,16 @@
 # Launch plan · 20 November 2026
 
-Updated **4 November 2026**; October 28 planning windows remain below as dated history. Status: **planned; human gates pending**. Target: a browser-first release of whichever demos meet their own criteria by 20 November. No game has human approval or an official release today. This plan schedules the next decisions; it does not record future work as completed.
+Updated **5 November 2026**; October 28 planning windows remain below as dated history. Status: **planned; human gates pending**. Target: a browser-first release of whichever demos meet their own criteria by 20 November. No game has human approval or an official release today. This plan schedules the next decisions; it does not record future work as completed.
 
 The [27 October handoff](../../milestones/2026-10-27.md) is the completed preparation baseline. Its historical game artifacts and QA dates remain preserved; current technical follow-ups are recorded separately in the [November 4 readiness handoff](../../iteration-2026-11-04/README.md). The [Task cards](../../../data/tasks.json), [per-game TODOs](../../games/) and [release policy](../../RELEASE-POLICY.md) remain authoritative for dependencies and acceptance. A calendar deadline cannot waive a human criterion. Keep each failed or incomplete candidate on `master`; another approved game may ship independently.
+
+## November 5 decision · all three lanes, recruitment unbooked
+
+The owner selected all three preparation lanes in parallel and supervised sessions on facilitator machines. Recruitment needs more time; no November 7–8 appointments or other dates are assumed. [Current iteration](../../iteration-2026-11-05/README.md) and [owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) specify the next work and human/admin dependencies. As of November 5, there are 15 days to launch and six to freeze. All games are at risk; Small Hours still needs its baseline pair decision before staging.
+
+Continue targeted technical preparation through November 6–10. Select at most one bounded correction per game only after a reproduced defect or actual observations. Keep November 11 freeze, November 12–15 exact-build review and November 16 go/no-go. Reforecast any lane that cannot fit; staffing uncertainty never shortens its gate. Facilitator HTTP access and physical-phone access must each be verified. The older public candidate URL repair remains paused.
+
+Vivid 0.1.3 staging and November 4 hub deployment are complete; [the current reconciliation](../../iteration-2026-11-05/README.md#issues-and-publication-reconciliation) replaces stale premerge pending statements. New iteration publication requires its own verification.
 
 ## Game packets
 
