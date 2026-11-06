@@ -116,6 +116,17 @@
     "Independent human release approval"
   ],
   "release_path": "game branch -> new immutable master candidate -> exact-build human gate -> selected main release",
-  "independent_code_review": "Passed independent technical review after the onboarding correction: four focused final-artifact cases, 172 old-engine inventory comparisons, full tooling review and frozen legacy-export reproduction. Human release approval remains pending.",
+  "independent_code_review": {
+    "status": "pass",
+    "reviewer": "/root/prep_ops_audit",
+    "scope": "Development code/build review only; no human, fluent, physical-device or release approval.",
+    "review_json_sha256": "435821044722b10835be623d9636dcdb409b3ffa1ea82bb7a95caa1e1a969363",
+    "evidence": "Independent review retained in private task audits/bell/INDEPENDENT-REVIEW.json and .md.",
+    "focused_locale_mode_cases_passed": 4,
+    "inventory_parity_comparisons_passed": 172,
+    "historical_export_matches_frozen_packet": true,
+    "committed_export_verification": "committed-export.json",
+    "committed_export_verified": true
+  },
   "committed_export_record": "committed-export.json"
 }

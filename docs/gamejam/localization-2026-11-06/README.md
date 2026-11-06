@@ -71,7 +71,7 @@ node tests/localized-journey.cjs
 
 The evidence directory must be new; retain failed attempts. The runner's paths are test fixtures, not a public deployment. Browser reports record actual engine versions, source-file hashes and build-file hashes. The tested matrix couples locale to viewport: English desktop, Japanese phone-sized, Chinese tablet-sized, plus explicit rotation/narrow reflow. It does **not** claim every locale at every device size or physical device.
 
-The first engineering run exposed missing registry keys and visual inspection found an untranslated clarity control. Independent review then found English regenerated onboarding HTML in both modes; the templates and regression coverage were corrected. Prior reports remain preserved. Final results and exact hashes are in [verification.json](verification.json); [browser observations](browser-results.json) remain automated engineering evidence.
+The first engineering run exposed missing registry keys and visual inspection found an untranslated clarity control. Independent review then found English regenerated onboarding HTML in both modes; the templates and regression coverage were corrected. Prior reports remain preserved. Independent development-code review passed after the onboarding correction: four focused locale/mode checks, 172 inventory parity comparisons and a byte-identical historical export. This is not human release approval. Final results and exact hashes are in [verification.json](verification.json); [browser observations](browser-results.json) remain automated engineering evidence.
 
 [Japanese phone-sized outcome](ja-phone-outcome.png) · [Chinese tablet-sized outcome](zh-tablet-outcome.png) · [Human language/device review tasks](LANGUAGE-REVIEW.md)
 
