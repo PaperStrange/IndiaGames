@@ -24,30 +24,30 @@
       "lane": "memorable",
       "name": "Small Hours",
       "branch": "memorable-moments-game",
-      "reviewed_head": "4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500",
+      "reviewed_head": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
       "prior_manifest_source": "f8b725d2ce3038a38c0b49dce564bc0c7b0856d0",
       "runtime_scope": [
         "memorable-moments-game/play",
         "memorable-moments-game/tests"
       ],
       "runtime_diff_empty": false,
-      "qa_source_commit": "4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500",
+      "qa_source_commit": "15d60d225186d655ad926e18ccc153fbe6ae7dfa",
       "qa_date_utc": "2026-11-06",
       "latest_runtime_unchanged_from_qa": true,
       "planning_document": "docs/games/small-hours/TODO.md",
       "research_evidence_commit": "e94aa04273e581d1a27ade1988fe6d422b6111ec",
       "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/competitor-plays-2026-10-28/README.md",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
-      "milestone_status_label": "Engineering cleanup verified · human release pending",
-      "milestone_summary": "6 November: development cleanup passed 5 countdown unit tests, 33 browser checks, 3 focused timer groups/9 assertions and 2 runner-failure cases. Real expiry measured 45,045 ms; simulated lifecycle checks are separate. Development has nine playable files; the frozen eight-file study baseline remains unchanged and unstaged.",
+      "milestone_status_label": "Export/CI engineering verified · human release pending",
+      "milestone_summary": "6 November exact-export verification: 13 unit tests, two matching nine-file/60,443-byte exports, 18 HTTP file comparisons, 66 browser checks and three timer groups/nine assertions passed on committed source. Real expiry took 45,051 ms. Four real favicon 404 responses and four matching console events remain a known limitation; other observed errors were zero. The earlier five-favicon attempt is retained. Frozen study bytes are unchanged; no candidate, human or physical-device result is added.",
       "human_participant_rows": 0,
       "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
       "official_release": false,
       "implementation_started": true,
-      "implementation_status": "engineering_cleanup_verified",
-      "qa_status": "automated_technical_pass_human_pending",
+      "implementation_status": "engineering_freeze_checks_verified",
+      "qa_status": "automated_technical_pass_with_known_favicon_diagnostics_human_pending",
       "candidate_status": "not_staged_pilot_decision_required",
-      "qa_scope": "6 November: development cleanup passed 5 countdown unit tests, 33 browser checks, 3 focused timer groups/9 assertions and 2 runner-failure cases. Real expiry measured 45,045 ms; simulated lifecycle checks are separate. Development has nine playable files; the frozen eight-file study baseline remains unchanged and unstaged.",
+      "qa_scope": "6 November exact-export verification: 13 unit tests, two matching nine-file/60,443-byte exports, 18 HTTP file comparisons, 66 browser checks and three timer groups/nine assertions passed on committed source. Real expiry took 45,051 ms. Four real favicon 404 responses and four matching console events remain a known limitation; other observed errors were zero. The earlier five-favicon attempt is retained. Frozen study bytes are unchanged; no candidate, human or physical-device result is added.",
       "baseline_source_commit": "ca7fb8ea0fa7ceb1a9fd1c8ab238a71a47e9c649",
       "baseline_build_sha256": "fa4ca1930fc1964d929bca9704c5f0bba89dc9cc46208d34294a1e1ae5c458e3",
       "baseline_build_bytes": 58313,
@@ -63,24 +63,27 @@
       },
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/launch-2026-11-20/README.md",
       "prior_manifest_reviewed_head": "b9953cd01e95a32c631f8fb6bce9eb72c176d1e4",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/README.md",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/README.md",
       "research_adjudication_summary": "Mode-specific labels express different states; a solo operator does not establish two-person comfort or voluntary keepsake use. Gartic Solo does not complete the social telephone chain.",
-      "historical_qa_scope": "Runtime unchanged from the 20 October verification at 822366ad (33 historical behavioral assertions). On 27 October, two targeted root/nested launch groups passed with keyboard entry, private-choice controls, reload reset, no overflow and no JavaScript/HTTP errors. Human and physical-device validation remain pending. 4 November: 8 supported-HTTP lifecycle cases passed across root/nested mounts, 1280/390px and pair/rehearsal modes; actual SVG contents and replay/reset/reload checked, zero reported errors, frozen baseline unchanged. Keyboard/focus, blank/maximum-length details, timer expiry, physical devices and real pair experience were not tested in this pass. 5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested.",
-      "technical_readiness_label": "Development timer verified; study baseline retained",
+      "historical_qa_scope": "Runtime unchanged from the 20 October verification at 822366ad (33 historical behavioral assertions). On 27 October, two targeted root/nested launch groups passed with keyboard entry, private-choice controls, reload reset, no overflow and no JavaScript/HTTP errors. Human and physical-device validation remain pending. 4 November: 8 supported-HTTP lifecycle cases passed across root/nested mounts, 1280/390px and pair/rehearsal modes; actual SVG contents and replay/reset/reload checked, zero reported errors, frozen baseline unchanged. Keyboard/focus, blank/maximum-length details, timer expiry, physical devices and real pair experience were not tested in this pass. 5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested. 6 November: development cleanup passed 5 countdown unit tests, 33 browser checks, 3 focused timer groups/9 assertions and 2 runner-failure cases. Real expiry measured 45,045 ms; simulated lifecycle checks are separate. Development has nine playable files; the frozen eight-file study baseline remains unchanged and unstaged.",
+      "technical_readiness_label": "Exact development exports verified; study baseline retained",
       "reviewed_archive_upload": "45042578e549d0aba3ee10702384d0a86c780aa9",
       "human_readiness_handoff": "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md",
-      "qa_evidence_commit": "4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500",
+      "qa_evidence_commit": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
       "qa_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/verification.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/VERIFICATION.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/verification.json"
       ],
       "historical_qa_evidence": [
         "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md",
         "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/technical-qa.json",
         "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/technical-qa.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/technical-qa.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/verification.json"
       ],
-      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/README.md",
+      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/README.md",
       "development_build_sha256": "6be6da63685f88eb5b4a12d0be34c56b6774b2fc04e9ed22dc4c0ba0d28ff0cb",
       "development_file_count": 9
     },
@@ -88,33 +91,34 @@
       "lane": "vivid",
       "name": "Vivid — small worlds, lasting traces",
       "branch": "vivid-2.5d-photo-game",
-      "reviewed_head": "3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c",
+      "reviewed_head": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
       "prior_manifest_source": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
       "runtime_scope": [
         "vivid-2.5d-photo-game/play"
       ],
-      "runtime_tree": "57949dc157581ff9455359fd2abcc81472130878",
+      "runtime_tree": "4f70ea266623a9864693950a4883c87a6db2b629",
       "runtime_diff_empty": false,
-      "qa_source_commit": "f4e6034a87944f30a28ac5ede9968fd59d07cc1d",
+      "qa_source_commit": "64c94dfd9f576914257f32ec0fb93872036071a8",
       "qa_date_utc": "2026-11-06",
       "latest_runtime_unchanged_from_qa": true,
       "planning_document": "docs/games/keepers-frame/TODO.md",
       "implementation_started": true,
-      "implementation_status": "engineering_cleanup_verified",
+      "implementation_status": "engineering_freeze_checks_verified",
       "candidate_version": "0.1.4",
       "candidate_status": "staged_awaiting_human_validation",
       "candidate_master_commit": "ac931cde281e9483f6f693289cad2d99038d5bc0",
       "official_release": false,
       "human_participant_rows": 0,
-      "qa_scope": "6 November: 51 unit tests, eight final canonical story conditions and fresh development badge checks passed. Two clean builds from committed source matched; four exact-export root/nested journeys passed with zero unexpected errors. Only built index.html differs from 0.1.3 (version badge and inline favicon). Earlier failed attempts remain disclosed; human/device evidence remains pending.",
+      "qa_scope": "6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. The local build comparison found all 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.",
       "qa_status": "automated_technical_pass_human_pending",
       "current_decision_document": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md",
-      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/README.md",
+      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/README.md",
       "qa_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/verification.json",
-        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/EXPORT-QA.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/staging-record.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/verification.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179",
+        "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/remote-ci.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42175791282"
       ],
       "candidate_build_sha256": "a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1",
       "candidate_build_bytes": 1401606,
@@ -131,7 +135,7 @@
           "release_profile": "mara-object-v1"
         }
       ],
-      "qa_evidence_commit": "3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c",
+      "qa_evidence_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
       "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/ac931cde281e9483f6f693289cad2d99038d5bc0/release-candidates/keepers-frame/0.1.4/candidate.json",
       "release_policy_review": {
         "status": "merged",
@@ -145,8 +149,8 @@
       "research_evidence_commit": "23d19663c78935e70307dca33acc8f1ce07bcf48",
       "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/competitor-plays-2026-10-28/README.md",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
-      "milestone_status_label": "Engineering cleanup verified · human release pending",
-      "milestone_summary": "6 November: 51 unit tests, eight final canonical story conditions and fresh development badge checks passed. Two clean builds from committed source matched; four exact-export root/nested journeys passed with zero unexpected errors. Only built index.html differs from 0.1.3 (version badge and inline favicon). Earlier failed attempts remain disclosed; human/device evidence remains pending.",
+      "milestone_status_label": "Export/CI engineering verified · human release pending",
+      "milestone_summary": "6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. The local build comparison found all 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.",
       "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
       "launch_verification": {
         "date_utc": "2026-10-27",
@@ -158,10 +162,10 @@
       },
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
       "prior_manifest_reviewed_head": "a63834557de0a8132ce5355c0d50858e200a3914",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/README.md",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md",
       "research_adjudication_summary": "Rescue/reveal captures are not full canonical endpoints; early letter availability is not permission. Mara alignment is expressive, not a harder deduction puzzle. The shared helper layout is the bounded technical target.",
-      "historical_qa_scope": "51 unit tests and 16 browser scenarios passed on 0.1.2 on 21 October; earlier lifecycle/art checks retain their own dates. On 27 October the exact 15-file artifact passed six direct/nested launch checks, not a new full story suite. Physical-device and human validation pending. 4 November: 20 distinct semantic cases functionally passed across retained attempts, with disclosed harness corrections and one aborted asset request followed by an error-free targeted retry; 8 layout cases and 51 unit tests passed, and two clean builds matched. Canonical Iona return placement and Mara interpretation were exercised. Neutral profile, migration/recovery, forced WebGL failure, physical devices and humans were not retested in this pass. The exact verified 0.1.3 inventory is staged on master via PR #6; human validation remains pending. 5 November: 26 distinct migration, storage and graphics-fault conditions passed across retained attempts (16 initial passes, 10 harness failures, then 10 targeted passes; 36 executions total). Eight expected injected-fault diagnostics in the retry, zero unexpected errors. All 15 frozen 0.1.3 files unchanged. The visible 0.1.2 badge is a documented metadata limitation; neutral study, physical devices and humans remain pending.",
-      "technical_readiness_label": "0.1.4 staged; version and export verified",
+      "historical_qa_scope": "51 unit tests and 16 browser scenarios passed on 0.1.2 on 21 October; earlier lifecycle/art checks retain their own dates. On 27 October the exact 15-file artifact passed six direct/nested launch checks, not a new full story suite. Physical-device and human validation pending. 4 November: 20 distinct semantic cases functionally passed across retained attempts, with disclosed harness corrections and one aborted asset request followed by an error-free targeted retry; 8 layout cases and 51 unit tests passed, and two clean builds matched. Canonical Iona return placement and Mara interpretation were exercised. Neutral profile, migration/recovery, forced WebGL failure, physical devices and humans were not retested in this pass. The exact verified 0.1.3 inventory is staged on master via PR #6; human validation remains pending. 5 November: 26 distinct migration, storage and graphics-fault conditions passed across retained attempts (16 initial passes, 10 harness failures, then 10 targeted passes; 36 executions total). Eight expected injected-fault diagnostics in the retry, zero unexpected errors. All 15 frozen 0.1.3 files unchanged. The visible 0.1.2 badge is a documented metadata limitation; neutral study, physical devices and humans remain pending. 6 November: 51 unit tests, eight final canonical story conditions and fresh development badge checks passed. Two clean builds from committed source matched; four exact-export root/nested journeys passed with zero unexpected errors. Only built index.html differs from 0.1.3 (version badge and inline favicon). Earlier failed attempts remain disclosed; human/device evidence remains pending.",
+      "technical_readiness_label": "Branch CI passed; 0.1.4 unchanged",
       "reviewed_archive_upload": "b9e1560cc641691bc8d48b4254cab0bac73fe64c",
       "human_readiness_handoff": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
       "historical_qa_evidence": [
@@ -171,7 +175,11 @@
         "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md",
         "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/technical-qa.json",
         "https://github.com/PaperStrange/IndiaGames/blob/2070902d7b5ea0da59ab07d35d218f9a66f7791f/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/2070902d7b5ea0da59ab07d35d218f9a66f7791f/docs/gamejam/readiness-2026-11-05/technical-qa.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/2070902d7b5ea0da59ab07d35d218f9a66f7791f/docs/gamejam/readiness-2026-11-05/technical-qa.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/verification.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/EXPORT-QA.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/staging-record.json"
       ],
       "historical_candidates": [
         {
@@ -182,34 +190,73 @@
           "file_count": 15,
           "manifest": "https://github.com/PaperStrange/IndiaGames/blob/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2/candidate.json",
           "status": "preserved_immutable_archive"
+        },
+        {
+          "version": "0.1.3",
+          "master_commit": "2be5f3648fed5422eb4459486661385df73c91be",
+          "source_commit": "813f264400bfc01d7e3e5f668de29bb835f5a70d",
+          "build_sha256": "7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00",
+          "build_bytes": 1401316,
+          "file_count": 15,
+          "manifest": "https://github.com/PaperStrange/IndiaGames/blob/2be5f3648fed5422eb4459486661385df73c91be/release-candidates/keepers-frame/0.1.3/candidate.json",
+          "status": "preserved_immutable_archive",
+          "staging": {
+            "version": "0.1.3",
+            "status": "merged_to_master",
+            "source_commit": "813f264400bfc01d7e3e5f668de29bb835f5a70d",
+            "build_sha256": "7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00",
+            "build_bytes": 1401316,
+            "file_count": 15,
+            "pr_url": "https://github.com/PaperStrange/IndiaGames/pull/6",
+            "pr_head": "6ac31873f21159943801d5646c3ac37c0eba3e5a",
+            "master_staged": true,
+            "human_sessions": 0,
+            "human_approved": false,
+            "master_commit": "2be5f3648fed5422eb4459486661385df73c91be",
+            "pr_merged": true
+          }
         }
       ],
       "historical_pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md",
-      "candidate_story_catalog": "https://github.com/PaperStrange/IndiaGames/blob/2be5f3648fed5422eb4459486661385df73c91be/release-candidates/keepers-frame/0.1.3/build/story-catalog.json",
-      "candidate_human_report": "https://github.com/PaperStrange/IndiaGames/blob/2be5f3648fed5422eb4459486661385df73c91be/release-candidates/keepers-frame/0.1.3/human-playtest.json",
-      "candidate_source_commit": "813f264400bfc01d7e3e5f668de29bb835f5a70d",
+      "candidate_story_catalog": "https://github.com/PaperStrange/IndiaGames/blob/ac931cde281e9483f6f693289cad2d99038d5bc0/release-candidates/keepers-frame/0.1.4/build/story-catalog.json",
+      "candidate_human_report": "https://github.com/PaperStrange/IndiaGames/blob/ac931cde281e9483f6f693289cad2d99038d5bc0/release-candidates/keepers-frame/0.1.4/human-playtest.json",
+      "candidate_source_commit": "f4e6034a87944f30a28ac5ede9968fd59d07cc1d",
       "candidate_staging": {
-        "version": "0.1.3",
+        "version": "0.1.4",
         "status": "merged_to_master",
-        "source_commit": "813f264400bfc01d7e3e5f668de29bb835f5a70d",
-        "build_sha256": "7498c636fee9b42298e4c9cde5ada0c8f688ef7835237e1e4761e269b68d3e00",
-        "build_bytes": 1401316,
+        "source_commit": "f4e6034a87944f30a28ac5ede9968fd59d07cc1d",
+        "build_sha256": "a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1",
+        "build_bytes": 1401606,
         "file_count": 15,
-        "pr_url": "https://github.com/PaperStrange/IndiaGames/pull/6",
-        "pr_head": "6ac31873f21159943801d5646c3ac37c0eba3e5a",
+        "pr_url": "https://github.com/PaperStrange/IndiaGames/pull/11",
+        "pr_head": "3b6544c22eb89659648333080a7574db620f9a5f",
         "master_staged": true,
         "human_sessions": 0,
         "human_approved": false,
-        "master_commit": "2be5f3648fed5422eb4459486661385df73c91be",
+        "master_commit": "ac931cde281e9483f6f693289cad2d99038d5bc0",
         "pr_merged": true
       },
-      "canonical_human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/launch-2026-11-20/README.md"
+      "canonical_human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/launch-2026-11-20/README.md",
+      "engineering_ci": {
+        "source_commit": "64c94dfd9f576914257f32ec0fb93872036071a8",
+        "workflow_run": 42175237179,
+        "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179",
+        "conclusion": "success",
+        "scope": "Unit/build/tooling verification; no new browser playthrough or human result",
+        "current_head_workflow": {
+          "source_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+          "id": 42175791282,
+          "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175791282",
+          "conclusion": "success",
+          "completed_at": "2026-11-06T06:39:33Z"
+        }
+      }
     },
     {
       "lane": "bell",
       "name": "The Thirteenth Bell",
       "branch": "the-thirteenth-bell",
-      "reviewed_head": "473ba38333e665b250d459e5d74bb496521c3e19",
+      "reviewed_head": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
       "prior_manifest_source": "c2a0a3e385be5b75324f978e84eb273b7d23e404",
       "runtime_scope": [
         "index.html",
@@ -220,24 +267,24 @@
         "tests"
       ],
       "runtime_diff_empty": false,
-      "qa_source_commit": "473ba38333e665b250d459e5d74bb496521c3e19",
+      "qa_source_commit": "5da5adc40b01f4c39b587c9422a69b2390728706",
       "qa_date_utc": "2026-11-06",
       "latest_runtime_unchanged_from_qa": true,
       "planning_document": "docs/games/thirteenth-bell/TODO.md",
       "research_evidence_commit": "56eec3e7d96410492ad70bf39b5eb5ae003feec8",
       "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/competitor-plays-2026-10-28/README.md",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
-      "milestone_status_label": "Engineering cleanup verified · human release pending",
-      "milestone_summary": "6 November: 25 Node tests, 21 static checks and four split/bundled browser journeys/20 checks passed, with zero unexpected browser errors. Two clean builds equal frozen 0.1.0 byte-for-byte. Validation preserves absent, valid and stale developer output. These checks are not a rerun of all historical causal scenarios or human observations.",
+      "milestone_status_label": "Export/CI engineering verified · human release pending",
+      "milestone_summary": "6 November engineering checks: 25 Node tests, 20 clean-checkout static checks and five inventory tests passed locally and in actual branch CI. Two complete portable-build inventories match frozen 0.1.0. A 21st freshness check applies only when local dist already exists. No fresh browser, human or physical-device result is claimed.",
       "human_participant_rows": 0,
       "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
       "official_release": false,
       "implementation_started": true,
-      "implementation_status": "engineering_cleanup_verified",
+      "implementation_status": "engineering_freeze_checks_verified",
       "qa_status": "automated_technical_pass_human_pending",
       "candidate_status": "staged_awaiting_human_validation",
-      "qa_scope": "6 November: 25 Node tests, 21 static checks and four split/bundled browser journeys/20 checks passed, with zero unexpected browser errors. Two clean builds equal frozen 0.1.0 byte-for-byte. Validation preserves absent, valid and stale developer output. These checks are not a rerun of all historical causal scenarios or human observations.",
-      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/README.md",
+      "qa_scope": "6 November engineering checks: 25 Node tests, 20 clean-checkout static checks and five inventory tests passed locally and in actual branch CI. Two complete portable-build inventories match frozen 0.1.0. A 21st freshness check applies only when local dist already exists. No fresh browser, human or physical-device result is claimed.",
+      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/README.md",
       "current_decision_document": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
       "candidate_version": "0.1.0",
       "candidate_master_commit": "02c78ad9739622fb447850fbecb5f46e7dec8de8",
@@ -245,17 +292,19 @@
       "candidate_build_bytes": 1455336,
       "candidate_file_count": 1,
       "candidate_manifest": "https://github.com/PaperStrange/IndiaGames/blob/02c78ad9739622fb447850fbecb5f46e7dec8de8/release-candidates/thirteenth-bell/0.1.0/candidate.json",
-      "qa_evidence_commit": "473ba38333e665b250d459e5d74bb496521c3e19",
+      "qa_evidence_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
       "qa_evidence": [
-        "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/verification.json"
+        "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/verification.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42175335194",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42175791241"
       ],
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/launch-2026-11-20/README.md",
       "prior_manifest_reviewed_head": "fce070bd9ee3006f0a017b9c33ee11f5b5133657",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/README.md",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md",
       "research_adjudication_summary": "Predictions are optional, map places are buttons, and existing rules describe borrowing/Fracture. Operator stalls motivate diagnosis, not a proven one-line remedy or five independent human failures.",
-      "historical_qa_scope": "15 pure tests (unchanged rule-file identity), 19 final static checks, 16 browser scenario groups, 19 legacy journey steps and 19 HTTP smoke assertions passed. Candidate browser/resource errors: 0. Physical devices and human approval pending. 4 November: 33 scenario executions passed (16 root, 16 nested, one nested desktop ending/restart) on unchanged 0.1.0. Candidate resources had no failures. The frozen historical reference used fallback fonts after its optional Google Fonts certificate failure. Known-route and race-regression checks are not fresh-player comprehension, recall or physical-device evidence. 5 November: four facilitator-setup journeys and 24 checks passed for frozen candidate/reference across desktop/narrow HTTP origins. Candidate/reference inventories and served HTML matched; no candidate failures. Four optional reference Google Fonts certificate failures remain disclosed. These setup checks do not rerun all November 4 causal scenarios or establish human recall/physical-device results.",
-      "technical_readiness_label": "Build tooling verified; 0.1.0 unchanged",
+      "historical_qa_scope": "15 pure tests (unchanged rule-file identity), 19 final static checks, 16 browser scenario groups, 19 legacy journey steps and 19 HTTP smoke assertions passed. Candidate browser/resource errors: 0. Physical devices and human approval pending. 4 November: 33 scenario executions passed (16 root, 16 nested, one nested desktop ending/restart) on unchanged 0.1.0. Candidate resources had no failures. The frozen historical reference used fallback fonts after its optional Google Fonts certificate failure. Known-route and race-regression checks are not fresh-player comprehension, recall or physical-device evidence. 5 November: four facilitator-setup journeys and 24 checks passed for frozen candidate/reference across desktop/narrow HTTP origins. Candidate/reference inventories and served HTML matched; no candidate failures. Four optional reference Google Fonts certificate failures remain disclosed. These setup checks do not rerun all November 4 causal scenarios or establish human recall/physical-device results. 6 November: 25 Node tests, 21 static checks and four split/bundled browser journeys/20 checks passed, with zero unexpected browser errors. Two clean builds equal frozen 0.1.0 byte-for-byte. Validation preserves absent, valid and stale developer output. These checks are not a rerun of all historical causal scenarios or human observations.",
+      "technical_readiness_label": "Branch CI passed; 0.1.0 unchanged",
       "reviewed_archive_upload": "3d4e205c417272f00b87c76c00532f4456d31e38",
       "human_readiness_handoff": "https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md",
       "historical_qa_evidence": [
@@ -265,8 +314,24 @@
         "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md",
         "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/technical-qa.json",
         "https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md",
-        "https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/technical-qa.json"
-      ]
+        "https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/technical-qa.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/verification.json"
+      ],
+      "engineering_ci": {
+        "source_commit": "5da5adc40b01f4c39b587c9422a69b2390728706",
+        "workflow_run": 42175335194,
+        "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175335194",
+        "conclusion": "success",
+        "scope": "Unit/build/tooling verification; no new browser playthrough or human result",
+        "current_head_workflow": {
+          "source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+          "id": 42175791241,
+          "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175791241",
+          "conclusion": "success",
+          "completed_at": "2026-11-06T06:39:39Z"
+        }
+      }
     }
   ],
   "research": {
@@ -503,12 +568,12 @@
     "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
   ],
   "milestone": {
-    "id": "engineering-cleanup-2026-11-06",
-    "title": "Clean the three engineering baselines and advance technical freeze",
-    "status": "engineering_cleanup_complete_technical_freeze_next_human_release_gates_pending",
+    "id": "technical-freeze-2026-11-06",
+    "title": "Repeatable exports and branch CI verified",
+    "status": "engineering_freeze_checks_complete_human_candidate_release_gates_pending",
     "plan_settled": true,
-    "document": "docs/iteration-2026-11-06/README.md",
-    "summary": "All three cleanup baselines are committed, verified and pushed; Vivid 0.1.4 is staged. Next: repeatable Small Hours development-export checks and Vivid/Bell branch CI integration before November 11. These engineering tasks do not wait for recruitment; human release criteria remain mandatory.",
+    "document": "docs/technical-freeze-2026-11-06/README.md",
+    "summary": "SH-23, KF-30 and TB-22 passed source-bound export and branch-CI checks. Small Hours development exports are repeatable; Vivid and Bell workflows passed on implementation and documentation heads. Engineering acceptance is complete; human-dependent candidate freeze and official release approval remain pending.",
     "human_staffing": "Unbooked: recruitment needs more time; no accepted facilitator, participant or reviewer assignments recorded.",
     "allowance_visibility": "unavailable",
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
@@ -521,19 +586,19 @@
     "expected_url": "https://paperstrange.github.io/IndiaGames/",
     "expected_url_http_status": 200,
     "live_deployment_verified": true,
-    "observed_page": "IndiaGames development hub with three projects and 69 tasks",
-    "required_action": "Publish the reviewed November 6 engineering dashboard and verify its actual deployed revision. Human official-game release approval and issue #2 administrator enforcement remain separate.",
+    "observed_page": "IndiaGames development hub with three projects and 75 tasks",
+    "required_action": "Publish the reviewed export/CI milestone dashboard and verify its actual deployed revision; the completed PR #12 verification applies to the earlier cleanup dashboard.",
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
     "pages_update_error": "Resource not accessible by integration",
-    "deployed_commit": "239fceeab2c84491f5d9d5c471bf18504567a587",
+    "deployed_commit": "89bb66834ff901045e17121e2a88dc087fbf830c",
     "verified_assets": 11,
-    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/9#issuecomment-6677860269",
+    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675",
     "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned403.",
-    "verification_scope": "PR #9 live verification on November 6: all 11 served files and actual browser responses match main 239fcee; desktop/narrow checks passed with zero unexpected errors and TLS verification enabled.",
+    "verification_scope": "PR #12 live verification on November 6: all 11 served files and actual browser responses match main 89bb668; desktop/narrow checks, all 75 task IDs, images and favicon passed with zero unexpected errors and TLS verification enabled.",
     "current_iteration_deployment_verified": false,
-    "verification_stage": "pr9_deployment_verified_november_6_cleanup_update_pending",
-    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/9#issuecomment-6677860269",
+    "verification_stage": "pr12_cleanup_deployment_verified_export_ci_update_pending",
+    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675",
     "historical_october_28_deployment": {
       "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
       "verified_assets": 6,
@@ -547,6 +612,12 @@
       "verified_assets": 11,
       "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/7#issuecomment-6637048654",
       "verification_scope": "November 4 final main deployment: all 11 served files and browser responses matched the commit; desktop/narrow checks passed with zero unexpected errors. November 5 working changes need their own deployment verification."
+    },
+    "historical_pr9_deployment": {
+      "deployed_commit": "239fceeab2c84491f5d9d5c471bf18504567a587",
+      "verified_assets": 11,
+      "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/9#issuecomment-6677860269",
+      "verification_scope": "PR #9 live verification on November 6: all 11 served files and actual browser responses match main 239fcee; desktop/narrow checks passed with zero unexpected errors and TLS verification enabled."
     }
   },
   "launch": {
@@ -558,8 +629,8 @@
     "cleanup_document": "docs/iteration-2026-11-06/README.md",
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
-    "readiness_document": "docs/iteration-2026-11-06/README.md",
-    "schedule_note": "Engineering cleanup and technical freeze preparation continue without recruitment. Human sessions stay unbooked; missing release evidence still means no-go at the November 16 decision.",
+    "readiness_document": "docs/technical-freeze-2026-11-06/README.md",
+    "schedule_note": "Selected export and branch-CI engineering checks are complete. November 11 candidate freeze and November 16 release decisions retain each game’s human, device, defect and approval prerequisites.",
     "timeline": [
       [
         "6 November",
@@ -567,9 +638,9 @@
         "Cleanup, reproducible export and staging"
       ],
       [
-        "Next",
-        "Technical freeze",
-        "Reproducible exports and focused regression"
+        "6 November",
+        "Export and CI verified",
+        "Repeatable artifacts and branch checks"
       ],
       [
         "Unbooked",
@@ -596,8 +667,8 @@
   "historical_manifest_review_date_utc": "2026-10-27",
   "readiness": {
     "date_utc": "2026-11-06",
-    "status": "engineering_cleanup_and_candidate_staging_complete_human_release_pending",
-    "document": "docs/iteration-2026-11-06/README.md",
+    "status": "engineering_freeze_checks_complete_human_candidate_release_gates_pending",
+    "document": "docs/technical-freeze-2026-11-06/README.md",
     "issues_document": "docs/iteration-2026-11-06/README.md#issue-dispositions",
     "shared_blockers": [
       {
@@ -648,9 +719,9 @@
       "review_report": "docs/iteration-2026-11-04/PR-REVIEW.md"
     },
     "technical_reports": {
-      "memorable": "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
-      "vivid": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
-      "bell": "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md"
+      "memorable": "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/VERIFICATION.md",
+      "vivid": "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md",
+      "bell": "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md"
     },
     "candidate_staging_pr": "https://github.com/PaperStrange/IndiaGames/pull/11",
     "pull_requests": [
@@ -708,10 +779,19 @@
         "merge_commit": "ac931cde281e9483f6f693289cad2d99038d5bc0",
         "ci_conclusion": "success",
         "ci_run": 42171163150
+      },
+      {
+        "number": 12,
+        "status": "merged",
+        "reviewed_head": "817c360bb2fc6ef31ca68dd290a43df903b4632a",
+        "merge_commit": "89bb66834ff901045e17121e2a88dc087fbf830c",
+        "ci_conclusion": "success",
+        "ci_run": 42172187197,
+        "publication_evidence": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675"
       }
     ],
-    "delivery_note": "Engineering cleanup is verified in all three branches. Vivid 0.1.4 is staged; Bell 0.1.0 and the separate Small Hours study baseline are preserved. Human sessions, actual devices and independent release approval remain pending.",
-    "status_checked_at": "2026-11-06T05:58:53.342338+00:00",
+    "delivery_note": "All three export/CI tasks are verified. Small Hours retains its known missing-favicon diagnostic; the study baseline, Vivid 0.1.4 and Bell 0.1.0 are preserved. Human sessions, physical devices and independent release approval remain pending.",
+    "status_checked_at": "2026-11-06T06:43:18.915273+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",
       "scope": "Current dashboard and engineering-progress delivery; owner reviews the whole dashboard after publication.",
@@ -733,5 +813,16 @@
     "latest_readback": "November 6: no effective main/master protection or rulesets. The administrator blocker remains open in issue #2; supported project browser route #5 is closed and original environment investigation continues separately in #10.",
     "latest_readback_document": "docs/iteration-2026-11-06/README.md#issue-dispositions"
   },
-  "environment_scope": "Historical verification environment; current technical reports record their actual browser and execution environment separately."
+  "environment_scope": "Historical verification environment; current technical reports record their actual browser and execution environment separately.",
+  "historical_cleanup_milestone": {
+    "id": "engineering-cleanup-2026-11-06",
+    "title": "Clean the three engineering baselines and advance technical freeze",
+    "status": "engineering_cleanup_complete_technical_freeze_next_human_release_gates_pending",
+    "plan_settled": true,
+    "document": "docs/iteration-2026-11-06/README.md",
+    "summary": "All three cleanup baselines are committed, verified and pushed; Vivid 0.1.4 is staged. Next: repeatable Small Hours development-export checks and Vivid/Bell branch CI integration before November 11. These engineering tasks do not wait for recruitment; human release criteria remain mandatory.",
+    "human_staffing": "Unbooked: recruitment needs more time; no accepted facilitator, participant or reviewer assignments recorded.",
+    "allowance_visibility": "unavailable",
+    "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
+  }
 }

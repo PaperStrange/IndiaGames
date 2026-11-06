@@ -1,6 +1,6 @@
 # Requests, evidence and remaining work
 
-**Latest delivery:** [November 6 engineering cleanup and issue reconciliation](../iteration-2026-11-06/README.md) records the owner’s instruction to advance all three codebases without waiting for recruitment and review the dashboard after publication. Human official-release gates remain unchanged.
+**Completed engineering milestone:** [November 6 export and branch-CI verification](../technical-freeze-2026-11-06/README.md) completes SH-23, KF-30 and TB-22 after the [completed cleanup](../iteration-2026-11-06/README.md). The owner asked to finish this engineering milestone without waiting for recruitment and review the whole dashboard after publication. Candidate freeze and human official-release gates remain separate.
 Reconciled on **28 October 2026** against the available conversation and repository records. “Prepared” and “implemented” do not mean human-approved. This table keeps earlier requirements visible while the hub presents a shorter overview.
 
 | Request | What exists | Still open / boundary |
