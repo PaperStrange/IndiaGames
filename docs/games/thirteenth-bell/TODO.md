@@ -445,3 +445,15 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 6 November engineering checks: 25 Node tests, 20 clean-checkout static checks and five inventory tests passed locally and in actual branch CI. Two complete portable-build inventories match frozen 0.1.0. A 21st freshness check applies only when local dist already exists. No fresh browser, human or physical-device result is claimed.
 
 [Committed record](https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Actual workflow](https://github.com/PaperStrange/IndiaGames/actions/runs/42175335194). Human evidence and independent human release approval remain pending.
+
+## Proposed multilingual and device preparation · November 6
+
+The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) is **proposed, not settled implementation**. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
+
+| New card | Proposed work | Owner |
+|---|---|---|
+| **TB-23** | Separate English labels from Bell rules before translation | Bell systems owner + narrative designer |
+| **TB-24** | Prepare translated clues, map access and device coverage | Bell UI/art integrator + localization editor + QA |
+| **TB-25** | Qualify localized causal understanding and real-device play | Fluent clue reviewers + physical-device QA + facilitator |
+
+Each card retains exact acceptance details in [tasks.json](tasks.json). Shared evidence-contract settlement precedes implementation; native review and physical-device observations remain human work. New translations/fonts/layout bytes require new immutable artifacts and exact-build evidence.

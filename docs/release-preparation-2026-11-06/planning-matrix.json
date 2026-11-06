@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "kind": "planning_targets_not_implemented_release_schema",
+  "status": "proposed",
+  "plan_settled": false,
+  "target_locales": [
+    "en",
+    "ja",
+    "zh-Hans"
+  ],
+  "game_units": [
+    "small-hours",
+    "keepers-frame/iona",
+    "keepers-frame/mara",
+    "thirteenth-bell"
+  ],
+  "november_20_scope_decision": {
+    "date_utc": "2026-11-06",
+    "source": "owner_confirmation",
+    "required_locales_per_released_game": [
+      "en",
+      "ja",
+      "zh-Hans"
+    ],
+    "incomplete_game_disposition": "defer",
+    "allows_language_subset_release": false,
+    "settles_additional_sampling_protocol": false
+  },
+  "reviewers_assigned": false,
+  "physical_devices_available": null,
+  "supported_combinations": [],
+  "evidence_layers": [
+    "native_language_review",
+    "automated_engine_checks",
+    "physical_device_checks",
+    "existing_gameplay_cohorts",
+    "reviewed_additional_locale_qualification"
+  ],
+  "device_slots": [
+    {
+      "id": "desktop-win-chrome",
+      "family": "desktop_web",
+      "os_family_proposed": "Windows",
+      "browser_proposed": "Chrome",
+      "engine_family_expected_not_observed": "Chromium",
+      "model": null,
+      "os_version": null,
+      "browser_version": null,
+      "actual_engine": null,
+      "owner": null,
+      "availability": null,
+      "status": "proposed_not_tested"
+    },
+    {
+      "id": "desktop-win-edge",
+      "family": "desktop_web",
+      "os_family_proposed": "Windows",
+      "browser_proposed": "Edge",
+      "engine_family_expected_not_observed": "Chromium",
+      "model": null,
+      "os_version": null,
+      "browser_version": null,
+      "actual_engine": null,
+      "owner": null,
+      "availability": null,
+      "status": "proposed_not_tested"
+    },
+    {
+      "id": "desktop-win-firefox",
+      "family": "desktop_web",
+      "os_family_proposed": "Windows",
+      "browser_proposed": "Firefox",
+      "engine_family_expected_not_observed": "Gecko",
+      "model": null,
+      "os_version": null,
+      "browser_version": null,
+      "actual_engine": null,
+      "owner": null,
+      "availability": null,
+      "status": "proposed_not_tested"
+    },
+    {
+      "id": "desktop-mac-safari",
+      "family": "desktop_web",
+      "os_family_proposed": "macOS",
+      "browser_proposed": "Safari",
+      "engine_family_expected_not_observed": "WebKit",
+      "model": null,
+      "os_version": null,
+      "browser_version": null,
+      "actual_engine": null,
+      "owner": null,
+      "availability": null,
+      "status": "proposed_not_tested"
+    },
+    {
+      "id": "phone-ios-safari",
+      "family": "phone",
+      "os_family_proposed": "iOS",
+      "browser_proposed": "Safari",
+      "engine_family_expected_not_observed": "WebKit",
+      "model": null,
+      "os_version": null,
+      "browser_version": null,
+      "actual_engine": null,
+      "owner": null,
+      "availability": null,
+      "status": "proposed_not_tested"
+    },
+    {
+      "id": "phone-android-chrome",
+      "family": "phone",
+      "os_family_proposed": "Android",
+      "browser_proposed": "Chrome",
+      "engine_family_expected_not_observed": "Chromium",
+      "model": null,
+      "os_version": null,
+      "browser_version": null,
+      "actual_engine": null,
+      "owner": null,
+      "availability": null,
+      "status": "proposed_not_tested"
+    },
+    {
+      "id": "tablet-ipados-safari",
+      "family": "tablet",
+      "os_family_proposed": "iPadOS",
+      "browser_proposed": "Safari",
+      "engine_family_expected_not_observed": "WebKit",
+      "model": null,
+      "os_version": null,
+      "browser_version": null,
+      "actual_engine": null,
+      "owner": null,
+      "availability": null,
+      "status": "proposed_not_tested"
+    },
+    {
+      "id": "tablet-android-chrome",
+      "family": "tablet",
+      "os_family_proposed": "Android",
+      "browser_proposed": "Chrome",
+      "engine_family_expected_not_observed": "Chromium",
+      "model": null,
+      "os_version": null,
+      "browser_version": null,
+      "actual_engine": null,
+      "owner": null,
+      "availability": null,
+      "status": "proposed_not_tested"
+    }
+  ],
+  "cell_requirements": {
+    "identity": [
+      "game",
+      "story_or_condition",
+      "candidate_version",
+      "source_commit",
+      "build_inventory_sha256",
+      "locale",
+      "catalog_revision_or_hash",
+      "font_revision_or_hash",
+      "protocol_id_revision"
+    ],
+    "observations": [
+      "actor_type",
+      "human_observer_id_if_applicable",
+      "physical_or_emulated",
+      "actual_device_model",
+      "os_browser_versions",
+      "input_methods",
+      "viewport_orientation",
+      "journey_endpoint",
+      "assistance",
+      "unexpected_failures",
+      "evidence_locator",
+      "reviewer_disposition"
+    ],
+    "result_values_proposed": [
+      "not_run",
+      "pass",
+      "fail",
+      "blocked",
+      "not_in_declared_scope"
+    ],
+    "no_prepopulated_passes": true
+  },
+  "study_boundary": {
+    "existing_people": 30,
+    "small_hours_pairs": 6,
+    "iona_people": 6,
+    "mara_people": 6,
+    "bell_people": 6,
+    "additional_locale_sample": "pending_explicit_protocol_review",
+    "may_pool_locales_as_approval": false,
+    "may_silently_multiply_by_devices": false
+  },
+  "source_audit_commits": {
+    "main": "345c33970745297103a099ecdf9dc11f134b0038",
+    "small-hours": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
+    "keepers-frame": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+    "thirteenth-bell": "b451f5dd90294b8713dfdf6518b5d43baf47e948"
+  },
+  "current_validator_enforces_these_fields": false
+}

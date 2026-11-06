@@ -123,6 +123,14 @@ def build():
         ],
         'tasks': tasks,
     }
+    preparation = manifest.get('release_preparation')
+    if preparation is not None:
+        result['gates'].append({
+            'id': 'release-preparation-plan',
+            'status': 'settled' if preparation.get('plan_settled') is True else 'not_settled',
+            'applies_to': ['memorable', 'vivid', 'bell'],
+            'requirement': 'The current language/device proposal has its own implementation settlement. Confirm its evidence contract, precise support matrix and human study scope before implementation; the earlier plan-settlement record applies only to its dated readiness work. This dashboard field is not a release-policy or validator gate.'
+        })
     output = ROOT / 'data' / 'tasks.json'
     output.parent.mkdir(exist_ok=True)
     output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n')
