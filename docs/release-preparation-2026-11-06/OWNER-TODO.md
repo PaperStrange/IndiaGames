@@ -1,10 +1,9 @@
 # Manage language and device preparation together
 
-**Confirmed:** English (`en`), Japanese (`ja`), Simplified Chinese (`zh-Hans`); desktop web, phones and tablets. **Proposed:** implementation/evidence contract and precise support matrix. No reviewer, device or session is booked by this checklist.
+**Confirmed:** English (`en`), Japanese (`ja`), Simplified Chinese (`zh-Hans`); desktop web, phones and tablets. On November 6 the owner required all three languages per November 20 release; incomplete games are deferred. **Proposed:** implementation/evidence contract and precise support matrix. No reviewer, device or session is booked by this checklist.
 
 | Input from you / responsible human | What to record | Why it is needed |
 |---|---|---|
-| November 20 scope | All three languages required per released game, or an explicitly approved verified subset; scope decision date/owner | The question is pending. No English-only or narrower-device fallback is assumed. |
 | Fluent reviewers | Accepted reviewer for English, Japanese and Simplified Chinese; available hours; game/story coverage and conflicts | Review tone, privacy/consent, clue fairness, action labels and endings; agent translations do not establish quality. |
 | Actual hardware | Device model, OS/version, browser/version, available keyboard/touch/stylus/screen reader and access windows | Desktop/phone/tablet names are targets, not test evidence. Include iPhone/iPad/Android tablet only when actual hardware is available. |
 | Study lead and facilitator | Accepted people, language proficiency and availability | Settle extra locale sampling before recruitment; retain original cohorts and uncoached prompts. |

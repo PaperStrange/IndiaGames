@@ -8,7 +8,7 @@ For this dashboard delivery, the owner will review the whole dashboard after pub
 
 ## Proposed language and device preparation
 
-The owner confirmed English, Japanese and Simplified Chinese across desktop web, phones and tablets. The [new plan](release-preparation-2026-11-06/README.md) adds nine proposed cards and a blank evidence matrix; implementation is not settled. Agents own agreed catalog/tooling/technical work, people own fluent judgment and real-device/gameplay evidence, and administrators own protection. One integrator per game prevents conflicting schema/runtime edits. [Owner coordination](release-preparation-2026-11-06/OWNER-TODO.md) keeps unassigned roles and the pending November 20 language-scope decision visible. Existing 75 task contracts and release criteria remain unchanged.
+The owner confirmed English, Japanese and Simplified Chinese across desktop web, phones and tablets. The [new plan](release-preparation-2026-11-06/README.md) adds nine proposed cards and a blank evidence matrix; implementation is not settled. Agents own agreed catalog/tooling/technical work, people own fluent judgment and real-device/gameplay evidence, and administrators own protection. One integrator per game prevents conflicting schema/runtime edits. [Owner coordination](release-preparation-2026-11-06/OWNER-TODO.md) keeps unassigned roles visible. The owner requires all three languages per November 20 release; incomplete games are deferred. Existing 75 task contracts and release criteria remain unchanged.
 
 ## Launch coordination · target 20 November 2026
 

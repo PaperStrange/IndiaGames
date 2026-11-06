@@ -14,7 +14,18 @@
     "keepers-frame/mara",
     "thirteenth-bell"
   ],
-  "november_20_scope_decision": null,
+  "november_20_scope_decision": {
+    "date_utc": "2026-11-06",
+    "source": "owner_confirmation",
+    "required_locales_per_released_game": [
+      "en",
+      "ja",
+      "zh-Hans"
+    ],
+    "incomplete_game_disposition": "defer",
+    "allows_language_subset_release": false,
+    "settles_additional_sampling_protocol": false
+  },
   "reviewers_assigned": false,
   "physical_devices_available": null,
   "supported_combinations": [],
