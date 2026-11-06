@@ -656,7 +656,7 @@
     "lane": "bell",
     "perspective": "Engineering",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Bell integrator + QA",
     "title": "Run isolated reproducible build checks in branch CI",
     "deliverable": "A branch-scoped CI job runs the Node tests and non-destructive static/build checks on a clean checkout.",
@@ -670,9 +670,15 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/verification.json",
+      "https://github.com/PaperStrange/IndiaGames/actions/runs/42175335194",
+      "https://github.com/PaperStrange/IndiaGames/actions/runs/42175791241"
+    ],
     "focus": "Engineering / technical freeze",
     "target_date_utc": "2026-11-10",
-    "completion_note": "Next queued engineering task; implementation and verification have not started. This task has no participant-recruitment dependency."
+    "completion_note": "6 November engineering checks: 25 Node tests, 20 clean-checkout static checks and five inventory tests passed locally and in actual branch CI. Two complete portable-build inventories match frozen 0.1.0. A 21st freshness check applies only when local dist already exists. No fresh browser, human or physical-device result is claimed.",
+    "assigned_person_or_agent": "/root/freeze_bell + /root"
   }
 ]

@@ -6,13 +6,13 @@ The **Overview** combines real game images, playtest readiness and the November 
 
 | Game | Experience being tested | Current artifact | Human work still required |
 |---|---|---|---|
-| **Small Hours** · Memorable Moments | Two people make a brief shared activity their own. | Frozen pair-study baseline preserved; development timer/runner cleanup verified | Six pairs |
-| **Vivid** · formerly Keeper’s Frame | Two stories express meaning through different actions. | Candidate 0.1.4 staged; earlier versions preserved | Six people per story, in separate cohorts |
-| **The Thirteenth Bell** | Understanding a repeated event enables a meaningful intervention. | Candidate 0.1.0 unchanged; reproducible build checks verified | Six people, balanced comparison order |
+| **Small Hours** · Memorable Moments | Two people make a brief shared activity their own. | Frozen pair-study baseline preserved; exact development exports verified | Six pairs |
+| **Vivid** · formerly Keeper’s Frame | Two stories express meaning through different actions. | Candidate 0.1.4 staged; branch CI passed | Six people per story, in separate cohorts |
+| **The Thirteenth Bell** | Understanding a repeated event enables a meaningful intervention. | Candidate 0.1.0 unchanged; reproducible branch CI passed | Six people, balanced comparison order |
 
 [Per-game checklists, recording templates and launch plans](docs/launch/2026-11-20/README.md#game-packets) include exact-artifact setup. GitHub source links open repository files; they are not browser play buttons. Repair of the older candidate Pages URL is paused at the owner’s request.
 
-[November 6 cleanup and Vivid 0.1.4 staging are complete](docs/iteration-2026-11-06/README.md). Next tasks **SH-23, KF-30 and TB-22** are queued for November 10: repeatable Small Hours development-export verification and Vivid/Bell branch CI. They do not wait for recruitment. **Official launch remains conditional:** human studies, devices and approval are pending. [Owner release checklist](docs/iteration-2026-11-06/OWNER-TODO.md) separates those dependencies from engineering work. [PR #9](https://github.com/PaperStrange/IndiaGames/pull/9) is published and verified; the [November 5 evidence](docs/iteration-2026-11-05/README.md) remains preserved.
+[The export and branch-CI engineering milestone is complete](docs/technical-freeze-2026-11-06/README.md): **SH-23, KF-30 and TB-22** passed their actual checks ahead of the November 10 target. Candidate freeze and human release criteria remain separate. [Cleanup and Vivid 0.1.4 staging](docs/iteration-2026-11-06/README.md) are complete, and [PR #12](https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675) is published and verified. **Official launch remains conditional:** human studies, devices and independent approval are pending. The [owner checklist](docs/iteration-2026-11-06/OWNER-TODO.md) keeps those dependencies separate from engineering acceptance.
 
 ## November 20 target
 

@@ -1,6 +1,6 @@
 # Vivid — implemented stories and remaining release work
 
-**Current engineering milestone · November 6:** KF-28 / KF-29 completed. The package-derived version badge is verified and candidate 0.1.4 is staged through PR #11. Next: **KF-30 proposed, target Nov 10** — run the existing version/build guards in branch CI; both human story cohorts remain pending. [Current milestone and evidence](../../iteration-2026-11-06/README.md). Human/design/release gates remain in force; dated history below is preserved.
+**Current engineering milestone · November 6:** **KF-30 completed.** Branch CI passed; 0.1.4 unchanged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) bind the actual workflow to reviewed source. Candidate freeze and human/design/release gates remain separate.
 
 ## Historical November 5 preparation plan · KF-27
 
@@ -169,3 +169,9 @@ Serve the exact selected master artifact locally or on an agreed trusted LAN for
 6 November: 51 unit tests, eight final canonical story conditions and fresh development badge checks passed. Two clean builds from committed source matched; four exact-export root/nested journeys passed with zero unexpected errors. Only built index.html differs from 0.1.3 (version badge and inline favicon). Earlier failed attempts remain disclosed; human/device evidence remains pending.
 
 [Committed maintenance record](https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/README.md) · [Verification](https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md). This completes the engineering card while preserving the separately pending human release cards.
+
+### November 6 completed export/CI engineering · KF-30
+
+6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. All 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.
+
+[Committed record](https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Actual workflow](https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179). Human evidence and independent human release approval remain pending.

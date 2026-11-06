@@ -1,6 +1,6 @@
 # The Thirteenth Bell — Mina-route experiment and human handoff
 
-**Current engineering milestone · November 6:** TB-21 completed. Isolated reproducible build/static checks are verified, preserving candidate 0.1.0 byte-for-byte. Next: **TB-22 proposed, target Nov 10** — run those checks in branch CI. [Current milestone and evidence](../../iteration-2026-11-06/README.md). Human/design/release gates remain in force; dated history below is preserved.
+**Current engineering milestone · November 6:** **TB-22 completed.** Branch CI passed; 0.1.0 unchanged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) bind the actual workflow to reviewed source. Candidate freeze and human/design/release gates remain separate.
 
 ## Historical November 5 preparation plan · TB-20
 
@@ -439,3 +439,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 6 November: 25 Node tests, 21 static checks and four split/bundled browser journeys/20 checks passed, with zero unexpected browser errors. Two clean builds equal frozen 0.1.0 byte-for-byte. Validation preserves absent, valid and stale developer output. These checks are not a rerun of all historical causal scenarios or human observations.
 
 [Committed maintenance record](https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/README.md) · [Verification](https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md). This completes the engineering card while preserving the separately pending human release cards.
+
+### November 6 completed export/CI engineering · TB-22
+
+6 November engineering checks: 25 Node tests, 20 clean-checkout static checks and five inventory tests passed locally and in actual branch CI. Two complete portable-build inventories match frozen 0.1.0. A 21st freshness check applies only when local dist already exists. No fresh browser, human or physical-device result is claimed.
+
+[Committed record](https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Actual workflow](https://github.com/PaperStrange/IndiaGames/actions/runs/42175335194). Human evidence and independent human release approval remain pending.

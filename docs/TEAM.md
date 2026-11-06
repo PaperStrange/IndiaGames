@@ -2,7 +2,7 @@
 
 ## Current engineering milestone · November 6
 
-The owner instructed the team to clean all three codebases and related issues, update progress, and continue engineering without waiting for recruitment. [The current milestone](iteration-2026-11-06/README.md) separates engineering acceptance from human release gates. One integrator owns each game’s changes; independent review and appropriate actual checks precede integration. Frozen study artifacts and historical evidence remain preserved.
+The selected export and branch-CI engineering milestone is complete; the owner instructed the team to finish it without waiting for recruitment. [The current milestone](technical-freeze-2026-11-06/README.md) separates engineering acceptance, candidate freeze and human release gates; the [completed cleanup](iteration-2026-11-06/README.md) remains historical evidence. One integrator owns each game’s changes; independent review and appropriate actual checks precede integration. Frozen study artifacts and historical evidence remain preserved.
 
 For this dashboard delivery, the owner will review the whole dashboard after publication. Publish after independent agent review and passing CI, then verify the actual deployed revision. This records the November 6 instruction; it does not claim counted robot approval, change standing protection settings or waive independent human game-release approval. The [owner checklist](iteration-2026-11-06/OWNER-TODO.md) is release-focused, not a stop condition for all coding.
 

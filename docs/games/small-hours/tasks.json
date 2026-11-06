@@ -586,7 +586,7 @@
     "lane": "memorable",
     "perspective": "Engineering",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Small Hours integrator + QA",
     "title": "Make development-export verification repeatable",
     "deliverable": "A documented command verifies the nine-file development artifact independently from the frozen eight-file human-study baseline.",
@@ -600,9 +600,14 @@
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/VERIFICATION.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/verification.json"
+    ],
     "focus": "Engineering / technical freeze",
     "target_date_utc": "2026-11-10",
-    "completion_note": "Next queued engineering task; implementation and verification have not started. This task has no participant-recruitment dependency."
+    "completion_note": "6 November exact-export verification: 13 unit tests, two matching nine-file/60,443-byte exports, 18 HTTP file comparisons, 66 browser checks and three timer groups/nine assertions passed on committed source. Real expiry took 45,051 ms. Four real favicon 404 responses and four matching console events remain a known limitation; other observed errors were zero. The earlier five-favicon attempt is retained. Frozen study bytes are unchanged; no candidate, human or physical-device result is added.",
+    "assigned_person_or_agent": "/root/freeze_small_hours + /root"
   }
 ]

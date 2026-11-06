@@ -840,7 +840,7 @@
     "lane": "vivid",
     "perspective": "Engineering",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Vivid integrator + QA",
     "title": "Run version and build guards in branch CI",
     "deliverable": "A branch-scoped CI job runs the existing package, story and emitted-version checks without publishing a candidate.",
@@ -854,9 +854,16 @@
     ],
     "source_plan": "docs/games/keepers-frame/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/verification.json",
+      "https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179",
+      "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/remote-ci.json",
+      "https://github.com/PaperStrange/IndiaGames/actions/runs/42175791282"
+    ],
     "focus": "Engineering / technical freeze",
     "target_date_utc": "2026-11-10",
-    "completion_note": "Next queued engineering task; implementation and verification have not started. This task has no participant-recruitment dependency."
+    "completion_note": "6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. All 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.",
+    "assigned_person_or_agent": "/root/freeze_vivid + /root"
   }
 ]

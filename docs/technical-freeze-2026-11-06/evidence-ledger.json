@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "milestone": "technical-freeze-2026-11-06",
+  "status": "engineering_tasks_complete",
+  "human_sessions": 0,
+  "official_release_approved": false,
+  "tasks": [
+    {
+      "id": "SH-23",
+      "lane": "memorable",
+      "status": "completed",
+      "source_commit": "15d60d225186d655ad926e18ccc153fbe6ae7dfa",
+      "reviewed_head": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
+      "checks": {
+        "unit_tests": 13,
+        "matching_exports": 2,
+        "export_files": 9,
+        "export_bytes": 60443,
+        "artifact_inventory": "6be6da63685f88eb5b4a12d0be34c56b6774b2fc04e9ed22dc4c0ba0d28ff0cb",
+        "http_file_comparisons": 18,
+        "browser_checks": 66,
+        "timer_groups": 3,
+        "timer_assertions": 9,
+        "real_timer_expiry_ms": 45051,
+        "known_favicon_http_404": 4,
+        "known_matching_console_events": 4,
+        "other_observed_errors": 0
+      },
+      "workflow_run": {
+        "status": "not_required",
+        "reason": "SH-23 acceptance uses committed-source local export/HTTP verification; no remote CI result is claimed."
+      },
+      "evidence_urls": [
+        "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/VERIFICATION.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/verification.json"
+      ],
+      "human_gate_waived": false
+    },
+    {
+      "id": "KF-30",
+      "lane": "vivid",
+      "status": "completed",
+      "source_commit": "64c94dfd9f576914257f32ec0fb93872036071a8",
+      "reviewed_head": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+      "checks": {
+        "unit_tests": 51,
+        "version_guard_fixtures": 7,
+        "artifact_files": 15,
+        "artifact_bytes": 1401606,
+        "artifact_inventory": "a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1"
+      },
+      "workflow_run": {
+        "id": 42175237179,
+        "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179",
+        "conclusion": "success"
+      },
+      "evidence_urls": [
+        "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/verification.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179",
+        "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/remote-ci.json"
+      ],
+      "human_gate_waived": false,
+      "current_head_workflow": {
+        "source_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+        "id": 42175791282,
+        "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175791282",
+        "conclusion": "success",
+        "completed_at": "2026-11-06T06:39:33Z"
+      }
+    },
+    {
+      "id": "TB-22",
+      "lane": "bell",
+      "status": "completed",
+      "source_commit": "5da5adc40b01f4c39b587c9422a69b2390728706",
+      "reviewed_head": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+      "checks": {
+        "node_tests": 25,
+        "clean_checkout_static_checks": 20,
+        "inventory_tests": 5,
+        "artifact_files": 1,
+        "artifact_bytes": 1455336,
+        "artifact_html_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973"
+      },
+      "workflow_run": {
+        "id": 42175335194,
+        "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175335194",
+        "conclusion": "success"
+      },
+      "evidence_urls": [
+        "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/verification.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42175335194"
+      ],
+      "human_gate_waived": false,
+      "current_head_workflow": {
+        "source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+        "id": 42175791241,
+        "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175791241",
+        "conclusion": "success",
+        "completed_at": "2026-11-06T06:39:39Z"
+      }
+    }
+  ],
+  "candidate_freeze_complete": false,
+  "dashboard_publication_verification": "pending_for_this_update"
+}

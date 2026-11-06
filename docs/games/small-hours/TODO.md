@@ -1,6 +1,6 @@
 # Small Hours — unchanged-baseline pilot
 
-**Current engineering milestone · November 6:** SH-22 completed. Countdown ownership and safe browser-run evidence are verified. Next: **SH-23 proposed, target Nov 10** — make development-export verification repeatable while retaining the separate eight-file study baseline. [Current milestone and evidence](../../iteration-2026-11-06/README.md). Human/design/release gates remain in force; dated history below is preserved.
+**Current engineering milestone · November 6:** **SH-23 completed.** Exact nine-file development exports, HTTP bytes, existing flows and timer checks are verified; the frozen eight-file study baseline remains separate and unstaged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) retain known favicon diagnostics. Candidate freeze and human/design/release gates remain separate.
 
 ## Historical November 5 preparation plan · SH-21
 
@@ -442,3 +442,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 6 November: development cleanup passed 5 countdown unit tests, 33 browser checks, 3 focused timer groups/9 assertions and 2 runner-failure cases. Real expiry measured 45,045 ms; simulated lifecycle checks are separate. Development has nine playable files; the frozen eight-file study baseline remains unchanged and unstaged.
 
 [Committed maintenance record](https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/README.md) · [Verification](https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md). This completes the engineering card while preserving the separately pending human release cards.
+
+### November 6 completed export engineering · SH-23
+
+6 November exact-export verification: 13 unit tests, two matching nine-file/60,443-byte exports, 18 HTTP file comparisons, 66 browser checks and three timer groups/nine assertions passed on committed source. Real expiry took 45,051 ms. Four real favicon 404 responses and four matching console events remain a known limitation; other observed errors were zero. The earlier five-favicon attempt is retained. Frozen study bytes are unchanged; no candidate, human or physical-device result is added.
+
+[Committed record](https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Exact verification](https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/VERIFICATION.md). Human evidence and independent human release approval remain pending.
