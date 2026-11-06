@@ -1,7 +1,7 @@
 {
   "observed_at": "2026-11-06T06:32:15.198871+00:00",
   "task": "KF-30",
-  "status": "local_pass_remote_pending",
+  "status": "local_and_remote_pass",
   "source_base": "3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c",
   "local_runtime": {
     "node": "24.19.0",
@@ -10,7 +10,7 @@
   "workflow_runtime": {
     "runner": "ubuntu-24.04",
     "node": "24.19.0",
-    "npm": "recorded by each workflow run"
+    "npm": "11.17.0 observed in reviewed remote run; each run records actual versions"
   },
   "checks": {
     "locked_install": "pass (explicit writable local cache)",
@@ -72,9 +72,24 @@
     }
   ],
   "remote_ci": {
-    "status": "pending",
-    "head": null,
-    "run_url": null
+    "status": "completed",
+    "conclusion": "success",
+    "head": "64c94dfd9f576914257f32ec0fb93872036071a8",
+    "run_id": 42175237179,
+    "run_url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179",
+    "job_id": 127752070050,
+    "job_url": "https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179/job/127752070050",
+    "event": "push",
+    "branch": "vivid-2.5d-photo-game",
+    "run_attempt": 1,
+    "completed_at": "2026-11-06T06:34:24Z",
+    "runner_label": "ubuntu-24.04",
+    "node": "24.19.0",
+    "npm": "11.17.0",
+    "existing_unit_tests_passed": 51,
+    "version_guard_cases_passed": 7,
+    "all_steps_passed": true,
+    "platform_warning": "Pinned checkout v4.2.2 and setup-node v4.4.0 declare the deprecated action Node20 runtime; GitHub forced these actions onto Node24. Both actions and the entire job succeeded. Application test/build runtime was explicitly Node24.19.0."
   },
   "human_evidence": {
     "sessions": 0,
@@ -84,6 +99,7 @@
   "limits": [
     "No new browser journey or physical-device result.",
     "Workflow-only/test-fixture additions leave runtime and staged0.1.4 unchanged.",
-    "Local pass does not substitute for observed remote CI."
-  ]
+    "Both local and actual remote CI passed; neither is human evidence."
+  ],
+  "source_implementation_commit": "64c94dfd9f576914257f32ec0fb93872036071a8"
 }
