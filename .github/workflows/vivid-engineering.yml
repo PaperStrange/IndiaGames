@@ -1,0 +1,47 @@
+name: Vivid engineering
+
+on:
+  push:
+    branches: [vivid-2.5d-photo-game]
+  pull_request:
+    branches: [vivid-2.5d-photo-game]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: vivid-unit-build-version
+    # A manual dispatch on another branch must not claim Vivid verification.
+    if: github.ref == 'refs/heads/vivid-2.5d-photo-game' || (github.event_name == 'pull_request' && github.base_ref == 'vivid-2.5d-photo-game')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: vivid-2.5d-photo-game/play
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24.19.0'
+      - name: Record checkout and tool versions
+        run: |
+          {
+            printf '## Vivid engineering environment\n\nRunner label: ubuntu-24.04\n\nCommit: '
+            git rev-parse HEAD
+            printf '\nNode: '
+            node --version
+            printf '\nnpm: '
+            npm --version
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Install the locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Test story and runtime rules
+        run: npm test
+      - name: Validate stories and build the versioned artifact
+        run: npm run build
+      - name: Prove the built-version guard rejects invalid metadata
+        run: node --test scripts/check-build-version.test.mjs

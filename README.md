@@ -3,6 +3,7 @@
 Two browser stories use different actions: Iona’s choice changes a return placement; Mara’s aligned sketches reveal a future workshop. This branch owns the modular story/cast implementation and research; main owns the [studio dashboard](https://github.com/PaperStrange/IndiaGames/tree/main).
 
 - [Human playtest checklist, blank records and November 20 plan](docs/gamejam/launch-2026-11-20/README.md)
+- [November 6 branch CI and technical-freeze verification](docs/gamejam/technical-freeze-2026-11-06/README.md)
 - [November 6 version-metadata cleanup and verification](docs/gamejam/maintenance-2026-11-06/README.md)
 - [Historical 0.1.2 artifact and study preparation](docs/gamejam/milestone-2026-10-27/README.md)
 - [November 5 recovery/fallback evidence and facilitator setup](docs/gamejam/readiness-2026-11-05/README.md)

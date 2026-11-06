@@ -1,0 +1,89 @@
+{
+  "observed_at": "2026-11-06T06:32:15.198871+00:00",
+  "task": "KF-30",
+  "status": "local_pass_remote_pending",
+  "source_base": "3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c",
+  "local_runtime": {
+    "node": "24.19.0",
+    "npm": "11.9.0"
+  },
+  "workflow_runtime": {
+    "runner": "ubuntu-24.04",
+    "node": "24.19.0",
+    "npm": "recorded by each workflow run"
+  },
+  "checks": {
+    "locked_install": "pass (explicit writable local cache)",
+    "existing_unit_tests": {
+      "passed": 51,
+      "failed": 0
+    },
+    "story_validation": {
+      "packs": 2,
+      "views": 25,
+      "asset_references": 6
+    },
+    "version_guard_fixtures": {
+      "passed": 7,
+      "failed": 0
+    },
+    "workflow_yaml": "parsed and scoped fields checked",
+    "build_matches_staged_0_1_4": true
+  },
+  "input_sha256": {
+    ".github/workflows/vivid-engineering.yml": "82c00cf568aebfacc45ad884a63f1e14e16a4b7156d726acd88b9d6ae020d1dd",
+    "vivid-2.5d-photo-game/play/package.json": "eb723d13e1feba3cc0fcbac3dc990e46fca3da379f11c6c633706cf03a25a9df",
+    "vivid-2.5d-photo-game/play/package-lock.json": "d5265d8cff667cb84a35e2f6455d70df9dc74a313f64d8970143e894cb16b55d",
+    "vivid-2.5d-photo-game/play/vite.config.js": "9108752c7d7c91a2e80edc43e6d5b07766b8c408049e150c58244fde7b960d7f",
+    "vivid-2.5d-photo-game/play/scripts/check-build-version.mjs": "916b1a679e03fde45e2437e60226fda441b55c6565ede7882d5c7c854b83954d",
+    "vivid-2.5d-photo-game/play/scripts/check-build-version.test.mjs": "a8f8c586cc4148ffa861bcd6be8e1c63af5480df2dbb64f8af3dc58f419fbf3f"
+  },
+  "build": {
+    "candidate_source": "f4e6034a87944f30a28ac5ede9968fd59d07cc1d",
+    "inventory": "a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1",
+    "files": {
+      "art/frame.glb": "f58216181104f2ebb9babd7d6fb536db66b3af178fc472beabdbbfb90bec244a",
+      "art/keeper-portrait.svg": "ce2e5ad30f0c2327d4874cb6d3f51f7d6ea2d94754237b0a5eaa5f4b39a9535f",
+      "art/model-metrics.json": "596f3b694e0782b28602789675e5b034eba841b887e4422aac8a02192f91d63a",
+      "art/postcard.svg": "fc8e7b8152cf01b09506bdc852a7d0ded509d64ac5c355a91e07e66848afefb3",
+      "art/sketch-overlay.svg": "2d1e247b3424e2d35ad6ef7493bdfd9711d5505e881267b4f4238c6985f901a9",
+      "art/sketch-underlay.svg": "9b489cddd713563f5a6a4f17856d6b8fb7cc996d84c32786718bc7d607d40b25",
+      "art/workbench.glb": "0da0115735a527aa6afb2276dceb58754a5fdd5118206ee94c4ae830cbc24446",
+      "assets/index-BWZuLwrg.js": "bf48b4e44c3d67bf88cd5ad14dc9d36e213d9e0c73d4744668b0dac2feba6c8a",
+      "assets/index-Bj1qgVaG.css": "07dfe7be85a9844e42efceae498c1d9ae271e942a5af25aee5de79d0b42b98d6",
+      "assets/iona-CUvUWMAu.js": "5848954d4fdad15a24415a65d0fa0a60711a201430f0ce3ee3e26e28dda60e59",
+      "assets/mara-D9h6TfjT.js": "13be7fa92007b3b0d30e320c4b77c64ff785c59c641731d68e2a2a654870a93e",
+      "assets/world-BIfCt15a.js": "b6841fa12456a7ac9910e56100638b63ef8f399398b912852ee4c88f4d3f6719",
+      "index.html": "766780e0d42b5a5f4c0a6403966fb7e0eeec47e4c347cbf159b0ddabcbf1ef44",
+      "story-catalog.json": "1b17343c35df541f9c1ef52579412667d0376b51e180cd409ef449115037d6fc",
+      "third-party-notices.txt": "b9229f490630a80cb4968dea0483aea95706b1e8dd5645ece366a7cea3c4f560"
+    },
+    "file_count": 15,
+    "bytes": 1401606
+  },
+  "retained_attempts": [
+    {
+      "attempt": "local-01",
+      "result": "npm ci failed because default local npm cache was unwritable; no test/build result"
+    },
+    {
+      "attempt": "local-02",
+      "result": "explicit writable cache; complete install/test/build/negative-fixture sequence passed"
+    }
+  ],
+  "remote_ci": {
+    "status": "pending",
+    "head": null,
+    "run_url": null
+  },
+  "human_evidence": {
+    "sessions": 0,
+    "physical_devices": "pending",
+    "independent_human_release_approval": false
+  },
+  "limits": [
+    "No new browser journey or physical-device result.",
+    "Workflow-only/test-fixture additions leave runtime and staged0.1.4 unchanged.",
+    "Local pass does not substitute for observed remote CI."
+  ]
+}

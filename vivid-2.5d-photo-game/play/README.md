@@ -23,6 +23,8 @@ The server uses `http://127.0.0.1:8112/`. `GAME_URL` can point browser checks at
 
 `npm run build` also verifies that the emitted HTML badge agrees with the package and lockfile. To verify the same contract on an exported build, run `node scripts/check-build-version.mjs /path/to/export/build`. Keep the version in `package.json` and its generated lockfile; do not replace the HTML's `%PACKAGE_VERSION%` placeholder with another manually maintained version. The badge identifies a package version, while the candidate inventory still establishes exact shipped bytes.
 
+Branch CI runs the same locked install, existing unit suite and build on Ubuntu24.04 with Node24.19.0. After building, `node --test scripts/check-build-version.test.mjs` verifies the guard against isolated valid/stale HTML and lock fixtures without changing the real inputs. See the [technical-freeze CI record](../../docs/gamejam/technical-freeze-2026-11-06/README.md) for actual local/remote status and retained attempts.
+
 ```sh
 # Optional URL controls for facilitators / reproducible diagnostics
 # ?flat=1#iona              force complete flat illustration mode
