@@ -1,0 +1,71 @@
+{
+  "started_at": "2026-11-06T05:51:28.917Z",
+  "finished_at": "2026-11-06T05:51:44.576Z",
+  "method": "Automated visible-control canonical Iona/Mara journeys on the immutable-source export at root and nested HTTP mounts. No human, device or preference observation.",
+  "version": "0.1.4",
+  "source_commit": "f4e6034a87944f30a28ac5ede9968fd59d07cc1d",
+  "build_sha256": "a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1",
+  "packet": "release-candidates/keepers-frame/0.1.4",
+  "browser": "151.0.7922.173",
+  "cases": [
+    {
+      "id": "root-1280-iona",
+      "story": "iona",
+      "mount": "/",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "PASS",
+      "endpoint": "Remembered private letter placed on return, retained after reload"
+    },
+    {
+      "id": "root-1280-mara",
+      "story": "mara",
+      "mount": "/",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "PASS",
+      "endpoint": "Repair interpretation reached and retained after reload"
+    },
+    {
+      "id": "nested-1280-iona",
+      "story": "iona",
+      "mount": "/IndiaGames/release-candidates/keepers-frame/0.1.4/build/",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "PASS",
+      "endpoint": "Remembered private letter placed on return, retained after reload"
+    },
+    {
+      "id": "nested-1280-mara",
+      "story": "mara",
+      "mount": "/IndiaGames/release-candidates/keepers-frame/0.1.4/build/",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "PASS",
+      "endpoint": "Repair interpretation reached and retained after reload"
+    }
+  ],
+  "errors": [],
+  "result": "PASS",
+  "build_files": 15,
+  "build_bytes": 1401606,
+  "reproducible_builds": 2,
+  "export_policy_commit": "7a26e07a71062766e357b51aece9cce8b00c9b17",
+  "export_staging_base": "2be5f3648fed5422eb4459486661385df73c91be",
+  "inventory_unchanged": true,
+  "source_inputs_match_reviewed_hashes": true,
+  "exported_badge_check": "PASS",
+  "staging_validator_result": "1 staged packages checked; human readiness is NOT approval.",
+  "human_sessions": 0,
+  "physical_device_results": 0,
+  "human_approved": false,
+  "master_staging": "Not claimed by this report; integrator records actual merge separately."
+}

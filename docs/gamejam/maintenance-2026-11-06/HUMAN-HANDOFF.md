@@ -7,15 +7,15 @@
 | Game / version | `keepers-frame/0.1.4`, containing both Iona and Mara |
 | Build inventory | `a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1` |
 | Files / bytes | 15 / 1,401,606 |
-| Implementation commit | Read the full `source_commit` from the reviewed, exported `candidate.json`; the integrator binds it after committing the implementation |
-| Master commit | Record the full immutable master SHA containing the reviewed packet before preregistration |
+| Implementation commit | `f4e6034a87944f30a28ac5ede9968fd59d07cc1d` |
+| Master commit | Initial reviewed staging: `ac931cde281e9483f6f693289cad2d99038d5bc0`; record the actual study packet SHA before preregistration |
 | Readiness | Human cohorts, physical devices, critical-bug adjudication and independent approval pending |
 
 The badge should now say **“Work in progress · 0.1.4”**. Its agreement is a useful setup check; the complete inventory remains the exact-artifact identity. Older 0.1.3 reports keep their old hash and are not relabelled as 0.1.4 human evidence.
 
 ## Extract the reviewed packet, then verify it
 
-The integrator must stage the packet before these commands can succeed. Until the version exists on master and passes the inventory check, leave the study setup pending. Use a full-history repository clone and Bash; stop on any error. This reads committed Git objects without changing the working branch or building from uncommitted source:
+[PR #11](https://github.com/PaperStrange/IndiaGames/pull/11) merged the exact packet to master `ac931cde281e9483f6f693289cad2d99038d5bc0`. Verify the selected committed packet before using these commands; technical staging does not register or approve a study. Use a full-history repository clone and Bash; stop on any error. This reads committed Git objects without changing the working branch or building from uncommitted source:
 
 ```sh
 set -euo pipefail

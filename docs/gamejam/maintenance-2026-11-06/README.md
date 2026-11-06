@@ -9,7 +9,7 @@ The 15-file output differs from frozen 0.1.3 only in `index.html`: the package b
 | Single version authority | Implemented; source/lock 0.1.4 and emitted badge verified |
 | Canonical browser journeys | Final 8/8 root/nested ×desktop/narrow ×Iona/Mara passed, plus fresh dev badge |
 | Regression guard | Deliberately stale 0.1.2 built HTML rejected; final normal build passes |
-| Source-bound export / master staging | Prepared for the integrator; a new immutable source commit and the existing version-aware exporter must establish the two clean builds before staging |
+| Source-bound export / master staging | Complete: two clean builds from `f4e6034a87944f30a28ac5ede9968fd59d07cc1d`; PR #11 merged the exact packet to master `ac931cde281e9483f6f693289cad2d99038d5bc0` |
 | Human study / official release | Unbooked; two distinct six-person cohorts, physical devices and independent human approval still required |
 
 [Verification and retained failures](VERIFICATION.md) · [0.1.4 human handoff](HUMAN-HANDOFF.md) · [Machine-readable evidence](verification.json)
@@ -21,10 +21,10 @@ The 15-file output differs from frozen 0.1.3 only in `index.html`: the package b
 - Files/bytes: **15 / 1,401,606**
 - Initial source base: `2070902d7b5ea0da59ab07d35d218f9a66f7791f`; the verification JSON binds the changed implementation inputs before the integrator commits them.
 
-The local build comparison and browser run do not invent an immutable implementation SHA. The integrator records that SHA and the exact master staging commit after review/export. Before using any staged 0.1.4 packet, compare its inventory with the value above and follow the handoff.
+The implementation is committed at `f4e6034a87944f30a28ac5ede9968fd59d07cc1d`. [PR #11](https://github.com/PaperStrange/IndiaGames/pull/11) staged the reviewed packet at master `ac931cde281e9483f6f693289cad2d99038d5bc0` after independent code review and passing CI. [Exact-export checks](EXPORT-QA.md) passed four HTTP journeys; [staging record](staging-record.json) retains the identities. All prior candidates remain unchanged.
 
-## Next engineering milestone
+## Completed staging and next engineering milestone
 
-Commit the reviewed implementation, export 0.1.4 twice from that immutable SHA with the [existing version-aware exporter](../readiness-2026-11-04/CANDIDATE-EXPORT.md), compare it with the browser-tested inventory, then stage the separate packet through its checked PR. The exporter already runs the package build, so the new badge guard participates automatically. Retain 0.1.3 unchanged and leave human report rows empty. This engineering work can proceed before recruitment.
+The reviewed implementation was exported twice with the [existing version-aware exporter](../readiness-2026-11-04/CANDIDATE-EXPORT.md), matched the browser-tested inventory, and was staged through the checked PR. The exporter already runs the package build, so the new badge guard participates automatically. Retain 0.1.3 unchanged and leave human report rows empty. This engineering work can proceed before recruitment.
 
 After staging, use the exact-artifact setup and record future reproduced defects against a version/hash. Select further source/tooling improvements independently of recruiting, while keeping new gameplay/content decisions tied to actual observations. Official promotion still waits for the unchanged human gate; code cleanup does not supply proof of fun or participant comprehension.
