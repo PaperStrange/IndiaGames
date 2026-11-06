@@ -1,0 +1,16 @@
+{
+  "unit": null,
+  "locale": null,
+  "build_sha256": null,
+  "locale_catalog_sha256": null,
+  "evidence_reference": null,
+  "reviewer_id": null,
+  "reviewer_is_human": false,
+  "fluent_in_locale": false,
+  "competence_statement": null,
+  "reviewed_in_game": false,
+  "reviewed_all_player_facing_content": false,
+  "review_notes": null,
+  "reviewed_at": null,
+  "outcome": null
+}

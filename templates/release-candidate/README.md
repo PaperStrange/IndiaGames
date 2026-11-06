@@ -2,6 +2,8 @@
 
 These files intentionally **fail readiness validation**. They contain no human results and no official version.
 
+The [locale/device governed draft](../../docs/governance/locale-device-evidence-2026-11-06/README.md) adds required `locale_device_evidence` inside the product report and a hashed `build/locale-catalog.json` for every new candidate. The new helper JSON files in this directory are recording aids, **not additional packet files**. The product templates already include blank supplemental arrays and false approval attestations. Fill only identity fields to stage; populate human observations only after they actually occur. Additional locale-comprehension criteria remain unadopted and block readiness even if every other field is filled.
+
 On `master`, create `release-candidates/<game>/<version>/`. Copy `candidate.json` and `notes.md` into it; add the exported browser game under `build/`, including `build/index.html`. For Small Hours and Bell, copy `human-playtest.json` and use `session.json` for each session. For every new Vivid candidate, copy **`human-playtest.vivid.json` as `human-playtest.json`** and use `session.vivid.json` for each story's sessions. Keep this README, session templates and other helper files out of the packet.
 
 Vivid's build must include `story-catalog.json`, generated from the shipping manifests in the shape shown by `story-catalog.vivid.json`. It lists both `iona` / `iona-return-v1` and `mara` / `mara-object-v1`, their current positive revisions and titles. Generate the build inventory only after the catalog is included. Its bytes are part of the shipped hash. Do not add these helper templates at the packet root.
