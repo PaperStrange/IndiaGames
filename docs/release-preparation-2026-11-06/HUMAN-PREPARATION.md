@@ -80,7 +80,7 @@ A shared fluent reviewer may edit all three games, with that role recorded. That
 | Nov 8–10 | Implement only settled scope; native editorial review and automated checks proceed together; prepare exact-build test setup | Reforecast, rather than compress translation review or human observations |
 | Nov 11 | Freeze only testable new candidate bytes, locale/catalog identities and complete protocols | The affected multilingual game is off the default launch track; preserve old candidates |
 | Nov 12–15 | Run real product cohorts, settled locale studies, physical-device checks and fixes/retests on exact builds | Missing coverage remains pending; no pooled-language shortcut or reused changed-build approval |
-| Nov 16 | Per-game go/no-go including declared locale/device claims | Owner chooses an explicitly revised release scope or deferral; do not silently drop a requested language/device |
+| Nov 16 | Per-game go/no-go including declared locale/device claims | Defer any game missing required locale/device evidence; do not silently drop a requested language/device |
 | Nov 20 | Publish only approved versions with all three languages and truthful support notes | Defer incomplete games; no release announcement for unverified scope |
 
 The existing estimate is about 24 facilitator-hours **before** the added language/device work. No defensible added-hours estimate exists until text scope, reviewers and hardware are known. All three languages and all three form factors are requested targets, not a promise that the expanded scope fits the remaining calendar.
