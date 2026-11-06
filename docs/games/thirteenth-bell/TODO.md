@@ -1,19 +1,20 @@
 # The Thirteenth Bell — Mina-route experiment and human handoff
 
-**Current engineering milestone · November6:** [TB-21 and the parallel cleanup plan](../../iteration-2026-11-06/README.md) proceed without waiting for recruitment. The canonical human/design/release gates below remain in force; historical evidence keeps its date.
-## November 5 parallel preparation · TB-20
+**Current engineering milestone · November 6:** TB-21 completed. Isolated reproducible build/static checks are verified, preserving candidate 0.1.0 byte-for-byte. Next: **TB-22 proposed, target Nov 10** — run those checks in branch CI. [Current milestone and evidence](../../iteration-2026-11-06/README.md). Human/design/release gates remain in force; dated history below is preserved.
 
-All three preparation lanes remain active; the owner selected facilitator-machine sessions and needs more recruitment time. Human dates remain unbooked. [Current iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
+## Historical November 5 preparation plan · TB-20
+
+The owner selected facilitator-machine sessions and needed more recruitment time. The planned technical preparation is now complete, with results below; human dates remain unbooked. [Dated iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
 
 **Verify the two-build facilitator setup and recall handoff.** Verify frozen candidate 0.1.0 and its previous Contrast reference are accessible over local HTTP with exact identities; disclose no-save and optional font limitations. Prepare the canonical six-person comparison with three people per first-build order. Require at least 120 seconds neutral activity after each run before recall and before exposing the next build.
 
-This dated task is active until its actual results and immutable evidence links are filed. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
+The completion record below closes this preparation task with actual results and immutable evidence links. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
 
-## Current readiness handoff · 4 November 2026
+## Historical readiness handoff · 4 November 2026
 
 4 November: 33 scenario executions passed (16 root, 16 nested, one nested desktop ending/restart) on unchanged 0.1.0. Candidate resources had no failures. The frozen historical reference used fallback fonts after its optional Google Fonts certificate failure. Known-route and race-regression checks are not fresh-player comprehension, recall or physical-device evidence.
 
-[Current game handoff](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Blank human handoff](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
+[November 4 game handoff](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Blank human handoff](https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
 
 Required human studies, physical devices and independent approval remain pending. Historical completed IDs and evidence are preserved; dated follow-ups do not erase prior verification.
 
@@ -39,11 +40,11 @@ Dated supported-HTTP evidence and an exact-artifact human-study handoff for issu
 
 Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/fce070bd9ee3006f0a017b9c33ee11f5b5133657/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
 
-## Current milestone · 27 October 2026
+## Historical milestone · 27 October 2026
 
 Option A, Prepare Mina’s route, was selected on October 24. The bounded scene is implemented and verified, and candidate 0.1.0 is staged on master with human approval pending; the manifest pins its exact source and artifacts. Original and previous Contrast remain comparison references. No human results or official release are implied.
 
-[Current playtest packet](https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
+[October 27 playtest packet](https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
 
 The current packet reconciles the October 22 research uploads with edition, substitution and partial-journey limits. Underlying play dates remain explicit. The detailed baseline below is retained for design rationale and acceptance criteria; its historical coverage/status statements do not replace the current packet, task JSON or source manifest. No human facilitator or independent reviewer is assigned.
 
@@ -432,3 +433,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 5 November: four facilitator-setup journeys and 24 checks passed for frozen candidate/reference across desktop/narrow HTTP origins. Candidate/reference inventories and served HTML matched; no candidate failures. Four optional reference Google Fonts certificate failures remain disclosed. These setup checks do not rerun all November 4 causal scenarios or establish human recall/physical-device results.
 
 [Technical evidence](https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md) · [Facilitator setup and blank-form links](https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md). The new preparation card is done; existing human and release cards keep their prior gates.
+
+### November 6 completed engineering · TB-21
+
+6 November: 25 Node tests, 21 static checks and four split/bundled browser journeys/20 checks passed, with zero unexpected browser errors. Two clean builds equal frozen 0.1.0 byte-for-byte. Validation preserves absent, valid and stale developer output. These checks are not a rerun of all historical causal scenarios or human observations.
+
+[Committed maintenance record](https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/README.md) · [Verification](https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md). This completes the engineering card while preserving the separately pending human release cards.

@@ -6,7 +6,7 @@
     {
       "lane": "memorable",
       "promise": "Make a small shared memory, together.",
-      "next_action": "Verify countdown ownership and safe test runs; retain the frozen pair-study baseline.",
+      "next_action": "Verify repeatable development exports while preserving the study baseline.",
       "image": {
         "src": "assets/hub/small-hours-opening.png",
         "alt": "Small Hours opening screen with a moonlit window, two cups and a shared postcard.",
@@ -32,7 +32,7 @@
     {
       "lane": "vivid",
       "promise": "Two small worlds. Two ways to care.",
-      "next_action": "Verify package-derived version 0.1.4, then stage its reproducible export.",
+      "next_action": "Carry verified version and export checks into branch CI.",
       "image": {
         "src": "assets/hub/vivid-iona-opening.png",
         "alt": "Vivid opening scene with harbour keeper Iona beside a lamp inside a wooden frame.",
@@ -58,7 +58,7 @@
     {
       "lane": "bell",
       "promise": "Learn the town. Change an outcome.",
-      "next_action": "Verify isolated, repeatable builds while preserving candidate 0.1.0.",
+      "next_action": "Connect reproducible build checks to branch CI.",
       "image": {
         "src": "assets/hub/bell-town-map.webp",
         "alt": "Illustrated town map with six districts surrounding a clock marked Dawn, Noon, Dusk and Midnight.",
