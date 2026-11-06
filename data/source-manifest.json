@@ -508,14 +508,18 @@
     },
     "latest_intake": {
       "filed_package_date": "2026-10-28",
-      "review_date": "2026-11-04",
-      "human_participant_rows": 0,
-      "summary": "Current archive intake reviewed across all three branches. Broader access and capture inspection correct several causal and completion claims; they do not turn partial attempts or desk studies into completed human journeys.",
+      "review_date": "2026-11-06",
+      "attribution": "human_gameplay_owner_confirmed",
+      "distinct_human_participants": null,
+      "distinct_play_sessions": null,
+      "qualifying_release_sessions_admitted": 0,
+      "summary": "Fifteen supplied original documents match the filed prose after evidence-path relocation. The owner corrects their retained agent labels to human gameplay. Criticism and technical traces refine interpretation; participant/session counts and exact-candidate release eligibility are not inferred from document count.",
       "record_packages": {
         "memorable": "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/competitor-plays-2026-10-28/README.md",
         "vivid": "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/competitor-plays-2026-10-28/README.md",
         "bell": "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/competitor-plays-2026-10-28/README.md"
-      }
+      },
+      "reconciliation_document": "docs/research-reconciliation-2026-11-06/README.md"
     },
     "six_title_four_family_gate_scope": "historical_original_roster_baseline",
     "historical_latest_intake": {
@@ -528,6 +532,17 @@
         "vivid": "https://github.com/PaperStrange/IndiaGames/blob/12ecc786d27a9d17d1bf93e07893bed16490a5b8/docs/gamejam/competitor-plays-2026-10-22/README.md",
         "bell": "https://github.com/PaperStrange/IndiaGames/blob/252cc55e8515da1438c3e74af2e7dcc58eb13118/docs/gamejam/competitor-plays-2026-10-22/README.md"
       }
+    },
+    "intake_review_2026_11_04": {
+      "filed_package_date": "2026-10-28",
+      "review_date": "2026-11-04",
+      "human_participant_rows": 0,
+      "summary": "Current archive intake reviewed across all three branches. Broader access and capture inspection correct several causal and completion claims; they do not turn partial attempts or desk studies into completed human journeys.",
+      "record_packages": {
+        "memorable": "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/competitor-plays-2026-10-28/README.md",
+        "vivid": "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/competitor-plays-2026-10-28/README.md",
+        "bell": "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/competitor-plays-2026-10-28/README.md"
+      }
     }
   },
   "review_methods": [
@@ -535,7 +550,7 @@
     "The October 24 decision settled prepare-sessions-first and Bell option A, Prepare Mina’s route.",
     "Small Hours retains its unchanged baseline; Vivid retains the immutable 0.1.2 artifact and historical verification.",
     "Bell implementation and new verification are tracked independently from its preserved previous Contrast reference.",
-    "Human participants, physical-device checks and independent release approval remain pending.",
+    "Release-cohort eligibility, physical-device checks and independent release approval remain pending. The November 6 owner correction identifies the supplied October 28 records as human gameplay; recorded document counts are not participant counts.",
     "27 October: the coordinator verified Vivid’s exact artifact and six direct/nested launch routes with no JavaScript errors or HTTP 4xx; no full story suite rerun or human session.",
     "27 October: the coordinator verified two Small Hours launch groups (root desktop and nested 390px). The 33 behavioral assertions retain their historical October 20 date; no new human or physical-device results.",
     "27 October: Bell source/hash-bound pure,static, 16-group browser,legacy journey and HTTP smoke verification completed; frozen candidate staged on master with pending human evidence.",
@@ -879,5 +894,24 @@
     "november_20_language_requirement": "all_three_required_per_released_game",
     "incomplete_language_coverage": "defer_game",
     "language_scope_decision_date_utc": "2026-11-06"
+  },
+  "research_intake": {
+    "date_utc": "2026-11-06",
+    "status": "human_feedback_reconciled_release_eligibility_pending",
+    "attribution": "human_gameplay_owner_confirmed",
+    "attribution_correction": "Owner confirms the same supplied records are human gameplay; retained agent labels are a recording-tool error. Originals are preserved. This is an owner-confirmed correction, not independent reconstruction of every action.",
+    "attribution_correction_date_utc": "2026-11-06",
+    "original_labels_preserved": true,
+    "compared_original_md_records": 15,
+    "game_record_sets": 3,
+    "duplicates_after_evidence_path_remapping": 15,
+    "distinct_human_participants": null,
+    "distinct_play_sessions": null,
+    "release_cohort_admission": "not_established",
+    "qualifying_release_sessions_admitted_from_intake": 0,
+    "qualifying_release_session_counts_changed": false,
+    "task_contracts_changed": false,
+    "new_gameplay_or_runtime_tests": false,
+    "report": "docs/research-reconciliation-2026-11-06/README.md"
   }
 }

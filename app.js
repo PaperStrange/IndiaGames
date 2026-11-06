@@ -123,7 +123,7 @@ function renderReadiness() {
   el('delivery-note').textContent = manifest.readiness?.delivery_note || 'Delivery status is in the current readiness report.';
   const humanZero = manifest.sources.every(source => source.human_participant_rows === 0);
   el('readiness-note').textContent = humanZero
-    ? 'No human sessions recorded. Physical-device checks and independent approval are pending.'
+    ? 'No release-qualifying human sessions are verified in the filed packets. Physical-device checks and independent approval are pending.'
     : 'Review each game’s original session records before making a release decision.';
   el('readiness-rows').replaceChildren(...LANES.map(lane => {
     const source = manifest.sources.find(item => item.lane === lane);
@@ -133,7 +133,7 @@ function renderReadiness() {
     const build = node('td'); build.dataset.label = 'Build';
     build.append(node('span', '', source.candidate_version ? 'Candidate ' + source.candidate_version : 'Pilot baseline'));
     build.append(node('small', '', source.technical_readiness_label || 'Technical status in evidence notes'));
-    const sessions = node('td'); sessions.dataset.label = 'Human sessions';
+    const sessions = node('td'); sessions.dataset.label = 'Verified release sessions';
     const counts = node('span', 'human-session-count');
     if (source.human_participant_rows === 0) {
       if (lane === 'vivid') counts.append(document.createTextNode('Iona 0 / 6'), node('br'), document.createTextNode('Mara 0 / 6'));

@@ -457,3 +457,9 @@ The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-H
 | **TB-25** | Qualify localized causal understanding and real-device play | Fluent clue reviewers + physical-device QA + facilitator |
 
 Each card retains exact acceptance details in [tasks.json](tasks.json). Shared evidence-contract settlement precedes implementation; native review and physical-device observations remain human work. New translations/fonts/layout bytes require new immutable artifacts and exact-build evidence.
+
+## Human-feedback reconciliation · November 6
+
+Use the human feedback to examine action/advance expectations, optional forecasts, witnessed knowledge, costs and changed-route explanation. A forecast is not a mandatory advance gate; map destinations already are native buttons. TB-23–25 retain semantic IDs before translated labels, contextual map/CJK/device work and the existing human comparison/neutral-recall protocol. Select guidance from observed misunderstanding, not the inaccurate proposed one-line rule.
+
+[Reconciled findings and source references](../../research-reconciliation-2026-11-06/README.md). The owner corrects the supplied records' actor attribution to human gameplay; original labels stay intact. Five documents per game are not five participants. Release-cohort eligibility needs separate assessment; existing task objects and thresholds are unchanged.

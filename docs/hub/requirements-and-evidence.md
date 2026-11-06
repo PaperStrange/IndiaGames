@@ -31,3 +31,7 @@ The [current adjudication and handoff](../iteration-2026-11-04/README.md) incorp
 ## November 6 language and device preparation request
 
 The owner confirmed `en`, `ja`, `zh-Hans` and desktop web/phones/tablets. On November 6 the owner required all three languages per November 20 release; incomplete games must be deferred. Additional locale sampling remains unsettled. The [proposed plan](../release-preparation-2026-11-06/README.md) and pinned source audits identify localization, physical-device and release-contract gaps. Nine proposed cards supplement the unchanged 75-card history. No translated game, new gameplay test, native-language approval or hardware-support result is claimed. [PR #13](https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493) remains the verified prior engineering deployment; [PR #14](https://github.com/PaperStrange/IndiaGames/pull/14) records this planning dashboard's separate review, CI and publication checks.
+
+## November 6 human-feedback attribution and reconciliation
+
+The owner identifies the supplied October 28 records as human gameplay and corrects their retained agent labels as a recording-tool mistake. [The reconciliation](../research-reconciliation-2026-11-06/README.md) preserves originals, compares all 15 Markdown documents with filed versions, and refines player/designer/art/operator priorities. Fifteen documents are not 15 people. The dashboard distinguishes received human feedback from verified release-cohort rows; no participant count, new game test or release approval is invented.

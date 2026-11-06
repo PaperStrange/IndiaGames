@@ -1,0 +1,230 @@
+{
+  "method": "Exact byte equality after four literal evidence-path replacements per game; no other normalization. Not new gameplay.",
+  "records": [
+    {
+      "lane": "vivid",
+      "record": "coverage--vivid-0.1.2-2026-10-28.md",
+      "original_sha256": "53375a3a3e26455736585bce8226cd996cb65e53447e5a48eb97dc6b48269430",
+      "filed_sha256": "d5b08beb1d5377030f0170a588c48188d278660bb909a4ca337dc8e1488f1eec",
+      "source_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/coverage--vivid-0.1.2-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../vivid/": "../evidence/vivid/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/vivid/": "evidence/vivid/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "vivid",
+      "record": "decision--vivid-0.1.2-2026-10-28.md",
+      "original_sha256": "1e4bc6fe6a7c4d746e80e2aa4d3f9da706d9a23969642e0723221c5059339c0a",
+      "filed_sha256": "c40b4a1f82c6794696b7bc803f1a2f6919f0eceba820c61db9897ed882fe5359",
+      "source_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/decision--vivid-0.1.2-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../vivid/": "../evidence/vivid/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/vivid/": "evidence/vivid/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "vivid",
+      "record": "session--vivid-0.1.2-agent-2026-10-28.md",
+      "original_sha256": "b8dc163cff4485d59396d1c81684ff89f2e08316768b777c7cac1920de7f3bed",
+      "filed_sha256": "a827236fa79db21b3e748f8785e9a6ec84f1bdcc08e6f21999875b727e1db81f",
+      "source_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/session--vivid-0.1.2-agent-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../vivid/": "../evidence/vivid/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/vivid/": "evidence/vivid/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "vivid",
+      "record": "art--vivid-0.1.2-2026-10-28.md",
+      "original_sha256": "9a4f4414071f659462bea429368f3a1ba4802068bc0b3d21fc9ad38bc6325427",
+      "filed_sha256": "863046c03bae88d96a2bfcdb6baeab093798cbe11833635fe2f5d61d75653961",
+      "source_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/art--vivid-0.1.2-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../vivid/": "../evidence/vivid/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/vivid/": "evidence/vivid/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "vivid",
+      "record": "journey--vivid-0.1.2-2026-10-28.md",
+      "original_sha256": "22449c3eeb294d7e25b247a5a45d67b88ccd6b70567078ee538ad9fda21a200d",
+      "filed_sha256": "b0d3f24a0214e0f480ae26af8fcc61f66f990187ebea71601c804b6910168494",
+      "source_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/journey--vivid-0.1.2-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../vivid/": "../evidence/vivid/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/vivid/": "evidence/vivid/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "moments",
+      "record": "coverage--small-hours-2026-10-28.md",
+      "original_sha256": "bb55d2a8577f506b06202c644b8952bba497c01091340ab6565a10e80753da1c",
+      "filed_sha256": "7aecfa4c0b15ea89d19c3642c067b62fb4d142f3a02f4dadb124bf7dd70e5660",
+      "source_commit": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/coverage--small-hours-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../moments/": "../evidence/moments/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/moments/": "evidence/moments/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "moments",
+      "record": "art--small-hours-2026-10-28.md",
+      "original_sha256": "93b8cd20e7ed8350a3e02c8b13509110a3a07f16113f22d8c6801ec7a95a33ac",
+      "filed_sha256": "73a736d1ccac8e26315d33f28e0ce21502286f57454a503adfba745ae0323880",
+      "source_commit": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/art--small-hours-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../moments/": "../evidence/moments/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/moments/": "evidence/moments/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "moments",
+      "record": "journey--small-hours-2026-10-28.md",
+      "original_sha256": "d1cb8101ee509d9ca58b2b3dbb057a8a8045bb4dfa6ac5a3626af5051e846a6a",
+      "filed_sha256": "2bef996f4ebe7a806c783de805a24e1ddfaf561a6c7a6e3b7fc23d37497b8356",
+      "source_commit": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/journey--small-hours-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../moments/": "../evidence/moments/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/moments/": "evidence/moments/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "moments",
+      "record": "decision--small-hours-2026-10-28.md",
+      "original_sha256": "85acbf980da4cf9071e22daf4ff3f60b10e8fd235cc64875d133427227a56b3e",
+      "filed_sha256": "1197564ba32fb444fcd8440f14c7bf520fd93f1bf5085edba7f7ffeb2c627d04",
+      "source_commit": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/decision--small-hours-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../moments/": "../evidence/moments/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/moments/": "evidence/moments/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "moments",
+      "record": "session--small-hours-agent-2026-10-28.md",
+      "original_sha256": "f21c24903e155aaae9a80be274194c441d7fb876738d8bf05d4de990401a906e",
+      "filed_sha256": "05be8313304d856587ba500048d696f3d835942ac1470fe9252b762479f080ce",
+      "source_commit": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/session--small-hours-agent-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../moments/": "../evidence/moments/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/moments/": "evidence/moments/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "bell",
+      "record": "coverage--bell-0.1.0-2026-10-28.md",
+      "original_sha256": "b42ee9431cb1b65d394668a3a8e463701ac116ff91fff5df0e1deffaea475da0",
+      "filed_sha256": "9385ca96277e7f85d3089e55acf2dc319e56e9eb1e1fb3ebed7af56c5dbfff39",
+      "source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/coverage--bell-0.1.0-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../bell/": "../evidence/bell/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/bell/": "evidence/bell/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "bell",
+      "record": "journey--bell-0.1.0-2026-10-28.md",
+      "original_sha256": "177d7ca5731da5613904a436db6a06469324649aa04ab5aadb213e947070ca7e",
+      "filed_sha256": "1a3fa1e8eeba1aeac1e8288125956b52697421ec664d29369b55573d4a9b0663",
+      "source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/journey--bell-0.1.0-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../bell/": "../evidence/bell/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/bell/": "evidence/bell/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "bell",
+      "record": "decision--bell-0.1.0-2026-10-28.md",
+      "original_sha256": "e8d81ea15279a8ea1c696dabcd4b4c621c18949dca601faa3d680b34bb25b761",
+      "filed_sha256": "1e3a1223bcb05b08ecf8b199ac07e95efcd45ca6b3ddd7347490c00f34046771",
+      "source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/decision--bell-0.1.0-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../bell/": "../evidence/bell/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/bell/": "evidence/bell/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "bell",
+      "record": "art--bell-0.1.0-2026-10-28.md",
+      "original_sha256": "ba36afe536af0e34d7eb53e342e71393dfa4bae32cbde924aabf3be85545a5f3",
+      "filed_sha256": "96a48dd6fa61de704763956a94be9e309afae262b5945d463a00dcf1a1daabbf",
+      "source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/art--bell-0.1.0-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../bell/": "../evidence/bell/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/bell/": "evidence/bell/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    },
+    {
+      "lane": "bell",
+      "record": "session--bell-0.1.0-agent-2026-10-28.md",
+      "original_sha256": "3da739ae91f160cb9ee442bba5c7caa18bcb1161418c32927da322c209977911",
+      "filed_sha256": "a37e8b2631e87d2b9c5e8a64e254236bf2702a181f51538305c4258580379f73",
+      "source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+      "filed_path": "docs/gamejam/competitor-plays-2026-10-28/records/session--bell-0.1.0-agent-2026-10-28.md",
+      "identical_after_explicit_evidence_path_remaps": true,
+      "path_remaps": {
+        "../../bell/": "../evidence/bell/",
+        "../../competitors/": "../evidence/competitors/",
+        "play-2026-10-28/bell/": "evidence/bell/",
+        "play-2026-10-28/competitors/": "evidence/competitors/"
+      }
+    }
+  ]
+}

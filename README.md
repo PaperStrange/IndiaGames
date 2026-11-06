@@ -39,3 +39,5 @@ python3 -m http.server 8120 --bind 127.0.0.1
 ```
 
 The hub uses static HTML, CSS, JavaScript and JSON. Check root and `/IndiaGames/` paths before publishing. Inspect local changes and stop owned servers before switching the shared checkout; retain source and evidence on their owning branches.
+
+[November 6 human-feedback reconciliation](docs/research-reconciliation-2026-11-06/README.md) records the owner's attribution correction, source comparisons and proposed per-game priorities. Original files are preserved; release eligibility is assessed separately.
