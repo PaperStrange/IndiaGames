@@ -2,6 +2,12 @@
 
 **The hub is live at [paperstrange.github.io/IndiaGames](https://paperstrange.github.io/IndiaGames/), served from `main` / root. The repository owner manually made that Pages switch.** A dashboard deployment is separate from an official game release; the release registry remains empty.
 
+## Human-feedback reconciliation delivery
+
+[PR #15](https://github.com/PaperStrange/IndiaGames/pull/15) carries the [human-feedback reconciliation](research-reconciliation-2026-11-06/README.md), including the owner's attribution correction and dashboard wording that separates received feedback from verified release sessions. [Local dashboard checks](research-reconciliation-2026-11-06/DASHBOARD-QA.md) identify the tested bytes; final review, CI and actual post-merge Pages verification are filed in that PR conversation.
+
+The preceding [PR #14 publication](https://github.com/PaperStrange/IndiaGames/pull/14#issuecomment-6679768911) was independently reviewed, merged as `81b951d07bb0263aa6a9e7971d1d42a221674aba`, built by Pages at 07:34:20 UTC and verified live at 07:34:48–07:34:57 UTC. All 11 file/browser-response hashes matched; 84 tasks were reachable and no unexpected errors were recorded. That result verifies the preceding deployment only.
+
 ## Previous verified publication · November 6
 
 [PR #13](https://github.com/PaperStrange/IndiaGames/pull/13) published the completed export/CI dashboard at main `345c33970745297103a099ecdf9dc11f134b0038` after independent review and passing CI. Pages built it at **06:49:31 UTC**. Live verification at **06:50:21–06:50:30 UTC** matched all 11 served files and actual browser-response hashes, exercised desktop/narrow navigation and all 75 task IDs, and recorded zero unexpected errors with TLS verification enabled. [Public verification](https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493) · [Portable result](release-preparation-2026-11-06/publication-pr13.json). Earlier [PR #12](technical-freeze-2026-11-06/publication-pr12.json) and [PR #9](iteration-2026-11-06/publication-pr9.json) remain historical evidence.

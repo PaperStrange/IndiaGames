@@ -460,3 +460,9 @@ The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-H
 | **SH-26** | Qualify three-language pair play on declared physical targets | Fluent language reviewers + physical-device QA + facilitator |
 
 Each card retains exact acceptance details in [tasks.json](tasks.json). Shared evidence-contract settlement precedes implementation; native review and physical-device observations remain human work. New translations/fonts/layout bytes require new immutable artifacts and exact-build evidence.
+
+## Human-feedback reconciliation · November 6
+
+Use the human feedback to examine choice versus guess, willing private handoffs, both offscreen contributions and whether the keepsake feels jointly authored. Preserve intentional A/B and rehearsal distinctions. SH-24–26 should carry this meaning into complete translated messages, CJK input/export and actual device runs; those refinements remain proposed. File export alone is not unique differentiation. Existing technical checks stay complete.
+
+[Reconciled findings and source references](../../research-reconciliation-2026-11-06/README.md). The owner corrects the supplied records' actor attribution to human gameplay; original labels stay intact. Five documents per game are not five participants. Release-cohort eligibility needs separate assessment; existing task objects and thresholds are unchanged.

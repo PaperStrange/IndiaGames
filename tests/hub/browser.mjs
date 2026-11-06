@@ -259,12 +259,12 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       assert.equal(await page.locator('#days-to-freeze').innerText(), daysFromSnapshot(manifest.launch.candidate_freeze_date_utc));
       assert.equal(await page.locator('#days-to-launch').innerText(), daysFromSnapshot(manifest.launch.target_date_utc));
       assert.equal(await page.locator('#human-sessions-filed').innerText(), '0');
-      assert.match(await page.locator('#launch-readiness').innerText(), /unbooked/i);
+      assert.match(await page.locator('#launch-readiness').innerText(), /release qualification remains unverified/i);
       assert.equal(await page.locator('.owner-actions li').count(), 3);
       const readiness = page.locator('#readiness-rows tr');
       assert.equal(await readiness.count(), 3);
       const rowWords = await readiness.allInnerTexts();
-      assert.ok(rowWords.every(words => /pending/i.test(words) && /0\s*\/\s*6/.test(words)), 'Readiness must preserve zero human results and pending checks');
+      assert.ok(rowWords.every(words => /pending/i.test(words) && /0\s*\/\s*6/.test(words)), 'Readiness must preserve zero verified release-cohort rows and pending checks');
       assert.match(rowWords.find(words => /small hours/i.test(words)), /pairs/i);
       const vividWords = rowWords.find(words => /vivid/i.test(words));
       assert.match(vividWords, /Iona/i); assert.match(vividWords, /Mara/i);

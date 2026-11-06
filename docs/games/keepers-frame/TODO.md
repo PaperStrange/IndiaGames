@@ -187,3 +187,9 @@ The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-H
 | **KF-33** | Qualify Iona and Mara in each declared locale/device scope | Fluent story reviewers + physical-device QA + facilitator |
 
 Each card retains exact acceptance details in [tasks.json](tasks.json). Shared evidence-contract settlement precedes implementation; native review and physical-device observations remain human work. New translations/fonts/layout bytes require new immutable artifacts and exact-build evidence.
+
+## Human-feedback reconciliation · November 6
+
+Use the human feedback to examine action ownership, permission and the full endpoints: Iona choice → return → actual placement; Mara actual interpretation. The failed vivid15 technical replay does not prove auto-placement, nor negate human completion elsewhere. KF-31–33 should preserve story/save/cast IDs and distinct care/interpretation mechanisms across locales and devices. Keep six Iona and six different Mara people, not six pairs.
+
+[Reconciled findings and source references](../../research-reconciliation-2026-11-06/README.md). The owner corrects the supplied records' actor attribution to human gameplay; original labels stay intact. Five documents per game are not five participants. Release-cohort eligibility needs separate assessment; existing task objects and thresholds are unchanged.
