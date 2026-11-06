@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 
@@ -22,8 +23,85 @@ gate = load("gate", "validate-release.py")
 publisher = load("publisher", "publish-releases.py")
 
 
+def add_locale_catalog(package, game):
+    (package / "build/locale-catalog.json").write_text(json.dumps({
+        "schema_version": 1, "game": game, "default_locale": "en", "locales": sorted(gate.LOCALES),
+        "units": [{"id": unit, "locales": sorted(gate.LOCALES)} for unit in sorted(gate.LOCALE_UNITS[game])]}))
+
+
+def synthetic_comprehension_protocol(block, game, report):
+    """TEST ONLY: not a proposed sample size or an adopted human-study protocol."""
+    expected = {(unit, locale) for unit in gate.LOCALE_UNITS[game] for locale in gate.LOCALES}
+    gate.require({(row["unit"], row["locale"]) for row in block["records"]} == expected,
+                 "synthetic protocol needs all test cells")
+    gate.require(all(row["findings"] == {"synthetic_example_only": True} for row in block["records"]),
+                 "synthetic protocol criteria failed")
+
+
+def adopt_test_only_protocol(test):
+    # Production policy stays empty. Every positive release fixture explicitly installs
+    # an invented trusted protocol in memory; no real packet can select it.
+    for module in (gate, publisher.gate):
+        temporary = patch.dict(module.REVIEWED_LOCALE_PROTOCOLS, {
+            (game, "synthetic-protocol-not-for-release"): {"sha256": "c" * 64, "validate": synthetic_comprehension_protocol}
+            for game in gate.GAMES})
+        temporary.start()
+        test.addCleanup(temporary.stop)
+
+
+def add_locale_evidence(report, game, version, built):
+    evidence = {"schema_version": 1, "game": game, "version": version,
+        "build_sha256": built["sha256"], "locale_catalog_sha256": built["files"][gate.LOCALE_CATALOG],
+        "language_reviews": [], "device_claims": [], "physical_checks": [],
+        "comprehension": {"protocol_id": "synthetic-protocol-not-for-release", "protocol_sha256": "c" * 64,
+            "registered_at": "2025-01-01T00:00:00Z", "records": []}}
+    for family in sorted(gate.DEVICE_FAMILIES):
+        evidence["device_claims"].append({"id": "synthetic-" + family, "device_family": family,
+            "model": "Synthetic device only", "os": "Synthetic OS", "os_version": "1.0",
+            "browser": "Synthetic browser", "browser_version": "1.0", "engine": "Synthetic engine",
+            "inputs": ["synthetic input"]})
+    for unit in sorted(gate.LOCALE_UNITS[game]):
+        for locale in sorted(gate.LOCALES):
+            common = {"unit": unit, "locale": locale, "build_sha256": built["sha256"],
+                "locale_catalog_sha256": built["files"][gate.LOCALE_CATALOG],
+                "evidence_reference": "Synthetic test fixture only; no actual private evidence."}
+            evidence["language_reviews"].append(dict(common, reviewer_id="synthetic-editor-" + locale,
+                reviewer_is_human=True, fluent_in_locale=True, competence_statement="Invented test role, not a real reviewer.",
+                reviewed_in_game=True, reviewed_all_player_facing_content=True, review_notes="Synthetic content review only.",
+                reviewed_at="2025-01-01T10:20:00Z", outcome="approved"))
+            for device in evidence["device_claims"]:
+                evidence["physical_checks"].append(dict(common, device=copy.deepcopy(device), tester_id="synthetic-device-tester",
+                    tester_is_human=True, method="manual-physical", is_physical=True, started_at="2025-01-01T10:00:00Z",
+                    completed_at="2025-01-01T10:20:00Z", critical_bugs_open=0,
+                    checks={key: True for key in gate.DEVICE_CHECKS | gate.GAME_DEVICE_CHECKS[game]},
+                    observation_notes="Synthetic hardware fixture only.", outcome="pass"))
+            evidence["comprehension"]["records"].append(dict(common, id=f"synthetic-locale-{unit}-{locale}",
+                participant_ids=[f"synthetic-locale-person-{unit}-{locale}"], observer_id="synthetic-locale-observer",
+                observer_is_human=True, method="manual-remote", prior_exposure="Synthetic fixture only.",
+                started_at="2025-01-01T10:00:00Z", completed_at="2025-01-01T10:20:00Z",
+                findings={"synthetic_example_only": True}, observation_notes="Invented test observation only."))
+    report["locale_device_evidence"] = evidence
+    report["human_approval"].update(reviewed_locale_device_evidence=True,
+        reviewed_locale_comprehension_evidence=True, played_exact_build=True)
+
+
+def rebind_fixture(report, built):
+    """Explicit fixture-only binding when a test intentionally changes catalog bytes."""
+    report["build_sha256"] = built["sha256"]
+    for cohort in [report] + report.get("story_reports", []) + report.get("study_reports", []):
+        cohort["build_sha256"] = built["sha256"]
+        for session in cohort.get("sessions", []):
+            session["build_sha256"] = built["sha256"]
+    evidence = report.get("locale_device_evidence")
+    if evidence:
+        for row in [evidence] + evidence["language_reviews"] + evidence["physical_checks"] + evidence["comprehension"]["records"]:
+            row["build_sha256"] = built["sha256"]
+            row["locale_catalog_sha256"] = built["files"].get(gate.LOCALE_CATALOG)
+
+
 class ReleaseGateTests(unittest.TestCase):
     def setUp(self):
+        adopt_test_only_protocol(self)
         self.temp = tempfile.TemporaryDirectory(prefix="synthetic-release-gate-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
@@ -71,6 +149,7 @@ class ReleaseGateTests(unittest.TestCase):
     def make_packet(self, path, game):
         (path / "build").mkdir(parents=True)
         (path / "build/index.html").write_text("<!doctype html><title>Synthetic test only</title>")
+        add_locale_catalog(path, game)
         built = gate.inventory(path / "build")
         self.write(path / "candidate.json", {"schema_version": 1, "game": game,
                    "version": "1.0.0", "source_commit": self.base, "build": built})
@@ -94,6 +173,7 @@ class ReleaseGateTests(unittest.TestCase):
                   "human_approval": {"approved": True, "reviewer_is_human": True,
                     "reviewed_manual_evidence": True, "reviewer_id": "synthetic-reviewer",
                     "reviewed_at": "2025-01-01T12:00:00Z"}}
+        add_locale_evidence(report, game, "1.0.0", built)
         self.write(path / "human-playtest.json", report)
         return report
 
@@ -194,9 +274,13 @@ class ReleaseGateTests(unittest.TestCase):
     def test_staging_accepts_draft_but_readiness_does_not(self):
         destination = self.root / "release-candidates" / self.key
         shutil.copytree(self.package, destination)
-        self.write(destination / "human-playtest.json", {"schema_version": 1})
+        report = self.report()
+        report["critical_bugs_open"] = None
+        report["sessions"] = []
+        report["human_approval"]["approved"] = False
+        self.write(destination / "human-playtest.json", report)
         self.assertIn("1 staged packages", gate.validate(self.root, staging=True))
-        with self.assertRaises(KeyError):
+        with self.assertRaisesRegex(ValueError, "critical bugs"):
             gate.validate_package(destination, self.game, self.version)
 
     def test_blank_templates_fail(self):
@@ -266,6 +350,7 @@ class MultiStoryGateTests(unittest.TestCase):
     """Invented fixtures exercise policy; they must never be copied into a candidate."""
 
     def setUp(self):
+        adopt_test_only_protocol(self)
         self.temp = tempfile.TemporaryDirectory(prefix="synthetic-story-gate-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
@@ -276,6 +361,7 @@ class MultiStoryGateTests(unittest.TestCase):
             {"id": key, "revision": 1, "title": f"Synthetic {key}", "release_profile": profile}
             for key, profile in gate.VIVID_STORIES.items()]}
         self.write("build/story-catalog.json", self.catalog)
+        add_locale_catalog(self.package, "keepers-frame")
         built = gate.inventory(self.package / "build")
         self.digest = built["sha256"]
         self.manifest = {"schema_version": 1, "game": "keepers-frame", "version": "0.1.0",
@@ -290,6 +376,7 @@ class MultiStoryGateTests(unittest.TestCase):
             "study_reports": [], "human_approval": {"approved": True, "reviewer_is_human": True,
                 "reviewed_manual_evidence": True, "reviewer_id": "synthetic-independent-reviewer",
                 "reviewed_at": "2025-01-01T12:00:00Z"}}
+        add_locale_evidence(self.report, "keepers-frame", "0.1.0", built)
         self.write("human-playtest.json", self.report)
 
     def write(self, path, value):
@@ -316,6 +403,8 @@ class MultiStoryGateTests(unittest.TestCase):
 
     def refresh_inventory(self):
         self.manifest["build"] = gate.inventory(self.package / "build")
+        self.digest = self.manifest["build"]["sha256"]
+        rebind_fixture(self.report, self.manifest["build"])
         self.write("candidate.json", self.manifest)
 
     def git(self, *args):
@@ -532,7 +621,7 @@ class MultiStoryGateTests(unittest.TestCase):
         self.write("human-playtest.json", report)
         with self.assertRaisesRegex(ValueError, "require build/story-catalog"):
             gate.validate_package(self.package, "keepers-frame", "0.0.1")
-        gate.validate_package(self.package, "keepers-frame", "0.0.1", allow_legacy_vivid=True)
+        gate.validate_package(self.package, "keepers-frame", "0.0.1", allow_legacy_vivid=True, allow_legacy_locale=True)
         base = self.stage_and_promote_fixture(version="0.0.1")
         with self.assertRaisesRegex(ValueError, "require build/story-catalog"):
             gate.validate(self.root, base_ref=base)
@@ -550,6 +639,207 @@ class MultiStoryGateTests(unittest.TestCase):
         self.report = template
         with self.assertRaises(ValueError):
             self.check()
+
+
+class LocaleDeviceGateTests(unittest.TestCase):
+    """Real gate behavior with explicitly invented local-only protocol/evidence fixtures."""
+
+    setUp = MultiStoryGateTests.setUp
+    write = MultiStoryGateTests.write
+    story_report = MultiStoryGateTests.story_report
+    check = MultiStoryGateTests.check
+    refresh_inventory = MultiStoryGateTests.refresh_inventory
+
+    @property
+    def evidence(self):
+        return self.report["locale_device_evidence"]
+
+    def test_complete_supplement_passes_only_under_explicit_test_policy(self):
+        self.check()
+        with patch.dict(gate.REVIEWED_LOCALE_PROTOCOLS, {}, clear=True):
+            with self.assertRaisesRegex(ValueError, "protocol is not adopted"):
+                self.check()
+
+    def test_candidate_cannot_self_approve_pending_protocol_or_borrow_other_game(self):
+        self.evidence["comprehension"]["protocol_id"] = "candidate-approved-protocol"
+        with self.assertRaisesRegex(ValueError, "protocol is not adopted"):
+            self.check()
+        self.evidence["comprehension"]["protocol_id"] = "synthetic-protocol-not-for-release"
+        with patch.dict(gate.REVIEWED_LOCALE_PROTOCOLS, {
+            ("small-hours", "synthetic-protocol-not-for-release"):
+                {"sha256": "c" * 64, "validate": synthetic_comprehension_protocol}}, clear=True):
+            with self.assertRaisesRegex(ValueError, "protocol is not adopted"):
+                self.check()
+
+    def test_catalog_requires_exact_three_locales_and_all_units(self):
+        path = self.package / "build/locale-catalog.json"
+        original = gate.read_json(path)
+        for mutation in ("missing-locale", "duplicate-locale", "wrong-default", "missing-unit",
+                         "duplicate-unit", "unit-locale", "renamed-story", "unknown-field", "boolean-schema"):
+            with self.subTest(mutation=mutation):
+                catalog = copy.deepcopy(original)
+                if mutation == "missing-locale": catalog["locales"].remove("ja")
+                elif mutation == "duplicate-locale": catalog["locales"].append("en")
+                elif mutation == "wrong-default": catalog["default_locale"] = "ja"
+                elif mutation == "missing-unit": catalog["units"].pop()
+                elif mutation == "duplicate-unit": catalog["units"][1] = catalog["units"][0]
+                elif mutation == "unit-locale": catalog["units"][1]["locales"].remove("zh-Hans")
+                elif mutation == "renamed-story": catalog["units"][1]["id"] = "mara-ja"
+                elif mutation == "unknown-field": catalog["approved"] = True
+                else: catalog["schema_version"] = True
+                self.write("build/locale-catalog.json", catalog)
+                self.refresh_inventory()
+                with self.assertRaises(ValueError): self.check(ready=False)
+        self.write("build/locale-catalog.json", original)
+        self.refresh_inventory()
+        self.check(ready=False)
+
+    def test_catalog_and_supplement_identity_cannot_be_stale(self):
+        path = self.package / "build/locale-catalog.json"
+        path.write_text(path.read_text() + "\n")
+        with self.assertRaisesRegex(ValueError, "inventory"): self.check(ready=False)
+        stale = copy.deepcopy(self.evidence)
+        self.refresh_inventory()  # Product reports follow the new bytes; supplemental identity deliberately does not.
+        self.report["locale_device_evidence"] = stale
+        with self.assertRaisesRegex(ValueError, "exact build and catalog"): self.check(ready=False)
+
+    def test_new_candidate_requires_supplement_and_rejects_sidecar(self):
+        original = copy.deepcopy(self.evidence)
+        del self.report["locale_device_evidence"]
+        with self.assertRaisesRegex(ValueError, "locale/device evidence"): self.check(ready=False)
+        self.report["locale_device_evidence"] = original
+        self.write("locale-review.json", original)
+        with self.assertRaisesRegex(ValueError, "package must contain"): self.check(ready=False)
+
+    def test_lower_version_or_old_schema_does_not_opt_out(self):
+        (self.package / "build/locale-catalog.json").unlink()
+        self.refresh_inventory()
+        for version in ("0.0.0", "0.0.1", "0.1.0", "99.0.0"):
+            with self.subTest(version=version):
+                self.manifest["version"] = version
+                self.report["version"] = version
+                self.write("candidate.json", self.manifest)
+                self.write("human-playtest.json", self.report)
+                with self.assertRaisesRegex(ValueError, "require build/locale-catalog"):
+                    gate.validate_package(self.package, "keepers-frame", version, ready=False)
+
+    def test_pending_blank_supplement_can_stage_but_never_approve(self):
+        for field in ("language_reviews", "device_claims", "physical_checks"):
+            self.evidence[field] = []
+        self.evidence["comprehension"] = {"protocol_id": None, "protocol_sha256": None,
+                                          "registered_at": None, "records": []}
+        self.check(ready=False)
+        with self.assertRaisesRegex(ValueError, "missing fluent review"): self.check()
+
+    def test_language_review_covers_every_story_locale(self):
+        original = copy.deepcopy(self.evidence["language_reviews"])
+        self.evidence["language_reviews"].pop()
+        with self.assertRaisesRegex(ValueError, "missing fluent review"): self.check()
+        self.evidence["language_reviews"] = original + [copy.deepcopy(original[0])]
+        with self.assertRaisesRegex(ValueError, "duplicate language"): self.check()
+
+    def test_language_attestations_require_real_fluent_in_game_review(self):
+        original = copy.deepcopy(self.evidence["language_reviews"][0])
+        for field, value in (("reviewer_is_human", False), ("fluent_in_locale", "true"),
+                ("competence_statement", None), ("reviewed_in_game", False),
+                ("reviewed_all_player_facing_content", False), ("review_notes", "TODO"),
+                ("outcome", "draft"), ("reviewer_id", None), ("evidence_reference", None)):
+            with self.subTest(field=field):
+                self.evidence["language_reviews"][0] = dict(original, **{field: value})
+                with self.assertRaises(ValueError): self.check()
+
+    def test_all_declared_hardware_and_all_language_unit_cells_required(self):
+        original = copy.deepcopy(self.evidence)
+        self.evidence["device_claims"] = [x for x in self.evidence["device_claims"] if x["device_family"] != "tablet"]
+        with self.assertRaisesRegex(ValueError, "desktop_web, phone and tablet"): self.check()
+        self.report["locale_device_evidence"] = copy.deepcopy(original)
+        self.evidence["physical_checks"].pop()
+        with self.assertRaisesRegex(ValueError, "every claimed device"): self.check()
+        self.report["locale_device_evidence"] = copy.deepcopy(original)
+        extra = dict(self.evidence["device_claims"][0], id="synthetic-unseen-device")
+        self.evidence["device_claims"].append(extra)
+        with self.assertRaisesRegex(ValueError, "every claimed device"): self.check()
+
+    def test_emulation_and_different_observed_configuration_cannot_fill_physical_cell(self):
+        original = copy.deepcopy(self.evidence["physical_checks"][0])
+        for field, value in (("is_physical", False), ("tester_is_human", False),
+                             ("method", "browser-automation"), ("tester_id", None)):
+            with self.subTest(field=field):
+                self.evidence["physical_checks"][0] = dict(original, **{field: value})
+                with self.assertRaisesRegex(ValueError, "actual hardware"): self.check()
+        self.evidence["physical_checks"][0] = copy.deepcopy(original)
+        self.evidence["physical_checks"][0]["device"]["browser_version"] = "unobserved version"
+        with self.assertRaisesRegex(ValueError, "observed hardware"): self.check()
+
+    def test_physical_coverage_retains_critical_journey_and_failure_semantics(self):
+        original = copy.deepcopy(self.evidence["physical_checks"][0])
+        for field, value in (("outcome", "fail"), ("critical_bugs_open", 1),
+                             ("critical_bugs_open", False), ("observation_notes", "TBD")):
+            with self.subTest(field=field, value=value):
+                self.evidence["physical_checks"][0] = dict(original, **{field: value})
+                with self.assertRaises(ValueError): self.check()
+        self.evidence["physical_checks"][0] = copy.deepcopy(original)
+        self.evidence["physical_checks"][0]["checks"]["flat_fallback"] = False
+        with self.assertRaisesRegex(ValueError, "critical journeys"): self.check()
+        self.evidence["physical_checks"][0] = copy.deepcopy(original)
+        self.evidence["physical_checks"].append(copy.deepcopy(original))
+        with self.assertRaisesRegex(ValueError, "duplicate physical"): self.check()
+
+    def test_each_observation_requires_exact_build_and_catalog(self):
+        for group in ("language_reviews", "physical_checks"):
+            for field in ("build_sha256", "locale_catalog_sha256"):
+                with self.subTest(group=group, field=field):
+                    original = self.evidence[group][0][field]
+                    self.evidence[group][0][field] = "0" * 64
+                    with self.assertRaisesRegex(ValueError, "observation build/catalog"): self.check()
+                    self.evidence[group][0][field] = original
+
+    def test_approver_independence_extends_to_all_supplemental_roles(self):
+        comp = self.evidence["comprehension"]["records"][0]
+        for actor in (self.evidence["language_reviews"][0]["reviewer_id"],
+                      self.evidence["physical_checks"][0]["tester_id"], comp["observer_id"], comp["participant_ids"][0]):
+            with self.subTest(actor=actor):
+                self.report["human_approval"]["reviewer_id"] = actor
+                with self.assertRaisesRegex(ValueError, "independent of language"): self.check()
+
+    def test_final_approval_must_explicitly_cover_new_evidence(self):
+        for field in ("reviewed_locale_device_evidence", "reviewed_locale_comprehension_evidence", "played_exact_build"):
+            with self.subTest(field=field):
+                self.report["human_approval"][field] = False
+                with self.assertRaisesRegex(ValueError, "explicitly cover"): self.check()
+                self.report["human_approval"][field] = True
+        self.evidence["language_reviews"][0]["reviewed_at"] = "2025-01-01T13:00:00Z"
+        with self.assertRaisesRegex(ValueError, "follow all locale/device"): self.check()
+
+    def test_adopted_protocol_is_pinned_preregistered_and_executed(self):
+        comp = self.evidence["comprehension"]
+        comp["protocol_sha256"] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "protocol hash mismatch"): self.check()
+        comp["protocol_sha256"] = "c" * 64
+        comp["registered_at"] = "2025-01-01T11:00:00Z"
+        with self.assertRaisesRegex(ValueError, "register locale protocol"): self.check()
+        comp["registered_at"] = "2025-01-01T00:00:00Z"
+        comp["records"][0]["findings"] = {"synthetic_example_only": False}
+        with self.assertRaisesRegex(ValueError, "synthetic protocol criteria"): self.check()
+
+    def test_unknown_supplement_fields_are_not_ignored(self):
+        self.evidence["waive_humans"] = True
+        with self.assertRaisesRegex(ValueError, "exactly the documented"): self.check(ready=False)
+
+    def test_staging_exception_is_exact_packet_identity_not_version_range(self):
+        (self.package / "build/locale-catalog.json").unlink()
+        self.refresh_inventory()
+        del self.report["locale_device_evidence"]
+        self.write("human-playtest.json", self.report)
+        files = gate.files_under(self.package)
+        import hashlib
+        hashes = {name: hashlib.sha256(data).hexdigest() for name, data in files.items()}
+        digest = hashlib.sha256(json.dumps(hashes, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        with patch.dict(gate.LEGACY_STAGED_PACKETS, {"keepers-frame/0.1.0": digest}):
+            self.check(ready=False)
+            with self.assertRaisesRegex(ValueError, "require build/locale-catalog"): self.check()
+            (self.package / "notes.md").write_text("Changed old packet")
+            with self.assertRaisesRegex(ValueError, "require build/locale-catalog"): self.check(ready=False)
 
 
 if __name__ == "__main__":

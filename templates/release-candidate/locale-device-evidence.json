@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "game": null,
+  "version": null,
+  "build_sha256": null,
+  "locale_catalog_sha256": null,
+  "language_reviews": [],
+  "device_claims": [],
+  "physical_checks": [],
+  "comprehension": {
+    "protocol_id": null,
+    "protocol_sha256": null,
+    "registered_at": null,
+    "records": []
+  }
+}

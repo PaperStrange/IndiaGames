@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "game": null,
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ja",
+    "zh-Hans"
+  ],
+  "units": []
+}

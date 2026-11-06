@@ -22,6 +22,32 @@ VERSION = re.compile(r"(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\Z
 SHA = re.compile(r"[0-9a-f]{40}\Z")
 REGISTRY = "data/releases.json"
 STORY_CATALOG = "story-catalog.json"
+LOCALE_CATALOG = "locale-catalog.json"
+LOCALES = {"en", "ja", "zh-Hans"}
+LOCALE_UNITS = {"small-hours": {"small-hours"}, "keepers-frame": {"iona", "mara"},
+                "thirteenth-bell": {"thirteenth-bell"}}
+DEVICE_FAMILIES = {"desktop_web", "phone", "tablet"}
+DEVICE_FIELDS = {"id", "device_family", "model", "os", "os_version", "browser",
+                 "browser_version", "engine", "inputs"}
+DEVICE_CHECKS = {"entry_and_critical_path", "readable_text_and_controls", "input_and_focus",
+                 "orientation_and_resize", "lifecycle_and_recovery"}
+GAME_DEVICE_CHECKS = {"small-hours": {"private_handoff", "ime_and_keepsake"},
+                      "keepers-frame": {"flat_fallback", "story_save_recovery"},
+                      "thirteenth-bell": {"map_and_receipts", "restart"}}
+# No locale-comprehension sampling/acceptance protocol has been adopted. A separately
+# human-reviewed policy patch must add a pinned protocol sha256 AND its validator.
+# Candidate-authored IDs, hashes or approval flags cannot populate this registry.
+REVIEWED_LOCALE_PROTOCOLS = {}
+# Staging-only preservation of complete packets at master ac931cde281e9483f6f693289cad2d99038d5bc0.
+# Digests cover ALL packet files, not just builds. Never grant readiness/promotion this exception.
+LEGACY_STAGED_PACKETS = {
+    "keepers-frame/0.1.0": "5fa7f7e5a611928b50c1d64ef233069543e99bfce5693566f63c7e5f3e026a35",
+    "keepers-frame/0.1.1": "5840d9787e4cb96061ba29ee491dd63adfbdb3a33001e70f2db66cae04c95ddc",
+    "keepers-frame/0.1.2": "f6e94461e3c65d33ae58dae0cd9a136c89d999d9cded371da39597fdce11dc98",
+    "keepers-frame/0.1.3": "3cb64e4c7bf0fef4760afbf2df6ac2731ef42c7fece0cf2b749c5660d1f048c0",
+    "keepers-frame/0.1.4": "461f1b5c217ec812e7e9ee7cfc4986a37ec652817245a9ceb0c52b6105e0f0ad",
+    "thirteenth-bell/0.1.0": "750cc4b23c83f535000985e58b2ae52a71dcb0d10846b2f61e5713915a16d5b3",
+}
 # Policy lives in the trusted validator, never in writer-editable story content.
 # Adding a shipping story or changing a threshold requires a separate policy review.
 VIVID_STORIES = {"iona": "iona-return-v1", "mara": "mara-object-v1"}
@@ -85,6 +111,164 @@ def inventory(build):
     digest = hashlib.sha256(json.dumps(files, sort_keys=True, separators=(",", ":"))
                             .encode("utf-8")).hexdigest()
     return {"entrypoint": "index.html", "sha256": digest, "files": files}
+
+
+def exact_keys(value, keys, context):
+    require(isinstance(value, dict) and set(value) == set(keys),
+            f"{context}: supply exactly the documented fields")
+
+
+def distinct_strings(value, context):
+    require(isinstance(value, list) and bool(value) and all(filled(x) for x in value)
+            and len(set(value)) == len(value), f"{context}: use distinct nonempty strings")
+
+
+def shipping_locales(build, game):
+    path = build / LOCALE_CATALOG
+    require(path.is_file(), "new candidates require build/locale-catalog.json")
+    catalog = read_json(path)
+    exact_keys(catalog, {"schema_version", "game", "default_locale", "locales", "units"}, "locale catalog")
+    require(type(catalog["schema_version"]) is int and catalog["schema_version"] == 1
+            and catalog["game"] == game and catalog["default_locale"] == "en", "locale catalog identity mismatch")
+    distinct_strings(catalog["locales"], "catalog locales")
+    require(set(catalog["locales"]) == LOCALES, "every release requires en, ja and zh-Hans")
+    require(isinstance(catalog["units"], list), "locale catalog units must be a list")
+    seen = set()
+    for unit in catalog["units"]:
+        exact_keys(unit, {"id", "locales"}, "locale unit")
+        require(unit["id"] in LOCALE_UNITS[game] and unit["id"] not in seen, "unknown or duplicate locale unit")
+        distinct_strings(unit["locales"], "unit locales")
+        require(set(unit["locales"]) == LOCALES, "every playable unit requires all three locales")
+        seen.add(unit["id"])
+    require(seen == LOCALE_UNITS[game], "missing playable locale unit")
+    return catalog
+
+
+def locale_evidence(report, game, version, built, ready=False):
+    """Supplement the fixed product cohorts; never derive locale policy from candidate data."""
+    evidence = report.get("locale_device_evidence")
+    exact_keys(evidence, {"schema_version", "game", "version", "build_sha256", "locale_catalog_sha256",
+                          "language_reviews", "device_claims", "physical_checks", "comprehension"},
+               "locale/device evidence")
+    require(type(evidence["schema_version"]) is int and evidence["schema_version"] == 1
+            and evidence["game"] == game and evidence["version"] == version,
+            "locale/device evidence identity mismatch")
+    require(evidence["build_sha256"] == built["sha256"]
+            and evidence["locale_catalog_sha256"] == built["files"][LOCALE_CATALOG],
+            "locale/device evidence must match the exact build and catalog")
+    for field in ("language_reviews", "device_claims", "physical_checks"):
+        require(isinstance(evidence[field], list), f"{field} must be a list")
+    comprehension = evidence["comprehension"]
+    exact_keys(comprehension, {"protocol_id", "protocol_sha256", "registered_at", "records"},
+               "locale comprehension")
+    require(isinstance(comprehension["records"], list), "comprehension records must be a list")
+    if not ready:
+        return None  # Empty human records are allowed only at staging; never approval.
+
+    actors, observed_times = set(), []
+    expected = {(unit, locale) for unit in LOCALE_UNITS[game] for locale in LOCALES}
+
+    def identity(row):
+        require((row["unit"], row["locale"]) in expected, "unknown evidence unit or locale")
+        require(row["build_sha256"] == built["sha256"]
+                and row["locale_catalog_sha256"] == built["files"][LOCALE_CATALOG],
+                "observation build/catalog mismatch")
+        require(filled(row["evidence_reference"]), "retain a deidentified manual evidence reference")
+        return row["unit"], row["locale"]
+
+    language_seen = set()
+    for row in evidence["language_reviews"]:
+        exact_keys(row, {"unit", "locale", "build_sha256", "locale_catalog_sha256", "reviewer_id",
+                         "reviewer_is_human", "fluent_in_locale", "competence_statement", "reviewed_in_game",
+                         "reviewed_all_player_facing_content", "review_notes", "evidence_reference",
+                         "reviewed_at", "outcome"}, "language review")
+        key = identity(row)
+        require(key not in language_seen, "duplicate language-review cell")
+        language_seen.add(key)
+        require(filled(row["reviewer_id"]) and row["reviewer_is_human"] is True
+                and row["fluent_in_locale"] is True and filled(row["competence_statement"])
+                and row["reviewed_in_game"] is True and row["reviewed_all_player_facing_content"] is True
+                and filled(row["review_notes"]) and row["outcome"] == "approved",
+                "each locale/unit needs an actual fluent human in-game content approval")
+        actors.add(row["reviewer_id"])
+        observed_times.append(timestamp(row["reviewed_at"]))
+    require(language_seen == expected, "missing fluent review for a locale/unit")
+
+    claims = {}
+    for claim in evidence["device_claims"]:
+        exact_keys(claim, DEVICE_FIELDS, "physical device claim")
+        require(all(filled(claim[field]) for field in DEVICE_FIELDS - {"inputs"})
+                and claim["device_family"] in DEVICE_FAMILIES and claim["id"] not in claims,
+                "device claims need unique IDs and actual model/OS/browser/engine identities")
+        distinct_strings(claim["inputs"], "device inputs")
+        claims[claim["id"]] = claim
+    require({claim["device_family"] for claim in claims.values()} == DEVICE_FAMILIES,
+            "declare physical desktop_web, phone and tablet configurations")
+    physical_seen = set()
+    for row in evidence["physical_checks"]:
+        exact_keys(row, {"unit", "locale", "build_sha256", "locale_catalog_sha256", "device",
+                         "tester_id", "tester_is_human", "method", "is_physical", "started_at", "completed_at",
+                         "checks", "critical_bugs_open", "observation_notes", "evidence_reference", "outcome"},
+                   "physical check")
+        unit, locale = identity(row)
+        device = row["device"]
+        exact_keys(device, DEVICE_FIELDS, "observed physical device")
+        claim = claims.get(device["id"])
+        require(claim is not None and device == claim, "observed hardware/software/input must match its declared configuration")
+        key = (unit, locale, device["id"])
+        require(key not in physical_seen, "duplicate physical coverage cell")
+        physical_seen.add(key)
+        require(filled(row["tester_id"]) and row["tester_is_human"] is True
+                and row["method"] == "manual-physical" and row["is_physical"] is True,
+                "physical coverage requires a human on actual hardware, not emulation")
+        exact_keys(row["checks"], DEVICE_CHECKS | GAME_DEVICE_CHECKS[game], "physical journey checks")
+        require(all(value is True for value in row["checks"].values()) and row["outcome"] == "pass"
+                and type(row["critical_bugs_open"]) is int and row["critical_bugs_open"] == 0
+                and filled(row["observation_notes"]), "physical critical journeys and critical-bug review must pass")
+        start, end = timestamp(row["started_at"]), timestamp(row["completed_at"])
+        require(start <= end, "physical session ends before it starts")
+        actors.add(row["tester_id"])
+        observed_times.append(end)
+    require(physical_seen == {(unit, locale, claim) for unit, locale in expected for claim in claims},
+            "every claimed device configuration needs every locale and playable unit")
+
+    # A candidate cannot approve its own new sampling/criteria. There are intentionally
+    # no adopted protocols yet. A human-reviewed policy patch supplies a pinned protocol
+    # and executable criteria; its validator receives all unfiltered, registered attempts.
+    protocol = REVIEWED_LOCALE_PROTOCOLS.get((game, comprehension["protocol_id"]))
+    require(protocol is not None, "locale comprehension protocol is not adopted; human policy review required")
+    require(comprehension["protocol_sha256"] == protocol["sha256"], "locale comprehension protocol hash mismatch")
+    registered = timestamp(comprehension["registered_at"])
+    seen_ids = set()
+    for row in comprehension["records"]:
+        exact_keys(row, {"id", "unit", "locale", "build_sha256", "locale_catalog_sha256", "participant_ids",
+                         "observer_id", "observer_is_human", "method", "prior_exposure", "started_at",
+                         "completed_at", "findings", "observation_notes", "evidence_reference"},
+                   "comprehension session")
+        identity(row)
+        require(filled(row["id"]) and row["id"] not in seen_ids, "comprehension session IDs must be unique")
+        seen_ids.add(row["id"])
+        distinct_strings(row["participant_ids"], "comprehension participants")
+        require(filled(row["observer_id"]) and row["observer_is_human"] is True
+                and row["method"] in ("manual-in-person", "manual-remote")
+                and filled(row["prior_exposure"]) and filled(row["observation_notes"])
+                and isinstance(row["findings"], dict), "record genuine human comprehension observations")
+        start, end = timestamp(row["started_at"]), timestamp(row["completed_at"])
+        require(registered <= start <= end, "register locale protocol before observations")
+        actors.update(row["participant_ids"])
+        actors.add(row["observer_id"])
+        observed_times.append(end)
+    protocol["validate"](comprehension, game, report)  # Trusted code, never a packet-supplied function.
+    approval = report["human_approval"]
+    require(approval.get("reviewed_locale_device_evidence") is True
+            and approval.get("reviewed_locale_comprehension_evidence") is True
+            and approval.get("played_exact_build") is True,
+            "independent human approval must explicitly cover locale/device evidence and exact-build play")
+    require(approval["reviewer_id"] not in actors,
+            "release approver must be independent of language reviewers and supplemental testers/observers/participants")
+    require(timestamp(approval["reviewed_at"]) >= max(observed_times),
+            "release approval must follow all locale/device observations")
+    return timestamp(approval["reviewed_at"])
 
 
 def playtests(report, game, version, digest, criteria=None):
@@ -223,7 +407,7 @@ def story_playtests(report, version, digest, stories, ready=True):
     return max(approvals)
 
 
-def validate_package(package, game, version, ready=True, allow_legacy_vivid=False):
+def validate_package(package, game, version, ready=True, allow_legacy_vivid=False, allow_legacy_locale=False):
     require(game in GAMES and VERSION.fullmatch(version), "unknown game or invalid version")
     all_files = files_under(package)
     require(set(all_files) == {"candidate.json", "notes.md", "human-playtest.json"}
@@ -238,20 +422,35 @@ def validate_package(package, game, version, ready=True, allow_legacy_vivid=Fals
     require(built == manifest["build"] and bool(built["files"]), "build inventory/hash mismatch")
     require(bool(all_files.get("build/index.html", b"").strip()), "build/index.html is required")
     report = read_json(package / "human-playtest.json")
+    packet_hashes = {name: hashlib.sha256(data).hexdigest() for name, data in all_files.items()}
+    packet_digest = hashlib.sha256(json.dumps(packet_hashes, sort_keys=True, separators=(",", ":"))
+                                   .encode("utf-8")).hexdigest()
+    preserved_staging = (not ready and LEGACY_STAGED_PACKETS.get(f"{game}/{version}") == packet_digest)
+    locale_required = not (allow_legacy_locale or preserved_staging)
     multi_story = game == "keepers-frame" and (
         not allow_legacy_vivid
         or STORY_CATALOG in built["files"] or report.get("schema_version") == 2)
     stories = shipping_stories(package / "build") if multi_story else None
     if multi_story:
         story_playtests(report, version, built["sha256"], stories, ready=False)
+    if locale_required:
+        require(report["game"] == game and report["version"] == version
+                and report["build_sha256"] == built["sha256"], "playtest envelope identity mismatch")
+        require(type(report["schema_version"]) is int
+                and report["schema_version"] == (2 if game == "keepers-frame" else 1),
+                "product playtest schema mismatch")
+        shipping_locales(package / "build", game)
+        locale_evidence(report, game, version, built)
     if ready:
         notes = all_files["notes.md"].decode("utf-8")
         require(filled(notes) and len(notes.strip()) >= 80
                 and all(title in notes for title in ("## Changes", "## Human validation", "## Known limitations")),
                 "complete release notes, human validation and known limitations")
-        if multi_story:
-            return story_playtests(report, version, built["sha256"], stories)
-        return playtests(report, game, version, built["sha256"])
+        approved = (story_playtests(report, version, built["sha256"], stories) if multi_story
+                    else playtests(report, game, version, built["sha256"]))
+        if locale_required:
+            locale_evidence(report, game, version, built, ready=True)
+        return approved
     return None
 
 
@@ -306,10 +505,12 @@ def validate(root, master_ref="refs/remotes/origin/master", base_ref=None, stagi
     require(all("/".join(path.split("/")[:2]) in entries for path in released),
             "unregistered files under releases/")
     old_entries = {}
+    old_files = {}
     if base_ref:
         # Only byte-identical, already-published archives may use their old evidence schema.
         # A smaller candidate version number never opts a new Vivid build out of story review.
-        for name, data in tree(root, base_ref, "releases/").items():
+        old_files = tree(root, base_ref, "releases/")
+        for name, data in old_files.items():
             target = root / name
             require(target.is_file() and target.read_bytes() == data, f"released file is immutable: {name}")
         old_data = tree(root, base_ref, REGISTRY)
@@ -319,8 +520,13 @@ def validate(root, master_ref="refs/remotes/origin/master", base_ref=None, stagi
                 require(entries.get(key) == entry, f"released registry entry is immutable: {key}")
     for key, entry in entries.items():
         game, version = key.split("/")
+        if key in old_entries:
+            prefix = f"releases/{key}/"
+            old_packet = {name[len(prefix):]: data for name, data in old_files.items() if name.startswith(prefix)}
+            require(old_packet == files_under(root / "releases" / key),
+                    f"published archive must remain exactly unchanged: {key}")
         approved_at = validate_package(root / "releases" / key, game, version,
-                                       allow_legacy_vivid=key in old_entries)
+                                       allow_legacy_vivid=key in old_entries, allow_legacy_locale=key in old_entries)
         implementation = read_json(root / "releases" / key / "candidate.json")["source_commit"]
         git(root, "cat-file", "-e", implementation + "^{commit}")
         require(timestamp(entry["released_at"]) >= approved_at, "release cannot precede human approval")

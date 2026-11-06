@@ -1,0 +1,17 @@
+{
+  "unit": null,
+  "locale": null,
+  "build_sha256": null,
+  "locale_catalog_sha256": null,
+  "evidence_reference": null,
+  "id": null,
+  "participant_ids": [],
+  "observer_id": null,
+  "observer_is_human": false,
+  "method": null,
+  "prior_exposure": null,
+  "started_at": null,
+  "completed_at": null,
+  "findings": {},
+  "observation_notes": null
+}
