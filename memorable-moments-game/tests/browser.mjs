@@ -8,6 +8,8 @@ let chromium;
 try { ({ chromium } = require('playwright')); }
 catch { ({ chromium } = require(process.env.PLAYWRIGHT_PATH || '/workspace/indiagames-env/toms-notebook-deps/node_modules/playwright')); }
 const base = process.env.BASE_URL || 'http://127.0.0.1:8111/memorable-moments-game/';
+const playURL = process.env.PLAY_URL || new URL('play/', base).href;
+if (!/^https?:$/.test(new URL(playURL).protocol)) throw new Error('PLAY_URL must use HTTP(S).');
 // Each run owns a new evidence folder; historical committed observations are immutable.
 const out = process.env.EVIDENCE_DIR
   ? path.resolve(process.env.EVIDENCE_DIR)
@@ -25,11 +27,29 @@ async function fits(page, label) {
   await check(`${label}: no horizontal overflow`, async () => assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)));
 }
 const errors = [];
+const knownDiagnostics = [];
+function observe(page) {
+  page.on('pageerror', error => errors.push({ type: 'pageerror', message: error.message }));
+  page.on('console', message => {
+    if (message.type() !== 'error') return;
+    const item = { type: 'console', message: message.text(), url: message.location().url };
+    // This unchanged development artifact has no favicon. Keep the host's real 404 visible.
+    if (item.url && new URL(item.url).pathname === '/favicon.ico' && /404/.test(item.message)) knownDiagnostics.push(item);
+    else errors.push(item);
+  });
+  page.on('requestfailed', request => errors.push({ type: 'requestfailed', url: request.url(), error: request.failure()?.errorText }));
+  page.on('response', response => {
+    if (response.status() < 400) return;
+    const item = { type: 'http', status: response.status(), url: response.url() };
+    if (new URL(item.url).pathname === '/favicon.ico' && item.status === 404) knownDiagnostics.push(item);
+    else errors.push(item);
+  });
+}
 try {
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
-page.on('pageerror', err => errors.push(err.message));
+observe(page);
 trace.push({ method: 'Automated development-build journey; not a frozen-baseline study, human session or physical-device observation.' });
-await page.goto(base + 'play/');
+await page.goto(playURL);
 await page.screenshot({ path: path.join(out, '01-desktop-home.png'), fullPage: true });
 await fits(page, 'Desktop home');
 await page.locator('[data-action="start-pair"]').focus();
@@ -90,8 +110,8 @@ await check('Cancel ending leaves the session in place', async () => assert.equa
 await click(page, 'end'); await page.locator('[data-confirm]').click();
 await check('End and forget returns to welcome', async () => assert.equal(await page.locator('[data-action="start-pair"]').count(), 1));
 const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1 });
-mobile.on('pageerror', err => errors.push(err.message));
-await mobile.goto(base + 'play/');
+observe(mobile);
+await mobile.goto(playURL);
 await mobile.screenshot({ path: path.join(out, '06-mobile-home.png'), fullPage: true });
 await fits(mobile, '390px home');
 await click(mobile, 'start-solo');
@@ -136,21 +156,21 @@ await mobile.locator('#memory').fill('Our paper boat was a ferry for lost button
 await mobile.locator('#memory').fill('The red button insisted on sitting by the window.'); await click(mobile,'seal-line');
 await mobile.screenshot({path:path.join(out,'08-mobile-keepsake.png'),fullPage:true});
 // Portal-sized iframe viewport: scroll is allowed; the controls must not clip horizontally.
-await page.setViewportSize({ width: 821, height: 462 }); await page.goto(base+'play/'); await fits(page, '821x462 portal home');
+await page.setViewportSize({ width: 821, height: 462 }); await page.goto(playURL); await fits(page, '821x462 portal home');
 await page.screenshot({ path: path.join(out,'09-portal-821x462.png'),fullPage:false });
 await click(page,'start-pair'); await fits(page, '821x462 scene selection');
 await page.setViewportSize({width:1000,height:650});
-await page.setContent(`<iframe title="Small Hours playable embed" sandbox="allow-scripts allow-same-origin allow-downloads" src="${base}play/" style="width:821px;height:462px;border:1px solid #999"></iframe>`);
+await page.setContent(`<iframe title="Small Hours playable embed" sandbox="allow-scripts allow-same-origin allow-downloads" src="${playURL}" style="width:821px;height:462px;border:1px solid #999"></iframe>`);
 const embedded = page.frameLocator('iframe');
 await embedded.locator('[data-action="start-pair"]').click();
 await embedded.locator('[data-action="start-scene"]').click();
 await check('Sandboxed 821x462 iframe runs the same-device flow', async () => assert((await embedded.locator('h1').textContent()).includes('Person A')));
 await page.screenshot({path:path.join(out,'10-iframe-interaction.png'),fullPage:false});
 await check('No uncaught browser errors in observed sessions', async () => assert.deepEqual(errors, []));
-await writeFile(path.join(out,'browser-observations.json'),JSON.stringify({ runAt: new Date().toISOString(), browser:'Headless Chromium via Playwright; simulated viewports, not physical-device tests', checks, trace }, null, 2)+'\n');
+await writeFile(path.join(out,'browser-observations.json'),JSON.stringify({ runAt: new Date().toISOString(), browser:'Headless Chromium via Playwright; simulated viewports, not physical-device tests', playURL, checks, trace, errors, knownDiagnostics }, null, 2)+'\n');
 console.log(`${checks} checks passed. Screenshots, downloads, and action trace: ${out}`);
 } catch (error) {
-  await writeFile(path.join(out, 'browser-failure.json'), JSON.stringify({ runAt: new Date().toISOString(), checks, trace, errors, failure: String(error) }, null, 2) + '\n');
+  await writeFile(path.join(out, 'browser-failure.json'), JSON.stringify({ runAt: new Date().toISOString(), checks, trace, errors, knownDiagnostics, failure: String(error) }, null, 2) + '\n');
   console.error(`Browser verification failed; partial evidence: ${out}`);
   throw error;
 } finally {

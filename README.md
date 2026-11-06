@@ -6,6 +6,7 @@ A browser experiment for two people sharing one device: choose an activity, cont
 - [Frozen baseline download, exact-artifact launch and protocol](docs/gamejam/milestone-2026-10-27/README.md)
 - [Development run instructions](memorable-moments-game/play/README.md)
 - [November 6 code cleanup and engineering milestone](docs/gamejam/maintenance-2026-11-06/README.md)
+- [Repeatable development exports and technical checks](docs/gamejam/technical-freeze-2026-11-06/README.md)
 - [Verified facilitator setup for the frozen study baseline](docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md)
 - [Research and historical evidence](docs/gamejam/README.md)
 

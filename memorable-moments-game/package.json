@@ -3,8 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/countdown.test.mjs",
-    "test:browser": "node tests/browser.mjs"
+    "test": "node --test tests/countdown.test.mjs tests/development-export.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "export:development": "node scripts/development-export.mjs",
+    "verify:development": "node scripts/verify-development-export.mjs"
   },
   "engines": {
     "node": ">=18"
