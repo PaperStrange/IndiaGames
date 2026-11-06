@@ -1,6 +1,8 @@
 # Small Hours — unchanged-baseline pilot
 
-**Current engineering milestone · November 6:** **SH-23 completed.** Exact nine-file development exports, HTTP bytes, existing flows and timer checks are verified; the frozen eight-file study baseline remains separate and unstaged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) retain known favicon diagnostics. Candidate freeze and human/design/release gates remain separate.
+**Current milestone · SH-24/25 completed:** Three-language development and browser verification are complete. [Current evidence and weekend handoff](../../multilingual-engineering-2026-11-06/README.md). Fluent review, physical devices and human release qualification remain pending.
+
+**Previous engineering milestone · November 6:** **SH-23 completed.** Exact nine-file development exports, HTTP bytes, existing flows and timer checks are verified; the frozen eight-file study baseline remains separate and unstaged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) retain known favicon diagnostics. Candidate freeze and human/design/release gates remain separate.
 
 ## Historical November 5 preparation plan · SH-21
 
@@ -449,9 +451,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 
 [Committed record](https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Exact verification](https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/VERIFICATION.md). Human evidence and independent human release approval remain pending.
 
-## Proposed multilingual and device preparation · November 6
+## Multilingual and device preparation · November 6
 
-The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) is **proposed, not settled implementation**. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
+The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) records the planning audit; the owner has since authorized the [technical implementation](../../multilingual-engineering-2026-11-06/README.md). Engineering and human qualification have separate statuses in tasks.json. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
 
 | New card | Proposed work | Owner |
 |---|---|---|
@@ -463,6 +465,12 @@ Each card retains exact acceptance details in [tasks.json](tasks.json). Shared e
 
 ## Human-feedback reconciliation · November 6
 
-Use the human feedback to examine choice versus guess, willing private handoffs, both offscreen contributions and whether the keepsake feels jointly authored. Preserve intentional A/B and rehearsal distinctions. SH-24–26 should carry this meaning into complete translated messages, CJK input/export and actual device runs; those refinements remain proposed. File export alone is not unique differentiation. Existing technical checks stay complete.
+Use the human feedback to examine choice versus guess, willing private handoffs, both offscreen contributions and whether the keepsake feels jointly authored. Preserve intentional A/B and rehearsal distinctions. SH-24–26 should carry this meaning into complete translated messages, CJK input/export and actual device runs; those technical refinements are complete; human qualification remains pending. File export alone is not unique differentiation. Existing technical checks stay complete.
 
 [Reconciled findings and source references](../../research-reconciliation-2026-11-06/README.md). The owner corrects the supplied records' actor attribution to human gameplay; original labels stay intact. Five documents per game are not five participants. Release-cohort eligibility needs separate assessment; existing task objects and thresholds are unchanged.
+
+## Multilingual engineering verified · November 6
+
+Small Hours now has complete en/ja/zh-Hans pair and rehearsal journeys, safe private-session language boundaries, grapheme/IME handling and readable CJK keepsakes. 21 unit/export tests, 1,416 localized assertions across Chromium/Firefox/WebKit and root/nested mounts, 66 English checks and timer verification passed. The committed exporter reproduced the exact 12-file/103,624-byte inventory and repeated 472 localized assertions plus English/timer checks; only known favicon diagnostics remained. Frozen study bytes are unchanged; fluent review, actual devices, real IME and pilot-first staging remain pending.
+
+[SH-24, SH-25 verification](https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md) · [Exact evidence](https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/committed-export.json). Japanese and Chinese remain agent drafts pending fluent review. Actual desktop/phone/tablet qualification, the reviewed supplemental protocol, existing game cohorts and independent approval remain pending. [Weekend handoff](../../multilingual-engineering-2026-11-06/WEEKEND-HANDOFF.md).

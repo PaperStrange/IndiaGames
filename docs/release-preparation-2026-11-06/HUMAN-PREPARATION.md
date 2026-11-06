@@ -1,6 +1,6 @@
-# Proposed human language and device release preparation
+# Human language and device release preparation
 
-**Planning audit only. No new playtest, translation, supported-device claim, participant assignment or policy change has occurred.** The owner confirmed English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. Actual hardware, fluent reviewers and appointments remain unknown. Source review is pinned to main `345c33970745297103a099ecdf9dc11f134b0038`.
+**Human coordination remains pending; technical implementation is complete.** This document preserves the planning audit and blank coordination forms. It does not supply observations, appointments, fluent approval or an adopted policy. See the [current engineering record](../multilingual-engineering-2026-11-06/README.md). The owner confirmed English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. Actual hardware, fluent reviewers and appointments remain unknown. Source review is pinned to main `345c33970745297103a099ecdf9dc11f134b0038`.
 
 ## What must stay separate
 

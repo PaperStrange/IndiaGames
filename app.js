@@ -98,16 +98,18 @@ function renderProjects() {
     imageLink.append(image);
     const body = node('div', 'project-body');
     const kicker = node('p', 'project-kicker');
-    kicker.append(node('span', '', '0' + (index + 1)), node('span', '', source.candidate_version ? 'Candidate ' + source.candidate_version : 'Baseline prepared'));
+    const localized = source.implementation_status === 'multilingual_engineering_verified_human_qualification_pending';
+    const buildLabel = localized ? (source.development_version ? 'Development ' + source.development_version : 'Language development') : (source.candidate_version ? 'Candidate ' + source.candidate_version : 'Baseline prepared');
+    kicker.append(node('span', '', '0' + (index + 1)), node('span', '', buildLabel));
     const next = node('p', 'project-next');
     next.append(node('strong', '', 'Next: '), document.createTextNode(display.next_action));
     const links = node('div', 'project-links');
-    const setup = link('Playtest setup ↗', source.human_playtest_packet);
-    setup.setAttribute('aria-label', `${LANE_NAMES[lane]} playtest setup and recording forms`);
+    const setup = link('Study setup ↗', source.human_playtest_packet);
+    setup.setAttribute('aria-label', `${LANE_NAMES[lane]} study setup and recording forms`);
     const code = link('View source ↗', REPOSITORY + 'tree/' + source.reviewed_head);
     code.setAttribute('aria-label', `View ${LANE_NAMES[lane]} source on GitHub`);
     links.append(setup, code);
-    if (source.current_readiness_document) links.append(link('Readiness notes ↗', source.current_readiness_document));
+    if (source.current_readiness_document) links.append(link(localized ? 'Development notes ↗' : 'Readiness notes ↗', source.current_readiness_document));
     body.append(kicker, node('h3', '', LANE_NAMES[lane]), node('p', 'project-promise', display.promise), next, links);
     const provenance = node('details', 'image-details');
     const summary = node('summary', '', 'Image & provenance');
@@ -131,7 +133,7 @@ function renderReadiness() {
     row.dataset.lane = lane;
     const name = node('th', '', LANE_NAMES[lane]); name.scope = 'row';
     const build = node('td'); build.dataset.label = 'Build';
-    build.append(node('span', '', source.candidate_version ? 'Candidate ' + source.candidate_version : 'Pilot baseline'));
+    build.append(node('span', '', source.candidate_version ? 'Frozen candidate ' + source.candidate_version : 'Frozen study baseline'));
     build.append(node('small', '', source.technical_readiness_label || 'Technical status in evidence notes'));
     const sessions = node('td'); sessions.dataset.label = 'Verified release sessions';
     const counts = node('span', 'human-session-count');
@@ -157,6 +159,23 @@ function renderLaunchReadiness() {
   el('days-to-launch').textContent = days(manifest.launch.target_date_utc);
   el('human-sessions-filed').textContent = manifest.readiness.human_sessions_completed;
   el('launch-readiness').hidden = false;
+}
+
+function renderLocalization() {
+  el('localization-rows').replaceChildren(...LANES.map(lane => {
+    const progress = manifest.release_preparation.engineering.find(item => item.lane === lane);
+    const row = node('tr'); row.dataset.lane = lane;
+    const name = node('th', '', LANE_NAMES[lane]); name.scope = 'row';
+    row.append(name);
+    for (const [locale, label] of [['en', 'English'], ['ja', '日本語'], ['zh-Hans', '简体中文']]) {
+      const cell = node('td'); cell.dataset.label = label;
+      cell.append(node('span', '', progress.locales[locale])); row.append(cell);
+    }
+    const evidence = node('td'); evidence.dataset.label = 'Technical evidence';
+    evidence.append(link(progress.checks_label, progress.evidence_url));
+    evidence.append(node('small', '', progress.human_status)); row.append(evidence);
+    return row;
+  }));
 }
 
 function renderTimeline() {
@@ -346,6 +365,12 @@ function validateData(tasks, sources, visuals) {
     ['pilot_packet', 'human_playtest_packet', 'latest_research_readme', 'current_readiness_document'].forEach(field => { if (!githubUrl(source[field])) throw new Error('Missing project evidence link'); });
     ['candidate_manifest'].forEach(field => { if (source[field] !== undefined && !githubUrl(source[field])) throw new Error('Invalid project evidence link'); });
   });
+  const engineering = sources.release_preparation?.engineering;
+  if (!Array.isArray(engineering) || engineering.length !== LANES.length || new Set(engineering.map(item => item.lane)).size !== LANES.length) throw new Error('Missing language build progress');
+  LANES.forEach(lane => {
+    const progress = engineering.find(item => item.lane === lane);
+    if (!progress || !['en', 'ja', 'zh-Hans'].every(locale => typeof progress.locales?.[locale] === 'string' && progress.locales[locale].trim()) || !githubUrl(progress.evidence_url) || !['checks_label', 'human_status'].every(key => typeof progress[key] === 'string' && progress[key].trim())) throw new Error('Invalid language build progress');
+  });
   const launch = sources.launch;
   if (!Array.isArray(launch?.timeline) || launch.timeline.length !== 6 || !launch.timeline.every(step => Array.isArray(step) && step.length === 3 && step.every(item => typeof item === 'string' && item.trim()))) throw new Error('Invalid readiness timeline');
   if (!launch || !['target_date_utc', 'decision_date_utc', 'candidate_freeze_date_utc'].every(field => validDate(launch[field])) || launch.candidate_freeze_date_utc > launch.decision_date_utc || launch.decision_date_utc > launch.target_date_utc || launch.plan_document !== `docs/launch/${launch.target_date_utc}/README.md`) throw new Error('Invalid launch plan');
@@ -381,7 +406,7 @@ async function loadDashboard() {
     if (attempt !== loadAttempt) return;
     snapshot = tasks; manifest = sources; releaseRegistry = releases; presentation = visuals;
     currentPage = 1;
-    renderPlanningMetadata(); renderProjects(); renderReadiness(); renderLaunchReadiness(); renderTimeline(); renderEvidence(); renderReleases(); renderBoardSummary(); renderTasks();
+    renderPlanningMetadata(); renderProjects(); renderReadiness(); renderLaunchReadiness(); renderLocalization(); renderTimeline(); renderEvidence(); renderReleases(); renderBoardSummary(); renderTasks();
     ['task-search', 'lane-filter', 'status-filter', 'perspective-filter'].forEach(id => { el(id).disabled = false; });
     setViewFromHash();
   } catch (error) {
@@ -392,6 +417,7 @@ async function loadDashboard() {
     el('project-grid').replaceChildren(node('p', 'loading-state', 'Project data unavailable. Open the launch plan above.'));
     el('task-grid').replaceChildren();
     el('readiness-rows').replaceChildren();
+    el('localization-rows').replaceChildren();
     el('result-count').textContent = 'Task data unavailable.';
     el('release-grid').replaceChildren(node('p', 'loading-state', 'Release status is unavailable.'));
     el('page-previous').disabled = true; el('page-next').disabled = true;

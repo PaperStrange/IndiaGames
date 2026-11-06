@@ -129,7 +129,7 @@ def build():
             'id': 'release-preparation-plan',
             'status': 'settled' if preparation.get('plan_settled') is True else 'not_settled',
             'applies_to': ['memorable', 'vivid', 'bell'],
-            'requirement': 'The current language/device proposal has its own implementation settlement. Confirm its evidence contract, precise support matrix and human study scope before implementation; the earlier plan-settlement record applies only to its dated readiness work. This dashboard field is not a release-policy or validator gate.'
+            'requirement': 'The owner authorized the technical language/device implementation on November 6. Physical configurations, fluent review, additional comprehension criteria and the separate release-policy extension remain human decisions before qualification or promotion. This dashboard field does not adopt a release policy or waive a human gate.'
         })
     output = ROOT / 'data' / 'tasks.json'
     output.parent.mkdir(exist_ok=True)

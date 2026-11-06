@@ -1,0 +1,118 @@
+{
+  "status": "pass",
+  "observed_at": "2026-11-06T09:51:22.761Z",
+  "completed_at": "2026-11-06T09:51:40.546Z",
+  "method": "Local Chromium dashboard integration, direct/project mounts, responsive layouts, keyboard and navigation, immutable asset/source checks. No human session, game regression, physical-device or deployed-site claim.",
+  "browser_version": "151.0.7922.173",
+  "input_sha256": {
+    "index.html": "63030405069fbb164322a5f2aa38a6767d3debfeff37441ac8f882e11df1db58",
+    "app.js": "597902fcb125ea7ad0c085bf294820bcbe9c673cb62e2e0f24ce1d4735417f7b",
+    "styles.css": "06168c9680a23ac46ba9f317a473f1c6327b986aea904a4236bc45098a590427",
+    "data/hub-presentation.json": "57532010b22b8d16178627b9b008ce9a620bcb4e225d3f7d4f65a17863cd7537",
+    "data/tasks.json": "1e01eea68a00ba92e2754eccca5856db5652d6054aa04780343d5d8217a94193",
+    "data/source-manifest.json": "f06165af309666d84337df4f16d316a51838f547ca89b98d6275dab82b75af79",
+    "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+    "tests/hub/browser.mjs": "95cd8ebacba96597f0fe81a88893e5caada4ad5caf88c324dd892dda39a9c282",
+    "docs/games/small-hours/tasks.json": "e13de881da808e2974c03564d32e93a41acb07a787eea1a9c35b844c3978e7f0",
+    "docs/games/keepers-frame/tasks.json": "fdbb30feda62a8b88b1cf86255e528eb7b473425d1d2b9659836ba9cb00ca8b7",
+    "docs/games/thirteenth-bell/tasks.json": "da8738ed439324eeba767f6b577c7a98ae9e67a85468c9e8139d1acf5d75ed71"
+  },
+  "static_checks": [
+    {
+      "id": "human-and-runtime-boundaries",
+      "status": "pass",
+      "detail": "Authored task IDs and lane counts match the generated snapshot; human counts remain zero; official registry empty; game branch heads equal the source review; runtime/test scopes equal their verified source (Vivid later play/evidence records excluded)."
+    },
+    {
+      "id": "candidate-identity",
+      "status": "pass",
+      "detail": "Current master candidate trees and file hashes equal their pinned packets; no human report populated or approval granted."
+    },
+    {
+      "id": "genuine-images",
+      "status": "pass",
+      "detail": "Three displayed assets are byte-identical to pinned game captures/art; total 2041402 bytes."
+    },
+    {
+      "id": "navigation-targets",
+      "status": "pass",
+      "detail": "166 unique rendered destinations classified; local anchors/files and GitHub source targets resolve. The paused candidate URL is not repaired or claimed successful."
+    }
+  ],
+  "extra_scenarios": [
+    {
+      "id": "load-failure-retry",
+      "status": "pass",
+      "expected_fault": "one 503 response for tasks.json",
+      "result": "Visible error recovered through keyboard activation of Retry; three projects and the task board load."
+    },
+    {
+      "id": "tablet-layout",
+      "status": "pass",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "result": "Images loaded, overview and board have no horizontal overflow, keyboard detail works. Browser viewport only; no physical-device claim."
+    },
+    {
+      "id": "enlarged-text",
+      "status": "pass",
+      "before": 43,
+      "after": 86,
+      "method": "Doubled computed CSS font sizes at 390 CSS px; not browser zoom.",
+      "result": "Overview and board reflow without horizontal overflow; keyboard task detail remains operable."
+    }
+  ],
+  "errors": [],
+  "viewport_groups": [
+    {
+      "id": "root-1440",
+      "mount": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "visible_words": 646
+    },
+    {
+      "id": "root-390",
+      "mount": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "visible_words": 640
+    },
+    {
+      "id": "project-1440",
+      "mount": "/IndiaGames/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "visible_words": 646
+    },
+    {
+      "id": "project-390",
+      "mount": "/IndiaGames/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "visible_words": 640
+    }
+  ],
+  "tasks": 84,
+  "completed_tasks": 53,
+  "scope": "Local final UI/input verification only. The immutable delivery PR records independent review, CI and later actual Pages deployment proof.",
+  "retained_failures": [
+    "Initial in-progress dashboard exceeded the 650-word budget by three words; prose was shortened.",
+    "A subsequent old-copy assertion was reconciled with the retained explicit release-qualification warning.",
+    "Independent review corrected stale proposed/current prose and Study setup accessible-name wording; final harness includes a regression assertion."
+  ]
+}
