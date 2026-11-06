@@ -6,10 +6,11 @@
    is declared in data.js; engine.js declares no story-data of its own.
 3. Asset-reference validation: every relative src/href/url() in index.html,
    css/ and js/ resolves to a file on disk, case-exact.
-4. dist freshness: rebuild via node build.mjs and byte-compare with the
-   committed dist/thirteenth-bell-playable-demo.html.
+4. Build reproducibility: create two isolated outputs and compare them. If a
+   local dist file exists, check freshness without overwriting it.
 """
-import os, re, subprocess, sys
+import os, re, subprocess, sys, tempfile
+from pathlib import Path
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 failures = []
@@ -59,16 +60,25 @@ for r in sorted(refs):
     if os.path.isdir(d):
         check(f"case-exact {r}", base in os.listdir(d))
 
-# 4. dist freshness: the committed dist/ file must be exactly what build.mjs
-# produces — read the committed bytes BEFORE rebuilding, then compare.
+# 4. dist/ is ignored local output. Validation must not create or replace it.
 dist = os.path.join(ROOT, "dist", "thirteenth-bell-playable-demo.html")
-committed = open(dist, "rb").read() if os.path.isfile(dist) else None
-r = run(["node", "build.mjs"])
-check("build.mjs runs", r.returncode == 0, r.stderr.strip()[:200])
-check("dist exists after build", os.path.isfile(dist))
-if committed is not None and os.path.isfile(dist):
-    check("committed dist matches fresh build", open(dist, "rb").read() == committed,
-          "run node build.mjs and commit the result")
+existing = Path(dist).read_bytes() if os.path.isfile(dist) else None
+with tempfile.TemporaryDirectory(prefix="bell-static-build-") as directory:
+    outputs = []
+    for number in (1, 2):
+        output = Path(directory) / f"build-{number}.html"
+        r = run(["node", "build.mjs", "--output", str(output)])
+        check(f"isolated build {number} succeeds", r.returncode == 0 and output.is_file(),
+              r.stderr.strip()[:200])
+        if r.returncode == 0 and output.is_file():
+            outputs.append(output.read_bytes())
+    if len(outputs) == 2:
+        check("isolated builds are byte-identical", outputs[0] == outputs[1])
+        if existing is not None:
+            check("local dist matches fresh build", existing == outputs[0],
+                  "local output is stale; run node build.mjs deliberately to replace it")
+check("static validation preserves local dist",
+      Path(dist).read_bytes() == existing if existing is not None else not Path(dist).exists())
 
 print()
 if failures:

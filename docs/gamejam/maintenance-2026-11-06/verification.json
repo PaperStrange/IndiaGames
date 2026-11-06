@@ -1,0 +1,140 @@
+{
+  "kind": "automated-build-maintenance-verification",
+  "observed_at": "2026-11-06T05:41:34.977375+00:00",
+  "base_source_branch_head": "70824713a09684de9b232a35e71f46840fe04d07",
+  "candidate_identity": {
+    "candidate_master_commit": "2be5f3648fed5422eb4459486661385df73c91be",
+    "candidate_version": "0.1.0",
+    "bytes": 1455336,
+    "html_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973",
+    "inventory_sha256": "fa7e9a4f5cc66a9798c6e3cb2c418a240bdbc2a11367d6f54ed2c1989bdfd51e"
+  },
+  "runtime_unchanged": true,
+  "two_isolated_builds_equal_prior_and_candidate": true,
+  "source_hashes": {
+    "README.md": "f9da64e919f70fbfc19066c13b5c98d31c864ea431d19c30a3a6d4b8bc58451f",
+    "build.mjs": "0cd58838f1554ff6fb6853198d57beac9257cb9978d066a72572aed8d906b340",
+    "tests/check_static.py": "80bb1aca9e92d03487d2190b82d12ec4421fb7c211af3b798782c3be028705f8",
+    "tests/build.test.cjs": "511f31134b17d3bfe5da34dc6298f90901963adb6286baf1f265d2b2226bb34a"
+  },
+  "tools": {
+    "node": "v24.19.0",
+    "python": "3.12.14",
+    "chromium": "151.0.7922.173"
+  },
+  "unit_tests": {
+    "command": "node --test tests/*.test.cjs",
+    "reported_tests": 25,
+    "passed": 25,
+    "failed": 0,
+    "existing_rule_tests": 15,
+    "new_build_suite": "7 top-level tests including one container with 3 negative subtests; Node reports 10 total"
+  },
+  "static_checks": {
+    "command": "python3 tests/check_static.py",
+    "passed": 21,
+    "failed": 0,
+    "scope": "Syntax, split-data references, assets and case, two isolated builds, optional local-dist freshness and non-mutation"
+  },
+  "before_after": {
+    "historical_base": "70824713a09684de9b232a35e71f46840fe04d07",
+    "before": {
+      "stale_output": {
+        "exit_code": 1,
+        "original_marker_preserved": false,
+        "replacement_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973"
+      },
+      "synthetic_duplicate_stylesheet": {
+        "exit_code": 0,
+        "unbundled_stylesheet_left": 1
+      }
+    },
+    "after": "tests/build.test.cjs verifies stale bytes/mtime preserved on failure and duplicate anchor rejects before output replacement"
+  },
+  "browser": {
+    "kind": "automated-build-equivalence-smoke",
+    "started_at": "2026-11-06T05:38:25.352Z",
+    "finished_at": "2026-11-06T05:38:33.867Z",
+    "cases": [
+      {
+        "id": "split-1280",
+        "format": "split",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "checks": [
+          "HTTP entry and exact served bundle identity",
+          "Visible Contrast start at Dawn",
+          "Visible first resolution advances to Noon and retains witnessed clue",
+          "No horizontal overflow at tested viewport",
+          "Reload clears the run and learned clue"
+        ],
+        "response_sha256": "50c9740c7885f8e1c74d21f8201e066d2e8e85a8e9a4f05ae45516986c355817",
+        "status": "pass"
+      },
+      {
+        "id": "split-390",
+        "format": "split",
+        "viewport": {
+          "width": 390,
+          "height": 900
+        },
+        "checks": [
+          "HTTP entry and exact served bundle identity",
+          "Visible Contrast start at Dawn",
+          "Visible first resolution advances to Noon and retains witnessed clue",
+          "No horizontal overflow at tested viewport",
+          "Reload clears the run and learned clue"
+        ],
+        "response_sha256": "50c9740c7885f8e1c74d21f8201e066d2e8e85a8e9a4f05ae45516986c355817",
+        "status": "pass"
+      },
+      {
+        "id": "bundle-1280",
+        "format": "bundle",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "checks": [
+          "HTTP entry and exact served bundle identity",
+          "Visible Contrast start at Dawn",
+          "Visible first resolution advances to Noon and retains witnessed clue",
+          "No horizontal overflow at tested viewport",
+          "Reload clears the run and learned clue"
+        ],
+        "response_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973",
+        "status": "pass"
+      },
+      {
+        "id": "bundle-390",
+        "format": "bundle",
+        "viewport": {
+          "width": 390,
+          "height": 900
+        },
+        "checks": [
+          "HTTP entry and exact served bundle identity",
+          "Visible Contrast start at Dawn",
+          "Visible first resolution advances to Noon and retains witnessed clue",
+          "No horizontal overflow at tested viewport",
+          "Reload clears the run and learned clue"
+        ],
+        "response_sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973",
+        "status": "pass"
+      }
+    ],
+    "errors": [],
+    "result": "pass"
+  },
+  "human_sessions": 0,
+  "physical_device_results": 0,
+  "human_approval": false,
+  "limits": [
+    "Build-only cleanup; no new gameplay or story implementation",
+    "Focused automated HTTP smoke, not full regression repetition or fresh-player comprehension",
+    "No participant bookings, physical hardware or screen-reader sessions",
+    "Candidate0.1.0 and frozen comparison unchanged; no new release version"
+  ]
+}

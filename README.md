@@ -4,27 +4,31 @@ A time-loop mystery adventure that plays in the browser. One town, one cracked
 bell, three loops to understand what the thirteenth chime is pulling out of the
 day — then break it.
 
-Current handoff: [human playtest checklist, recording templates and November 20 plan](docs/gamejam/launch-2026-11-20/README.md). Human approval is still pending.
+Current engineering milestone: [non-mutating build validation and November 6 cleanup](docs/gamejam/maintenance-2026-11-06/README.md). The generated game remains byte-identical to staged candidate **0.1.0**. Engineering continues while recruitment is unbooked; no human game approval is recorded.
+
+For actual studies, use the [verified facilitator setup](docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md) and its linked blank records. The [November 20 plan](docs/gamejam/launch-2026-11-20/README.md) retains the human release criteria.
 
 **Play it:** serve this folder over a local static server and open the printed URL:
 
 ```sh
-python3 -m http.server 8000
+python3 -m http.server 8000 --bind 127.0.0.1
 # open http://localhost:8000/
 ```
 
-(`file://` also works for the split tree, but a static server matches how the
-game is hosted on itch.io. For sharing (e.g. Google Drive previews), send
-`dist/thirteenth-bell-playable-demo.html` — the split tree's relative `css/`/`js/`
-references don't survive Drive's preview sandbox.)
+Open the URL on that same computer. Use HTTP for both the split tree and the
+portable build; a source-file page or a cloud-storage preview is not a verified
+game host. Physical phones need the separately verified route in the facilitator
+setup. A developer server is not human-device evidence.
 
 **Single-file build:** `dist/thirteenth-bell-playable-demo.html` is the whole game
 in one file (CSS/JS inlined, town map embedded as a data URI, system fonts).
-The current candidate makes no external font request.
-Regenerate it any time with:
+The current candidate makes no external font request. `dist/` is ignored local
+output, not a committed candidate. Generate it explicitly with:
 
 ```sh
 node build.mjs
+# Or write an isolated build without replacing the default output:
+node build.mjs --output /tmp/bell-review/index.html
 ```
 
 ## How to play
@@ -52,7 +56,7 @@ js/engine.js          game systems + UI copy: loop, clock, scenes, predictions, 
 assets/images/        town-map.webp — the official canon town map
 docs/                 design dossier PDF, work-package README, research reports
 dist/                 generated single-file build (do not hand-edit; run node build.mjs)
-tests/                static checks + headless-Chromium smoke test
+tests/                pure rules, build contracts, static validation and browser journeys
 ```
 
 **Content vs. engine:** story/world data lives in `js/data.js` and is read through
@@ -63,13 +67,33 @@ copy those systems render (theory text, consequence leads, mode labels).
 ## Tests
 
 ```sh
-node --test tests/*.test.cjs   # earned-time and Square causal rules
-node build.mjs                 # regenerate current branch output
-python3 tests/check_static.py   # syntax, JSON, asset references, dist freshness
+node --test tests/*.test.cjs    # earned-time/Square rules and build contracts
+python3 tests/check_static.py   # syntax, data references, assets, isolated reproducible builds
+node build.mjs                 # explicitly create/refresh local output for browser checks
 node tests/square-journey.cjs   # HTTP-hosted browser journeys; set PLAYWRIGHT_MODULE if needed
 ```
 
+The first two commands work on a clean checkout without generating `dist/`.
+Static validation compares two temporary builds. If a local distribution exists,
+it must match; a stale file fails the check and remains untouched for inspection.
+`--output FILE` resolves a relative path from the command's working directory;
+source inputs always come from the directory containing `build.mjs`.
+
 The browser runner needs Playwright and Chromium; its header documents executable/module/output settings. The older `tests/smoke_cdp.py` uses file URLs, which managed browsers may block. For that environment use the preserved [HTTP adapter and smoke notes](docs/gamejam/milestone-2026-10-27/verification.md) with a fresh `BELL_SMOKE_TMP` profile. Do not reuse old profile locks or treat archived output as a new run.
+
+## Parallel development ownership
+
+Keep one integrator for `js/engine.js`; narrative work owns `js/data.js`, pure-rule
+work owns `js/echo-time.js` and `js/square-event.js`, and build/QA work owns
+`build.mjs` and `tests/`. Agree state/content contracts before concurrent changes
+cross those boundaries. Each lane runs the relevant checks and links actual
+results. Historical evidence and frozen candidate/reference packages stay intact.
+
+The next engineering goal is a clean-checkout branch CI job using the two
+dependency-free verification commands above, with browser smoke on a supported
+runner as a separate job. This does not depend on recruiting participants and is
+not yet claimed implemented. Gameplay-selection and official-release decisions
+still require their own real observations and approval.
 
 ## License
 
