@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Presentation-only content; existing task, artifact and release records remain authoritative.",
-  "questions_label": "Product hypotheses · human tests pending",
+  "questions_label": "Product hypotheses · broader validation pending",
   "projects": [
     {
       "lane": "memorable",
