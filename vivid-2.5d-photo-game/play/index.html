@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#162e35" />
+    <meta name="vivid-build-version" content="%PACKAGE_VERSION%" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23162e35'/%3E%3Ctext x='7' y='23' fill='%23f8f3e7' font-family='serif' font-size='25'%3Ev.%3C/text%3E%3C/svg%3E" />
     <meta
       name="description"
@@ -13,19 +14,19 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to the stories</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to the stories</a>
     <header class="site-header">
       <a
         class="brand"
         href="#"
         id="home-link"
-        aria-label="Vivid story collection"
+        aria-label="Vivid story collection" data-i18n-aria="brandLabel"
         ><span class="brand-mark" aria-hidden="true">v.</span
-        ><span>VIVID<small>THE STORY COLLECTION</small></span></a
+        ><span>VIVID<small data-i18n="collection">THE STORY COLLECTION</small></span></a
       >
-      <div class="header-note">Small worlds. Lasting traces.</div>
+      <div class="header-note" data-i18n="tagline">Small worlds. Lasting traces.</div>
       <button
-        id="settings-toggle"
+        id="settings-toggle" data-i18n="settings"
         class="quiet-button"
         aria-expanded="false"
         aria-controls="settings"
@@ -37,11 +38,11 @@
       id="settings"
       class="settings"
       hidden
-      aria-label="Reading and motion settings"
+      aria-label="Reading and motion settings" data-i18n-aria="settingsLabel"
     >
-      <label><input type="checkbox" id="motion" /> Gentle movement</label
-      ><label><input type="checkbox" id="flat" /> Flat illustration mode</label>
-      <p>
+      <label><input type="checkbox" id="motion" /> <span data-i18n="motion">Gentle movement</span></label
+      ><label><input type="checkbox" id="flat" /> <span data-i18n="flat">Flat illustration mode</span></label>
+      <p data-i18n="settingsHint">
         No sound is needed. Every action works with a tap or keyboard. Progress
         stays in this browser.
       </p>
@@ -49,29 +50,38 @@
     <main id="main" tabindex="-1">
       <section id="gallery" aria-labelledby="gallery-title">
         <div class="collection-intro">
-          <p class="eyebrow">AN INTERACTIVE ANTHOLOGY · VOLUME 01</p>
-          <h1 id="gallery-title">Some things stay<br />with <em>you.</em></h1>
-          <p>
+          <p class="eyebrow" data-i18n="anthology">AN INTERACTIVE ANTHOLOGY · VOLUME 01</p>
+          <h1 id="gallery-title" data-i18n="headline">Some things stay with you.</h1>
+          <p data-i18n="introduction">
             Look a little closer. Lend a hand.<br />Leave a small world
             different from how you found it.
           </p>
         </div>
+        <div class="language-picker">
+          <label for="language" data-i18n="language">Language</label>
+          <select id="language" aria-describedby="language-hint">
+            <option value="en" lang="en">English</option>
+            <option value="ja" lang="ja">日本語</option>
+            <option value="zh-Hans" lang="zh-Hans">简体中文</option>
+          </select>
+          <p id="language-hint" data-i18n="languageHint">Change language here between visits. Your story progress stays; each visit starts a new transcript.</p>
+        </div>
         <div id="story-cards" class="story-cards"></div>
         <div class="collection-footer">
-          <span>02 authored stories</span
-          ><span>No rush. No score. A place to return to.</span
+          <span data-i18n="storiesCount">02 authored stories</span
+          ><span data-i18n="collectionHint">No rush. No score. A place to return to.</span
           ><span id="build-version">Work in progress · %PACKAGE_VERSION%</span>
         </div>
       </section>
       <section id="experience" hidden aria-labelledby="story-title">
         <div class="story-topline">
-          <button id="back" class="text-button">← All stories</button
+          <button id="back" class="text-button" data-i18n="back">← All stories</button
           ><span id="story-progress"></span
-          ><span id="render-label">Illustrated world</span>
+          ><span id="render-label" data-i18n="illustrated">Illustrated world</span>
         </div>
         <div class="experience-layout">
           <div class="world-column">
-            <div id="world" class="world" aria-label="Story illustration">
+            <div id="world" class="world" aria-label="Story illustration" data-i18n-aria="storyIllustration">
               <div id="flat-world" class="flat-world" aria-hidden="true">
                 <div class="world-halo"></div>
                 <div class="flat-frame">
@@ -105,7 +115,7 @@
               <span id="motion-hint">Drag gently to look around</span>
             </div>
             <p id="storage-status" class="storage-status" role="status"></p>
-            <button id="recover" class="text-button" hidden>
+            <button id="recover" class="text-button" data-i18n="recover" hidden>
               Replace the incompatible save with this visit
             </button>
           </div>
@@ -123,7 +133,7 @@
             <div
               id="actions"
               class="actions"
-              aria-label="Available story actions"
+              aria-label="Available story actions" data-i18n-aria="actions"
             ></div>
             <p
               id="interaction-status"
@@ -131,21 +141,21 @@
               role="status"
             ></p>
             <details id="transcript">
-              <summary>Read this visit’s transcript</summary>
+              <summary data-i18n="transcript">Read this visit’s transcript</summary>
               <ol id="transcript-lines"></ol>
             </details>
             <div class="visit-footer">
               <span id="choice-summary"></span
-              ><button id="reset" class="text-button">Forget this story</button>
+              ><button id="reset" class="text-button" data-i18n="forget">Forget this story</button>
             </div>
           </div>
         </div>
       </section>
-      <p id="load-error" role="alert" hidden></p>
+      <p id="load-error" role="alert" data-i18n="loadError" hidden></p>
     </main>
     <footer class="site-footer">
-      <span>VIVID / Stories you can touch</span
-      ><span>Made for a quiet moment.</span>
+      <span data-i18n="footerBrand">VIVID / Stories you can touch</span
+      ><span data-i18n="footerNote">Made for a quiet moment.</span>
     </footer>
     <script type="module" src="./src/app.js"></script>
   </body>

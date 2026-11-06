@@ -1,10 +1,31 @@
-import { catalog } from "./stories/catalog.js";
+import { getCatalog } from "./stories/catalog.js";
+import { resolveLocale, readLocalePreference, rememberLocale } from "./i18n/core.js";
+import { createUiTranslator } from "./i18n/ui.js";
 import { createSession, loadStory } from "./runtime/index.js";
 
 const $ = (id) => document.getElementById(id);
 const base = import.meta.env.BASE_URL;
 const params = new URLSearchParams(location.search);
 const profile = params.get("profile") === "neutral" ? "neutral" : "remembered";
+function browserStorage() { try { return window.localStorage; } catch { return null; } }
+let locale = resolveLocale({ explicit: params.get("lang"), saved: readLocalePreference(browserStorage()), languages: navigator.languages || [navigator.language] });
+let t = createUiTranslator(locale);
+let catalog = getCatalog(locale);
+// Same-page snapshots retain temporary progress even when device storage fails.
+// Only semantic state is carried across locale boundaries, never rendered prose.
+const snapshots = new Map();
+const snapshotKey = id => `${id}:${profile}`;
+const version = document.querySelector('meta[name="vivid-build-version"]').content;
+const lowerLabel = value => locale === 'en' ? value.toLowerCase() : value;
+function translatePage() {
+  document.documentElement.lang = locale;
+  document.title = t('pageTitle');
+  document.querySelector('meta[name="description"]').content = t('pageDescription');
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
+  $('build-version').textContent = t('version', {version});
+  $('language').value = locale;
+}
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 let motion = !reduced.matches;
 let flat = params.get("flat") === "1";
@@ -58,12 +79,12 @@ function makeCards() {
       }
       art.append(mount);
       if (presentation.kind === "workbench")
-        art.append(element("span", "card-stamp", "POST / 02"));
+        art.append(element("span", "card-stamp", t('postcard')));
       const body = element("div", "card-body"),
         meta = element("div", "card-meta");
       meta.append(
         element("span", "", entry.subtitle),
-        element("span", "", "A small story"),
+        element("span", "", t('smallStory')),
       );
       body.append(
         meta,
@@ -90,21 +111,21 @@ function disposeWorld() {
   $("world").classList.remove("has-three");
   $("three-world").replaceChildren();
 }
-function showFlat(reason = "Illustrated world") {
+function showFlat(reason = t('illustrated')) {
   disposeWorld();
   $("render-label").textContent = reason;
 }
 async function startWorld() {
   disposeWorld();
   if (flat || !current) {
-    $("render-label").textContent = "Flat illustration";
+    $("render-label").textContent = t('flatLabel');
     return;
   }
   const token = rendererGeneration,
     storyToken = generation;
   const stale = () =>
     token !== rendererGeneration || storyToken !== generation || flat;
-  $("render-label").textContent = "Opening the world…";
+  $("render-label").textContent = t('loadingWorld');
   let candidate;
   try {
     const { createRenderer } = await import("./renderers/world.js");
@@ -112,7 +133,7 @@ async function startWorld() {
     candidate = await createRenderer({
       container: $("three-world"),
       onUnavailable: () => {
-        if (!stale()) showFlat("Illustration · 3D unavailable");
+        if (!stale()) showFlat(t('unavailableWorld'));
       },
     });
     if (stale()) {
@@ -128,13 +149,14 @@ async function startWorld() {
     }
     candidate.setTilt(motion ? vm.scene.view || 0 : 0, { immediate: !motion });
     $("world").classList.add("has-three");
-    $("render-label").textContent = "A little world in 3D";
+    $("render-label").textContent = t('world3d');
   } catch {
     candidate?.dispose();
-    if (!stale()) showFlat("Illustration · 3D unavailable");
+    if (!stale()) showFlat(t('unavailableWorld'));
   }
 }
 function leaveStory({ focus = true } = {}) {
+  if (current && session) snapshots.set(snapshotKey(current.manifest.id), current.serialize(session.getState()));
   generation++;
   controls.abort();
   session?.dispose();
@@ -148,7 +170,7 @@ function leaveStory({ focus = true } = {}) {
   lastTranscript = "";
   $("transcript-lines").replaceChildren();
   $("transcript").open = false;
-  $("reset").textContent = "Forget this story";
+  $("reset").textContent = t('forget');
   $("experience").hidden = true;
   $("gallery").hidden = false;
   $("load-error").hidden = true;
@@ -166,23 +188,7 @@ async function openStory(entry) {
     const pack = await loadStory(entry);
     if (token !== generation) return;
     current = pack;
-    let storage;
-    try {
-      storage = window.localStorage;
-    } catch {
-      storage = {
-        getItem() {
-          throw new Error("Storage unavailable");
-        },
-        setItem() {
-          throw new Error("Storage unavailable");
-        },
-        removeItem() {
-          throw new Error("Storage unavailable");
-        },
-      };
-    }
-    session = createSession({ pack, profile, storage });
+    session = createSession({ pack, profile, storage: browserStorage(), translate: t, resumeState: snapshots.get(snapshotKey(entry.id)) });
     session.subscribe(() => render());
     $("gallery").hidden = true;
     $("experience").hidden = false;
@@ -201,7 +207,7 @@ async function openStory(entry) {
     if (token !== generation) return;
     leaveStory({ focus: false });
     $("load-error").textContent =
-      "This story could not be opened. Your saved visits have not been replaced. Try the other story or reload this page.";
+      t('loadError');
     $("load-error").hidden = false;
     console.warn("Story could not be loaded:", e.message);
   } finally {
@@ -212,7 +218,7 @@ function dispatch(event) {
   if (!session) return;
   selectedObject = null;
   confirmReset = false;
-  $("reset").textContent = "Forget this story";
+  $("reset").textContent = t('forget');
   $("interaction-status").textContent = "";
   session.dispatch(event);
 }
@@ -247,14 +253,14 @@ function placementControl(action) {
   const hint = element(
     "p",
     "",
-    `Select ${action.objectLabel.toLowerCase()}, then its place. You can also drag it across.`,
+    t('placeHint', {object: lowerLabel(action.objectLabel)}),
   );
   const select = () => {
     selectedObject = action.id;
     object.classList.add("selected");
     object.setAttribute("aria-pressed", "true");
     $("interaction-status").textContent =
-      `${action.objectLabel} selected. Choose ${action.destinationLabel.toLowerCase()}.`;
+      t('selected', {object: action.objectLabel, destination: lowerLabel(action.destinationLabel)});
   };
   object.setAttribute("aria-pressed", "false");
   object.addEventListener(
@@ -271,7 +277,7 @@ function placementControl(action) {
       if (selectedObject === action.id) dispatch(action.event);
       else
         $("interaction-status").textContent =
-          `Select ${action.objectLabel.toLowerCase()} first.`;
+          t('selectFirst', {object: lowerLabel(action.objectLabel)});
     },
     { signal: controls.signal },
   );
@@ -292,7 +298,7 @@ function placementControl(action) {
     object.classList.remove("selected");
     object.setAttribute("aria-pressed", "false");
     $("interaction-status").textContent =
-      "Placement cancelled. The object has stayed where it was.";
+      t('cancelled');
   };
   object.addEventListener(
     "pointerdown",
@@ -332,7 +338,7 @@ function placementControl(action) {
         dispatch(action.event);
       else if (moved) {
         $("interaction-status").textContent =
-          "The object stays with you. Select it and choose its place when you are ready.";
+          t('invalidDrop');
       }
     },
     { signal: controls.signal },
@@ -399,7 +405,7 @@ function adjustmentControl(action) {
         token = rendererGeneration;
       Promise.resolve(active?.update(preview, current.manifest)).catch(() => {
         if (world === active && token === rendererGeneration)
-          showFlat("Illustration · 3D unavailable");
+          showFlat(t('unavailableWorld'));
       });
     },
     { signal: controls.signal },
@@ -407,8 +413,8 @@ function adjustmentControl(action) {
   const minus = element("button", "action-button", "−"),
     plus = element("button", "action-button", "+");
   minus.type = plus.type = "button";
-  minus.setAttribute("aria-label", `Decrease ${action.label.toLowerCase()}`);
-  plus.setAttribute("aria-label", `Increase ${action.label.toLowerCase()}`);
+  minus.setAttribute("aria-label", t('decrease', {action: lowerLabel(action.label)}));
+  plus.setAttribute("aria-label", t('increase', {action: lowerLabel(action.label)}));
   minus.dataset.action = `${action.id}-minus`;
   plus.dataset.action = `${action.id}-plus`;
   minus.disabled = action.disabled || action.value <= action.min;
@@ -426,7 +432,7 @@ function adjustmentControl(action) {
   const hint = element(
     "p",
     "action-group-label",
-    action.hint || "Use the slider, arrow keys or step buttons.",
+    action.hint || t('adjustHint'),
   );
   hint.id = hintId;
   wrap.append(label, minus, input, plus, hint);
@@ -484,20 +490,20 @@ function render() {
     vm.scene.caption || current.manifest.subtitle;
   $("scene-description").textContent = vm.scene.details?.length
     ? vm.scene.details.join(" · ")
-    : actor?.description || "A workbench waits for a closer look.";
+    : actor?.description || t('workbenchDescription');
   $("flat-world").style.transform = motion
     ? `perspective(900px) rotateY(${(vm.scene.view || 0) * 6}deg)`
     : "";
   $("world").setAttribute(
     "aria-label",
-    `${vm.scene.descriptionLabel || (vm.scene.kind === "portrait" ? "A framed painted portrait" : "An illustrated workbench")}. ${$("scene-description").textContent}${vm.scene.placement ? " An object is now in its remembered place." : ""}`,
+    t(vm.scene.placement ? 'placedDescription' : 'sceneDescription', {scene: vm.scene.descriptionLabel || (vm.scene.kind === 'portrait' ? t('portraitDescription') : t('illustrationDescription')), details: $('scene-description').textContent}),
   );
   if (world) {
     const active = world,
       token = rendererGeneration;
     Promise.resolve(active.update(vm, current.manifest)).catch(() => {
       if (world === active && token === rendererGeneration)
-        showFlat("Illustration · 3D unavailable");
+        showFlat(t('unavailableWorld'));
     });
     if (!motion) active.setTilt(0, { immediate: true });
   }
@@ -527,12 +533,12 @@ function render() {
     $("actions").querySelector("button")?.classList.add("primary");
   const status = session.status;
   $("storage-status").textContent =
-    status.message || "Your visit is remembered in this browser.";
+    status.message || t('storageOk');
   $("storage-status").classList.toggle("warning", status.kind !== "ok");
   $("recover").hidden = !["corrupt", "future"].includes(status.kind);
   const line = [
-    vm.speaker ? `${vm.speaker}: ${vm.text}` : vm.text,
-    vm.inspection ? `${vm.inspection.title}: ${vm.inspection.text}` : "",
+    vm.speaker ? t('transcriptLine', {speaker: vm.speaker, text: vm.text}) : vm.text,
+    vm.inspection ? t('inspectionLine', {title: vm.inspection.title, text: vm.inspection.text}) : "",
   ]
     .filter(Boolean)
     .join("\n");
@@ -579,8 +585,8 @@ function applyMotion(enabled) {
   $("motion").checked = motion;
   document.body.classList.toggle("motion-off", !motion);
   $("motion-hint").textContent = motion
-    ? "Drag gently to look around"
-    : "Gentle movement is off";
+    ? t('motionOn')
+    : t('motionOff');
   world?.setReducedMotion(!motion);
   settleWorld();
   if (current) render();
@@ -597,14 +603,14 @@ $("reset").addEventListener("click", () => {
   if (!session) return;
   if (!confirmReset) {
     confirmReset = true;
-    $("reset").textContent = "Confirm: forget this story";
+    $("reset").textContent = t('confirmForget');
     return;
   }
   transcript = [];
   lastTranscript = "";
   $("transcript-lines").replaceChildren();
   confirmReset = false;
-  $("reset").textContent = "Forget this story";
+  $("reset").textContent = t('forget');
   session.reset();
 });
 $("recover").addEventListener("click", () => {
@@ -615,14 +621,14 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     selectedObject = null;
     confirmReset = false;
-    $("reset").textContent = "Forget this story";
+    $("reset").textContent = t('forget');
     $("actions")
       .querySelectorAll(".place-control .selected")
       .forEach((el) => {
         el.classList.remove("selected");
         el.setAttribute("aria-pressed", "false");
       });
-    $("interaction-status").textContent = "Selection cancelled.";
+    $("interaction-status").textContent = t('selectionCancelled');
   }
 });
 $("world").addEventListener("pointerdown", (event) => {
@@ -675,10 +681,27 @@ window.addEventListener("pageshow", (event) => {
     if (entry) openStory(entry);
   }
 });
+translatePage();
 makeCards();
+$('language').addEventListener('change', () => {
+  // The picker lives in the collection. Ignore programmatic attempts mid-visit.
+  if (current || $('gallery').hidden) { $('language').value = locale; return; }
+  generation++; // Cancel any story import still pending in the previous language.
+  $('load-error').hidden = true;
+  locale = $('language').value;
+  t = createUiTranslator(locale);
+  catalog = getCatalog(locale);
+  rememberLocale(locale, browserStorage());
+  const url = new URL(location.href);
+  url.searchParams.set('lang', locale);
+  history.replaceState(null, '', url.pathname + url.search + url.hash);
+  translatePage();
+  makeCards();
+  $('motion-hint').textContent = motion ? t('motionOn') : t('motionOff');
+});
 $("motion-hint").textContent = motion
-  ? "Drag gently to look around"
-  : "Gentle movement is off";
+  ? t('motionOn')
+  : t('motionOff');
 function routeBookmark() {
   // The skip link is a document anchor, not a story navigation request.
   if (location.hash === "#main") return;

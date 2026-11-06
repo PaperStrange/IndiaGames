@@ -1,4 +1,6 @@
-import { defaultCast, makeContent } from './content.js';
+import { defaultCast, makeContent, localizeCast } from './content.js';
+import { catalogs } from './catalogs.js';
+import { createTranslator } from '../../i18n/core.js';
 
 const PHASES = ['intro', 'explore', 'rescued', 'recollection', 'choice', 'end', 'return'];
 const STAGES = ['unseen', 'entered', 'braced', 'wedged', 'complete'];
@@ -7,16 +9,18 @@ const CHOICES = ['private', 'archive'];
 const PROFILES = ['remembered', 'neutral'];
 const copy = state => ({ ...state, clues: [...state.clues] });
 const action = (id, label, kind, event, extra = {}) => ({ id, label, kind, event, ...extra });
-const viewAction = (value, label) => action(`view-${value}`, label, 'choose', { type: 'VIEW', value }, { group: 'Look around' });
 
-export function createIonaPack({ id = 'iona', cast = defaultCast } = {}) {
-  const content = makeContent(cast);
+export function createIonaPack({ id = 'iona', cast = defaultCast, locale = 'en' } = {}) {
+  const t = createTranslator(catalogs, locale);
+  cast = localizeCast(cast, locale);
+  const content = makeContent(cast, locale);
+  const viewAction = (value, label) => action(`view-${value}`, label, 'choose', { type: 'VIEW', value }, { group: t('ui.look') });
   const manifest = {
     id, revision: 1, saveVersion: 1, title: content.title, subtitle: content.subtitle,
-    description: content.description, duration: 'About 5–8 minutes · a return visit',
+    description: content.description, duration: t('duration'),
     cast, assets: [
       { id: 'portrait', src: cast.keeper.portrait || 'art/keeper-portrait.svg', alt: cast.keeper.description },
-      { id: 'frame', src: 'art/frame.glb', alt: 'A wooden portrait frame with a brass lamp, a worn notch, and a sheltered recess.' },
+      { id: 'frame', src: 'art/frame.glb', alt: t('assets.frame') },
     ], capabilities: ['inspect', 'choose', 'place'], releaseProfile: 'iona-return-v1',
   };
 
@@ -107,62 +111,62 @@ export function createIonaPack({ id = 'iona', cast = defaultCast } = {}) {
     const actions = [];
     let text = content.welcome;
     let kicker = content.subtitle;
-    let progress = 'Begin an evening at the harbour';
+    let progress = t('ui.progress.intro');
     let speaker = k.name;
     if (s.phase === 'intro') {
-      actions.push(action('start', 'Step closer to the frame', 'choose', { type: 'START' }));
+      actions.push(action('start', t('ui.start'), 'choose', { type: 'START' }));
     } else if (s.phase === 'explore') {
       text = s.feedback || (s.clues.length ? content.explore : content.invitation);
-      progress = `${s.clues.length}/2 harbour marks found`;
-      actions.push(viewAction(-1, 'Lean left'), viewAction(0, 'Look straight ahead'), viewAction(1, 'Lean right'));
-      if (s.view === -1) actions.push(action('ledger', 'Read the tucked page', 'inspect', { type: 'INSPECT', id: 'ledger' }, { group: 'At this edge' }));
+      progress = t('ui.progress.clues', { count: s.clues.length });
+      actions.push(viewAction(-1, t('ui.left')), viewAction(0, t('ui.center')), viewAction(1, t('ui.right')));
+      if (s.view === -1) actions.push(action('ledger', t('ui.ledger'), 'inspect', { type: 'INSPECT', id: 'ledger' }, { group: t('ui.edge') }));
       if (s.view === 1) {
-        actions.push(action('plate', 'Read the brass plate', 'inspect', { type: 'INSPECT', id: 'plate' }, { group: 'At this edge' }));
-        actions.push(action('letter', 'Open the private letter', 'inspect', { type: 'INSPECT', id: 'letter' }, { group: 'At this edge', hint: 'The keeper has not offered this letter to you.' }));
+        actions.push(action('plate', t('ui.plate'), 'inspect', { type: 'INSPECT', id: 'plate' }, { group: t('ui.edge') }));
+        actions.push(action('letter', t('ui.letter'), 'inspect', { type: 'INSPECT', id: 'letter' }, { group: t('ui.edge'), hint: t('ui.letterHint') }));
       }
-      if (s.view === 0) actions.push(action('notch', 'Notice the worn notch', 'inspect', { type: 'INSPECT', id: 'notch' }, { group: 'Beside the lamp' }));
-      for (const [value, label] of [['east', 'East — old breakwater'], ['west', 'West — outer channel']]) {
-        actions.push(action(`bearing-${value}`, label, 'choose', { type: 'SET_BEARING', value }, { group: 'Lamp bearing', selected: s.bearing === value }));
+      if (s.view === 0) actions.push(action('notch', t('ui.notch'), 'inspect', { type: 'INSPECT', id: 'notch' }, { group: t('ui.besideLamp') }));
+      for (const [value, label] of [['east', t('ui.east')], ['west', t('ui.west')]]) {
+        actions.push(action(`bearing-${value}`, label, 'choose', { type: 'SET_BEARING', value }, { group: t('ui.bearing'), selected: s.bearing === value }));
       }
-      for (const [value, label] of [['sls', 'Short · long · short'], ['sss', 'Short · short · short'], ['lsl', 'Long · short · long']]) {
-        actions.push(action(`rhythm-${value}`, label, 'choose', { type: 'SET_RHYTHM', value }, { group: 'Flash pattern', selected: s.rhythm === value }));
+      for (const [value, label] of [['sls', t('ui.sls')], ['sss', t('ui.sss')], ['lsl', t('ui.lsl')]]) {
+        actions.push(action(`rhythm-${value}`, label, 'choose', { type: 'SET_RHYTHM', value }, { group: t('ui.rhythm'), selected: s.rhythm === value }));
       }
-      actions.push(action('signal', 'Send the signal', 'choose', { type: 'SIGNAL' }, { group: 'Call the ferry', hint: 'You can try again; there is no timer.' }));
+      actions.push(action('signal', t('ui.signal'), 'choose', { type: 'SIGNAL' }, { group: t('ui.call'), hint: t('ui.signalHint') }));
     } else if (s.phase === 'rescued') {
-      text = content.rescued; progress = 'The ferry is safely home';
-      actions.push(action('recollect', 'Remember an earlier watch', 'choose', { type: 'BEGIN_RECOLLECTION' }));
+      text = content.rescued; progress = t('ui.progress.rescued');
+      actions.push(action('recollect', t('ui.recollect'), 'choose', { type: 'BEGIN_RECOLLECTION' }));
     } else if (s.phase === 'recollection') {
-      kicker = 'The Worn Notch · an earlier watch';
+      kicker = t('ui.memoryKicker');
       text = content.recollection[s.recollectionStage];
-      progress = { entered: 'A memory · brace the shade', braced: 'A memory · fit the wedge', wedged: 'A memory · the light steadies' }[s.recollectionStage];
-      if (s.recollectionStage === 'entered') actions.push(action('brace', 'Brace the lamp shade', 'choose', { type: 'BRACE' }, { hint: 'The catch stays closed. You do not need to hold a button.' }));
-      if (s.recollectionStage === 'braced') actions.push(action('wedge', 'Fit the wedge into the notch', 'place', { type: 'PLACE_WEDGE', destination: 'notch' }, { objectLabel: 'Wooden wedge', destinationLabel: 'Worn notch' }));
-      if (s.recollectionStage === 'wedged') actions.push(action('present', 'Return to the present', 'choose', { type: 'FINISH_RECOLLECTION' }));
+      progress = { entered: t('ui.progress.entered'), braced: t('ui.progress.braced'), wedged: t('ui.progress.wedged') }[s.recollectionStage];
+      if (s.recollectionStage === 'entered') actions.push(action('brace', t('ui.brace'), 'choose', { type: 'BRACE' }, { hint: t('ui.braceHint') }));
+      if (s.recollectionStage === 'braced') actions.push(action('wedge', t('ui.wedge'), 'place', { type: 'PLACE_WEDGE', destination: 'notch' }, { objectLabel: t('ui.wedgeObject'), destinationLabel: t('ui.wedgeDestination') }));
+      if (s.recollectionStage === 'wedged') actions.push(action('present', t('ui.present'), 'choose', { type: 'FINISH_RECOLLECTION' }));
     } else if (s.phase === 'choice') {
       text = `${content.recollection.finished} ${content.choice}`;
-      progress = 'Choose what may be shared';
-      actions.push(action('read-offered-letter', 'Read the letter, with permission', 'inspect', { type: 'INSPECT', id: 'letter' }));
-      actions.push(action('private', 'Keep the letter between us', 'choose', { type: 'REMEMBER', value: 'private' }));
-      actions.push(action('archive', 'Approve the public dedication', 'choose', { type: 'REMEMBER', value: 'archive' }, { hint: content.dedication }));
+      progress = t('ui.progress.choice');
+      actions.push(action('read-offered-letter', t('ui.readPermission'), 'inspect', { type: 'INSPECT', id: 'letter' }));
+      actions.push(action('private', t('ui.private'), 'choose', { type: 'REMEMBER', value: 'private' }));
+      actions.push(action('archive', t('ui.archive'), 'choose', { type: 'REMEMBER', value: 'archive' }, { hint: content.dedication }));
     } else if (s.phase === 'end') {
       kicker = content.endings[s.choice].title;
       text = `${content.endings[s.choice].text}${s.peeked ? ` ${content.intrusion}` : ''}`;
-      progress = 'A promise made';
-      actions.push(action('return', 'Visit the frame again', 'choose', { type: 'RETURN' }, { hint: 'Your choice has made a place for something.' }));
+      progress = t('ui.progress.end');
+      actions.push(action('return', t('ui.return'), 'choose', { type: 'RETURN' }, { hint: t('ui.returnHint') }));
     } else if (s.phase === 'return') {
-      kicker = 'Another evening';
+      kicker = t('ui.returnKicker');
       const object = expectedPlacement(s);
       text = s.placement ? `${content.placed[s.placement]} ${content.closing}` :
         s.profile === 'neutral' ? content.returns.neutral :
           `${s.letterPublished ? content.returns.legacyArchive : content.returns[s.choice]}${s.peeked ? ` ${content.intrusion}` : ''}`;
-      progress = s.placement ? 'The frame remembers its arrangement' : 'One small thing to put in place';
+      progress = s.placement ? t('ui.progress.placed') : t('ui.progress.place');
       if (!s.placement) actions.push(action('place-memory', {
-        letter: 'Shelter the folded letter', dedication: 'Pin the dedication', cloth: 'Hang the cleaning cloth',
+        letter: t('ui.place.letter'), dedication: t('ui.place.dedication'), cloth: t('ui.place.cloth'),
       }[object], 'place', { type: 'PLACE_MEMORY', object, destination: { letter: 'recess', dedication: 'harbour-edge', cloth: 'peg' }[object] }, {
-        objectLabel: { letter: 'Folded letter', dedication: 'Approved dedication', cloth: 'Cleaning cloth' }[object],
-        destinationLabel: { letter: 'Sheltered recess', dedication: 'Harbour-facing edge', cloth: 'Drying peg' }[object],
+        objectLabel: { letter: t('ui.object.letter'), dedication: t('ui.object.dedication'), cloth: t('ui.object.cloth') }[object],
+        destinationLabel: { letter: t('ui.destination.letter'), dedication: t('ui.destination.dedication'), cloth: t('ui.destination.cloth') }[object],
       }));
-      if (s.recollectionStage === 'unseen') actions.push(action('optional-recollection', 'Ask about the worn notch', 'choose', { type: 'BEGIN_RECOLLECTION' }, { hint: 'An optional memory. The ferry does not need rescuing again.' }));
+      if (s.recollectionStage === 'unseen') actions.push(action('optional-recollection', t('ui.optionalRecollection'), 'choose', { type: 'BEGIN_RECOLLECTION' }, { hint: t('ui.optionalHint') }));
     }
     const hasLight = ['rescued', 'choice', 'end', 'return'].includes(s.phase) || ['wedged', 'complete'].includes(s.recollectionStage);
     const inspection = s.inspection ? { title: content.marks[s.inspection].title, text: content.marks[s.inspection].text } : undefined;
@@ -178,7 +182,7 @@ export function createIonaPack({ id = 'iona', cast = defaultCast } = {}) {
         memory: s.phase === 'recollection', letterPublished: s.letterPublished,
       },
       ...(inspection ? { inspection } : {}),
-      ...(s.choice && s.profile !== 'neutral' ? { choiceSummary: s.letterPublished ? 'On the earlier version, you approved publishing the original letter.' : content.endings[s.choice].summary } : {}),
+      ...(s.choice && s.profile !== 'neutral' ? { choiceSummary: s.letterPublished ? t('ui.legacySummary') : content.endings[s.choice].summary } : {}),
       complete: s.phase === 'return' && Boolean(s.placement),
     };
   }

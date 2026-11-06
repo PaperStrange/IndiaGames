@@ -1,7 +1,9 @@
 import { access, realpath, stat } from 'node:fs/promises';
 import { dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { catalog } from '../src/stories/catalog.js';
+import { getCatalog } from '../src/stories/catalog.js';
+import { LOCALES, validateCatalogs } from '../src/i18n/core.js';
+import { uiCatalogs } from '../src/i18n/ui.js';
 import { loadStory, validateViewModel, assertSerializable } from '../src/runtime/validate.js';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -10,10 +12,13 @@ const seen = new Set();
 let views = 0;
 let assets = 0;
 
+validateCatalogs(uiCatalogs);
+for (const locale of LOCALES) {
+const catalog = getCatalog(locale);
 if (!Array.isArray(catalog) || catalog.length === 0) throw new Error('The catalog needs at least one story');
 for (const entry of catalog) {
-  if (seen.has(entry.id)) throw new Error(`Duplicate catalog story ${entry.id}`);
-  seen.add(entry.id);
+  if (seen.has(`${locale}:${entry.id}`)) throw new Error(`Duplicate catalog story ${entry.id}`);
+  seen.add(`${locale}:${entry.id}`);
   const pack = await loadStory(entry);
   for (const key of ['title', 'subtitle', 'description', 'duration']) {
     if (entry[key] !== pack.manifest[key]) throw new Error(`Catalog ${entry.id}.${key} differs from its story manifest`);
@@ -49,5 +54,6 @@ for (const entry of catalog) {
     validateViewModel(pack.getViewModel(pack.migrate({ version: pack.manifest.saveVersion, state: saved })), pack.manifest);
     views += 1;
   }
+}
 }
 console.log(`Validated ${seen.size} story packs, ${views} representative views and ${assets} local asset references.`);

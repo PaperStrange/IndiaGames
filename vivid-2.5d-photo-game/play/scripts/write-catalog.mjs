@@ -19,3 +19,11 @@ await writeFile(
     2,
   ) + "\n",
 );
+
+await writeFile('dist/locale-catalog.json', JSON.stringify({
+  schema_version: 1,
+  game: 'keepers-frame',
+  default_locale: 'en',
+  locales: ['en', 'ja', 'zh-Hans'],
+  units: catalog.map(entry => ({ id: entry.id, locales: ['en', 'ja', 'zh-Hans'] })),
+}, null, 2) + '\n');

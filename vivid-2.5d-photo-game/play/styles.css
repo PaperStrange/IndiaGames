@@ -1076,3 +1076,35 @@ details li {
   clip-path: polygon(0 100%, 100% 0, 100% 100%);
   z-index: 4;
 }
+
+/* Locale controls stay at a safe collection boundary; no active gesture is
+   interrupted. Local system fonts keep the build self-contained. */
+.language-picker { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; }
+.language-picker label { font-size: 14px; }
+.language-picker select { min-height: 44px; max-width: 100%; padding: 8px 32px 8px 12px; font: inherit; color: inherit; background: #f8f3e7; border: 1px solid #a8ad9d; border-radius: 6px; }
+.language-picker p { flex-basis: 100%; max-width: 62ch; margin: 0; font-size: 13px; line-height: 1.65; }
+:lang(ja) { font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans CJK JP", sans-serif; }
+:lang(zh-Hans) { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }
+html:not([lang="en"]) .collection-intro h1,
+html:not([lang="en"]) .card-body h2,
+html:not([lang="en"]) .story-panel h1,
+html:not([lang="en"]) .story-copy,
+html:not([lang="en"]) .inspection { font-family: inherit; letter-spacing: normal; line-height: 1.6; }
+html:not([lang="en"]) .collection-intro h1 { max-width: 15em; font-size: clamp(32px, 5vw, 64px); line-height: 1.35; }
+html:not([lang="en"]) .action-button,
+html:not([lang="en"]) .action-group-label { letter-spacing: normal; }
+.card-body, .story-panel, .action-group, .world-column { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 650px) {
+  .collection-footer, .site-footer, .story-topline { flex-wrap: wrap; gap: 10px; }
+  .world-under { flex-wrap: wrap; gap: 8px; }
+  .world-under p { max-width: 100%; }
+  .world-under > span { white-space: normal; }
+}
+
+html:not([lang="en"]) #narration,
+html:not([lang="en"]) .inspection p,
+html:not([lang="en"]) details ol { font-family: inherit; line-height: 1.8; }
+@media (max-width: 650px) {
+  .visit-footer { flex-wrap: wrap; gap: 12px; }
+  .visit-footer button { white-space: normal; }
+}

@@ -1,19 +1,23 @@
-import { defaultCast, makeContent } from './content.js';
+import { defaultCast, makeContent, localizeCast } from './content.js';
+import { catalogs } from './catalogs.js';
+import { createTranslator } from '../../i18n/core.js';
 
 const OBJECTS = ['timetable', 'postcard', 'sketches'];
 const INTERPRETATIONS = ['repair', 'meet', 'unfinished'];
 const action = (id, label, kind, event, extra = {}) => ({ id, label, kind, event, ...extra });
 
-export function createMaraPack({ id = 'mara', cast = defaultCast } = {}) {
-  const content = makeContent(cast);
+export function createMaraPack({ id = 'mara', cast = defaultCast, locale = 'en' } = {}) {
+  const t = createTranslator(catalogs, locale);
+  cast = localizeCast(cast, locale);
+  const content = makeContent(cast, locale);
   const manifest = {
     id, revision: 1, saveVersion: 1, title: content.title, subtitle: content.subtitle,
-    description: content.description, duration: 'About 2–4 minutes · one sitting', cast,
+    description: content.description, duration: t('duration'), cast,
     assets: [
-      { id: 'workbench', src: 'art/workbench.glb', alt: 'A station workbench holding a lightbox and three paper objects.' },
-      { id: 'postcard', src: 'art/postcard.svg', alt: 'A painted postcard of the old station waiting room, with space for an invitation.' },
-      { id: 'sketch-underlay', src: 'art/sketch-underlay.svg', alt: 'The waiting-room windows drawn on transparent paper.' },
-      { id: 'sketch-overlay', src: 'art/sketch-overlay.svg', alt: 'Tables and tools drawn on a second sheet; its window lines can align with the first.' },
+      { id: 'workbench', src: 'art/workbench.glb', alt: t('assets.workbench') },
+      { id: 'postcard', src: 'art/postcard.svg', alt: t('assets.postcard') },
+      { id: 'sketch-underlay', src: 'art/sketch-underlay.svg', alt: t('assets.sketch-underlay') },
+      { id: 'sketch-overlay', src: 'art/sketch-overlay.svg', alt: t('assets.sketch-overlay') },
     ],
     capabilities: ['inspect', 'choose', 'adjust'], releaseProfile: 'mara-object-v1',
   };
@@ -48,29 +52,29 @@ export function createMaraPack({ id = 'mara', cast = defaultCast } = {}) {
   }
   function getViewModel(s) {
     let text = content.welcome;
-    let progress = 'An empty station, an unfinished picture';
+    let progress = t('ui.progress.intro');
     const actions = [];
-    if (s.phase === 'intro') actions.push(action('start', 'Look at the workbench', 'choose', { type: 'START' }));
+    if (s.phase === 'intro') actions.push(action('start', t('ui.start'), 'choose', { type: 'START' }));
     if (s.phase === 'investigate') {
       text = s.feedback || (s.inspected.includes('sketches') ? s.alignment === 3 ? content.aligned : content.adjustment : content.investigate);
-      progress = `${s.inspected.length}/3 objects examined · registration notch ${s.alignment}`;
-      for (const id of OBJECTS) actions.push(action(id, content.objects[id].title, 'inspect', { type: 'INSPECT', id }, { group: 'On the workbench', hint: s.inspected.includes(id) ? 'You have examined this. Look again whenever you like.' : 'Examine this object.' }));
-      if (s.inspected.includes('sketches')) actions.push(action('align', 'Align the architectural sketches', 'adjust', { type: 'ALIGN' }, {
-        value: s.alignment, min: 0, max: 6, step: 1, group: 'On the lightbox',
-        hint: 'Registration notch 3 aligns the window edges. Use the slider or step buttons; dragging is optional.',
+      progress = t('ui.progress.objects', { count: s.inspected.length, alignment: s.alignment });
+      for (const id of OBJECTS) actions.push(action(id, content.objects[id].title, 'inspect', { type: 'INSPECT', id }, { group: t('ui.workbench'), hint: s.inspected.includes(id) ? t('ui.examined') : t('ui.examine') }));
+      if (s.inspected.includes('sketches')) actions.push(action('align', t('ui.align'), 'adjust', { type: 'ALIGN' }, {
+        value: s.alignment, min: 0, max: 6, step: 1, group: t('ui.lightbox'),
+        hint: t('ui.alignHint'),
       }));
-      actions.push(action('reveal', 'Read the completed picture', 'choose', { type: 'REVEAL' }, {
-        group: 'On the lightbox', disabled: s.inspected.length !== 3 || s.alignment !== 3,
-        hint: 'Examine all three objects and align the sketches at notch 3.',
+      actions.push(action('reveal', t('ui.reveal'), 'choose', { type: 'REVEAL' }, {
+        group: t('ui.lightbox'), disabled: s.inspected.length !== 3 || s.alignment !== 3,
+        hint: t('ui.revealHint'),
       }));
     }
     if (s.phase === 'reveal') {
-      text = content.reveal; progress = 'The picture comes together';
-      for (const option of content.interpretations) actions.push(action(option.id, option.label, 'choose', { type: 'INTERPRET', value: option.id }, { group: 'What stays with you?', hint: 'An interpretation, not a right-or-wrong answer.' }));
+      text = content.reveal; progress = t('ui.progress.reveal');
+      for (const option of content.interpretations) actions.push(action(option.id, option.label, 'choose', { type: 'INTERPRET', value: option.id }, { group: t('ui.interpretation'), hint: t('ui.interpretationHint') }));
     }
     if (s.phase === 'end') {
       text = `${content.interpretations.find(option => option.id === s.interpretation).ending} ${content.closing}`;
-      progress = 'An invitation completed';
+      progress = t('ui.progress.end');
     }
     return {
       title: content.title, kicker: content.subtitle, speaker: '', text, phase: s.phase, progress, actions,

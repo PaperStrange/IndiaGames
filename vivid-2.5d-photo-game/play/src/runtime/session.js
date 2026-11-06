@@ -1,3 +1,4 @@
+import { createUiTranslator } from '../i18n/ui.js';
 import { assertSerializable, validatePack, validateViewModel } from './validate.js';
 
 export const SAVE_SCHEMA_VERSION = 1;
@@ -45,14 +46,14 @@ function validateEnvelope(envelope, pack, profile) {
  * deliberately explicit; it keeps the current in-memory progress. Reset starts
  * the active story/profile again. Neither operation touches another story.
  */
-export function createSession({ pack, profile = 'remembered', storage = browserStorage() } = {}) {
+export function createSession({ pack, profile = 'remembered', storage = browserStorage(), translate = createUiTranslator('en'), resumeState } = {}) {
   validatePack(pack);
   if (!PROFILES.includes(profile)) throw new TypeError('Unknown study profile');
   const key = saveKey(pack.manifest.id, profile);
   const legacyImport = pack.legacyImport;
   const usesLegacy = legacyImport?.profiles.includes(profile) === true;
   let state = pack.createState({ profile });
-  let status = Object.freeze({ kind: 'ok', message: 'Progress is kept on this device.' });
+  let status = Object.freeze({ kind: 'ok', message: translate('storageOk') });
   let protectedRecord = false;
   let disposed = false;
   const subscribers = new Set();
@@ -71,7 +72,7 @@ export function createSession({ pack, profile = 'remembered', storage = browserS
   }
 
   function unavailable() {
-    setStatus('unavailable', 'Device storage is unavailable. You can keep playing, but this visit may not be saved.');
+    setStatus('unavailable', translate('storageUnavailable'));
   }
 
   if (!storage || typeof storage.getItem !== 'function' || typeof storage.setItem !== 'function'
@@ -107,10 +108,16 @@ export function createSession({ pack, profile = 'remembered', storage = browserS
         state = checkState(restored);
       } catch (error) {
         protectedRecord = true;
-        if (error.code === 'FUTURE_SAVE') setStatus('future', error.message);
-        else setStatus('corrupt', 'This saved record could not be read. It is preserved while you play a temporary visit. Choose recovery only if you want to replace it.');
+        if (error.code === 'FUTURE_SAVE') setStatus('future', translate('storageFuture'));
+        else setStatus('corrupt', translate('storageCorrupt'));
       }
     }
+  }
+
+  // Collection-only language changes may restore the same tab's temporary
+  // semantic checkpoint. Reading a snapshot never writes or unprotects storage.
+  if (resumeState !== undefined) {
+    state = checkState(pack.migrate({ version: pack.manifest.saveVersion, state: clone(resumeState) }));
   }
 
   function envelope() {
@@ -130,7 +137,7 @@ export function createSession({ pack, profile = 'remembered', storage = browserS
     const record = JSON.stringify(envelope());
     try {
       storage.setItem(key, record);
-      setStatus('ok', 'Progress is kept on this device.');
+      setStatus('ok', translate('storageOk'));
       return true;
     } catch {
       unavailable();

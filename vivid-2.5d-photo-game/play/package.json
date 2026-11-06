@@ -1,6 +1,6 @@
 {
   "name": "keepers-frame",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -13,7 +13,8 @@
     "validate": "node scripts/validate-stories.mjs",
     "build": "npm run validate && vite build && node scripts/write-catalog.mjs && node scripts/check-build-version.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 8112",
-    "test:browser": "node test/iteration-browser.mjs"
+    "test:browser": "node test/iteration-browser.mjs",
+    "test:browser:locales": "node test/locale-browser.mjs"
   },
   "dependencies": {
     "three": "0.186.1"

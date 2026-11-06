@@ -1,44 +1,46 @@
+import { createTranslator } from '../../i18n/core.js';
+import { catalogs } from './catalogs.js';
+
 export const defaultCast = {
   painter: {
     name: 'Mara', pronouns: 'she/her', subject: 'she', object: 'her', possessive: 'her',
-    description: 'The station sign painter, present through paint marks, notes, and work left carefully unfinished.',
+    description: catalogs.en['cast.description'],
+    descriptions: Object.fromEntries(Object.entries(catalogs).map(([locale, values]) => [locale, values['cast.description']])),
+    subjects: Object.fromEntries(Object.entries(catalogs).map(([locale, values]) => [locale, values['cast.subject']])),
   },
 };
 
-export function makeContent(cast) {
-  const m = cast.painter;
-  return {
-    title: 'The Unfinished Postcard', subtitle: 'A mystery told by objects',
-    sceneLabels: { description: 'A station workbench and lightbox' },
-    description: 'A closed station. Three things left on a workbench. Find the picture its sign painter was still making.',
-    welcome: `The station closed on a Thursday. On Friday, its sign painter, ${m.name}, was still at the workbench. The room is empty now. What was ${m.subject} making?`,
-    investigate: 'The workbench is just as it was left: a timetable, a paint-marked postcard, and two thin sheets of drawings. You can begin with any of them.',
-    objects: {
-      timetable: {
-        title: 'The cancelled timetable',
-        text: 'LAST SERVICE · THURSDAY, 18:40. Across the bottom, in fresh blue paint: “Key kept at the bakery. A room does not stop being a room when the trains stop.”',
-        short: 'The last train left. Someone kept a key.',
-      },
-      postcard: {
-        title: 'A postcard with paint on its edge',
-        text: `The picture shows the old waiting room. On the back, ${m.name} has written: “Bring the thing you do not know how to mend. Saturdays, if enough of us come.” The address line is empty.`,
-        short: 'An invitation to bring something broken.',
-      },
-      sketches: {
-        title: 'Two architectural sketches',
-        text: 'One sheet traces the waiting-room windows. The other adds broad tables and a rack of tools. Three little registration notches are drawn beside the layers. At the third notch, the window edges should meet.',
-        short: 'The old room and a new arrangement, drawn on separate sheets.',
-      },
-    },
-    adjustment: 'The layers move across the lightbox. Look for the window edges meeting at registration notch 3. There is no time limit; each step can be undone.',
-    aligned: 'The window edges meet. The benches have become worktables; the ticket shelf holds tools. The same room, ready to be used differently.',
-    notYet: 'The picture is not quite together. Inspect all three objects, then line up the window edges at notch 3.',
-    reveal: `The postcard was an invitation, not a farewell. ${m.name} was drawing a community workshop inside the old waiting room. The trains had stopped; the room could still bring people together. There is space at the nearest table.`,
-    interpretations: [
-      { id: 'repair', label: 'A place to repair things', ending: 'Perhaps someone will bring a chair with one loose leg. Perhaps they will stay for tea. A place can begin again with a small repair.' },
-      { id: 'meet', label: 'A reason to meet again', ending: 'The old timetable once gave people a reason to arrive together. The new invitation might do that, too. No ticket required.' },
-      { id: 'unfinished', label: 'An invitation still taking shape', ending: 'Not every edge is inked. There is room to add a table, change a plan, bring an idea. Unfinished can mean there is a place for you.' },
-    ],
-    closing: 'You leave the layers aligned on the lightbox. The empty address line on the postcard could be for anyone in the town.',
+export function localizeCast(cast, locale) {
+  const painter = cast.painter;
+  const description = locale === 'en' ? painter.description ?? painter.descriptions?.en : painter.descriptions?.[locale];
+  if (typeof description !== 'string' || !description.trim()) {
+    throw new Error(`The painter cast needs an authored description for ${locale}.`);
+  }
+  return { ...cast, painter: { ...painter, description } };
+}
+
+export function makeContent(cast, locale = 'en') {
+  const t = createTranslator(catalogs, locale);
+  const values = {
+    name: cast.painter.name,
+    // Preserve English recasting grammar. CJK uses an authored, gender-neutral
+    // noun phrase unless the author supplies a locale-specific form.
+    subject: locale === 'en' ? cast.painter.subject : cast.painter.subjects?.[locale] || t('cast.subject'),
   };
+  // Complete question variants preserve English agreement for singular they,
+  // we/you and explicitly authored casts; CJK keeps its own full sentence.
+  const agreement = cast.painter.subjectAgreement || (['they', 'we', 'you'].includes(String(values.subject).toLowerCase()) ? 'plural' : 'singular');
+  if (!['singular', 'plural'].includes(agreement)) throw new Error('Unknown cast subject agreement');
+  values.question = t(`ui.welcomeQuestion.${agreement}`, { subject: values.subject });
+  const content = {};
+  for (const key of Object.keys(catalogs.en)) {
+    if (key === 'duration' || /^(ui|cast|assets)\./.test(key)) continue;
+    const path = key.split('.');
+    let node = content;
+    for (const part of path.slice(0, -1)) node = node[part] ||= {};
+    const params = Object.fromEntries([...catalogs.en[key].matchAll(/\{(\w+)\}/g)].map(([, name]) => [name, values[name]]));
+    node[path.at(-1)] = t(key, params);
+  }
+  content.interpretations = ['repair', 'meet', 'unfinished'].map(id => ({ id, ...content.interpretations[id] }));
+  return content;
 }

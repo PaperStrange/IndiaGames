@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "game": "keepers-frame",
+  "development_version": "0.2.0",
+  "base_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
+  "source_status": "Reviewed implementation; the containing Git commit identifies the source. Authored source file hashes below match the final tested snapshot.",
+  "translation_status": "agent-authored Japanese and Simplified Chinese drafts; fluent review pending",
+  "build_inventory_sha256": "1c440d1a1bcbb0b8470949aeb8a2f590e9ab2278eac1ed384198acfbaeb9ca63",
+  "build_file_count": 16,
+  "build_bytes": 1450016,
+  "unit_tests": {
+    "passed": 69,
+    "failed": 0
+  },
+  "version_guard_fixtures": {
+    "passed": 7,
+    "failed": 0
+  },
+  "story_validation": {
+    "localized_packs": 6,
+    "representative_views": 75,
+    "local_asset_references": 18
+  },
+  "browser": {
+    "engines": [
+      {
+        "name": "chromium",
+        "version": "141.0.7390.37"
+      },
+      {
+        "name": "firefox",
+        "version": "142.0.1"
+      },
+      {
+        "name": "webkit",
+        "version": "26.0"
+      }
+    ],
+    "cases": [
+      {
+        "id": "chromium-en-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-en-phone",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-en-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-ja-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-ja-phone",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-ja-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-zh-Hans-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-zh-Hans-phone",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-zh-Hans-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-en-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-ja-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-zh-Hans-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "chromium-switch-storage-recovery",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-en-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-en-phone",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-en-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-ja-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-ja-phone",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-ja-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-zh-Hans-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-zh-Hans-phone",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-zh-Hans-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-en-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-ja-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-zh-Hans-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "firefox-switch-storage-recovery",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-en-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-en-phone",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-en-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-ja-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-ja-phone",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-ja-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-zh-Hans-desktop",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-zh-Hans-phone",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-zh-Hans-tablet",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-en-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-ja-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-zh-Hans-neutral-and-fallback",
+        "status": "passed"
+      },
+      {
+        "id": "webkit-switch-storage-recovery",
+        "status": "passed"
+      }
+    ],
+    "active_control_measurements": 522,
+    "scope": "Automated browser-engine checks with emulated viewports/input. No fluent-language approval, physical-device result or human study evidence.",
+    "target_check": "Nonempty required controls at braced placement, permission choice, return placement, Mara alignment including range, and interpretations; width and height at least44px; no horizontal document overflow.",
+    "app_edge_regression_cases": 10,
+    "app_edge_regression_result": "passed",
+    "earlier_english_regression_observations": 16,
+    "earlier_english_regression_scope": "Passed before reviewed recast-grammar change on inventory98cc62e45de7bf01289bed1aa53583be5cc0c443c6bd22c87c195ebcc1f231a8; retained as historical. Final39-case matrix and10edge cases bind rebuilt inventory."
+  },
+  "retained_attempts": [
+    {
+      "attempt": "chromium locale run1",
+      "result": "5 harness races: assertions ran before async story import made experience visible; corrected harness waits for experience, same runtime bytes."
+    },
+    {
+      "attempt": "chromium locale run2",
+      "result": "All13 cases passed."
+    },
+    {
+      "attempt": "independent code review",
+      "result": "Resolved inherited English recast grammar (What was they making?) with complete singular/plural question variants and exact assertions; all69 unit tests passed again."
+    },
+    {
+      "attempt": "first39-case engine matrix",
+      "result": "All passed, but target-size measurements at finished endpoints were empty; superseded target evidence only with active-state assertions."
+    },
+    {
+      "attempt": "strengthened39-case engine matrix",
+      "result": "All passed with522 required active-control measurements and skip-link bounds checks on final build."
+    }
+  ],
+  "cross_engine_status": {
+    "Chromium": "passed in supported Playwright container",
+    "Firefox": "passed in supported Playwright container",
+    "WebKit": "passed in supported Playwright container"
+  },
+  "human_qualification": "Not performed by this engineering task; supplied human feedback remains separate from exact-build release qualification.",
+  "staging": "No master candidate or main release mutation",
+  "environment_note": "Initial outer-host Firefox/WebKit could not launch due sandbox/system-library constraints. Root provided the pinned supported Playwright1.56.1 container; this is desktop engine automation, not real Safari/iOS/Android hardware.",
+  "repeatability": "Final repeat build and reviewed development export match all16 file hashes; inventory recorded above.",
+  "catalog_keys": {
+    "ui": 58,
+    "iona": 107,
+    "mara": 50,
+    "locales": [
+      "en",
+      "ja",
+      "zh-Hans"
+    ]
+  },
+  "source_files_sha256": {
+    "vivid-2.5d-photo-game/play/index.html": "0ef1346e6c2296dd2aa9487c678b5669df25c9a95e8bfd3f2d7f8df471b24dde",
+    "vivid-2.5d-photo-game/play/package-lock.json": "785a98df21ece5632582afae692774d6c0953e66c350adf101a8fe643690836d",
+    "vivid-2.5d-photo-game/play/package.json": "79569d4f1e78d17a392218a3d0143529dbe280c94fc20443635ab12563d0c7e6",
+    "vivid-2.5d-photo-game/play/scripts/validate-stories.mjs": "6427da76bdec20bca7a617a3ca4b54a80f2b3aad002ab441771d1357fc684e85",
+    "vivid-2.5d-photo-game/play/scripts/write-catalog.mjs": "6ea95a4389cd8b42055b6014db1d09575fb35def21d0e5928e40c984ad152ffb",
+    "vivid-2.5d-photo-game/play/src/app.js": "02d8fffb630aa7e2026c8267f33aadbf9b45cfe3b419be6871c99d4bd2d0b4ce",
+    "vivid-2.5d-photo-game/play/src/runtime/session.js": "321bb5df37b48af0ec4607589aae4218b94902f1b8e085a23d8ffc2b38476e2f",
+    "vivid-2.5d-photo-game/play/src/stories/catalog.js": "40f216b56e3bfdae0d07bdad5e842aabaccda7619a1c7768ee1993ca717b5cd6",
+    "vivid-2.5d-photo-game/play/src/stories/iona/content.js": "6b9a108eb139f6bd5212b46d5caa70fa1f9fd41f326a625268ea273057d30f5a",
+    "vivid-2.5d-photo-game/play/src/stories/iona/index.js": "bc527e2bc91d0ab100b8063b271461f32d21aa94fd5dbe0740be7f60a23bfdb4",
+    "vivid-2.5d-photo-game/play/src/stories/mara/content.js": "60fe523fd908b88861d4cee1f9cc92f0af5875f3cb7481ba08dd855de22935c3",
+    "vivid-2.5d-photo-game/play/src/stories/mara/index.js": "21165e8198e27e92170d14df76b29300ca53c4582d24e161676410fd1523a536",
+    "vivid-2.5d-photo-game/play/styles.css": "9a87609befb705c52aa9656d276e95de1ee2fd5dac6086e9f574b8ffccce6d50",
+    "docs/gamejam/localization-2026-11-06/README.md": "067b4c7230ffdb071b20f190e85354ec3fab23060bb8170c931f8b77eb717987",
+    "docs/gamejam/localization-2026-11-06/verification.json": "34b92793675f5baf3e84581b08bb57ca24c9aead2fa4bd0973fdde6596ec847e",
+    "vivid-2.5d-photo-game/play/src/i18n/core.js": "2dbc5ef78bd1d99269713155a4b0efbee2c6a596cfa60c3f1e8b96e10ff7ad67",
+    "vivid-2.5d-photo-game/play/src/i18n/ui.js": "2fa35ea47287971d8536a13317194982421f6ec1eb1e9d952f381c8cd2029abb",
+    "vivid-2.5d-photo-game/play/src/stories/iona/catalogs.js": "87200e854d575ff2bbbbfeb2a284dc4f13291ed8d1e706af9be2630e21669780",
+    "vivid-2.5d-photo-game/play/src/stories/mara/catalogs.js": "f8e0de6185f4a26a83c592f0c6c2b3936a160b421cfdad080a5fbf57ab9dd590",
+    "vivid-2.5d-photo-game/play/test/i18n.test.js": "d871739321fadb0847910675ce0d2376a73c36b36174d0d230026edbf324d505",
+    "vivid-2.5d-photo-game/play/test/locale-browser.mjs": "0ace8150fafc152a2a232fd9b440cbfe1a991e18abf8137bacfe85fa799fad00",
+    "vivid-2.5d-photo-game/play/test/story-locales.test.js": "d3207b8e01dbdacc81208d843089225de4e71aaf20ae914ec8a8299c4365846e"
+  },
+  "build_files_sha256": {
+    "art/frame.glb": "f58216181104f2ebb9babd7d6fb536db66b3af178fc472beabdbbfb90bec244a",
+    "art/keeper-portrait.svg": "ce2e5ad30f0c2327d4874cb6d3f51f7d6ea2d94754237b0a5eaa5f4b39a9535f",
+    "art/model-metrics.json": "596f3b694e0782b28602789675e5b034eba841b887e4422aac8a02192f91d63a",
+    "art/postcard.svg": "fc8e7b8152cf01b09506bdc852a7d0ded509d64ac5c355a91e07e66848afefb3",
+    "art/sketch-overlay.svg": "2d1e247b3424e2d35ad6ef7493bdfd9711d5505e881267b4f4238c6985f901a9",
+    "art/sketch-underlay.svg": "9b489cddd713563f5a6a4f17856d6b8fb7cc996d84c32786718bc7d607d40b25",
+    "art/workbench.glb": "0da0115735a527aa6afb2276dceb58754a5fdd5118206ee94c4ae830cbc24446",
+    "assets/index-CIMPlTNI.js": "5dc77ebca1ebe275597b4f318e420203ff393f733b1f978fa58d491446b03c8b",
+    "assets/index-DT_oXPPR.css": "9776e027b9d98288a16aec141d2d48ed6b5087529660c6a7001f471ec2e301c3",
+    "assets/iona-EYrKmOJA.js": "6bab4862808c68cc408123da8a0c926719197d96d362976cf0a1737f8777ec8a",
+    "assets/mara-pG_QhjiV.js": "4b581103d73c91aaa2a543df1666a51e6b4679eabb016a8527fb0648af5d0ae1",
+    "assets/world-BIfCt15a.js": "b6841fa12456a7ac9910e56100638b63ef8f399398b912852ee4c88f4d3f6719",
+    "index.html": "2016f5e8ae16f1b4b8c23734ded81a99d447b7411a597c1f2206a04525d6f194",
+    "locale-catalog.json": "8db1450962f1041c21963f9ec3aad4e31c0bff8e0458423a1da542b197b5a34a",
+    "story-catalog.json": "1b17343c35df541f9c1ef52579412667d0376b51e180cd409ef449115037d6fc",
+    "third-party-notices.txt": "b9229f490630a80cb4968dea0483aea95706b1e8dd5645ece366a7cea3c4f560"
+  }
+}
