@@ -13,7 +13,7 @@
 
 [Portable results and 11 input hashes](dashboard-qa.json) identify the tested bytes. Screenshots below are automated dashboard captures, not physical-device observations. No new game playthrough, native-language review, translation or release approval was performed.
 
-The independent PR review binds the input hashes to the final commit. CI and actual Pages deployment verification are recorded separately in the delivery PR after those checks occur. [PR #13 verification](publication-pr13.json) is historical and does not prove this deployment.
+The independent PR review binds the input hashes to the final commit. CI and actual Pages deployment verification are recorded separately in [PR #14](https://github.com/PaperStrange/IndiaGames/pull/14) after those checks occur. [PR #13 verification](publication-pr13.json) is historical and does not prove this deployment.
 
 ## Desktop preview
 

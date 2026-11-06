@@ -64,6 +64,6 @@ Agents own agreed catalogs, tooling, technical checks and evidence packaging. Pe
 
 ## Publication and evidence boundary
 
-[PR #13](https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493) published and verified the completed engineering dashboard at main `345c33970745297103a099ecdf9dc11f134b0038`. Pages built it at 06:49:31 UTC; actual HTTPS/browser verification ran 06:50:21–06:50:30 UTC with all 11 file hashes matching, all 75 tasks reachable and zero unexpected dashboard errors. [Portable previous result](publication-pr13.json). This proposed-plan update needs its own review and deployment verification; a planning document is not game QA or release approval.
+[PR #13](https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493) published and verified the completed engineering dashboard at main `345c33970745297103a099ecdf9dc11f134b0038`. Pages built it at 06:49:31 UTC; actual HTTPS/browser verification ran 06:50:21–06:50:30 UTC with all 11 file hashes matching, all 75 tasks reachable and zero unexpected dashboard errors. [Portable previous result](publication-pr13.json). [PR #14](https://github.com/PaperStrange/IndiaGames/pull/14) carries this proposed-plan update. Its conversation records independent final-head review, CI and actual Pages verification separately; a planning document is not game QA or release approval.
 
 [Dashboard verification and visual previews](DASHBOARD-QA.md) record the local planning-dashboard checks. The delivery PR records independent review, CI and actual publication verification separately.
