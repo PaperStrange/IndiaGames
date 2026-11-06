@@ -686,12 +686,12 @@
     "lane": "bell",
     "perspective": "Engineering",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Bell systems owner + narrative designer",
     "title": "Separate English labels from Bell rules before translation",
     "deliverable": "Stable action/item/bond identifiers and explicit costs, with a behavior-preserving English reference before adding locale catalogs.",
     "acceptance_criteria": [
-      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
       "Replace English-prefix and label matching in game consequences, risky-choice costs and stored choice references with semantic IDs/metadata. Preserve event, witness/provenance, Momentum/Fracture and midnight rules.",
       "Create focused invariance checks proving the same semantic action has the same cost and consequence under all three labels/locales. Preserve Mina’s explicit IDs and the frozen Contrast/reference artifacts.",
       "Document any migration of stored/rendered history and the intentional in-memory reload/reset behavior. No new save feature, mechanic or altered comparison is implied. Bind the refactor to exact source and newly versioned development artifacts."
@@ -701,22 +701,27 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Proposed multilingual / multi-device preparation",
-    "plan_settled": false,
-    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/committed-export.json",
+      "https://github.com/PaperStrange/IndiaGames/actions/runs/42197649192"
+    ],
+    "focus": "Three-language engineering and weekend handoff",
+    "plan_settled": true,
+    "completion_note": "Bell now separates all 43 action identities/costs and inventory/history identities from translated labels. A single en/ja/zh-Hans development bundle covers Original and Contrast with localized map access and keyboard behavior. 32 Node tests, 30 static checks, 13 inventory/exporter tests and nine Chromium/Firefox/WebKit locale journeys passed. Independent review corrected regenerated English onboarding and confirmed 172 original inventory comparisons plus four focused final-artifact cases. The committed two-file development export matches the tested HTML/catalog; frozen 0.1.0 and reference bytes remain unchanged. Fluent, physical-device and human qualification are pending.",
+    "technical_implementation_authorized": true
   },
   {
     "id": "TB-24",
     "lane": "bell",
     "perspective": "QA",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Bell UI/art integrator + localization editor + QA",
     "title": "Prepare translated clues, map access and device coverage",
     "deliverable": "Three-locale catalogs and accessible map presentation with source-bound engine, layout and interaction verification.",
     "acceptance_criteria": [
-      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
       "After semantic rules are isolated, translate full clue/forecast/cost/receipt/transcript messages. Preserve distinctions between eyewitness and reported knowledge, pre-outcome prediction and learned intervention; do not reveal answers through translation.",
       "Plan a locale-aware map-label/legend solution for baked English artwork, CJK fonts, touch labels and accessible text alternatives. Test long text, modal scrolling, browser chrome, rotation and tablet split view without relying on tiny overlays.",
       "Plan Chromium/Firefox/WebKit and actual-device handoff coverage for entry, keyboard/touch choice, witnessed clue, ordinary/borrowed intervention, Fracture 4, midnight, journal, ending and restart. Record exact source/build/locale identity and preserve candidate 0.1.0/reference bytes."
@@ -726,22 +731,27 @@
     ],
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Proposed multilingual / multi-device preparation",
-    "plan_settled": false,
-    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/committed-export.json",
+      "https://github.com/PaperStrange/IndiaGames/actions/runs/42197649192"
+    ],
+    "focus": "Three-language engineering and weekend handoff",
+    "plan_settled": true,
+    "completion_note": "Bell now separates all 43 action identities/costs and inventory/history identities from translated labels. A single en/ja/zh-Hans development bundle covers Original and Contrast with localized map access and keyboard behavior. 32 Node tests, 30 static checks, 13 inventory/exporter tests and nine Chromium/Firefox/WebKit locale journeys passed. Independent review corrected regenerated English onboarding and confirmed 172 original inventory comparisons plus four focused final-artifact cases. The committed two-file development export matches the tested HTML/catalog; frozen 0.1.0 and reference bytes remain unchanged. Fluent, physical-device and human qualification are pending.",
+    "technical_implementation_authorized": true
   },
   {
     "id": "TB-25",
     "lane": "bell",
     "perspective": "Human playtesting",
     "priority": "P1",
-    "status": "proposed",
+    "status": "blocked_human",
     "owner_role": "Fluent clue reviewers + physical-device QA + facilitator",
     "title": "Qualify localized causal understanding and real-device play",
     "deliverable": "A reviewed locale comparison protocol and actual-device observations preserving the six-person Bell experiment.",
     "acceptance_criteria": [
-      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
       "Preregister locale-specific qualification and actual device cells before sessions; native readers assess clue fairness, causal/cost wording and map readability. Keep reference and candidate language comparable or explicitly settle a revised study design first.",
       "Preserve six players, 3/3 first-build order and at least 120 seconds of neutral activity before recall, plus current joint metrics and all failed/assisted attempts. Do not split six into two per language or coach the prediction/Fracture explanation.",
       "Keep TB-13/17 and independent human release approval separate. Translation/map/font changes create new candidate bytes and require exact-build evidence; actual phone/tablet records must name hardware, OS/browser/input and observed outcomes."
@@ -752,8 +762,9 @@
     "source_plan": "docs/games/thirteenth-bell/TODO.md",
     "human_participants_required": true,
     "completion_evidence": [],
-    "focus": "Proposed multilingual / multi-device preparation",
+    "focus": "Three-language engineering and weekend handoff",
     "plan_settled": false,
-    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    "completion_note": "Weekend handoff is planned by the owner. Accepted reviewers, exact physical configurations and supplemental language protocol remain pending; no observed session or approval is supplied.",
+    "technical_implementation_authorized": true
   }
 ]

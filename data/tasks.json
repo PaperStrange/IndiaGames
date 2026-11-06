@@ -14,51 +14,51 @@
     "memorable": {
       "implementation_started": true,
       "qa_date_utc": "2026-11-06",
-      "qa_status": "automated_technical_pass_with_known_favicon_diagnostics_human_pending",
+      "qa_status": "three_engine_localized_journeys_pass_human_pending",
       "candidate_version": null,
       "candidate_status": "not_staged_pilot_decision_required",
-      "milestone_status_label": "Export/CI engineering verified · human release pending",
+      "milestone_status_label": "Three-language engineering verified · human qualification pending",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/launch-2026-11-20/README.md",
-      "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/README.md",
-      "technical_readiness_label": "Exact development exports verified; study baseline retained",
+      "human_staffing": "Owner is coordinating the November 7–8 handoff. Accepted fluent reviewers, physical-device configurations and session appointments remain pending.",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md",
+      "technical_readiness_label": "12-file language development verified; frozen study baseline retained",
       "official_release": false
     },
     "vivid": {
       "implementation_started": true,
       "qa_date_utc": "2026-11-06",
-      "qa_status": "automated_technical_pass_human_pending",
+      "qa_status": "three_engine_localized_journeys_pass_human_pending",
       "candidate_version": "0.1.4",
       "candidate_status": "staged_awaiting_human_validation",
-      "milestone_status_label": "Export/CI engineering verified · human release pending",
+      "milestone_status_label": "Three-language engineering verified · human qualification pending",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
-      "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md",
-      "technical_readiness_label": "Branch CI passed; 0.1.4 unchanged",
+      "human_staffing": "Owner is coordinating the November 7–8 handoff. Accepted fluent reviewers, physical-device configurations and session appointments remain pending.",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/README.md",
+      "technical_readiness_label": "0.2.0 language development verified; frozen 0.1.4 retained",
       "official_release": false
     },
     "bell": {
       "implementation_started": true,
       "qa_date_utc": "2026-11-06",
-      "qa_status": "automated_technical_pass_human_pending",
+      "qa_status": "three_engine_localized_journeys_pass_human_pending",
       "candidate_version": "0.1.0",
       "candidate_status": "staged_awaiting_human_validation",
-      "milestone_status_label": "Export/CI engineering verified · human release pending",
+      "milestone_status_label": "Three-language engineering verified · human qualification pending",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/launch-2026-11-20/README.md",
-      "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md",
-      "technical_readiness_label": "Branch CI passed; 0.1.0 unchanged",
+      "human_staffing": "Owner is coordinating the November 7–8 handoff. Accepted fluent reviewers, physical-device configurations and session appointments remain pending.",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md",
+      "technical_readiness_label": "0.2.0 language development verified; frozen 0.1.0 retained",
       "official_release": false
     }
   },
   "source_manifest": "source-manifest.json",
   "readiness": {
     "date_utc": "2026-11-06",
-    "status": "engineering_freeze_checks_complete_human_candidate_release_gates_pending",
-    "document": "docs/technical-freeze-2026-11-06/README.md",
+    "status": "multilingual_engineering_complete_human_qualification_pending",
+    "document": "docs/multilingual-engineering-2026-11-06/README.md",
     "issues_document": "docs/iteration-2026-11-06/README.md#issue-dispositions",
     "shared_blockers": [
       {
@@ -109,9 +109,9 @@
       "review_report": "docs/iteration-2026-11-04/PR-REVIEW.md"
     },
     "technical_reports": {
-      "memorable": "https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/VERIFICATION.md",
-      "vivid": "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md",
-      "bell": "https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md"
+      "memorable": "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md",
+      "vivid": "https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/README.md",
+      "bell": "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md"
     },
     "candidate_staging_pr": "https://github.com/PaperStrange/IndiaGames/pull/11",
     "pull_requests": [
@@ -188,7 +188,7 @@
         "live_verification": "https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493"
       }
     ],
-    "delivery_note": "Export and branch-CI work is complete. English, Japanese and Simplified Chinese across desktop, phones and tablets are new planning targets, not verified support. Existing artifacts and human release gates remain unchanged.",
+    "delivery_note": "Three-language development and browser verification are complete. Frozen study/candidate artifacts remain unchanged. Fluent review, physical devices, reviewed supplemental criteria and genuine exact-build release studies are pending.",
     "status_checked_at": "2026-11-06T06:43:18.915273+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",
@@ -197,7 +197,18 @@
       "human_game_release_gate_waived": false,
       "standing_policy_changed": false
     },
-    "planning_document": "docs/release-preparation-2026-11-06/README.md"
+    "planning_document": "docs/multilingual-engineering-2026-11-06/README.md",
+    "locale_device_policy_draft": {
+      "pr": 17,
+      "url": "https://github.com/PaperStrange/IndiaGames/pull/17",
+      "head": "0f570a65266fe1cf5d49a7957671bf40dc33a3b5",
+      "status": "draft_human_review_required",
+      "authored_tests_passed": 53,
+      "independent_cases_passed": 42,
+      "ci_run": 42195537714,
+      "ci_conclusion": "success",
+      "adopted": false
+    }
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -209,7 +220,7 @@
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
     "readiness_document": "docs/technical-freeze-2026-11-06/README.md",
-    "schedule_note": "The export/CI milestone is complete. New three-language desktop/phone/tablet preparation is proposed, with reviewers and exact devices unconfirmed. November11 freeze, November16 go/no-go and November20 conditional launch retain existing human criteria; scope expansion is not a promise to meet those dates.",
+    "schedule_note": "Technical language implementation is authorized and progressing on separate game branches. November 7–8 human handoff, November 11 candidate freeze and November 16 go/no-go remain conditional on reviewed protocols, fluent review, actual devices and genuine sessions.",
     "timeline": [
       [
         "6 November",
@@ -217,9 +228,9 @@
         "Cleanup, exports and branch CI complete"
       ],
       [
-        "Proposed",
-        "Languages and devices",
-        "English, Japanese, Chinese; desktop, phones, tablets"
+        "Nov 6–8",
+        "Language engineering",
+        "Implement three languages; review technical evidence and prepare the weekend human handoff."
       ],
       [
         "Unbooked",
@@ -285,13 +296,13 @@
     },
     {
       "id": "release-preparation-plan",
-      "status": "not_settled",
+      "status": "settled",
       "applies_to": [
         "memorable",
         "vivid",
         "bell"
       ],
-      "requirement": "The current language/device proposal has its own implementation settlement. Confirm its evidence contract, precise support matrix and human study scope before implementation; the earlier plan-settlement record applies only to its dated readiness work. This dashboard field is not a release-policy or validator gate."
+      "requirement": "The owner authorized the technical language/device implementation on November 6. Physical configurations, fluent review, additional comprehension criteria and the separate release-policy extension remain human decisions before qualification or promotion. This dashboard field does not adopt a release policy or waive a human gate."
     }
   ],
   "tasks": [
@@ -911,12 +922,12 @@
       "lane": "memorable",
       "perspective": "Engineering",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Small Hours integrator + localization editor",
       "title": "Define locale-safe messages and private-session behavior",
       "deliverable": "An agreed en/ja/zh-Hans message catalog and formatting contract around stable scene/choice IDs, without changing the frozen study baseline.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "Inventory visible, accessible, privacy, status, date and downloadable-keepsake strings. Use complete messages and named placeholders; preserve optional writing and nonjudgmental reveal wording.",
         "Specify locale selection and any mid-session switch before implementation; do not expose private answers through URLs, saves, analytics or external translation services. Never auto-translate player writing.",
         "Define local CJK font resources, text-length/grapheme policy and explicit export allowlist changes. Preserve the frozen eight-file study artifact and publish exact source/content/inventory evidence for a new development build."
@@ -926,22 +937,26 @@
       ],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
-      "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/committed-export.json"
+      ],
+      "focus": "Three-language engineering and weekend handoff",
+      "plan_settled": true,
+      "completion_note": "Small Hours now has complete en/ja/zh-Hans pair and rehearsal journeys, safe private-session language boundaries, grapheme/IME handling and readable CJK keepsakes. 21 unit/export tests, 1,416 localized assertions across Chromium/Firefox/WebKit and root/nested mounts, 66 English checks and timer verification passed. The committed exporter reproduced the exact 12-file/103,624-byte inventory and repeated 472 localized assertions plus English/timer checks; only known favicon diagnostics remained. Frozen study bytes are unchanged; fluent review, actual devices, real IME and pilot-first staging remain pending.",
+      "technical_implementation_authorized": true
     },
     {
       "id": "SH-25",
       "lane": "memorable",
       "perspective": "QA",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Small Hours QA + integrator",
       "title": "Verify CJK keepsakes and desktop/phone/tablet journeys",
       "deliverable": "A proposed three-locale technical matrix for exact exported bytes, input, keepsake layout and cross-engine behavior.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "After SH-24 is selected and implemented, test Japanese/Chinese IME commit and cancellation, graphemes, full-width punctuation, blank/long/escaped text and actual SVG glyphs/line wrapping. Distinguish offered, attempted and delivered save.",
         "Run affected root/nested and selected embed journeys in Chromium, Firefox and WebKit where available; record actual engine/version and emulation. Cover keyboard, touch alternatives, rotation, tablet split view, virtual-keyboard occlusion and privacy clearing.",
         "Keep meaningful missing-catalog/placeholder/file-list failure cases and immutable export inventories. Record unavailable engines and physical checks as pending; browser automation cannot establish phone/tablet support."
@@ -951,22 +966,26 @@
       ],
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
-      "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/committed-export.json"
+      ],
+      "focus": "Three-language engineering and weekend handoff",
+      "plan_settled": true,
+      "completion_note": "Small Hours now has complete en/ja/zh-Hans pair and rehearsal journeys, safe private-session language boundaries, grapheme/IME handling and readable CJK keepsakes. 21 unit/export tests, 1,416 localized assertions across Chromium/Firefox/WebKit and root/nested mounts, 66 English checks and timer verification passed. The committed exporter reproduced the exact 12-file/103,624-byte inventory and repeated 472 localized assertions plus English/timer checks; only known favicon diagnostics remained. Frozen study bytes are unchanged; fluent review, actual devices, real IME and pilot-first staging remain pending.",
+      "technical_implementation_authorized": true
     },
     {
       "id": "SH-26",
       "lane": "memorable",
       "perspective": "Human playtesting",
       "priority": "P1",
-      "status": "proposed",
+      "status": "blocked_human",
       "owner_role": "Fluent language reviewers + physical-device QA + facilitator",
       "title": "Qualify three-language pair play on declared physical targets",
       "deliverable": "Native-language review and deidentified physical-device journey records under a reviewed protocol, separate from existing baseline release cohorts.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "Preregister the agreed per-locale qualification sample and actual device/browser cells before observing results; accepted fluent reviewers, observers and devices must be named. Do not split six pairs into two per language or invent a 30-times-devices quota.",
         "Observe privacy handoff, both contributions, comfortable Japanese/Chinese input, actual saved keepsake and exit/reset on declared devices. Record original words, assistance, failures and stopping; do not infer a pass from an empty form.",
         "Preserve SH-05/10/17/18 and the six-pair 5/6 reveal, 4/6 both-contribute, 3/6 voluntary save/replay criteria. Changed build bytes require a new identity and exact-build evidence; independent human approval remains separate."
@@ -977,9 +996,10 @@
       "source_plan": "docs/games/small-hours/TODO.md",
       "human_participants_required": true,
       "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
+      "focus": "Three-language engineering and weekend handoff",
       "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_note": "Weekend handoff is planned by the owner. Accepted reviewers, exact physical configurations and supplemental language protocol remain pending; no observed session or approval is supplied.",
+      "technical_implementation_authorized": true
     },
     {
       "id": "KF-01",
@@ -1853,12 +1873,12 @@
       "lane": "vivid",
       "perspective": "Engineering",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Vivid engine owner + story authors + localization editor",
       "title": "Localize both story packs without forking semantic identities",
       "deliverable": "An agreed en/ja/zh-Hans catalog layer for engine UI and both existing stories, with locale-independent saves and recasting.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "Extract HTML/app/storage/recovery/ARIA text and each story’s action, progress, feedback, transcript and asset descriptions. Preserve Iona/Mara story IDs, release profiles, action IDs, cast replacement and semantic serialized facts.",
         "Specify locale choice, fallback and switching behavior: retain the semantic checkpoint, cancel transient gestures safely and define transcript/feedback rendering. Do not create iona-ja story forks or overwrite protected/corrupt/future saves.",
         "Keep Iona private/public consent routes and legacy continuity equally truthful, and Mara interpretation nonjudgmental. Publish catalog/font revisions and a new immutable build; staged 0.1.4 stays unchanged."
@@ -1868,22 +1888,27 @@
       ],
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
-      "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/verification.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42196165998"
+      ],
+      "focus": "Three-language engineering and weekend handoff",
+      "plan_settled": true,
+      "completion_note": "Vivid 0.2.0 development covers both stories in en/ja/zh-Hans with stable saves and replaceable casts. 69 unit tests, seven version guards, 39 localized Chromium/Firefox/WebKit cases and ten app-edge cases passed. Nonempty active controls were measured at 44×44 or larger; the repeated 16-file build matches the tested inventory. Recast grammar and a vacuous geometry assertion were corrected during independent review. Existing staged 0.1.4 remains unchanged; fluent, physical-device and human release qualification are pending.",
+      "technical_implementation_authorized": true
     },
     {
       "id": "KF-32",
       "lane": "vivid",
       "perspective": "QA",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Vivid QA + renderer/persistence integrator",
       "title": "Verify localized stories across engines and input modes",
       "deliverable": "A source-bound locale/story/profile and desktop/phone/tablet technical matrix covering both flat and 3D presentation.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "After the catalog contract is implemented, exercise both stories in every target locale for missing messages, placeholders, longest reviewed text, CJK glyphs and keyboard/tap alternatives; preserve profile-specific rules and saves.",
         "Plan Chromium/Firefox/WebKit root/nested runs with save/reload/migration/recovery, language switch, placement/adjustment, reduced motion, asset/context failure and complete flat fallback. Declare unrun cases rather than merging old Chromium results into new coverage.",
         "Separate emulated layouts from real iPhone/iPad/Android and desktop performance. Prepare a predeclared physical frame-time/memory/thermal workload and blank handoff for KF-33; do not claim actual hardware results here, infer 3D performance from flat completion or add IME cases without a text-entry feature."
@@ -1893,22 +1918,27 @@
       ],
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
-      "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/verification.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42196165998"
+      ],
+      "focus": "Three-language engineering and weekend handoff",
+      "plan_settled": true,
+      "completion_note": "Vivid 0.2.0 development covers both stories in en/ja/zh-Hans with stable saves and replaceable casts. 69 unit tests, seven version guards, 39 localized Chromium/Firefox/WebKit cases and ten app-edge cases passed. Nonempty active controls were measured at 44×44 or larger; the repeated 16-file build matches the tested inventory. Recast grammar and a vacuous geometry assertion were corrected during independent review. Existing staged 0.1.4 remains unchanged; fluent, physical-device and human release qualification are pending.",
+      "technical_implementation_authorized": true
     },
     {
       "id": "KF-33",
       "lane": "vivid",
       "perspective": "Human playtesting",
       "priority": "P1",
-      "status": "proposed",
+      "status": "blocked_human",
       "owner_role": "Fluent story reviewers + physical-device QA + facilitator",
       "title": "Qualify Iona and Mara in each declared locale/device scope",
       "deliverable": "Language-quality and physical-device records for both stories under a reviewed additional protocol, without flattening the original cohorts.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "Settle per-locale study scope and any additional sampling before preregistration. Fluent reviewers assess consent/privacy meaning, action clarity, tone and visible consequence in both stories; record translation assistance.",
         "Keep six Iona people and six different Mara people, distinct across games, and all existing thresholds. Do not treat six mixed-language sessions or a translator walkthrough as approval of every locale; optional neutral/recall studies remain separately declared.",
         "Verify actual keyboard/touch, flat/3D recovery, readability, save behavior and the predeclared frame-time/memory/thermal workload on named physical devices and exact artifact/catalog hashes. Preserve KF-12/18/23 and independent bundle approval; either story failing required criteria keeps the bundle staged."
@@ -1919,9 +1949,10 @@
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": true,
       "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
+      "focus": "Three-language engineering and weekend handoff",
       "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_note": "Weekend handoff is planned by the owner. Accepted reviewers, exact physical configurations and supplemental language protocol remain pending; no observed session or approval is supplied.",
+      "technical_implementation_authorized": true
     },
     {
       "id": "TB-01",
@@ -2610,12 +2641,12 @@
       "lane": "bell",
       "perspective": "Engineering",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Bell systems owner + narrative designer",
       "title": "Separate English labels from Bell rules before translation",
       "deliverable": "Stable action/item/bond identifiers and explicit costs, with a behavior-preserving English reference before adding locale catalogs.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "Replace English-prefix and label matching in game consequences, risky-choice costs and stored choice references with semantic IDs/metadata. Preserve event, witness/provenance, Momentum/Fracture and midnight rules.",
         "Create focused invariance checks proving the same semantic action has the same cost and consequence under all three labels/locales. Preserve Mina’s explicit IDs and the frozen Contrast/reference artifacts.",
         "Document any migration of stored/rendered history and the intentional in-memory reload/reset behavior. No new save feature, mechanic or altered comparison is implied. Bind the refactor to exact source and newly versioned development artifacts."
@@ -2625,22 +2656,27 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
-      "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/committed-export.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42197649192"
+      ],
+      "focus": "Three-language engineering and weekend handoff",
+      "plan_settled": true,
+      "completion_note": "Bell now separates all 43 action identities/costs and inventory/history identities from translated labels. A single en/ja/zh-Hans development bundle covers Original and Contrast with localized map access and keyboard behavior. 32 Node tests, 30 static checks, 13 inventory/exporter tests and nine Chromium/Firefox/WebKit locale journeys passed. Independent review corrected regenerated English onboarding and confirmed 172 original inventory comparisons plus four focused final-artifact cases. The committed two-file development export matches the tested HTML/catalog; frozen 0.1.0 and reference bytes remain unchanged. Fluent, physical-device and human qualification are pending.",
+      "technical_implementation_authorized": true
     },
     {
       "id": "TB-24",
       "lane": "bell",
       "perspective": "QA",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Bell UI/art integrator + localization editor + QA",
       "title": "Prepare translated clues, map access and device coverage",
       "deliverable": "Three-locale catalogs and accessible map presentation with source-bound engine, layout and interaction verification.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "After semantic rules are isolated, translate full clue/forecast/cost/receipt/transcript messages. Preserve distinctions between eyewitness and reported knowledge, pre-outcome prediction and learned intervention; do not reveal answers through translation.",
         "Plan a locale-aware map-label/legend solution for baked English artwork, CJK fonts, touch labels and accessible text alternatives. Test long text, modal scrolling, browser chrome, rotation and tablet split view without relying on tiny overlays.",
         "Plan Chromium/Firefox/WebKit and actual-device handoff coverage for entry, keyboard/touch choice, witnessed clue, ordinary/borrowed intervention, Fracture 4, midnight, journal, ending and restart. Record exact source/build/locale identity and preserve candidate 0.1.0/reference bytes."
@@ -2650,22 +2686,27 @@
       ],
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
-      "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/committed-export.json",
+        "https://github.com/PaperStrange/IndiaGames/actions/runs/42197649192"
+      ],
+      "focus": "Three-language engineering and weekend handoff",
+      "plan_settled": true,
+      "completion_note": "Bell now separates all 43 action identities/costs and inventory/history identities from translated labels. A single en/ja/zh-Hans development bundle covers Original and Contrast with localized map access and keyboard behavior. 32 Node tests, 30 static checks, 13 inventory/exporter tests and nine Chromium/Firefox/WebKit locale journeys passed. Independent review corrected regenerated English onboarding and confirmed 172 original inventory comparisons plus four focused final-artifact cases. The committed two-file development export matches the tested HTML/catalog; frozen 0.1.0 and reference bytes remain unchanged. Fluent, physical-device and human qualification are pending.",
+      "technical_implementation_authorized": true
     },
     {
       "id": "TB-25",
       "lane": "bell",
       "perspective": "Human playtesting",
       "priority": "P1",
-      "status": "proposed",
+      "status": "blocked_human",
       "owner_role": "Fluent clue reviewers + physical-device QA + facilitator",
       "title": "Qualify localized causal understanding and real-device play",
       "deliverable": "A reviewed locale comparison protocol and actual-device observations preserving the six-person Bell experiment.",
       "acceptance_criteria": [
-        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
         "Preregister locale-specific qualification and actual device cells before sessions; native readers assess clue fairness, causal/cost wording and map readability. Keep reference and candidate language comparable or explicitly settle a revised study design first.",
         "Preserve six players, 3/3 first-build order and at least 120 seconds of neutral activity before recall, plus current joint metrics and all failed/assisted attempts. Do not split six into two per language or coach the prediction/Fracture explanation.",
         "Keep TB-13/17 and independent human release approval separate. Translation/map/font changes create new candidate bytes and require exact-build evidence; actual phone/tablet records must name hardware, OS/browser/input and observed outcomes."
@@ -2676,9 +2717,10 @@
       "source_plan": "docs/games/thirteenth-bell/TODO.md",
       "human_participants_required": true,
       "completion_evidence": [],
-      "focus": "Proposed multilingual / multi-device preparation",
+      "focus": "Three-language engineering and weekend handoff",
       "plan_settled": false,
-      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+      "completion_note": "Weekend handoff is planned by the owner. Accepted reviewers, exact physical configurations and supplemental language protocol remain pending; no observed session or approval is supplied.",
+      "technical_implementation_authorized": true
     }
   ]
 }

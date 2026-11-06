@@ -615,12 +615,12 @@
     "lane": "memorable",
     "perspective": "Engineering",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Small Hours integrator + localization editor",
     "title": "Define locale-safe messages and private-session behavior",
     "deliverable": "An agreed en/ja/zh-Hans message catalog and formatting contract around stable scene/choice IDs, without changing the frozen study baseline.",
     "acceptance_criteria": [
-      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
       "Inventory visible, accessible, privacy, status, date and downloadable-keepsake strings. Use complete messages and named placeholders; preserve optional writing and nonjudgmental reveal wording.",
       "Specify locale selection and any mid-session switch before implementation; do not expose private answers through URLs, saves, analytics or external translation services. Never auto-translate player writing.",
       "Define local CJK font resources, text-length/grapheme policy and explicit export allowlist changes. Preserve the frozen eight-file study artifact and publish exact source/content/inventory evidence for a new development build."
@@ -630,22 +630,26 @@
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Proposed multilingual / multi-device preparation",
-    "plan_settled": false,
-    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/committed-export.json"
+    ],
+    "focus": "Three-language engineering and weekend handoff",
+    "plan_settled": true,
+    "completion_note": "Small Hours now has complete en/ja/zh-Hans pair and rehearsal journeys, safe private-session language boundaries, grapheme/IME handling and readable CJK keepsakes. 21 unit/export tests, 1,416 localized assertions across Chromium/Firefox/WebKit and root/nested mounts, 66 English checks and timer verification passed. The committed exporter reproduced the exact 12-file/103,624-byte inventory and repeated 472 localized assertions plus English/timer checks; only known favicon diagnostics remained. Frozen study bytes are unchanged; fluent review, actual devices, real IME and pilot-first staging remain pending.",
+    "technical_implementation_authorized": true
   },
   {
     "id": "SH-25",
     "lane": "memorable",
     "perspective": "QA",
     "priority": "P1",
-    "status": "proposed",
+    "status": "done",
     "owner_role": "Small Hours QA + integrator",
     "title": "Verify CJK keepsakes and desktop/phone/tablet journeys",
     "deliverable": "A proposed three-locale technical matrix for exact exported bytes, input, keepsake layout and cross-engine behavior.",
     "acceptance_criteria": [
-      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
       "After SH-24 is selected and implemented, test Japanese/Chinese IME commit and cancellation, graphemes, full-width punctuation, blank/long/escaped text and actual SVG glyphs/line wrapping. Distinguish offered, attempted and delivered save.",
       "Run affected root/nested and selected embed journeys in Chromium, Firefox and WebKit where available; record actual engine/version and emulation. Cover keyboard, touch alternatives, rotation, tablet split view, virtual-keyboard occlusion and privacy clearing.",
       "Keep meaningful missing-catalog/placeholder/file-list failure cases and immutable export inventories. Record unavailable engines and physical checks as pending; browser automation cannot establish phone/tablet support."
@@ -655,22 +659,26 @@
     ],
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
-    "focus": "Proposed multilingual / multi-device preparation",
-    "plan_settled": false,
-    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/committed-export.json"
+    ],
+    "focus": "Three-language engineering and weekend handoff",
+    "plan_settled": true,
+    "completion_note": "Small Hours now has complete en/ja/zh-Hans pair and rehearsal journeys, safe private-session language boundaries, grapheme/IME handling and readable CJK keepsakes. 21 unit/export tests, 1,416 localized assertions across Chromium/Firefox/WebKit and root/nested mounts, 66 English checks and timer verification passed. The committed exporter reproduced the exact 12-file/103,624-byte inventory and repeated 472 localized assertions plus English/timer checks; only known favicon diagnostics remained. Frozen study bytes are unchanged; fluent review, actual devices, real IME and pilot-first staging remain pending.",
+    "technical_implementation_authorized": true
   },
   {
     "id": "SH-26",
     "lane": "memorable",
     "perspective": "Human playtesting",
     "priority": "P1",
-    "status": "proposed",
+    "status": "blocked_human",
     "owner_role": "Fluent language reviewers + physical-device QA + facilitator",
     "title": "Qualify three-language pair play on declared physical targets",
     "deliverable": "Native-language review and deidentified physical-device journey records under a reviewed protocol, separate from existing baseline release cohorts.",
     "acceptance_criteria": [
-      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Technical implementation was authorized by the owner on November 6 under the shared multilingual contract. Exact physical support, additional locale sampling and the separate release-policy extension still require the recorded human review before qualification or promotion.",
       "Preregister the agreed per-locale qualification sample and actual device/browser cells before observing results; accepted fluent reviewers, observers and devices must be named. Do not split six pairs into two per language or invent a 30-times-devices quota.",
       "Observe privacy handoff, both contributions, comfortable Japanese/Chinese input, actual saved keepsake and exit/reset on declared devices. Record original words, assistance, failures and stopping; do not infer a pass from an empty form.",
       "Preserve SH-05/10/17/18 and the six-pair 5/6 reveal, 4/6 both-contribute, 3/6 voluntary save/replay criteria. Changed build bytes require a new identity and exact-build evidence; independent human approval remains separate."
@@ -681,8 +689,9 @@
     "source_plan": "docs/games/small-hours/TODO.md",
     "human_participants_required": true,
     "completion_evidence": [],
-    "focus": "Proposed multilingual / multi-device preparation",
+    "focus": "Three-language engineering and weekend handoff",
     "plan_settled": false,
-    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    "completion_note": "Weekend handoff is planned by the owner. Accepted reviewers, exact physical configurations and supplemental language protocol remain pending; no observed session or approval is supplied.",
+    "technical_implementation_authorized": true
   }
 ]

@@ -6,13 +6,13 @@ The **Overview** combines real game images, playtest readiness and the November 
 
 | Game | Experience being tested | Current artifact | Human work still required |
 |---|---|---|---|
-| **Small Hours** · Memorable Moments | Two people make a brief shared activity their own. | Frozen pair-study baseline preserved; exact development exports verified | Six pairs |
-| **Vivid** · formerly Keeper’s Frame | Two stories express meaning through different actions. | Candidate 0.1.4 staged; branch CI passed | Six people per story, in separate cohorts |
-| **The Thirteenth Bell** | Understanding a repeated event enables a meaningful intervention. | Candidate 0.1.0 unchanged; reproducible branch CI passed | Six people, balanced comparison order |
+| **Small Hours** · Memorable Moments | Two people make a brief shared activity their own. | Three-language development export verified; frozen study baseline retained | Six pairs |
+| **Vivid** · formerly Keeper’s Frame | Two stories express meaning through different actions. | 0.2.0 multilingual development verified; frozen 0.1.4 retained | Six people per story, in separate cohorts |
+| **The Thirteenth Bell** | Understanding a repeated event enables a meaningful intervention. | 0.2.0 multilingual development verified; frozen 0.1.0 retained | Six people, balanced comparison order |
 
 [Per-game checklists, recording templates and launch plans](docs/launch/2026-11-20/README.md#game-packets) include exact-artifact setup. GitHub source links open repository files; they are not browser play buttons. Repair of the older candidate Pages URL is paused at the owner’s request.
 
-[The export and branch-CI engineering milestone is complete](docs/technical-freeze-2026-11-06/README.md), and [PR #13](https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493) is published and verified. The next [three-language/device preparation plan](docs/release-preparation-2026-11-06/README.md) is **proposed**: English, Japanese and Simplified Chinese across desktop web, phones and tablets. Nine new cards are planned; current artifacts do not yet establish that support. [Your coordination checklist](docs/release-preparation-2026-11-06/OWNER-TODO.md) covers reviewers and actual hardware. Each November 20 release must include all three languages; incomplete games are deferred. **Official launch remains conditional:** original human cohorts, device evidence and independent approval remain required.
+[The three-language engineering milestone is complete](docs/multilingual-engineering-2026-11-06/README.md): English, Japanese and Simplified Chinese cover all three demos, including both Vivid stories. Six new engineering cards are complete, bringing the board to **53 of 84**. Cross-engine technical checks passed; Japanese/Chinese text remains draft and physical-device qualification remains pending. [Your weekend handoff](docs/multilingual-engineering-2026-11-06/WEEKEND-HANDOFF.md) covers accepted reviewers, actual hardware and protocol decisions. [Draft PR #17](https://github.com/PaperStrange/IndiaGames/pull/17) is a separately reviewed release-contract proposal, not adopted policy. Each November 20 release requires all three languages; incomplete games are deferred. Original human cohorts and independent release approval remain mandatory.
 
 ## November 20 target
 

@@ -53,3 +53,9 @@ The earlier direct remote Chromium attempt failed before rendering because of th
 </details>
 
 The owner’s manual Pages change supersedes earlier “unknown attribution” wording. Historical API failures retain their dates and meaning. Follow the [release policy](RELEASE-POLICY.md) and [November launch calendar](launch/2026-11-20/README.md) for future game promotion; never change visibility or invent participant records to make publication appear complete.
+
+## November 6 multilingual engineering dashboard
+
+The [current iteration](multilingual-engineering-2026-11-06/README.md) records completed three-language engineering on the three game branches, with exact development artifact identities and separate frozen study/candidate packages. The dashboard adds a compact language-progress table and an actionable [weekend handoff](multilingual-engineering-2026-11-06/WEEKEND-HANDOFF.md). It records 53 completed cards out of 84; fluent review, physical devices, original human cohorts and independent approval remain pending.
+
+[Draft policy PR #17](https://github.com/PaperStrange/IndiaGames/pull/17) is a separate governed proposal and remains unmerged. Publishing this engineering dashboard does not adopt that policy or promote a game release. The delivery PR conversation records final-head independent review, required CI and subsequent actual Pages verification against the immutable merged main commit. The source manifest preserves the preceding verified deployment separately to avoid claiming a new deployment before it is observed.

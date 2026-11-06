@@ -1,6 +1,8 @@
 # The Thirteenth Bell — Mina-route experiment and human handoff
 
-**Current engineering milestone · November 6:** **TB-22 completed.** Branch CI passed; 0.1.0 unchanged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) bind the actual workflow to reviewed source. Candidate freeze and human/design/release gates remain separate.
+**Current milestone · TB-23/24 completed:** Three-language development and browser verification are complete. [Current evidence and weekend handoff](../../multilingual-engineering-2026-11-06/README.md). Fluent review, physical devices and human release qualification remain pending.
+
+**Previous engineering milestone · November 6:** **TB-22 completed.** Branch CI passed; 0.1.0 unchanged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) bind the actual workflow to reviewed source. Candidate freeze and human/design/release gates remain separate.
 
 ## Historical November 5 preparation plan · TB-20
 
@@ -446,9 +448,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 
 [Committed record](https://github.com/PaperStrange/IndiaGames/blob/b451f5dd90294b8713dfdf6518b5d43baf47e948/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Actual workflow](https://github.com/PaperStrange/IndiaGames/actions/runs/42175335194). Human evidence and independent human release approval remain pending.
 
-## Proposed multilingual and device preparation · November 6
+## Multilingual and device preparation · November 6
 
-The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) is **proposed, not settled implementation**. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
+The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) records the planning audit; the owner has since authorized the [technical implementation](../../multilingual-engineering-2026-11-06/README.md). Engineering and human qualification have separate statuses in tasks.json. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
 
 | New card | Proposed work | Owner |
 |---|---|---|
@@ -463,3 +465,9 @@ Each card retains exact acceptance details in [tasks.json](tasks.json). Shared e
 Use the human feedback to examine action/advance expectations, optional forecasts, witnessed knowledge, costs and changed-route explanation. A forecast is not a mandatory advance gate; map destinations already are native buttons. TB-23–25 retain semantic IDs before translated labels, contextual map/CJK/device work and the existing human comparison/neutral-recall protocol. Select guidance from observed misunderstanding, not the inaccurate proposed one-line rule.
 
 [Reconciled findings and source references](../../research-reconciliation-2026-11-06/README.md). The owner corrects the supplied records' actor attribution to human gameplay; original labels stay intact. Five documents per game are not five participants. Release-cohort eligibility needs separate assessment; existing task objects and thresholds are unchanged.
+
+## Multilingual engineering verified · November 6
+
+Bell now separates all 43 action identities/costs and inventory/history identities from translated labels. A single en/ja/zh-Hans development bundle covers Original and Contrast with localized map access and keyboard behavior. 32 Node tests, 30 static checks, 13 inventory/exporter tests and nine Chromium/Firefox/WebKit locale journeys passed. Independent review corrected regenerated English onboarding and confirmed 172 original inventory comparisons plus four focused final-artifact cases. The committed two-file development export matches the tested HTML/catalog; frozen 0.1.0 and reference bytes remain unchanged. Fluent, physical-device and human qualification are pending.
+
+[TB-23, TB-24 verification](https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md) · [Exact evidence](https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/committed-export.json). Japanese and Chinese remain agent drafts pending fluent review. Actual desktop/phone/tablet qualification, the reviewed supplemental protocol, existing game cohorts and independent approval remain pending. [Weekend handoff](../../multilingual-engineering-2026-11-06/WEEKEND-HANDOFF.md).

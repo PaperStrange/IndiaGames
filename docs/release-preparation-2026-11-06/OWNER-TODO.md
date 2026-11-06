@@ -1,6 +1,6 @@
 # Manage language and device preparation together
 
-**Confirmed:** English (`en`), Japanese (`ja`), Simplified Chinese (`zh-Hans`); desktop web, phones and tablets. On November 6 the owner required all three languages per November 20 release; incomplete games are deferred. **Proposed:** implementation/evidence contract and precise support matrix. No reviewer, device or session is booked by this checklist.
+**Confirmed:** English (`en`), Japanese (`ja`), Simplified Chinese (`zh-Hans`); desktop web, phones and tablets. On November 6 the owner required all three languages per November 20 release; incomplete games are deferred. **Authorized:** technical implementation. **Pending:** separately reviewed release-evidence contract, comprehension criteria and precise physical support matrix. See the [weekend handoff](../multilingual-engineering-2026-11-06/WEEKEND-HANDOFF.md). No reviewer, device or session is booked by this checklist.
 
 | Input from you / responsible human | What to record | Why it is needed |
 |---|---|---|
@@ -15,6 +15,6 @@
 
 Fill the device inventory and reviewer assignments in the [blank human forms](HUMAN-PREPARATION.md). Keep contacts, consent and raw recordings private. Share accepted roles, pseudonymous IDs, hardware capabilities and realistic time windows; unknown remains unknown.
 
-The team can then settle a bounded implementation contract and assign one integrator per game. Agents may prepare catalogs, automation and candidate handoffs after settlement while humans schedule native review and physical runs. No additional gameplay experiment is selected here. Small Hours' pilot-first staging sequence and all current fixed release thresholds remain intact.
+Technical implementation, browser checks and development exports are complete. A separate policy draft is ready for review while humans schedule fluent review and physical runs. No additional gameplay experiment is selected here. Small Hours' pilot-first staging sequence and all current fixed release thresholds remain intact.
 
 Use the [shared plan](README.md) and [original owner checklist](../iteration-2026-11-06/OWNER-TODO.md) together. The original 30-person game cohorts do not automatically validate every locale; additional language qualification must be explicitly scoped. Do not silently split or multiply cohorts, reuse stale build approval, or call a translator walkthrough a gameplay session.

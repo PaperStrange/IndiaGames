@@ -1,6 +1,8 @@
 # Vivid — implemented stories and remaining release work
 
-**Current engineering milestone · November 6:** **KF-30 completed.** Branch CI passed; 0.1.4 unchanged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) bind the actual workflow to reviewed source. Candidate freeze and human/design/release gates remain separate.
+**Current milestone · KF-31/32 completed:** Three-language development and browser verification are complete. [Current evidence and weekend handoff](../../multilingual-engineering-2026-11-06/README.md). Fluent review, physical devices and human release qualification remain pending.
+
+**Previous engineering milestone · November 6:** **KF-30 completed.** Branch CI passed; 0.1.4 unchanged. [Acceptance and evidence](../../technical-freeze-2026-11-06/README.md) bind the actual workflow to reviewed source. Candidate freeze and human/design/release gates remain separate.
 
 ## Historical November 5 preparation plan · KF-27
 
@@ -176,9 +178,9 @@ Serve the exact selected master artifact locally or on an agreed trusted LAN for
 
 [Committed record](https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Actual workflow](https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179). Human evidence and independent human release approval remain pending.
 
-## Proposed multilingual and device preparation · November 6
+## Multilingual and device preparation · November 6
 
-The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) is **proposed, not settled implementation**. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
+The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) records the planning audit; the owner has since authorized the [technical implementation](../../multilingual-engineering-2026-11-06/README.md). Engineering and human qualification have separate statuses in tasks.json. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
 
 | New card | Proposed work | Owner |
 |---|---|---|
@@ -193,3 +195,9 @@ Each card retains exact acceptance details in [tasks.json](tasks.json). Shared e
 Use the human feedback to examine action ownership, permission and the full endpoints: Iona choice → return → actual placement; Mara actual interpretation. The failed vivid15 technical replay does not prove auto-placement, nor negate human completion elsewhere. KF-31–33 should preserve story/save/cast IDs and distinct care/interpretation mechanisms across locales and devices. Keep six Iona and six different Mara people, not six pairs.
 
 [Reconciled findings and source references](../../research-reconciliation-2026-11-06/README.md). The owner corrects the supplied records' actor attribution to human gameplay; original labels stay intact. Five documents per game are not five participants. Release-cohort eligibility needs separate assessment; existing task objects and thresholds are unchanged.
+
+## Multilingual engineering verified · November 6
+
+Vivid 0.2.0 development covers both stories in en/ja/zh-Hans with stable saves and replaceable casts. 69 unit tests, seven version guards, 39 localized Chromium/Firefox/WebKit cases and ten app-edge cases passed. Nonempty active controls were measured at 44×44 or larger; the repeated 16-file build matches the tested inventory. Recast grammar and a vacuous geometry assertion were corrected during independent review. Existing staged 0.1.4 remains unchanged; fluent, physical-device and human release qualification are pending.
+
+[KF-31, KF-32 verification](https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/README.md) · [Exact evidence](https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/verification.json). Japanese and Chinese remain agent drafts pending fluent review. Actual desktop/phone/tablet qualification, the reviewed supplemental protocol, existing game cohorts and independent approval remain pending. [Weekend handoff](../../multilingual-engineering-2026-11-06/WEEKEND-HANDOFF.md).

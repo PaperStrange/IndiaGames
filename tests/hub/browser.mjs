@@ -239,6 +239,16 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       assert.equal(await page.locator('#tasks').isVisible(), false);
       assert.equal(await page.locator('#project-grid .project-card').count(), 3);
       assert.equal(await page.locator('#project-grid .project-image').count(), 3);
+      for (const setup of await page.locator('.project-links a:first-child').all()) {
+        assert.ok((await setup.getAttribute('aria-label')).toLowerCase().includes((await setup.innerText()).trim().toLowerCase()), 'Study link accessible name includes its visible label');
+      }
+      assert.equal(await page.locator('#localization-rows tr').count(), 3);
+      for (const progress of manifest.release_preparation.engineering) {
+        const row = page.locator(`#localization-rows tr[data-lane="${progress.lane}"]`);
+        assert.deepEqual(await row.locator('td > span').allTextContents(), ['en', 'ja', 'zh-Hans'].map(locale => progress.locales[locale]));
+        assert.equal(await row.locator('a').getAttribute('href'), progress.evidence_url);
+        assert.match(await row.innerText(), /pending/i);
+      }
       // Images below the narrow-screen fold load only when reached by the reader.
       // Exercise that journey before asserting loaded image content.
       for (const picture of await page.locator('#project-grid .project-image').all()) {
