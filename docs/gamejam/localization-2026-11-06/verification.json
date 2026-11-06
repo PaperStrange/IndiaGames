@@ -116,5 +116,6 @@
     "Independent human release approval"
   ],
   "release_path": "game branch -> new immutable master candidate -> exact-build human gate -> selected main release",
-  "independent_code_review": "Root independent agent review pending final tooling assessment; not human release approval"
+  "independent_code_review": "Passed independent technical review after the onboarding correction: four focused final-artifact cases, 172 old-engine inventory comparisons, full tooling review and frozen legacy-export reproduction. Human release approval remains pending.",
+  "committed_export_record": "committed-export.json"
 }

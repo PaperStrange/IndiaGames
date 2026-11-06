@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "source_commit": "579d56691fa2b72e92d03939cd4023bd61c40ae7",
+  "checked_at": "2026-11-06T09:45:17.173913+00:00",
+  "development_version": "0.2.0",
+  "scope": "Pinned-source development export only; no master staging or human release approval",
+  "build": {
+    "entrypoint": "index.html",
+    "sha256": "f88951e363e0bb739661eafb91e59b7ab778bca9cc8f8dc01cdbe16d860c646a",
+    "files": {
+      "index.html": "af89415f841f29249fbb4d81b9204da4e3153159b1bea8d8cdaf1ed855666fa4",
+      "locale-catalog.json": "577e3e0827c16557aa0fdf93101b33013fc973d992f94692853d0a28e25fbbda"
+    }
+  },
+  "build_bytes": 284548,
+  "matches_final_browser_bytes": true,
+  "independent_review": "Passed technical review after the onboarding correction; actual fluent and physical qualification remain pending."
+}
