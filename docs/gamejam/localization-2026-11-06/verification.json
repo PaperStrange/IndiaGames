@@ -4,7 +4,7 @@
   "game": "keepers-frame",
   "development_version": "0.2.0",
   "base_commit": "2130e5523dbf9ba27af268f0ba8cccb86aef56e2",
-  "source_status": "Reviewed implementation; the containing Git commit identifies the source. Authored source file hashes below match the final tested snapshot.",
+  "source_status": "Reviewed runtime/test/build source at qa_source_commit; the 20 authored source hashes exclude documentation, avoiding a self-referential evidence hash. Later documentation-only commits do not change the tested build.",
   "translation_status": "agent-authored Japanese and Simplified Chinese drafts; fluent review pending",
   "build_inventory_sha256": "1c440d1a1bcbb0b8470949aeb8a2f590e9ab2278eac1ed384198acfbaeb9ca63",
   "build_file_count": 16,
@@ -258,8 +258,6 @@
     "vivid-2.5d-photo-game/play/src/stories/mara/content.js": "60fe523fd908b88861d4cee1f9cc92f0af5875f3cb7481ba08dd855de22935c3",
     "vivid-2.5d-photo-game/play/src/stories/mara/index.js": "21165e8198e27e92170d14df76b29300ca53c4582d24e161676410fd1523a536",
     "vivid-2.5d-photo-game/play/styles.css": "9a87609befb705c52aa9656d276e95de1ee2fd5dac6086e9f574b8ffccce6d50",
-    "docs/gamejam/localization-2026-11-06/README.md": "067b4c7230ffdb071b20f190e85354ec3fab23060bb8170c931f8b77eb717987",
-    "docs/gamejam/localization-2026-11-06/verification.json": "34b92793675f5baf3e84581b08bb57ca24c9aead2fa4bd0973fdde6596ec847e",
     "vivid-2.5d-photo-game/play/src/i18n/core.js": "2dbc5ef78bd1d99269713155a4b0efbee2c6a596cfa60c3f1e8b96e10ff7ad67",
     "vivid-2.5d-photo-game/play/src/i18n/ui.js": "2fa35ea47287971d8536a13317194982421f6ec1eb1e9d952f381c8cd2029abb",
     "vivid-2.5d-photo-game/play/src/stories/iona/catalogs.js": "87200e854d575ff2bbbbfeb2a284dc4f13291ed8d1e706af9be2630e21669780",
@@ -285,5 +283,6 @@
     "locale-catalog.json": "8db1450962f1041c21963f9ec3aad4e31c0bff8e0458423a1da542b197b5a34a",
     "story-catalog.json": "1b17343c35df541f9c1ef52579412667d0376b51e180cd409ef449115037d6fc",
     "third-party-notices.txt": "b9229f490630a80cb4968dea0483aea95706b1e8dd5645ece366a7cea3c4f560"
-  }
+  },
+  "qa_source_commit": "7ee0e78a2e01ad8bdad9d2471676281d92ecad6b"
 }
