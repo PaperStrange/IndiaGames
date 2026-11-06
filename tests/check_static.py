@@ -33,7 +33,7 @@ for jf in js_files:
 # 2. split integrity
 data_js = open(os.path.join(ROOT, "js", "data.js")).read()
 engine_js = open(os.path.join(ROOT, "js", "engine.js")).read()
-declared = set(re.findall(r"^  (\w+):", data_js, re.M))
+declared = set(re.findall(r'^  "?(\w+)"?:', data_js, re.M))
 referenced = set(re.findall(r"TTB_DATA\.(\w+)", engine_js))
 check("data.js declares keys", len(declared) >= 5, f"found {sorted(declared)}")
 check("engine refs resolve in data.js", referenced <= declared,

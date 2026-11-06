@@ -4,7 +4,7 @@ A time-loop mystery adventure that plays in the browser. One town, one cracked
 bell, three loops to understand what the thirteenth chime is pulling out of the
 day — then break it.
 
-Current engineering milestone: [branch CI and reproducible build inventories](docs/gamejam/technical-freeze-2026-11-06/README.md). The generated game remains byte-identical to staged candidate **0.1.0**. Engineering continues while recruitment is unbooked; no human game approval is recorded.
+Current development milestone: [English, Japanese and Simplified Chinese](docs/gamejam/localization-2026-11-06/README.md), with semantic action IDs, localized narrative/UI and device preparation. This is a new development build, not an approved release. The staged **0.1.0** package and previous Contrast study reference remain unchanged; use the frozen study package for its registered protocol.
 
 For actual studies, use the [verified facilitator setup](docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md) and its linked blank records. The [November 20 plan](docs/gamejam/launch-2026-11-20/README.md) retains the human release criteria.
 
@@ -20,9 +20,9 @@ portable build; a source-file page or a cloud-storage preview is not a verified
 game host. Physical phones need the separately verified route in the facilitator
 setup. A developer server is not human-device evidence.
 
-**Single-file build:** `dist/thirteenth-bell-playable-demo.html` is the whole game
+**Portable build:** `dist/thirteenth-bell-playable-demo.html` is the whole game
 in one file (CSS/JS inlined, town map embedded as a data URI, system fonts).
-The current candidate makes no external font request. `dist/` is ignored local
+The development export also writes the required `locale-catalog.json` beside the HTML; keep both files for packaging. It makes no external font request. `dist/` is ignored local
 output, not a committed candidate. Generate it explicitly with:
 
 ```sh
@@ -34,9 +34,9 @@ node build.mjs --output /tmp/bell-review/index.html
 ## How to play
 
 - Travel the six districts of the town map as the clock moves Dawn → Noon → Dusk → Midnight.
-- **Predict** what each phase will bring *before* you travel — correct predictions earn **Momentum**, which lets you skip scenes you've already mastered.
-- Anchor three memories on the **Midnight Anchor Board** to face the thirteenth bell.
-- The **Original / Contrast** toggle (top of the page) compares two builds of the experience: the original map adventure vs. the research-driven contrast build (two-view journal, prediction ledger, batched theory validation).
+- Optionally **predict** before committing an action. Correct forecasts earn **Momentum**; in Contrast, a prior-loop familiar route can use one Momentum to borrow a visit while Fracture still counts.
+- At the **Midnight Anchor Board**, choose one bond and one object, then confirm. Learned route, song, lens and eyewitness knowledge persist independently.
+- The **Original / Contrast** toggle (top of the page) selects two separate modes: the original map adventure and the consequence-led Contrast mode. The study comparator remains the separately frozen previous Contrast artifact.
 
 ## GameJam update · 2026-10-05
 
@@ -48,14 +48,18 @@ Contrast now remembers witnessed forecast outcomes and lets you spend 1 Momentum
 index.html            thin shell — loads css/, js/, assets/
 css/main.css          all styling
 js/data.js            story/world content: locations, NPC schedules, scenes, tuning (edit story here)
+js/actions.js         pure action identity, explicit costs and inventory contracts
+js/i18n.js            strict locale negotiation and presentation, without game rules
+js/messages.js        required complete English UI messages
+js/*-locales.js       Japanese / Simplified Chinese UI and story drafts
 js/echo-time.js       pure borrowed-minute rules (no DOM or state mutation)
 js/square-event.js    pure witnessed-clue, preparation and Mina-route rules
 js/engine.js          game systems + UI copy: loop, clock, scenes, predictions, journal, meters
                       (story data lives in js/data.js; engine.js keeps narrative UI copy with the
                       systems that render it)
-assets/images/        town-map.webp — the official canon town map
+assets/images/        label-free development map SVG; historical WebP preserved
 docs/                 design dossier PDF, work-package README, research reports
-dist/                 generated single-file build (do not hand-edit; run node build.mjs)
+dist/                 generated self-contained HTML + locale catalog (run node build.mjs)
 tests/                pure rules, build/inventory contracts, static validation and browser journeys
 .github/workflows/    branch-scoped engineering CI; no deployment
 ```

@@ -1,0 +1,120 @@
+{
+  "kind": "bell-multilingual-development-verification",
+  "date_utc": "2026-11-06",
+  "base_source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+  "uncommitted_at_verification": true,
+  "official_release": false,
+  "candidate_staged": false,
+  "human_approval": false,
+  "fluent_translation_review": "pending",
+  "physical_device_review": "pending",
+  "required_message_count": 576,
+  "locales": [
+    "en",
+    "ja",
+    "zh-Hans"
+  ],
+  "scope": "Original and Contrast; one three-language development bundle",
+  "checks": {
+    "node_tests": {
+      "passed": 32,
+      "failed": 0,
+      "log_sha256": "081b8a403b2940647e4385fd3488506412e48972b2488d934b30adc9c5d35ce6",
+      "log_evidence": "Full raw log retained in private task QA; not published in repository."
+    },
+    "static_checks": {
+      "passed": 30,
+      "failed": 0,
+      "log_sha256": "78b87823a7be373c8b9f7fc06c90be86e14a071fc6da33c1c3fd90fa4c87bb3e",
+      "log_evidence": "Full raw log retained in private task QA; not published in repository."
+    },
+    "python_tests": {
+      "passed": 13,
+      "failed": 0,
+      "inventory_tests": 7,
+      "exporter_tests": 6,
+      "hosted_ci_entrypoint": "tests/test_reproducible.py",
+      "log_sha256": "735c61d710562b0588ac3e650f946b94fe24562fff109b19800cf90380a62f00",
+      "log_evidence": "Full raw log retained in private task QA; not published in repository."
+    },
+    "reproducible_builds": {
+      "passed": 2,
+      "files": [
+        {
+          "path": "locale-catalog.json",
+          "bytes": 269,
+          "sha256": "577e3e0827c16557aa0fdf93101b33013fc973d992f94692853d0a28e25fbbda"
+        },
+        {
+          "path": "thirteenth-bell-playable-demo.html",
+          "bytes": 284279,
+          "sha256": "af89415f841f29249fbb4d81b9204da4e3153159b1bea8d8cdaf1ed855666fa4"
+        }
+      ]
+    },
+    "browser_cells": {
+      "passed": 9,
+      "failed": 0,
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "report": "browser-results.json",
+      "all_three_locales_per_engine": true,
+      "viewport_scope": "en 1280x1000; ja 390x844; zh-Hans 820x1180; ja/zh additional844x390 and375x820; 150% text proxy inallcells",
+      "not_a_full_locale_by_all_device_size_matrix": true
+    },
+    "runtime_hashes_match_browser_capture": true,
+    "frozen_candidate_or_reference_modified": false,
+    "existing_pure_rule_modules_modified": false
+  },
+  "source_files": {
+    "index.html": "d96b836b28b81bfa2a353ca97ccbb9fb19277893028c4712e790fb891783b933",
+    "css/main.css": "b99063ee95b1f769fabbbb5960cfcc05a4ead82365f6d90da4573ad7e09f9a77",
+    "assets/images/town-map.svg": "b9157e4af8c71d17a1626751e2ae45fe6642bf860e9e277743b269b0aa4e7a43",
+    "js/actions.js": "b79da595af27473e6b1632d91d2508032b817a8974df899d74aeb1fe22b34b34",
+    "js/data.js": "232c1623d7e253ad45d7d676eed39cd62b63a16c9576c24ba32a9cc3634f4411",
+    "js/echo-time.js": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f",
+    "js/engine.js": "c8702b34a5c9fd7eb70e3c800cb3256293abc9a3aa50d3c4c4eebead0dc68694",
+    "js/i18n.js": "96a8a9e8602fdb75729ee15964816d8067b9164cb39913ce9cac14a14152e4b4",
+    "js/messages.js": "42c440fa6e27d3ee3e087220a8495f9ae39a14763f78cc110ccf9905c27d046d",
+    "js/square-event.js": "ba313b38bd226de8b2571784eae2a4f96af6ead49cb19e917dce7eee4fab227a",
+    "js/story-locales.js": "6bf8a7eec292c6a955a28226952b600debc7bac1076f195b04e678c3721ef176",
+    "js/ui-locales.js": "c9ff4d7ced2fbe6544c84b038dc845a7b2ea43480bec64917b37aec31201e83f",
+    "tests/localized-journey.cjs": "ca0f7cf16b932c5021842bd2470ee502eb45ef48183a74529412dd879f5944ed"
+  },
+  "additional_tooling_files": {
+    "build.mjs": "6d48c4b63b9f315716008b1163f189365e8d7e65f6c4bd3edb4fdb065dcc4fb7",
+    "scripts/package-pilot.py": "18598d5aa93ea1f9f3084cba89b1229c6632babaa7a050010f1c21310d04a88d",
+    "tests/locales.test.cjs": "213f69a54c355168d67c7ac016bd2c03a64dfb25e2cfbe5bb1f7777e60b4589f",
+    "tests/test_reproducible.py": "29234912059b3e99de6918214329f23f5f931221def08499b2ad9045fb652bbe",
+    "tests/check_reproducible.py": "a41e3fd7fed0630f447af8fc0a4723b325f002d6dc433acf780162517617eaa4",
+    "tests/check_static.py": "f54cb78ecbf6866ef15825800dce4a66ba073e7a25bdcb80e35729bda6e310f0"
+  },
+  "prior_attempts": [
+    {
+      "path": "/workspace/indiagames-locales-2026-11-06/qa/bell/run-1/results.json",
+      "result": "failed",
+      "finding": "Required dynamic messages beginning with single-letter A omitted from initial registry; fixed and strictcoverage expanded."
+    },
+    {
+      "path": "/workspace/indiagames-locales-2026-11-06/qa/bell/run-2/results.json",
+      "result": "functional checks passed; visual omission found",
+      "finding": "Clarity control regenerated English; fixed."
+    },
+    {
+      "path": "/workspace/indiagames-locales-2026-11-06/qa/bell/run-3/results.json",
+      "result": "functional checks passed; independentreviewfound onboardingomission",
+      "finding": "Numbered full HTML templates regenerated English; fixed, added all generated HTML regression and explicit visible-onboarding assertions."
+    }
+  ],
+  "human_qualification": [
+    "Fluent narrative/clue/receipt review for en,ja,zh-Hans",
+    "Actual claimed desktop,phone,tablet models and browser/OS/input combinations",
+    "Existing six-person,balanced3/3Bell comparison and neutral>=120s recall with exactbuild identity",
+    "Independent human release approval"
+  ],
+  "release_path": "game branch -> new immutable master candidate -> exact-build human gate -> selected main release",
+  "independent_code_review": "Root independent agent review pending final tooling assessment; not human release approval"
+}

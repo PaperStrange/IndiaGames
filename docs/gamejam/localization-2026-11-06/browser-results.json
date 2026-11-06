@@ -1,0 +1,563 @@
+{
+  "kind": "automated-known-route-locale-journeys",
+  "human_approval": false,
+  "physical_device": false,
+  "fluent_review": "pending",
+  "source_commit": "b451f5dd90294b8713dfdf6518b5d43baf47e948",
+  "uncommitted_development": true,
+  "source_files": {
+    "index.html": "d96b836b28b81bfa2a353ca97ccbb9fb19277893028c4712e790fb891783b933",
+    "css/main.css": "b99063ee95b1f769fabbbb5960cfcc05a4ead82365f6d90da4573ad7e09f9a77",
+    "assets/images/town-map.svg": "b9157e4af8c71d17a1626751e2ae45fe6642bf860e9e277743b269b0aa4e7a43",
+    "js/actions.js": "b79da595af27473e6b1632d91d2508032b817a8974df899d74aeb1fe22b34b34",
+    "js/data.js": "232c1623d7e253ad45d7d676eed39cd62b63a16c9576c24ba32a9cc3634f4411",
+    "js/echo-time.js": "15e29252a6c156f5b4d94940853ec8d265b3f906e271c69dacc08325a2b7a97f",
+    "js/engine.js": "c8702b34a5c9fd7eb70e3c800cb3256293abc9a3aa50d3c4c4eebead0dc68694",
+    "js/i18n.js": "96a8a9e8602fdb75729ee15964816d8067b9164cb39913ce9cac14a14152e4b4",
+    "js/messages.js": "42c440fa6e27d3ee3e087220a8495f9ae39a14763f78cc110ccf9905c27d046d",
+    "js/square-event.js": "ba313b38bd226de8b2571784eae2a4f96af6ead49cb19e917dce7eee4fab227a",
+    "js/story-locales.js": "6bf8a7eec292c6a955a28226952b600debc7bac1076f195b04e678c3721ef176",
+    "js/ui-locales.js": "c9ff4d7ced2fbe6544c84b038dc845a7b2ea43480bec64917b37aec31201e83f",
+    "tests/localized-journey.cjs": "ca0f7cf16b932c5021842bd2470ee502eb45ef48183a74529412dd879f5944ed"
+  },
+  "build_files": {
+    "index.html": "af89415f841f29249fbb4d81b9204da4e3153159b1bea8d8cdaf1ed855666fa4",
+    "locale-catalog.json": "577e3e0827c16557aa0fdf93101b33013fc973d992f94692853d0a28e25fbbda"
+  },
+  "results": [
+    {
+      "engine": "chromium",
+      "browser": "141.0.7390.37",
+      "locale": "en",
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "en",
+        "font": true,
+        "buttons": [
+          {
+            "width": 142,
+            "height": 78.0625
+          },
+          {
+            "width": 130.34375,
+            "height": 67.328125
+          },
+          {
+            "width": 109.21875,
+            "height": 67.328125
+          },
+          {
+            "width": 142,
+            "height": 84.921875
+          },
+          {
+            "width": 118.6875,
+            "height": 67.328125
+          },
+          {
+            "width": 142,
+            "height": 78.0625
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "browser": "141.0.7390.37",
+      "locale": "ja",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "emulated touch: visible-control witnessed clue",
+        "rotation and narrow split-view reflow",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "ja",
+        "font": true,
+        "buttons": [
+          {
+            "width": 68,
+            "height": 44.796875
+          },
+          {
+            "width": 68,
+            "height": 44.796875
+          },
+          {
+            "width": 70.3125,
+            "height": 61.59375
+          },
+          {
+            "width": 70.3125,
+            "height": 61.59375
+          },
+          {
+            "width": 81.40625,
+            "height": 61.59375
+          },
+          {
+            "width": 68,
+            "height": 44.796875
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "browser": "141.0.7390.37",
+      "locale": "zh-Hans",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "emulated touch: visible-control witnessed clue",
+        "rotation and narrow split-view reflow",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "zh-Hans",
+        "font": true,
+        "buttons": [
+          {
+            "width": 142,
+            "height": 80.171875
+          },
+          {
+            "width": 108,
+            "height": 69.4375
+          },
+          {
+            "width": 108,
+            "height": 69.4375
+          },
+          {
+            "width": 108,
+            "height": 69.4375
+          },
+          {
+            "width": 108,
+            "height": 69.4375
+          },
+          {
+            "width": 108,
+            "height": 69.4375
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "browser": "142.0.1",
+      "locale": "en",
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "en",
+        "font": true,
+        "buttons": [
+          {
+            "width": 142,
+            "height": 78.10000610351562
+          },
+          {
+            "width": 130.51666259765625,
+            "height": 67.35000610351562
+          },
+          {
+            "width": 109.36666870117188,
+            "height": 67.35000610351562
+          },
+          {
+            "width": 142,
+            "height": 84.94999694824219
+          },
+          {
+            "width": 119.46665954589844,
+            "height": 67.35000610351562
+          },
+          {
+            "width": 142,
+            "height": 78.09999084472656
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "browser": "142.0.1",
+      "locale": "ja",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "emulated touch: visible-control witnessed clue",
+        "rotation and narrow split-view reflow",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "ja",
+        "font": true,
+        "buttons": [
+          {
+            "width": 68,
+            "height": 44.80000305175781
+          },
+          {
+            "width": 68,
+            "height": 44.80000305175781
+          },
+          {
+            "width": 70.30000305175781,
+            "height": 61.600006103515625
+          },
+          {
+            "width": 70.30000305175781,
+            "height": 61.59999084472656
+          },
+          {
+            "width": 81.40000915527344,
+            "height": 61.600006103515625
+          },
+          {
+            "width": 68,
+            "height": 44.79998779296875
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "browser": "142.0.1",
+      "locale": "zh-Hans",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "emulated touch: visible-control witnessed clue",
+        "rotation and narrow split-view reflow",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "zh-Hans",
+        "font": true,
+        "buttons": [
+          {
+            "width": 142,
+            "height": 80.2166748046875
+          },
+          {
+            "width": 108,
+            "height": 69.46665954589844
+          },
+          {
+            "width": 108,
+            "height": 69.46665954589844
+          },
+          {
+            "width": 108,
+            "height": 69.4666748046875
+          },
+          {
+            "width": 108,
+            "height": 69.46665954589844
+          },
+          {
+            "width": 108,
+            "height": 69.46665954589844
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "browser": "26.0",
+      "locale": "en",
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "en",
+        "font": true,
+        "buttons": [
+          {
+            "width": 142,
+            "height": 76
+          },
+          {
+            "width": 130.34375,
+            "height": 66
+          },
+          {
+            "width": 109.21875,
+            "height": 66
+          },
+          {
+            "width": 142,
+            "height": 83
+          },
+          {
+            "width": 119.46875,
+            "height": 66
+          },
+          {
+            "width": 142,
+            "height": 76
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "browser": "26.0",
+      "locale": "ja",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "emulated touch: visible-control witnessed clue",
+        "rotation and narrow split-view reflow",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "ja",
+        "font": true,
+        "buttons": [
+          {
+            "width": 68,
+            "height": 44
+          },
+          {
+            "width": 68,
+            "height": 44
+          },
+          {
+            "width": 70.3125,
+            "height": 60
+          },
+          {
+            "width": 70.3125,
+            "height": 60
+          },
+          {
+            "width": 81.40625,
+            "height": 60
+          },
+          {
+            "width": 68,
+            "height": 44
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "browser": "26.0",
+      "locale": "zh-Hans",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "emulated": true,
+      "steps": [
+        "entry",
+        "blank forecast → witnessed clue → three ordinary actions → anchor confirmation → Loop 2",
+        "safe language switch preserves IDs/resources/history and re-renders",
+        "ordinary next-loop intervention without Momentum → visibly changed Mina outcome",
+        "three anchors → complete ending",
+        "explicit restart clears run",
+        "borrow spends once, holds Dawn/forecast, later boundary resolves prepared report",
+        "reload preserves locale preference only; game starts fresh",
+        "Fracture 4 reaches midnight without forecast reward",
+        "split-source Original mode: native Tab/Enter entry → scene action → next phase",
+        "Original full three-loop ending and restart",
+        "emulated touch: visible-control witnessed clue",
+        "rotation and narrow split-view reflow",
+        "150% text-size reflow proxy",
+        "denied preference storage still allows language choice and play"
+      ],
+      "errors": [],
+      "layout": {
+        "overflow": false,
+        "language": "zh-Hans",
+        "font": true,
+        "buttons": [
+          {
+            "width": 142,
+            "height": 78
+          },
+          {
+            "width": 108,
+            "height": 68
+          },
+          {
+            "width": 108,
+            "height": 68
+          },
+          {
+            "width": 108,
+            "height": 68
+          },
+          {
+            "width": 108,
+            "height": 68
+          },
+          {
+            "width": 108,
+            "height": 68
+          }
+        ]
+      },
+      "status": "pass"
+    }
+  ]
+}

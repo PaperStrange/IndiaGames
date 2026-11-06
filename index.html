@@ -12,7 +12,7 @@
   <main class="app">
     <div class="topline">
       <div class="run-state"><span class="pulse"></span><span id="runLabel">Ready to enter Bellweather</span></div>
-      <div class="top-actions"><div class="mode-switch" aria-label="Demo version"><button id="originalMode" type="button" aria-pressed="true">Original</button><button id="contrastMode" type="button" aria-pressed="false">Contrast</button></div><button class="text-btn" id="rulesBtn" type="button">How to play</button></div>
+      <div class="top-actions"><label class="locale-field"><span>Language</span><select class="locale-choice" aria-label="Language" data-no-i18n><option value="en" lang="en">English</option><option value="ja" lang="ja">日本語</option><option value="zh-Hans" lang="zh-Hans">简体中文</option></select></label><div class="mode-switch" aria-label="Demo version"><button id="originalMode" type="button" aria-pressed="true">Original</button><button id="contrastMode" type="button" aria-pressed="false">Contrast</button></div><button class="text-btn" id="rulesBtn" type="button">How to play</button></div>
     </div>
     <div class="layout">
       <section class="game" aria-label="Bellweather adventure board">
@@ -35,8 +35,8 @@
         <section class="schedule-panel contrast-only" id="schedulePanel" hidden aria-labelledby="scheduleTitle"><div class="schedule-head"><h3 id="scheduleTitle">People × phase ledger</h3><span>Plan from patterns, not waypoints.</span></div><div class="schedule-grid" id="scheduleGrid"></div></section>
         <section class="forecast" aria-labelledby="forecastTitle"><div class="forecast-head"><div><div class="forecast-label" id="forecastLabel">Prediction · before the next bell</div><h3 id="forecastTitle">What changes by noon?</h3><p id="forecastClue">Read the schedule, then commit before you travel.</p></div><div class="forecast-state" id="forecastState">Undeclared</div></div><p class="forecast-memory" id="forecastMemory" hidden></p><div class="prediction-choices" id="predictionChoices"></div></section>
         <div class="map-head"><h2>Where do you go?</h2><p id="mapPace">Each district holds an activity, not an answer.<br>Three visits before midnight.</p></div>
-        <div class="town-map" id="townMap" aria-label="Interactive illustrated map of Bellweather">
-          <img class="map-art" src="assets/images/town-map.webp" alt="Hand-drawn town map showing Bell Square, North Gate, Glassworks, Saint Orra's Hospice, Flooded Archive, Underbell, and the central clock" />
+        <div class="town-map" id="townMap" aria-label="Map of Bellweather with six district buttons">
+          <img class="map-art" src="assets/images/town-map.svg" alt="" aria-hidden="true" />
           <div class="map-caption" id="mapCaption">Loop I · The ordinary morning</div>
           <div class="map-clock" id="mapClock" aria-hidden="true"><i class="clock-hand hour" id="hourHand"></i><i class="clock-hand minute" id="minuteHand"></i><i class="clock-pin"></i><span id="mapClockPhase">Dawn · 7:00</span></div>
           <div id="mapPlaces"></div>
@@ -115,7 +115,9 @@
       <div class="event-body">
         <div class="event-label" id="startLabel">A 4–8 minute solo adventure</div><h2 id="startTitle">Walk a day that refuses to repeat.</h2>
         <p id="startText">You have three visits before the thirteenth bell—unless Fracture reaches 4 and catastrophe arrives early. Predict scheduled events to gain Momentum, then carry one bond and one object through midnight. Scars never reset.</p>
+        <p class="locale-help">Forecasts are optional. A scene action records a visit; resolve its receipt to continue. At midnight, choose one bond and one object, then confirm.</p>
         <div class="how" id="startHow"><div><b>1 · Predict</b>Commit before the next bell.</div><div><b>2 · Travel & act</b>Every choice strains the town.</div><div><b>3 · Spend Momentum</b>Skip scenes you have mastered.</div><div><b>4 · Anchor</b>Choose what tomorrow remembers.</div></div>
+        <label class="locale-field"><span>Language</span><select class="locale-choice" aria-label="Language" data-no-i18n><option value="en" lang="en">English</option><option value="ja" lang="ja">日本語</option><option value="zh-Hans" lang="zh-Hans">简体中文</option></select></label><p class="locale-help">Change language at the map between visits. Your run stays in this tab; reloading starts over.</p>
         <button class="primary" id="startBtn" type="button">Step into Bellweather</button>
         <button class="text-btn start-alternative" id="tryContrastBtn" type="button">Try GameJam / Contrast</button>
       </div>
@@ -131,8 +133,13 @@
   <section class="event" id="winModal" role="dialog" aria-modal="true" aria-labelledby="winTitle"><div class="event-card"><div class="event-art"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7v12M14 14l8 9M50 14l-8 9M9 34h13M42 34h13M18 51l9-10M46 51l-9-10"/><circle cx="32" cy="32" r="9"/></svg><div class="weather">A fourteenth morning.</div></div><div class="event-body"><div class="event-label">Adventure complete</div><h2 id="winTitle">The tower releases the day.</h2><p>You descend by the hidden route, carrying the bell's true song through the ember lens. Bellweather does not reset. Its people remember fragments of every life you crossed.</p><div class="debrief" id="debrief"></div><button class="primary" id="restartBtn" type="button">Begin a different path</button></div></div></section>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="js/actions.js"></script>
   <script src="js/echo-time.js"></script>
   <script src="js/square-event.js"></script>
+  <script src="js/story-locales.js"></script>
+  <script src="js/ui-locales.js"></script>
+  <script src="js/messages.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/data.js"></script>
     <script src="js/engine.js"></script>
 </body>

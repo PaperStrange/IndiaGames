@@ -14,17 +14,23 @@ OUTPUT_NAME = 'thirteenth-bell-playable-demo.html'
 
 
 def inventory(directory):
-    """Require the complete single-file artifact, rejecting extra/symlink paths."""
+    """Require exactly the portable HTML and locale catalog, rejecting extras/symlinks."""
     entries = sorted(directory.rglob('*'))
     if any(path.is_symlink() for path in entries):
         raise ValueError('Build inventory contains a symbolic link')
     files = [path for path in entries if path.is_file()]
     names = [path.relative_to(directory).as_posix() for path in files]
-    if names != [OUTPUT_NAME] or len(entries) != 1:
-        raise ValueError(f'Expected only {OUTPUT_NAME}; found {names}')
-    content = files[0].read_bytes()
-    return [{'path': OUTPUT_NAME, 'bytes': len(content),
-             'sha256': hashlib.sha256(content).hexdigest()}]
+    expected = ['locale-catalog.json', OUTPUT_NAME]
+    if names != expected or len(entries) != 2:
+        raise ValueError(f'Expected only {expected}; found {names}')
+    catalog = json.loads((directory / 'locale-catalog.json').read_text())
+    required = {'schema_version': 1, 'game': 'thirteenth-bell', 'default_locale': 'en',
+                'locales': ['en', 'ja', 'zh-Hans'],
+                'units': [{'id': 'thirteenth-bell', 'locales': ['en', 'ja', 'zh-Hans']}]}
+    if catalog != required:
+        raise ValueError('Locale catalog does not match the reviewed build scope')
+    return [{'path': path.name, 'bytes': len(path.read_bytes()),
+             'sha256': hashlib.sha256(path.read_bytes()).hexdigest()} for path in files]
 
 
 def main():
