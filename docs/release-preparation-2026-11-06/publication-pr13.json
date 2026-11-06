@@ -1,0 +1,153 @@
+{
+  "started_at": "2026-11-06T06:50:21.886Z",
+  "completed_at": "2026-11-06T06:50:30.873Z",
+  "kind": "actual-public-HTTPS-Pages-verification",
+  "expected_commit": "345c33970745297103a099ecdf9dc11f134b0038",
+  "base": "https://paperstrange.github.io/IndiaGames/",
+  "tls_verification": true,
+  "expected_tasks": 75,
+  "human_rows": 0,
+  "expected_sha256": {
+    "index.html": "449099890698b7aeffea654a3a8db88500714d0a9c9486526ef2354679e298d8",
+    "app.js": "ea5afe760cf9a7be491b449018e3e54a14d8ab31e0baa855fc4269d98b79f5ed",
+    "styles.css": "06168c9680a23ac46ba9f317a473f1c6327b986aea904a4236bc45098a590427",
+    "data/tasks.json": "5d762aa74b4f33481ec21aa97487dfca9fd440228b7001d01831cce3c788471a",
+    "data/source-manifest.json": "0d648ce8f4dd195fb950aa47d7b432be2c4a136616f51471efcb9ce7a59daa11",
+    "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+    "data/hub-presentation.json": "1db61798b3348af9bb6f22ed99f997eace1d8af8eda0dcb0135e2348d6ee9fdd",
+    "assets/hub/small-hours-opening.png": "b88ae8d49eb69f173ec333c3cad8b6365118481c861a3c182e4ee37d7592b2a6",
+    "assets/hub/vivid-iona-opening.png": "befb61b8eaff29115ee1b8447f4ffc8646edf883ad6af23e2abcee4b678da75b",
+    "assets/hub/bell-town-map.webp": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+    "assets/hub/favicon.svg": "8c8d7a2f1b4b3107be407adb59f3547d56abb9fe389f0461ae9610673960e44b"
+  },
+  "limitations": [
+    "No human session, physical-device or game playthrough claim.",
+    "Only the deployed project mount is exercised; local root-mount coverage is separate.",
+    "This does not repair the owner-paused historical candidate URL."
+  ],
+  "status": "pass",
+  "pages_build": {
+    "commit": "345c33970745297103a099ecdf9dc11f134b0038",
+    "status": "built",
+    "created_at": "2026-11-06T06:49:13Z",
+    "updated_at": "2026-11-06T06:49:31Z"
+  },
+  "http_files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "449099890698b7aeffea654a3a8db88500714d0a9c9486526ef2354679e298d8",
+      "expected_sha256": "449099890698b7aeffea654a3a8db88500714d0a9c9486526ef2354679e298d8",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "sha256": "ea5afe760cf9a7be491b449018e3e54a14d8ab31e0baa855fc4269d98b79f5ed",
+      "expected_sha256": "ea5afe760cf9a7be491b449018e3e54a14d8ab31e0baa855fc4269d98b79f5ed",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "styles.css",
+      "status": 200,
+      "sha256": "06168c9680a23ac46ba9f317a473f1c6327b986aea904a4236bc45098a590427",
+      "expected_sha256": "06168c9680a23ac46ba9f317a473f1c6327b986aea904a4236bc45098a590427",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "data/tasks.json",
+      "status": 200,
+      "sha256": "5d762aa74b4f33481ec21aa97487dfca9fd440228b7001d01831cce3c788471a",
+      "expected_sha256": "5d762aa74b4f33481ec21aa97487dfca9fd440228b7001d01831cce3c788471a",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "data/source-manifest.json",
+      "status": 200,
+      "sha256": "0d648ce8f4dd195fb950aa47d7b432be2c4a136616f51471efcb9ce7a59daa11",
+      "expected_sha256": "0d648ce8f4dd195fb950aa47d7b432be2c4a136616f51471efcb9ce7a59daa11",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "data/releases.json",
+      "status": 200,
+      "sha256": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "expected_sha256": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "data/hub-presentation.json",
+      "status": 200,
+      "sha256": "1db61798b3348af9bb6f22ed99f997eace1d8af8eda0dcb0135e2348d6ee9fdd",
+      "expected_sha256": "1db61798b3348af9bb6f22ed99f997eace1d8af8eda0dcb0135e2348d6ee9fdd",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "assets/hub/small-hours-opening.png",
+      "status": 200,
+      "sha256": "b88ae8d49eb69f173ec333c3cad8b6365118481c861a3c182e4ee37d7592b2a6",
+      "expected_sha256": "b88ae8d49eb69f173ec333c3cad8b6365118481c861a3c182e4ee37d7592b2a6",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "assets/hub/vivid-iona-opening.png",
+      "status": 200,
+      "sha256": "befb61b8eaff29115ee1b8447f4ffc8646edf883ad6af23e2abcee4b678da75b",
+      "expected_sha256": "befb61b8eaff29115ee1b8447f4ffc8646edf883ad6af23e2abcee4b678da75b",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "assets/hub/bell-town-map.webp",
+      "status": 200,
+      "sha256": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+      "expected_sha256": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+      "matches": true,
+      "tls_verify_result": 0
+    },
+    {
+      "file": "assets/hub/favicon.svg",
+      "status": 200,
+      "sha256": "8c8d7a2f1b4b3107be407adb59f3547d56abb9fe389f0461ae9610673960e44b",
+      "expected_sha256": "8c8d7a2f1b4b3107be407adb59f3547d56abb9fe389f0461ae9610673960e44b",
+      "matches": true,
+      "tls_verify_result": 0
+    }
+  ],
+  "browser_groups": [
+    {
+      "id": "live-1440",
+      "width": 1440,
+      "height": 1000,
+      "checks": [
+        "Snapshot date, candidate-freeze/launch countdown and actual recorded human-session count match deployed data",
+        "Declared project favicon returns200, decodes as an image, and matches the deployed Git blob through an actual browser response",
+        "Three genuine loaded images, empty official-release registry and overview reflow",
+        "All authored IDs reachable; three lane filters; dependency search; keyboard detail open/close; board reflow"
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "live-390",
+      "width": 390,
+      "height": 844,
+      "checks": [
+        "Snapshot date, candidate-freeze/launch countdown and actual recorded human-session count match deployed data",
+        "Declared project favicon returns200, decodes as an image, and matches the deployed Git blob through an actual browser response",
+        "Three genuine loaded images, empty official-release registry and overview reflow",
+        "All authored IDs reachable; three lane filters; dependency search; keyboard detail open/close; board reflow"
+      ],
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "actual_browser_response_hashes": "All11files observed and matched in each browser group."
+}

@@ -6,6 +6,10 @@ The selected export and branch-CI engineering milestone is complete; the owner i
 
 For this dashboard delivery, the owner will review the whole dashboard after publication. Publish after independent agent review and passing CI, then verify the actual deployed revision. This records the November 6 instruction; it does not claim counted robot approval, change standing protection settings or waive independent human game-release approval. The [owner checklist](iteration-2026-11-06/OWNER-TODO.md) is release-focused, not a stop condition for all coding.
 
+## Proposed language and device preparation
+
+The owner confirmed English, Japanese and Simplified Chinese across desktop web, phones and tablets. The [new plan](release-preparation-2026-11-06/README.md) adds nine proposed cards and a blank evidence matrix; implementation is not settled. Agents own agreed catalog/tooling/technical work, people own fluent judgment and real-device/gameplay evidence, and administrators own protection. One integrator per game prevents conflicting schema/runtime edits. [Owner coordination](release-preparation-2026-11-06/OWNER-TODO.md) keeps unassigned roles and the pending November 20 language-scope decision visible. Existing 75 task contracts and release criteria remain unchanged.
+
 ## Launch coordination · target 20 November 2026
 
 Use the [dated launch plan](launch/2026-11-20/README.md) and each game’s linked human-test packet. Role names remain assignment slots until a real person accepts them. The November 4 milestone is a [technical readiness handoff](iteration-2026-11-04/README.md); human studies will be arranged later. Name a facilitator, device QA owner, release integrator, repository administrator and independent human reviewer before sessions, then reforecast the affected launch target. Keep the historical task cards and dated follow-ups and their completion evidence authoritative. The new schedule does not mark human work complete.

@@ -27,3 +27,7 @@ The three projects remain **Small Hours / Memorable Moments**, **Vivid / Keeperâ
 ## November 4 readiness update
 
 The [current adjudication and handoff](../iteration-2026-11-04/README.md) incorporates the newer archived reports, source-correct criticism and four dated technical follow-ups. All original task IDs and evidence remain; the historical policy-review card records its actual merge. Supported HTTP checks and the bounded Vivid shared-helper layout correction do not create human results. Small Hours keeps its baseline, Bell keeps 0.1.0 and Vivid preserves 0.1.2 and has staged the verified 0.1.3 candidate via PR #6; human approval remains pending. [Issue dispositions](../iteration-2026-11-04/issues.md) retain actual protection and managed-browser limitations. The November 4 code-review exception applies only to this user-authorized batch, not to standing governance or human release approval.
+
+## November 6 language and device preparation request
+
+The owner confirmed `en`, `ja`, `zh-Hans` and desktop web/phones/tablets. The [proposed plan](../release-preparation-2026-11-06/README.md) and pinned source audits identify localization, physical-device and release-contract gaps. Nine proposed cards supplement the unchanged 75-card history. No translated game, new gameplay test, native-language approval or hardware-support result is claimed. [PR #13](https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493) remains the verified prior engineering deployment; this planning dashboard needs its own publication check.

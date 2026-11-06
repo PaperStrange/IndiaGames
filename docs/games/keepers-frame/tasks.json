@@ -865,5 +865,80 @@
     "target_date_utc": "2026-11-10",
     "completion_note": "6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. The local build comparison found all 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.",
     "assigned_person_or_agent": "/root/freeze_vivid + /root"
+  },
+  {
+    "id": "KF-31",
+    "lane": "vivid",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Vivid engine owner + story authors + localization editor",
+    "title": "Localize both story packs without forking semantic identities",
+    "deliverable": "An agreed en/ja/zh-Hans catalog layer for engine UI and both existing stories, with locale-independent saves and recasting.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Extract HTML/app/storage/recovery/ARIA text and each story’s action, progress, feedback, transcript and asset descriptions. Preserve Iona/Mara story IDs, release profiles, action IDs, cast replacement and semantic serialized facts.",
+      "Specify locale choice, fallback and switching behavior: retain the semantic checkpoint, cancel transient gestures safely and define transcript/feedback rendering. Do not create iona-ja story forks or overwrite protected/corrupt/future saves.",
+      "Keep Iona private/public consent routes and legacy continuity equally truthful, and Mara interpretation nonjudgmental. Publish catalog/font revisions and a new immutable build; staged 0.1.4 stays unchanged."
+    ],
+    "depends_on": [
+      "KF-30"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+  },
+  {
+    "id": "KF-32",
+    "lane": "vivid",
+    "perspective": "QA",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Vivid QA + renderer/persistence integrator",
+    "title": "Verify localized stories across engines and input modes",
+    "deliverable": "A source-bound locale/story/profile and desktop/phone/tablet technical matrix covering both flat and 3D presentation.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "After the catalog contract is implemented, exercise both stories in every target locale for missing messages, placeholders, longest reviewed text, CJK glyphs and keyboard/tap alternatives; preserve profile-specific rules and saves.",
+      "Plan Chromium/Firefox/WebKit root/nested runs with save/reload/migration/recovery, language switch, placement/adjustment, reduced motion, asset/context failure and complete flat fallback. Declare unrun cases rather than merging old Chromium results into new coverage.",
+      "Separate emulated layouts from real iPhone/iPad/Android and desktop performance. Prepare a predeclared physical frame-time/memory/thermal workload and blank handoff for KF-33; do not claim actual hardware results here, infer 3D performance from flat completion or add IME cases without a text-entry feature."
+    ],
+    "depends_on": [
+      "KF-31"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+  },
+  {
+    "id": "KF-33",
+    "lane": "vivid",
+    "perspective": "Human playtesting",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Fluent story reviewers + physical-device QA + facilitator",
+    "title": "Qualify Iona and Mara in each declared locale/device scope",
+    "deliverable": "Language-quality and physical-device records for both stories under a reviewed additional protocol, without flattening the original cohorts.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Settle per-locale study scope and any additional sampling before preregistration. Fluent reviewers assess consent/privacy meaning, action clarity, tone and visible consequence in both stories; record translation assistance.",
+      "Keep six Iona people and six different Mara people, distinct across games, and all existing thresholds. Do not treat six mixed-language sessions or a translator walkthrough as approval of every locale; optional neutral/recall studies remain separately declared.",
+      "Verify actual keyboard/touch, flat/3D recovery, readability, save behavior and the predeclared frame-time/memory/thermal workload on named physical devices and exact artifact/catalog hashes. Preserve KF-12/18/23 and independent bundle approval; either story failing required criteria keeps the bundle staged."
+    ],
+    "depends_on": [
+      "KF-32"
+    ],
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
   }
 ]

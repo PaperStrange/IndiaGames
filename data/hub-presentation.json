@@ -6,7 +6,7 @@
     {
       "lane": "memorable",
       "promise": "Make a small shared memory, together.",
-      "next_action": "Use the verified export command for changes; retain the separate study baseline.",
+      "next_action": "Proposed: plan private locale choice, CJK writing and readable keepsakes.",
       "image": {
         "src": "assets/hub/small-hours-opening.png",
         "alt": "Small Hours opening screen with a moonlit window, two cups and a shared postcard.",
@@ -32,7 +32,7 @@
     {
       "lane": "vivid",
       "promise": "Two small worlds. Two ways to care.",
-      "next_action": "Keep branch checks green; preserve the exact staged build for human review.",
+      "next_action": "Proposed: localize both stories while preserving saves, actions and recasting.",
       "image": {
         "src": "assets/hub/vivid-iona-opening.png",
         "alt": "Vivid opening scene with harbour keeper Iona beside a lamp inside a wooden frame.",
@@ -58,7 +58,7 @@
     {
       "lane": "bell",
       "promise": "Learn the town. Change an outcome.",
-      "next_action": "Keep build checks green and investigate reproduced regressions.",
+      "next_action": "Proposed: replace English-dependent rule labels before translating clues and maps.",
       "image": {
         "src": "assets/hub/bell-town-map.webp",
         "alt": "Illustrated town map with six districts surrounding a clock marked Dawn, Noon, Dusk and Midnight.",

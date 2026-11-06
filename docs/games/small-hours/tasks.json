@@ -609,5 +609,80 @@
     "target_date_utc": "2026-11-10",
     "completion_note": "6 November exact-export verification: 13 unit tests, two matching nine-file/60,443-byte exports, 18 HTTP file comparisons, 66 browser checks and three timer groups/nine assertions passed on committed source. Real expiry took 45,051 ms. Four real favicon 404 responses and four matching console events remain a known limitation; other observed errors were zero. The earlier five-favicon attempt is retained. Frozen study bytes are unchanged; no candidate, human or physical-device result is added.",
     "assigned_person_or_agent": "/root/freeze_small_hours + /root"
+  },
+  {
+    "id": "SH-24",
+    "lane": "memorable",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Small Hours integrator + localization editor",
+    "title": "Define locale-safe messages and private-session behavior",
+    "deliverable": "An agreed en/ja/zh-Hans message catalog and formatting contract around stable scene/choice IDs, without changing the frozen study baseline.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Inventory visible, accessible, privacy, status, date and downloadable-keepsake strings. Use complete messages and named placeholders; preserve optional writing and nonjudgmental reveal wording.",
+      "Specify locale selection and any mid-session switch before implementation; do not expose private answers through URLs, saves, analytics or external translation services. Never auto-translate player writing.",
+      "Define local CJK font resources, text-length/grapheme policy and explicit export allowlist changes. Preserve the frozen eight-file study artifact and publish exact source/content/inventory evidence for a new development build."
+    ],
+    "depends_on": [
+      "SH-23"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+  },
+  {
+    "id": "SH-25",
+    "lane": "memorable",
+    "perspective": "QA",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Small Hours QA + integrator",
+    "title": "Verify CJK keepsakes and desktop/phone/tablet journeys",
+    "deliverable": "A proposed three-locale technical matrix for exact exported bytes, input, keepsake layout and cross-engine behavior.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "After SH-24 is selected and implemented, test Japanese/Chinese IME commit and cancellation, graphemes, full-width punctuation, blank/long/escaped text and actual SVG glyphs/line wrapping. Distinguish offered, attempted and delivered save.",
+      "Run affected root/nested and selected embed journeys in Chromium, Firefox and WebKit where available; record actual engine/version and emulation. Cover keyboard, touch alternatives, rotation, tablet split view, virtual-keyboard occlusion and privacy clearing.",
+      "Keep meaningful missing-catalog/placeholder/file-list failure cases and immutable export inventories. Record unavailable engines and physical checks as pending; browser automation cannot establish phone/tablet support."
+    ],
+    "depends_on": [
+      "SH-24"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+  },
+  {
+    "id": "SH-26",
+    "lane": "memorable",
+    "perspective": "Human playtesting",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Fluent language reviewers + physical-device QA + facilitator",
+    "title": "Qualify three-language pair play on declared physical targets",
+    "deliverable": "Native-language review and deidentified physical-device journey records under a reviewed protocol, separate from existing baseline release cohorts.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Preregister the agreed per-locale qualification sample and actual device/browser cells before observing results; accepted fluent reviewers, observers and devices must be named. Do not split six pairs into two per language or invent a 30-times-devices quota.",
+      "Observe privacy handoff, both contributions, comfortable Japanese/Chinese input, actual saved keepsake and exit/reset on declared devices. Record original words, assistance, failures and stopping; do not infer a pass from an empty form.",
+      "Preserve SH-05/10/17/18 and the six-pair 5/6 reveal, 4/6 both-contribute, 3/6 voluntary save/replay criteria. Changed build bytes require a new identity and exact-build evidence; independent human approval remains separate."
+    ],
+    "depends_on": [
+      "SH-25"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
   }
 ]

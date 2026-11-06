@@ -680,5 +680,80 @@
     "target_date_utc": "2026-11-10",
     "completion_note": "6 November engineering checks: 25 Node tests, 20 clean-checkout static checks and five inventory tests passed locally and in actual branch CI. Two complete portable-build inventories match frozen 0.1.0. A 21st freshness check applies only when local dist already exists. No fresh browser, human or physical-device result is claimed.",
     "assigned_person_or_agent": "/root/freeze_bell + /root"
+  },
+  {
+    "id": "TB-23",
+    "lane": "bell",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Bell systems owner + narrative designer",
+    "title": "Separate English labels from Bell rules before translation",
+    "deliverable": "Stable action/item/bond identifiers and explicit costs, with a behavior-preserving English reference before adding locale catalogs.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Replace English-prefix and label matching in game consequences, risky-choice costs and stored choice references with semantic IDs/metadata. Preserve event, witness/provenance, Momentum/Fracture and midnight rules.",
+      "Create focused invariance checks proving the same semantic action has the same cost and consequence under all three labels/locales. Preserve Mina’s explicit IDs and the frozen Contrast/reference artifacts.",
+      "Document any migration of stored/rendered history and the intentional in-memory reload/reset behavior. No new save feature, mechanic or altered comparison is implied. Bind the refactor to exact source and newly versioned development artifacts."
+    ],
+    "depends_on": [
+      "TB-22"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+  },
+  {
+    "id": "TB-24",
+    "lane": "bell",
+    "perspective": "QA",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Bell UI/art integrator + localization editor + QA",
+    "title": "Prepare translated clues, map access and device coverage",
+    "deliverable": "Three-locale catalogs and accessible map presentation with source-bound engine, layout and interaction verification.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "After semantic rules are isolated, translate full clue/forecast/cost/receipt/transcript messages. Preserve distinctions between eyewitness and reported knowledge, pre-outcome prediction and learned intervention; do not reveal answers through translation.",
+      "Plan a locale-aware map-label/legend solution for baked English artwork, CJK fonts, touch labels and accessible text alternatives. Test long text, modal scrolling, browser chrome, rotation and tablet split view without relying on tiny overlays.",
+      "Plan Chromium/Firefox/WebKit and actual-device handoff coverage for entry, keyboard/touch choice, witnessed clue, ordinary/borrowed intervention, Fracture 4, midnight, journal, ending and restart. Record exact source/build/locale identity and preserve candidate 0.1.0/reference bytes."
+    ],
+    "depends_on": [
+      "TB-23"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+  },
+  {
+    "id": "TB-25",
+    "lane": "bell",
+    "perspective": "Human playtesting",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Fluent clue reviewers + physical-device QA + facilitator",
+    "title": "Qualify localized causal understanding and real-device play",
+    "deliverable": "A reviewed locale comparison protocol and actual-device observations preserving the six-person Bell experiment.",
+    "acceptance_criteria": [
+      "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+      "Preregister locale-specific qualification and actual device cells before sessions; native readers assess clue fairness, causal/cost wording and map readability. Keep reference and candidate language comparable or explicitly settle a revised study design first.",
+      "Preserve six players, 3/3 first-build order and at least 120 seconds of neutral activity before recall, plus current joint metrics and all failed/assisted attempts. Do not split six into two per language or coach the prediction/Fracture explanation.",
+      "Keep TB-13/17 and independent human release approval separate. Translation/map/font changes create new candidate bytes and require exact-build evidence; actual phone/tablet records must name hardware, OS/browser/input and observed outcomes."
+    ],
+    "depends_on": [
+      "TB-24"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Proposed multilingual / multi-device preparation",
+    "plan_settled": false,
+    "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
   }
 ]

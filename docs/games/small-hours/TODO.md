@@ -448,3 +448,15 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 6 November exact-export verification: 13 unit tests, two matching nine-file/60,443-byte exports, 18 HTTP file comparisons, 66 browser checks and three timer groups/nine assertions passed on committed source. Real expiry took 45,051 ms. Four real favicon 404 responses and four matching console events remain a known limitation; other observed errors were zero. The earlier five-favicon attempt is retained. Frozen study bytes are unchanged; no candidate, human or physical-device result is added.
 
 [Committed record](https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Exact verification](https://github.com/PaperStrange/IndiaGames/blob/c9b98b025e0b7ea38254648058146fceddeb9d1a/docs/gamejam/technical-freeze-2026-11-06/VERIFICATION.md). Human evidence and independent human release approval remain pending.
+
+## Proposed multilingual and device preparation · November 6
+
+The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) is **proposed, not settled implementation**. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
+
+| New card | Proposed work | Owner |
+|---|---|---|
+| **SH-24** | Define locale-safe messages and private-session behavior | Small Hours integrator + localization editor |
+| **SH-25** | Verify CJK keepsakes and desktop/phone/tablet journeys | Small Hours QA + integrator |
+| **SH-26** | Qualify three-language pair play on declared physical targets | Fluent language reviewers + physical-device QA + facilitator |
+
+Each card retains exact acceptance details in [tasks.json](tasks.json). Shared evidence-contract settlement precedes implementation; native review and physical-device observations remain human work. New translations/fonts/layout bytes require new immutable artifacts and exact-build evidence.

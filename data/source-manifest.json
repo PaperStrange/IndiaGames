@@ -568,12 +568,12 @@
     "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
   ],
   "milestone": {
-    "id": "technical-freeze-2026-11-06",
-    "title": "Repeatable exports and branch CI verified",
-    "status": "engineering_freeze_checks_complete_human_candidate_release_gates_pending",
-    "plan_settled": true,
-    "document": "docs/technical-freeze-2026-11-06/README.md",
-    "summary": "SH-23, KF-30 and TB-22 passed source-bound export and branch-CI checks. Small Hours development exports are repeatable; Vivid and Bell workflows passed on implementation and documentation heads. Engineering acceptance is complete; human-dependent candidate freeze and official release approval remain pending.",
+    "id": "release-preparation-2026-11-06",
+    "title": "Proposed three-language and device release preparation",
+    "status": "proposed_scope_confirmed_contract_unsettled",
+    "plan_settled": false,
+    "document": "docs/release-preparation-2026-11-06/README.md",
+    "summary": "English, Japanese and Simplified Chinese across desktop web, phones and tablets are confirmed planning targets. Nine new cards are proposed; locale/device evidence contracts, precise supported combinations and human assignments remain unsettled. The completed export/CI milestone and all current artifact evidence are preserved.",
     "human_staffing": "Unbooked: recruitment needs more time; no accepted facilitator, participant or reviewer assignments recorded.",
     "allowance_visibility": "unavailable",
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
@@ -587,18 +587,18 @@
     "expected_url_http_status": 200,
     "live_deployment_verified": true,
     "observed_page": "IndiaGames development hub with three projects and 75 tasks",
-    "required_action": "Publish the reviewed export/CI milestone dashboard and verify its actual deployed revision; the completed PR #12 verification applies to the earlier cleanup dashboard.",
+    "required_action": "Publish and verify this proposed language/device planning update separately; PR #13 evidence verifies the preceding completed engineering dashboard.",
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
     "pages_update_error": "Resource not accessible by integration",
-    "deployed_commit": "89bb66834ff901045e17121e2a88dc087fbf830c",
+    "deployed_commit": "345c33970745297103a099ecdf9dc11f134b0038",
     "verified_assets": 11,
-    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675",
+    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493",
     "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned403.",
-    "verification_scope": "PR #12 live verification on November 6: all 11 served files and actual browser responses match main 89bb668; desktop/narrow checks, all 75 task IDs, images and favicon passed with zero unexpected errors and TLS verification enabled.",
+    "verification_scope": "PR #13 actual Pages verification on November6: all11served files and actual browser responses matched main345c339; desktop/narrow,75tasks,images/favicon/layout/date checks passed with TLS enabled and zero unexpected dashboard errors.",
     "current_iteration_deployment_verified": false,
-    "verification_stage": "pr12_cleanup_deployment_verified_export_ci_update_pending",
-    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675",
+    "verification_stage": "pr13_engineering_deployment_verified_release_preparation_plan_pending",
+    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493",
     "historical_october_28_deployment": {
       "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
       "verified_assets": 6,
@@ -618,6 +618,12 @@
       "verified_assets": 11,
       "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/9#issuecomment-6677860269",
       "verification_scope": "PR #9 live verification on November 6: all 11 served files and actual browser responses match main 239fcee; desktop/narrow checks passed with zero unexpected errors and TLS verification enabled."
+    },
+    "historical_pr12_deployment": {
+      "deployed_commit": "89bb66834ff901045e17121e2a88dc087fbf830c",
+      "verified_assets": 11,
+      "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675",
+      "verification_scope": "PR #12 live verification on November 6: all 11 served files and actual browser responses match main 89bb668; desktop/narrow checks, all 75 task IDs, images and favicon passed with zero unexpected errors and TLS verification enabled."
     }
   },
   "launch": {
@@ -630,17 +636,17 @@
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
     "readiness_document": "docs/technical-freeze-2026-11-06/README.md",
-    "schedule_note": "Selected export and branch-CI engineering checks are complete. November 11 candidate freeze and November 16 release decisions retain each game’s human, device, defect and approval prerequisites.",
+    "schedule_note": "The export/CI milestone is complete. New three-language desktop/phone/tablet preparation is proposed, with reviewers and exact devices unconfirmed. November11 freeze, November16 go/no-go and November20 conditional launch retain existing human criteria; scope expansion is not a promise to meet those dates.",
     "timeline": [
       [
         "6 November",
         "Engineering verified",
-        "Cleanup, reproducible export and staging"
+        "Cleanup, exports and branch CI complete"
       ],
       [
-        "6 November",
-        "Export and CI verified",
-        "Repeatable artifacts and branch checks"
+        "Proposed",
+        "Languages and devices",
+        "English, Japanese, Chinese; desktop, phones, tablets"
       ],
       [
         "Unbooked",
@@ -662,7 +668,8 @@
         "Conditional launch",
         "Only individually approved games"
       ]
-    ]
+    ],
+    "planning_document": "docs/release-preparation-2026-11-06/README.md"
   },
   "historical_manifest_review_date_utc": "2026-10-27",
   "readiness": {
@@ -788,9 +795,17 @@
         "ci_conclusion": "success",
         "ci_run": 42172187197,
         "publication_evidence": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675"
+      },
+      {
+        "number": 13,
+        "status": "merged",
+        "reviewed_head": "60fc4038d774b0103a9a358f6d461ac022eadfa1",
+        "merge_commit": "345c33970745297103a099ecdf9dc11f134b0038",
+        "ci_conclusion": "success",
+        "live_verification": "https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493"
       }
     ],
-    "delivery_note": "All three export/CI tasks are verified. Small Hours retains its known missing-favicon diagnostic; the study baseline, Vivid 0.1.4 and Bell 0.1.0 are preserved. Human sessions, physical devices and independent release approval remain pending.",
+    "delivery_note": "Export and branch-CI work is complete. English, Japanese and Simplified Chinese across desktop, phones and tablets are new planning targets, not verified support. Existing artifacts and human release gates remain unchanged.",
     "status_checked_at": "2026-11-06T06:43:18.915273+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",
@@ -798,7 +813,8 @@
       "method": "Independent agent review and passing CI before publication; actual deployment verified afterward.",
       "human_game_release_gate_waived": false,
       "standing_policy_changed": false
-    }
+    },
+    "planning_document": "docs/release-preparation-2026-11-06/README.md"
   },
   "governance": {
     "issue": "https://github.com/PaperStrange/IndiaGames/issues/2",
@@ -824,5 +840,42 @@
     "human_staffing": "Unbooked: recruitment needs more time; no accepted facilitator, participant or reviewer assignments recorded.",
     "allowance_visibility": "unavailable",
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
+  },
+  "completed_engineering_milestone": {
+    "id": "technical-freeze-2026-11-06",
+    "title": "Repeatable exports and branch CI verified",
+    "status": "engineering_freeze_checks_complete_human_candidate_release_gates_pending",
+    "plan_settled": true,
+    "document": "docs/technical-freeze-2026-11-06/README.md",
+    "summary": "SH-23, KF-30 and TB-22 passed source-bound export and branch-CI checks. Small Hours development exports are repeatable; Vivid and Bell workflows passed on implementation and documentation heads. Engineering acceptance is complete; human-dependent candidate freeze and official release approval remain pending.",
+    "human_staffing": "Unbooked: recruitment needs more time; no accepted facilitator, participant or reviewer assignments recorded.",
+    "allowance_visibility": "unavailable",
+    "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
+  },
+  "release_preparation": {
+    "status": "proposed",
+    "plan_settled": false,
+    "scope_confirmed": true,
+    "target_locales": [
+      "en",
+      "ja",
+      "zh-Hans"
+    ],
+    "target_device_families": [
+      "desktop_web",
+      "phone",
+      "tablet"
+    ],
+    "targets_are_verified_support": false,
+    "exact_devices_confirmed": false,
+    "fluent_reviewers_assigned": false,
+    "november_20_language_subset_decision": "pending_owner_answer",
+    "additional_locale_sampling_protocol": "pending_explicit_review",
+    "current_validator_enforces_locale_device_coverage": false,
+    "plan_document": "docs/release-preparation-2026-11-06/README.md",
+    "matrix_document": "docs/release-preparation-2026-11-06/planning-matrix.json",
+    "owner_document": "docs/release-preparation-2026-11-06/OWNER-TODO.md",
+    "implementation_started": false,
+    "plan_date_utc": "2026-11-06"
   }
 }

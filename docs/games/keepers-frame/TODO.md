@@ -175,3 +175,15 @@ Serve the exact selected master artifact locally or on an agreed trusted LAN for
 6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. The local build comparison found all 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.
 
 [Committed record](https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Actual workflow](https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179). Human evidence and independent human release approval remain pending.
+
+## Proposed multilingual and device preparation · November 6
+
+The owner selected English (`en`), Japanese (`ja`) and Simplified Chinese (`zh-Hans`) across desktop web, phones and tablets. The [shared plan](../../release-preparation-2026-11-06/README.md) is **proposed, not settled implementation**. Existing task criteria and source/candidate evidence above remain unchanged. Current English artifacts do not inherit these support claims.
+
+| New card | Proposed work | Owner |
+|---|---|---|
+| **KF-31** | Localize both story packs without forking semantic identities | Vivid engine owner + story authors + localization editor |
+| **KF-32** | Verify localized stories across engines and input modes | Vivid QA + renderer/persistence integrator |
+| **KF-33** | Qualify Iona and Mara in each declared locale/device scope | Fluent story reviewers + physical-device QA + facilitator |
+
+Each card retains exact acceptance details in [tasks.json](tasks.json). Shared evidence-contract settlement precedes implementation; native review and physical-device observations remain human work. New translations/fonts/layout bytes require new immutable artifacts and exact-build evidence.

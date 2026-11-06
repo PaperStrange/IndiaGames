@@ -178,9 +178,17 @@
         "ci_conclusion": "success",
         "ci_run": 42172187197,
         "publication_evidence": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675"
+      },
+      {
+        "number": 13,
+        "status": "merged",
+        "reviewed_head": "60fc4038d774b0103a9a358f6d461ac022eadfa1",
+        "merge_commit": "345c33970745297103a099ecdf9dc11f134b0038",
+        "ci_conclusion": "success",
+        "live_verification": "https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493"
       }
     ],
-    "delivery_note": "All three export/CI tasks are verified. Small Hours retains its known missing-favicon diagnostic; the study baseline, Vivid 0.1.4 and Bell 0.1.0 are preserved. Human sessions, physical devices and independent release approval remain pending.",
+    "delivery_note": "Export and branch-CI work is complete. English, Japanese and Simplified Chinese across desktop, phones and tablets are new planning targets, not verified support. Existing artifacts and human release gates remain unchanged.",
     "status_checked_at": "2026-11-06T06:43:18.915273+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",
@@ -188,7 +196,8 @@
       "method": "Independent agent review and passing CI before publication; actual deployment verified afterward.",
       "human_game_release_gate_waived": false,
       "standing_policy_changed": false
-    }
+    },
+    "planning_document": "docs/release-preparation-2026-11-06/README.md"
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -200,17 +209,17 @@
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
     "readiness_document": "docs/technical-freeze-2026-11-06/README.md",
-    "schedule_note": "Selected export and branch-CI engineering checks are complete. November 11 candidate freeze and November 16 release decisions retain each game’s human, device, defect and approval prerequisites.",
+    "schedule_note": "The export/CI milestone is complete. New three-language desktop/phone/tablet preparation is proposed, with reviewers and exact devices unconfirmed. November11 freeze, November16 go/no-go and November20 conditional launch retain existing human criteria; scope expansion is not a promise to meet those dates.",
     "timeline": [
       [
         "6 November",
         "Engineering verified",
-        "Cleanup, reproducible export and staging"
+        "Cleanup, exports and branch CI complete"
       ],
       [
-        "6 November",
-        "Export and CI verified",
-        "Repeatable artifacts and branch checks"
+        "Proposed",
+        "Languages and devices",
+        "English, Japanese, Chinese; desktop, phones, tablets"
       ],
       [
         "Unbooked",
@@ -232,7 +241,8 @@
         "Conditional launch",
         "Only individually approved games"
       ]
-    ]
+    ],
+    "planning_document": "docs/release-preparation-2026-11-06/README.md"
   },
   "status_definitions": {
     "proposed": "Planned; not started.",
@@ -272,6 +282,16 @@
         "bell"
       ],
       "requirement": "Observe actual people using the per-game protocol; automated checks and emotional agent prose are not human evidence."
+    },
+    {
+      "id": "release-preparation-plan",
+      "status": "not_settled",
+      "applies_to": [
+        "memorable",
+        "vivid",
+        "bell"
+      ],
+      "requirement": "The current language/device proposal has its own implementation settlement. Confirm its evidence contract, precise support matrix and human study scope before implementation; the earlier plan-settlement record applies only to its dated readiness work. This dashboard field is not a release-policy or validator gate."
     }
   ],
   "tasks": [
@@ -885,6 +905,81 @@
       "target_date_utc": "2026-11-10",
       "completion_note": "6 November exact-export verification: 13 unit tests, two matching nine-file/60,443-byte exports, 18 HTTP file comparisons, 66 browser checks and three timer groups/nine assertions passed on committed source. Real expiry took 45,051 ms. Four real favicon 404 responses and four matching console events remain a known limitation; other observed errors were zero. The earlier five-favicon attempt is retained. Frozen study bytes are unchanged; no candidate, human or physical-device result is added.",
       "assigned_person_or_agent": "/root/freeze_small_hours + /root"
+    },
+    {
+      "id": "SH-24",
+      "lane": "memorable",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Small Hours integrator + localization editor",
+      "title": "Define locale-safe messages and private-session behavior",
+      "deliverable": "An agreed en/ja/zh-Hans message catalog and formatting contract around stable scene/choice IDs, without changing the frozen study baseline.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Inventory visible, accessible, privacy, status, date and downloadable-keepsake strings. Use complete messages and named placeholders; preserve optional writing and nonjudgmental reveal wording.",
+        "Specify locale selection and any mid-session switch before implementation; do not expose private answers through URLs, saves, analytics or external translation services. Never auto-translate player writing.",
+        "Define local CJK font resources, text-length/grapheme policy and explicit export allowlist changes. Preserve the frozen eight-file study artifact and publish exact source/content/inventory evidence for a new development build."
+      ],
+      "depends_on": [
+        "SH-23"
+      ],
+      "source_plan": "docs/games/small-hours/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    },
+    {
+      "id": "SH-25",
+      "lane": "memorable",
+      "perspective": "QA",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Small Hours QA + integrator",
+      "title": "Verify CJK keepsakes and desktop/phone/tablet journeys",
+      "deliverable": "A proposed three-locale technical matrix for exact exported bytes, input, keepsake layout and cross-engine behavior.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "After SH-24 is selected and implemented, test Japanese/Chinese IME commit and cancellation, graphemes, full-width punctuation, blank/long/escaped text and actual SVG glyphs/line wrapping. Distinguish offered, attempted and delivered save.",
+        "Run affected root/nested and selected embed journeys in Chromium, Firefox and WebKit where available; record actual engine/version and emulation. Cover keyboard, touch alternatives, rotation, tablet split view, virtual-keyboard occlusion and privacy clearing.",
+        "Keep meaningful missing-catalog/placeholder/file-list failure cases and immutable export inventories. Record unavailable engines and physical checks as pending; browser automation cannot establish phone/tablet support."
+      ],
+      "depends_on": [
+        "SH-24"
+      ],
+      "source_plan": "docs/games/small-hours/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    },
+    {
+      "id": "SH-26",
+      "lane": "memorable",
+      "perspective": "Human playtesting",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Fluent language reviewers + physical-device QA + facilitator",
+      "title": "Qualify three-language pair play on declared physical targets",
+      "deliverable": "Native-language review and deidentified physical-device journey records under a reviewed protocol, separate from existing baseline release cohorts.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Preregister the agreed per-locale qualification sample and actual device/browser cells before observing results; accepted fluent reviewers, observers and devices must be named. Do not split six pairs into two per language or invent a 30-times-devices quota.",
+        "Observe privacy handoff, both contributions, comfortable Japanese/Chinese input, actual saved keepsake and exit/reset on declared devices. Record original words, assistance, failures and stopping; do not infer a pass from an empty form.",
+        "Preserve SH-05/10/17/18 and the six-pair 5/6 reveal, 4/6 both-contribute, 3/6 voluntary save/replay criteria. Changed build bytes require a new identity and exact-build evidence; independent human approval remains separate."
+      ],
+      "depends_on": [
+        "SH-25"
+      ],
+      "source_plan": "docs/games/small-hours/TODO.md",
+      "human_participants_required": true,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
     },
     {
       "id": "KF-01",
@@ -1754,6 +1849,81 @@
       "assigned_person_or_agent": "/root/freeze_vivid + /root"
     },
     {
+      "id": "KF-31",
+      "lane": "vivid",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Vivid engine owner + story authors + localization editor",
+      "title": "Localize both story packs without forking semantic identities",
+      "deliverable": "An agreed en/ja/zh-Hans catalog layer for engine UI and both existing stories, with locale-independent saves and recasting.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Extract HTML/app/storage/recovery/ARIA text and each story’s action, progress, feedback, transcript and asset descriptions. Preserve Iona/Mara story IDs, release profiles, action IDs, cast replacement and semantic serialized facts.",
+        "Specify locale choice, fallback and switching behavior: retain the semantic checkpoint, cancel transient gestures safely and define transcript/feedback rendering. Do not create iona-ja story forks or overwrite protected/corrupt/future saves.",
+        "Keep Iona private/public consent routes and legacy continuity equally truthful, and Mara interpretation nonjudgmental. Publish catalog/font revisions and a new immutable build; staged 0.1.4 stays unchanged."
+      ],
+      "depends_on": [
+        "KF-30"
+      ],
+      "source_plan": "docs/games/keepers-frame/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    },
+    {
+      "id": "KF-32",
+      "lane": "vivid",
+      "perspective": "QA",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Vivid QA + renderer/persistence integrator",
+      "title": "Verify localized stories across engines and input modes",
+      "deliverable": "A source-bound locale/story/profile and desktop/phone/tablet technical matrix covering both flat and 3D presentation.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "After the catalog contract is implemented, exercise both stories in every target locale for missing messages, placeholders, longest reviewed text, CJK glyphs and keyboard/tap alternatives; preserve profile-specific rules and saves.",
+        "Plan Chromium/Firefox/WebKit root/nested runs with save/reload/migration/recovery, language switch, placement/adjustment, reduced motion, asset/context failure and complete flat fallback. Declare unrun cases rather than merging old Chromium results into new coverage.",
+        "Separate emulated layouts from real iPhone/iPad/Android and desktop performance. Prepare a predeclared physical frame-time/memory/thermal workload and blank handoff for KF-33; do not claim actual hardware results here, infer 3D performance from flat completion or add IME cases without a text-entry feature."
+      ],
+      "depends_on": [
+        "KF-31"
+      ],
+      "source_plan": "docs/games/keepers-frame/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    },
+    {
+      "id": "KF-33",
+      "lane": "vivid",
+      "perspective": "Human playtesting",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Fluent story reviewers + physical-device QA + facilitator",
+      "title": "Qualify Iona and Mara in each declared locale/device scope",
+      "deliverable": "Language-quality and physical-device records for both stories under a reviewed additional protocol, without flattening the original cohorts.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Settle per-locale study scope and any additional sampling before preregistration. Fluent reviewers assess consent/privacy meaning, action clarity, tone and visible consequence in both stories; record translation assistance.",
+        "Keep six Iona people and six different Mara people, distinct across games, and all existing thresholds. Do not treat six mixed-language sessions or a translator walkthrough as approval of every locale; optional neutral/recall studies remain separately declared.",
+        "Verify actual keyboard/touch, flat/3D recovery, readability, save behavior and the predeclared frame-time/memory/thermal workload on named physical devices and exact artifact/catalog hashes. Preserve KF-12/18/23 and independent bundle approval; either story failing required criteria keeps the bundle staged."
+      ],
+      "depends_on": [
+        "KF-32"
+      ],
+      "source_plan": "docs/games/keepers-frame/TODO.md",
+      "human_participants_required": true,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    },
+    {
       "id": "TB-01",
       "lane": "bell",
       "perspective": "Research",
@@ -2434,6 +2604,81 @@
       "target_date_utc": "2026-11-10",
       "completion_note": "6 November engineering checks: 25 Node tests, 20 clean-checkout static checks and five inventory tests passed locally and in actual branch CI. Two complete portable-build inventories match frozen 0.1.0. A 21st freshness check applies only when local dist already exists. No fresh browser, human or physical-device result is claimed.",
       "assigned_person_or_agent": "/root/freeze_bell + /root"
+    },
+    {
+      "id": "TB-23",
+      "lane": "bell",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Bell systems owner + narrative designer",
+      "title": "Separate English labels from Bell rules before translation",
+      "deliverable": "Stable action/item/bond identifiers and explicit costs, with a behavior-preserving English reference before adding locale catalogs.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Replace English-prefix and label matching in game consequences, risky-choice costs and stored choice references with semantic IDs/metadata. Preserve event, witness/provenance, Momentum/Fracture and midnight rules.",
+        "Create focused invariance checks proving the same semantic action has the same cost and consequence under all three labels/locales. Preserve Mina’s explicit IDs and the frozen Contrast/reference artifacts.",
+        "Document any migration of stored/rendered history and the intentional in-memory reload/reset behavior. No new save feature, mechanic or altered comparison is implied. Bind the refactor to exact source and newly versioned development artifacts."
+      ],
+      "depends_on": [
+        "TB-22"
+      ],
+      "source_plan": "docs/games/thirteenth-bell/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    },
+    {
+      "id": "TB-24",
+      "lane": "bell",
+      "perspective": "QA",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Bell UI/art integrator + localization editor + QA",
+      "title": "Prepare translated clues, map access and device coverage",
+      "deliverable": "Three-locale catalogs and accessible map presentation with source-bound engine, layout and interaction verification.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "After semantic rules are isolated, translate full clue/forecast/cost/receipt/transcript messages. Preserve distinctions between eyewitness and reported knowledge, pre-outcome prediction and learned intervention; do not reveal answers through translation.",
+        "Plan a locale-aware map-label/legend solution for baked English artwork, CJK fonts, touch labels and accessible text alternatives. Test long text, modal scrolling, browser chrome, rotation and tablet split view without relying on tiny overlays.",
+        "Plan Chromium/Firefox/WebKit and actual-device handoff coverage for entry, keyboard/touch choice, witnessed clue, ordinary/borrowed intervention, Fracture 4, midnight, journal, ending and restart. Record exact source/build/locale identity and preserve candidate 0.1.0/reference bytes."
+      ],
+      "depends_on": [
+        "TB-23"
+      ],
+      "source_plan": "docs/games/thirteenth-bell/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
+    },
+    {
+      "id": "TB-25",
+      "lane": "bell",
+      "perspective": "Human playtesting",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Fluent clue reviewers + physical-device QA + facilitator",
+      "title": "Qualify localized causal understanding and real-device play",
+      "deliverable": "A reviewed locale comparison protocol and actual-device observations preserving the six-person Bell experiment.",
+      "acceptance_criteria": [
+        "Settle the proposed language/device evidence contract, locale behavior and supported target matrix before implementation; this proposal does not change the current release policy or validator.",
+        "Preregister locale-specific qualification and actual device cells before sessions; native readers assess clue fairness, causal/cost wording and map readability. Keep reference and candidate language comparable or explicitly settle a revised study design first.",
+        "Preserve six players, 3/3 first-build order and at least 120 seconds of neutral activity before recall, plus current joint metrics and all failed/assisted attempts. Do not split six into two per language or coach the prediction/Fracture explanation.",
+        "Keep TB-13/17 and independent human release approval separate. Translation/map/font changes create new candidate bytes and require exact-build evidence; actual phone/tablet records must name hardware, OS/browser/input and observed outcomes."
+      ],
+      "depends_on": [
+        "TB-24"
+      ],
+      "source_plan": "docs/games/thirteenth-bell/TODO.md",
+      "human_participants_required": true,
+      "completion_evidence": [],
+      "focus": "Proposed multilingual / multi-device preparation",
+      "plan_settled": false,
+      "completion_note": "Proposal only. Language and device families are confirmed; evidence-contract, staffing and precise support decisions remain unsettled. No implementation or language/device result is claimed."
     }
   ]
 }
