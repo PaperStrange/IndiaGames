@@ -172,6 +172,6 @@ Serve the exact selected master artifact locally or on an agreed trusted LAN for
 
 ### November 6 completed export/CI engineering · KF-30
 
-6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. All 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.
+6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. The local build comparison found all 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.
 
 [Committed record](https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/docs/gamejam/technical-freeze-2026-11-06/README.md) · [Actual workflow](https://github.com/PaperStrange/IndiaGames/actions/runs/42175237179). Human evidence and independent human release approval remain pending.

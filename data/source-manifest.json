@@ -109,7 +109,7 @@
       "candidate_master_commit": "ac931cde281e9483f6f693289cad2d99038d5bc0",
       "official_release": false,
       "human_participant_rows": 0,
-      "qa_scope": "6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. All 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.",
+      "qa_scope": "6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. The local build comparison found all 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.",
       "qa_status": "automated_technical_pass_human_pending",
       "current_decision_document": "https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/DECISION.md",
       "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/2130e5523dbf9ba27af268f0ba8cccb86aef56e2/README.md",
@@ -150,7 +150,7 @@
       "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/competitor-plays-2026-10-28/README.md",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
       "milestone_status_label": "Export/CI engineering verified · human release pending",
-      "milestone_summary": "6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. All 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.",
+      "milestone_summary": "6 November engineering checks: 51 unit tests, seven version-guard fixtures, story validation and emitted-version build passed locally and in actual branch CI. The local build comparison found all 15 output files equal staged 0.1.4. A local cache-permission retry and the successful actions’ platform runtime warning are retained. This run adds no browser, human or physical-device result.",
       "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
       "launch_verification": {
         "date_utc": "2026-10-27",

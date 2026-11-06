@@ -48,7 +48,8 @@
         "version_guard_fixtures": 7,
         "artifact_files": 15,
         "artifact_bytes": 1401606,
-        "artifact_inventory": "a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1"
+        "artifact_inventory": "a511fbcf55fc94fe344f1a6d4eb1bebb509291ee5f31fb6f2889fcd85f67dbb1",
+        "artifact_comparison_method": "Local built output compared with all 15 immutable staged0.1.4 files; this inventory equality is not claimed as a CI job assertion."
       },
       "workflow_run": {
         "id": 42175237179,
