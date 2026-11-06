@@ -12,6 +12,12 @@ Continue targeted technical preparation through November 6–10. Select at most 
 
 Vivid 0.1.3 staging and November 4 hub deployment are complete; [the current reconciliation](../../iteration-2026-11-05/README.md#issues-and-publication-reconciliation) replaces stale premerge pending statements. New iteration publication requires its own verification.
 
+## November 6 engineering path
+
+Engineering cleanup proceeds in all three lanes without waiting for the 30-person recruitment plan. The [current milestone](../../iteration-2026-11-06/README.md) covers Small Hours countdown/test ownership, Vivid package-derived version identity and a separately versioned 0.1.4 export, and Bell’s isolated build validation. The [owner checklist](../../iteration-2026-11-06/OWNER-TODO.md) governs human studies, actual devices and official release approval; those tasks are not prerequisites for this bounded maintenance.
+
+The exact human-study packages listed below remain their dated starting points until a verified replacement is staged. Preserve old packets and records. Small Hours development cleanup does not automatically replace its baseline or satisfy its pilot/design prerequisites. Keep the November 11 freeze and November 16 go/no-go cut lines; any game without its required evidence remains staged rather than being released on calendar pressure.
+
 ## Game packets
 
 Each owning game branch contains its own test list, blank human records, setup and next-iteration plan. Copy forms into a private study workspace; the committed templates contain no participants or results.

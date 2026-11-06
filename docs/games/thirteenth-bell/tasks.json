@@ -623,5 +623,29 @@
     "focus": "Technical preparation / facilitator setup",
     "assigned_person_or_agent": "/root/bell_nov5 + /root",
     "completion_note": "5 November: four facilitator-setup journeys and 24 checks passed for frozen candidate/reference across desktop/narrow HTTP origins. Candidate/reference inventories and served HTML matched; no candidate failures. Four optional reference Google Fonts certificate failures remain disclosed. These setup checks do not rerun all November 4 causal scenarios or establish human recall/physical-device results."
+  },
+  {
+    "id": "TB-21",
+    "lane": "bell",
+    "owner_role": "Bell integrator + QA",
+    "title": "Make build validation reproducible and non-destructive",
+    "deliverable": "Explicit build output control, isolated validation runs and focused negative checks without changing the frozen Bell artifact.",
+    "acceptance_criteria": [
+      "Allow an explicit output destination and run static/reproducibility checks in isolated directories, without overwriting a developer’s existing dist while validating it.",
+      "Reject malformed or duplicate build anchors with meaningful negative regression checks; document commands and actual failure behavior.",
+      "Verify generated gameplay bytes equal the frozen 0.1.0 candidate, run applicable existing checks and focused visible-control smoke, and preserve the previous Contrast reference and all human protocol gates."
+    ],
+    "depends_on": [
+      "TB-20"
+    ],
+    "assigned_person_or_agent": "/root/cleanup_bell + /root",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "active",
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Engineering cleanup / technical freeze",
+    "completion_note": "November 6 engineering cleanup is assigned and underway. Final source, verification and remote evidence will be bound after integration; human release gates are unchanged."
   }
 ]

@@ -1,5 +1,6 @@
 # Owner unblock checklist · November 5
 
+**November 6 update:** [Engineering cleanup continues independently of recruitment](../iteration-2026-11-06/README.md). PR #9 is now published and verified; the dated observations and limits below remain preserved.
 **Start with accepted human roles and the earliest realistic booking date.** You chose three parallel lanes and facilitator-machine sessions; recruitment needs more time. Nothing below is booked or completed. The November 20 target stays conditional, with candidate freeze November 11 and go/no-go November 16.
 
 | Priority | Your action | Completion evidence | Timing |

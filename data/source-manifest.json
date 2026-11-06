@@ -464,7 +464,8 @@
     "27 October: the coordinator verified two Small Hours launch groups (root desktop and nested 390px). The 33 behavioral assertions retain their historical October 20 date; no new human or physical-device results.",
     "27 October: Bell source/hash-bound pure,static, 16-group browser,legacy journey and HTTP smoke verification completed; frozen candidate staged on master with pending human evidence.",
     "4 November: source/capture adjudication across pinned archive uploads; supported-HTTP readiness is tracked separately. No human sessions or physical-device results are created by agent review.",
-    "5 November: remote issue/branch review and accepted three-parallel-lane plan; facilitator machines selected, recruitment needs more time. Targeted technical follow-ups are dated separately and human gates remain empty."
+    "5 November: remote issue/branch review and accepted three-parallel-lane plan; facilitator machines selected, recruitment needs more time. Targeted technical follow-ups are dated separately and human gates remain empty.",
+    "6 November: owner authorized codebase and issue cleanup plus engineering progress without waiting for recruitment; dashboard publication precedes their whole-dashboard review. Human official-release gates remain unchanged."
   ],
   "environment": {
     "node": "v24.19.0",
@@ -475,11 +476,11 @@
     "rebuilt_in_this_review": false,
     "retested_in_this_review": false
   },
-  "plan_date_utc": "2026-11-05",
+  "plan_date_utc": "2026-11-06",
   "evidence_intake_date_utc": "2026-11-04",
   "publication_branch": "main",
   "historical_review_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee",
-  "dashboard_date_utc": "2026-11-05",
+  "dashboard_date_utc": "2026-11-06",
   "historical_coordination_branch": "gamejam-next-iteration-2026-10-20",
   "historical_coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
   "historical_review_methods": [
@@ -491,45 +492,51 @@
     "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
   ],
   "milestone": {
-    "id": "parallel-preparation-2026-11-05",
-    "title": "Prepare three facilitator-machine studies and resolve bounded technical gaps",
-    "status": "targeted_preparation_active_human_staffing_unbooked",
+    "id": "engineering-cleanup-2026-11-06",
+    "title": "Clean the three engineering baselines and advance technical freeze",
+    "status": "engineering_cleanup_active_human_release_gates_pending",
     "plan_settled": true,
-    "document": "docs/iteration-2026-11-05/README.md",
-    "summary": "Three parallel technical-preparation lanes; facilitator-machine access selected. Recruitment needs more time. Candidate identities and all human thresholds remain unchanged.",
+    "document": "docs/iteration-2026-11-06/README.md",
+    "summary": "Countdown ownership, package-derived version identity and non-destructive reproducible build checks proceed in parallel. Recruitment does not block these engineering tasks; human release criteria remain mandatory.",
     "human_staffing": "Unbooked: recruitment needs more time; no accepted facilitator, participant or reviewer assignments recorded.",
     "allowance_visibility": "unavailable",
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
   },
   "publication": {
-    "checked_date_utc": "2026-11-04",
+    "checked_date_utc": "2026-11-06",
     "pages_api_status": 200,
     "source_branch": "main",
     "source_path": "/",
     "expected_url": "https://paperstrange.github.io/IndiaGames/",
     "expected_url_http_status": 200,
     "live_deployment_verified": true,
-    "observed_page": "IndiaGames development hub with three projects and 65 tasks",
-    "required_action": "Resolve protection issue#2 and verify scoped robot approval; human game-release approval remains mandatory.",
+    "observed_page": "IndiaGames development hub with three projects and 69 tasks",
+    "required_action": "Publish the reviewed November 6 engineering dashboard and verify its actual deployed revision. Human official-game release approval and issue #2 administrator enforcement remain separate.",
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
     "pages_update_error": "Resource not accessible by integration",
-    "deployed_commit": "f68c755c6b738ff219561faaaf2f78b0ceee3a83",
+    "deployed_commit": "239fceeab2c84491f5d9d5c471bf18504567a587",
     "verified_assets": 11,
-    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/7#issuecomment-6637048654",
+    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/9#issuecomment-6677860269",
     "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned403.",
-    "verification_scope": "November 4 final main deployment: all 11 served files and browser responses matched the commit; desktop/narrow checks passed with zero unexpected errors. November 5 working changes need their own deployment verification.",
+    "verification_scope": "PR #9 live verification on November 6: all 11 served files and actual browser responses match main 239fcee; desktop/narrow checks passed with zero unexpected errors and TLS verification enabled.",
     "current_iteration_deployment_verified": false,
-    "verification_stage": "november_4_deployment_verified_november_5_update_pending",
-    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/7#issuecomment-6637048654",
+    "verification_stage": "pr9_deployment_verified_november_6_cleanup_update_pending",
+    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/9#issuecomment-6677860269",
     "historical_october_28_deployment": {
       "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
       "verified_assets": 6,
       "verification_document": "docs/verification-launch-2026-10-28/live-assets.json"
     },
     "historical_october_28_branch_protection_read_status": 403,
-    "current_branch_rules_readback": "docs/iteration-2026-11-05/admin/readback.json",
-    "branch_rules_checked_date_utc": "2026-11-05"
+    "current_branch_rules_readback": "https://github.com/PaperStrange/IndiaGames/issues/2#issuecomment-6677871490",
+    "branch_rules_checked_date_utc": "2026-11-06",
+    "historical_november_4_deployment": {
+      "deployed_commit": "f68c755c6b738ff219561faaaf2f78b0ceee3a83",
+      "verified_assets": 11,
+      "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/7#issuecomment-6637048654",
+      "verification_scope": "November 4 final main deployment: all 11 served files and browser responses matched the commit; desktop/narrow checks passed with zero unexpected errors. November 5 working changes need their own deployment verification."
+    }
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -537,35 +544,35 @@
     "candidate_freeze_date_utc": "2026-11-11",
     "status": "planned_human_gates_pending",
     "plan_document": "docs/launch/2026-11-20/README.md",
-    "cleanup_document": "docs/maintenance/2026-10-28.md",
+    "cleanup_document": "docs/iteration-2026-11-06/README.md",
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
-    "readiness_document": "docs/iteration-2026-11-05/README.md",
-    "schedule_note": "All three preparation lanes continue in parallel on facilitator machines. Recruitment needs more time; no dates are booked. November 11 freeze, November 16 go/no-go and November 20 launch do not waive human gates.",
+    "readiness_document": "docs/iteration-2026-11-06/README.md",
+    "schedule_note": "Engineering cleanup and technical freeze preparation continue without recruitment. Human sessions stay unbooked; missing release evidence still means no-go at the November 16 decision.",
     "timeline": [
       [
-        "5–10 November",
-        "Prepare three lanes",
-        "Targeted QA and facilitator setup"
+        "6 November",
+        "Engineering cleanup",
+        "Countdown, version identity and build checks"
+      ],
+      [
+        "Next",
+        "Technical freeze",
+        "Reproducible exports and focused regression"
       ],
       [
         "Unbooked",
         "Human pilots",
-        "Recruitment needs more time"
-      ],
-      [
-        "Before freeze",
-        "Select a response",
-        "One observed issue, or no change"
+        "Release evidence when staffed"
       ],
       [
         "11 November",
         "Freeze candidates",
-        "Small Hours needs its pilot first"
+        "Small Hours still needs its pilot decision"
       ],
       [
-        "12–16 November",
-        "Review / go-no-go",
+        "16 November",
+        "Go / no-go",
         "Humans, devices and approval"
       ],
       [
@@ -577,10 +584,10 @@
   },
   "historical_manifest_review_date_utc": "2026-10-27",
   "readiness": {
-    "date_utc": "2026-11-05",
-    "status": "targeted_preparation_complete_human_staffing_unbooked",
-    "document": "docs/iteration-2026-11-05/README.md",
-    "issues_document": "docs/iteration-2026-11-05/README.md#issues-and-publication-reconciliation",
+    "date_utc": "2026-11-06",
+    "status": "engineering_cleanup_active_human_release_gates_pending",
+    "document": "docs/iteration-2026-11-06/README.md",
+    "issues_document": "docs/iteration-2026-11-06/README.md#issue-dispositions",
     "shared_blockers": [
       {
         "issue": 2,
@@ -588,7 +595,7 @@
         "status": "blocked_admin",
         "owner_role": "Repository administrator",
         "title": "Activate and verify main/master protection and scoped counted approval",
-        "evidence": "November 5 readback: rulesets/effective main/master rules empty; both protected=false. Only PaperStrange listed as collaborator. Prior writes403; counted approval unverified.",
+        "evidence": "November 6 readback: no effective main/master protection or rulesets; previous settings writes returned 403. Administrator work remains in issue #2; source cleanup continues.",
         "milestone": "Before Nov16 go/no-go; preferably before Nov11 freeze",
         "closure_requires": [
           "Exact effective rules and rule IDs verified",
@@ -600,15 +607,21 @@
       {
         "issue": 5,
         "url": "https://github.com/PaperStrange/IndiaGames/issues/5",
-        "status": "supported_route_and_issue_handoff_complete_original_route_open",
+        "status": "closed_supported_project_route_delivered",
         "owner_role": "QA/tooling lead",
-        "title": "Adopt a reproducible supported HTTP browser route",
-        "closure_requires": [
-          "Original managed Chromium 152/LNA route resolved or explicit maintainer-approved disposition recorded",
-          "Facilitator/device setup failures tracked separately from already delivered supported-HTTP reports",
-          "No human result inferred from automation"
-        ],
-        "evidence": "November 4 supported-HTTP reports and issue comment delivered; original managed Chromium 152/LNA route remains unresolved. Facilitator and physical-phone setups require actual verification."
+        "title": "Supported project HTTP route delivered; environment follow-up separated",
+        "closure_requires": [],
+        "evidence": "Closed November 6 after committed supported same-host HTTP reports and facilitator packets across all three games. Original managed Chromium 152/LNA restriction is preserved in non-blocking issue #10; it is not claimed repaired.",
+        "closure_record": "https://github.com/PaperStrange/IndiaGames/issues/5#issuecomment-6677869410",
+        "follow_up": "https://github.com/PaperStrange/IndiaGames/issues/10"
+      },
+      {
+        "issue": 10,
+        "url": "https://github.com/PaperStrange/IndiaGames/issues/10",
+        "status": "open_nonblocking_tooling_followup",
+        "owner_role": "Environment/tooling owner",
+        "title": "Investigate original managed Chromium 152 Local Network Access restriction",
+        "evidence": "Split from closed project blocker #5; supported co-located HTTP remains available. This investigation is not a required release gate."
       }
     ],
     "human_studies_arranged": false,
@@ -668,10 +681,25 @@
         "status": "merged",
         "merge_commit": "f68c755c6b738ff219561faaaf2f78b0ceee3a83",
         "ci_conclusion": "success"
+      },
+      {
+        "number": 9,
+        "status": "merged",
+        "reviewed_head": "d93bf7f82cc228ec11cdae2cfa20495482455678",
+        "merge_commit": "239fceeab2c84491f5d9d5c471bf18504567a587",
+        "ci_conclusion": "success",
+        "publication_evidence": "docs/iteration-2026-11-06/publication-pr9.json"
       }
     ],
-    "delivery_note": "All three facilitator-preparation reports are committed on their owning game branches. Vivid 0.1.3 and Bell 0.1.0 stay staged; Small Hours awaits its pair-study decision. Human appointments, physical-device results and independent approval remain pending.",
-    "status_checked_at": "2026-11-05T16:10:03.471978+00:00"
+    "delivery_note": "Engineering work continues in all three branches. Frozen study artifacts remain available; recruitment, physical-device checks and independent approval remain release dependencies.",
+    "status_checked_at": "2026-11-05T16:10:03.471978+00:00",
+    "dashboard_publication_authorization": {
+      "date_utc": "2026-11-06",
+      "scope": "Current dashboard and engineering-progress delivery; owner reviews the whole dashboard after publication.",
+      "method": "Independent agent review and passing CI before publication; actual deployment verified afterward.",
+      "human_game_release_gate_waived": false,
+      "standing_policy_changed": false
+    }
   },
   "governance": {
     "issue": "https://github.com/PaperStrange/IndiaGames/issues/2",
@@ -682,9 +710,9 @@
     "robot_counted_approval_status": "unverified",
     "nemo_invitation": "deferred",
     "legacy_candidate_url_repair": "paused_by_owner",
-    "latest_readback_date_utc": "2026-11-05",
-    "latest_readback": "No rulesets or effective main/master rules; both protected=false. Only PaperStrange listed as collaborator. Counted robot approval remains unverified.",
-    "latest_readback_document": "docs/iteration-2026-11-05/admin/STATUS.md"
+    "latest_readback_date_utc": "2026-11-06",
+    "latest_readback": "November 6: no effective main/master protection or rulesets. The administrator blocker remains open in issue #2; supported project browser route #5 is closed and original environment investigation continues separately in #10.",
+    "latest_readback_document": "docs/iteration-2026-11-06/README.md#issue-dispositions"
   },
   "environment_scope": "Historical verification environment; current technical reports record their actual browser and execution environment separately."
 }

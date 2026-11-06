@@ -1,5 +1,6 @@
 # November 5 iteration · prepare three parallel human studies
 
+**November 6 update:** [Engineering cleanup continues independently of recruitment](../iteration-2026-11-06/README.md). PR #9 is now published and verified; the dated observations and limits below remain preserved.
 **November 20 is at risk for all three games.** As of November 5, 15 calendar days remain until launch and six until candidate freeze. The October 31–November 4 human pilots did not occur; the planned November 5 design selections therefore lack human evidence.
 
 The owner chose **all three preparation lanes in parallel**, with supervised sessions on **facilitator machines**. Recruitment needs more time. No facilitator, participant roster, device appointment or independent review date is confirmed. The next action for the owner is the [unblock checklist](OWNER-TODO.md); the [launch calendar](../launch/2026-11-20/README.md) preserves the full release criteria.

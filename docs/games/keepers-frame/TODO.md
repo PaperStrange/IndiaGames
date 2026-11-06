@@ -1,5 +1,6 @@
 # Vivid — implemented stories and remaining release work
 
+**Current engineering milestone · November6:** [KF-29 and the parallel cleanup plan](../../iteration-2026-11-06/README.md) proceed without waiting for recruitment. The canonical human/design/release gates below remain in force; historical evidence keeps its date.
 ## November 5 parallel preparation · KF-27
 
 All three preparation lanes remain active; the owner selected facilitator-machine sessions and needs more recruitment time. Human dates remain unbooked. [Current iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).

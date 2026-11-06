@@ -784,10 +784,10 @@
     "lane": "vivid",
     "perspective": "Engineering",
     "priority": "P1",
-    "status": "proposed",
+    "status": "active",
     "owner_role": "Vivid integrator + release integrator",
-    "title": "Correct the displayed version badge in the next separately versioned build",
-    "deliverable": "A future candidate whose visible version label matches its manifest; preserve staged 0.1.3 and all earlier immutable packages.",
+    "title": "Derive the displayed version from the package and verify the built badge",
+    "deliverable": "Version 0.1.4 with one package version authority and a built-metadata guard, preserving frozen 0.1.3.",
     "acceptance_criteria": [
       "Confirm the 0.1.3 index displays 0.1.2 and document this metadata limitation for facilitators using the authoritative manifest/inventory. Do not treat the visible badge as proof of artifact identity.",
       "When a next build is selected, correct its version display and bind an assertion to the exported manifest; assign a new unused version and verify the exported bytes. Do not silently replace current candidate bytes.",
@@ -800,6 +800,31 @@
     "human_participants_required": false,
     "completion_evidence": [],
     "focus": "Artifact identification / next-build metadata",
-    "completion_note": "Reproduced on immutable 0.1.3 and documented in the November 5 technical report. Proposed next-build correction only; no candidate bytes changed."
+    "completion_note": "Selected on November 6 under the owner’s cleanup instruction. Implementation/verification is underway; 0.1.4 is not yet claimed staged.",
+    "assigned_person_or_agent": "/root/cleanup_vivid + /root"
+  },
+  {
+    "id": "KF-29",
+    "lane": "vivid",
+    "owner_role": "Release integrator + independent code reviewer",
+    "title": "Stage the reproducible Vivid 0.1.4 metadata correction",
+    "deliverable": "A separately versioned immutable 0.1.4 candidate on master, with exact source/inventory, notes and blank schema-2 human evidence.",
+    "acceptance_criteria": [
+      "Use the package-derived version implemented in KF-28 and produce two matching clean exports; verify the actual emitted badge and both canonical story endpoints over supported HTTP.",
+      "Preserve earlier candidate packets byte for byte and use the current version-aware exporter. Run staging validation and independent exact-head review before merging the master PR.",
+      "Record source SHA, full inventory, staging PR/merge and actual remote verification. Empty human reports must still fail readiness; no official release or human approval is created."
+    ],
+    "depends_on": [
+      "KF-28"
+    ],
+    "assigned_person_or_agent": "/root/cleanup_vivid + /root",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "active",
+    "source_plan": "docs/games/keepers-frame/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Engineering cleanup / technical freeze",
+    "completion_note": "November 6 engineering cleanup is assigned and underway. Final source, verification and remote evidence will be bound after integration; human release gates are unchanged."
   }
 ]
