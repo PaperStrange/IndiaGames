@@ -29,7 +29,7 @@ async function command(label, script, env) {
   assert.equal(code, 0, `${label} failed; inspect retained log and evidence.`);
 }
 try {
-  for (const name of ['scripts/development-export.mjs', 'scripts/verify-development-export.mjs', 'tests/browser.mjs', 'tests/timer-browser.mjs']) {
+  for (const name of ['scripts/development-export.mjs', 'scripts/verify-development-export.mjs', 'tests/browser.mjs', 'tests/timer-browser.mjs', 'tests/locales-browser.mjs']) {
     report.tooling_sha256['memorable-moments-game/' + name] = hash(await readFile(path.join(gameDirectory, name)));
   }
   const first = path.join(output, 'export-a'), second = path.join(output, 'export-b');
@@ -45,7 +45,7 @@ try {
       const body = await readFile(path.join(first, name)), actual = hash(body);
       assert.equal(actual, report.first.files[name], `Served file changed: ${name}`);
       report.http.push({ path: pathname, file: name, status: 200, sha256: actual });
-      res.writeHead(200, { 'Content-Type': { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.md': 'text/plain; charset=utf-8' }[path.extname(name)], 'Cache-Control': 'no-store' }); res.end(body);
+      res.writeHead(200, { 'Content-Type': { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.md': 'text/plain; charset=utf-8' }[path.extname(name)], 'Cache-Control': 'no-store' }); res.end(body);
     } catch (error) { report.errors.push(String(error)); res.writeHead(500); res.end('Export verification failed'); }
   });
   await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
@@ -58,6 +58,7 @@ try {
       assert.equal(hash(Buffer.from(await response.arrayBuffer())), report.first.files[name]);
     }
     await command('browser-' + label, path.join(gameDirectory, 'tests/browser.mjs'), { PLAY_URL: base + mount, EVIDENCE_DIR: path.join(output, 'browser-' + label) });
+    await command('locales-' + label, path.join(gameDirectory, 'tests/locales-browser.mjs'), { PLAY_URL: base + mount, EVIDENCE_DIR: path.join(output, 'locales-' + label), BROWSER_ENGINE: 'chromium' });
   }
   await command('timer', path.join(gameDirectory, 'tests/timer-browser.mjs'), { PLAY_URL: base + '/', NESTED_PLAY_URL: base + prefix, EVIDENCE_DIR: path.join(output, 'timer') });
   report.first_after = await inventory(first); report.second_after = await inventory(second);

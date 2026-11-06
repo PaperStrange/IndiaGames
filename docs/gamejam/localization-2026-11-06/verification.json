@@ -1,0 +1,624 @@
+{
+  "status": "pass",
+  "evidence_kind": "Uncommitted review snapshot, not a committed export, staged candidate, language approval or human study",
+  "base_commit": "c9b98b025e0b7ea38254648058146fceddeb9d1a",
+  "working_diff_sha256": "c67fa30156af89a1b92bae5c193aba2bc72547af9d0918bafd680c94313d56f0",
+  "started_at": "2026-11-06T09:29:33.171Z",
+  "completed_at": "2026-11-06T09:32:31.169Z",
+  "inventory": {
+    "files": {
+      "README.md": "4e67152fae89453daea606ac8b170984ce740acc3281248ee4d9fd4cb4178669",
+      "content.js": "c4f31dd514c1407b780fcab57a5edfdcc63d821db8223cf207a027fdcd767c1d",
+      "countdown.js": "91083a0e752e8c0e81a9b3adc7ef54c15ea17df0cb8e902ced0780b0fbd86b48",
+      "game.js": "2ab4fe1ff5f5af4900de709cb634bdf066c3939a10e39c19b2b229a50b0b9f17",
+      "icons.js": "7c05b43160356b9697665ae9cf0f0eb759441830aae030c2dfa867e28f61e2dd",
+      "index.html": "bfc303bfa094c80a55d442e9468c369153f0985da723511fb7ecb002c391f5cf",
+      "locale-catalog.json": "23de08f4fb3b73d3b8afff79f25af1c36125dda0d9461a91776b5dffd9bf8964",
+      "locales.js": "4fa94aece5283f6aa37aa180ce4e768978c057164460015eda6f678a6374eb53",
+      "messages.js": "5f7384e6b9d230f56528003832cc3b3ecf0f29972725f57fff0a64cae7fd23ed",
+      "state.js": "7f8cd132affac49700d4e400dc36d690efa82d635aa87404e2267f3a27ae0be1",
+      "style.css": "aba1f7659af0a85fa05ab1c8190f88c301ef311ce383cce3618f60f709021711",
+      "views.js": "00926c5efde886824e95612b8a968290dc0b9e0884af54eaed1abde3daf4cc5c"
+    },
+    "file_count": 12,
+    "bytes": 103624,
+    "inventory_sha256": "7743c91f718190e4f8328789cc583fea1e390348aba42075783936d6c6bf5ada"
+  },
+  "http_file_comparisons": 24,
+  "matching_snapshots": 2,
+  "unit_test_count": 21,
+  "legacy_browser_checks": 66,
+  "locale_browser_checks": 1416,
+  "locale_runs": [
+    {
+      "run": "locales-chromium-nested",
+      "status": "pass",
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "checks": 236,
+      "cases": [
+        {
+          "locale": "en",
+          "mode": "pair",
+          "scene": "museum",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "en-pair.svg",
+          "saved_svg_sha256": "19d6be47e5043f81a470e70d1ff9808f3faa5188ea5c7a1a10436abd9c473526",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "en",
+          "mode": "solo",
+          "scene": "museum",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "en-solo.svg",
+          "saved_svg_sha256": "ca013d5411b3cab8ad5ccd58587bc482093b6af3f6c7c28cff737739dc92ebcf",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "pair",
+          "scene": "postcard",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "ja-pair.svg",
+          "saved_svg_sha256": "eb2bb0058e889b3424442e9ad09be827fb6033d2a214770f52d62e30c1d76611",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "solo",
+          "scene": "postcard",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "ja-solo.svg",
+          "saved_svg_sha256": "9b27a89e75a243ada68106ed774cab43a6590578f2bbc0ce275476d764470532",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "pair",
+          "scene": "weather",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "zh-Hans-pair.svg",
+          "saved_svg_sha256": "84453ee53a53d29b8a7793afb54754268edec621ea223378fe657aa7f23e1c4d",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "solo",
+          "scene": "weather",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "zh-Hans-solo.svg",
+          "saved_svg_sha256": "cfbfb429b677812a695e9d17dcfab00ebbab225b3ddf05a3ad9c4ec1a82fbe43",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        }
+      ],
+      "errors": [],
+      "known_diagnostics": [
+        {
+          "type": "console",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "url": "http://127.0.0.1:37911/favicon.ico"
+        }
+      ],
+      "report_sha256": "f783bf68ed192d087084435c51df464360bdd94e94f1a3267c7e807806b7c195"
+    },
+    {
+      "run": "locales-chromium-root",
+      "status": "pass",
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "checks": 236,
+      "cases": [
+        {
+          "locale": "en",
+          "mode": "pair",
+          "scene": "museum",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "en-pair.svg",
+          "saved_svg_sha256": "19d6be47e5043f81a470e70d1ff9808f3faa5188ea5c7a1a10436abd9c473526",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "en",
+          "mode": "solo",
+          "scene": "museum",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "en-solo.svg",
+          "saved_svg_sha256": "ca013d5411b3cab8ad5ccd58587bc482093b6af3f6c7c28cff737739dc92ebcf",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "pair",
+          "scene": "postcard",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "ja-pair.svg",
+          "saved_svg_sha256": "eb2bb0058e889b3424442e9ad09be827fb6033d2a214770f52d62e30c1d76611",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "solo",
+          "scene": "postcard",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "ja-solo.svg",
+          "saved_svg_sha256": "9b27a89e75a243ada68106ed774cab43a6590578f2bbc0ce275476d764470532",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "pair",
+          "scene": "weather",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "zh-Hans-pair.svg",
+          "saved_svg_sha256": "84453ee53a53d29b8a7793afb54754268edec621ea223378fe657aa7f23e1c4d",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "solo",
+          "scene": "weather",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "zh-Hans-solo.svg",
+          "saved_svg_sha256": "cfbfb429b677812a695e9d17dcfab00ebbab225b3ddf05a3ad9c4ec1a82fbe43",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        }
+      ],
+      "errors": [],
+      "known_diagnostics": [
+        {
+          "type": "console",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "url": "http://127.0.0.1:37911/favicon.ico"
+        }
+      ],
+      "report_sha256": "2ced9abd8ba22ea8d5e3b72c1d467a2fc789177abcb21bb314e1a41d72b1c217"
+    },
+    {
+      "run": "locales-firefox-nested",
+      "status": "pass",
+      "engine": "firefox",
+      "version": "142.0.1",
+      "checks": 236,
+      "cases": [
+        {
+          "locale": "en",
+          "mode": "pair",
+          "scene": "museum",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "en-pair.svg",
+          "saved_svg_sha256": "19d6be47e5043f81a470e70d1ff9808f3faa5188ea5c7a1a10436abd9c473526",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "en",
+          "mode": "solo",
+          "scene": "museum",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "en-solo.svg",
+          "saved_svg_sha256": "ca013d5411b3cab8ad5ccd58587bc482093b6af3f6c7c28cff737739dc92ebcf",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "pair",
+          "scene": "postcard",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "ja-pair.svg",
+          "saved_svg_sha256": "eb2bb0058e889b3424442e9ad09be827fb6033d2a214770f52d62e30c1d76611",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "solo",
+          "scene": "postcard",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "ja-solo.svg",
+          "saved_svg_sha256": "9b27a89e75a243ada68106ed774cab43a6590578f2bbc0ce275476d764470532",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "pair",
+          "scene": "weather",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "zh-Hans-pair.svg",
+          "saved_svg_sha256": "84453ee53a53d29b8a7793afb54754268edec621ea223378fe657aa7f23e1c4d",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "solo",
+          "scene": "weather",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "zh-Hans-solo.svg",
+          "saved_svg_sha256": "cfbfb429b677812a695e9d17dcfab00ebbab225b3ddf05a3ad9c4ec1a82fbe43",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        }
+      ],
+      "errors": [],
+      "known_diagnostics": [],
+      "report_sha256": "21e4a9aeb54ec14c53a4571af74e29382f7562ee2e57061c58a9193546f6b78f"
+    },
+    {
+      "run": "locales-firefox-root",
+      "status": "pass",
+      "engine": "firefox",
+      "version": "142.0.1",
+      "checks": 236,
+      "cases": [
+        {
+          "locale": "en",
+          "mode": "pair",
+          "scene": "museum",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "en-pair.svg",
+          "saved_svg_sha256": "19d6be47e5043f81a470e70d1ff9808f3faa5188ea5c7a1a10436abd9c473526",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "en",
+          "mode": "solo",
+          "scene": "museum",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "en-solo.svg",
+          "saved_svg_sha256": "ca013d5411b3cab8ad5ccd58587bc482093b6af3f6c7c28cff737739dc92ebcf",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "pair",
+          "scene": "postcard",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "ja-pair.svg",
+          "saved_svg_sha256": "eb2bb0058e889b3424442e9ad09be827fb6033d2a214770f52d62e30c1d76611",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "solo",
+          "scene": "postcard",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "ja-solo.svg",
+          "saved_svg_sha256": "9b27a89e75a243ada68106ed774cab43a6590578f2bbc0ce275476d764470532",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "pair",
+          "scene": "weather",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "zh-Hans-pair.svg",
+          "saved_svg_sha256": "84453ee53a53d29b8a7793afb54754268edec621ea223378fe657aa7f23e1c4d",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "solo",
+          "scene": "weather",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "zh-Hans-solo.svg",
+          "saved_svg_sha256": "cfbfb429b677812a695e9d17dcfab00ebbab225b3ddf05a3ad9c4ec1a82fbe43",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        }
+      ],
+      "errors": [],
+      "known_diagnostics": [],
+      "report_sha256": "91669605eb2b98d085b8f3149ce11a0ffb007960ee7bb900b23abc4e2c5f1d39"
+    },
+    {
+      "run": "locales-webkit-nested",
+      "status": "pass",
+      "engine": "webkit",
+      "version": "26.0",
+      "checks": 236,
+      "cases": [
+        {
+          "locale": "en",
+          "mode": "pair",
+          "scene": "museum",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "en-pair.svg",
+          "saved_svg_sha256": "19d6be47e5043f81a470e70d1ff9808f3faa5188ea5c7a1a10436abd9c473526",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "en",
+          "mode": "solo",
+          "scene": "museum",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "en-solo.svg",
+          "saved_svg_sha256": "ca013d5411b3cab8ad5ccd58587bc482093b6af3f6c7c28cff737739dc92ebcf",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "pair",
+          "scene": "postcard",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "ja-pair.svg",
+          "saved_svg_sha256": "eb2bb0058e889b3424442e9ad09be827fb6033d2a214770f52d62e30c1d76611",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "solo",
+          "scene": "postcard",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "ja-solo.svg",
+          "saved_svg_sha256": "9b27a89e75a243ada68106ed774cab43a6590578f2bbc0ce275476d764470532",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "pair",
+          "scene": "weather",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "zh-Hans-pair.svg",
+          "saved_svg_sha256": "84453ee53a53d29b8a7793afb54754268edec621ea223378fe657aa7f23e1c4d",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "solo",
+          "scene": "weather",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "zh-Hans-solo.svg",
+          "saved_svg_sha256": "cfbfb429b677812a695e9d17dcfab00ebbab225b3ddf05a3ad9c4ec1a82fbe43",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        }
+      ],
+      "errors": [],
+      "known_diagnostics": [],
+      "report_sha256": "c94858ca047c1df8d9d3e9c33750feea9b94226cd517168c70a749ec8b806485"
+    },
+    {
+      "run": "locales-webkit-root",
+      "status": "pass",
+      "engine": "webkit",
+      "version": "26.0",
+      "checks": 236,
+      "cases": [
+        {
+          "locale": "en",
+          "mode": "pair",
+          "scene": "museum",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "en-pair.svg",
+          "saved_svg_sha256": "19d6be47e5043f81a470e70d1ff9808f3faa5188ea5c7a1a10436abd9c473526",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "en",
+          "mode": "solo",
+          "scene": "museum",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "en-solo.svg",
+          "saved_svg_sha256": "ca013d5411b3cab8ad5ccd58587bc482093b6af3f6c7c28cff737739dc92ebcf",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "pair",
+          "scene": "postcard",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "ja-pair.svg",
+          "saved_svg_sha256": "eb2bb0058e889b3424442e9ad09be827fb6033d2a214770f52d62e30c1d76611",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "ja",
+          "mode": "solo",
+          "scene": "postcard",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "ja-solo.svg",
+          "saved_svg_sha256": "9b27a89e75a243ada68106ed774cab43a6590578f2bbc0ce275476d764470532",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "pair",
+          "scene": "weather",
+          "width": 1280,
+          "status": "pass",
+          "saved_svg": "zh-Hans-pair.svg",
+          "saved_svg_sha256": "84453ee53a53d29b8a7793afb54754268edec621ea223378fe657aa7f23e1c4d",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        },
+        {
+          "locale": "zh-Hans",
+          "mode": "solo",
+          "scene": "weather",
+          "width": 390,
+          "status": "pass",
+          "saved_svg": "zh-Hans-solo.svg",
+          "saved_svg_sha256": "cfbfb429b677812a695e9d17dcfab00ebbab225b3ddf05a3ad9c4ec1a82fbe43",
+          "reopened_via": "Same-machine HTTP serving actual downloaded bytes; XML bounds inspected directly, preview via HTML img; not an OS viewer check"
+        }
+      ],
+      "errors": [],
+      "known_diagnostics": [],
+      "report_sha256": "34f0a951c6573f8f7d859af82da971d1e345fe0eef9678058f21c10e36715bfb"
+    }
+  ],
+  "timer": {
+    "started_at": "2026-11-06T09:31:44.106Z",
+    "method": "Automated exact-export timer regression. Clock emulation and synthetic page transition events are explicitly separated from real expiry; no human, physical-device or bfcache claim.",
+    "cases": [
+      {
+        "id": "real-expiry-root",
+        "url": "http://127.0.0.1:37911/",
+        "width": 1280,
+        "checks": [
+          "repeated start disabled; initial 45 seconds shown",
+          "real expiry keeps the optional activity playable"
+        ],
+        "real_elapsed_ms": 45068,
+        "status": "pass"
+      },
+      {
+        "id": "dialog-and-navigation-nested",
+        "url": "http://127.0.0.1:37911/IndiaGames/development/small-hours/",
+        "width": 390,
+        "checks": [
+          "elapsed time updates countdown",
+          "canceling End retains the active countdown",
+          "confirm forget clears timer and stage without late writes",
+          "new activity has its own optional 45-second timer",
+          "leaving activity cancels the old timer"
+        ],
+        "clock_method": "Playwright clock emulation",
+        "status": "pass"
+      },
+      {
+        "id": "page-lifecycle-root",
+        "url": "http://127.0.0.1:37911/",
+        "width": 1280,
+        "checks": [
+          "simulated pagehide clears private DOM and interval",
+          "simulated persisted pageshow restores a fresh welcome"
+        ],
+        "lifecycle_method": "Synthetic PageTransitionEvent dispatch, not an actual browser bfcache test",
+        "status": "pass"
+      }
+    ],
+    "errors": [],
+    "knownDiagnostics": [
+      {
+        "id": "page-lifecycle-root",
+        "type": "console",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "url": "http://127.0.0.1:37911/favicon.ico"
+      },
+      {
+        "id": "dialog-and-navigation-nested",
+        "type": "console",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "url": "http://127.0.0.1:37911/favicon.ico"
+      },
+      {
+        "id": "real-expiry-root",
+        "type": "console",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "url": "http://127.0.0.1:37911/favicon.ico"
+      }
+    ],
+    "browser": "141.0.7390.37",
+    "status": "pass",
+    "completed_at": "2026-11-06T09:32:31.155Z"
+  },
+  "runner_commands": [
+    {
+      "label": "legacy-root",
+      "code": 0,
+      "runner_sha256": "7afbe0d35787f423a5de1f259f211c7b64467d7ad8adcf75580884723902b0a4"
+    },
+    {
+      "label": "locales-chromium-root",
+      "code": 0,
+      "runner_sha256": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a"
+    },
+    {
+      "label": "locales-firefox-root",
+      "code": 0,
+      "runner_sha256": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a"
+    },
+    {
+      "label": "locales-webkit-root",
+      "code": 0,
+      "runner_sha256": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a"
+    },
+    {
+      "label": "legacy-nested",
+      "code": 0,
+      "runner_sha256": "7afbe0d35787f423a5de1f259f211c7b64467d7ad8adcf75580884723902b0a4"
+    },
+    {
+      "label": "locales-chromium-nested",
+      "code": 0,
+      "runner_sha256": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a"
+    },
+    {
+      "label": "locales-firefox-nested",
+      "code": 0,
+      "runner_sha256": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a"
+    },
+    {
+      "label": "locales-webkit-nested",
+      "code": 0,
+      "runner_sha256": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a"
+    },
+    {
+      "label": "timer",
+      "code": 0,
+      "runner_sha256": "df1843f8223148d43f17ba3c984d14f4d0884b04d79815507693247aee142d48"
+    }
+  ],
+  "raw_evidence_directory": "/workspace/indiagames-locales-2026-11-06/qa/small-hours/review-attempt-7",
+  "frozen_study_zip_sha256": "64ebb3bdfd69b4a643a06817cc023754e94fc114c5a812fae6fb111af1ad2fd2",
+  "human_sessions_added": 0,
+  "fluent_review": "pending",
+  "physical_devices": "pending",
+  "native_ime": "pending",
+  "official_release_approval": false,
+  "retained_attempts": [
+    {
+      "id": 1,
+      "outcome": "Managed Chromium rejected file URL reopening; legacy33 passed and SVG delivered."
+    },
+    {
+      "id": 2,
+      "outcome": "Same-machine HTTP reopened SVG and bounds passed; standalone XML screenshot timed out."
+    },
+    {
+      "id": 3,
+      "outcome": "Stock container Chromium reproduced standalone XML screenshot timeout."
+    },
+    {
+      "id": 4,
+      "outcome": "Harness tried replacing XML via HTML-only document.open; failed."
+    },
+    {
+      "id": 5,
+      "outcome": "Blank-origin image preview failed decoding; isolated same-origin HTTP preview succeeded."
+    },
+    {
+      "id": 6,
+      "outcome": "Chromium root236 and legacy33 passed; Firefox evidence-directory creation hit ENOSPC before launch. Shared wrapper then serialized containers."
+    }
+  ]
+}

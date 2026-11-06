@@ -15,6 +15,7 @@ async function fixture(t) {
   git('init', '-q'); git('config', 'user.name', 'Export fixture'); git('config', 'user.email', 'fixture@example.invalid');
   const play = path.join(repo, PLAY_PATH); await mkdir(play, { recursive: true });
   for (const name of PLAY_FILES) await writeFile(path.join(play, name), `fixture:${name}\n`);
+  for (const name of ['messages.js', 'locale-catalog.json']) await writeFile(path.join(play, name), await readFile(new URL('../play/' + name, import.meta.url)));
   const commit = () => { git('add', '.'); git('commit', '-qm', 'fixture'); return git('rev-parse', 'HEAD'); };
   return { root, repo, play, commit, head: commit() };
 }
@@ -25,7 +26,7 @@ test('exports exact pinned bytes twice, ignoring dirty checkout contents', async
   await writeFile(path.join(f.play, 'private.txt'), 'not a committed playable file');
   const first = await exportDevelopment({ repo: f.repo, commit: f.head, output: path.join(f.root, 'first') });
   const second = await exportDevelopment({ repo: f.repo, commit: f.head, output: path.join(f.root, 'second') });
-  assert.deepEqual(first, second); assert.equal(first.file_count, 9);
+  assert.deepEqual(first, second); assert.equal(first.file_count, PLAY_FILES.length);
   assert.equal(await readFile(path.join(f.root, 'first/game.js'), 'utf8'), 'fixture:game.js\n');
 });
 
@@ -72,5 +73,15 @@ test('wrapper rejects an in-checkout evidence folder even when repo names a subd
   assert.equal(result.status, 1); assert.match(result.stderr, /outside the source checkout/);
   await assert.rejects(access(output), /ENOENT/);
   const external = await exportDevelopment({ repo: f.play, commit: f.head, output: path.join(f.root, 'external') });
-  assert.equal(external.file_count, 9);
+  assert.equal(external.file_count, PLAY_FILES.length);
+});
+
+test('invalid locale scope and missing translations fail before output creation', async t => {
+  const f = await fixture(t);
+  await writeFile(path.join(f.play, 'locale-catalog.json'), JSON.stringify({schema_version:1, locales:['en']}));
+  await assert.rejects(exportDevelopment({ repo:f.repo, commit:f.commit(), output:path.join(f.root,'bad-scope') }), /Locale catalog metadata/);
+  await writeFile(path.join(f.play, 'locale-catalog.json'), await readFile(new URL('../play/locale-catalog.json', import.meta.url)));
+  await writeFile(path.join(f.play, 'messages.js'), 'export const messageRows = { missing: ["en", "ja"] };');
+  await assert.rejects(exportDevelopment({ repo:f.repo, commit:f.commit(), output:path.join(f.root,'missing-translation') }), /exactly three translations/);
+  await assert.rejects(access(path.join(f.root, 'missing-translation')), /ENOENT/);
 });

@@ -4,9 +4,10 @@ import { createHash } from 'node:crypto';
 import { mkdir, lstat, readdir, readFile, realpath, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { LOCALES, localeCatalog, validateCatalogs } from '../play/locales.js';
 
 export const PLAY_PATH = 'memorable-moments-game/play';
-export const PLAY_FILES = Object.freeze(['README.md', 'content.js', 'countdown.js', 'game.js', 'icons.js', 'index.html', 'state.js', 'style.css', 'views.js']);
+export const PLAY_FILES = Object.freeze(['README.md', 'content.js', 'countdown.js', 'game.js', 'icons.js', 'index.html', 'locale-catalog.json', 'locales.js', 'messages.js', 'state.js', 'style.css', 'views.js']);
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const git = (repo, ...args) => execFileSync('git', ['-C', repo, ...args], { maxBuffer: 8 * 1024 * 1024 });
 
@@ -14,6 +15,15 @@ export function assertFileSet(actual) {
   const missing = PLAY_FILES.filter(name => !actual.includes(name));
   const extra = actual.filter(name => !PLAY_FILES.includes(name));
   if (missing.length || extra.length) throw new Error(`Playable file set differs: missing [${missing.join(', ')}]; extra [${extra.join(', ')}]`);
+}
+
+export async function validateLocaleArtifact(files) {
+  const byName = Object.fromEntries(files.map(file => [file.name, file.bytes]));
+  assert.deepEqual(JSON.parse(byName['locale-catalog.json'].toString()), localeCatalog, 'Locale catalog metadata differs from the supported scope.');
+  // Load the exact exported data module, not another checkout's translations.
+  const { messageRows } = await import(`data:text/javascript;base64,${Buffer.from(byName['messages.js']).toString('base64')}`);
+  assert(Object.values(messageRows).every(row => Array.isArray(row) && row.length === LOCALES.length), 'Every message needs exactly three translations.');
+  validateCatalogs(Object.fromEntries(LOCALES.map((locale, i) => [locale, Object.fromEntries(Object.entries(messageRows).map(([key, row]) => [key, row[i]]))])));
 }
 
 export async function inventory(directory) {
@@ -50,6 +60,7 @@ export function pinnedFiles(repo, commit) {
 export async function exportDevelopment({ repo, commit, output }) {
   // Resolve and validate the complete committed tree before creating any output.
   const files = pinnedFiles(repo, commit);
+  await validateLocaleArtifact(files);
   const requested = path.resolve(output);
   const target = path.join(await realpath(path.dirname(requested)), path.basename(requested));
   const checkout = await realpath(git(repo, 'rev-parse', '--show-toplevel').toString().trim());
