@@ -2,7 +2,15 @@
 
 **The hub is live at [paperstrange.github.io/IndiaGames](https://paperstrange.github.io/IndiaGames/), served from `main` / root. The repository owner manually made that Pages switch.** A dashboard deployment is separate from an official game release; the release registry remains empty.
 
-## Current state · 28 October 2026
+## Current verified publication · November 6
+
+[PR #9](https://github.com/PaperStrange/IndiaGames/pull/9) merged to main `239fceeab2c84491f5d9d5c471bf18504567a587` after independent agent review, passing CI and the owner’s instruction to review the dashboard as a whole after publication. Pages built that revision at **05:34:03 UTC**. Strict live verification at **05:36:19–05:36:27 UTC** matched all 11 served files and actual browser-response hashes, exercised desktop/narrow navigation and all 69 task IDs, and recorded zero unexpected errors with TLS verification enabled. [Public verification comment](https://github.com/PaperStrange/IndiaGames/pull/9#issuecomment-6677860269) · [Portable result](iteration-2026-11-06/publication-pr9.json).
+
+The new [November 6 engineering update](iteration-2026-11-06/README.md) needs its own reviewed merge and actual deployment check. The prior live result is not reused as proof of a later deployment. Human game sessions, physical-device results and official release approval remain pending; the release registry is empty.
+
+The owner’s publish-first instruction applies to this dashboard delivery. It does not enable branch protection or counted robot approval. [Issue #2](https://github.com/PaperStrange/IndiaGames/issues/2) remains administrator-blocked; the former project playtesting blocker [#5](https://github.com/PaperStrange/IndiaGames/issues/5) is closed for the delivered supported route, while [#10](https://github.com/PaperStrange/IndiaGames/issues/10) separately tracks the original managed Chromium restriction. The legacy candidate URL repair remains paused.
+
+## Historical state · 28 October 2026
 
 | Item | Observed state / next action |
 |---|---|

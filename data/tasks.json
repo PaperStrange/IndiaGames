@@ -1,65 +1,65 @@
 {
   "schema_version": 2,
   "type": "versioned development snapshot; coding-agent assignments are explicit, human staffing is not implied",
-  "snapshot_date_utc": "2026-11-05",
-  "plan_date_utc": "2026-11-05",
+  "snapshot_date_utc": "2026-11-06",
+  "plan_date_utc": "2026-11-06",
   "demo_qa_date_utc_by_lane": {
-    "memorable": "2026-11-05",
-    "vivid": "2026-11-05",
-    "bell": "2026-11-05"
+    "memorable": "2026-11-06",
+    "vivid": "2026-11-06",
+    "bell": "2026-11-06"
   },
   "incoming_evidence_reviewed": true,
   "implementation_started": true,
   "lane_status": {
     "memorable": {
-      "implementation_started": false,
-      "qa_date_utc": "2026-11-05",
+      "implementation_started": true,
+      "qa_date_utc": "2026-11-06",
       "qa_status": "automated_technical_pass_human_pending",
       "candidate_version": null,
       "candidate_status": "not_staged_pilot_decision_required",
-      "milestone_status_label": "Facilitator preparation complete · humans unbooked",
+      "milestone_status_label": "Engineering cleanup verified · human release pending",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md",
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/launch-2026-11-20/README.md",
       "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/README.md",
-      "technical_readiness_label": "4 targeted groups passed · humans pending",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/README.md",
+      "technical_readiness_label": "Development timer verified; study baseline retained",
       "official_release": false
     },
     "vivid": {
       "implementation_started": true,
-      "qa_date_utc": "2026-11-05",
+      "qa_date_utc": "2026-11-06",
       "qa_status": "automated_technical_pass_human_pending",
-      "candidate_version": "0.1.3",
+      "candidate_version": "0.1.4",
       "candidate_status": "staged_awaiting_human_validation",
-      "milestone_status_label": "Facilitator preparation complete · humans unbooked",
-      "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md",
-      "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md",
+      "milestone_status_label": "Engineering cleanup verified · human release pending",
+      "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
+      "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
       "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/2070902d7b5ea0da59ab07d35d218f9a66f7791f/docs/gamejam/readiness-2026-11-05/README.md",
-      "technical_readiness_label": "26 recovery/fallback cases · humans pending",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/README.md",
+      "technical_readiness_label": "0.1.4 staged; version and export verified",
       "official_release": false
     },
     "bell": {
       "implementation_started": true,
-      "qa_date_utc": "2026-11-05",
+      "qa_date_utc": "2026-11-06",
       "qa_status": "automated_technical_pass_human_pending",
       "candidate_version": "0.1.0",
       "candidate_status": "staged_awaiting_human_validation",
-      "milestone_status_label": "Facilitator preparation complete · humans unbooked",
+      "milestone_status_label": "Engineering cleanup verified · human release pending",
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/1f0fe0798ca991a05686e17c08f043d2c225f162/docs/gamejam/milestone-2026-10-27/README.md",
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/56eec3e7d96410492ad70bf39b5eb5ae003feec8/docs/gamejam/launch-2026-11-20/README.md",
       "human_staffing": "Unbooked. Facilitator-machine sessions selected; recruitment needs more time. Actual facilitators, participants, physical-device tester and independent reviewer remain unassigned.",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/README.md",
-      "technical_readiness_label": "4 comparison setup journeys · humans pending",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/README.md",
+      "technical_readiness_label": "Build tooling verified; 0.1.0 unchanged",
       "official_release": false
     }
   },
   "source_manifest": "source-manifest.json",
   "readiness": {
-    "date_utc": "2026-11-05",
-    "status": "targeted_preparation_complete_human_staffing_unbooked",
-    "document": "docs/iteration-2026-11-05/README.md",
-    "issues_document": "docs/iteration-2026-11-05/README.md#issues-and-publication-reconciliation",
+    "date_utc": "2026-11-06",
+    "status": "engineering_cleanup_and_candidate_staging_complete_human_release_pending",
+    "document": "docs/iteration-2026-11-06/README.md",
+    "issues_document": "docs/iteration-2026-11-06/README.md#issue-dispositions",
     "shared_blockers": [
       {
         "issue": 2,
@@ -67,7 +67,7 @@
         "status": "blocked_admin",
         "owner_role": "Repository administrator",
         "title": "Activate and verify main/master protection and scoped counted approval",
-        "evidence": "November 5 readback: rulesets/effective main/master rules empty; both protected=false. Only PaperStrange listed as collaborator. Prior writes403; counted approval unverified.",
+        "evidence": "November 6 readback: no effective main/master protection or rulesets; previous settings writes returned 403. Administrator work remains in issue #2; source cleanup continues.",
         "milestone": "Before Nov16 go/no-go; preferably before Nov11 freeze",
         "closure_requires": [
           "Exact effective rules and rule IDs verified",
@@ -79,15 +79,21 @@
       {
         "issue": 5,
         "url": "https://github.com/PaperStrange/IndiaGames/issues/5",
-        "status": "supported_route_and_issue_handoff_complete_original_route_open",
+        "status": "closed_supported_project_route_delivered",
         "owner_role": "QA/tooling lead",
-        "title": "Adopt a reproducible supported HTTP browser route",
-        "closure_requires": [
-          "Original managed Chromium 152/LNA route resolved or explicit maintainer-approved disposition recorded",
-          "Facilitator/device setup failures tracked separately from already delivered supported-HTTP reports",
-          "No human result inferred from automation"
-        ],
-        "evidence": "November 4 supported-HTTP reports and issue comment delivered; original managed Chromium 152/LNA route remains unresolved. Facilitator and physical-phone setups require actual verification."
+        "title": "Supported project HTTP route delivered; environment follow-up separated",
+        "closure_requires": [],
+        "evidence": "Closed November 6 after committed supported same-host HTTP reports and facilitator packets across all three games. Original managed Chromium 152/LNA restriction is preserved in non-blocking issue #10; it is not claimed repaired.",
+        "closure_record": "https://github.com/PaperStrange/IndiaGames/issues/5#issuecomment-6677869410",
+        "follow_up": "https://github.com/PaperStrange/IndiaGames/issues/10"
+      },
+      {
+        "issue": 10,
+        "url": "https://github.com/PaperStrange/IndiaGames/issues/10",
+        "status": "open_nonblocking_tooling_followup",
+        "owner_role": "Environment/tooling owner",
+        "title": "Investigate original managed Chromium 152 Local Network Access restriction",
+        "evidence": "Split from closed project blocker #5; supported co-located HTTP remains available. This investigation is not a required release gate."
       }
     ],
     "human_studies_arranged": false,
@@ -103,11 +109,11 @@
       "review_report": "docs/iteration-2026-11-04/PR-REVIEW.md"
     },
     "technical_reports": {
-      "memorable": "https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md",
-      "vivid": "https://github.com/PaperStrange/IndiaGames/blob/2070902d7b5ea0da59ab07d35d218f9a66f7791f/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md",
-      "bell": "https://github.com/PaperStrange/IndiaGames/blob/70824713a09684de9b232a35e71f46840fe04d07/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md"
+      "memorable": "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
+      "vivid": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md",
+      "bell": "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md"
     },
-    "candidate_staging_pr": "https://github.com/PaperStrange/IndiaGames/pull/6",
+    "candidate_staging_pr": "https://github.com/PaperStrange/IndiaGames/pull/11",
     "pull_requests": [
       {
         "number": 1,
@@ -147,10 +153,33 @@
         "status": "merged",
         "merge_commit": "f68c755c6b738ff219561faaaf2f78b0ceee3a83",
         "ci_conclusion": "success"
+      },
+      {
+        "number": 9,
+        "status": "merged",
+        "reviewed_head": "d93bf7f82cc228ec11cdae2cfa20495482455678",
+        "merge_commit": "239fceeab2c84491f5d9d5c471bf18504567a587",
+        "ci_conclusion": "success",
+        "publication_evidence": "docs/iteration-2026-11-06/publication-pr9.json"
+      },
+      {
+        "number": 11,
+        "status": "merged",
+        "reviewed_head": "3b6544c22eb89659648333080a7574db620f9a5f",
+        "merge_commit": "ac931cde281e9483f6f693289cad2d99038d5bc0",
+        "ci_conclusion": "success",
+        "ci_run": 42171163150
       }
     ],
-    "delivery_note": "All three facilitator-preparation reports are committed on their owning game branches. Vivid 0.1.3 and Bell 0.1.0 stay staged; Small Hours awaits its pair-study decision. Human appointments, physical-device results and independent approval remain pending.",
-    "status_checked_at": "2026-11-05T16:10:03.471978+00:00"
+    "delivery_note": "Engineering cleanup is verified in all three branches. Vivid 0.1.4 is staged; Bell 0.1.0 and the separate Small Hours study baseline are preserved. Human sessions, actual devices and independent release approval remain pending.",
+    "status_checked_at": "2026-11-06T05:58:53.342338+00:00",
+    "dashboard_publication_authorization": {
+      "date_utc": "2026-11-06",
+      "scope": "Current dashboard and engineering-progress delivery; owner reviews the whole dashboard after publication.",
+      "method": "Independent agent review and passing CI before publication; actual deployment verified afterward.",
+      "human_game_release_gate_waived": false,
+      "standing_policy_changed": false
+    }
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -158,35 +187,35 @@
     "candidate_freeze_date_utc": "2026-11-11",
     "status": "planned_human_gates_pending",
     "plan_document": "docs/launch/2026-11-20/README.md",
-    "cleanup_document": "docs/maintenance/2026-10-28.md",
+    "cleanup_document": "docs/iteration-2026-11-06/README.md",
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
-    "readiness_document": "docs/iteration-2026-11-05/README.md",
-    "schedule_note": "All three preparation lanes continue in parallel on facilitator machines. Recruitment needs more time; no dates are booked. November 11 freeze, November 16 go/no-go and November 20 launch do not waive human gates.",
+    "readiness_document": "docs/iteration-2026-11-06/README.md",
+    "schedule_note": "Engineering cleanup and technical freeze preparation continue without recruitment. Human sessions stay unbooked; missing release evidence still means no-go at the November 16 decision.",
     "timeline": [
       [
-        "5–10 November",
-        "Prepare three lanes",
-        "Targeted QA and facilitator setup"
+        "6 November",
+        "Engineering verified",
+        "Cleanup, reproducible export and staging"
+      ],
+      [
+        "Next",
+        "Technical freeze",
+        "Reproducible exports and focused regression"
       ],
       [
         "Unbooked",
         "Human pilots",
-        "Recruitment needs more time"
-      ],
-      [
-        "Before freeze",
-        "Select a response",
-        "One observed issue, or no change"
+        "Release evidence when staffed"
       ],
       [
         "11 November",
         "Freeze candidates",
-        "Small Hours needs its pilot first"
+        "Small Hours still needs its pilot decision"
       ],
       [
-        "12–16 November",
-        "Review / go-no-go",
+        "16 November",
+        "Go / no-go",
         "Humans, devices and approval"
       ],
       [
@@ -791,6 +820,57 @@
       "focus": "Technical preparation / facilitator setup",
       "assigned_person_or_agent": "/root/small_hours_nov5 + /root",
       "completion_note": "5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested."
+    },
+    {
+      "id": "SH-22",
+      "lane": "memorable",
+      "owner_role": "Small Hours integrator + QA",
+      "title": "Isolate countdown lifecycle and preserve test evidence",
+      "deliverable": "A behavior-preserving countdown module, safe browser-run output and verified development source distinct from the frozen study baseline.",
+      "acceptance_criteria": [
+        "Move countdown timing/lifecycle ownership out of the DOM adapter without changing the optional 45-second behavior, cancellation or repeated-start semantics.",
+        "Run the existing behavioral suite and focused timer lifecycle checks; verify relevant visible-control behavior and retain actual failures/limitations.",
+        "Make new browser runs use fresh external evidence directories and guaranteed teardown. Preserve historical reports and the frozen eight-file human-study baseline; no candidate staging or human result is implied."
+      ],
+      "depends_on": [
+        "SH-21"
+      ],
+      "assigned_person_or_agent": "/root/cleanup_small_hours + /root",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "done",
+      "source_plan": "docs/games/small-hours/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md"
+      ],
+      "focus": "Engineering cleanup / technical freeze",
+      "completion_note": "6 November: development cleanup passed 5 countdown unit tests, 33 browser checks, 3 focused timer groups/9 assertions and 2 runner-failure cases. Real expiry measured 45,045 ms; simulated lifecycle checks are separate. Development has nine playable files; the frozen eight-file study baseline remains unchanged and unstaged."
+    },
+    {
+      "id": "SH-23",
+      "lane": "memorable",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Small Hours integrator + QA",
+      "title": "Make development-export verification repeatable",
+      "deliverable": "A documented command verifies the nine-file development artifact independently from the frozen eight-file human-study baseline.",
+      "acceptance_criteria": [
+        "Generate two isolated development exports from a pinned source, compare complete file inventories and hashes, and fail clearly on missing or extra playable files.",
+        "Exercise the exported artifact over supported HTTP with the existing behavior and timer checks; keep raw attempts in fresh external evidence directories.",
+        "Record source SHA, commands, inventory and actual results. Preserve the frozen study baseline and leave staging dependent on its existing pilot/design/manual prerequisites."
+      ],
+      "depends_on": [
+        "SH-22"
+      ],
+      "source_plan": "docs/games/small-hours/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Engineering / technical freeze",
+      "target_date_utc": "2026-11-10",
+      "completion_note": "Next queued engineering task; implementation and verification have not started. This task has no participant-recruitment dependency."
     },
     {
       "id": "KF-01",
@@ -1577,10 +1657,10 @@
       "lane": "vivid",
       "perspective": "Engineering",
       "priority": "P1",
-      "status": "proposed",
+      "status": "done",
       "owner_role": "Vivid integrator + release integrator",
-      "title": "Correct the displayed version badge in the next separately versioned build",
-      "deliverable": "A future candidate whose visible version label matches its manifest; preserve staged 0.1.3 and all earlier immutable packages.",
+      "title": "Derive the displayed version from the package and verify the built badge",
+      "deliverable": "Version 0.1.4 with one package version authority and a built-metadata guard, preserving frozen 0.1.3.",
       "acceptance_criteria": [
         "Confirm the 0.1.3 index displays 0.1.2 and document this metadata limitation for facilitators using the authoritative manifest/inventory. Do not treat the visible badge as proof of artifact identity.",
         "When a next build is selected, correct its version display and bind an assertion to the exported manifest; assign a new unused version and verify the exported bytes. Do not silently replace current candidate bytes.",
@@ -1591,9 +1671,66 @@
       ],
       "source_plan": "docs/games/keepers-frame/TODO.md",
       "human_participants_required": false,
-      "completion_evidence": [],
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md"
+      ],
       "focus": "Artifact identification / next-build metadata",
-      "completion_note": "Reproduced on immutable 0.1.3 and documented in the November 5 technical report. Proposed next-build correction only; no candidate bytes changed."
+      "completion_note": "6 November: 51 unit tests, eight final canonical story conditions and fresh development badge checks passed. Two clean builds from committed source matched; four exact-export root/nested journeys passed with zero unexpected errors. Only built index.html differs from 0.1.3 (version badge and inline favicon). Earlier failed attempts remain disclosed; human/device evidence remains pending.",
+      "assigned_person_or_agent": "/root/cleanup_vivid + /root"
+    },
+    {
+      "id": "KF-29",
+      "lane": "vivid",
+      "owner_role": "Release integrator + independent code reviewer",
+      "title": "Stage the reproducible Vivid 0.1.4 metadata correction",
+      "deliverable": "A separately versioned immutable 0.1.4 candidate on master, with exact source/inventory, notes and blank schema-2 human evidence.",
+      "acceptance_criteria": [
+        "Use the package-derived version implemented in KF-28 and produce two matching clean exports; verify the actual emitted badge and both canonical story endpoints over supported HTTP.",
+        "Preserve earlier candidate packets byte for byte and use the current version-aware exporter. Run staging validation and independent exact-head review before merging the master PR.",
+        "Record source SHA, full inventory, staging PR/merge and actual remote verification. Empty human reports must still fail readiness; no official release or human approval is created."
+      ],
+      "depends_on": [
+        "KF-28"
+      ],
+      "assigned_person_or_agent": "/root + /root/cleanup_review",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "done",
+      "source_plan": "docs/games/keepers-frame/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/ac931cde281e9483f6f693289cad2d99038d5bc0/release-candidates/keepers-frame/0.1.4/candidate.json",
+        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/EXPORT-QA.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/staging-record.json",
+        "https://github.com/PaperStrange/IndiaGames/pull/11"
+      ],
+      "focus": "Engineering cleanup / technical freeze",
+      "completion_note": "Two clean committed-source builds and four exact-export HTTP journeys verified. PR #11 merged to master ac931cde281e9483f6f693289cad2d99038d5bc0 after independent review and passing CI. Six staged packets validate; required human readiness correctly fails with pending evidence."
+    },
+    {
+      "id": "KF-30",
+      "lane": "vivid",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Vivid integrator + QA",
+      "title": "Run version and build guards in branch CI",
+      "deliverable": "A branch-scoped CI job runs the existing package, story and emitted-version checks without publishing a candidate.",
+      "acceptance_criteria": [
+        "Use the lockfile and supported Node version, run the existing 51-test unit suite, build and check the emitted badge against package and lock versions.",
+        "Observe an actual green workflow on the reviewed source and verify a deliberately mismatched badge or version is rejected in an isolated fixture.",
+        "Document runner and command versions. Preserve the staged 0.1.4 packet and story/runtime contract; no deployment, human approval or automatic official release is introduced."
+      ],
+      "depends_on": [
+        "KF-29"
+      ],
+      "source_plan": "docs/games/keepers-frame/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Engineering / technical freeze",
+      "target_date_utc": "2026-11-10",
+      "completion_note": "Next queued engineering task; implementation and verification have not started. This task has no participant-recruitment dependency."
     },
     {
       "id": "TB-01",
@@ -1713,7 +1850,7 @@
       ],
       "focus": "Engineering / event state",
       "assigned_person_or_agent": "/root/bell_runtime",
-      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "completion_note": "27 October: the Dawn→Noon Mina event, eyewitness/report distinction and late/elsewhere discovery were implemented and covered by the pinned automated scenario report; human causal comprehension remains untested.",
       "assigned_agents": [
         "bell_runtime",
         "bell_qa",
@@ -1748,7 +1885,7 @@
       ],
       "focus": "Gameplay / knowledge and action economy",
       "assigned_person_or_agent": "/root/bell_runtime",
-      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "completion_note": "27 October: ordinary and borrowed route preparation, Momentum/Fracture costs, interruption and Mina’s changed destination passed pinned technical checks; meaningful player understanding remains pending.",
       "assigned_agents": [
         "bell_runtime",
         "bell_qa",
@@ -1782,7 +1919,7 @@
       ],
       "focus": "Narrative / character consequence",
       "assigned_person_or_agent": "/root/bell_runtime",
-      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "completion_note": "27 October: the settled Mina cause, clue, preparation and outcome wording is documented and exercised in the pinned candidate; source/report distinctions were corrected during verification. Human interpretation remains pending.",
       "assigned_agents": [
         "bell_runtime",
         "bell_qa",
@@ -1816,7 +1953,7 @@
       ],
       "focus": "UX / memory and uncertainty",
       "assigned_person_or_agent": "/root/bell_runtime",
-      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "completion_note": "27 October: sourced clue, local action costs and outcome receipt are implemented in the pinned candidate and exercised by automated journeys; human legibility and comprehension remain pending.",
       "assigned_agents": [
         "bell_runtime",
         "bell_qa",
@@ -1852,7 +1989,7 @@
       ],
       "focus": "Art / visual storytelling",
       "assigned_person_or_agent": "/root/bell_runtime",
-      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "completion_note": "27 October: pinned before/after captures show Mina, crate and redflower moving from the blocked stalls to the well, using repeated landmarks, location and labels. Desktop/narrow automated visual coverage is documented; physical-device and human readability remain pending.",
       "assigned_agents": [
         "bell_runtime",
         "bell_qa",
@@ -1890,7 +2027,7 @@
       ],
       "focus": "UX / accessibility and devices",
       "assigned_person_or_agent": "/root/bell_runtime",
-      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "completion_note": "27 October: the full route passed a 30-activation keyboard journey with visible focus; 390px, iframe and doubled-text checks passed after recorded fixes. These are emulated/CSS stress checks; physical phone/Safari, assistive technology and human readability remain pending.",
       "remaining_manual_checks": "Physical phone/Safari, screen reader and human usability remain pending under the release gate; this card records the automated path and disclosed limits.",
       "assigned_agents": [
         "bell_runtime",
@@ -1927,7 +2064,7 @@
       ],
       "focus": "Engineering / state lifecycle",
       "assigned_person_or_agent": "/root/bell_runtime",
-      "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+      "completion_note": "27 October: midnight knowledge, daily/reset/mode boundaries, repeated-input guards, catastrophe and restart were exercised on the pinned candidate; reload still resets the session. Runtime/build identity and preserved reference are recorded.",
       "assigned_agents": [
         "bell_runtime",
         "bell_qa",
@@ -1996,7 +2133,7 @@
       ],
       "focus": "Research / human pilot protocol",
       "assigned_person_or_agent": "/root",
-      "completion_note": "Protocol and evidence handoff preparation in progress. Human facilitator and reviewer remain unassigned.",
+      "completion_note": "27 October: the six-person, counterbalanced comparison protocol and blank observation form are prepared, with three participants per first-build order, neutral prompts and at least 120 seconds of neutral activity before recall. Registration, recruitment, sessions, facilitator and independent reviewer remain pending.",
       "assigned_agents": [
         "bell_runtime",
         "bell_qa",
@@ -2082,7 +2219,7 @@
       ],
       "focus": "Project / handoff and scope control",
       "assigned_person_or_agent": "/root",
-      "completion_note": "Protocol and evidence handoff preparation in progress. Human facilitator and reviewer remain unassigned.",
+      "completion_note": "27 October: the settled design, candidate/source identities, implementation limits, verification attempts and human-study handoff are linked in the pinned milestone record. Technical completion is separated from zero human sessions and pending official approval; current progress is reconciled in the dated iteration records.",
       "assigned_agents": [
         "bell_runtime",
         "bell_qa",
@@ -2219,6 +2356,57 @@
       "focus": "Technical preparation / facilitator setup",
       "assigned_person_or_agent": "/root/bell_nov5 + /root",
       "completion_note": "5 November: four facilitator-setup journeys and 24 checks passed for frozen candidate/reference across desktop/narrow HTTP origins. Candidate/reference inventories and served HTML matched; no candidate failures. Four optional reference Google Fonts certificate failures remain disclosed. These setup checks do not rerun all November 4 causal scenarios or establish human recall/physical-device results."
+    },
+    {
+      "id": "TB-21",
+      "lane": "bell",
+      "owner_role": "Bell integrator + QA",
+      "title": "Make build validation reproducible and non-destructive",
+      "deliverable": "Explicit build output control, isolated validation runs and focused negative checks without changing the frozen Bell artifact.",
+      "acceptance_criteria": [
+        "Allow an explicit output destination and run static/reproducibility checks in isolated directories, without overwriting a developer’s existing dist while validating it.",
+        "Reject malformed or duplicate build anchors with meaningful negative regression checks; document commands and actual failure behavior.",
+        "Verify generated gameplay bytes equal the frozen 0.1.0 candidate, run applicable existing checks and focused visible-control smoke, and preserve the previous Contrast reference and all human protocol gates."
+      ],
+      "depends_on": [
+        "TB-20"
+      ],
+      "assigned_person_or_agent": "/root/cleanup_bell + /root",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "done",
+      "source_plan": "docs/games/thirteenth-bell/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md"
+      ],
+      "focus": "Engineering cleanup / technical freeze",
+      "completion_note": "6 November: 25 Node tests, 21 static checks and four split/bundled browser journeys/20 checks passed, with zero unexpected browser errors. Two clean builds equal frozen 0.1.0 byte-for-byte. Validation preserves absent, valid and stale developer output. These checks are not a rerun of all historical causal scenarios or human observations."
+    },
+    {
+      "id": "TB-22",
+      "lane": "bell",
+      "perspective": "Engineering",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Bell integrator + QA",
+      "title": "Run isolated reproducible build checks in branch CI",
+      "deliverable": "A branch-scoped CI job runs the Node tests and non-destructive static/build checks on a clean checkout.",
+      "acceptance_criteria": [
+        "Run the existing 25 Node tests and isolated static validation with supported pinned runtimes; compare two clean build inventories.",
+        "Observe an actual green workflow on the reviewed source and retain meaningful malformed-anchor failure coverage without overwriting developer output.",
+        "Record source SHA, workflow run and actual results. Preserve the byte-identical 0.1.0 candidate and Contrast reference; no human or official-release approval is implied."
+      ],
+      "depends_on": [
+        "TB-21"
+      ],
+      "source_plan": "docs/games/thirteenth-bell/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Engineering / technical freeze",
+      "target_date_utc": "2026-11-10",
+      "completion_note": "Next queued engineering task; implementation and verification have not started. This task has no participant-recruitment dependency."
     }
   ]
 }

@@ -117,7 +117,7 @@
     ],
     "focus": "Engineering / event state",
     "assigned_person_or_agent": "/root/bell_runtime",
-    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "completion_note": "27 October: the Dawn→Noon Mina event, eyewitness/report distinction and late/elsewhere discovery were implemented and covered by the pinned automated scenario report; human causal comprehension remains untested.",
     "assigned_agents": [
       "bell_runtime",
       "bell_qa",
@@ -152,7 +152,7 @@
     ],
     "focus": "Gameplay / knowledge and action economy",
     "assigned_person_or_agent": "/root/bell_runtime",
-    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "completion_note": "27 October: ordinary and borrowed route preparation, Momentum/Fracture costs, interruption and Mina’s changed destination passed pinned technical checks; meaningful player understanding remains pending.",
     "assigned_agents": [
       "bell_runtime",
       "bell_qa",
@@ -186,7 +186,7 @@
     ],
     "focus": "Narrative / character consequence",
     "assigned_person_or_agent": "/root/bell_runtime",
-    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "completion_note": "27 October: the settled Mina cause, clue, preparation and outcome wording is documented and exercised in the pinned candidate; source/report distinctions were corrected during verification. Human interpretation remains pending.",
     "assigned_agents": [
       "bell_runtime",
       "bell_qa",
@@ -220,7 +220,7 @@
     ],
     "focus": "UX / memory and uncertainty",
     "assigned_person_or_agent": "/root/bell_runtime",
-    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "completion_note": "27 October: sourced clue, local action costs and outcome receipt are implemented in the pinned candidate and exercised by automated journeys; human legibility and comprehension remain pending.",
     "assigned_agents": [
       "bell_runtime",
       "bell_qa",
@@ -256,7 +256,7 @@
     ],
     "focus": "Art / visual storytelling",
     "assigned_person_or_agent": "/root/bell_runtime",
-    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "completion_note": "27 October: pinned before/after captures show Mina, crate and redflower moving from the blocked stalls to the well, using repeated landmarks, location and labels. Desktop/narrow automated visual coverage is documented; physical-device and human readability remain pending.",
     "assigned_agents": [
       "bell_runtime",
       "bell_qa",
@@ -294,7 +294,7 @@
     ],
     "focus": "UX / accessibility and devices",
     "assigned_person_or_agent": "/root/bell_runtime",
-    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "completion_note": "27 October: the full route passed a 30-activation keyboard journey with visible focus; 390px, iframe and doubled-text checks passed after recorded fixes. These are emulated/CSS stress checks; physical phone/Safari, assistive technology and human readability remain pending.",
     "remaining_manual_checks": "Physical phone/Safari, screen reader and human usability remain pending under the release gate; this card records the automated path and disclosed limits.",
     "assigned_agents": [
       "bell_runtime",
@@ -331,7 +331,7 @@
     ],
     "focus": "Engineering / state lifecycle",
     "assigned_person_or_agent": "/root/bell_runtime",
-    "completion_note": "Selected Mina-route implementation in progress. Final evidence and technical readiness will be recorded on the exact candidate revision; no completion claimed yet.",
+    "completion_note": "27 October: midnight knowledge, daily/reset/mode boundaries, repeated-input guards, catastrophe and restart were exercised on the pinned candidate; reload still resets the session. Runtime/build identity and preserved reference are recorded.",
     "assigned_agents": [
       "bell_runtime",
       "bell_qa",
@@ -400,7 +400,7 @@
     ],
     "focus": "Research / human pilot protocol",
     "assigned_person_or_agent": "/root",
-    "completion_note": "Protocol and evidence handoff preparation in progress. Human facilitator and reviewer remain unassigned.",
+    "completion_note": "27 October: the six-person, counterbalanced comparison protocol and blank observation form are prepared, with three participants per first-build order, neutral prompts and at least 120 seconds of neutral activity before recall. Registration, recruitment, sessions, facilitator and independent reviewer remain pending.",
     "assigned_agents": [
       "bell_runtime",
       "bell_qa",
@@ -486,7 +486,7 @@
     ],
     "focus": "Project / handoff and scope control",
     "assigned_person_or_agent": "/root",
-    "completion_note": "Protocol and evidence handoff preparation in progress. Human facilitator and reviewer remain unassigned.",
+    "completion_note": "27 October: the settled design, candidate/source identities, implementation limits, verification attempts and human-study handoff are linked in the pinned milestone record. Technical completion is separated from zero human sessions and pending official approval; current progress is reconciled in the dated iteration records.",
     "assigned_agents": [
       "bell_runtime",
       "bell_qa",
@@ -623,5 +623,56 @@
     "focus": "Technical preparation / facilitator setup",
     "assigned_person_or_agent": "/root/bell_nov5 + /root",
     "completion_note": "5 November: four facilitator-setup journeys and 24 checks passed for frozen candidate/reference across desktop/narrow HTTP origins. Candidate/reference inventories and served HTML matched; no candidate failures. Four optional reference Google Fonts certificate failures remain disclosed. These setup checks do not rerun all November 4 causal scenarios or establish human recall/physical-device results."
+  },
+  {
+    "id": "TB-21",
+    "lane": "bell",
+    "owner_role": "Bell integrator + QA",
+    "title": "Make build validation reproducible and non-destructive",
+    "deliverable": "Explicit build output control, isolated validation runs and focused negative checks without changing the frozen Bell artifact.",
+    "acceptance_criteria": [
+      "Allow an explicit output destination and run static/reproducibility checks in isolated directories, without overwriting a developer’s existing dist while validating it.",
+      "Reject malformed or duplicate build anchors with meaningful negative regression checks; document commands and actual failure behavior.",
+      "Verify generated gameplay bytes equal the frozen 0.1.0 candidate, run applicable existing checks and focused visible-control smoke, and preserve the previous Contrast reference and all human protocol gates."
+    ],
+    "depends_on": [
+      "TB-20"
+    ],
+    "assigned_person_or_agent": "/root/cleanup_bell + /root",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "done",
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/473ba38333e665b250d459e5d74bb496521c3e19/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md"
+    ],
+    "focus": "Engineering cleanup / technical freeze",
+    "completion_note": "6 November: 25 Node tests, 21 static checks and four split/bundled browser journeys/20 checks passed, with zero unexpected browser errors. Two clean builds equal frozen 0.1.0 byte-for-byte. Validation preserves absent, valid and stale developer output. These checks are not a rerun of all historical causal scenarios or human observations."
+  },
+  {
+    "id": "TB-22",
+    "lane": "bell",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Bell integrator + QA",
+    "title": "Run isolated reproducible build checks in branch CI",
+    "deliverable": "A branch-scoped CI job runs the Node tests and non-destructive static/build checks on a clean checkout.",
+    "acceptance_criteria": [
+      "Run the existing 25 Node tests and isolated static validation with supported pinned runtimes; compare two clean build inventories.",
+      "Observe an actual green workflow on the reviewed source and retain meaningful malformed-anchor failure coverage without overwriting developer output.",
+      "Record source SHA, workflow run and actual results. Preserve the byte-identical 0.1.0 candidate and Contrast reference; no human or official-release approval is implied."
+    ],
+    "depends_on": [
+      "TB-21"
+    ],
+    "source_plan": "docs/games/thirteenth-bell/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Engineering / technical freeze",
+    "target_date_utc": "2026-11-10",
+    "completion_note": "Next queued engineering task; implementation and verification have not started. This task has no participant-recruitment dependency."
   }
 ]

@@ -1,20 +1,22 @@
 # Vivid — implemented stories and remaining release work
 
-## November 5 parallel preparation · KF-27
+**Current engineering milestone · November 6:** KF-28 / KF-29 completed. The package-derived version badge is verified and candidate 0.1.4 is staged through PR #11. Next: **KF-30 proposed, target Nov 10** — run the existing version/build guards in branch CI; both human story cohorts remain pending. [Current milestone and evidence](../../iteration-2026-11-06/README.md). Human/design/release gates remain in force; dated history below is preserved.
 
-All three preparation lanes remain active; the owner selected facilitator-machine sessions and needs more recruitment time. Human dates remain unbooked. [Current iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
+## Historical November 5 preparation plan · KF-27
+
+The owner selected facilitator-machine sessions and needed more recruitment time. The planned technical preparation is now complete, with results below; human dates remain unbooked. [Dated iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
 
 **Verify recovery/fallback gaps and prepare both story sessions.** Check save migration/recovery and forced WebGL failure on the exact staged 0.1.3 artifact; record actual failure behavior and retained retries without changing story rules or save contracts. Prepare Iona and Mara on the same frozen build with explicit story/profile isolation and local HTTP setup. Keep neutral comparison optional and separate from the two required cohorts.
 
-This dated task is active until its actual results and immutable evidence links are filed. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
+The completion record below closes this preparation task with actual results and immutable evidence links. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
 
-**KF-28 · proposed next-build follow-up:** 0.1.3 displays a stale 0.1.2 badge. Use the manifest/inventory to identify facilitator artifacts. Correct the label only in a future separately versioned build; current candidate bytes remain immutable. No critical severity or human result is inferred.
+**KF-28 · completed November 6:** the stale badge documented in immutable 0.1.3 is corrected in separately versioned 0.1.4. Its badge derives from the package version; [PR #11](https://github.com/PaperStrange/IndiaGames/pull/11) staged the verified export. Earlier candidate bytes remain immutable. Use the [current 0.1.4 handoff](https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md) for new sessions; no human result is inferred.
 
-## Current readiness handoff · 4 November 2026
+## Historical readiness handoff · 4 November 2026
 
 4 November: 20 distinct semantic cases functionally passed across retained attempts, with disclosed harness corrections and one aborted asset request followed by an error-free targeted retry; 8 layout cases and 51 unit tests passed, and two clean builds matched. Canonical Iona return placement and Mara interpretation were exercised. Neutral profile, migration/recovery, forced WebGL failure, physical devices and humans were not retested in this pass. The exact verified 0.1.3 artifact is staged on master; human validation remains pending.
 
-[Current game handoff](https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Blank human handoff](https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
+[November 4 game handoff](https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/23d19663c78935e70307dca33acc8f1ce07bcf48/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Blank human handoff](https://github.com/PaperStrange/IndiaGames/blob/7ba944adac4f122d1a290f7a98a6fab2baf278d5/docs/gamejam/readiness-2026-11-04/HUMAN-HANDOFF.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
 
 Required human studies, physical devices and independent approval remain pending. Historical completed IDs and evidence are preserved; dated follow-ups do not erase prior verification.
 
@@ -69,11 +71,11 @@ PR #6 merged to master 2be5f3648fed5422eb4459486661385df73c91be. The merged pack
 
 Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/a63834557de0a8132ce5355c0d50858e200a3914/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
 
-## Current milestone · 27 October 2026
+## Historical milestone · 27 October 2026
 
 Prepare separate Iona and Mara sessions against the exact existing 0.1.2 candidate. Its runtime and historical QA are unchanged. The operational packet supplements the canonical October 21 protocol; physical-device observations, both human cohorts and separate policy review remain pending.
 
-[Current playtest packet](https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
+[October 27 playtest packet](https://github.com/PaperStrange/IndiaGames/blob/545a867fe0d6b1fe2555526e2b48278b96372f9a/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
 
 The current packet reconciles the October 22 research uploads with edition, substitution and partial-journey limits. Underlying play dates remain explicit. The detailed baseline below is retained for design rationale and acceptance criteria; its historical coverage/status statements do not replace the current packet, task JSON or source manifest. No human facilitator or independent reviewer is assigned.
 
@@ -123,7 +125,7 @@ The [machine-readable cards](tasks.json) carry detailed acceptance criteria, dep
 | **KF-16** | Product decision | Conditional: advance, revise or stop only after actual observations; one story cannot compensate for another failing the shipping gate. |
 | **KF-18, 19** | Human review and release | Human approval pending; official promotion remains conditional. Main's official registry is empty. |
 | **KF-20, 21** | Flexible architecture and second story | Pack contract, validation, recast fixture, story-owned captions/accessible labels and Mara's independent investigation/alignment structure implemented. |
-| **KF-22** | Release policy | Active: [PR #1](https://github.com/PaperStrange/IndiaGames/pull/1) awaits separate independent review before any promotion. It is not merged; policy work is not game approval. |
+| **KF-22** | Release policy | Done: [PR #1](https://github.com/PaperStrange/IndiaGames/pull/1) merged on November 4 after the dated agent-review authorization. Policy integration is separate from pending human game approval. |
 | **KF-23** | Physical performance and accessibility | Blocked: measure real phones and human screen-reader use; headless emulation is not physical-device evidence. |
 
 The [team contract](https://github.com/PaperStrange/IndiaGames/blob/0c72da97994d9f2d315e6aba1afba5219936b78b/docs/gamejam/vivid-iteration-2026-10-21/TEAM-CONTRACT.md) records separate story, runtime, art, UI, research and release ownership. One coordinator integrates cross-cutting changes. Source checkpoints stay on the Vivid branch; master receives versioned build packets; policy changes are reviewed independently from game promotion.
@@ -152,7 +154,7 @@ Use the [prepared protocol](https://github.com/PaperStrange/IndiaGames/blob/0c72
 - **Both:** include all predeclared attempts, distinct cohorts, the same exact build hash, zero open critical bugs and an independent real human reviewer who also plays the candidate. Automation cannot authenticate participants or approve their experiences.
 - **Devices:** target ≤8 MiB cold load, ≤100,000 active triangles, DPR ≤1.5 and 30 FPS on physical phones. The 0.1.2 build contains 1,401,263 bytes across 15 files (about 1.336 MiB), and each scene has fewer than 7,000 triangles. Physical-phone FPS, reading comfort and actual screen-reader operation remain unknown.
 
-Candidate **0.1.2** is pinned at [master `f9488e50`](https://github.com/PaperStrange/IndiaGames/tree/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2). Its [16-scenario browser recheck](https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/browser-observations.json) and [15-file served-artifact verification](https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json) passed. Build hash: `e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4`. The 0.1.0 packet and 0.1.1 license-notice revision remain unchanged. Version 0.1.2 moves setting-specific captions and accessible labels into packs, preserving existing text, saves and choices. All three packets pass staging integrity checks; none has human approval.
+Historical candidate **0.1.2** is pinned at [master `f9488e50`](https://github.com/PaperStrange/IndiaGames/tree/f9488e5079d1d193caef560d1fe72936add6cba3/release-candidates/keepers-frame/0.1.2). Its [16-scenario browser recheck](https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/browser-observations.json) and [15-file served-artifact verification](https://github.com/PaperStrange/IndiaGames/blob/76eb93eacb001808a0fc66c9bdb25f740d76c441/vivid-2.5d-photo-game/play/evidence/iteration-2026-10-21T08-12-07-932Z/artifact-verification.json) passed. Build hash: `e768b0fc12e34d1c4bdfc0cc5bdb194a39f10d07324e2951a6318373573572a4`. The 0.1.0 packet and 0.1.1 license-notice revision remain unchanged. Version 0.1.2 moves setting-specific captions and accessible labels into packs, preserving existing text, saves and choices. All three packets pass staging integrity checks; none has human approval.
 
 Serve the exact selected master artifact locally or on an agreed trusted LAN for manual testing. Do not assume a master Pages deployment. If either story fails or evidence remains incomplete, the anthology stays staged. After separate policy review and human approval, promote only that packet to main and verify the version tag, release notes and deployed URL. **No official game release, human pass or physical-device pass is claimed.** The project dashboard is now live from main/root following the owner’s manual Pages switch; see [current publication status](../../PUBLISHING.md). The earlier October 21 publication limits above retain their historical date.
 
@@ -161,3 +163,9 @@ Serve the exact selected master artifact locally or on an agreed trusted LAN for
 5 November: 26 distinct migration, storage and graphics-fault conditions passed across retained attempts (16 initial passes, 10 harness failures, then 10 targeted passes; 36 executions total). Eight expected injected-fault diagnostics in the retry, zero unexpected errors. All 15 frozen 0.1.3 files unchanged. The visible 0.1.2 badge is a documented metadata limitation; neutral study, physical devices and humans remain pending.
 
 [Technical evidence](https://github.com/PaperStrange/IndiaGames/blob/2070902d7b5ea0da59ab07d35d218f9a66f7791f/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md) · [Facilitator setup and blank-form links](https://github.com/PaperStrange/IndiaGames/blob/2070902d7b5ea0da59ab07d35d218f9a66f7791f/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md). The new preparation card is done; existing human and release cards keep their prior gates.
+
+### November 6 completed engineering · KF-28 / KF-29
+
+6 November: 51 unit tests, eight final canonical story conditions and fresh development badge checks passed. Two clean builds from committed source matched; four exact-export root/nested journeys passed with zero unexpected errors. Only built index.html differs from 0.1.3 (version badge and inline favicon). Earlier failed attempts remain disclosed; human/device evidence remains pending.
+
+[Committed maintenance record](https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/README.md) · [Verification](https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md). This completes the engineering card while preserving the separately pending human release cards.

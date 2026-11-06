@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "started_at": "2026-11-06T05:36:19.154Z",
+  "completed_at": "2026-11-06T05:36:27.540Z",
+  "deployed_commit": "239fceeab2c84491f5d9d5c471bf18504567a587",
+  "url": "https://paperstrange.github.io/IndiaGames/",
+  "pages_built_at": "2026-11-06T05:34:03Z",
+  "tls_verification": true,
+  "files_verified": 11,
+  "file_sha256": {
+    "index.html": "4fea000c6d2adb0229b360b4801396e6434e12683b92929a04f4a8bf3959d8b1",
+    "app.js": "ea5afe760cf9a7be491b449018e3e54a14d8ab31e0baa855fc4269d98b79f5ed",
+    "styles.css": "06168c9680a23ac46ba9f317a473f1c6327b986aea904a4236bc45098a590427",
+    "data/tasks.json": "3680c169e270988a94cd21aa472567714693643f37833a82fbd8159bc3ce5eff",
+    "data/source-manifest.json": "916b30855fbcbf971a9eaad6178a277f91387eaac30f5bf7a69bbb5be9cca722",
+    "data/releases.json": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+    "data/hub-presentation.json": "024c36626d1acf6d5c2e05a1e9da8a6e685695b678692ce34338e8327cf27baf",
+    "assets/hub/small-hours-opening.png": "b88ae8d49eb69f173ec333c3cad8b6365118481c861a3c182e4ee37d7592b2a6",
+    "assets/hub/vivid-iona-opening.png": "befb61b8eaff29115ee1b8447f4ffc8646edf883ad6af23e2abcee4b678da75b",
+    "assets/hub/bell-town-map.webp": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+    "assets/hub/favicon.svg": "8c8d7a2f1b4b3107be407adb59f3547d56abb9fe389f0461ae9610673960e44b"
+  },
+  "task_count": 69,
+  "human_sessions": 0,
+  "browser": "151.0.7922.173",
+  "browser_groups": [
+    {
+      "id": "live-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "checks": [
+        "Snapshot date, candidate-freeze/launch countdown and actual recorded human-session count match deployed data",
+        "Declared project favicon returns200, decodes as an image, and matches the deployed Git blob through an actual browser response",
+        "Three genuine loaded images, empty official-release registry and overview reflow",
+        "All authored IDs reachable; three lane filters; dependency search; keyboard detail open/close; board reflow"
+      ],
+      "task_ids_verified": 69,
+      "response_hashes_match": true
+    },
+    {
+      "id": "live-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "checks": [
+        "Snapshot date, candidate-freeze/launch countdown and actual recorded human-session count match deployed data",
+        "Declared project favicon returns200, decodes as an image, and matches the deployed Git blob through an actual browser response",
+        "Three genuine loaded images, empty official-release registry and overview reflow",
+        "All authored IDs reachable; three lane filters; dependency search; keyboard detail open/close; board reflow"
+      ],
+      "task_ids_verified": 69,
+      "response_hashes_match": true
+    }
+  ],
+  "unexpected_errors": 0,
+  "limitations": [
+    "No human session, physical-device or game playthrough claim.",
+    "Only the deployed project mount is exercised; local root-mount coverage is separate.",
+    "This does not repair the owner-paused historical candidate URL."
+  ]
+}

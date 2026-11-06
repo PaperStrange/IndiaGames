@@ -553,5 +553,56 @@
     "focus": "Technical preparation / facilitator setup",
     "assigned_person_or_agent": "/root/small_hours_nov5 + /root",
     "completion_note": "5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested."
+  },
+  {
+    "id": "SH-22",
+    "lane": "memorable",
+    "owner_role": "Small Hours integrator + QA",
+    "title": "Isolate countdown lifecycle and preserve test evidence",
+    "deliverable": "A behavior-preserving countdown module, safe browser-run output and verified development source distinct from the frozen study baseline.",
+    "acceptance_criteria": [
+      "Move countdown timing/lifecycle ownership out of the DOM adapter without changing the optional 45-second behavior, cancellation or repeated-start semantics.",
+      "Run the existing behavioral suite and focused timer lifecycle checks; verify relevant visible-control behavior and retain actual failures/limitations.",
+      "Make new browser runs use fresh external evidence directories and guaranteed teardown. Preserve historical reports and the frozen eight-file human-study baseline; no candidate staging or human result is implied."
+    ],
+    "depends_on": [
+      "SH-21"
+    ],
+    "assigned_person_or_agent": "/root/cleanup_small_hours + /root",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "done",
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md"
+    ],
+    "focus": "Engineering cleanup / technical freeze",
+    "completion_note": "6 November: development cleanup passed 5 countdown unit tests, 33 browser checks, 3 focused timer groups/9 assertions and 2 runner-failure cases. Real expiry measured 45,045 ms; simulated lifecycle checks are separate. Development has nine playable files; the frozen eight-file study baseline remains unchanged and unstaged."
+  },
+  {
+    "id": "SH-23",
+    "lane": "memorable",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "proposed",
+    "owner_role": "Small Hours integrator + QA",
+    "title": "Make development-export verification repeatable",
+    "deliverable": "A documented command verifies the nine-file development artifact independently from the frozen eight-file human-study baseline.",
+    "acceptance_criteria": [
+      "Generate two isolated development exports from a pinned source, compare complete file inventories and hashes, and fail clearly on missing or extra playable files.",
+      "Exercise the exported artifact over supported HTTP with the existing behavior and timer checks; keep raw attempts in fresh external evidence directories.",
+      "Record source SHA, commands, inventory and actual results. Preserve the frozen study baseline and leave staging dependent on its existing pilot/design/manual prerequisites."
+    ],
+    "depends_on": [
+      "SH-22"
+    ],
+    "source_plan": "docs/games/small-hours/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Engineering / technical freeze",
+    "target_date_utc": "2026-11-10",
+    "completion_note": "Next queued engineering task; implementation and verification have not started. This task has no participant-recruitment dependency."
   }
 ]

@@ -1,18 +1,20 @@
 # Small Hours — unchanged-baseline pilot
 
-## November 5 parallel preparation · SH-21
+**Current engineering milestone · November 6:** SH-22 completed. Countdown ownership and safe browser-run evidence are verified. Next: **SH-23 proposed, target Nov 10** — make development-export verification repeatable while retaining the separate eight-file study baseline. [Current milestone and evidence](../../iteration-2026-11-06/README.md). Human/design/release gates remain in force; dated history below is preserved.
 
-All three preparation lanes remain active; the owner selected facilitator-machine sessions and needs more recruitment time. Human dates remain unbooked. [Current iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
+## Historical November 5 preparation plan · SH-21
+
+The owner selected facilitator-machine sessions and needed more recruitment time. The planned technical preparation is now complete, with results below; human dates remain unbooked. [Dated iteration](../../iteration-2026-11-05/README.md) · [Owner unblock checklist](../../iteration-2026-11-05/OWNER-TODO.md) · [Authoritative task status](tasks.json).
 
 **Close targeted input/timer gaps and prepare facilitator machines.** Check keyboard/focus through the full baseline path, blank and maximum/long detail inputs, and timer expiry against actual implemented semantics; retain failures and separate driver mistakes from product defects. Record the exact unchanged eight-file baseline inventory before/after and a local HTTP facilitator setup; verify downloads/privacy reset where needed rather than rerunning every historical case.
 
-This dated task is active until its actual results and immutable evidence links are filed. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
+The completion record below closes this preparation task with actual results and immutable evidence links. No human/device pass or release approval is supplied by agent QA. November 11 freeze and November 16 go/no-go remain conditional cut lines; historical results below retain their original dates.
 
-## Current readiness handoff · 4 November 2026
+## Historical readiness handoff · 4 November 2026
 
 4 November: 8 supported-HTTP lifecycle cases passed across root/nested mounts, 1280/390px and pair/rehearsal modes; actual SVG contents and replay/reset/reload checked, zero reported errors, frozen baseline unchanged. Keyboard/focus, blank/maximum-length details, timer expiry, physical devices and real pair experience were not tested in this pass.
 
-[Current game handoff](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Human handoff](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/README.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
+[November 4 game handoff](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/README.md) · [Technical report](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/TECHNICAL-QA.md) · [Human handoff](https://github.com/PaperStrange/IndiaGames/blob/e94aa04273e581d1a27ade1988fe6d422b6111ec/docs/gamejam/readiness-2026-11-04/README.md) · [Current task status](tasks.json) · [Issue dispositions](../../iteration-2026-11-04/issues.md)
 
 Required human studies, physical devices and independent approval remain pending. Historical completed IDs and evidence are preserved; dated follow-ups do not erase prior verification.
 
@@ -38,11 +40,11 @@ Dated supported-HTTP evidence and an exact-artifact human-study handoff for issu
 
 Use the [game-specific human test list, blank records and iteration plan](https://github.com/PaperStrange/IndiaGames/blob/b9953cd01e95a32c631f8fb6bce9eb72c176d1e4/docs/gamejam/launch-2026-11-20/README.md), alongside the [cross-game launch calendar](../../launch/2026-11-20/README.md). Candidate freeze: **11 November**; go/no-go: **16 November**. Human roles and results remain pending. This schedule adds no completed gameplay or human-validation claims; existing task status and evidence below remain authoritative.
 
-## Current milestone · 27 October 2026
+## Historical milestone · 27 October 2026
 
 The settled milestone prepares the unchanged build and six-pair observation packet. Gameplay changes remain conditional on real-pair observations; SH-17 retains its existing post-pilot dependencies. No participant results or master candidate are created by preparation.
 
-[Current playtest packet](https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
+[October 27 playtest packet](https://github.com/PaperStrange/IndiaGames/blob/cc0b9ddd777d5772358df272bec69fe5c7ba8daf/docs/gamejam/milestone-2026-10-27/README.md) · [Team milestone](../../milestones/2026-10-27.md) · [Current task status](tasks.json)
 
 The current packet reconciles the October 22 research uploads with edition, substitution and partial-journey limits. Underlying play dates remain explicit. The detailed baseline below is retained for design rationale and acceptance criteria; its historical coverage/status statements do not replace the current packet, task JSON or source manifest. No human facilitator or independent reviewer is assigned.
 
@@ -434,3 +436,9 @@ These tasks implement the shared [release policy](../../RELEASE-POLICY.md). `mas
 5 November: four targeted groups and 64 assertions passed, including full keyboard/focus, blank/maximum-length details, actual SVG contents, real 45,060 ms timer expiry and a separate clock-assisted interruption. Zero observed browser/network errors; eight-file baseline unchanged. Physical devices and real pair experience remain untested.
 
 [Technical evidence](https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/TECHNICAL-QA.md) · [Facilitator setup and blank-form links](https://github.com/PaperStrange/IndiaGames/blob/7f4a7f26418b61632acf4e02634a636da5e08da0/docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md). The new preparation card is done; existing human and release cards keep their prior gates.
+
+### November 6 completed engineering · SH-22
+
+6 November: development cleanup passed 5 countdown unit tests, 33 browser checks, 3 focused timer groups/9 assertions and 2 runner-failure cases. Real expiry measured 45,045 ms; simulated lifecycle checks are separate. Development has nine playable files; the frozen eight-file study baseline remains unchanged and unstaged.
+
+[Committed maintenance record](https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/README.md) · [Verification](https://github.com/PaperStrange/IndiaGames/blob/4905ae84cb29ff0e1bb0bdfff19795fdd2d1f500/docs/gamejam/maintenance-2026-11-06/VERIFICATION.md). This completes the engineering card while preserving the separately pending human release cards.

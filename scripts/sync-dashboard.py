@@ -30,7 +30,7 @@ def build():
         document = launch.get('plan_document', '')
         if document != f"docs/launch/{launch['target_date_utc']}/README.md" or not (ROOT / document).is_file():
             raise ValueError('Missing launch plan document')
-        packet_pattern = r'https://github\.com/PaperStrange/IndiaGames/blob/[0-9a-f]{40}/docs/gamejam/(?:launch-' + re.escape(launch['target_date_utc']) + r'/README\.md|readiness-2026-11-04/HUMAN-HANDOFF\.md)'
+        packet_pattern = r'https://github\.com/PaperStrange/IndiaGames/blob/[0-9a-f]{40}/docs/gamejam/(?:launch-' + re.escape(launch['target_date_utc']) + r'/README\.md|readiness-2026-11-04/HUMAN-HANDOFF\.md|maintenance-2026-11-06/HUMAN-HANDOFF\.md)'
         for lane, source in sources.items():
             if not re.fullmatch(packet_pattern, source.get('human_playtest_packet', '')):
                 raise ValueError(f'{lane}: missing pinned human playtest packet')
