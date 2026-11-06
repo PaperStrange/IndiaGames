@@ -1,0 +1,202 @@
+{
+  "status": "pass",
+  "evidence_kind": "Committed development export verification; not a release or human qualification",
+  "source_commit": "1e118acb5ff1c0669d36962bc40b9c0c86edda95",
+  "source_path": "memorable-moments-game/play",
+  "started_at": "2026-11-06T09:38:14.539Z",
+  "completed_at": "2026-11-06T09:39:39.099Z",
+  "node_version": "v22.20.0",
+  "git_version": "git version 2.43.0",
+  "tooling_sha256_matches_commit": {
+    "memorable-moments-game/scripts/development-export.mjs": "e129281b627449120b6f9e5a330522fc47ae4ccd564a92de534065c6c13f524e",
+    "memorable-moments-game/scripts/verify-development-export.mjs": "73960ab5331ceae36131383f47faddfc11b3e7d26a89b06cab0013c7ae134acc",
+    "memorable-moments-game/tests/browser.mjs": "7afbe0d35787f423a5de1f259f211c7b64467d7ad8adcf75580884723902b0a4",
+    "memorable-moments-game/tests/timer-browser.mjs": "df1843f8223148d43f17ba3c984d14f4d0884b04d79815507693247aee142d48",
+    "memorable-moments-game/tests/locales-browser.mjs": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a"
+  },
+  "export_inventory": {
+    "files": {
+      "README.md": "4e67152fae89453daea606ac8b170984ce740acc3281248ee4d9fd4cb4178669",
+      "content.js": "c4f31dd514c1407b780fcab57a5edfdcc63d821db8223cf207a027fdcd767c1d",
+      "countdown.js": "91083a0e752e8c0e81a9b3adc7ef54c15ea17df0cb8e902ced0780b0fbd86b48",
+      "game.js": "2ab4fe1ff5f5af4900de709cb634bdf066c3939a10e39c19b2b229a50b0b9f17",
+      "icons.js": "7c05b43160356b9697665ae9cf0f0eb759441830aae030c2dfa867e28f61e2dd",
+      "index.html": "bfc303bfa094c80a55d442e9468c369153f0985da723511fb7ecb002c391f5cf",
+      "locale-catalog.json": "23de08f4fb3b73d3b8afff79f25af1c36125dda0d9461a91776b5dffd9bf8964",
+      "locales.js": "4fa94aece5283f6aa37aa180ce4e768978c057164460015eda6f678a6374eb53",
+      "messages.js": "5f7384e6b9d230f56528003832cc3b3ecf0f29972725f57fff0a64cae7fd23ed",
+      "state.js": "7f8cd132affac49700d4e400dc36d690efa82d635aa87404e2267f3a27ae0be1",
+      "style.css": "aba1f7659af0a85fa05ab1c8190f88c301ef311ce383cce3618f60f709021711",
+      "views.js": "00926c5efde886824e95612b8a968290dc0b9e0884af54eaed1abde3daf4cc5c"
+    },
+    "file_count": 12,
+    "bytes": 103624,
+    "inventory_sha256": "7743c91f718190e4f8328789cc583fea1e390348aba42075783936d6c6bf5ada"
+  },
+  "matching_exports": 2,
+  "exports_unchanged_after_browser_runs": true,
+  "http_file_comparisons": 24,
+  "mounts": [
+    "/",
+    "/IndiaGames/development/small-hours/"
+  ],
+  "legacy_browser_checks": 66,
+  "locale_browser_checks": 472,
+  "locale_runs": [
+    {
+      "mount": "root",
+      "status": "pass",
+      "checks": 236,
+      "browser_version": "141.0.7390.37",
+      "errors": [],
+      "known_diagnostics": [
+        {
+          "type": "console",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "url": "http://127.0.0.1:35311/favicon.ico"
+        }
+      ],
+      "report_sha256": "1840d843b0aeb3b790b46d7ca7141eb5bebe4af307a8485f8a8c432d9941586f"
+    },
+    {
+      "mount": "nested",
+      "status": "pass",
+      "checks": 236,
+      "browser_version": "141.0.7390.37",
+      "errors": [],
+      "known_diagnostics": [
+        {
+          "type": "console",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "url": "http://127.0.0.1:35311/favicon.ico"
+        }
+      ],
+      "report_sha256": "6f7bd08e59b9d06e748bb260f93ad0f1c92b636c66de793b494b32037a2a0eb0"
+    }
+  ],
+  "timer": {
+    "started_at": "2026-11-06T09:38:52.749Z",
+    "method": "Automated exact-export timer regression. Clock emulation and synthetic page transition events are explicitly separated from real expiry; no human, physical-device or bfcache claim.",
+    "cases": [
+      {
+        "id": "real-expiry-root",
+        "url": "http://127.0.0.1:35311/",
+        "width": 1280,
+        "checks": [
+          "repeated start disabled; initial 45 seconds shown",
+          "real expiry keeps the optional activity playable"
+        ],
+        "real_elapsed_ms": 45058,
+        "status": "pass"
+      },
+      {
+        "id": "dialog-and-navigation-nested",
+        "url": "http://127.0.0.1:35311/IndiaGames/development/small-hours/",
+        "width": 390,
+        "checks": [
+          "elapsed time updates countdown",
+          "canceling End retains the active countdown",
+          "confirm forget clears timer and stage without late writes",
+          "new activity has its own optional 45-second timer",
+          "leaving activity cancels the old timer"
+        ],
+        "clock_method": "Playwright clock emulation",
+        "status": "pass"
+      },
+      {
+        "id": "page-lifecycle-root",
+        "url": "http://127.0.0.1:35311/",
+        "width": 1280,
+        "checks": [
+          "simulated pagehide clears private DOM and interval",
+          "simulated persisted pageshow restores a fresh welcome"
+        ],
+        "lifecycle_method": "Synthetic PageTransitionEvent dispatch, not an actual browser bfcache test",
+        "status": "pass"
+      }
+    ],
+    "errors": [],
+    "knownDiagnostics": [
+      {
+        "id": "dialog-and-navigation-nested",
+        "type": "console",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "url": "http://127.0.0.1:35311/favicon.ico"
+      }
+    ],
+    "browser": "141.0.7390.37",
+    "status": "pass",
+    "completed_at": "2026-11-06T09:39:39.084Z"
+  },
+  "commands": [
+    {
+      "label": "browser-root",
+      "runner_sha256": "7afbe0d35787f423a5de1f259f211c7b64467d7ad8adcf75580884723902b0a4",
+      "exit_code": 0,
+      "log": "browser-root.log"
+    },
+    {
+      "label": "locales-root",
+      "runner_sha256": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a",
+      "exit_code": 0,
+      "log": "locales-root.log"
+    },
+    {
+      "label": "browser-nested",
+      "runner_sha256": "7afbe0d35787f423a5de1f259f211c7b64467d7ad8adcf75580884723902b0a4",
+      "exit_code": 0,
+      "log": "browser-nested.log"
+    },
+    {
+      "label": "locales-nested",
+      "runner_sha256": "305c86289c9aa8c796050c7b30ec965821abacf5e997ae0dc5d295f45c94fe7a",
+      "exit_code": 0,
+      "log": "locales-nested.log"
+    },
+    {
+      "label": "timer",
+      "runner_sha256": "df1843f8223148d43f17ba3c984d14f4d0884b04d79815507693247aee142d48",
+      "exit_code": 0,
+      "log": "timer.log"
+    }
+  ],
+  "errors": [],
+  "http_diagnostics": [
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "known_missing_favicon": true
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "known_missing_favicon": true
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "known_missing_favicon": true
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "known_missing_favicon": true
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 404,
+      "known_missing_favicon": true
+    }
+  ],
+  "raw_evidence_directory": "/workspace/indiagames-locales-2026-11-06/qa/small-hours/committed-1e118ac",
+  "raw_verification_sha256": "6cbf9ca4b541cdc79cb149266c5c13c235421f0a10039545bd772862d6f5b6df",
+  "prior_working_snapshot_record": "verification.json",
+  "same_inventory_as_cross_engine_snapshot": true,
+  "cross_engine_scope": "Earlier identical-byte snapshot: Chromium141.0.7390.37, Firefox142.0.1, WebKit26.0 at root/nested. This committed verification reran Chromium only.",
+  "frozen_study_zip_sha256": "64ebb3bdfd69b4a643a06817cc023754e94fc114c5a812fae6fb111af1ad2fd2",
+  "human_sessions_added": 0,
+  "fluent_review": "pending",
+  "physical_devices": "pending",
+  "native_ime": "pending",
+  "official_release_approval": false
+}
