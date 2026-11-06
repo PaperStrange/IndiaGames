@@ -1,0 +1,74 @@
+{
+  "kind": "automated-bell-branch-ci-preparation",
+  "observed_at": "2026-11-06T06:33:11.733494+00:00",
+  "base_source_commit": "473ba38333e665b250d459e5d74bb496521c3e19",
+  "source_commit": null,
+  "local_status": "pass",
+  "remote_ci": {
+    "status": "pending",
+    "commit": null,
+    "run_url": null
+  },
+  "runner_target": "ubuntu-24.04",
+  "tools": {
+    "node": "v24.19.0",
+    "python": "3.12.14"
+  },
+  "runtime_manifest_availability": {
+    "node": "https://github.com/actions/node-versions/releases/tag/24.19.0-30872449280",
+    "python": "https://github.com/actions/python-versions/releases/tag/3.12.14-31661455385"
+  },
+  "input_sha256": {
+    ".github/workflows/bell-checks.yml": "e0a8c2294488e395728d5b0ed7981f0397002faf0b2ee360d54dce07b718832e",
+    "tests/check_reproducible.py": "60822aaa989d61300b2efd2ce4eff8e24fc4b8a81c9c3fe9b74c6e2b90cfa2ed",
+    "tests/test_reproducible.py": "b7ac7692bd8627d9c05732dfaf04ca0cf1f4a69a31dd512a9a07b9a0cfd9b335",
+    "tests/check_static.py": "80bb1aca9e92d03487d2190b82d12ec4421fb7c211af3b798782c3be028705f8",
+    "tests/build.test.cjs": "511f31134b17d3bfe5da34dc6298f90901963adb6286baf1f265d2b2226bb34a",
+    "build.mjs": "0cd58838f1554ff6fb6853198d57beac9257cb9978d066a72572aed8d906b340"
+  },
+  "unit_tests": {
+    "node_passed": 25,
+    "node_failed": 0,
+    "inventory_contract_passed": 5,
+    "inventory_contract_failed": 0
+  },
+  "static_checks": {
+    "passed": 21,
+    "failed": 0
+  },
+  "cli_failure_contracts": {
+    "passed": 2,
+    "cases": [
+      "existing report refused and preserved",
+      "invalid source SHA refused"
+    ]
+  },
+  "portable_build": {
+    "kind": "automated-portable-build-inventory",
+    "status": "pass",
+    "source_commit": null,
+    "build_count": 2,
+    "inventories_equal": true,
+    "files": [
+      {
+        "path": "thirteenth-bell-playable-demo.html",
+        "bytes": 1455336,
+        "sha256": "433c9c6706e95ce5da2e541d73c2662322bef8b8c391e72ae451dcd42c80b973"
+      }
+    ],
+    "node": "v24.19.0",
+    "python": "3.12.14",
+    "human_approval": false,
+    "deployment": false
+  },
+  "runtime_unchanged": true,
+  "frozen_candidate_0_1_0_unchanged": true,
+  "human_sessions": 0,
+  "physical_device_results": 0,
+  "human_approval": false,
+  "limits": [
+    "No remote CI result yet",
+    "No browser regression rerun because runtime and generated game are unchanged",
+    "No release staging, deployment, new human observations or physical-device claim"
+  ]
+}

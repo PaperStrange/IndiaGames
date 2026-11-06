@@ -4,7 +4,7 @@ A time-loop mystery adventure that plays in the browser. One town, one cracked
 bell, three loops to understand what the thirteenth chime is pulling out of the
 day — then break it.
 
-Current engineering milestone: [non-mutating build validation and November 6 cleanup](docs/gamejam/maintenance-2026-11-06/README.md). The generated game remains byte-identical to staged candidate **0.1.0**. Engineering continues while recruitment is unbooked; no human game approval is recorded.
+Current engineering milestone: [branch CI and reproducible build inventories](docs/gamejam/technical-freeze-2026-11-06/README.md). The generated game remains byte-identical to staged candidate **0.1.0**. Engineering continues while recruitment is unbooked; no human game approval is recorded.
 
 For actual studies, use the [verified facilitator setup](docs/gamejam/readiness-2026-11-05/FACILITATOR-SETUP.md) and its linked blank records. The [November 20 plan](docs/gamejam/launch-2026-11-20/README.md) retains the human release criteria.
 
@@ -56,7 +56,8 @@ js/engine.js          game systems + UI copy: loop, clock, scenes, predictions, 
 assets/images/        town-map.webp — the official canon town map
 docs/                 design dossier PDF, work-package README, research reports
 dist/                 generated single-file build (do not hand-edit; run node build.mjs)
-tests/                pure rules, build contracts, static validation and browser journeys
+tests/                pure rules, build/inventory contracts, static validation and browser journeys
+.github/workflows/    branch-scoped engineering CI; no deployment
 ```
 
 **Content vs. engine:** story/world data lives in `js/data.js` and is read through
@@ -69,6 +70,8 @@ copy those systems render (theory text, consequence leads, mode labels).
 ```sh
 node --test tests/*.test.cjs    # earned-time/Square rules and build contracts
 python3 tests/check_static.py   # syntax, data references, assets, isolated reproducible builds
+python3 -B -m unittest discover -s tests -p 'test_reproducible.py' -v
+python3 tests/check_reproducible.py --report /tmp/bell-inventory-new.json
 node build.mjs                 # explicitly create/refresh local output for browser checks
 node tests/square-journey.cjs   # HTTP-hosted browser journeys; set PLAYWRIGHT_MODULE if needed
 ```
@@ -89,11 +92,13 @@ work owns `js/echo-time.js` and `js/square-event.js`, and build/QA work owns
 cross those boundaries. Each lane runs the relevant checks and links actual
 results. Historical evidence and frozen candidate/reference packages stay intact.
 
-The next engineering goal is a clean-checkout branch CI job using the two
-dependency-free verification commands above, with browser smoke on a supported
-runner as a separate job. This does not depend on recruiting participants and is
-not yet claimed implemented. Gameplay-selection and official-release decisions
-still require their own real observations and approval.
+The branch CI job now runs the dependency-free rule/build/static checks and
+complete portable-build inventory checks on Ubuntu 24.04, Node 24.19.0 and
+Python 3.12.14. The [technical-freeze record](docs/gamejam/technical-freeze-2026-11-06/README.md)
+separates actual local verification from remote CI status. Reports require a new
+output path and do not replace earlier evidence or create local `dist/`. Browser
+smoke on a supported runner remains separate future work. Gameplay-selection and
+official-release decisions still require real observations and approval.
 
 ## License
 
