@@ -4,6 +4,7 @@
 
 | Input from you / responsible human | What to record | Why it is needed |
 |---|---|---|
+| Existing human-record mapping | Link the received records to pseudonymous session/player or pair IDs, build, language, device, prior exposure and assistance | The owner-confirmed human feedback is useful now; this mapping assesses release-cohort eligibility without inventing counts or repeating research unnecessarily. See [reconciliation](../research-reconciliation-2026-11-06/README.md). |
 | Fluent reviewers | Accepted reviewer for English, Japanese and Simplified Chinese; available hours; game/story coverage and conflicts | Review tone, privacy/consent, clue fairness, action labels and endings; agent translations do not establish quality. |
 | Actual hardware | Device model, OS/version, browser/version, available keyboard/touch/stylus/screen reader and access windows | Desktop/phone/tablet names are targets, not test evidence. Include iPhone/iPad/Android tablet only when actual hardware is available. |
 | Study lead and facilitator | Accepted people, language proficiency and availability | Settle extra locale sampling before recruitment; retain original cohorts and uncoached prompts. |

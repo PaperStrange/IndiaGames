@@ -6,7 +6,7 @@ The displayed count now means **verified release sessions**, separately from the
 
 Two earlier attempts remain recorded: the first stopped before browser/static work because the output parent directory was missing; the next stopped on the old “unbooked” copy assertion. After preparing the directory and updating that existing assertion for the intentional release-qualification wording, the complete final run passed. These were runner/expectation corrections, not gameplay fixes.
 
-[Portable result and all 11 input hashes](dashboard-qa.json). These hashes bind the tested bytes; independent final-head review and CI are filed in the delivery PR. Actual Pages verification is a separate post-merge check. The 158 destinations are local/Git-object classifications, not remote HTTP checks.
+[Portable result and all 11 input hashes](dashboard-qa.json). These hashes bind the tested bytes; independent final-head review and CI are filed in [PR #15](https://github.com/PaperStrange/IndiaGames/pull/15). Actual Pages verification is a separate post-merge check. The 158 destinations are local/Git-object classifications, not remote HTTP checks.
 
 ![Desktop dashboard with received human feedback and separately verified release sessions](root-1440-overview.jpg)
 

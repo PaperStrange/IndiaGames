@@ -60,3 +60,5 @@ Keep the existing **84 task objects / 47 completed** unchanged. Completed engine
 [Exact record comparison](record-reconciliation.json) preserves original and filed hashes and the literal path substitutions. The originals remain unchanged.
 
 [Dashboard verification and previews](DASHBOARD-QA.md) document the presentation checks and their limits.
+
+[PR #15](https://github.com/PaperStrange/IndiaGames/pull/15) records independent review, CI and actual post-merge Pages verification for this update.
