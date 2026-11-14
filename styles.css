@@ -10,6 +10,7 @@
   --memorable: #52663b;
   --vivid: #805537;
   --bell: #435f76;
+  --notebook: #70494e;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: var(--ink);
@@ -86,10 +87,12 @@ button, a, td, th { overflow-wrap: anywhere; }
 .section-note { margin-bottom: 14px; }
 .section-heading .section-note { margin: 0; }
 .text-link { font-size: 14px; font-weight: 600; padding-block: 5px; }
-.project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .project-card { --accent: var(--memorable); --wash: var(--green); border: 1px solid var(--line); background: var(--card); min-width: 0; display: flex; flex-direction: column; }
 .project-card.vivid { --accent: var(--vivid); --wash: var(--orange); }
 .project-card.bell { --accent: var(--bell); --wash: var(--blue); }
+.project-card.notebook { --accent: var(--notebook); --wash: #eadfdf; }
+.project-image-pending { display: grid; place-items: center; aspect-ratio: 16 / 10; padding: 32px; color: var(--muted); background: #eadfdf; text-align: center; }
 .project-image-link { display: block; background: var(--wash); }
 .project-image { width: 100%; height: auto; aspect-ratio: 16/10; object-fit: contain; background: var(--wash); border-bottom: 1px solid var(--line); }
 .project-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
@@ -144,7 +147,7 @@ button, a, td, th { overflow-wrap: anywhere; }
 .detail-hint { margin-left: auto; color: var(--muted); font-size: 13px; font-weight: 400; }
 .evidence-content { padding-bottom: 24px; }
 .evidence-content > p { font-size: 14px; color: var(--muted); max-width: 900px; }
-.question-grid, .source-ledger { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; margin: 22px 0; }
+.question-grid, .source-ledger { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; margin: 22px 0; }
 .question-card { border: 1px solid var(--line); padding: 20px; background: var(--card); }
 .question-card h3, .source-record h3 { font-size: 18px; margin-bottom: 14px; }
 .question-card dl { margin: 0; }

@@ -4,10 +4,10 @@
 const REPOSITORY = 'https://github.com/PaperStrange/IndiaGames/';
 const MAIN_ROOT = REPOSITORY + 'blob/main/';
 const REVIEW_ROOT = REPOSITORY + 'blob/e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee/docs/gamejam/iteration-2026-10-20/';
-const LANES = ['memorable', 'vivid', 'bell'];
-const LANE_NAMES = { memorable: 'Small Hours', vivid: 'Vivid', bell: 'The Thirteenth Bell', shared: 'Shared team' };
+const LANES = ['memorable', 'vivid', 'bell', 'notebook'];
+const LANE_NAMES = { memorable: 'Small Hours', vivid: 'Vivid', bell: 'The Thirteenth Bell', notebook: 'Tom’s Notebook', shared: 'Shared team' };
 const STATUS_NAMES = { active: 'In progress', done: 'Done', not_selected: 'Not selected', proposed: 'Proposed', conditional: 'Conditional', waiting_for_records: 'Awaiting records', blocked_human: 'Needs people' };
-const TODO_PATHS = { memorable: 'docs/games/small-hours/TODO.md', vivid: 'docs/games/keepers-frame/TODO.md', bell: 'docs/games/thirteenth-bell/TODO.md' };
+const TODO_PATHS = { memorable: 'docs/games/small-hours/TODO.md', vivid: 'docs/games/keepers-frame/TODO.md', bell: 'docs/games/thirteenth-bell/TODO.md', notebook: 'docs/games/toms-notebook/TODO.md' };
 const PAGE_SIZE = 12;
 const el = id => document.getElementById(id);
 let snapshot = null;
@@ -86,20 +86,22 @@ function renderProjects() {
     const source = manifest.sources.find(item => item.lane === lane);
     const display = presentation.projects.find(item => item.lane === lane);
     const card = node('article', 'project-card ' + lane);
-    const imageLink = link('', './' + display.image.src, 'project-image-link');
-    imageLink.setAttribute('aria-label', `Open the full ${LANE_NAMES[lane]} image`);
-    const image = node('img', 'project-image');
-    image.src = './' + display.image.src;
-    image.alt = display.image.alt;
-    image.width = display.image.width;
-    image.height = display.image.height;
-    image.decoding = 'async';
-    if (index > 0) image.loading = 'lazy';
-    imageLink.append(image);
+    const imageLink = display.image ? link('', './' + display.image.src, 'project-image-link') : node('div', 'project-image-pending', display.image_pending_reason);
+    if (display.image) {
+      imageLink.setAttribute('aria-label', `Open the full ${LANE_NAMES[lane]} image`);
+      const image = node('img', 'project-image');
+      image.src = './' + display.image.src;
+      image.alt = display.image.alt;
+      image.width = display.image.width;
+      image.height = display.image.height;
+      image.decoding = 'async';
+      if (index > 0) image.loading = 'lazy';
+      imageLink.append(image);
+    }
     const body = node('div', 'project-body');
     const kicker = node('p', 'project-kicker');
     const localized = source.implementation_status === 'multilingual_engineering_verified_human_qualification_pending';
-    const buildLabel = localized ? (source.development_version ? 'Development ' + source.development_version : 'Language development') : (source.candidate_version ? 'Candidate ' + source.candidate_version : 'Baseline prepared');
+    const buildLabel = source.development_version ? 'Development ' + source.development_version : localized ? 'Language development' : (source.candidate_version ? 'Candidate ' + source.candidate_version : 'Baseline prepared');
     kicker.append(node('span', '', '0' + (index + 1)), node('span', '', buildLabel));
     const next = node('p', 'project-next');
     next.append(node('strong', '', 'Next: '), document.createTextNode(display.next_action));
@@ -107,16 +109,24 @@ function renderProjects() {
     const setup = link('Study setup ↗', source.human_playtest_packet);
     setup.setAttribute('aria-label', `${LANE_NAMES[lane]} study setup and recording forms`);
     const code = link('View source ↗', REPOSITORY + 'tree/' + source.reviewed_head);
-    code.setAttribute('aria-label', `View ${LANE_NAMES[lane]} source on GitHub`);
+    code.setAttribute('aria-label', `View source for ${LANE_NAMES[lane]} on GitHub`);
     links.append(setup, code);
+    if (source.development_preview_path) {
+      const play = link('Play development ↗', './' + source.development_preview_path);
+      play.setAttribute('aria-label', `${LANE_NAMES[lane]}: play development preview, not an official release`);
+      links.prepend(play);
+    }
     if (source.current_readiness_document) links.append(link(localized ? 'Development notes ↗' : 'Readiness notes ↗', source.current_readiness_document));
     body.append(kicker, node('h3', '', LANE_NAMES[lane]), node('p', 'project-promise', display.promise), next, links);
-    const provenance = node('details', 'image-details');
-    const summary = node('summary', '', 'Image & provenance');
-    const caption = node('p', '', display.image.caption);
-    caption.append(node('br'), link('Original source image ↗', display.image.source_url));
-    provenance.append(summary, caption);
-    card.append(imageLink, body, provenance);
+    card.append(imageLink, body);
+    if (display.image) {
+      const provenance = node('details', 'image-details');
+      const summary = node('summary', '', 'Image & provenance');
+      const caption = node('p', '', display.image.caption);
+      caption.append(node('br'), link('Original source image ↗', display.image.source_url));
+      provenance.append(summary, caption);
+      card.append(provenance);
+    }
     return card;
   }));
 }
@@ -125,7 +135,7 @@ function renderReadiness() {
   el('delivery-note').textContent = manifest.readiness?.delivery_note || 'Delivery status is in the current readiness report.';
   const humanZero = manifest.sources.every(source => source.human_participant_rows === 0);
   el('readiness-note').textContent = humanZero
-    ? 'No release-qualifying human sessions are verified in the filed packets. Physical-device checks and independent approval are pending.'
+    ? 'Release sessions, physical devices and independent approval remain unverified.'
     : 'Review each game’s original session records before making a release decision.';
   el('readiness-rows').replaceChildren(...LANES.map(lane => {
     const source = manifest.sources.find(item => item.lane === lane);
@@ -133,7 +143,7 @@ function renderReadiness() {
     row.dataset.lane = lane;
     const name = node('th', '', LANE_NAMES[lane]); name.scope = 'row';
     const build = node('td'); build.dataset.label = 'Build';
-    build.append(node('span', '', source.candidate_version ? 'Frozen candidate ' + source.candidate_version : 'Frozen study baseline'));
+    build.append(node('span', '', source.readiness_build_label || (source.candidate_version ? 'Frozen candidate ' + source.candidate_version : 'Frozen study baseline')));
     build.append(node('small', '', source.technical_readiness_label || 'Technical status in evidence notes'));
     const sessions = node('td'); sessions.dataset.label = 'Verified release sessions';
     const counts = node('span', 'human-session-count');
@@ -155,7 +165,8 @@ function renderLaunchReadiness() {
   const days = target => Math.round((Date.parse(target) - Date.parse(asOf)) / 86400000);
   el('risk-date').dateTime = asOf;
   el('risk-date').textContent = shortDate(asOf, true);
-  el('days-to-freeze').textContent = days(manifest.launch.candidate_freeze_date_utc);
+  const freezeDays = days(manifest.launch.candidate_freeze_date_utc);
+  el('days-to-freeze').textContent = freezeDays < 0 ? `${Math.abs(freezeDays)} days past target` : String(freezeDays);
   el('days-to-launch').textContent = days(manifest.launch.target_date_utc);
   el('human-sessions-filed').textContent = manifest.readiness.human_sessions_completed;
   el('launch-readiness').hidden = false;
@@ -224,7 +235,7 @@ function renderEvidence() {
 }
 
 function renderReleases() {
-  const names = { 'small-hours': 'Small Hours', 'keepers-frame': 'Vivid', 'thirteenth-bell': 'The Thirteenth Bell' };
+  const names = { 'small-hours': 'Small Hours', 'keepers-frame': 'Vivid', 'thirteenth-bell': 'The Thirteenth Bell', 'toms-notebook': 'Tom’s Notebook' };
   if (!releaseRegistry.releases.length) {
     const empty = node('article', 'release-empty');
     empty.append(node('strong', '', 'No official releases yet.'), node('p', '', 'Candidates await measured human playtests and independent approval.'));
@@ -350,7 +361,7 @@ function renderPlanningMetadata() {
 }
 
 function validateData(tasks, sources, visuals) {
-  if (!Array.isArray(tasks.tasks) || !Array.isArray(sources.sources) || !sources.research || !validDate(tasks.plan_date_utc || tasks.snapshot_date_utc)) throw new Error('Missing snapshot data');
+  if (!Array.isArray(tasks.tasks) || !Array.isArray(sources.sources) || sources.sources.length !== LANES.length || new Set(sources.sources.map(source => source.lane)).size !== LANES.length || !sources.research || !validDate(tasks.plan_date_utc || tasks.snapshot_date_utc)) throw new Error('Missing snapshot data');
   const ids = new Set();
   tasks.tasks.forEach(task => {
     if (!task || typeof task.id !== 'string' || !task.id || ids.has(task.id) || !Object.hasOwn(LANE_NAMES, task.lane) || !Object.hasOwn(STATUS_NAMES, task.status) || !['README.md', 'memorable-next.md', 'vivid-next.md', 'bell-next.md', ...Object.values(TODO_PATHS)].includes(task.source_plan)) throw new Error('Invalid task metadata');
@@ -362,8 +373,9 @@ function validateData(tasks, sources, visuals) {
   LANES.forEach(lane => {
     const source = sources.sources.find(item => item.lane === lane);
     if (!source || !/^[0-9a-f]{40}$/.test(source.reviewed_head) || !Number.isInteger(source.human_participant_rows) || source.human_participant_rows < 0) throw new Error('Invalid project metadata');
-    ['pilot_packet', 'human_playtest_packet', 'latest_research_readme', 'current_readiness_document'].forEach(field => { if (!githubUrl(source[field])) throw new Error('Missing project evidence link'); });
-    ['candidate_manifest'].forEach(field => { if (source[field] !== undefined && !githubUrl(source[field])) throw new Error('Invalid project evidence link'); });
+    ['human_playtest_packet', 'latest_research_readme', 'current_readiness_document'].forEach(field => { if (!githubUrl(source[field])) throw new Error('Missing project evidence link'); });
+    ['pilot_packet', 'candidate_manifest'].forEach(field => { if (source[field] !== undefined && !githubUrl(source[field])) throw new Error('Invalid project evidence link'); });
+    if (source.development_preview_path !== undefined && (!/^development\/toms-notebook\/\d+\.\d+\.\d+\/$/.test(source.development_preview_path) || !/^[0-9a-f]{64}$/.test(source.development_build_sha256))) throw new Error('Invalid development preview');
   });
   const engineering = sources.release_preparation?.engineering;
   if (!Array.isArray(engineering) || engineering.length !== LANES.length || new Set(engineering.map(item => item.lane)).size !== LANES.length) throw new Error('Missing language build progress');
@@ -377,12 +389,15 @@ function validateData(tasks, sources, visuals) {
   if (!visuals || visuals.schema_version !== 1 || !Array.isArray(visuals.projects) || visuals.projects.length !== LANES.length) throw new Error('Invalid visual presentation');
   LANES.forEach(lane => {
     const visual = visuals.projects.find(item => item.lane === lane);
-    if (!visual || !['promise', 'next_action'].every(key => typeof visual[key] === 'string' && visual[key].trim()) || !visual.image || !/^assets\/hub\/[a-z0-9-]+\.(png|webp|jpe?g)$/.test(visual.image.src) || !['alt', 'caption'].every(key => typeof visual.image[key] === 'string' && visual.image[key].trim()) || !githubUrl(visual.image.source_url) || !/^[0-9a-f]{40}$/.test(visual.image.source_commit) || !/^[0-9a-f]{64}$/.test(visual.image.sha256) || ![visual.image.width, visual.image.height].every(value => Number.isInteger(value) && value > 0)) throw new Error('Invalid image provenance');
+    if (!visual || !['promise', 'next_action'].every(key => typeof visual[key] === 'string' && visual[key].trim())) throw new Error('Invalid project presentation');
+    if (visual.image) {
+      if (!/^assets\/hub\/[a-z0-9-]+\.(png|webp|jpe?g)$/.test(visual.image.src) || !['alt', 'caption'].every(key => typeof visual.image[key] === 'string' && visual.image[key].trim()) || !githubUrl(visual.image.source_url) || !/^[0-9a-f]{40}$/.test(visual.image.source_commit) || !/^[0-9a-f]{64}$/.test(visual.image.sha256) || ![visual.image.width, visual.image.height].every(value => Number.isInteger(value) && value > 0)) throw new Error('Invalid image provenance');
+    } else if (typeof visual.image_pending_reason !== 'string' || !visual.image_pending_reason.trim()) throw new Error('Missing image or explicit pending state');
     if (!visual.questions || !['why_play', 'differentiation', 'unique_experience'].every(key => typeof visual.questions[key] === 'string')) throw new Error('Missing product hypotheses');
   });
 }
 function validateReleaseRegistry(registry) {
-  const games = ['small-hours', 'keepers-frame', 'thirteenth-bell'];
+  const games = ['small-hours', 'keepers-frame', 'thirteenth-bell', 'toms-notebook'];
   if (!registry || registry.schema_version !== 1 || !Array.isArray(registry.releases)) throw new Error('Invalid release registry');
   const seen = new Set();
   registry.releases.forEach(release => {

@@ -1,0 +1,276 @@
+[
+  {
+    "id": "TN-01",
+    "lane": "notebook",
+    "perspective": "Research",
+    "priority": "P1",
+    "status": "done",
+    "owner_role": "Research agent pair",
+    "title": "Play six competitors and record complete attempted journeys",
+    "deliverable": "Six source-linked browser observations with actual actions, endpoints or stopping, critic comparisons, limitations and implications before story freeze.",
+    "acceptance_criteria": [
+      "Record player, design, art/accessibility and operator perspectives for six distinct titles.",
+      "Separate observed actions, interpretation and hypothesis; retain inaccessible or partial endpoints rather than claiming completion.",
+      "Connect adopted design changes to evidence; agent gameplay never counts as human qualification."
+    ],
+    "depends_on": [],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/README.md"
+    ],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "Six public-game attempted journeys and cross-perspective critic comparisons are filed at 9330f88. One Seedship mission completed; other endpoints remain partial and WBWWB pixel assistance is disclosed. Agent observations do not qualify human cohorts."
+  },
+  {
+    "id": "TN-02",
+    "lane": "notebook",
+    "perspective": "Narrative",
+    "priority": "P1",
+    "status": "done",
+    "owner_role": "Narrative + localization agent",
+    "title": "Author Borrowed Words and its replaceable cast contract",
+    "deliverable": "One authored unsettling chapter with three exchanges and two consequential endings, using stable story/cast/action/message identities.",
+    "acceptance_criteria": [
+      "Earlier choices change later replies and the final page.",
+      "Keeper and Correspondent are replaceable roles; existing companion/product behavior remains unchanged.",
+      "All narrative and accessible strings exist in en/ja/zh-Hans; all three remain drafts until fluent review."
+    ],
+    "depends_on": [
+      "TN-01"
+    ],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/story.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/localization.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/verification.json"
+    ],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "Three exchanges, two endings and eight earlier-choice callbacks use stable replaceable story/cast identities. All en/ja/zh-Hans strings exist as drafts pending fluent review; original product unchanged."
+  },
+  {
+    "id": "TN-03",
+    "lane": "notebook",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "done",
+    "owner_role": "Notebook runtime integrator",
+    "title": "Make writing, reply and original recovery playable",
+    "deliverable": "A separate static game with semantic phrase marks, explicit submit, compare/correct/accept, local recovery and transcript export.",
+    "acceptance_criteria": [
+      "Keyboard, pointer and touch choices have equal semantic effects; no OCR or unrestricted-AI promise.",
+      "Original-language entries and IDs survive safe language changes; restore/cancel cannot duplicate choices.",
+      "Optional local saves, denied/corrupt storage, reset/delete and exports describe actual behavior."
+    ],
+    "depends_on": [
+      "TN-02"
+    ],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/verification.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/INDEPENDENT-REVIEW.md"
+    ],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "Playable semantic phrase choices, explicit send, original recovery, correct/accept, optional local saves and transcript export verified. Three-engine and independent results include denial/corruption, safe switching, resume/reset and accessible controls."
+  },
+  {
+    "id": "TN-04",
+    "lane": "notebook",
+    "perspective": "QA",
+    "priority": "P1",
+    "status": "done",
+    "owner_role": "Notebook QA + localization editor",
+    "title": "Verify three-language interaction and accessible layouts",
+    "deliverable": "Source-bound desktop/phone/tablet viewport and Chromium/Firefox/WebKit evidence for complete routes.",
+    "acceptance_criteria": [
+      "Check all three locales, both endings, keyboard/touch, reduced motion and CJK wrapping.",
+      "Distinguish browser viewport evidence from physical devices, native IME and fluent review.",
+      "Keep failed attempts and actual versions; correct observed regressions before engineering signoff."
+    ],
+    "depends_on": [
+      "TN-03"
+    ],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/verification.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/INDEPENDENT-REVIEW.md"
+    ],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "54 authored browser cases / 2,166 assertions across Chromium, Firefox and WebKit plus 26 independent cases / 147 assertions passed on the canonical game. Three locales, three viewports, endings, touch/keyboard and reduced motion are covered; physical devices and fluent review remain pending."
+  },
+  {
+    "id": "TN-05",
+    "lane": "notebook",
+    "perspective": "Engineering",
+    "priority": "P1",
+    "status": "done",
+    "owner_role": "Release integrator",
+    "title": "Package a reproducible isolated game edition",
+    "deliverable": "Version 0.1.0 static game export with hashed inventory, locale catalog, allowed assets and source-bound verification.",
+    "acceptance_criteria": [
+      "Repeat isolated exports and verify complete file identities on root/nested paths.",
+      "Exclude private app APIs, credentials, OCR payload and supplied reference films.",
+      "Keep original app 0.4.0-alpha.0 and its 35 MC cards intact; do not stage or promote a release."
+    ],
+    "depends_on": [
+      "TN-04"
+    ],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/committed-export.json",
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/verification.json",
+      "https://github.com/PaperStrange/IndiaGames/actions/runs/43581634137"
+    ],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "Clean 0.1.0 export from 5ef5ab4 has ten files / 1,153,082 bytes and inventory b91bc1f. Six exporter tests and repeat identities passed; CI reports matching inventory. CI artifact download 403 is not byte verification. Product 0.4.0-alpha.0 and 35 MC cards unchanged; no release staged."
+  },
+  {
+    "id": "TN-06",
+    "lane": "notebook",
+    "perspective": "Operations",
+    "priority": "P1",
+    "status": "done",
+    "owner_role": "Release policy integrator",
+    "title": "Prepare Notebook release criteria for human review",
+    "deliverable": "A separately reviewed draft extension to PR17 registering Notebook and its proposed product and language/device coverage.",
+    "acceptance_criteria": [
+      "Retain six additional fresh solo attempts and the proposed four joint completion/consequence successes without claiming adoption.",
+      "Preserve original game cohorts and immutable legacy packets.",
+      "Keep PR17 draft and comprehension registry unadopted until actual eligible human governance decisions."
+    ],
+    "depends_on": [],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/f2a90c242350ea1a3d9d9ffdd9cccf9d777a286c/docs/governance/locale-device-evidence-2026-11-06/NOTEBOOK-PROTOCOL.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/f2a90c242350ea1a3d9d9ffdd9cccf9d777a286c/docs/governance/locale-device-evidence-2026-11-06/NOTEBOOK-INDEPENDENT-REVIEW.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/f2a90c242350ea1a3d9d9ffdd9cccf9d777a286c/docs/governance/locale-device-evidence-2026-11-06/VERIFICATION.md"
+    ],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "November 14: Notebook draft release profile and protocol were committed at f2a90c2. 64 authored validator tests and 11 independent targeted reruns passed; original three-game contracts and empty production comprehension registry preserved. This completes proposal preparation, not human policy adoption, study qualification or release approval."
+  },
+  {
+    "id": "TN-07",
+    "lane": "notebook",
+    "perspective": "Research",
+    "priority": "P1",
+    "status": "done",
+    "owner_role": "Study integrator",
+    "title": "Deliver a readable four-game human-results handoff",
+    "deliverable": "Batch, session, language, device, defect and independent-decision instructions using existing forms.",
+    "acceptance_criteria": [
+      "Keep original build identities and private evidence references; unknown remains unknown.",
+      "Retain all attempts, assistance, prior exposure and original wording.",
+      "Accept partial Markdown/Docs/spreadsheet deliveries; integrator performs schema conversion, not the owner."
+    ],
+    "depends_on": [
+      "TN-06"
+    ],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/blob/main/docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md",
+      "https://github.com/PaperStrange/IndiaGames/blob/f2a90c242350ea1a3d9d9ffdd9cccf9d777a286c/docs/governance/locale-device-evidence-2026-11-06/NOTEBOOK-HUMAN-SESSION.md"
+    ],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "Readable four-game batch/session/fluent/device/defect/independent-review handoff prepared, with exact versus older builds, retained originals, unknown fields and uncued canonical observation. Preparation is complete; no appointments, human results or protocol adoption invented."
+  },
+  {
+    "id": "TN-08",
+    "lane": "notebook",
+    "perspective": "Operations",
+    "priority": "P1",
+    "status": "active",
+    "owner_role": "Dashboard integrator",
+    "title": "Publish Notebook development and the fourth dashboard lane",
+    "deliverable": "A verified development preview, genuine game capture, pinned sources and accurate fourth-lane progress.",
+    "acceptance_criteria": [
+      "Preserve all 84 earlier task contracts/statuses and original candidate packages.",
+      "Exercise all four lanes, task links, project mounts, mobile/tablet reflow and failure recovery.",
+      "Verify actual deployed assets after publication; no official registry entry or approval claim."
+    ],
+    "depends_on": [
+      "TN-05",
+      "TN-07"
+    ],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": false,
+    "completion_evidence": [],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "Exact development files and genuine source-bound capture are included. Independent hub review/CI and actual immutable-commit Pages verification remain required before this publication card completes."
+  },
+  {
+    "id": "TN-09",
+    "lane": "notebook",
+    "perspective": "Human research",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Human study lead + fluent reviewers + device QA",
+    "title": "Qualify Notebook on reviewed language and device protocols",
+    "deliverable": "Six preregistered fresh solo sessions plus reviewed language-comprehension, fluent and physical-device evidence for exact game bytes.",
+    "acceptance_criteria": [
+      "Adopt and preregister the protocol before qualifying observations; retain the first six attempts including failures.",
+      "All three languages and declared desktop/phone/tablet configurations need their actual reviewed coverage.",
+      "Record causal explanation and independent evidence without treating successful completion as proof of fun."
+    ],
+    "depends_on": [
+      "TN-05",
+      "TN-06",
+      "TN-07"
+    ],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "No completion or human acceptance is claimed until linked evidence is reviewed."
+  },
+  {
+    "id": "TN-10",
+    "lane": "notebook",
+    "perspective": "Release",
+    "priority": "P0",
+    "status": "blocked_human",
+    "owner_role": "Independent human reviewer + repository administrator",
+    "title": "Approve or defer the exact Notebook version",
+    "deliverable": "An individual go/defer decision with zero unresolved human-classified critical bugs, effective protection and exact-build independent approval.",
+    "acceptance_criteria": [
+      "Only qualified immutable master packets may reach official main release paths and version notes.",
+      "PR17 adoption, actual comprehension criteria and issue #2 protection must be resolved.",
+      "Defer incomplete Notebook without delaying another qualified game; retain development as explicitly unofficial."
+    ],
+    "depends_on": [
+      "TN-09"
+    ],
+    "source_plan": "docs/games/toms-notebook/TODO.md",
+    "human_participants_required": true,
+    "completion_evidence": [],
+    "focus": "Fourth game / November 20 preparation",
+    "technical_implementation_authorized": true,
+    "plan_settled": true,
+    "completion_note": "No completion or human acceptance is claimed until linked evidence is reviewed."
+  }
+]

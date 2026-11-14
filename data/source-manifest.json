@@ -42,7 +42,7 @@
       "milestone_status_label": "Three-language engineering verified · human qualification pending",
       "milestone_summary": "Small Hours now has complete en/ja/zh-Hans pair and rehearsal journeys, safe private-session language boundaries, grapheme/IME handling and readable CJK keepsakes. 21 unit/export tests, 1,416 localized assertions across Chromium/Firefox/WebKit and root/nested mounts, 66 English checks and timer verification passed. The committed exporter reproduced the exact 12-file/103,624-byte inventory and repeated 472 localized assertions plus English/timer checks; only known favicon diagnostics remained. Frozen study bytes are unchanged; fluent review, actual devices, real IME and pilot-first staging remain pending.",
       "human_participant_rows": 0,
-      "human_staffing": "Owner is coordinating the November 7–8 handoff. Accepted fluent reviewers, physical-device configurations and session appointments remain pending.",
+      "human_staffing": "Accepted handoff/results, fluent reviewers, physical-device configurations and session appointments remain pending.",
       "official_release": false,
       "implementation_started": true,
       "implementation_status": "multilingual_engineering_verified_human_qualification_pending",
@@ -163,7 +163,7 @@
       "pilot_packet": "https://github.com/PaperStrange/IndiaGames/blob/3d64c918f070f65fc7aa0d9d5ca444ca7928bb2c/docs/gamejam/maintenance-2026-11-06/HUMAN-HANDOFF.md",
       "milestone_status_label": "Three-language engineering verified · human qualification pending",
       "milestone_summary": "Vivid 0.2.0 development covers both stories in en/ja/zh-Hans with stable saves and replaceable casts. 69 unit tests, seven version guards, 39 localized Chromium/Firefox/WebKit cases and ten app-edge cases passed. Nonempty active controls were measured at 44×44 or larger; the repeated 16-file build matches the tested inventory. Recast grammar and a vacuous geometry assertion were corrected during independent review. Existing staged 0.1.4 remains unchanged; fluent, physical-device and human release qualification are pending.",
-      "human_staffing": "Owner is coordinating the November 7–8 handoff. Accepted fluent reviewers, physical-device configurations and session appointments remain pending.",
+      "human_staffing": "Accepted handoff/results, fluent reviewers, physical-device configurations and session appointments remain pending.",
       "launch_verification": {
         "date_utc": "2026-10-27",
         "scope": "Six targeted entry routes: direct and nested mounts × Iona remembered, Mara, Iona neutral. Launch only; the full story suite was not rerun.",
@@ -313,7 +313,7 @@
       "milestone_status_label": "Three-language engineering verified · human qualification pending",
       "milestone_summary": "Bell now separates all 43 action identities/costs and inventory/history identities from translated labels. A single en/ja/zh-Hans development bundle covers Original and Contrast with localized map access and keyboard behavior. 32 Node tests, 30 static checks, 13 inventory/exporter tests and nine Chromium/Firefox/WebKit locale journeys passed. Independent review corrected regenerated English onboarding and confirmed 172 original inventory comparisons plus four focused final-artifact cases. The committed two-file development export matches the tested HTML/catalog; frozen 0.1.0 and reference bytes remain unchanged. Fluent, physical-device and human qualification are pending.",
       "human_participant_rows": 0,
-      "human_staffing": "Owner is coordinating the November 7–8 handoff. Accepted fluent reviewers, physical-device configurations and session appointments remain pending.",
+      "human_staffing": "Accepted handoff/results, fluent reviewers, physical-device configurations and session appointments remain pending.",
       "official_release": false,
       "implementation_started": true,
       "implementation_status": "multilingual_engineering_verified_human_qualification_pending",
@@ -390,6 +390,73 @@
       "development_file_count": 2,
       "development_build_bytes": 284548,
       "development_version": "0.2.0"
+    },
+    {
+      "lane": "notebook",
+      "name": "Tom’s Notebook · Borrowed Words",
+      "branch": "toms_notebook",
+      "reviewed_head": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+      "runtime_scope": [
+        "game"
+      ],
+      "qa_source_commit": "5ef5ab4b40c2839c9ce6394e4561c658ca5866cc",
+      "qa_date_utc": "2026-11-14",
+      "qa_status": "source_bound_three_engine_verification_passed",
+      "planning_document": "docs/games/toms-notebook/TODO.md",
+      "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/README.md",
+      "milestone_status_label": "Game engineering verified; human qualification pending",
+      "milestone_summary": "Authored three-exchange, two-ending game verified in three languages and browser engines. Original product and 35 MC cards retain their status.",
+      "human_participant_rows": 0,
+      "human_staffing": "Six additional fresh solo players proposed; accepted handoff/results, reviewers, devices and appointments pending.",
+      "official_release": false,
+      "implementation_started": true,
+      "implementation_status": "multilingual_engineering_verified_human_qualification_pending",
+      "candidate_status": "not_staged_protocol_review_required",
+      "qa_scope": "54 authored browser cases / 2,166 assertions across three engines; 26 independent cases / 147 assertions; 16 unit tests including 192 complete semantic paths and six exporter tests. All language text is draft; physical devices and fluent/human review remain unverified.",
+      "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md",
+      "research_adjudication_summary": "Six agent-operated public-game observations with critic comparisons and bounded endpoints; one Seedship mission completed, other games partial. WBWWB success followed disclosed pixel targeting assistance. No human or six-complete-game claim.",
+      "technical_readiness_label": "Three-engine technical pass",
+      "readiness_build_label": "Development only · no candidate",
+      "development_version": "0.1.0",
+      "product_version_preserved": "0.4.0-alpha.0",
+      "release_policy_review": {
+        "url": "https://github.com/PaperStrange/IndiaGames/pull/17",
+        "status": "draft_human_review_required"
+      },
+      "qa_evidence_commit": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+      "research_evidence_commit": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+      "latest_runtime_unchanged_from_qa": true,
+      "runtime_diff_empty": true,
+      "implementation_readme": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md",
+      "qa_evidence": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/verification.json",
+      "development_preview_path": "development/toms-notebook/0.1.0/",
+      "development_build_files": {
+        "assets/index-CieFw0qD.css": "1cd5780db68e09c4210be6dff981fb0a814620fa484b5142cee196a5a4685e5b",
+        "assets/index-fCLrQG-e.js": "2dff0d4740dce3736791c89ac3b041315524bc225e40b1bd1ef7ef78c8916477",
+        "build-info.json": "5536816b4e18c3e0c55c7548b17d562684b9829230181cf461898e6691486816",
+        "favicon.svg": "0e9e5cc3f3c34e7256fc146d4e78fbf6148e79d7259f785f3caf7355eda7355d",
+        "fonts/OFL.txt": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b",
+        "fonts/caveat.ttf": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988",
+        "index.html": "01631b2ffcb78d714b38d7925b001e587d24bc61a10e2e2d4f62d1df877d4480",
+        "locale-catalog.json": "6c4cf73ffa1be09c7e4697ac2901bb2b889d98469d5f1d37cc4639355b77d683",
+        "materials/leather-alpha-02.webp": "87584839901a314788780e79bc0d8be3b6fec0ab8d43245cb85701ee3253a596",
+        "materials/vellum-alpha-02.webp": "527f3fa49aa6a69a112b4962655ae41b1146e4f05e978811de992aabaf8cf17f"
+      },
+      "development_build_sha256": "b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a",
+      "development_build_bytes": 1153082,
+      "development_file_count": 10,
+      "development_source_inputs_sha256": "d99ce0af9ec9ff63016a27f87e18b29d3ddeea784238033ee6bc8c4970e7c1a6",
+      "development_source_commit": "5ef5ab4b40c2839c9ce6394e4561c658ca5866cc",
+      "development_manifest": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/committed-export.json",
+      "independent_review": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/INDEPENDENT-REVIEW.md",
+      "ci": {
+        "run": 43581634137,
+        "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/43581634137",
+        "source_commit": "2f269e2b87539f37d781995c9fcb0f70c3788f36",
+        "conclusion": "success",
+        "scope": "CI log reports matching build inventory. Artifact download returned 403; no downloaded artifact byte-verification claim."
+      }
     }
   ],
   "research": {
@@ -625,11 +692,11 @@
     "rebuilt_in_this_review": false,
     "retested_in_this_review": false
   },
-  "plan_date_utc": "2026-11-06",
+  "plan_date_utc": "2026-11-14",
   "evidence_intake_date_utc": "2026-11-04",
   "publication_branch": "main",
   "historical_review_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee",
-  "dashboard_date_utc": "2026-11-06",
+  "dashboard_date_utc": "2026-11-14",
   "historical_coordination_branch": "gamejam-next-iteration-2026-10-20",
   "historical_coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
   "historical_review_methods": [
@@ -641,13 +708,13 @@
     "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
   ],
   "milestone": {
-    "id": "release-preparation-2026-11-06",
-    "title": "Three-language development verified; human qualification next",
-    "status": "multilingual_engineering_complete_human_qualification_pending",
+    "id": "four-game-preparation-2026-11-14",
+    "title": "Four-game engineering complete; human qualification next",
+    "status": "four_game_engineering_complete_human_qualification_pending",
     "plan_settled": true,
-    "document": "docs/multilingual-engineering-2026-11-06/README.md",
-    "summary": "Six multilingual engineering cards are complete with source-bound, independently reviewed three-engine evidence. All three game branches are synchronized. The next milestone is fluent review, declared physical-device qualification, reviewed comprehension criteria and exact-build human studies; no official release is approved.",
-    "human_staffing": "Owner plans the November 7–8 weekend handoff; accepted reviewers, devices and session appointments are not yet recorded.",
+    "document": "docs/four-game-release-2026-11-14/README.md",
+    "summary": "Notebook research, authored game, source-bound export, three-engine verification, draft protocol preparation and human handoff are complete. The board preserves 84 earlier cards and adds ten Notebook cards: 60 of 94 complete. Current Pages verification remains active; fluent review, declared physical devices, reviewed criteria and exact-build human studies are pending.",
+    "human_staffing": "Accepted handoff/results, fluent reviewers, actual device configurations and session appointments remain pending.",
     "allowance_visibility": "unavailable",
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
   },
@@ -660,17 +727,17 @@
     "expected_url_http_status": 200,
     "live_deployment_verified": true,
     "observed_page": "Last verified deployment: PR #16 human-feedback dashboard with 84 tasks",
-    "required_action": "Verify the new multilingual engineering dashboard after its delivery PR merges; record proof against that immutable main commit in the PR conversation.",
+    "required_action": "After this four-game dashboard and Notebook development preview merge, verify actual Pages assets and browser responses against that immutable main commit; attach proof before completing TN-08.",
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
     "pages_update_error": "Resource not accessible by integration",
     "deployed_commit": "ec2be8169d008e1925648eb5f0534e7fa9d750bd",
     "verified_assets": 11,
     "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/16#issuecomment-6680324481",
-    "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned403.",
+    "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned 403.",
     "verification_scope": "Previous PR #16 deployment: 11 served file/browser response hashes matched ec2be81, with strict TLS, desktop/narrow checks and all 84 tasks reachable.",
     "current_iteration_deployment_verified": false,
-    "verification_stage": "previous_pr16_verified_new_multilingual_dashboard_requires_postmerge_check",
+    "verification_stage": "previous_pr16_verified_four_game_preview_requires_postmerge_check",
     "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/16#issuecomment-6680324481",
     "historical_october_28_deployment": {
       "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
@@ -679,7 +746,7 @@
     },
     "historical_october_28_branch_protection_read_status": 403,
     "current_branch_rules_readback": "https://github.com/PaperStrange/IndiaGames/issues/2#issuecomment-6677871490",
-    "branch_rules_checked_date_utc": "2026-11-06",
+    "branch_rules_checked_date_utc": "2026-11-14",
     "historical_november_4_deployment": {
       "deployed_commit": "f68c755c6b738ff219561faaaf2f78b0ceee3a83",
       "verified_assets": 11,
@@ -697,7 +764,8 @@
       "verified_assets": 11,
       "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675",
       "verification_scope": "PR #12 live verification on November 6: all 11 served files and actual browser responses match main 89bb668; desktop/narrow checks, all 75 task IDs, images and favicon passed with zero unexpected errors and TLS verification enabled."
-    }
+    },
+    "branch_rules_checked_at": "2026-11-14T09:46:45.289050+00:00"
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -708,47 +776,47 @@
     "cleanup_document": "docs/iteration-2026-11-06/README.md",
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
-    "readiness_document": "docs/technical-freeze-2026-11-06/README.md",
-    "schedule_note": "Technical language implementation is authorized and progressing on separate game branches. November 7–8 human handoff, November 11 candidate freeze and November 16 go/no-go remain conditional on reviewed protocols, fluent review, actual devices and genuine sessions.",
+    "readiness_document": "docs/four-game-release-2026-11-14/README.md",
+    "schedule_note": "November 14: add Notebook as a fourth game. The November 11 target has passed without a new multilingual candidate. Preserve November 16 individual go/defer and November 20 conditional launch; dates do not manufacture qualification.",
     "timeline": [
       [
         "6 November",
-        "Engineering verified",
-        "Cleanup, exports and branch CI complete"
-      ],
-      [
-        "Nov 6–8",
-        "Language engineering",
-        "Implement three languages; review technical evidence and prepare the weekend human handoff."
-      ],
-      [
-        "Unbooked",
-        "Human pilots",
-        "Release evidence when staffed"
+        "Three language builds",
+        "Technical evidence retained"
       ],
       [
         "11 November",
-        "Freeze candidates",
-        "Small Hours still needs its pilot decision"
+        "Freeze target passed",
+        "No new multilingual candidate recorded"
+      ],
+      [
+        "14–15 November",
+        "Fourth game + handoff",
+        "Build Notebook; assess actual results"
       ],
       [
         "16 November",
-        "Go / no-go",
-        "Humans, devices and approval"
+        "Go / defer",
+        "Decide each game from evidence"
+      ],
+      [
+        "17–19 November",
+        "Eligible fixes + review",
+        "Retest changed bytes"
       ],
       [
         "20 November",
         "Conditional launch",
-        "Only individually approved games"
+        "Publish only approved games"
       ]
     ],
-    "planning_document": "docs/release-preparation-2026-11-06/README.md"
+    "planning_document": "docs/four-game-release-2026-11-14/README.md"
   },
   "historical_manifest_review_date_utc": "2026-10-27",
   "readiness": {
-    "date_utc": "2026-11-06",
-    "status": "multilingual_engineering_complete_human_qualification_pending",
-    "document": "docs/multilingual-engineering-2026-11-06/README.md",
+    "date_utc": "2026-11-14",
+    "status": "four_game_engineering_complete_human_qualification_pending",
+    "document": "docs/four-game-release-2026-11-14/README.md",
     "issues_document": "docs/iteration-2026-11-06/README.md#issue-dispositions",
     "shared_blockers": [
       {
@@ -757,8 +825,8 @@
         "status": "blocked_admin",
         "owner_role": "Repository administrator",
         "title": "Activate and verify main/master protection and scoped counted approval",
-        "evidence": "November 6 readback: no effective main/master protection or rulesets; previous settings writes returned 403. Administrator work remains in issue #2; source cleanup continues.",
-        "milestone": "Before Nov16 go/no-go; preferably before Nov11 freeze",
+        "evidence": "November 14 09:46:45 UTC API readback: main/master protected:false and rulesets empty. Administrator enablement and effective-rule readback remain open under issue #2.",
+        "milestone": "Before any official release; November 16 go/defer remains conditional",
         "closure_requires": [
           "Exact effective rules and rule IDs verified",
           "Current-head required checks and scoped counted approval demonstrated",
@@ -801,7 +869,8 @@
     "technical_reports": {
       "memorable": "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md",
       "vivid": "https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/README.md",
-      "bell": "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md"
+      "bell": "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md",
+      "notebook": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md"
     },
     "candidate_staging_pr": "https://github.com/PaperStrange/IndiaGames/pull/11",
     "pull_requests": [
@@ -878,8 +947,8 @@
         "live_verification": "https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493"
       }
     ],
-    "delivery_note": "Three-language development and browser verification are complete. Frozen study/candidate artifacts remain unchanged. Fluent review, physical devices, reviewed supplemental criteria and genuine exact-build release studies are pending.",
-    "status_checked_at": "2026-11-06T06:43:18.915273+00:00",
+    "delivery_note": "Four games have verified engineering. Human qualification and this preview’s publication check remain pending.",
+    "status_checked_at": "2026-11-14T09:46:45.289050+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",
       "scope": "Current dashboard and engineering-progress delivery; owner reviews the whole dashboard after publication.",
@@ -887,18 +956,31 @@
       "human_game_release_gate_waived": false,
       "standing_policy_changed": false
     },
-    "planning_document": "docs/multilingual-engineering-2026-11-06/README.md",
+    "planning_document": "docs/four-game-release-2026-11-14/README.md",
     "locale_device_policy_draft": {
       "pr": 17,
       "url": "https://github.com/PaperStrange/IndiaGames/pull/17",
-      "head": "0f570a65266fe1cf5d49a7957671bf40dc33a3b5",
+      "head": "f2a90c242350ea1a3d9d9ffdd9cccf9d777a286c",
       "status": "draft_human_review_required",
-      "authored_tests_passed": 53,
-      "independent_cases_passed": 42,
-      "ci_run": 42195537714,
-      "ci_conclusion": "success",
-      "adopted": false
-    }
+      "authored_tests_passed": 64,
+      "independent_targeted_reruns_passed": 11,
+      "independent_review": "https://github.com/PaperStrange/IndiaGames/blob/f2a90c242350ea1a3d9d9ffdd9cccf9d777a286c/docs/governance/locale-device-evidence-2026-11-06/NOTEBOOK-INDEPENDENT-REVIEW.md",
+      "verification": "https://github.com/PaperStrange/IndiaGames/blob/f2a90c242350ea1a3d9d9ffdd9cccf9d777a286c/docs/governance/locale-device-evidence-2026-11-06/VERIFICATION.md",
+      "adopted": false,
+      "ci_conclusion": "current_head_not_yet_recorded",
+      "previous_validation": {
+        "pr": 17,
+        "url": "https://github.com/PaperStrange/IndiaGames/pull/17",
+        "head": "0f570a65266fe1cf5d49a7957671bf40dc33a3b5",
+        "status": "draft_human_review_required",
+        "authored_tests_passed": 53,
+        "independent_cases_passed": 42,
+        "ci_run": 42195537714,
+        "ci_conclusion": "success",
+        "adopted": false
+      }
+    },
+    "status_check_scope": "November 14 source/evidence reconciliation and administrator API readback; not human qualification or a new Pages deployment check."
   },
   "governance": {
     "issue": "https://github.com/PaperStrange/IndiaGames/issues/2",
@@ -909,9 +991,10 @@
     "robot_counted_approval_status": "unverified",
     "nemo_invitation": "deferred",
     "legacy_candidate_url_repair": "paused_by_owner",
-    "latest_readback_date_utc": "2026-11-06",
-    "latest_readback": "November 6: no effective main/master protection or rulesets. The administrator blocker remains open in issue #2; supported project browser route #5 is closed and original environment investigation continues separately in #10.",
-    "latest_readback_document": "docs/iteration-2026-11-06/README.md#issue-dispositions"
+    "latest_readback_date_utc": "2026-11-14",
+    "latest_readback": "November 14 09:46:45 UTC API readback: main/master protected:false and rulesets empty. Issue #2 remains an administrator blocker. The earlier403 settings response is historical; no new settings write is claimed.",
+    "latest_readback_document": "docs/four-game-release-2026-11-14/README.md#handoff-and-shared-blockers",
+    "latest_readback_at": "2026-11-14T09:46:45.289050+00:00"
   },
   "environment_scope": "Historical verification environment; current technical reports record their actual browser and execution environment separately.",
   "historical_cleanup_milestone": {
@@ -937,7 +1020,7 @@
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
   },
   "release_preparation": {
-    "status": "technical_implementation_complete_human_qualification_pending",
+    "status": "four_game_engineering_complete_human_qualification_pending",
     "plan_settled": true,
     "scope_confirmed": true,
     "target_locales": [
@@ -955,9 +1038,9 @@
     "fluent_reviewers_assigned": false,
     "additional_locale_sampling_protocol": "pending_explicit_review",
     "current_validator_enforces_locale_device_coverage": false,
-    "plan_document": "docs/release-preparation-2026-11-06/README.md",
+    "plan_document": "docs/four-game-release-2026-11-14/README.md",
     "matrix_document": "docs/release-preparation-2026-11-06/planning-matrix.json",
-    "owner_document": "docs/multilingual-engineering-2026-11-06/WEEKEND-HANDOFF.md",
+    "owner_document": "docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md",
     "implementation_started": true,
     "plan_date_utc": "2026-11-06",
     "november_20_language_requirement": "all_three_required_per_released_game",
@@ -976,7 +1059,7 @@
         },
         "checks_label": "1,416 checks · 3 engines",
         "evidence_url": "https://github.com/PaperStrange/IndiaGames/blob/6e09d4ff7315ea8848f5f792002c78af709c4c8f/docs/gamejam/localization-2026-11-06/README.md",
-        "human_status": "Fluent and physical review pending",
+        "human_status": "Fluent/physical review pending",
         "source_commit": "6e09d4ff7315ea8848f5f792002c78af709c4c8f",
         "build_inventory_sha256": "7743c91f718190e4f8328789cc583fea1e390348aba42075783936d6c6bf5ada"
       },
@@ -989,7 +1072,7 @@
         },
         "checks_label": "39 cases · 3 engines",
         "evidence_url": "https://github.com/PaperStrange/IndiaGames/blob/83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f/docs/gamejam/localization-2026-11-06/README.md",
-        "human_status": "Fluent and physical review pending",
+        "human_status": "Fluent/physical review pending",
         "source_commit": "83c76dc2a2744e38298f38aa5b3ec0a734f4ed1f",
         "build_inventory_sha256": "1c440d1a1bcbb0b8470949aeb8a2f590e9ab2278eac1ed384198acfbaeb9ca63"
       },
@@ -1002,13 +1085,27 @@
         },
         "checks_label": "9 journeys · 3 engines",
         "evidence_url": "https://github.com/PaperStrange/IndiaGames/blob/58e5cf15ac6920b6a25df0b656d843e69217fafd/docs/gamejam/localization-2026-11-06/README.md",
-        "human_status": "Fluent and physical review pending",
+        "human_status": "Fluent/physical review pending",
         "source_commit": "58e5cf15ac6920b6a25df0b656d843e69217fafd",
         "build_inventory_sha256": "f88951e363e0bb739661eafb91e59b7ab778bca9cc8f8dc01cdbe16d860c646a"
+      },
+      {
+        "lane": "notebook",
+        "locales": {
+          "en": "Draft · technical pass",
+          "ja": "Draft · technical pass",
+          "zh-Hans": "Draft · technical pass"
+        },
+        "checks_label": "54 cases · 3 engines",
+        "evidence_url": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md",
+        "human_status": "Protocol, fluent/physical review pending",
+        "source_commit": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+        "build_inventory_sha256": "b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a"
       }
     ],
     "release_policy_pr": "https://github.com/PaperStrange/IndiaGames/pull/17",
-    "technical_implementation_complete": true
+    "technical_implementation_complete": true,
+    "fourth_game_authorized_date_utc": "2026-11-14"
   },
   "research_intake": {
     "date_utc": "2026-11-06",
@@ -1028,5 +1125,66 @@
     "task_contracts_changed": false,
     "new_gameplay_or_runtime_tests": false,
     "report": "docs/research-reconciliation-2026-11-06/README.md"
+  },
+  "historical_multilingual_milestone": {
+    "id": "release-preparation-2026-11-06",
+    "title": "Three-language development verified; human qualification next",
+    "status": "multilingual_engineering_complete_human_qualification_pending",
+    "plan_settled": true,
+    "document": "docs/multilingual-engineering-2026-11-06/README.md",
+    "summary": "Six multilingual engineering cards are complete with source-bound, independently reviewed three-engine evidence. All three game branches are synchronized. The next milestone is fluent review, declared physical-device qualification, reviewed comprehension criteria and exact-build human studies; no official release is approved.",
+    "human_staffing": "Owner plans the November 7–8 weekend handoff; accepted reviewers, devices and session appointments are not yet recorded.",
+    "allowance_visibility": "unavailable",
+    "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
+  },
+  "notebook_research": {
+    "review_date_utc": "2026-11-14",
+    "reviewed_head": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+    "scope": "Separate November 14 agent observations; not added to historical original-roster or owner-confirmed human counts.",
+    "attribution": "agent_operated_public_browser_gameplay",
+    "recorded_titles": 6,
+    "human_participant_rows": 0,
+    "record_index": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/README.md",
+    "full_games_completed_claimed": false,
+    "timing_limit": "Tool and interleaved elapsed time is not human completion duration.",
+    "observations": [
+      {
+        "title": "A Dark Room",
+        "record": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/a-dark-room/README.md",
+        "endpoint": "Fire, stranger, forest, traps/cart and improved gathering; bounded opening, not full game."
+      },
+      {
+        "title": "Seedship",
+        "record": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/seedship/README.md",
+        "endpoint": "One completed three-planet mission: 850 settlers, medieval egalitarian republic and saved history; no exhaustive endings claim."
+      },
+      {
+        "title": "Birdland",
+        "record": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/birdland/README.md",
+        "endpoint": "Opening, first dream and first canoe scene; stopped entering midday, no ending."
+      },
+      {
+        "title": "The Uncle Who Works for Nintendo",
+        "record": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/uncle-nintendo/README.md",
+        "endpoint": "Arrival, relationship, exploration and clock to fictional 10 pm; no midnight or ending."
+      },
+      {
+        "title": "Sort the Court!",
+        "record": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/sort-the-court/README.md",
+        "endpoint": "Queen, day-one petitions, stat consequences, summary and growth; not full campaign."
+      },
+      {
+        "title": "We Become What We Behold",
+        "record": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/we-become/README.md",
+        "endpoint": "Initial misses then separate pixel-assisted replay to hat headline and six hat wearers; no ending or unaided-success claim."
+      }
+    ],
+    "design_implications": [
+      "Immediate visible reply and meaningful authored intents.",
+      "Later callbacks connect choices to consequences without hidden trust scores.",
+      "Optional inspection commits nothing; original entries remain recoverable.",
+      "Explicit commit/continue without artificial delays."
+    ],
+    "criticism_scope": "Each record separates actions, critic comparisons and player/design/art/accessibility/operator interpretation; observations motivate hypotheses, not measured demand or fun."
   }
 }

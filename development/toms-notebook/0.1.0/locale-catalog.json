@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "game": "toms-notebook",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ja",
+    "zh-Hans"
+  ],
+  "units": [
+    {
+      "id": "toms-notebook",
+      "locales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ]
+    }
+  ]
+}

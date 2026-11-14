@@ -4,9 +4,9 @@ Run after the interface and presentation metadata are stable. This checks the
 static dashboard, not game playability, human research, physical devices or
 GitHub protection settings.
 
-Use the repository's full-history working checkout, with the reviewed local refs
+Use the repository's full-history working checkout, with the reviewed fetched `origin/` refs
 `master`, `memorable-moments-game`, `vivid-2.5d-photo-game`, and
-`the-thirteenth-bell`, plus the pinned historical commits from
+`the-thirteenth-bell` and `toms_notebook`, plus the pinned historical commits from
 `data/source-manifest.json`. An ordinary shallow or single-branch clone is not
 enough for the source/candidate identity checks. The runner never fetches,
 creates, switches, or updates refs; prepare those separately before running it.
@@ -25,3 +25,5 @@ Coverage includes desktop and narrow layouts on both mounts, a tablet viewport,
 all authored tasks and their filters/navigation, keyboard details, late-task and
 legacy anchors, load failure/retry, and doubled computed font sizes. The latter
 is a 200% text reflow check, not a browser zoom or physical-device test.
+
+The four-game checks preserve all 84 pre-November 14 task contracts, verify the Notebook lane/deep link, classify absent captures explicitly, and compare every linked development-preview file against its full inventory. Preview publication remains separate from candidate staging and the empty official registry.
