@@ -713,32 +713,32 @@
     "status": "four_game_engineering_complete_human_qualification_pending",
     "plan_settled": true,
     "document": "docs/four-game-release-2026-11-14/README.md",
-    "summary": "Notebook research, authored game, source-bound export, three-engine verification, draft protocol preparation and human handoff are complete. The board preserves 84 earlier cards and adds ten Notebook cards: 60 of 94 complete. Current Pages verification remains active; fluent review, declared physical devices, reviewed criteria and exact-build human studies are pending.",
+    "summary": "Notebook research, authored game, reproducible export, three-engine verification, draft protocol preparation, readable handoff and actual Pages publication are complete. The board preserves 84 earlier cards and adds ten Notebook cards:61 of 94 complete. Fluent review, declared physical devices, reviewed criteria and exact-build human studies remain pending.",
     "human_staffing": "Accepted handoff/results, fluent reviewers, actual device configurations and session appointments remain pending.",
     "allowance_visibility": "unavailable",
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
   },
   "publication": {
-    "checked_date_utc": "2026-11-06",
+    "checked_date_utc": "2026-11-14",
     "pages_api_status": 200,
     "source_branch": "main",
     "source_path": "/",
     "expected_url": "https://paperstrange.github.io/IndiaGames/",
     "expected_url_http_status": 200,
     "live_deployment_verified": true,
-    "observed_page": "Last verified deployment: PR #16 human-feedback dashboard with 84 tasks",
-    "required_action": "After this four-game dashboard and Notebook development preview merge, verify actual Pages assets and browser responses against that immutable main commit; attach proof before completing TN-08.",
+    "observed_page": "Verified four-game dashboard and Notebook 0.1.0 development preview; 94 tasks / 60 done at observation. Progress-only follow-up records TN-08 completion.",
+    "required_action": "Retain the exact PR19 publication proof; verify the progress-only follow-up after its merge and record that new immutable main commit in its PR.",
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
     "pages_update_error": "Resource not accessible by integration",
-    "deployed_commit": "ec2be8169d008e1925648eb5f0534e7fa9d750bd",
-    "verified_assets": 11,
-    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/16#issuecomment-6680324481",
+    "deployed_commit": "06e8fd3f363e3969d5365ae1f3af52108a8a6ebe",
+    "verified_assets": 22,
+    "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290",
     "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned 403.",
-    "verification_scope": "Previous PR #16 deployment: 11 served file/browser response hashes matched ec2be81, with strict TLS, desktop/narrow checks and all 84 tasks reachable.",
-    "current_iteration_deployment_verified": false,
-    "verification_stage": "previous_pr16_verified_four_game_preview_requires_postmerge_check",
-    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/16#issuecomment-6680324481",
+    "verification_scope": "PR19 actual HTTPS and Chromium browser verification: 22 served files match 06e8fd3; desktop/phone dashboard and both Notebook endings passed, with TLS verification enabled. Automated evidence only.",
+    "current_iteration_deployment_verified": true,
+    "verification_stage": "development_preview_verified_progress_record_followup",
+    "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290",
     "historical_october_28_deployment": {
       "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
       "verified_assets": 6,
@@ -765,7 +765,12 @@
       "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/12#issuecomment-6678626675",
       "verification_scope": "PR #12 live verification on November 6: all 11 served files and actual browser responses match main 89bb668; desktop/narrow checks, all 75 task IDs, images and favicon passed with zero unexpected errors and TLS verification enabled."
     },
-    "branch_rules_checked_at": "2026-11-14T09:46:45.289050+00:00"
+    "branch_rules_checked_at": "2026-11-14T09:46:45.289050+00:00",
+    "historical_pr16_deployment": {
+      "deployed_commit": "ec2be8169d008e1925648eb5f0534e7fa9d750bd",
+      "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/16#issuecomment-6680324481",
+      "verification_scope": "Previous PR #16 deployment: 11 served file/browser response hashes matched ec2be81, with strict TLS, desktop/narrow checks and all 84 tasks reachable."
+    }
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -945,9 +950,18 @@
         "merge_commit": "345c33970745297103a099ecdf9dc11f134b0038",
         "ci_conclusion": "success",
         "live_verification": "https://github.com/PaperStrange/IndiaGames/pull/13#issuecomment-6679061493"
+      },
+      {
+        "number": 19,
+        "status": "merged",
+        "reviewed_head": "e4584a3a87ef6867d16390c2d435c7a4ccca5e4d",
+        "merge_commit": "06e8fd3f363e3969d5365ae1f3af52108a8a6ebe",
+        "ci_conclusion": "success",
+        "ci_run": 43582803596,
+        "publication_evidence": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290"
       }
     ],
-    "delivery_note": "Four games have verified engineering. Human qualification and this preview’s publication check remain pending.",
+    "delivery_note": "Four-game dashboard and Notebook development are published and verified. Human qualification remains pending.",
     "status_checked_at": "2026-11-14T09:46:45.289050+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",

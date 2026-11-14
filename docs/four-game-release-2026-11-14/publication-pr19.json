@@ -1,0 +1,180 @@
+{
+  "kind": "actual_pages_development_verification",
+  "official_release": false,
+  "status": "pass",
+  "merged_main": "06e8fd3f363e3969d5365ae1f3af52108a8a6ebe",
+  "completed_at": "2026-11-14T10:00:35.967Z",
+  "public_record": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290",
+  "report_sha256": "3953fb4567ef47c9ae359ea05fbd3db0633692605dfc4d568eb2cd2122e6dd30",
+  "driver_sha256": "7c523baf28caa3b47d5b842924e30b812206ced7de4c43dfe69e201bd16fbdc5",
+  "tls_verification": true,
+  "browser_version": "151.0.7922.173",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 12813,
+      "sha256": "b7d7bec0b22573b19ac14d1311e563af0f0bb8abe52aad828537e35e10f3e600",
+      "match": true
+    },
+    {
+      "path": "app.js",
+      "bytes": 30972,
+      "sha256": "4d0e2715c33afd52ee6bb82118a98c9f2d55958204cec5d0e7b94912d8c8b634",
+      "match": true
+    },
+    {
+      "path": "styles.css",
+      "bytes": 24438,
+      "sha256": "5b35ae865e0342fb1bec1003a0cdb6b04cd78f5b5bd6332651973465118d3d22",
+      "match": true
+    },
+    {
+      "path": "data/source-manifest.json",
+      "bytes": 86150,
+      "sha256": "cf9d382195511eb2fa52a966a0add129d1ad5aec341aba64ee96b535f7dcc11e",
+      "match": true
+    },
+    {
+      "path": "data/tasks.json",
+      "bytes": 209496,
+      "sha256": "cb53c43cc6efe42d640a6a681282d737b7c2b19ae76882fa0ecb3307d71c5c62",
+      "match": true
+    },
+    {
+      "path": "data/hub-presentation.json",
+      "bytes": 6272,
+      "sha256": "aaf001003ff97ff252cd366234297d3d4cb5c5bff9a1d98e547659aa011efde9",
+      "match": true
+    },
+    {
+      "path": "data/releases.json",
+      "bytes": 44,
+      "sha256": "18d5edaf86d40b0838d5d38e8b3445a29a7a7592986e782bcc8a23d5b2ebe2d4",
+      "match": true
+    },
+    {
+      "path": "assets/hub/favicon.svg",
+      "bytes": 293,
+      "sha256": "8c8d7a2f1b4b3107be407adb59f3547d56abb9fe389f0461ae9610673960e44b",
+      "match": true
+    },
+    {
+      "path": "assets/hub/small-hours-opening.png",
+      "bytes": 131915,
+      "sha256": "b88ae8d49eb69f173ec333c3cad8b6365118481c861a3c182e4ee37d7592b2a6",
+      "match": true
+    },
+    {
+      "path": "assets/hub/vivid-iona-opening.png",
+      "bytes": 897287,
+      "sha256": "befb61b8eaff29115ee1b8447f4ffc8646edf883ad6af23e2abcee4b678da75b",
+      "match": true
+    },
+    {
+      "path": "assets/hub/bell-town-map.webp",
+      "bytes": 1012200,
+      "sha256": "7a45fe2d201ef823702840983a76c20b743a1b98d9624fa2aa3b7098c3eead45",
+      "match": true
+    },
+    {
+      "path": "assets/hub/toms-notebook-opening.jpg",
+      "bytes": 222101,
+      "sha256": "cabf77668c3e6e4e8d2481c34e8c7eacd89f8cc37585486fea1bf3bf2e3ce307",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/assets/index-CieFw0qD.css",
+      "bytes": 15087,
+      "sha256": "1cd5780db68e09c4210be6dff981fb0a814620fa484b5142cee196a5a4685e5b",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/assets/index-fCLrQG-e.js",
+      "bytes": 79053,
+      "sha256": "2dff0d4740dce3736791c89ac3b041315524bc225e40b1bd1ef7ef78c8916477",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/build-info.json",
+      "bytes": 446,
+      "sha256": "5536816b4e18c3e0c55c7548b17d562684b9829230181cf461898e6691486816",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/favicon.svg",
+      "bytes": 298,
+      "sha256": "0e9e5cc3f3c34e7256fc146d4e78fbf6148e79d7259f785f3caf7355eda7355d",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/fonts/OFL.txt",
+      "bytes": 4385,
+      "sha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/fonts/caveat.ttf",
+      "bytes": 403648,
+      "sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/index.html",
+      "bytes": 706,
+      "sha256": "01631b2ffcb78d714b38d7925b001e587d24bc61a10e2e2d4f62d1df877d4480",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/locale-catalog.json",
+      "bytes": 265,
+      "sha256": "6c4cf73ffa1be09c7e4697ac2901bb2b889d98469d5f1d37cc4639355b77d683",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/materials/leather-alpha-02.webp",
+      "bytes": 421368,
+      "sha256": "87584839901a314788780e79bc0d8be3b6fec0ab8d43245cb85701ee3253a596",
+      "match": true
+    },
+    {
+      "path": "development/toms-notebook/0.1.0/materials/vellum-alpha-02.webp",
+      "bytes": 227826,
+      "sha256": "527f3fa49aa6a69a112b4962655ae41b1146e4f05e978811de992aabaf8cf17f",
+      "match": true
+    }
+  ],
+  "browser_groups": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "pass",
+      "ending_title": "In your own hand",
+      "transcript_sha256": "62b376bda266a375571b72b77e3d2efbef4a0983981b490cb15068f3698ac24f"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "ending_title": "In a borrowed hand",
+      "transcript_sha256": "60a81d6d53a1d9b9b0f3e7d60888d7025513c3ec179c4327dc5ff52ada3c087d"
+    }
+  ],
+  "task_count": 94,
+  "completed_at_observation": 60,
+  "preview": {
+    "path": "development/toms-notebook/0.1.0/",
+    "source_commit": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+    "build_sha256": "b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a",
+    "file_count": 10,
+    "official_release": false
+  },
+  "limitations": [
+    "Automated browser/viewport play, not human or physical-device qualification.",
+    "Initial browser trust-store failure retained; rerun used only the inherited public session CA, with TLS verification enabled.",
+    "This record identifies the first verified deployment; the progress-only follow-up receives its own postmerge check in its PR."
+  ]
+}

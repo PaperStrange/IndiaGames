@@ -49,7 +49,7 @@ The original 30-person baseline stays intact. Notebook adds six fresh solo playe
 
 ## Delivery evidence
 
-The dashboard preserves all 84 earlier task contracts and statuses. **TN-01–07 are complete, TN-08 remains active, TN-09–10 remain human-blocked: 60 of 94 total cards complete.** The genuine opening image and complete ten-file preview are bound to the reviewed Notebook evidence head `9330f88fd9960ce30f9de1490ccf4870e10cac1e` and clean executable source `5ef5ab4b40c2839c9ce6394e4561c658ca5866cc`.
+The dashboard preserves all 84 earlier task contracts and statuses. **TN-01–08 are complete; TN-09–10 remain human-blocked: 61 of 94 total cards complete.** The genuine opening image and complete ten-file preview are bound to the reviewed Notebook evidence head `9330f88fd9960ce30f9de1490ccf4870e10cac1e` and clean executable source `5ef5ab4b40c2839c9ce6394e4561c658ca5866cc`.
 
 | Engineering evidence | Verified scope |
 |---|---|
@@ -58,6 +58,6 @@ The dashboard preserves all 84 earlier task contracts and statuses. **TN-01–07
 | [Exact clean export](https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/committed-export.json) | Ten files / 1,153,082 bytes; inventory `b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a` |
 | [Game CI](https://github.com/PaperStrange/IndiaGames/actions/runs/43581634137) | Successful workflow at `2f269e2`; log reports the matching inventory. Artifact download returned 403, so no downloaded-artifact byte claim |
 
-The previous PR #16 deployment evidence remains historical. This four-game dashboard and development preview still need independent hub review, CI and actual post-merge Pages asset/browser-response verification against their immutable main commit. The delivery PR will hold that proof; only then can TN-08 complete. Local checks do not establish deployment.
+[PR #19 publication proof](https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290) and the [file-level verification record](publication-pr19.json) establish the actual development deployment at `06e8fd3`: all 22 served files match, four-game desktop/phone dashboard checks pass, and both Notebook endings complete with original comparison and real downloads. Independent review and CI passed before merge. TN-08 is complete on that evidence; the progress-only follow-up receives its own postmerge check. The previous PR #16 proof remains historical. This is development publication, with human qualification and official release still pending.
 
 Each game retains its own source branch. Root integrates reviewed increments and verifies remote equality; private raw logs, failed attempts and restart checkpoints stay in local backups. The full notebook application and its 35 MC cards retain their original completion boundaries.
