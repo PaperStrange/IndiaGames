@@ -9,7 +9,7 @@ The **Overview** combines real game images, playtest readiness and the November 
 | **Small Hours** · Memorable Moments | Two people make a brief shared activity their own. | Three-language development export verified; frozen study baseline retained | Six pairs |
 | **Vivid** · formerly Keeper’s Frame | Two stories express meaning through different actions. | 0.2.0 multilingual development verified; frozen 0.1.4 retained | Six people per story, in separate cohorts |
 | **The Thirteenth Bell** | Understanding a repeated event enables a meaningful intervention. | 0.2.0 multilingual development verified; frozen 0.1.0 retained | Six people, balanced comparison order |
-| **Tom’s Notebook · Borrowed Words** | An answering diary changes its account; preserve and challenge it with your own words. | [0.1.0 development preview](development/toms-notebook/0.1.0/), three-language engineering verified; original product 0.4.0-alpha.0 retained | Six additional fresh solo players; protocol adoption pending |
+| **Tom’s Notebook · Borrowed Words** | An answering diary changes its account; preserve and challenge it with your own words. | [0.1.0 development preview](https://paperstrange.github.io/IndiaGames/development/toms-notebook/0.1.0/), three-language engineering verified; original product 0.4.0-alpha.0 retained | Six additional fresh solo players; protocol adoption pending |
 
 [Per-game checklists, recording templates and launch plans](docs/launch/2026-11-20/README.md#game-packets) include exact-artifact setup. GitHub source links open repository files; they are not browser play buttons. Repair of the older candidate Pages URL is paused at the owner’s request.
 
