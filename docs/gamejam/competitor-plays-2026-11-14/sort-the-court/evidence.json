@@ -1,0 +1,62 @@
+{
+  "method": "agent-operated browser UI; not a human playtest",
+  "browser": "Chromium151.0.7922.173",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "tls_verification": true,
+  "screenshots": [
+    {
+      "file": "evidence/01-one-rule-tutorial.png",
+      "sha256": "18bde093534400b25c3705afd6636afbc5698b2a5a54c9e5d483e9f1e479c76b",
+      "captured_at": "2026-11-14T09:23:41.363Z",
+      "source_capture": "sort-the-court/095.png",
+      "step": 95,
+      "input": {
+        "op": "wait",
+        "game": "sort-the-court",
+        "ms": 3000
+      }
+    },
+    {
+      "file": "evidence/02-guard-consequence.png",
+      "sha256": "ff10435325c0f28d23a3aac269c7b9b7a93fd34ff92fa39f45718c49f34684b8",
+      "captured_at": "2026-11-14T09:26:47.957Z",
+      "source_capture": "sort-the-court/106.png",
+      "step": 106,
+      "input": {
+        "op": "key",
+        "game": "sort-the-court",
+        "key": "y",
+        "after": 2500
+      }
+    },
+    {
+      "file": "evidence/03-unexpected-cost.png",
+      "sha256": "6ef73886bf435beb4e998f8dc5eb17c74fd85ad97fa98cbcd76c389c6ad5c83d",
+      "captured_at": "2026-11-14T09:27:48.208Z",
+      "source_capture": "sort-the-court/108.png",
+      "step": 108,
+      "input": {
+        "op": "key",
+        "game": "sort-the-court",
+        "key": "y",
+        "after": 2500
+      }
+    },
+    {
+      "file": "evidence/04-day-one-summary.png",
+      "sha256": "9362e5f678486c3ce30742dcb6f8fe261cd9220768640fd2ba5df2e48f84dbea",
+      "captured_at": "2026-11-14T09:28:40.281Z",
+      "source_capture": "sort-the-court/111.png",
+      "step": 111,
+      "input": {
+        "op": "key",
+        "game": "sort-the-court",
+        "key": "Space",
+        "after": 7000
+      }
+    }
+  ]
+}

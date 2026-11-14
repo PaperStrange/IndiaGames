@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "kind": "agent_technical_development_verification",
+  "game": "toms-notebook",
+  "version": "0.1.0",
+  "official_release": false,
+  "qa_source_commit": "5ef5ab4b40c2839c9ce6394e4561c658ca5866cc",
+  "source_inputs_sha256": "d99ce0af9ec9ff63016a27f87e18b29d3ddeea784238033ee6bc8c4970e7c1a6",
+  "build_inventory_sha256": "b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a",
+  "build_files": {
+    "assets/index-CieFw0qD.css": "1cd5780db68e09c4210be6dff981fb0a814620fa484b5142cee196a5a4685e5b",
+    "assets/index-fCLrQG-e.js": "2dff0d4740dce3736791c89ac3b041315524bc225e40b1bd1ef7ef78c8916477",
+    "build-info.json": "5536816b4e18c3e0c55c7548b17d562684b9829230181cf461898e6691486816",
+    "favicon.svg": "0e9e5cc3f3c34e7256fc146d4e78fbf6148e79d7259f785f3caf7355eda7355d",
+    "fonts/OFL.txt": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b",
+    "fonts/caveat.ttf": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988",
+    "index.html": "01631b2ffcb78d714b38d7925b001e587d24bc61a10e2e2d4f62d1df877d4480",
+    "locale-catalog.json": "6c4cf73ffa1be09c7e4697ac2901bb2b889d98469d5f1d37cc4639355b77d683",
+    "materials/leather-alpha-02.webp": "87584839901a314788780e79bc0d8be3b6fec0ab8d43245cb85701ee3253a596",
+    "materials/vellum-alpha-02.webp": "527f3fa49aa6a69a112b4962655ae41b1146e4f05e978811de992aabaf8cf17f"
+  },
+  "file_count": 10,
+  "build_bytes": 1153082,
+  "clean_committed_rebuild_matches_tested_inventory": true,
+  "state_tests": {
+    "passed": 16,
+    "complete_paths": 192
+  },
+  "export_tests": {
+    "passed": 6
+  },
+  "browser_runs": [
+    {
+      "kind": "author",
+      "private_report": "qa/runtime/chromium-final-02/report.json",
+      "report_sha256": "ac489d7b1044feeb0ab4b010734fa2366e85017ba09b671437e3d0b4ba7b548c",
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "cases": 18,
+      "assertions": 722,
+      "started_at": "2026-11-14T09:28:46.532Z",
+      "completed_at": "2026-11-14T09:29:56.067Z",
+      "status": "pass"
+    },
+    {
+      "kind": "author",
+      "private_report": "qa/runtime/firefox-final-02/report.json",
+      "report_sha256": "8dda07496fdf346ef5492847efa53dc3ffef81cd302692bbacbad36a9a4491a8",
+      "engine": "firefox",
+      "version": "142.0.1",
+      "cases": 18,
+      "assertions": 722,
+      "started_at": "2026-11-14T09:32:08.270Z",
+      "completed_at": "2026-11-14T09:33:52.573Z",
+      "status": "pass"
+    },
+    {
+      "kind": "author",
+      "private_report": "qa/runtime/webkit-final-02/report.json",
+      "report_sha256": "fd0792d3af84296f368e307bde400bcc673327e605b76802e1898d7dc4be7815",
+      "engine": "webkit",
+      "version": "26.0",
+      "cases": 18,
+      "assertions": 722,
+      "started_at": "2026-11-14T09:36:23.562Z",
+      "completed_at": "2026-11-14T09:37:49.687Z",
+      "status": "pass"
+    },
+    {
+      "kind": "independent",
+      "private_report": "qa/independent-game/chromium-final04/report.json",
+      "report_sha256": "7379c899df82635bceeb9bd8e15eaf90d89bad9c3c7cddf09dd78a5cc91e58bc",
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "cases": 8,
+      "assertions": 43,
+      "started_at": "2026-11-14T09:30:53.316Z",
+      "completed_at": "2026-11-14T09:31:12.361Z",
+      "status": "pass"
+    },
+    {
+      "kind": "independent",
+      "private_report": "qa/independent-game/firefox-final04/report.json",
+      "report_sha256": "dd5cf56069634bd48681a936c3269b40396ee7ba2a82d4970befbf17bddf0b20",
+      "engine": "firefox",
+      "version": "142.0.1",
+      "cases": 8,
+      "assertions": 43,
+      "started_at": "2026-11-14T09:35:01.617Z",
+      "completed_at": "2026-11-14T09:35:29.060Z",
+      "status": "pass"
+    },
+    {
+      "kind": "independent",
+      "private_report": "qa/independent-game/webkit-final04/report.json",
+      "report_sha256": "da1834c432107a081fe1100cce14b35af4005437f6be3f497b514b0aa8805a10",
+      "engine": "webkit",
+      "version": "26.0",
+      "cases": 8,
+      "assertions": 43,
+      "started_at": "2026-11-14T09:38:37.764Z",
+      "completed_at": "2026-11-14T09:39:07.339Z",
+      "status": "pass"
+    },
+    {
+      "kind": "independent",
+      "private_report": "qa/independent-game/root-touch-final04/report.json",
+      "report_sha256": "ea368d0a7959a79c5349fb2b28de1f3478099525959f730ce90841ada29c9967",
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "cases": 2,
+      "assertions": 18,
+      "started_at": "2026-11-14T09:39:35.720Z",
+      "completed_at": "2026-11-14T09:39:42.501Z",
+      "status": "pass"
+    }
+  ],
+  "ci": {
+    "url": "https://github.com/PaperStrange/IndiaGames/actions/runs/43581634137",
+    "source_commit": "2f269e2b87539f37d781995c9fcb0f70c3788f36",
+    "conclusion": "success",
+    "browser_cases": 18,
+    "browser_assertions": 722,
+    "export_inventory_reported": "b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a",
+    "downloaded_artifact_independently_inspected": false,
+    "artifact_download_limitation": "Storage-host download returned403; successful CI and matching export identity verified from job metadata/logs."
+  },
+  "earlier_failures_preserved": [
+    "Enlarged cover title overflow fixed and retested on all3engines.",
+    "Intermediate browser matrix interrupted when source changed; not counted as final.",
+    "CI43581571163 browser install failed on unsupported Ubuntu26.04; workflow pinned24.04 and rerun passed."
+  ],
+  "human_qualification": {
+    "sessions": 0,
+    "fluent_review": "pending",
+    "physical_devices": "pending",
+    "protocol_adoption": "pending",
+    "release_approval": false
+  },
+  "limitations": [
+    "Browser viewport and simulated touch evidence are not physical-device observations.",
+    "Agent prose and completed routes do not establish fun, trust, human causal understanding or a 10–15minute playtime.",
+    "Private full reports, drivers, failed attempts and raw research remain in the task backup; public records retain reviewable summaries and hashes."
+  ],
+  "independent_review_record_sha256": "8bdba63037a241c8c8fc2471a04bc8125ba7754307840fe2cdb570b48e26da68"
+}

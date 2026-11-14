@@ -1,0 +1,63 @@
+{
+  "method": "agent-operated browser UI; not a human playtest",
+  "browser": "Chromium151.0.7922.173",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "tls_verification": true,
+  "screenshots": [
+    {
+      "file": "evidence/01-name-choice.png",
+      "sha256": "647050d66708e6db1d513edfc792c1da3b3cebd07a4fbc2667eb5e44d78f6ab4",
+      "captured_at": "2026-11-14T09:05:26.728Z",
+      "source_capture": "uncle-nintendo/007.png",
+      "step": 7,
+      "input": {
+        "op": "click",
+        "game": "uncle-nintendo",
+        "selector": "a.internalLink:has-text(\"the uncle who works for nintendo\")",
+        "after": 1800
+      }
+    },
+    {
+      "file": "evidence/02-questioning-the-story.png",
+      "sha256": "dde668d345b9d492ab012589531bdb1b79cab4820a07469834afeefb75e71be3",
+      "captured_at": "2026-11-14T09:18:50.038Z",
+      "source_capture": "uncle-nintendo/071.png",
+      "step": 71,
+      "input": {
+        "op": "click",
+        "game": "uncle-nintendo",
+        "text": "\"Then what does he have to do here?\"",
+        "after": 1800
+      }
+    },
+    {
+      "file": "evidence/03-visible-withdrawal.png",
+      "sha256": "7bf7ce619b9236c18607773091c193d9662a6d2ef6cf5b8ef1985c3795da7437",
+      "captured_at": "2026-11-14T09:20:14.623Z",
+      "source_capture": "uncle-nintendo/078.png",
+      "step": 78,
+      "input": {
+        "op": "click",
+        "game": "uncle-nintendo",
+        "text": "You take a breather",
+        "after": 1800
+      }
+    },
+    {
+      "file": "evidence/04-stopping-point.png",
+      "sha256": "4c85d0eec804ef71fa8106ba4602b05e4663c4e34a7cb57d6fc410113d2e9b0c",
+      "captured_at": "2026-11-14T09:22:16.099Z",
+      "source_capture": "uncle-nintendo/090.png",
+      "step": 90,
+      "input": {
+        "op": "click",
+        "game": "uncle-nintendo",
+        "text": "the grandfather clock",
+        "after": 1800
+      }
+    }
+  ]
+}

@@ -4,6 +4,19 @@ Product **alpha 0.4** · Documentation **docs-v4** · Artifact **v6-alpha04-2026
 
 A private interactive notebook with pressure-aware ink, layered vellum, physical page turns, PDF annotations and a persistent companion. React/TypeScript is shared by the hosted app and mobile bundle. Previous alpha 0.1–0.3 checkpoints remain in Git.
 
+## Standalone game edition — Borrowed Words
+
+**Tom’s Notebook game 0.1.0 is a development preview**, separate from the private alpha 0.4 product described below. It is a short authored psychological diary: mark a supplied phrase, read a reply that changes its meaning, compare the retained original, and decide which account continues. Three exchanges lead to two endings with callbacks to earlier decisions. No account, live AI, OCR or provider key is required.
+
+English, Japanese and Simplified Chinese are included; fluent review, actual device qualification and independent human release approval remain pending. This game does not complete the notebook product’s broader customer, provider, storage or physical-edition requirements.
+
+- [Run, build and export the game](game/README.md)
+- [Story, player journey and design hypotheses](docs/gamejam/notebook-game-2026-11-14/story.md)
+- [Six competitor gameplay records and design decisions](docs/gamejam/competitor-plays-2026-11-14/README.md)
+- [Language review and exact-original handling](docs/gamejam/notebook-game-2026-11-14/localization.md)
+
+## Private notebook product
+
 [Project handover — 2026-10-18](HANDOVER.md) records completed implementation, saved QA evidence, publication/source checkpoints, remaining acceptance work and development restart instructions.
 
 Art research, proposals, material assets and review evidence are collected in [docs/art-design](docs/art-design/README.md), with implementation status and original-source provenance.

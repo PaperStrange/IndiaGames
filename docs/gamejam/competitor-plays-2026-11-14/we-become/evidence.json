@@ -1,0 +1,73 @@
+{
+  "method": "agent-operated browser UI; not a human playtest",
+  "browser": "Chromium151.0.7922.173",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "tls_verification": true,
+  "screenshots": [
+    {
+      "file": "evidence/01-ordinary-frame.png",
+      "sha256": "069357ac0ec087f7fb06dc7cdf190cec7a182f1f937ab62fd002c0163cba2c12",
+      "captured_at": "2026-11-14T09:30:26.773Z",
+      "source_capture": "we-become/117.png",
+      "step": 117,
+      "input": {
+        "op": "wait",
+        "game": "we-become",
+        "ms": 4000
+      }
+    },
+    {
+      "file": "evidence/02-empty-frame.png",
+      "sha256": "1342b8abe73f5443d831d05399d61cec21112552b240cc5d61225c8b4a9008ef",
+      "captured_at": "2026-11-14T09:31:10.901Z",
+      "source_capture": "we-become/119.png",
+      "step": 119,
+      "input": {
+        "op": "mouse",
+        "game": "we-become",
+        "x": 362,
+        "y": 222,
+        "after": 4000
+      }
+    },
+    {
+      "file": "evidence/03-hat-headline.png",
+      "sha256": "7783d33bf4645c3eaa6f0a674cae48644beb300c0a6b426ebe8d751210809f22",
+      "captured_at": "2026-11-14T09:35:22.979Z",
+      "source_capture": "we-become-replay/004.png",
+      "step": 4,
+      "input": {
+        "op": "target",
+        "game": "we-become-replay",
+        "after": 6500,
+        "pixel_target": {
+          "x": 944,
+          "y": 374,
+          "area": 692,
+          "box": [
+            925,
+            341,
+            963,
+            407
+          ]
+        },
+        "source_screenshot": "/workspace/indiagames-notebook-2026-11-14/research/right/we-become-replay-pixel-4.png"
+      }
+    },
+    {
+      "file": "evidence/04-visible-world-change.png",
+      "sha256": "f719472a8ac7fcbd59e74963e6032c2b7bf66bf510470604289b9c7f88bc0242",
+      "captured_at": "2026-11-14T09:35:43.159Z",
+      "source_capture": "we-become-replay/005.png",
+      "step": 5,
+      "input": {
+        "op": "wait",
+        "game": "we-become-replay",
+        "ms": 8000
+      }
+    }
+  ]
+}
