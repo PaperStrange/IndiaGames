@@ -6,7 +6,7 @@
     {
       "lane": "memorable",
       "promise": "Make a small shared memory, together.",
-      "next_action": "Review translated privacy and shared authorship; test real CJK keyboards and saved keepsakes.",
+      "next_action": "Review privacy, shared authorship, CJK input and keepsakes.",
       "image": {
         "src": "assets/hub/small-hours-opening.png",
         "alt": "Small Hours opening screen with a moonlit window, two cups and a shared postcard.",
@@ -32,7 +32,7 @@
     {
       "lane": "vivid",
       "promise": "Two small worlds. Two ways to care.",
-      "next_action": "Review both stories in every language; qualify saves, touch and flat/3D play on actual devices.",
+      "next_action": "Review both stories; qualify saves, touch and flat/3D play.",
       "image": {
         "src": "assets/hub/vivid-iona-opening.png",
         "alt": "Vivid opening scene with harbour keeper Iona beside a lamp inside a wooden frame.",
@@ -58,7 +58,7 @@
     {
       "lane": "bell",
       "promise": "Learn the town. Change an outcome.",
-      "next_action": "Review localized clues and costs; observe causal understanding and real-device map interaction.",
+      "next_action": "Review clue fairness, causal understanding and physical map controls.",
       "image": {
         "src": "assets/hub/bell-town-map.webp",
         "alt": "Illustrated town map with six districts surrounding a clock marked Dawn, Noon, Dusk and Midnight.",
@@ -79,6 +79,32 @@
         "why_play": "Recognizing a repeated event may turn uncertainty into an achievable plan.",
         "differentiation": "Test whether learned causes support new actions with readable costs and consequences.",
         "unique_experience": "Knowledge survives the loop and makes a later intervention possible."
+      }
+    },
+    {
+      "lane": "notebook",
+      "promise": "The book remembers differently. Keep your own account.",
+      "next_action": "Review authorship, original recovery and all three languages.",
+      "image": {
+        "src": "assets/hub/toms-notebook-opening.jpg",
+        "alt": "Borrowed Words opening exchange: a notebook asks which words the Keeper will send to the Correspondent.",
+        "caption": "Opening exchange · automated capture, 14 Nov 2026",
+        "kind": "automated_game_capture",
+        "width": 1440,
+        "height": 1144,
+        "bytes": 222101,
+        "source_commit": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+        "source_path": "docs/gamejam/notebook-game-2026-11-14/captures/en-desktop-opening.jpg",
+        "source_url": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/captures/en-desktop-opening.jpg",
+        "sha256": "cabf77668c3e6e4e8d2481c34e8c7eacd89f8cc37585486fea1bf3bf2e3ce307",
+        "captured_at": "2026-11-14T09:29:52.584Z",
+        "evidence_date_utc": "2026-11-14",
+        "preservation": "Byte-for-byte copy of the pinned Chromium151 capture; no image edits. Not human, physical-device or fluent-review evidence."
+      },
+      "questions": {
+        "why_play": "An answering diary may create curiosity and unease while giving the player a way to challenge its account.",
+        "differentiation": "Mark actual phrases, compare recoverable originals and decide which account survives; no unrestricted AI conversation.",
+        "unique_experience": "The same notebook holds your words and a conflicting reply. Earlier corrections change the final page."
       }
     }
   ]

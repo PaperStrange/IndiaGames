@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { mkdir, readFile, writeFile, stat } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, stat, readdir } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { createRequire } from 'node:module';
 import { tmpdir } from 'node:os';
@@ -14,10 +14,12 @@ const root = resolve(process.env.HUB_ROOT || resolve(dirname(fileURLToPath(impor
 const observedAt = new Date().toISOString();
 const out = resolve(process.env.HUB_EVIDENCE_DIR || join(tmpdir(), 'indiagames-hub-' + observedAt.replaceAll(':', '-')));
 const githubRoot = 'https://github.com/PaperStrange/IndiaGames/';
+const laneIds = ['memorable', 'vivid', 'bell', 'notebook'];
+const gameFolders = ['small-hours', 'keepers-frame', 'thirteenth-bell', 'toms-notebook'];
 const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
 const blob = object => execFileSync('git', ['show', object], { cwd: root, maxBuffer: 16 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
-const inputFiles = ['index.html', 'app.js', 'styles.css', 'data/hub-presentation.json', 'data/tasks.json', 'data/source-manifest.json', 'data/releases.json', 'tests/hub/browser.mjs', 'docs/games/small-hours/tasks.json', 'docs/games/keepers-frame/tasks.json', 'docs/games/thirteenth-bell/tasks.json'];
+const inputFiles = ['index.html', 'app.js', 'styles.css', 'data/hub-presentation.json', 'data/tasks.json', 'data/source-manifest.json', 'data/releases.json', 'tests/hub/browser.mjs', ...gameFolders.map(folder => `docs/games/${folder}/tasks.json`)];
 const report = { observed_at: observedAt, method: 'Local Chromium dashboard integration, direct/project mounts, responsive layouts, keyboard and navigation, immutable asset/source checks. No human session, game regression, physical-device or deployed-site claim.', viewport_groups: [], extra_scenarios: [], static_checks: [], images: [], links: [], errors: [], screenshots: [], input_sha256: {} };
 let server, browser, activePage, created = false;
 const allLinks = new Map();
@@ -42,24 +44,30 @@ async function hashes() {
 }
 
 async function verifyIdentity(tasks, manifest, presentation, releases) {
-  const authored = (await Promise.all(['small-hours', 'keepers-frame', 'thirteenth-bell'].map(folder => readFile(join(root, 'docs/games', folder, 'tasks.json'), 'utf8').then(JSON.parse)))).flat();
+  const authored = (await Promise.all(gameFolders.map(folder => readFile(join(root, 'docs/games', folder, 'tasks.json'), 'utf8').then(JSON.parse)))).flat();
+  const previous = JSON.parse(blob('f73d95d3874e9c1c2a2f1a8b307cbcc47498f971:data/tasks.json')).tasks;
+  assert.equal(previous.length, 84);
+  assert.deepEqual(authored.filter(task => task.lane !== 'notebook'), previous, 'Existing 84 task contracts or statuses changed');
+  assert.deepEqual(manifest.sources.map(source => source.lane), laneIds);
   assert.deepEqual(tasks.tasks, authored);
   assert.equal(tasks.tasks.length, authored.length);
   assert.equal(new Set(tasks.tasks.map(task => task.id)).size, authored.length);
   assert.deepEqual(releases.releases, []);
   assert.equal(manifest.research.human_participant_rows, 0);
-  const lanes = Object.fromEntries(['memorable', 'vivid', 'bell'].map(lane => [lane, authored.filter(task => task.lane === lane).length]));
+  const lanes = Object.fromEntries(laneIds.map(lane => [lane, authored.filter(task => task.lane === lane).length]));
   for (const [lane, count] of Object.entries(lanes)) {
     assert.equal(tasks.tasks.filter(task => task.lane === lane).length, count);
     const source = manifest.sources.find(source => source.lane === lane);
     assert.equal(source.human_participant_rows, 0);
     assert.equal(source.official_release, false);
-    assert.equal(git(['rev-parse', source.branch]), source.reviewed_head, 'Game branch changed since the source manifest review');
+    const sourceRef = 'origin/' + source.branch;
+    assert.equal(git(['rev-parse', sourceRef]), source.reviewed_head, 'Fetched remote game branch changed since the source manifest review');
     // Historical evidence was committed after Vivid's executable QA source; it is not runtime.
     const exclusions = lane === 'vivid' ? [':(exclude)vivid-2.5d-photo-game/play/evidence/**'] : [];
-    git(['diff', '--exit-code', source.qa_source_commit, source.branch, '--', ...source.runtime_scope, ...exclusions]);
+    if (source.qa_source_commit) git(['diff', '--exit-code', source.qa_source_commit, sourceRef, '--', ...source.runtime_scope, ...exclusions]);
+    else assert.equal(source.qa_status, 'new_game_verification_pending', 'Missing QA source must remain explicitly pending');
   }
-  pass('human-and-runtime-boundaries', 'Authored task IDs and lane counts match the generated snapshot; human counts remain zero; official registry empty; game branch heads equal the source review; runtime/test scopes equal their verified source (Vivid later play/evidence records excluded).');
+  pass('human-and-runtime-boundaries', 'All four authored lanes match the snapshot; previous 84 tasks unchanged; human counts zero; registry empty; fetched remote heads equal review. Verified runtime scopes match QA sources; missing new-game QA remains explicitly pending.');
   report.candidates = [];
   for (const source of manifest.sources.filter(source => source.candidate_manifest)) {
     const path = new URL(source.candidate_manifest).pathname.split('/').slice(5).join('/');
@@ -69,17 +77,21 @@ async function verifyIdentity(tasks, manifest, presentation, releases) {
     assert.equal(digest(JSON.stringify(sortedFiles)), candidate.build.sha256);
     assert.equal(candidate.build.sha256, source.candidate_build_sha256);
     for (const [name, hash] of Object.entries(sortedFiles)) assert.equal(digest(blob(source.candidate_master_commit + ':' + prefix + 'build/' + name)), hash, name);
-    git(['diff', '--exit-code', source.candidate_master_commit, 'master', '--', prefix]);
+    git(['diff', '--exit-code', source.candidate_master_commit, 'origin/master', '--', prefix]);
     const human = JSON.parse(blob(source.candidate_master_commit + ':' + prefix + 'human-playtest.json'));
     const rows = (human.sessions || []).length + [...(human.story_reports || []), ...(human.study_reports || [])].reduce((n, record) => n + (record.sessions || []).length, 0);
     assert.equal(rows, 0); assert.equal(human.human_approval.approved, false);
     report.candidates.push({ game: candidate.game, version: candidate.version, build_sha256: candidate.build.sha256, files: Object.keys(sortedFiles).length, source_commit: candidate.source_commit });
   }
   pass('candidate-identity', 'Current master candidate trees and file hashes equal their pinned packets; no human report populated or approval granted.');
-  assert.equal(presentation.projects.length, 3);
+  assert.equal(presentation.projects.length, laneIds.length);
   let imageBytes = 0;
   for (const project of presentation.projects) {
     const art = project.image;
+    if (!art) {
+      assert.ok(project.image_pending_reason?.trim(), 'Missing capture must be explicitly pending');
+      continue;
+    }
     assert.ok(art.src.startsWith('assets/hub/') && !art.src.includes('..'));
     assert.ok(art.alt.trim() && art.caption.trim());
     assert.match(art.source_commit, /^[0-9a-f]{40}$/);
@@ -91,7 +103,31 @@ async function verifyIdentity(tasks, manifest, presentation, releases) {
     report.images.push({ lane: project.lane, path: art.src, sha256: art.sha256, bytes: art.bytes, source_commit: art.source_commit, source_path: art.source_path, kind: art.kind });
   }
   assert.ok(imageBytes <= 4 * 1024 * 1024, 'Original hub images exceed the 4 MiB budget');
-  pass('genuine-images', `Three displayed assets are byte-identical to pinned game captures/art; total ${imageBytes} bytes.`);
+  pass('genuine-images', `${report.images.length} displayed assets are byte-identical to pinned game captures/art; total ${imageBytes} bytes. Missing captures are explicitly pending, never substituted as game evidence.`);
+  report.development_previews = [];
+  for (const source of manifest.sources.filter(source => source.development_preview_path)) {
+    assert.match(source.development_preview_path, /^development\/toms-notebook\/\d+\.\d+\.\d+\/$/);
+    const directory = join(root, source.development_preview_path);
+    const names = [];
+    async function walk(path = '') {
+      for (const entry of await readdir(join(directory, path), { withFileTypes: true })) {
+        const name = path + entry.name;
+        if (entry.isDirectory()) await walk(name + '/');
+        else { assert.ok(entry.isFile(), 'Preview contains nonregular file'); names.push(name); }
+      }
+    }
+    await walk();
+    const expected = source.development_build_files;
+    assert.ok(expected && typeof expected === 'object');
+    assert.deepEqual(names.sort(), Object.keys(expected).sort(), 'Preview inventory differs, including extra files');
+    const sorted = Object.fromEntries(Object.entries(expected).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0));
+    assert.equal(digest(JSON.stringify(sorted)), source.development_build_sha256);
+    for (const name of names) assert.equal(digest(await readFile(join(directory, name))), expected[name], name);
+    const catalog = JSON.parse(await readFile(join(directory, 'locale-catalog.json'), 'utf8'));
+    assert.equal(catalog.game, 'toms-notebook');
+    report.development_previews.push({ path: source.development_preview_path, source_commit: source.reviewed_head, files: names.length, build_sha256: source.development_build_sha256 });
+  }
+  pass('development-preview-identity', `${report.development_previews.length} linked previews match complete inventories, hashes and game catalogs; official registry remains separate.`);
 }
 
 async function collectLinks(page) {
@@ -237,12 +273,12 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       await ready(page);
       assert.equal(await page.locator('#overview-view').isVisible(), true);
       assert.equal(await page.locator('#tasks').isVisible(), false);
-      assert.equal(await page.locator('#project-grid .project-card').count(), 3);
-      assert.equal(await page.locator('#project-grid .project-image').count(), 3);
-      for (const setup of await page.locator('.project-links a:first-child').all()) {
-        assert.ok((await setup.getAttribute('aria-label')).toLowerCase().includes((await setup.innerText()).trim().toLowerCase()), 'Study link accessible name includes its visible label');
+      assert.equal(await page.locator('#project-grid .project-card').count(), laneIds.length);
+      assert.equal(await page.locator('#project-grid .project-image').count(), presentation.projects.filter(project => project.image).length);
+      for (const setup of await page.locator('.project-links a[aria-label]').all()) {
+        assert.ok((await setup.getAttribute('aria-label')).toLowerCase().includes((await setup.innerText()).trim().toLowerCase()), 'Accessible project-link name includes its visible label');
       }
-      assert.equal(await page.locator('#localization-rows tr').count(), 3);
+      assert.equal(await page.locator('#localization-rows tr').count(), laneIds.length);
       for (const progress of manifest.release_preparation.engineering) {
         const row = page.locator(`#localization-rows tr[data-lane="${progress.lane}"]`);
         assert.deepEqual(await row.locator('td > span').allTextContents(), ['en', 'ja', 'zh-Hans'].map(locale => progress.locales[locale]));
@@ -258,7 +294,7 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       await page.evaluate(() => window.scrollTo(0, 0));
       const imageStates = await page.locator('#project-grid .project-image').evaluateAll(images => images.map(image => ({ loaded: image.complete && image.naturalWidth > 0, src: image.getAttribute('src'), alt: image.getAttribute('alt') })));
       assert.ok(imageStates.every(image => image.loaded && image.alt?.trim()));
-      assert.deepEqual(imageStates.map(image => image.src.replace(/^\.\//, '')).sort(), presentation.projects.map(project => project.image.src).sort());
+      assert.deepEqual(imageStates.map(image => image.src.replace(/^\.\//, '')).sort(), presentation.projects.filter(project => project.image).map(project => project.image.src).sort());
       group.visible_words = (await page.locator('body').innerText()).split(/\s+/).filter(Boolean).length;
       group.overview_height_px = await page.evaluate(() => document.documentElement.scrollHeight);
       assert.ok(group.visible_words <= 650, `${id}: ${group.visible_words} overview words exceeds 650`);
@@ -266,13 +302,14 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       assert.equal(await page.locator('#launch-readiness').isVisible(), true);
       assert.equal(await page.locator('#risk-date').getAttribute('datetime'), tasks.snapshot_date_utc);
       const daysFromSnapshot = target => String(Math.round((Date.parse(target) - Date.parse(tasks.snapshot_date_utc)) / 86400000));
-      assert.equal(await page.locator('#days-to-freeze').innerText(), daysFromSnapshot(manifest.launch.candidate_freeze_date_utc));
+      const freezeDays = Number(daysFromSnapshot(manifest.launch.candidate_freeze_date_utc));
+      assert.equal(await page.locator('#days-to-freeze').innerText(), freezeDays < 0 ? `${Math.abs(freezeDays)} days past target` : String(freezeDays));
       assert.equal(await page.locator('#days-to-launch').innerText(), daysFromSnapshot(manifest.launch.target_date_utc));
       assert.equal(await page.locator('#human-sessions-filed').innerText(), '0');
       assert.match(await page.locator('#launch-readiness').innerText(), /release qualification remains unverified/i);
       assert.equal(await page.locator('.owner-actions li').count(), 3);
       const readiness = page.locator('#readiness-rows tr');
-      assert.equal(await readiness.count(), 3);
+      assert.equal(await readiness.count(), laneIds.length);
       const rowWords = await readiness.allInnerTexts();
       assert.ok(rowWords.every(words => /pending/i.test(words) && /0\s*\/\s*6/.test(words)), 'Readiness must preserve zero verified release-cohort rows and pending checks');
       assert.match(rowWords.find(words => /small hours/i.test(words)), /pairs/i);
@@ -293,7 +330,7 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       const overviewShot = id + '-overview.jpg';
       await page.screenshot({ path: join(out, overviewShot), type: 'jpeg', quality: 78, fullPage: true });
       report.screenshots.push(overviewShot);
-      group.checks.push('Default overview has three genuine loaded images, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.');
+      group.checks.push('Default overview has four projects with genuine loaded images or explicit pending capture states, correct human denominators, empty release registry, launch timeline, exact served data and <=650 visible words.');
 
       await page.locator('#board-link').click();
       await page.locator('#tasks').waitFor({ state: 'visible' });
@@ -309,7 +346,7 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       await page.locator('#page-previous').click();
       assert.equal(await page.locator('#page-status').innerText(), `Page ${Math.ceil(tasks.tasks.length / 12) - 1} of ${Math.ceil(tasks.tasks.length / 12)}`);
 
-      for (const [lane, count] of Object.entries(Object.fromEntries(['memorable', 'vivid', 'bell'].map(lane => [lane, tasks.tasks.filter(task => task.lane === lane).length])))) {
+      for (const [lane, count] of Object.entries(Object.fromEntries(laneIds.map(lane => [lane, tasks.tasks.filter(task => task.lane === lane).length])))) {
         await page.locator('#lane-filter').selectOption(lane);
         assert.equal(await page.locator('#page-status').innerText(), `Page 1 of ${Math.ceil(count / 12)}`);
         const filtered = await allTaskIds(page);
@@ -369,6 +406,11 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       assert.equal(await page.locator('#task-TB-17 .task-toggle').getAttribute('aria-expanded'), 'true');
       assert.equal(await page.locator('#details-TB-17').isVisible(), true);
       await collectLinks(page);
+      await page.goto(base + mount + '#task-TN-10', { waitUntil: 'networkidle' });
+      await ready(page);
+      await page.locator('#details-TN-10').waitFor({ state: 'visible' });
+      assert.equal(await page.locator('#task-TN-10').isVisible(), true);
+      await collectLinks(page);
       await page.goto(base + mount + '#bad%', { waitUntil: 'networkidle' });
       await ready(page);
       await page.locator('#overview-view').waitFor({ state: 'visible' });
@@ -392,12 +434,41 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
     await page.locator('#load-error').waitFor({ state: 'visible' });
     await page.locator('#retry-load').focus(); await page.keyboard.press('Enter');
     await ready(page);
-    assert.equal(await page.locator('#project-grid .project-card').count(), 3);
+    assert.equal(await page.locator('#project-grid .project-card').count(), laneIds.length);
     await page.locator('#board-link').click();
     await page.locator('#tasks').waitFor({ state: 'visible' });
     assert.equal((await taskIds(page)).length, 12);
     await noOverflow(page, 'recovered dashboard');
-    report.extra_scenarios.push({ id: 'load-failure-retry', status: 'pass', expected_fault: 'one 503 response for tasks.json', result: 'Visible error recovered through keyboard activation of Retry; three projects and the task board load.' });
+    report.extra_scenarios.push({ id: 'load-failure-retry', status: 'pass', expected_fault: 'one 503 response for tasks.json', result: 'Visible error recovered through keyboard activation of Retry; four projects and the task board load.' });
+    await context.close(); activePage = null;
+  }
+
+  // Invalid new-lane metadata must fail visibly before links or coverage are rendered.
+  for (const fault of ['missing-notebook-language-row', 'unsafe-preview-path']) {
+    const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+    const page = await context.newPage(); activePage = page; watch(page, fault);
+    let malformed = true;
+    await page.route('**/data/source-manifest.json', async route => {
+      if (!malformed) { await route.continue(); return; }
+      const broken = structuredClone(manifest);
+      if (fault === 'missing-notebook-language-row') broken.release_preparation.engineering = broken.release_preparation.engineering.filter(row => row.lane !== 'notebook');
+      else {
+        const notebook = broken.sources.find(source => source.lane === 'notebook');
+        notebook.development_preview_path = 'development/toms-notebook/../../other/';
+        notebook.development_build_sha256 = 'a'.repeat(64);
+      }
+      await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(broken) });
+    });
+    await page.goto(base + '/IndiaGames/', { waitUntil: 'domcontentloaded' });
+    await page.locator('#load-error').waitFor({ state: 'visible' });
+    assert.equal(await page.locator('#project-grid .project-card').count(), 0);
+    assert.equal(await page.locator('#localization-rows tr').count(), 0);
+    malformed = false;
+    await page.locator('#retry-load').click();
+    await ready(page);
+    assert.equal(await page.locator('#project-grid .project-card').count(), laneIds.length);
+    assert.equal(await page.locator('#localization-rows tr').count(), laneIds.length);
+    report.extra_scenarios.push({ id: fault, status: 'pass', result: 'Invalid fourth-game metadata was rejected before rendering; retry restored all four lanes.' });
     await context.close(); activePage = null;
   }
 

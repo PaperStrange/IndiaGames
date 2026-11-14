@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "kind": "development-preview",
+  "game": "toms-notebook",
+  "version": "0.1.0",
+  "story": {
+    "id": "borrowed-words",
+    "version": 1
+  },
+  "source_inputs_sha256": "d99ce0af9ec9ff63016a27f87e18b29d3ddeea784238033ee6bc8c4970e7c1a6",
+  "catalogs_sha256": "ed7e62a6dbceb6932ecb8dbcbd0d4678aa6a39c2b571882f2414fb74007675e0",
+  "translation_status": {
+    "en": "draft",
+    "ja": "draft",
+    "zh-Hans": "draft"
+  }
+}

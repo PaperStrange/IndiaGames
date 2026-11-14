@@ -10,6 +10,7 @@ LANES = {
     'small-hours': ('memorable', 'SH-'),
     'keepers-frame': ('vivid', 'KF-'),
     'thirteenth-bell': ('bell', 'TB-'),
+    'toms-notebook': ('notebook', 'TN-'),
 }
 STATUSES = {'proposed', 'conditional', 'blocked_human', 'active', 'done', 'not_selected'}
 REQUIRED = {'id', 'lane', 'perspective', 'priority', 'status', 'owner_role', 'title',
@@ -32,7 +33,8 @@ def build():
             raise ValueError('Missing launch plan document')
         packet_pattern = r'https://github\.com/PaperStrange/IndiaGames/blob/[0-9a-f]{40}/docs/gamejam/(?:launch-' + re.escape(launch['target_date_utc']) + r'/README\.md|readiness-2026-11-04/HUMAN-HANDOFF\.md|maintenance-2026-11-06/HUMAN-HANDOFF\.md)'
         for lane, source in sources.items():
-            if not re.fullmatch(packet_pattern, source.get('human_playtest_packet', '')):
+            notebook_preparation = lane == 'notebook' and source.get('human_playtest_packet') == 'https://github.com/PaperStrange/IndiaGames/blob/main/docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md'
+            if not notebook_preparation and not re.fullmatch(packet_pattern, source.get('human_playtest_packet', '')):
                 raise ValueError(f'{lane}: missing pinned human playtest packet')
     tasks = []
     for folder, (lane, prefix) in LANES.items():
@@ -118,18 +120,22 @@ def build():
              'requirement': 'The November 4 readiness handoff preserves Small Hours and Bell, permits the bounded shared-helper correction for Vivid, and separates supported HTTP verification from human studies arranged later. Human observations still determine subsequent feature and release decisions.'},
             {'id': 'competitor-coverage', 'status': 'open', 'applies_to': ['memorable', 'vivid', 'bell'],
              'requirement': 'Retain each lane’s six-title roster, broad-family coverage, substituted editions and unfinished endpoints. The October 28–30 records and November archive uploads add inspectable evidence, not human validation or six completed journeys. Current competitor and pilot packets carry the qualifications; historical original-roster counts remain separate.'},
-            {'id': 'human-validation', 'status': 'not_run', 'applies_to': ['memorable', 'vivid', 'bell'],
+            {'id': 'human-validation', 'status': 'not_run', 'applies_to': ['memorable', 'vivid', 'bell', 'notebook'],
              'requirement': 'Observe actual people using the per-game protocol; automated checks and emotional agent prose are not human evidence.'}
         ],
         'tasks': tasks,
     }
+    result['gates'].append({
+        'id': 'notebook-game-edition', 'status': 'settled', 'applies_to': ['notebook'],
+        'requirement': 'The owner authorized an authored unsettling diary game, a separate 0.1.0 version and six additional fresh solo players on November 14. Original notebook product 0.4.0-alpha.0 and 35 MC cards remain separate. Product/language protocols, physical devices, fluent review and independent release approval still require human evidence; PR17 remains a draft.'
+    })
     preparation = manifest.get('release_preparation')
     if preparation is not None:
         result['gates'].append({
             'id': 'release-preparation-plan',
             'status': 'settled' if preparation.get('plan_settled') is True else 'not_settled',
-            'applies_to': ['memorable', 'vivid', 'bell'],
-            'requirement': 'The owner authorized the technical language/device implementation on November 6. Physical configurations, fluent review, additional comprehension criteria and the separate release-policy extension remain human decisions before qualification or promotion. This dashboard field does not adopt a release policy or waive a human gate.'
+            'applies_to': ['memorable', 'vivid', 'bell', 'notebook'],
+            'requirement': 'The owner authorized technical language/device implementation for the original three games on November 6 and Notebook on November 14. Physical configurations, fluent review, additional comprehension criteria and the separate release-policy extension remain human decisions before qualification or promotion. This dashboard field does not adopt a release policy or waive a human gate.'
         })
     output = ROOT / 'data' / 'tasks.json'
     output.parent.mkdir(exist_ok=True)
