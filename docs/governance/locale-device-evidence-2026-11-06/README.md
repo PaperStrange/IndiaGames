@@ -1,6 +1,6 @@
 # Locale/device evidence v1 — governed draft
 
-**Status: pending eligible human policy/code-owner review. No human evidence, support claim or official release is approved.** Game development can use the shared catalog now. Adoption of this validator change and adoption of a comprehension protocol are separate decisions. Both must be complete before a new multilingual release can pass.
+**Status: pending eligible human policy/code-owner review. No human evidence, support claim or official release is approved.** Game development can use the shared catalog now. Adoption of this validator change and adoption of a comprehension protocol are separate decisions. Both must be complete before a new multilingual release can pass. The November14 extension adds Notebook as a fourth game in this draft, with its own [proposed product protocol](NOTEBOOK-PROTOCOL.md), [blank human decision worksheet](NOTEBOOK-DECISION.md) and [manual session form](NOTEBOOK-HUMAN-SESSION.md). PR17 remains draft/unmerged; passing agent tests are not human adoption.
 
 The [verification record](VERIFICATION.md) separates engineering results from the human review and evidence still required.
 
@@ -20,7 +20,7 @@ Keep `candidate.json`, `human-playtest.json`, `notes.md` and `build/**` as the o
 }
 ```
 
-Use `keepers-frame` with units `iona`, `mara`, or `thirteenth-bell` with its same-named unit. Arrays must contain each required value exactly once; no extra locale/story IDs or fields. The catalog is a hashed declaration of scope, not proof of translated behavior. Game checks and human review must verify that it describes the actual shipped content.
+Use `keepers-frame` with units `iona`, `mara`, `thirteenth-bell` with its same-named unit, or `toms-notebook` with unit `toms-notebook`. Notebook's game version starts independently at `0.1.0`; the existing private-product version is not its release identity. Arrays must contain each required value exactly once; no extra locale/story IDs or fields. The catalog is a hashed declaration of scope, not proof of translated behavior. Game checks and human review must verify that it describes the actual shipped content.
 
 Include the catalog before generating the complete build inventory. Its file SHA-256 is `locale_catalog_sha256`; `build_sha256` is the existing inventory digest. Any changed font, text, layout or other build byte requires a new immutable version and exact-build records. Do not rewrite prior English candidates or transplant their approvals.
 
@@ -58,8 +58,9 @@ Each check names a human tester and `method: "manual-physical"`, `is_physical: t
 | Small Hours also | `private_handoff`, `ime_and_keepsake` |
 | Vivid also | `flat_fallback`, `story_save_recovery` |
 | Bell also | `map_and_receipts`, `restart` |
+| Notebook also | `diary_navigation_and_choices` |
 
-These record the declared game's actual behaviors: Small Hours clears private state; Bell does not promise saved progress; Vivid preserves its story/profile saves. Desktop orientation/resize checks use applicable window changes, not a fictional rotating monitor. Physical observations must retain failed attempts, assistance, limitations and human severity decisions in the referenced original evidence. Record the accepted current-build coverage summary only after reviewing that history. Repeated technical rows may use familiar QA staff; they do not increase fresh-player denominators. No new FPS/performance threshold or browser/OS minimum is invented by this schema.
+These record the declared game's actual behaviors: Small Hours clears private state; Bell does not promise saved progress; Vivid preserves its story/profile saves. Notebook checks phrase controls, explicit submit, reply/original comparison, correction/acceptance, ending and applicable resume/reset/delete/export behavior on the actual device. Desktop orientation/resize checks use applicable window changes, not a fictional rotating monitor. Physical observations must retain failed attempts, assistance, limitations and human severity decisions in the referenced original evidence. Record the accepted current-build coverage summary only after reviewing that history. Repeated technical rows may use familiar QA staff; they do not increase fresh-player denominators. No new FPS/performance threshold or browser/OS minimum is invented by this schema.
 
 ### Locale comprehension: deliberately blocked pending adoption
 
@@ -81,5 +82,7 @@ The existing `human_approval` must retain all current product-study requirements
 4. Already-published archives may use their historical locale evidence only when the entire packet and registry entry equal trusted `--base-ref` exactly. Added files, changed records, lower versions and newly copied packets are not archives. The current official registry is empty; compatibility is exercised with explicitly synthetic historical fixtures.
 5. New development builds can proceed while human policy review is pending. New staged multilingual packets need correct catalog/supplement identity but may keep all observations blank. Original game-specific staging prerequisites, including Small Hours' pilot decision, still apply.
 6. Adopt actual comprehension criteria in a separate reviewed policy change, then collect and review exact-build evidence. Keep original fixed cohorts and optional neutral conditions unchanged. If any required language, physical claim or independent approval is missing at go/no-go, defer the game.
+
+Notebook has no legacy staging exception. Its proposed product cohort adds six fresh solo players without changing the original 30-person baseline. The two Notebook-specific eligibility attestations and joint four-of-six criterion are documented in the draft product protocol; actual human review must adopt them before qualifying sessions. Adding Notebook to this draft does not expand the empty trusted comprehension registry, stage a candidate or create an official release.
 
 Rollback is a reviewed policy decision, not a candidate-authored downgrade. Never remove a required gate during promotion or reuse an old English approval to meet the calendar.

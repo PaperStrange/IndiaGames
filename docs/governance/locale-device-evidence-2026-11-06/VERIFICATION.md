@@ -1,4 +1,24 @@
-# Draft implementation verification — 6 November 2026
+# Draft implementation verification — Notebook extension, 14 November 2026
+
+**Current authored checks: 64 release-gate tests passed. This is technical verification of a draft, not human policy adoption or release qualification.** The original November6 record is preserved below and its 42 independent cases are historical evidence for that earlier snapshot, not a new independent review of the Notebook extension.
+
+The extension starts from draft PR17 commit `0f570a65266fe1cf5d49a7957671bf40dc33a3b5`. Current validator SHA-256: `cbd00e5ff6bce8308edc55c1b9269381208cc66009680e85b83b5c1fee8d79b6`. No game runtime, workflow, CODEOWNERS, repository setting, existing packet or registry entry changed here. PR17 remains draft/unmerged; Notebook's [product protocol](NOTEBOOK-PROTOCOL.md) and [decision worksheet](NOTEBOOK-DECISION.md) require responsible human review before qualifying sessions. `REVIEWED_LOCALE_PROTOCOLS` remains empty.
+
+| November14 check | Actual result |
+|---|---|
+| Full versioned suite | **64 passed**, including all 53 prior test methods and 11 Notebook methods. Command: `python3 -m unittest discover -s tests -p 'test_release_gate.py' -v`. The first run passed; no failed run was relabelled. |
+| Notebook joint criterion | Exactly four joint completion/explanation successes accepted under a synthetic test-only comprehension callback; three joint successes and four marginal successes with only two joint successes rejected. |
+| Notebook eligibility and manual evidence | Missing/extra/reordered sessions, non-solo/reused participants, prior or unknown exposure, prior project-cohort participation, truthy Boolean substitutes, late preregistration, wrong hashes, unobserved runs, critical bugs and approver conflicts rejected. |
+| Catalog and physical coverage | The `toms-notebook` unit requires all three locales. Wrong/missing/duplicate units, missing locale, diary-control failure/omission, missing physical cell, emulation and missing fluent review rejected. Blank Notebook template can stage with correct identity but cannot approve. |
+| Production protocol boundary | Empty production registry and candidate-invented protocol ID reject Notebook readiness. Positive tests inject an explicitly synthetic callback only in memory; no real comprehension protocol/sample was added. |
+| Original policy preservation | Compared original `GAMES`, locale-unit and device-check entries against PR17's previous head: unchanged. The original 30-person baseline and Vivid's optional neutral study retain their contracts. |
+| Actual immutable master | Re-extracted all six packets from `ac931cde281e9483f6f693289cad2d99038d5bc0`. Every complete-packet digest equals the preserved table; all six stage unchanged, all six reject readiness, and one added notes newline removes each staging exception. Notebook has no exception. |
+| Static checks | Validator/tests parse; all 14 JSON templates parse; all 34 relative Markdown links in the changed documents, including this addendum, resolve; `git diff --check` passed. |
+| Independent review of this extension | [Root technical review](NOTEBOOK-INDEPENDENT-REVIEW.md): no unresolved blocker; 11 Notebook cases rerun and original contracts independently compared. The earlier 42-case result remains historical. Human governance adoption is still pending. |
+
+Synthetic fixtures do not establish real fluency, physical hardware, fresh eligibility, source understanding or authentic approval. Humans must check the private roster/originals and exact game build. The draft extends the technical acceptance contract while preserving those responsibilities.
+
+## Preserved November6 verification record
 
 **Engineering checks passed. Human policy review, adoption and release qualification remain pending.** These are synthetic validator tests and preservation checks, not player sessions, language approvals or physical-device observations.
 

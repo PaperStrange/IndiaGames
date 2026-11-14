@@ -166,6 +166,8 @@ class ReleaseGateTests(unittest.TestCase):
                 "completed_at": "2025-01-01T10:10:00Z", "observation_notes": "Synthetic test fixture only.",
                 "metrics": {metric: metric != "expected_unrestricted_ai" for group in groups for metric in group},
                 "follow_up_at": "2025-01-01T10:12:00Z", "follow_up_notes": "Synthetic test follow-up only."})
+            if game == "toms-notebook":
+                sessions[-1].update(prior_exposure="none", prior_project_cohort_participation=False)
         report = {"schema_version": 1, "game": game, "version": "1.0.0", "build_sha256": built["sha256"],
                   "critical_bugs_open": 0, "protocol": {"sampling_rule": "first-six-predeclared-sessions",
                     "registered_at": "2025-01-01T00:00:00Z", "session_ids": [s["id"] for s in sessions],
@@ -840,6 +842,153 @@ class LocaleDeviceGateTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "require build/locale-catalog"): self.check()
             (self.package / "notes.md").write_text("Changed old packet")
             with self.assertRaisesRegex(ValueError, "require build/locale-catalog"): self.check(ready=False)
+
+
+class NotebookGateTests(unittest.TestCase):
+    """Notebook's proposed gate uses synthetic fixtures, never actual human observations."""
+
+    write = ReleaseGateTests.write
+    make_packet = ReleaseGateTests.make_packet
+
+    def setUp(self):
+        adopt_test_only_protocol(self)
+        self.temp = tempfile.TemporaryDirectory(prefix="synthetic-notebook-gate-")
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.base = "1" * 40
+        self.package = self.root / "release-candidates/toms-notebook/0.1.0"
+        self.report = self.make_packet(self.package, "toms-notebook")
+        self.manifest = gate.read_json(self.package / "candidate.json")
+        self.manifest["version"] = self.report["version"] = "0.1.0"
+        self.report["locale_device_evidence"]["version"] = "0.1.0"
+        self.write(self.package / "candidate.json", self.manifest)
+
+    def check(self, ready=True):
+        self.write(self.package / "human-playtest.json", self.report)
+        return gate.validate_package(self.package, "toms-notebook", "0.1.0", ready=ready)
+
+    def test_four_joint_successes_pass_three_fail(self):
+        for session in self.report["sessions"][4:]:
+            session["metrics"]["completed_unassisted"] = False
+        self.check()
+        self.report["sessions"][3]["metrics"]["explained_edit_to_reply_or_ending_consequence"] = False
+        with self.assertRaisesRegex(ValueError, "criteria failed"):
+            self.check()
+
+    def test_marginal_counts_cannot_replace_joint_observations(self):
+        for index, session in enumerate(self.report["sessions"]):
+            session["metrics"]["completed_unassisted"] = index < 4
+            session["metrics"]["explained_edit_to_reply_or_ending_consequence"] = index >= 2
+        with self.assertRaisesRegex(ValueError, "criteria failed"):
+            self.check()
+
+    def test_first_six_order_and_distinct_solo_players_required(self):
+        original = copy.deepcopy(self.report)
+        for change in ("fewer", "extra", "reordered", "pair", "reused"):
+            with self.subTest(change=change):
+                self.report = copy.deepcopy(original)
+                rows = self.report["sessions"]
+                if change == "fewer": rows.pop()
+                elif change == "extra": rows.append(copy.deepcopy(rows[0]))
+                elif change == "reordered": rows.reverse()
+                elif change == "pair": rows[0]["participant_count"] = 2
+                else: rows[1]["participant_ids"] = rows[0]["participant_ids"]
+                with self.assertRaises(ValueError): self.check()
+
+    def test_fresh_exposure_and_additional_cohort_are_explicit(self):
+        original = copy.deepcopy(self.report["sessions"][0])
+        for field, value in (("prior_exposure", "played"), ("prior_exposure", None),
+                             ("prior_exposure", False), ("prior_project_cohort_participation", True),
+                             ("prior_project_cohort_participation", "false"),
+                             ("prior_project_cohort_participation", 0)):
+            with self.subTest(field=field, value=value):
+                self.report["sessions"][0] = dict(original, **{field: value})
+                with self.assertRaisesRegex(ValueError, "fresh game exposure"): self.check()
+        for field in ("prior_exposure", "prior_project_cohort_participation"):
+            self.report["sessions"][0] = copy.deepcopy(original)
+            del self.report["sessions"][0][field]
+            with self.assertRaisesRegex(ValueError, "fresh game exposure"): self.check()
+
+    def test_exact_build_preregistration_and_boolean_metrics_required(self):
+        original = copy.deepcopy(self.report)
+        for change in ("build", "late-registration", "truthy", "extra-metric", "no-observer"):
+            with self.subTest(change=change):
+                self.report = copy.deepcopy(original)
+                session = self.report["sessions"][0]
+                if change == "build": session["build_sha256"] = "0" * 64
+                elif change == "late-registration": self.report["protocol"]["registered_at"] = "2025-01-01T11:00:00Z"
+                elif change == "truthy": session["metrics"]["completed_unassisted"] = "true"
+                elif change == "extra-metric": session["metrics"]["liked_game"] = True
+                else: session["observer_is_human"] = False
+                with self.assertRaises(ValueError): self.check()
+
+    def test_critical_bugs_and_approver_conflicts_block(self):
+        self.report["critical_bugs_open"] = 1
+        with self.assertRaisesRegex(ValueError, "critical bugs"): self.check()
+        self.report["critical_bugs_open"] = 0
+        for actor in (self.report["sessions"][0]["participant_ids"][0],
+                      self.report["sessions"][0]["observer_id"],
+                      self.report["locale_device_evidence"]["physical_checks"][0]["tester_id"]):
+            self.report["human_approval"]["reviewer_id"] = actor
+            with self.assertRaisesRegex(ValueError, "independent"): self.check()
+
+    def test_notebook_is_its_own_catalog_unit_in_all_three_locales(self):
+        self.check(ready=False)
+        original = gate.read_json(self.package / "build/locale-catalog.json")
+        for change in ("other-unit", "missing-unit", "missing-locale", "duplicate-unit"):
+            with self.subTest(change=change):
+                catalog = copy.deepcopy(original)
+                if change == "other-unit": catalog["units"][0]["id"] = "iona"
+                elif change == "missing-unit": catalog["units"] = []
+                elif change == "missing-locale": catalog["units"][0]["locales"].remove("ja")
+                else: catalog["units"].append(copy.deepcopy(catalog["units"][0]))
+                self.write(self.package / "build/locale-catalog.json", catalog)
+                self.manifest["build"] = gate.inventory(self.package / "build")
+                rebind_fixture(self.report, self.manifest["build"])
+                self.write(self.package / "candidate.json", self.manifest)
+                with self.assertRaises(ValueError): self.check(ready=False)
+
+    def test_diary_navigation_and_complete_physical_coverage_required(self):
+        original = copy.deepcopy(self.report["locale_device_evidence"])
+        for change in ("missing-check", "failed-check", "missing-cell", "emulation", "missing-language"):
+            with self.subTest(change=change):
+                self.report["locale_device_evidence"] = copy.deepcopy(original)
+                evidence = self.report["locale_device_evidence"]
+                row = evidence["physical_checks"][0]
+                if change == "missing-check": del row["checks"]["diary_navigation_and_choices"]
+                elif change == "failed-check": row["checks"]["diary_navigation_and_choices"] = False
+                elif change == "missing-cell": evidence["physical_checks"].pop()
+                elif change == "emulation": row["is_physical"] = False
+                else: evidence["language_reviews"].pop()
+                with self.assertRaises(ValueError): self.check()
+
+    def test_no_production_comprehension_protocol_can_be_invented(self):
+        with patch.dict(gate.REVIEWED_LOCALE_PROTOCOLS, {}, clear=True):
+            with self.assertRaisesRegex(ValueError, "protocol is not adopted"): self.check()
+        self.report["locale_device_evidence"]["comprehension"]["protocol_id"] = "owner-approved-in-packet"
+        with self.assertRaisesRegex(ValueError, "protocol is not adopted"): self.check()
+
+    def test_blank_notebook_template_stages_pending_but_never_approves(self):
+        self.report = gate.read_json(SCRIPTS.parent / "templates/release-candidate/human-playtest.notebook.json")
+        self.report["version"] = "0.1.0"
+        self.report["build_sha256"] = self.manifest["build"]["sha256"]
+        self.report["locale_device_evidence"].update(version="0.1.0", build_sha256=self.report["build_sha256"],
+            locale_catalog_sha256=self.manifest["build"]["files"][gate.LOCALE_CATALOG])
+        self.check(ready=False)
+        with self.assertRaises(ValueError): self.check()
+
+    def test_original_cohort_contracts_and_legacy_packets_are_unchanged(self):
+        self.assertEqual(gate.GAMES["small-hours"],
+            (2, (("reached_reveal_unaided",), ("both_contributed",), ("voluntarily_saved_or_replayed",)), (5, 4, 3)))
+        self.assertEqual(gate.GAMES["keepers-frame"],
+            (1, (("completed_unassisted", "explained_choice_to_return_action"), ("expected_unrestricted_ai",)), (4, None)))
+        self.assertEqual(gate.GAMES["thirteenth-bell"],
+            (1, (("explained_cause", "predicted_before_outcome"), ("earned_action_uncoached", "explained_fracture"),
+                  ("delayed_recalled_specific_mina_outcome",)), (4, 4, 3)))
+        self.assertEqual(gate.STORY_CRITERIA["mara-object-v1"],
+            (1, (("completed_unassisted", "explained_action_to_visible_consequence"),), (4,)))
+        self.assertEqual(len(gate.LEGACY_STAGED_PACKETS), 6)
+        self.assertFalse(any(key.startswith("toms-notebook/") for key in gate.LEGACY_STAGED_PACKETS))
 
 
 if __name__ == "__main__":

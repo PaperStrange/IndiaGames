@@ -17,6 +17,8 @@ GAMES = {
     "thirteenth-bell": (1, (("explained_cause", "predicted_before_outcome"),
                             ("earned_action_uncoached", "explained_fracture"),
                             ("delayed_recalled_specific_mina_outcome",)), (4, 4, 3)),
+    # Draft Notebook product criterion; this branch still requires human policy adoption.
+    "toms-notebook": (1, (("completed_unassisted", "explained_edit_to_reply_or_ending_consequence"),), (4,)),
 }
 VERSION = re.compile(r"(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\Z")
 SHA = re.compile(r"[0-9a-f]{40}\Z")
@@ -25,7 +27,7 @@ STORY_CATALOG = "story-catalog.json"
 LOCALE_CATALOG = "locale-catalog.json"
 LOCALES = {"en", "ja", "zh-Hans"}
 LOCALE_UNITS = {"small-hours": {"small-hours"}, "keepers-frame": {"iona", "mara"},
-                "thirteenth-bell": {"thirteenth-bell"}}
+                "thirteenth-bell": {"thirteenth-bell"}, "toms-notebook": {"toms-notebook"}}
 DEVICE_FAMILIES = {"desktop_web", "phone", "tablet"}
 DEVICE_FIELDS = {"id", "device_family", "model", "os", "os_version", "browser",
                  "browser_version", "engine", "inputs"}
@@ -33,7 +35,8 @@ DEVICE_CHECKS = {"entry_and_critical_path", "readable_text_and_controls", "input
                  "orientation_and_resize", "lifecycle_and_recovery"}
 GAME_DEVICE_CHECKS = {"small-hours": {"private_handoff", "ime_and_keepsake"},
                       "keepers-frame": {"flat_fallback", "story_save_recovery"},
-                      "thirteenth-bell": {"map_and_receipts", "restart"}}
+                      "thirteenth-bell": {"map_and_receipts", "restart"},
+                      "toms-notebook": {"diary_navigation_and_choices"}}
 # No locale-comprehension sampling/acceptance protocol has been adopted. A separately
 # human-reviewed policy patch must add a pinned protocol sha256 AND its validator.
 # Candidate-authored IDs, hashes or approval flags cannot populate this registry.
@@ -299,6 +302,10 @@ def playtests(report, game, version, digest, criteria=None):
                 and all(filled(person) for person in people) and len(set(people)) == participants
                 and not seen_people.intersection(people), "use distinct deidentified real participants")
         seen_people.update(people)
+        if game == "toms-notebook":
+            require(session.get("prior_exposure") == "none"
+                    and session.get("prior_project_cohort_participation") is False,
+                    "Notebook needs fresh game exposure and six additional project-cohort participants")
         require(session["method"] in ("manual-in-person", "manual-remote")
                 and session["observer_is_human"] is True and filled(session["observer_id"]),
                 "a human must manually observe each session")

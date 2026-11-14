@@ -4,11 +4,11 @@ These files intentionally **fail readiness validation**. They contain no human r
 
 The [locale/device governed draft](../../docs/governance/locale-device-evidence-2026-11-06/README.md) adds required `locale_device_evidence` inside the product report and a hashed `build/locale-catalog.json` for every new candidate. The new helper JSON files in this directory are recording aids, **not additional packet files**. The product templates already include blank supplemental arrays and false approval attestations. Fill only identity fields to stage; populate human observations only after they actually occur. Additional locale-comprehension criteria remain unadopted and block readiness even if every other field is filled.
 
-On `master`, create `release-candidates/<game>/<version>/`. Copy `candidate.json` and `notes.md` into it; add the exported browser game under `build/`, including `build/index.html`. For Small Hours and Bell, copy `human-playtest.json` and use `session.json` for each session. For every new Vivid candidate, copy **`human-playtest.vivid.json` as `human-playtest.json`** and use `session.vivid.json` for each story's sessions. Keep this README, session templates and other helper files out of the packet.
+On `master`, create `release-candidates/<game>/<version>/`. Copy `candidate.json` and `notes.md` into it; add the exported browser game under `build/`, including `build/index.html`. For Small Hours and Bell, copy `human-playtest.json` and use `session.json` for each session. For every new Vivid candidate, copy **`human-playtest.vivid.json` as `human-playtest.json`** and use `session.vivid.json` for each story's sessions. For Notebook, use **`human-playtest.notebook.json` as `human-playtest.json`** and `session.notebook.json`. Notebook's [product protocol remains a draft](../../docs/governance/locale-device-evidence-2026-11-06/NOTEBOOK-PROTOCOL.md) requiring human adoption before qualifying sessions. Keep this README, session templates and other helper files out of the packet.
 
 Vivid's build must include `story-catalog.json`, generated from the shipping manifests in the shape shown by `story-catalog.vivid.json`. It lists both `iona` / `iona-return-v1` and `mara` / `mara-object-v1`, their current positive revisions and titles. Generate the build inventory only after the catalog is included. Its bytes are part of the shipped hash. Do not add these helper templates at the packet root.
 
-Use game IDs `small-hours`, `keepers-frame`, or `thirteenth-bell` and a three-part version such as `1.0.0`. Record the full implementation commit in `source_commit`. Generate the manifest's `build` object with:
+Use game IDs `small-hours`, `keepers-frame`, `thirteenth-bell`, or `toms-notebook` and a three-part version such as `1.0.0`. Notebook's first game version is independently `0.1.0`. Record the full implementation commit in `source_commit`. Generate the manifest's `build` object with:
 
 ```sh
 python3 scripts/validate-release.py --inventory release-candidates/GAME/VERSION/build
@@ -24,6 +24,9 @@ Each session's `method` is `manual-in-person` or `manual-remote`; the observer m
 | Vivid / Iona remembered or optional neutral | `completed_unassisted`, `explained_choice_to_return_action`, `expected_unrestricted_ai` |
 | Vivid / Mara | `completed_unassisted`, `explained_action_to_visible_consequence` |
 | Thirteenth Bell | `explained_cause`, `predicted_before_outcome`, `earned_action_uncoached`, `explained_fracture`, `delayed_recalled_specific_mina_outcome` |
+| Notebook — proposed gate pending human adoption | `completed_unassisted`, `explained_edit_to_reply_or_ending_consequence` |
+
+Notebook adds six distinct fresh solo people to the original 30-person baseline. Each Notebook session explicitly records `prior_exposure: "none"` for this game and literal `prior_project_cohort_participation: false`; unknown eligibility is not a pass. A human checks the private cross-game roster. At least four of the same six must meet both metrics. Blank eligibility/metric fields are null, not a prefilled success. The [human-readable form](../../docs/governance/locale-device-evidence-2026-11-06/NOTEBOOK-HUMAN-SESSION.md) permits direct handoff without writing JSON. Qualitative replay/trust/source-recovery/authored-system findings belong in notes, not additional scored keys. The trusted language-comprehension registry remains empty.
 
 For Bell, predeclare `delayed_recall_min_hours` of at least `0.03333333333333333` (two minutes), use a neutral break, then record `follow_up_at` and `follow_up_notes` for every participant, including failures. This is short delayed recall, not day-two retention. Other games do not use the follow-up fields.
 

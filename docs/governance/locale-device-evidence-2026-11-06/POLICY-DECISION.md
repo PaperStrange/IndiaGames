@@ -2,6 +2,8 @@
 
 This is the concrete handoff for the responsible research lead and eligible human policy/code-owner reviewer. **No role, sampling number, criterion, appointment or approval is prefilled.** The engineering extension is prepared; language-comprehension readiness remains blocked by the empty trusted protocol registry.
 
+The November14 Notebook addition has a separate [product-protocol proposal](NOTEBOOK-PROTOCOL.md) and [blank adoption worksheet](NOTEBOOK-DECISION.md). The owner selected six additional fresh solo players and a proposed ≥4/6 joint product criterion, pending human protocol review. This does not choose supplemental language-comprehension sampling or alter the original three-game cohorts.
+
 | Decision | Record before implementation/adoption of a comprehension protocol |
 |---|---|
 | Responsible research lead / eligible human policy reviewer | Accepted pseudonymous roles, review reference and conflicts; do not invent a bot substitute. |
