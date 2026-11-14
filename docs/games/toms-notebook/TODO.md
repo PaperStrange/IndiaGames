@@ -33,9 +33,9 @@ The separate static TypeScript/Vite export includes only allowed game assets. It
 
 [Task contracts](tasks.json) are the status authority. Existing 84 dashboard tasks are preserved. The new game does not close notebook-product MC cards.
 
-**November 14 checkpoint:** TN-01–07 are complete with source-bound research, content, runtime, technical verification, export, draft policy preparation and handoff evidence. [The engineering report](https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md) records 54 authored browser cases / 2,166 assertions, 26 independent cases / 147 assertions, 16 unit tests including 192 complete semantic paths and six exporter tests. The [0.1.0 development preview](https://paperstrange.github.io/IndiaGames/development/toms-notebook/0.1.0/) contains ten exact files from source `5ef5ab4`, inventory `b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a`.
+**November 14 checkpoint:** TN-01–08 are complete with source-bound research, content, runtime, technical verification, export, draft policy preparation, handoff and actual Pages publication evidence. [The engineering report](https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md) records 54 authored browser cases / 2,166 assertions, 26 independent cases / 147 assertions, 16 unit tests including 192 complete semantic paths and six exporter tests. The [0.1.0 development preview](https://paperstrange.github.io/IndiaGames/development/toms-notebook/0.1.0/) contains ten exact files from source `5ef5ab4`, inventory `b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a`.
 
-TN-08 remains active until independent hub review, CI and actual published Pages verification. TN-09–10 remain blocked on human qualification and approval. The full board has 60 completed cards out of 94; this is engineering progress, not release readiness.
+TN-08 completed after [independent review, CI and actual Pages verification](https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290). TN-09–10 remain blocked on human qualification and approval. The full board has 61 completed cards out of 94; this is engineering progress, not release readiness.
 
 ## Human study and release boundary
 

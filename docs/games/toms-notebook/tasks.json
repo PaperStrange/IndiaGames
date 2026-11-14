@@ -200,7 +200,7 @@
     "lane": "notebook",
     "perspective": "Operations",
     "priority": "P1",
-    "status": "active",
+    "status": "done",
     "owner_role": "Dashboard integrator",
     "title": "Publish Notebook development and the fourth dashboard lane",
     "deliverable": "A verified development preview, genuine game capture, pinned sources and accurate fourth-lane progress.",
@@ -215,11 +215,14 @@
     ],
     "source_plan": "docs/games/toms-notebook/TODO.md",
     "human_participants_required": false,
-    "completion_evidence": [],
+    "completion_evidence": [
+      "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290",
+      "https://github.com/PaperStrange/IndiaGames/blob/main/docs/four-game-release-2026-11-14/publication-pr19.json"
+    ],
     "focus": "Fourth game / November 20 preparation",
     "technical_implementation_authorized": true,
     "plan_settled": true,
-    "completion_note": "Exact development files and genuine source-bound capture are included. Independent hub review/CI and actual immutable-commit Pages verification remain required before this publication card completes."
+    "completion_note": "November 14: independent review and exact-head CI passed; PR #19 merged and actual Pages verified at 06e8fd3. All 22 served files match; desktop/phone dashboard flows, all 94 tasks and both Notebook endings with real transcript downloads passed. This completes development publication only; human qualification and official release remain pending."
   },
   {
     "id": "TN-09",
