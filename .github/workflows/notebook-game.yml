@@ -1,0 +1,44 @@
+name: Notebook game
+
+on:
+  push:
+    branches: [toms_notebook]
+    paths: ['game/**', '.github/workflows/notebook-game.yml']
+  pull_request:
+    paths: ['game/**', '.github/workflows/notebook-game.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  standalone-game:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24.19.0'
+          cache: npm
+          cache-dependency-path: game/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npm run test:export
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser -- --engine chromium --mount /IndiaGames/development/toms-notebook/0.1.0/ --out "$RUNNER_TEMP/notebook-game-qa"
+      - run: npm run export -- --version 0.1.0 --out "$RUNNER_TEMP/notebook-game-export"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: notebook-game-development-evidence
+          path: |
+            ${{ runner.temp }}/notebook-game-qa
+            ${{ runner.temp }}/notebook-game-export
+          if-no-files-found: warn
