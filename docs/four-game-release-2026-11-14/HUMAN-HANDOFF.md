@@ -1,5 +1,7 @@
 # Hand over human results · all four games
 
+**Notebook scope update · November 15:** The [ink redesign](../notebook-ink-redesign-2026-11-15/README.md) is being researched; the public 0.1.0 preview remains the phrase-choice comparison baseline. Feedback on it is welcome with its exact identity. Its proposed completion/edit-to-reply measure does not automatically qualify a future ink game. Settle the new mechanic and adopt a matching protocol before recruiting its qualifying cohort; exploratory exposure must remain recorded. The other games' handoff instructions continue to apply.
+
 Send one Google Drive folder or ZIP with a batch index and one folder per game: **Small Hours**, **Vivid** (separate Iona/Mara records), **The Thirteenth Bell**, **Tom’s Notebook**. Markdown, Google Docs and spreadsheets are welcome. You do not need to write release JSON; the integrator will transcribe reviewed facts and validate them.
 
 Send partial batches now. Mark missing information **unknown** and checks **not run**. Keep failed, abandoned, assisted and repeat attempts alongside successful ones. A helpful retrospective observation can guide a fix without qualifying for a preregistered release cohort.

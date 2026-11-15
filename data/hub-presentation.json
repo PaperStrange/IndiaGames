@@ -83,12 +83,12 @@
     },
     {
       "lane": "notebook",
-      "promise": "The book remembers differently. Keep your own account.",
-      "next_action": "Review authorship, original recovery and all three languages.",
+      "promise": "Make a mark. Discover what the ink can do.",
+      "next_action": "Observe seven games; compare ink mechanics.",
       "image": {
         "src": "assets/hub/toms-notebook-opening.jpg",
         "alt": "Borrowed Words opening exchange: a notebook asks which words the Keeper will send to the Correspondent.",
-        "caption": "Opening exchange · automated capture, 14 Nov 2026",
+        "caption": "0.1.0 comparison baseline · automated capture, 14 Nov 2026; not a redesigned build",
         "kind": "automated_game_capture",
         "width": 1440,
         "height": 1144,
@@ -102,9 +102,9 @@
         "preservation": "Byte-for-byte copy of the pinned Chromium151 capture; no image edits. Not human, physical-device or fluent-review evidence."
       },
       "questions": {
-        "why_play": "An answering diary may create curiosity and unease while giving the player a way to challenge its account.",
-        "differentiation": "Mark actual phrases, compare recoverable originals and decide which account survives; no unrestricted AI conversation.",
-        "unique_experience": "The same notebook holds your words and a conflicting reply. Earlier corrections change the final page."
+        "why_play": "Hypothesis: making, changing and recovering your own marks may support discovery, expression and growing skill.",
+        "differentiation": "Test whether stroke shape, placement, connections, timing or meaning creates understandable consequences beyond selecting an authored phrase.",
+        "unique_experience": "A persistent page absorbs and responds to the player’s own ink. Eight possible game systems remain alternatives; none is selected or verified."
       }
     }
   ]

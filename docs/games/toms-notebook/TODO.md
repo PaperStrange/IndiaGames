@@ -1,8 +1,29 @@
-# Tom’s Notebook — Borrowed Words
+# Tom’s Notebook — ink redesign and preserved baseline
+
+## Current direction · November 15
+
+Keep the original product’s freehand writing, pressure-aware strokes, erasing, fading and recoverable originals. Build gameplay around consequences of the player’s marks. The existing phrase-selection game remains **0.1.0, a comparison baseline**; it is not the selected future design. The private product remains separate.
+
+[Source review and full plan](https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/README.md) · [Seven-game roster](https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/MARKET-PLAN.md) · [Observation template](https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/OBSERVATION-TEMPLATE.md) · [Decision matrix](https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/DECISION-MATRIX.md)
+
+| Stage | Status | Cards / next result |
+|---|---|---|
+| Original ink review and research plan | Prepared; source review complete | TN-11: retain real product behavior and distinguish proposed systems |
+| Seven new market journeys | Not started | TN-12: observe complete attempted journeys and critique across roles |
+| Three different ink experiments | Conditional; none built | TN-13: select experiments from evidence across eight alternatives |
+| Core decision and revised study | Conditional; no favorite selected | TN-14: select/reject, scope the next milestone and review fitting human criteria |
+
+The eight families are material experimentation, construction, living-page ecology, graphic programming, performance, restoration, a learning companion, and an ink workshop/economy. These are alternatives to test, not a combined feature backlog. A persistent evolving page is allowed; one page per authored scene is not a constraint. Narrative and replaceable characters should support the chosen interaction.
+
+The new seven titles are Line Rider, Sandspiel, Townscaper, shapez, Universal Paperclips, A Dance of Fire and Ice and Draw a Stickman. None of these new sessions is complete. Keep their evidence distinct from TN-01’s six earlier narrative-game studies. The original local handwriting model targets English; do not assume Japanese or Chinese handwriting recognition, stylus ownership or recognition errors as game difficulty.
+
+November 16 remains the individual go/defer checkpoint and November 20 a conditional target. The redesigned edition requires its own exact-build verification, fitting reviewed human protocol, all three languages and actual declared desktop/phone/tablet evidence. The 0.1.0 draft consequence metric does not automatically qualify a changed core.
+
+## Historical 0.1.0 baseline · November 14
 
 The owner selected an authored, unsettling psychological diary adventure on November 14. This is the fourth game in the November 20 programme. The independent game version is **0.1.0**; the existing Enchanted Notebook product remains **0.4.0-alpha.0**, with its original application, private hosting and 35 MC cards unchanged.
 
-## Experience and questions
+### Baseline experience and questions
 
 | Question | Hypothesis to test | Contrary evidence to preserve |
 |---|---|---|
@@ -12,7 +33,7 @@ The owner selected an authored, unsettling psychological diary adventure on Nove
 
 These are hypotheses, not measured demand, enjoyment or uniqueness. [Six browser competitor observations](https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/README.md) informed the authored interactions: A Dark Room, Seedship, Birdland, The Uncle Who Works for Nintendo, Sort the Court! and We Become What We Behold. Only one Seedship mission reached its ending; the other journeys are partial and WBWWB's successful hat capture used disclosed pixel targeting assistance. Agent observations remain labelled agent; human qualification is separate.
 
-## Bounded game edition
+### Baseline game edition
 
 One chapter, three exchanges and two endings. Ten–fifteen minutes is a design target, not an observed duration. The player marks authored phrases, explicitly submits, observes a reply, compares the original, corrects or accepts, and reaches an ending reflecting those decisions. Circle/strike/select targets have equivalent keyboard, pointer and touch controls. There is no handwriting recognition, free-form AI, timed failure or jump scare.
 
@@ -20,7 +41,7 @@ Stable story, cast, action and message identities support later narrative replac
 
 The separate static TypeScript/Vite export includes only allowed game assets. It retains the original notebook’s material direction without shipping its backend, provider settings, large OCR payload or supplied reference films. English, Japanese and Simplified Chinese ship together; all three Notebook drafts require fluent review. Desktop, phone and tablet viewport checks do not establish physical-device support.
 
-## Team work
+### Baseline team work
 
 | Cards | Perspective | Required result |
 |---|---|---|
@@ -35,9 +56,9 @@ The separate static TypeScript/Vite export includes only allowed game assets. It
 
 **November 14 checkpoint:** TN-01–08 are complete with source-bound research, content, runtime, technical verification, export, draft policy preparation, handoff and actual Pages publication evidence. [The engineering report](https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md) records 54 authored browser cases / 2,166 assertions, 26 independent cases / 147 assertions, 16 unit tests including 192 complete semantic paths and six exporter tests. The [0.1.0 development preview](https://paperstrange.github.io/IndiaGames/development/toms-notebook/0.1.0/) contains ten exact files from source `5ef5ab4`, inventory `b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a`.
 
-TN-08 completed after [independent review, CI and actual Pages verification](https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290). TN-09–10 remain blocked on human qualification and approval. The full board has 61 completed cards out of 94; this is engineering progress, not release readiness.
+TN-08 completed after [independent review, CI and actual Pages verification](https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290). TN-09–10 remain blocked on human qualification and approval. At that checkpoint the board had 61 completed cards out of 94. New redesign cards add separate work without rewriting that historical completion; task counts are engineering progress, not release readiness.
 
-## Human study and release boundary
+### Baseline human-study proposal and release boundary
 
 The owner selected six additional fresh solo players. The proposed product protocol uses the first six preregistered attempts and requires at least four of those same players both to finish unaided and correctly explain an edit-to-reply/ending consequence. It also records original recovery, authored-versus-AI expectations, trust and voluntary continuation without inventing a numerical “fun” pass.
 

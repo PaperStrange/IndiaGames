@@ -1,5 +1,7 @@
 # Four-game release preparation · November 14
 
+**November 15 update:** Notebook's next iteration preserves the original product's direct ink interaction and reopens its gameplay design. This page remains the November 14 baseline record. See the [ink redesign review and delivery plan](../notebook-ink-redesign-2026-11-15/README.md) for current scope. The published 0.1.0 preview and its engineering evidence remain intact; they do not verify the proposed redesign. Its phrase-choice protocol needs reconsideration after a new mechanic is selected.
+
 Tom’s Notebook joins Small Hours, Vivid and The Thirteenth Bell as the fourth game. The owner approved the authored **Borrowed Words** edition, an unsettling psychological chapter and six additional fresh solo testers. Its game version is **0.1.0**, separate from Enchanted Notebook **0.4.0-alpha.0**.
 
 | Game | Engineering evidence available at this checkpoint | Human qualification |

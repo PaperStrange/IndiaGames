@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "type": "versioned development snapshot; coding-agent assignments are explicit, human staffing is not implied",
-  "snapshot_date_utc": "2026-11-14",
-  "plan_date_utc": "2026-11-14",
+  "snapshot_date_utc": "2026-11-15",
+  "plan_date_utc": "2026-11-15",
   "demo_qa_date_utc_by_lane": {
     "memorable": "2026-11-06",
     "vivid": "2026-11-06",
@@ -60,19 +60,19 @@
       "qa_status": "source_bound_three_engine_verification_passed",
       "candidate_version": null,
       "candidate_status": "not_staged_protocol_review_required",
-      "milestone_status_label": "Game engineering verified; human qualification pending",
+      "milestone_status_label": "Ink source review complete; new market studies planned",
       "pilot_packet": null,
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md",
-      "human_staffing": "Six additional fresh solo players proposed; accepted handoff/results, reviewers, devices and appointments pending.",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md",
+      "human_staffing": "Six additional fresh solo players remain proposed. Redesign requires a fitting reviewed protocol and new exact-build evidence; 0.1.0 draft criteria are not automatically transferable.",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/README.md",
       "technical_readiness_label": "Three-engine technical pass",
       "official_release": false
     }
   },
   "source_manifest": "source-manifest.json",
   "readiness": {
-    "date_utc": "2026-11-14",
-    "status": "four_game_engineering_complete_human_qualification_pending",
+    "date_utc": "2026-11-15",
+    "status": "baseline_engineering_retained_notebook_redesign_research_pending",
     "document": "docs/four-game-release-2026-11-14/README.md",
     "issues_document": "docs/iteration-2026-11-06/README.md#issue-dispositions",
     "shared_blockers": [
@@ -213,7 +213,7 @@
         "publication_evidence": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290"
       }
     ],
-    "delivery_note": "Four-game dashboard and Notebook development are published and verified. Human qualification remains pending.",
+    "delivery_note": "Notebook: playable 0.1.0 baseline; ink research planned.",
     "status_checked_at": "2026-11-14T09:46:45.289050+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",
@@ -222,7 +222,7 @@
       "human_game_release_gate_waived": false,
       "standing_policy_changed": false
     },
-    "planning_document": "docs/four-game-release-2026-11-14/README.md",
+    "planning_document": "docs/notebook-ink-redesign-2026-11-15/README.md",
     "locale_device_policy_draft": {
       "pr": 17,
       "url": "https://github.com/PaperStrange/IndiaGames/pull/17",
@@ -246,7 +246,7 @@
         "adopted": false
       }
     },
-    "status_check_scope": "November 14 source/evidence reconciliation and administrator API readback; not human qualification or a new Pages deployment check."
+    "status_check_scope": "November 15 Notebook planning update; dated administrator and technical evidence remain historical. No new human qualification or deployment check is implied."
   },
   "launch": {
     "target_date_utc": "2026-11-20",
@@ -258,7 +258,7 @@
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
     "readiness_document": "docs/four-game-release-2026-11-14/README.md",
-    "schedule_note": "November 14: add Notebook as a fourth game. The November 11 target has passed without a new multilingual candidate. Preserve November 16 individual go/defer and November 20 conditional launch; dates do not manufacture qualification.",
+    "schedule_note": "November 15: Notebook enters ink redesign research; the verified 0.1.0 stays a comparison baseline. Seven new market sessions have not started. November 16 remains individual go/defer; November 20 requires exact-build human, language and device qualification, with incomplete games deferred.",
     "timeline": [
       [
         "6 November",
@@ -272,8 +272,8 @@
       ],
       [
         "14–15 November",
-        "Fourth game + handoff",
-        "Build Notebook; assess actual results"
+        "Baseline + ink review",
+        "Notebook research plan; new playtests pending"
       ],
       [
         "16 November",
@@ -3007,7 +3007,8 @@
       "acceptance_criteria": [
         "Adopt and preregister the protocol before qualifying observations; retain the first six attempts including failures.",
         "All three languages and declared desktop/phone/tablet configurations need their actual reviewed coverage.",
-        "Record causal explanation and independent evidence without treating successful completion as proof of fun."
+        "Record causal explanation and independent evidence without treating successful completion as proof of fun.",
+        "Do not transfer 0.1.0 authored-choice qualification or proposed metrics to a redesigned ink game without a reviewed applicable protocol and exact-build evidence."
       ],
       "depends_on": [
         "TN-05",
@@ -3020,7 +3021,7 @@
       "focus": "Fourth game / November 20 preparation",
       "technical_implementation_authorized": true,
       "plan_settled": true,
-      "completion_note": "No completion or human acceptance is claimed until linked evidence is reviewed."
+      "completion_note": "Pending human qualification. Existing draft criteria describe the 0.1.0 authored-choice baseline; a redesigned core needs a fitting reviewed protocol and new exact-build evidence before these gates can close."
     },
     {
       "id": "TN-10",
@@ -3034,7 +3035,8 @@
       "acceptance_criteria": [
         "Only qualified immutable master packets may reach official main release paths and version notes.",
         "PR17 adoption, actual comprehension criteria and issue #2 protection must be resolved.",
-        "Defer incomplete Notebook without delaying another qualified game; retain development as explicitly unofficial."
+        "Defer incomplete Notebook without delaying another qualified game; retain development as explicitly unofficial.",
+        "Do not transfer 0.1.0 authored-choice qualification or proposed metrics to a redesigned ink game without a reviewed applicable protocol and exact-build evidence."
       ],
       "depends_on": [
         "TN-09"
@@ -3045,7 +3047,106 @@
       "focus": "Fourth game / November 20 preparation",
       "technical_implementation_authorized": true,
       "plan_settled": true,
-      "completion_note": "No completion or human acceptance is claimed until linked evidence is reviewed."
+      "completion_note": "Pending human qualification. Existing draft criteria describe the 0.1.0 authored-choice baseline; a redesigned core needs a fitting reviewed protocol and new exact-build evidence before these gates can close."
+    },
+    {
+      "id": "TN-11",
+      "lane": "notebook",
+      "perspective": "Research",
+      "priority": "P1",
+      "status": "done",
+      "owner_role": "Source reviewers + research coordinator",
+      "title": "Review original ink and prepare a broad redesign research plan",
+      "deliverable": "Source-grounded ink review, seven-title market plan, reusable journey template and eight-direction decision matrix.",
+      "acceptance_criteria": [
+        "Preserve actual freehand, erasure, fade and original recovery; distinguish current OCR/reply behavior from proposed simulation mechanics.",
+        "Keep seven new market sessions unplayed and eight mechanism families unselected; retain earlier six records as historical evidence.",
+        "Provide a journey and cross-perspective critique template, evidence-selection sequence and language/device/release boundaries."
+      ],
+      "depends_on": [],
+      "source_plan": "docs/games/toms-notebook/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/README.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/MARKET-PLAN.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/OBSERVATION-TEMPLATE.md",
+        "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/DECISION-MATRIX.md"
+      ],
+      "focus": "Ink redesign / evidence before selection",
+      "technical_implementation_authorized": false,
+      "plan_settled": true
+    },
+    {
+      "id": "TN-12",
+      "lane": "notebook",
+      "perspective": "Research",
+      "priority": "P1",
+      "status": "proposed",
+      "owner_role": "Research agents + independent synthesis reviewer",
+      "title": "Play seven market games and record their attempted journeys",
+      "deliverable": "Seven bounded observed sessions, contrary evidence and critic/creator comparisons across material, construction, creation, systems, rhythm and progression.",
+      "acceptance_criteria": [
+        "Record actual entry, actions, prediction, feedback, confusion, recovery and stopping, with timestamps and honest endpoints.",
+        "Separate agent operations from human evidence and observations from interpretation; disclose help, audio limits, inaccessible editions and incomplete loops.",
+        "Critique player, systems, interaction/accessibility, art/narrative and operator implications before selecting any mechanic."
+      ],
+      "depends_on": [
+        "TN-11"
+      ],
+      "source_plan": "docs/games/toms-notebook/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Ink redesign / evidence before selection",
+      "technical_implementation_authorized": false,
+      "plan_settled": true
+    },
+    {
+      "id": "TN-13",
+      "lane": "notebook",
+      "perspective": "Design / engineering",
+      "priority": "P1",
+      "status": "conditional",
+      "owner_role": "Game systems + interaction integrators",
+      "title": "Compare three mechanically different ink experiments",
+      "deliverable": "Three bounded experiments selected from the eight-direction evidence matrix, with declared uncertainties and rejection criteria.",
+      "acceptance_criteria": [
+        "Select experiments only after TN-12 synthesis; each has a distinct dominant action and meaningful consequence from the player’s marks.",
+        "Preserve originals and useful correction; distinguish expressive ink from drawing precision, recognition errors and hidden choices.",
+        "Evaluate mouse, finger, keyboard and optional stylus feasibility plus English, Japanese and Simplified Chinese before expanding narrative."
+      ],
+      "depends_on": [
+        "TN-12"
+      ],
+      "source_plan": "docs/games/toms-notebook/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Ink redesign / evidence before selection",
+      "technical_implementation_authorized": false,
+      "plan_settled": true
+    },
+    {
+      "id": "TN-14",
+      "lane": "notebook",
+      "perspective": "Design / operations",
+      "priority": "P1",
+      "status": "conditional",
+      "owner_role": "Independent design reviewer + release coordinator",
+      "title": "Select or reject the redesigned core and prepare its next milestone",
+      "deliverable": "Evidence-linked decision, retained alternatives, scoped implementation plan and revised human-study proposal for the selected game.",
+      "acceptance_criteria": [
+        "Compare all three experiments against their declared criteria; retain contrary evidence and reject all if none supports understandable worthwhile play.",
+        "Define progression appropriate to the selected core and flexible narrative where supported; a page may persist, but no fixed world or one-page-per-scene structure is required.",
+        "Keep November 16 go/defer and November 20 conditional; an incomplete redesign defers and cannot reuse baseline qualification."
+      ],
+      "depends_on": [
+        "TN-13"
+      ],
+      "source_plan": "docs/games/toms-notebook/TODO.md",
+      "human_participants_required": false,
+      "completion_evidence": [],
+      "focus": "Ink redesign / evidence before selection",
+      "technical_implementation_authorized": false,
+      "plan_settled": true
     }
   ]
 }

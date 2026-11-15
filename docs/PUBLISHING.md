@@ -4,6 +4,8 @@
 
 ## Human-feedback reconciliation delivery
 
+The [November 15 Notebook ink review and research plan](notebook-ink-redesign-2026-11-15/README.md) updates dashboard presentation and task tracking. The 0.1.0 development preview is retained byte-for-byte as a comparison baseline. The delivery PR records independent review, CI and the subsequent exact-commit Pages check; source publication alone is not deployment verification. No game release, candidate or policy adoption is part of this update.
+
 [PR #15](https://github.com/PaperStrange/IndiaGames/pull/15) carries the [human-feedback reconciliation](research-reconciliation-2026-11-06/README.md), including the owner's attribution correction and dashboard wording that separates received feedback from verified release sessions. [Local dashboard checks](research-reconciliation-2026-11-06/DASHBOARD-QA.md) identify the tested bytes; final review, CI and actual post-merge Pages verification are filed in that PR conversation.
 
 The preceding [PR #14 publication](https://github.com/PaperStrange/IndiaGames/pull/14#issuecomment-6679768911) was independently reviewed, merged as `81b951d07bb0263aa6a9e7971d1d42a221674aba`, built by Pages at 07:34:20 UTC and verified live at 07:34:48–07:34:57 UTC. All 11 file/browser-response hashes matched; 84 tasks were reachable and no unexpected errors were recorded. That result verifies the preceding deployment only.
