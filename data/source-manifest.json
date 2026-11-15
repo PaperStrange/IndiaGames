@@ -393,9 +393,9 @@
     },
     {
       "lane": "notebook",
-      "name": "Tom’s Notebook · Borrowed Words",
+      "name": "Tom’s Notebook · ink redesign",
       "branch": "toms_notebook",
-      "reviewed_head": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+      "reviewed_head": "b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3",
       "runtime_scope": [
         "game"
       ],
@@ -404,20 +404,20 @@
       "qa_status": "source_bound_three_engine_verification_passed",
       "planning_document": "docs/games/toms-notebook/TODO.md",
       "latest_research_readme": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/competitor-plays-2026-11-14/README.md",
-      "milestone_status_label": "Game engineering verified; human qualification pending",
-      "milestone_summary": "Authored three-exchange, two-ending game verified in three languages and browser engines. Original product and 35 MC cards retain their status.",
+      "milestone_status_label": "Ink source review complete; new market studies planned",
+      "milestone_summary": "Preserve original freehand writing, erasure, fading and recoverable marks. Seven new market sessions, three comparative experiments and a selected redesign remain future work. Verified 0.1.0 stays available as the comparison baseline.",
       "human_participant_rows": 0,
-      "human_staffing": "Six additional fresh solo players proposed; accepted handoff/results, reviewers, devices and appointments pending.",
+      "human_staffing": "Six additional fresh solo players remain proposed. Redesign requires a fitting reviewed protocol and new exact-build evidence; 0.1.0 draft criteria are not automatically transferable.",
       "official_release": false,
       "implementation_started": true,
       "implementation_status": "multilingual_engineering_verified_human_qualification_pending",
       "candidate_status": "not_staged_protocol_review_required",
       "qa_scope": "54 authored browser cases / 2,166 assertions across three engines; 26 independent cases / 147 assertions; 16 unit tests including 192 complete semantic paths and six exporter tests. All language text is draft; physical devices and fluent/human review remain unverified.",
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md",
-      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md",
+      "current_readiness_document": "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/README.md",
       "research_adjudication_summary": "Six agent-operated public-game observations with critic comparisons and bounded endpoints; one Seedship mission completed, other games partial. WBWWB success followed disclosed pixel targeting assistance. No human or six-complete-game claim.",
       "technical_readiness_label": "Three-engine technical pass",
-      "readiness_build_label": "Development only · no candidate",
+      "readiness_build_label": "0.1.0 baseline · redesign not built",
       "development_version": "0.1.0",
       "product_version_preserved": "0.4.0-alpha.0",
       "release_policy_review": {
@@ -456,7 +456,11 @@
         "source_commit": "2f269e2b87539f37d781995c9fcb0f70c3788f36",
         "conclusion": "success",
         "scope": "CI log reports matching build inventory. Artifact download returned 403; no downloaded artifact byte-verification claim."
-      }
+      },
+      "development_status_label": "Baseline 0.1.0",
+      "development_preview_label": "Play 0.1.0 baseline ↗",
+      "current_design_plan": "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/README.md",
+      "current_design_status": "source_review_complete_market_sessions_not_started"
     }
   ],
   "research": {
@@ -692,11 +696,11 @@
     "rebuilt_in_this_review": false,
     "retested_in_this_review": false
   },
-  "plan_date_utc": "2026-11-14",
+  "plan_date_utc": "2026-11-15",
   "evidence_intake_date_utc": "2026-11-04",
   "publication_branch": "main",
   "historical_review_commit": "e0a3b13bcc8eb212a0f9b61a0f2d909a34fadaee",
-  "dashboard_date_utc": "2026-11-14",
+  "dashboard_date_utc": "2026-11-15",
   "historical_coordination_branch": "gamejam-next-iteration-2026-10-20",
   "historical_coordination_base": "0b35e3fb23bef222f3f3cae72d2b78f6ab72d18b",
   "historical_review_methods": [
@@ -708,12 +712,12 @@
     "October21 read-only intake of new Small Hours and Bell text records; runtime diffs checked; no new gameplay or human tests"
   ],
   "milestone": {
-    "id": "four-game-preparation-2026-11-14",
-    "title": "Four-game engineering complete; human qualification next",
-    "status": "four_game_engineering_complete_human_qualification_pending",
+    "id": "notebook-ink-redesign-2026-11-15",
+    "title": "Notebook ink review and research plan; development baseline preserved",
+    "status": "ink_review_prepared_market_sessions_not_started",
     "plan_settled": true,
-    "document": "docs/four-game-release-2026-11-14/README.md",
-    "summary": "Notebook research, authored game, reproducible export, three-engine verification, draft protocol preparation, readable handoff and actual Pages publication are complete. The board preserves 84 earlier cards and adds ten Notebook cards:61 of 94 complete. Fluent review, declared physical devices, reviewed criteria and exact-build human studies remain pending.",
+    "document": "docs/notebook-ink-redesign-2026-11-15/README.md",
+    "summary": "Source review retains the original ink interaction. Seven new browser-market sessions are planned before comparing three mechanically different experiments. No redesign, new gameplay records or human qualification are claimed; existing game engineering evidence keeps its scope and date.",
     "human_staffing": "Accepted handoff/results, fluent reviewers, actual device configurations and session appointments remain pending.",
     "allowance_visibility": "unavailable",
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
@@ -727,7 +731,7 @@
     "expected_url_http_status": 200,
     "live_deployment_verified": true,
     "observed_page": "Verified four-game dashboard and Notebook 0.1.0 development preview; 94 tasks / 60 done at observation. Progress-only follow-up records TN-08 completion.",
-    "required_action": "Retain the exact PR19 publication proof; verify the progress-only follow-up after its merge and record that new immutable main commit in its PR.",
+    "required_action": "Review and publish this dashboard change, then verify actual Pages bytes against the merged commit. Prior PR19/20 evidence does not verify this update.",
     "branch_protection_enforcement_verified": false,
     "pages_update_http_status": 403,
     "pages_update_error": "Resource not accessible by integration",
@@ -736,8 +740,8 @@
     "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290",
     "settings_change_attribution": "The repository owner confirmed manually switching Pages to main/root; the earlier integration PUT returned 403.",
     "verification_scope": "PR19 actual HTTPS and Chromium browser verification: 22 served files match 06e8fd3; desktop/phone dashboard and both Notebook endings passed, with TLS verification enabled. Automated evidence only.",
-    "current_iteration_deployment_verified": true,
-    "verification_stage": "development_preview_verified_progress_record_followup",
+    "current_iteration_deployment_verified": false,
+    "verification_stage": "ink_redesign_plan_pending_publication_verification",
     "postmerge_verification_record": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290",
     "historical_october_28_deployment": {
       "deployed_commit": "1dd23301fdd3046a0c7f5403bcd25957e2176562",
@@ -770,6 +774,12 @@
       "deployed_commit": "ec2be8169d008e1925648eb5f0534e7fa9d750bd",
       "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/16#issuecomment-6680324481",
       "verification_scope": "Previous PR #16 deployment: 11 served file/browser response hashes matched ec2be81, with strict TLS, desktop/narrow checks and all 84 tasks reachable."
+    },
+    "historical_pr20_deployment": {
+      "deployed_commit": "1085045b35e4f2214e4c7fb309842e5ac99a7835",
+      "verified_assets": 22,
+      "verification_document": "https://github.com/PaperStrange/IndiaGames/pull/20#issuecomment-6879729181",
+      "verification_scope": "November 14 actual Pages verification of the four-game dashboard, 94 tasks / 61 done and unchanged 0.1.0 game. Historical proof, not this redesign-plan deployment."
     }
   },
   "launch": {
@@ -782,7 +792,7 @@
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
     "readiness_document": "docs/four-game-release-2026-11-14/README.md",
-    "schedule_note": "November 14: add Notebook as a fourth game. The November 11 target has passed without a new multilingual candidate. Preserve November 16 individual go/defer and November 20 conditional launch; dates do not manufacture qualification.",
+    "schedule_note": "November 15: Notebook enters ink redesign research; the verified 0.1.0 stays a comparison baseline. Seven new market sessions have not started. November 16 remains individual go/defer; November 20 requires exact-build human, language and device qualification, with incomplete games deferred.",
     "timeline": [
       [
         "6 November",
@@ -796,8 +806,8 @@
       ],
       [
         "14–15 November",
-        "Fourth game + handoff",
-        "Build Notebook; assess actual results"
+        "Baseline + ink review",
+        "Notebook research plan; new playtests pending"
       ],
       [
         "16 November",
@@ -819,8 +829,8 @@
   },
   "historical_manifest_review_date_utc": "2026-10-27",
   "readiness": {
-    "date_utc": "2026-11-14",
-    "status": "four_game_engineering_complete_human_qualification_pending",
+    "date_utc": "2026-11-15",
+    "status": "baseline_engineering_retained_notebook_redesign_research_pending",
     "document": "docs/four-game-release-2026-11-14/README.md",
     "issues_document": "docs/iteration-2026-11-06/README.md#issue-dispositions",
     "shared_blockers": [
@@ -961,7 +971,7 @@
         "publication_evidence": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290"
       }
     ],
-    "delivery_note": "Four-game dashboard and Notebook development are published and verified. Human qualification remains pending.",
+    "delivery_note": "Notebook: playable 0.1.0 baseline; ink research planned.",
     "status_checked_at": "2026-11-14T09:46:45.289050+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",
@@ -970,7 +980,7 @@
       "human_game_release_gate_waived": false,
       "standing_policy_changed": false
     },
-    "planning_document": "docs/four-game-release-2026-11-14/README.md",
+    "planning_document": "docs/notebook-ink-redesign-2026-11-15/README.md",
     "locale_device_policy_draft": {
       "pr": 17,
       "url": "https://github.com/PaperStrange/IndiaGames/pull/17",
@@ -994,7 +1004,7 @@
         "adopted": false
       }
     },
-    "status_check_scope": "November 14 source/evidence reconciliation and administrator API readback; not human qualification or a new Pages deployment check."
+    "status_check_scope": "November 15 Notebook planning update; dated administrator and technical evidence remain historical. No new human qualification or deployment check is implied."
   },
   "governance": {
     "issue": "https://github.com/PaperStrange/IndiaGames/issues/2",
@@ -1034,7 +1044,7 @@
     "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
   },
   "release_preparation": {
-    "status": "four_game_engineering_complete_human_qualification_pending",
+    "status": "baseline_engineering_retained_notebook_redesign_research_pending",
     "plan_settled": true,
     "scope_confirmed": true,
     "target_locales": [
@@ -1110,9 +1120,9 @@
           "ja": "Draft · technical pass",
           "zh-Hans": "Draft · technical pass"
         },
-        "checks_label": "54 cases · 3 engines",
+        "checks_label": "0.1.0 baseline · 3 engines",
         "evidence_url": "https://github.com/PaperStrange/IndiaGames/blob/9330f88fd9960ce30f9de1490ccf4870e10cac1e/docs/gamejam/notebook-game-2026-11-14/README.md",
-        "human_status": "Protocol, fluent/physical review pending",
+        "human_status": "Baseline only; redesign and human qualification pending",
         "source_commit": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
         "build_inventory_sha256": "b91bc1f841ac6e9910a8be0ca8c6663e0253d7d41c0aab4a09088e3f7bd2dc9a"
       }
@@ -1200,5 +1210,47 @@
       "Explicit commit/continue without artificial delays."
     ],
     "criticism_scope": "Each record separates actions, critic comparisons and player/design/art/accessibility/operator interpretation; observations motivate hypotheses, not measured demand or fun."
+  },
+  "historical_four_game_milestone": {
+    "id": "four-game-preparation-2026-11-14",
+    "title": "Four-game engineering complete; human qualification next",
+    "status": "four_game_engineering_complete_human_qualification_pending",
+    "plan_settled": true,
+    "document": "docs/four-game-release-2026-11-14/README.md",
+    "summary": "Notebook research, authored game, reproducible export, three-engine verification, draft protocol preparation, readable handoff and actual Pages publication are complete. The board preserves 84 earlier cards and adds ten Notebook cards:61 of 94 complete. Fluent review, declared physical devices, reviewed criteria and exact-build human studies remain pending.",
+    "human_staffing": "Accepted handoff/results, fluent reviewers, actual device configurations and session appointments remain pending.",
+    "allowance_visibility": "unavailable",
+    "stop_rule": "If the user reports allowance below 5%, stop new work at a safe boundary, save completed work, unfinished checks and exact restart steps, then wait."
+  },
+  "notebook_redesign": {
+    "date_utc": "2026-11-15",
+    "status": "source_review_complete_market_sessions_not_started",
+    "source_review_url": "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/README.md",
+    "market_plan_url": "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/MARKET-PLAN.md",
+    "observation_template_url": "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/OBSERVATION-TEMPLATE.md",
+    "decision_matrix_url": "https://github.com/PaperStrange/IndiaGames/blob/b395ca7a4c332c43a48e47ff9cb61b0f10ce45c3/docs/gamejam/ink-redesign-2026-11-15/DECISION-MATRIX.md",
+    "original_product_source_commit": "9330f88fd9960ce30f9de1490ccf4870e10cac1e",
+    "baseline_game_version": "0.1.0",
+    "proposed_mechanism_families": 8,
+    "planned_market_titles": 7,
+    "completed_new_market_sessions": 0,
+    "planned_comparative_experiments": 3,
+    "implemented_comparative_experiments": 0,
+    "selected_redesign": null,
+    "planned_titles": [
+      "Line Rider",
+      "Sandspiel",
+      "Townscaper",
+      "shapez",
+      "Universal Paperclips",
+      "A Dance of Fire and Ice",
+      "Draw a Stickman"
+    ],
+    "boundaries": [
+      "The November 14 six narrative-game observations remain historical; they are not the seven new sessions.",
+      "Source inspection confirms ink behavior; it does not establish enjoyment or demand.",
+      "The 0.1.0 authored-choice study proposal must be reconsidered for any redesigned core.",
+      "All released games require English, Japanese and Simplified Chinese plus actual declared device and human approval evidence."
+    ]
   }
 }

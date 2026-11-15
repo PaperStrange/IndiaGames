@@ -9,11 +9,13 @@ The **Overview** combines real game images, playtest readiness and the November 
 | **Small Hours** · Memorable Moments | Two people make a brief shared activity their own. | Three-language development export verified; frozen study baseline retained | Six pairs |
 | **Vivid** · formerly Keeper’s Frame | Two stories express meaning through different actions. | 0.2.0 multilingual development verified; frozen 0.1.4 retained | Six people per story, in separate cohorts |
 | **The Thirteenth Bell** | Understanding a repeated event enables a meaningful intervention. | 0.2.0 multilingual development verified; frozen 0.1.0 retained | Six people, balanced comparison order |
-| **Tom’s Notebook · Borrowed Words** | An answering diary changes its account; preserve and challenge it with your own words. | [0.1.0 development preview](https://paperstrange.github.io/IndiaGames/development/toms-notebook/0.1.0/), three-language engineering verified; original product 0.4.0-alpha.0 retained | Six additional fresh solo players; protocol adoption pending |
+| **Tom’s Notebook · ink redesign** | Preserve original ink and discover gameplay through the player’s own marks; research planned. | [0.1.0 comparison baseline](https://paperstrange.github.io/IndiaGames/development/toms-notebook/0.1.0/) retained; redesign not built | Revised core needs fitting study criteria and new exact-build evidence |
 
 [Per-game checklists, recording templates and launch plans](docs/launch/2026-11-20/README.md#game-packets) include exact-artifact setup. GitHub source links open repository files; they are not browser play buttons. Repair of the older candidate Pages URL is paused at the owner’s request.
 
-[Four-game engineering is complete](docs/four-game-release-2026-11-14/README.md), extending the [November 6 milestone](docs/multilingual-engineering-2026-11-06/README.md). The board preserves all 84 earlier cards and adds ten Notebook cards: **61 of 94 complete**. Notebook’s six competitor observations, authored chapter, exact export and three-engine checks have pinned evidence. Its publication card is complete after [actual Pages verification](https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290); the progress-only follow-up receives its own deployment check. All Notebook language text remains draft; fluent review and physical-device qualification remain pending across the programme. [Your four-game result handoff](docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md) covers original sessions, accepted reviewers, actual hardware and protocol decisions. [Draft PR #17](https://github.com/PaperStrange/IndiaGames/pull/17) is not adopted policy. Each November 20 release requires all three languages; incomplete games are deferred. Original human cohorts and independent release approval remain mandatory.
+The [November 14 engineering baseline](docs/four-game-release-2026-11-14/README.md) completed 61 of 94 cards. The [November 15 ink review and plan](docs/notebook-ink-redesign-2026-11-15/README.md) adds four separate tasks: **62 of 98 cards are now complete**. TN-11 records the completed review and planning package; seven new market journeys and three conditional experiments remain ahead. The original 84 task contracts remain unchanged; TN-01–08 retain their completed evidence, including [verified 0.1.0 publication](https://github.com/PaperStrange/IndiaGames/pull/20#issuecomment-6879729181).
+
+[Your four-game result handoff](docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md) covers original sessions, reviewers, actual hardware and protocol decisions. Fluent review and physical-device qualification remain pending; the old phrase-choice protocol does not automatically qualify an ink redesign. [Draft PR #17](https://github.com/PaperStrange/IndiaGames/pull/17) is not adopted policy. Each November 20 release requires all three languages and independent human approval; incomplete games are deferred.
 
 ## November 20 target
 
@@ -24,6 +26,9 @@ The **Overview** combines real game images, playtest readiness and the November 
 Actual observations, physical-device checks and independent approval determine which games can ship. The [full calendar](docs/launch/2026-11-20/README.md) preserves the required cohorts and decision criteria.
 
 ## Work and evidence
+
+[Notebook ink review and next research milestone](docs/notebook-ink-redesign-2026-11-15/README.md): source review complete; seven new market sessions planned, three experiments conditional, no redesign selected. Earlier technical passes and six narrative-game studies remain baseline evidence.
+
 
 - [Requests, completed work and remaining evidence](docs/hub/requirements-and-evidence.md)
 - [Small Hours tasks](docs/games/small-hours/TODO.md) · [Vivid tasks](docs/games/keepers-frame/TODO.md) · [Bell tasks](docs/games/thirteenth-bell/TODO.md) · [Notebook tasks](docs/games/toms-notebook/TODO.md)

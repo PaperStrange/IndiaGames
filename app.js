@@ -101,7 +101,7 @@ function renderProjects() {
     const body = node('div', 'project-body');
     const kicker = node('p', 'project-kicker');
     const localized = source.implementation_status === 'multilingual_engineering_verified_human_qualification_pending';
-    const buildLabel = source.development_version ? 'Development ' + source.development_version : localized ? 'Language development' : (source.candidate_version ? 'Candidate ' + source.candidate_version : 'Baseline prepared');
+    const buildLabel = source.development_status_label || (source.development_version ? 'Development ' + source.development_version : localized ? 'Language development' : (source.candidate_version ? 'Candidate ' + source.candidate_version : 'Baseline prepared'));
     kicker.append(node('span', '', '0' + (index + 1)), node('span', '', buildLabel));
     const next = node('p', 'project-next');
     next.append(node('strong', '', 'Next: '), document.createTextNode(display.next_action));
@@ -112,8 +112,8 @@ function renderProjects() {
     code.setAttribute('aria-label', `View source for ${LANE_NAMES[lane]} on GitHub`);
     links.append(setup, code);
     if (source.development_preview_path) {
-      const play = link('Play development ↗', './' + source.development_preview_path);
-      play.setAttribute('aria-label', `${LANE_NAMES[lane]}: play development preview, not an official release`);
+      const play = link(source.development_preview_label || 'Play development ↗', './' + source.development_preview_path);
+      play.setAttribute('aria-label', `${LANE_NAMES[lane]}: ${source.development_preview_label || 'Play development'}, not an official release`);
       links.prepend(play);
     }
     if (source.current_readiness_document) links.append(link(localized ? 'Development notes ↗' : 'Readiness notes ↗', source.current_readiness_document));
