@@ -10,6 +10,8 @@ A private interactive notebook with pressure-aware ink, layered vellum, physical
 
 English, Japanese and Simplified Chinese are included; fluent review, actual device qualification and independent human release approval remain pending. This game does not complete the notebook product’s broader customer, provider, storage or physical-edition requirements.
 
+**Next iteration — November 15:** the owner’s revised direction preserves the original product’s freehand ink and explores richer gameplay beyond supplied phrases. The [ink source review and research plan](docs/gamejam/ink-redesign-2026-11-15/README.md) compares eight possible mechanisms and schedules seven new market journeys. Those sessions and the redesigned experiments are not yet started; 0.1.0 remains the unchanged comparison preview.
+
 - [Run, build and export the game](game/README.md)
 - [Story, player journey and design hypotheses](docs/gamejam/notebook-game-2026-11-14/story.md)
 - [Six competitor gameplay records and design decisions](docs/gamejam/competitor-plays-2026-11-14/README.md)

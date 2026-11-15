@@ -1,5 +1,7 @@
 # Borrowed Words · Notebook game 0.1.0
 
+**Historical baseline for the next iteration:** the [November 15 ink redesign review and plan](../ink-redesign-2026-11-15/README.md) supersedes authored phrase selection as the future design direction. It preserves the original product’s direct ink interaction and opens several gameplay alternatives. No redesigned build or new market session has been completed; the 0.1.0 implementation and verification below remain unchanged.
+
 The fourth game is implemented as a separate, static authored diary adventure in **English, Japanese and Simplified Chinese**. Mark an authored phrase, send it, compare the notebook's reinterpretation with your retained original, and decide which account leads. Three exchanges reach two endings with eight callbacks to earlier decisions. This is a **development preview**, not a staged candidate or official release.
 
 The existing Enchanted Notebook product remains **0.4.0-alpha.0**. Its private application, backend and 35 MC acceptance cards are unchanged. No account, live AI, camera, OCR or private service is required by the game.
