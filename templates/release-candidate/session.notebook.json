@@ -1,0 +1,18 @@
+{
+  "id": null,
+  "participant_count": null,
+  "participant_ids": [],
+  "prior_exposure": null,
+  "prior_project_cohort_participation": null,
+  "method": null,
+  "observer_is_human": false,
+  "observer_id": null,
+  "build_sha256": null,
+  "started_at": null,
+  "completed_at": null,
+  "observation_notes": null,
+  "metrics": {
+    "completed_unassisted": null,
+    "explained_edit_to_reply_or_ending_consequence": null
+  }
+}

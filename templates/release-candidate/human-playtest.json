@@ -16,6 +16,25 @@
     "reviewer_is_human": false,
     "reviewed_manual_evidence": false,
     "reviewer_id": null,
-    "reviewed_at": null
+    "reviewed_at": null,
+    "reviewed_locale_device_evidence": false,
+    "reviewed_locale_comprehension_evidence": false,
+    "played_exact_build": false
+  },
+  "locale_device_evidence": {
+    "schema_version": 1,
+    "game": null,
+    "version": null,
+    "build_sha256": null,
+    "locale_catalog_sha256": null,
+    "language_reviews": [],
+    "device_claims": [],
+    "physical_checks": [],
+    "comprehension": {
+      "protocol_id": null,
+      "protocol_sha256": null,
+      "registered_at": null,
+      "records": []
+    }
   }
 }

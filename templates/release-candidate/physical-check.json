@@ -1,0 +1,28 @@
+{
+  "unit": null,
+  "locale": null,
+  "build_sha256": null,
+  "locale_catalog_sha256": null,
+  "evidence_reference": null,
+  "device": {
+    "id": null,
+    "device_family": null,
+    "model": null,
+    "os": null,
+    "os_version": null,
+    "browser": null,
+    "browser_version": null,
+    "engine": null,
+    "inputs": []
+  },
+  "tester_id": null,
+  "tester_is_human": false,
+  "method": null,
+  "is_physical": false,
+  "started_at": null,
+  "completed_at": null,
+  "checks": {},
+  "critical_bugs_open": null,
+  "observation_notes": null,
+  "outcome": null
+}

@@ -1,0 +1,46 @@
+# Borrowed Words — proposed Notebook product protocol v1
+
+**Draft for human research/policy review, 14 November 2026. Not adopted, preregistered or run.** The owner authorized preparation of six additional fresh solo players and this proposed criterion. Agent implementation or a passing synthetic test does not adopt the protocol, establish a participant, or approve release. Complete the [decision worksheet](NOTEBOOK-DECISION.md) before qualifying sessions. The independent locale-comprehension protocol remains unadopted.
+
+## Product and claim
+
+Technical game/unit: `toms-notebook`; working title: **Borrowed Words**; proposed first game version: `0.1.0`. This authored psychological diary is distinct from the existing private-product version. It ships one chapter, three exchanges and two endings. A player marks/selects a phrase, explicitly submits an edit intent, reads a changed reply, may recover/compare originals and correct/accept, and reaches a consequence-bearing ending. There is no live AI, account, backend, camera or OCR in this game export.
+
+The provisional claim is modest: players can finish the authored interaction and explain a concrete causal consequence of their own edit. It does not claim a desired emotion, therapeutic benefit, general writing intelligence, population retention or statistically representative conversion. Suspense, distrust and stopping may be meaningful outcomes; no participant is expected to praise the story.
+
+## Cohort and registration
+
+- Recruit **six additional distinct fresh solo players**, separate from the original three-game baseline of six Small Hours pairs, six Iona players, six different Mara players and six Bell players (30 people). Keep those counts and thresholds unchanged. The proposed four-game baseline is 36 people before optional studies or separately reviewed locale sampling.
+- Fresh means no prior play, walkthrough, implementation, authored-content review or observed run of this Notebook game. Familiarity with the private notebook product or with another game genre is not automatically prior exposure; disclose it to the research lead. A member of a prior project release cohort is not one of these six additional players. The coordinator checks the private cross-game roster and prevents later reuse that would erase the additional cohort.
+- Before the first observation, a responsible human adopts the protocol and registers six ordered session IDs, exact frozen build/catalog hashes, game version, language/instruction language, physical configuration, actual observer, eligibility/exclusions and private evidence locator. Register the true timestamp; never backdate or turn a prior informal run into a preregistered one.
+- Use the first six assigned attempts in order. Retain abandonment, failure, help, interruption and missing responses. Do not replace a disappointing result. Any exclusion or changed design needs a separately reviewed new protocol before another run; preserve the old attempts. Screening happens before play.
+- Product-study language assignments must be explicit. Six mixed-language observations do not automatically satisfy all three language-comprehension claims. Reviewers decide that supplemental protocol separately; do not silently split six into two per language or infer a new participant quota.
+
+## Session and neutral prompts
+
+1. Record setup, consent under the coordinator's real process, first-exposure screening, build identity and actual start. Give the same non-spoiling content notice about unsettling psychological fiction. Participation, pausing and stopping are voluntary. No jump scare or time pressure is part of the intended game.
+2. Say: **“Please play this short diary story as you normally would. You may stop whenever you want.”** Let the player use built-in controls, source comparison, reset/recovery, skip-reveal and accessibility options. Do not identify a target phrase, edit intent, preferred interpretation or ending. Never require typed private information.
+3. Observe the entry → three exchanges → actual ending path. Record each action, visible consequence, hesitation, assistance and final endpoint. A screen recorder is optional evidence under real consent, not a substitute for the human observer. If help is necessary, record its exact wording/time and retain the attempt.
+4. After the player reaches an ending or stops, ask exactly: **“Choose one action you took and describe what, if anything, changed afterward.”** Record the original-language response verbatim. Do not supply the action, causal connection or answer. A separate translation may accompany the original. Ending interpretation and emotional response are not graded.
+5. Only after those canonical observations, ask the optional diagnostics below. Record end time even when the story was not completed. The observer and later independent reviewer score the two metrics against actual actions and replies, retaining disagreements and uncertainty.
+
+| Metric | True only when observed | False / uncertain behavior |
+|---|---|---|
+| `completed_unassisted` | The player reaches an actual ending after the three exchanges using the shipped UI, without facilitator instruction that enables progress. Built-in help, accessibility controls and source recovery are allowed. | Stops early, encounters a completion-blocking defect, needs a target/intent/next-step solution from another person, or completion is unobserved. |
+| `explained_edit_to_reply_or_ending_consequence` | The player's own account correctly links one edit/intent they actually chose to a visible changed reply or ending consequence in that run. The observer retains the relevant original, edit, output and quotation for review. | Gives only a feeling or plot summary, describes an unchosen action, reverses the causal relation, repeats a supplied explanation, or has no observable answer. |
+
+Pass the product criterion only when **at least four of the same six people satisfy both metrics**. Four completions and four explanations from different people are not a joint pass. Missing/uncertain answers never become true; record the reason in the notes. The two Boolean metrics are the exact validator keys; exploratory findings belong in notes and the human form, not extra scored keys.
+
+Optional diagnostics: “What would you do next, if anything?”, “How did you decide what to trust?”, and “Who or what did you think wrote the replies?” After recording answers, invite an attempt to locate an original entry if useful and document the prompt. Record spontaneous replay before this invitation separately from prompted exploration. Voluntary replay, trust, source recovery and authored-system expectations have no invented numeric pass threshold. Do not count repeated exploration as another fresh participant.
+
+## Evidence, coverage and decision
+
+Use the [human-readable session form](NOTEBOOK-HUMAN-SESSION.md). The implementer can convert it into [the blank Notebook report](../../../templates/release-candidate/human-playtest.notebook.json) and [session helper](../../../templates/release-candidate/session.notebook.json); the human does not have to author JSON. Unknowns remain blank/null until verified. Readiness additionally requires zero human-classified open critical bugs, genuine manual observations, exact-build identities and independent human approval after every observation.
+
+Notebook-only eligibility fields are `prior_exposure: "none"` and literal `prior_project_cohort_participation: false`. They assert screening of this Notebook game and the other project release cohorts; they are not defaults. The machine checks consistency, while humans verify the private roster and original evidence. Existing games' session schemas are unchanged.
+
+Every shipped unit needs fluent in-game English, Japanese and Simplified Chinese review, and actual desktop-web, phone and tablet evidence for all declared configurations × locales. Notebook adds the physical check `diary_navigation_and_choices`: reach phrase controls, explicitly submit, read/compare original and altered entries, recover/correct/accept, reach an ending and use applicable resume/reset/delete/export controls on that hardware. General input/focus, text, resize and lifecycle checks still apply. A view-sized browser test is not physical coverage.
+
+The final approver must be independent of product participants/observers and supplemental editors/testers/observers/participants, review the private originals and play the exact build. Human code review is separate. Any changed build byte needs a new version/identity and appropriate requalification; old approvals are not copied. Preserve the immutable master packets and selective promotion route.
+
+PR17 remains draft/unmerged. `REVIEWED_LOCALE_PROTOCOLS` stays empty; this proposed product protocol does not register a comprehension callback or unblock official readiness. Adopt the reviewed policy on trusted main/master and adopt an actual language-comprehension protocol separately before qualifying/promotion. As of November14, the earlier November11 freeze is not a new Notebook artifact. Use the November16 game-by-game go/defer decision and November20 release target honestly; an incomplete game is deferred rather than approved by the calendar.
