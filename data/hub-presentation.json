@@ -6,7 +6,7 @@
     {
       "lane": "memorable",
       "promise": "Make a small shared memory, together.",
-      "next_action": "Review privacy, shared authorship, CJK input and keepsakes.",
+      "next_action": "Study shared creation, surprise and a reason to keep the result.",
       "image": {
         "src": "assets/hub/small-hours-opening.png",
         "alt": "Small Hours opening screen with a moonlit window, two cups and a shared postcard.",
@@ -32,7 +32,7 @@
     {
       "lane": "vivid",
       "promise": "Two small worlds. Two ways to care.",
-      "next_action": "Review both stories; qualify saves, touch and flat/3D play.",
+      "next_action": "Study action-driven stories before revising the character loop.",
       "image": {
         "src": "assets/hub/vivid-iona-opening.png",
         "alt": "Vivid opening scene with harbour keeper Iona beside a lamp inside a wooden frame.",
@@ -51,14 +51,14 @@
       },
       "questions": {
         "why_play": "Caring for a small world may make an authored consequence feel personal.",
-        "differentiation": "Different actions give each story its own structure and expression.",
-        "unique_experience": "A remembered promise and aligned sketches create two distinct story experiences."
+        "differentiation": "Test whether each character calls for a meaningfully different action and consequence.",
+        "unique_experience": "A remembered promise and aligned sketches are candidate hooks; owner-reported feedback says the character-reading loop still feels flat."
       }
     },
     {
       "lane": "bell",
       "promise": "Learn the town. Change an outcome.",
-      "next_action": "Review clue fairness, causal understanding and physical map controls.",
+      "next_action": "Study readable goals, learning from failure and consequential planning.",
       "image": {
         "src": "assets/hub/bell-town-map.webp",
         "alt": "Illustrated town map with six districts surrounding a clock marked Dawn, Noon, Dusk and Midnight.",
@@ -84,7 +84,7 @@
     {
       "lane": "notebook",
       "promise": "Make a mark. Discover what the ink can do.",
-      "next_action": "Observe seven games; compare ink mechanics.",
+      "next_action": "Finish remaining comparisons; resolve partial scopes.",
       "image": {
         "src": "assets/hub/toms-notebook-opening.jpg",
         "alt": "Borrowed Words opening exchange: a notebook asks which words the Keeper will send to the Correspondent.",

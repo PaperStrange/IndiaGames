@@ -301,12 +301,15 @@ async function checkJourney(base, tasks, manifest, presentation, releases) {
       await noOverflow(page, id + ' overview');
       assert.equal(await page.locator('#launch-readiness').isVisible(), true);
       assert.equal(await page.locator('#risk-date').getAttribute('datetime'), tasks.snapshot_date_utc);
+      assert.equal(await page.locator('#plan-date').getAttribute('datetime'), tasks.snapshot_date_utc);
       const daysFromSnapshot = target => String(Math.round((Date.parse(target) - Date.parse(tasks.snapshot_date_utc)) / 86400000));
       const freezeDays = Number(daysFromSnapshot(manifest.launch.candidate_freeze_date_utc));
       assert.equal(await page.locator('#days-to-freeze').innerText(), freezeDays < 0 ? `${Math.abs(freezeDays)} days past target` : String(freezeDays));
-      assert.equal(await page.locator('#days-to-launch').innerText(), daysFromSnapshot(manifest.launch.target_date_utc));
+      const launchInterval = Number(daysFromSnapshot(manifest.launch.target_date_utc));
+      assert.equal(await page.locator('#days-to-launch').innerText(), launchInterval < 0 ? `${Math.abs(launchInterval)} days past target` : String(launchInterval));
       assert.equal(await page.locator('#human-sessions-filed').innerText(), '0');
-      assert.match(await page.locator('#launch-readiness').innerText(), /release qualification remains unverified/i);
+      assert.match(await page.locator('#launch-readiness').innerText(), /November 20 passed with no official release recorded/i);
+      assert.match(await page.locator('#launch-readiness').innerText(), /independent human approval remain required/i);
       assert.equal(await page.locator('.owner-actions li').count(), 3);
       const readiness = page.locator('#readiness-rows tr');
       assert.equal(await readiness.count(), laneIds.length);

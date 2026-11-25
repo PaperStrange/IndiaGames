@@ -26,7 +26,7 @@ def build():
             if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', launch.get(field, '')):
                 raise ValueError(f'Invalid launch {field}')
             date.fromisoformat(launch[field])
-        if not launch['candidate_freeze_date_utc'] <= launch['decision_date_utc'] <= launch['target_date_utc'] or launch.get('status') != 'planned_human_gates_pending':
+        if not launch['candidate_freeze_date_utc'] <= launch['decision_date_utc'] <= launch['target_date_utc'] or launch.get('status') not in {'planned_human_gates_pending', 'target_passed_human_gates_pending'}:
             raise ValueError('Invalid launch decision or status')
         document = launch.get('plan_document', '')
         if document != f"docs/launch/{launch['target_date_utc']}/README.md" or not (ROOT / document).is_file():
