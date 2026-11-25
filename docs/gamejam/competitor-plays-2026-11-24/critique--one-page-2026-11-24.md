@@ -24,7 +24,7 @@ Ten slots [OPEN]: Gartic's telephone loop (needs humans), Drawasaurus drawing tu
 
 ## What it means for the own games
 
-No competitor in the fifteen makes a keepsake the pair owns. Small Hours sits between the two deeps — a shared story that ends in a shared picture — and the six-pair human gate is still the only way to test whether two real people feel the keepsake is worth keeping. The high-score family adds the missing retention shape: none of the own games has a reason to return tomorrow.
+The keepsake's differentiator is unproven: Gartic's shareable album is the nearest rival artifact, and no pair has yet tested whether the keepsake feels worth keeping. Small Hours sits between the two deeps — a shared story that ends in a shared picture — and the six-pair human gate is still the only way to test whether two real people feel the keepsake is worth keeping. The high-score family adds the missing retention shape: none of the own games has a reason to return tomorrow.
 
 ## Evidence
 

@@ -33,7 +33,7 @@
 
 - [x] Contains only agent observations; no personal text.
 - [x] Outcomes reflect this attempt; assistance and failures remain visible (one operator, two blocked alternatives).
-- [ ] Saved into the private study folder — this record lives in the play dir, not Git, until Sakura confirms it (confirmation gate).
+- [x] Filed to the remote as PR #34 (branch competitor-plays-2026-11-24 → main), pending merge.
 
 ## Evidence gallery
 
