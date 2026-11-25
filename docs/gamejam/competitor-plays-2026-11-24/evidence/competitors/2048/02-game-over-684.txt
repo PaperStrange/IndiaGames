@@ -1,0 +1,1 @@
+2048, Game Over [REAL] — "Game Over — 684 points scored in 93 moves. No powerups used!", final board all 16 cells filled, no adjacent equals, best tile 64 (row 2 col 3), Play Again + Undo (2 undos left). Source: pdf/98381617-a8d4-56cd-aca1-9b323be507b0/browser-page-20261125T023936.827833536Z-46.pdf p.1.
