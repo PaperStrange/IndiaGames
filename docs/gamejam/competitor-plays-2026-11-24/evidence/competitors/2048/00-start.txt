@@ -1,0 +1,1 @@
+2048, start [REAL] — SCORE 0 / BEST 0, two 2-tiles (row 2 col 4, row 4 col 3), play2048.co. Source: pdf/98381617-a8d4-56cd-aca1-9b323be507b0/browser-page-20261125T023252.681198519Z-35.pdf p.1.

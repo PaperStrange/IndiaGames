@@ -1,0 +1,1 @@
+2048, mid-run [REAL] — SCORE 212 / BEST 212, 11 tiles, best tile 32 (bottom row 2-16-32-8). Source: pdf/98381617-a8d4-56cd-aca1-9b323be507b0/browser-page-20261125T023508.315872987Z-36.pdf p.1.

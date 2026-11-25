@@ -1,0 +1,1 @@
+EPIC 2 trailer attempt [REAL] — the trailer lightbox is white and empty ("Ad removed. Details" twice), the page dimmed behind, "WATCH TRAILER" button below. No video playing. The task's "Unable to play media" error text is NOT legible on this frame. Source: pdf/6cd34b44-d0b3-5f0d-b754-5949e2801a25/browser-page-20261125T025227.531985523Z-65.pdf p.1.
