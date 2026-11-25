@@ -167,7 +167,8 @@ function renderLaunchReadiness() {
   el('risk-date').textContent = shortDate(asOf, true);
   const freezeDays = days(manifest.launch.candidate_freeze_date_utc);
   el('days-to-freeze').textContent = freezeDays < 0 ? `${Math.abs(freezeDays)} days past target` : String(freezeDays);
-  el('days-to-launch').textContent = days(manifest.launch.target_date_utc);
+  const launchDays = days(manifest.launch.target_date_utc);
+  el('days-to-launch').textContent = launchDays < 0 ? `${Math.abs(launchDays)} days past target` : String(launchDays);
   el('human-sessions-filed').textContent = manifest.readiness.human_sessions_completed;
   el('launch-readiness').hidden = false;
 }
@@ -349,7 +350,7 @@ function renderBoardSummary() {
 function renderPlanningMetadata() {
   el('project-count').textContent = manifest.sources.length;
   el('task-count').textContent = snapshot.tasks.length;
-  const date = snapshot.plan_date_utc || snapshot.snapshot_date_utc;
+  const date = snapshot.snapshot_date_utc || snapshot.plan_date_utc;
   el('plan-date').dateTime = date;
   el('plan-date').textContent = shortDate(date, true);
   const perspectives = [...new Set(snapshot.tasks.map(task => task.perspective).filter(Boolean))].sort();

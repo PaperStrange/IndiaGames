@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "type": "versioned development snapshot; coding-agent assignments are explicit, human staffing is not implied",
-  "snapshot_date_utc": "2026-11-15",
+  "snapshot_date_utc": "2026-11-25",
   "plan_date_utc": "2026-11-15",
   "demo_qa_date_utc_by_lane": {
     "memorable": "2026-11-06",
@@ -60,7 +60,7 @@
       "qa_status": "source_bound_three_engine_verification_passed",
       "candidate_version": null,
       "candidate_status": "not_staged_protocol_review_required",
-      "milestone_status_label": "Ink source review complete; new market studies planned",
+      "milestone_status_label": "Ink review and partial market observations recorded",
       "pilot_packet": null,
       "human_playtest_packet": "https://github.com/PaperStrange/IndiaGames/blob/main/docs/four-game-release-2026-11-14/HUMAN-HANDOFF.md",
       "human_staffing": "Six additional fresh solo players remain proposed. Redesign requires a fitting reviewed protocol and new exact-build evidence; 0.1.0 draft criteria are not automatically transferable.",
@@ -71,8 +71,8 @@
   },
   "source_manifest": "source-manifest.json",
   "readiness": {
-    "date_utc": "2026-11-15",
-    "status": "baseline_engineering_retained_notebook_redesign_research_pending",
+    "date_utc": "2026-11-25",
+    "status": "target_passed_partial_research_recorded_human_qualification_pending",
     "document": "docs/four-game-release-2026-11-14/README.md",
     "issues_document": "docs/iteration-2026-11-06/README.md#issue-dispositions",
     "shared_blockers": [
@@ -83,7 +83,7 @@
         "owner_role": "Repository administrator",
         "title": "Activate and verify main/master protection and scoped counted approval",
         "evidence": "November 14 09:46:45 UTC API readback: main/master protected:false and rulesets empty. Administrator enablement and effective-rule readback remain open under issue #2.",
-        "milestone": "Before any official release; November 16 go/defer remains conditional",
+        "milestone": "Before any official release; November 16 decision target passed without a recorded decision",
         "closure_requires": [
           "Exact effective rules and rule IDs verified",
           "Current-head required checks and scoped counted approval demonstrated",
@@ -213,7 +213,7 @@
         "publication_evidence": "https://github.com/PaperStrange/IndiaGames/pull/19#issuecomment-6875593290"
       }
     ],
-    "delivery_note": "Notebook: playable 0.1.0 baseline; ink research planned.",
+    "delivery_note": "1/4 development previews; no official release.",
     "status_checked_at": "2026-11-14T09:46:45.289050+00:00",
     "dashboard_publication_authorization": {
       "date_utc": "2026-11-06",
@@ -246,49 +246,49 @@
         "adopted": false
       }
     },
-    "status_check_scope": "November 15 Notebook planning update; dated administrator and technical evidence remain historical. No new human qualification or deployment check is implied."
+    "status_check_scope": "November 25 source/evidence intake and agent research. Administrative checks retain November 14 dates; no refreshed branch-protection or human qualification claim."
   },
   "launch": {
     "target_date_utc": "2026-11-20",
     "decision_date_utc": "2026-11-16",
     "candidate_freeze_date_utc": "2026-11-11",
-    "status": "planned_human_gates_pending",
+    "status": "target_passed_human_gates_pending",
     "plan_document": "docs/launch/2026-11-20/README.md",
     "cleanup_document": "docs/iteration-2026-11-06/README.md",
     "staffing_status": "unbooked_recruitment_needs_more_time",
     "human_sessions_completed": 0,
     "readiness_document": "docs/four-game-release-2026-11-14/README.md",
-    "schedule_note": "November 15: Notebook enters ink redesign research; the verified 0.1.0 stays a comparison baseline. Seven new market sessions have not started. November 16 remains individual go/defer; November 20 requires exact-build human, language and device qualification, with incomplete games deferred.",
+    "schedule_note": "November 25: November 20 target has passed with no official release recorded. Agent competitor observations and newly filed evidence inform revision; no new target or completed go/defer meeting is inferred. All three languages, physical devices and independent human approval remain required.",
     "timeline": [
       [
         "6 November",
-        "Three language builds",
+        "Language builds",
         "Technical evidence retained"
       ],
       [
         "11 November",
         "Freeze target passed",
-        "No new multilingual candidate recorded"
+        "No new candidate"
       ],
       [
         "14–15 November",
-        "Baseline + ink review",
-        "Notebook research plan; new playtests pending"
+        "Notebook baseline + plan",
+        "Historical delivery"
       ],
       [
         "16 November",
-        "Go / defer",
-        "Decide each game from evidence"
-      ],
-      [
-        "17–19 November",
-        "Eligible fixes + review",
-        "Retest changed bytes"
+        "Decision target passed",
+        "No decision recorded"
       ],
       [
         "20 November",
-        "Conditional launch",
-        "Publish only approved games"
+        "Launch target passed",
+        "No official release"
+      ],
+      [
+        "25 November",
+        "Play and critique",
+        "Research before redesign"
       ]
     ],
     "planning_document": "docs/four-game-release-2026-11-14/README.md"
@@ -3081,7 +3081,7 @@
       "lane": "notebook",
       "perspective": "Research",
       "priority": "P1",
-      "status": "proposed",
+      "status": "active",
       "owner_role": "Research agents + independent synthesis reviewer",
       "title": "Play seven market games and record their attempted journeys",
       "deliverable": "Seven bounded observed sessions, contrary evidence and critic/creator comparisons across material, construction, creation, systems, rhythm and progression.",
@@ -3098,7 +3098,11 @@
       "completion_evidence": [],
       "focus": "Ink redesign / evidence before selection",
       "technical_implementation_authorized": false,
-      "plan_settled": true
+      "plan_settled": true,
+      "progress_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/main/docs/competitor-learning-2026-11-25/README.md"
+      ],
+      "progress_summary": "November 25: four of seven planned titles attempted; partial Sandspiel/ADOFAI scopes and three remaining titles keep this task incomplete."
     },
     {
       "id": "TN-13",
