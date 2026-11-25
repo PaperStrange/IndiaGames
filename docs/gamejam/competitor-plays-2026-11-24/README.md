@@ -16,8 +16,9 @@ All sessions are **agent sessions, not human sessions** — played by one assist
 4. **`records/coverage--2026-11-24.md`** — the sixteen-title table, the coverage check, what the coverage says.
 5. **The session records** — start with the two deeps (`session--counterfoil-agent-2026-11-24.md`, `session--co-op-puzzle-agent-2026-11-24.md`), then the completed plays (`session--the-missing-heir-agent-2026-11-24.md`, `session--2048-agent-2026-11-24.md`, `session--codenames-agent-2026-11-24.md`), then the rest.
 6. **The evidence** — `evidence/competitors/<game>/` holds numbered PNG + TXT pairs and `pdf/<task-uuid>/` raw captures. The photo that checks the sharpest claim: `evidence/competitors/jigsaw-together/03-solved-dialog.png` ("Solved! Nice work — 2 players finished this puzzle.") and `evidence/competitors/counterfoil/03-case-closed.png` ("CASE CLOSED … 4 min · 3 answers submitted · 2 hints used").
+7. **`application-plan/`** — four PRDs applying the findings to the own games (Notebook, Vivid, Small Hours, Bell), in the synthesis's sequence order, each hypothesis with a falsifiable gate and kill criterion. Read after the records. Preceded by the solo self-questioning pass in `notes/self-questioning--application-plan-2026-11-25.md`.
 
-## Contents (224 files)
+## Contents (230 files)
 
 - `README.md` (this file)
 - `critique--one-page-2026-11-24.md`
@@ -27,6 +28,8 @@ All sessions are **agent sessions, not human sessions** — played by one assist
   - `2048/` (3 PNG, 3 PDF) · `adofai/` (3, 3) · `agar-io/` (3, 3) · `codenames/` (3, 3) · `counterfoil/` (4, 4) · `draw-a-stickman/` (7, 15) · `drawasaurus/` (5, 5) · `drawize/` (5, 12) · `fireboy-and-watergirl/` (1, 2) · `gartic-phone/` (2, 2) · `jigsaw-together/` (4, 6) · `skribbl-io/` (4, 5) · `slither-io/` (1, 3) · `slope/` (3, 5) · `tetr-io/` (3, 4) · `the-missing-heir/` (4, 4)
 - `html/` — `review--scan-2026-11-24.html` (review page, 6 photos base64-embedded)
 - `notes/verify/` — per-session verification notes (15 files, one per session)
+- `application-plan/` — 5 files: `README.md` (order, filter, how to read) + 4 PRDs (`prd--notebook-`, `prd--vivid-`, `prd--small-hours-`, `prd--bell-2026-11-25.md`), one PRD per game, hypotheses with gates and kill criteria
+- `notes/self-questioning--application-plan-2026-11-25.md` — solo adversarial pass written before the plan
 
 ## What stays open (10 slots)
 
