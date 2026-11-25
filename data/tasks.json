@@ -3081,7 +3081,7 @@
       "lane": "notebook",
       "perspective": "Research",
       "priority": "P1",
-      "status": "proposed",
+      "status": "active",
       "owner_role": "Research agents + independent synthesis reviewer",
       "title": "Play seven market games and record their attempted journeys",
       "deliverable": "Seven bounded observed sessions, contrary evidence and critic/creator comparisons across material, construction, creation, systems, rhythm and progression.",
@@ -3098,7 +3098,11 @@
       "completion_evidence": [],
       "focus": "Ink redesign / evidence before selection",
       "technical_implementation_authorized": false,
-      "plan_settled": true
+      "plan_settled": true,
+      "progress_evidence": [
+        "https://github.com/PaperStrange/IndiaGames/blob/main/docs/competitor-learning-2026-11-25/README.md"
+      ],
+      "progress_summary": "November 25: four of seven planned titles attempted; partial Sandspiel/ADOFAI scopes and three remaining titles keep this task incomplete."
     },
     {
       "id": "TN-13",

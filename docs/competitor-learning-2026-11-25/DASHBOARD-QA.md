@@ -27,3 +27,5 @@ Independent review checks the final research claims and changed metadata against
 ## Final copy/data check
 
 After all six records and the final counts were filed, a targeted browser run at **02:40:12 UTC** passed. Desktop/narrow overview counts were **645/639 words**. The new research table opened correctly at both widths and at doubled narrow text without horizontal overflow. Snapshot/footer were November 25; the launch interval read five days past target. All seven served presentation/data files matched the final local bytes. No JavaScript errors occurred. This supplements the full integration run; it does not assert a public deployment.
+
+Final review found that TN-12 still said Proposed (defined as not started), and its source TODO repeated that stale status. A follow-up marks only TN-12 Active and links partial evidence; its acceptance criteria, completion evidence and Done credit remain unchanged. The original 84 task records remain byte-equivalent as data. This follow-up receives its own snapshot check and CI before publication.

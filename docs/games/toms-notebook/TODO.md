@@ -1,6 +1,6 @@
 # Tom’s Notebook — ink redesign and preserved baseline
 
-## Current direction · November 15
+## Current direction · updated November 25
 
 Keep the original product’s freehand writing, pressure-aware strokes, erasing, fading and recoverable originals. Build gameplay around consequences of the player’s marks. The existing phrase-selection game remains **0.1.0, a comparison baseline**; it is not the selected future design. The private product remains separate.
 
@@ -9,15 +9,15 @@ Keep the original product’s freehand writing, pressure-aware strokes, erasing,
 | Stage | Status | Cards / next result |
 |---|---|---|
 | Original ink review and research plan | Prepared; source review complete | TN-11: retain real product behavior and distinguish proposed systems |
-| Seven new market journeys | Not started | TN-12: observe complete attempted journeys and critique across roles |
+| Seven new market journeys | Active; 4/7 titles attempted, incomplete scopes | TN-12: observe complete attempted journeys and critique across roles |
 | Three different ink experiments | Conditional; none built | TN-13: select experiments from evidence across eight alternatives |
 | Core decision and revised study | Conditional; no favorite selected | TN-14: select/reject, scope the next milestone and review fitting human criteria |
 
 The eight families are material experimentation, construction, living-page ecology, graphic programming, performance, restoration, a learning companion, and an ink workshop/economy. These are alternatives to test, not a combined feature backlog. A persistent evolving page is allowed; one page per authored scene is not a constraint. Narrative and replaceable characters should support the chosen interaction.
 
-The new seven titles are Line Rider, Sandspiel, Townscaper, shapez, Universal Paperclips, A Dance of Fire and Ice and Draw a Stickman. None of these new sessions is complete. Keep their evidence distinct from TN-01’s six earlier narrative-game studies. The original local handwriting model targets English; do not assume Japanese or Chinese handwriting recognition, stylus ownership or recognition errors as game difficulty.
+The new seven titles are Line Rider, Sandspiel, Townscaper, shapez, Universal Paperclips, A Dance of Fire and Ice and Draw a Stickman. [November 25 records and synthesis](../../competitor-learning-2026-11-25/README.md) document Sandspiel, Townscaper, shapez and ADOFAI attempts. Line Rider, Universal Paperclips with next-day return, and Draw a Stickman remain; Sandspiel lacks a matched comparison and ADOFAI lacks tutorial/track/audio evidence. TN-12 is active, not complete. Keep their evidence distinct from TN-01’s six earlier narrative-game studies. The original local handwriting model targets English; do not assume Japanese or Chinese handwriting recognition, stylus ownership or recognition errors as game difficulty.
 
-November 16 remains the individual go/defer checkpoint and November 20 a conditional target. The redesigned edition requires its own exact-build verification, fitting reviewed human protocol, all three languages and actual declared desktop/phone/tablet evidence. The 0.1.0 draft consequence metric does not automatically qualify a changed core.
+The November 16 checkpoint and November 20 launch target have passed without an official release recorded. No replacement date is assigned. The redesigned edition requires its own exact-build verification, fitting reviewed human protocol, all three languages and actual declared desktop/phone/tablet evidence. The 0.1.0 draft consequence metric does not automatically qualify a changed core.
 
 ## Historical 0.1.0 baseline · November 14
 

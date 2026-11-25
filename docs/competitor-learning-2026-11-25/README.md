@@ -39,10 +39,10 @@ For our three reported problems:
 |---|---|
 | Six dated attempt records and contrasting public opinions, after independent evidence review | Complete remaining Notebook comparisons and reconcile partial scopes |
 | Latest Small Hours/Bell evidence commits reviewed; runtime unchanged | Six broken image embeds and stale filing prose in those source bundles, logged in the audit |
-| 62/98 historical task deliverables remain complete | TN-12 unfinished; 0/3 ink experiments; no selected redesigned core |
+| 62/98 historical task deliverables remain complete | TN-12 active and unfinished; 0/3 ink experiments; no selected redesigned core |
 | Notebook 0.1.0 development preview remains on main | Current development previews for the other three games |
 | November 20 recorded as a passed target | No official release or accepted qualification rows recorded; no replacement date invented |
 
-This batch overlaps **four of Notebook's seven planned titles**. Line Rider, Universal Paperclips (including its separate next-day return) and Draw a Stickman remain. Sandspiel's matched starting conditions and ADOFAI's audio scope also remain unresolved. Four attempted titles do not close the original research contract, and no full-game completion is claimed. Celeste Classic and Sort the Court are additional comparisons, not silent substitutions. The historical authored task list is preserved; this research does not turn TN-12 into Done.
+This batch overlaps **four of Notebook's seven planned titles**. Line Rider, Universal Paperclips (including its separate next-day return) and Draw a Stickman remain. Sandspiel's matched starting conditions and ADOFAI's audio scope also remain unresolved. Four attempted titles do not close the original research contract, and no full-game completion is claimed. Celeste Classic and Sort the Court are additional comparisons, not silent substitutions. TN-12 moves from Proposed to Active because research has started; its seven-title acceptance criteria are unchanged. Historical completed credit stays 62/98.
 
 English, Japanese and Simplified Chinese remain mandatory for every official release, with declared physical desktop/phone/tablet evidence and independent exact-build human approval. `master` remains candidate staging; official publication on `main` follows those gates. Formative research and engineering need not wait for the full recruitment cohort. Codex allowance is not visible; no remaining percentage is assumed.
